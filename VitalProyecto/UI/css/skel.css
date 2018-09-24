@@ -10,6 +10,7 @@
 		box-sizing: border-box;
 	}
 
+
 /* Container */
 
 	body {
@@ -183,3 +184,162 @@
 				/* margin-left: -(gutters * 2) */
 				margin-left: -80px;
 			}
+
+
+/*.row2 + .row2 > * {
+    padding-top: 50px;
+}
+
+.row2 {
+    margin-left: 50px;
+}
+
+    /* Rows */
+
+    .row2:after {
+        content: '';
+        display: block;
+        clear: both;
+        height: 0;
+    }
+
+    .row2:first-child > * {
+        padding-top: 0;
+    }
+
+    .row2 > * {
+        padding-top: 0;
+    }
+
+    /* Modifiers */
+
+    /* Flush */
+
+    .row2.flush {
+        margin-left: 0;
+    }
+
+        .row2.flush > * {
+            padding: 0 !important;
+        }
+
+    /* Quarter */
+
+    .row2.quarter > * {
+        padding: 12.5px 0 0 12.5px;
+    }
+
+    .row2.quarter + .row2.quarter > * {
+        padding-top: 12.5px;
+    }
+
+    .row2.quarter {
+        margin-left: -12.5px;
+    }
+
+    /* Half */
+
+    .row2.half > * {
+        padding: 25px 0 0 25px;
+    }
+
+    .row2.half + .row2.half > * {
+        padding-top: 25px;
+    }
+
+    .row2.half {
+        margin-left: -25px;
+    }
+
+    /* One and (a) Half */
+
+    .row2.oneandhalf > * {
+        padding: 75px 0 0 75px;
+    }
+
+    .row2.oneandhalf + .row2.oneandhalf > * {
+        padding-top: 75px;
+    }
+
+    .row2.oneandhalf {
+        margin-left: -75px;
+    }
+
+    /* Double */
+
+    .row2.double > * {
+        padding: 100px 0 0 100px;
+    }
+
+    .row2.double + .row2.double > * {
+        padding-top: 100px;
+    }
+
+    .row2.double {
+        margin-left: -100px;
+    }*/
+
+
+/*ul.style3 .date {
+    display: inline-block;
+    margin: 0px 0px 20px 0px;
+    padding: 1em 1em;
+    background: #323338;
+    border-radius: 4px;
+    line-height: normal;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Abel', sans-serif;
+    font-size: 14px;
+    color: #323338;
+}*/
+
+    /*ul.style3 .date b {
+    }
+
+    ul.style3 .date a {
+        color: #FFFFFF;
+    }
+
+        ul.style3 .date a:hover {
+            text-decoration: none;
+        }*/
+
+/*ul.style3 .first {
+    padding-top: 0px;
+    border-top: none;
+    
+}
+
+ul.style3 {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    
+}*/
+
+    /*ul.style3 li {
+        padding: 20px 0px 25px 0px;
+        border-top: 1px solid #E7E5DA;
+        
+    }
+
+    ul.style3 a {
+        display: block;
+        text-decoration: none;
+        color: #525252;
+    }
+
+        ul.style3 a:hover {
+            text-decoration: underline;
+        }
+
+ul.style3 .first {
+	padding-top: 0px;
+	border-top: none;
+ 
+}*/
+
+
+
+
