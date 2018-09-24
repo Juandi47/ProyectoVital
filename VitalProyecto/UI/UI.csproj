@@ -78,7 +78,10 @@
     <Content Include="css\style-normal.css" />
     <Content Include="css\style-wide.css" />
     <Content Include="css\style.css" />
+    <Content Include="estilos.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="images\banner.jpg" />
+    <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="index.html" />
     <Content Include="js\init.js" />
