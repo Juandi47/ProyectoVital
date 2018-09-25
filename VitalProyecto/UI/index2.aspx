@@ -97,7 +97,8 @@
                     <h2>06 Oct</h2>
                     <p>Crete is a Greek island in the Mediterranean Sea.</p>
                     <h2>24 Nov</h2>
-                    <p>You can reach Chania airport from all over Europe.</p>
+                    <p>You can reach Chania airport from all over Europegggg.</p>
+
 
             </div>
 
