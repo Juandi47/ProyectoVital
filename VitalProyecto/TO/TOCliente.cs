@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TO
 {
-    public class Class1
+    class TOCliente
     {
     }
 }
