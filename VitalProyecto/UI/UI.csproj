@@ -68,28 +68,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPrincipal.aspx" />
-    <Content Include="css\font-awesome.min.css" />
-    <Content Include="css\ie\html5shiv.js" />
-    <Content Include="css\ie\PIE.htc" />
-    <Content Include="css\ie\v8.css" />
-    <Content Include="css\skel.css" />
-    <Content Include="css\style-mobile.css" />
-    <Content Include="css\style-narrow.css" />
-    <Content Include="css\style-narrower.css" />
-    <Content Include="css\style-normal.css" />
-    <Content Include="css\style-wide.css" />
-    <Content Include="css\style.css" />
-    <Content Include="estilos.css" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="images\banner.jpg" />
-    <Content Include="images\pic02.jpg" />
-    <Content Include="images\placeholder.png" />
-    <Content Include="index2.aspx" />
-    <Content Include="js\init.js" />
-    <Content Include="js\jquery.dropotron.min.js" />
-    <Content Include="js\jquery.min.js" />
-    <Content Include="js\skel-layers.min.js" />
-    <Content Include="js\skel.min.js" />
+    <Content Include="Cliente\css\font-awesome.min.css" />
+    <Content Include="Cliente\css\ie\html5shiv.js" />
+    <Content Include="Cliente\css\ie\PIE.htc" />
+    <Content Include="Cliente\css\ie\v8.css" />
+    <Content Include="Cliente\css\skel.css" />
+    <Content Include="Cliente\css\style-mobile.css" />
+    <Content Include="Cliente\css\style-narrow.css" />
+    <Content Include="Cliente\css\style-narrower.css" />
+    <Content Include="Cliente\css\style-normal.css" />
+    <Content Include="Cliente\css\style-wide.css" />
+    <Content Include="Cliente\css\style.css" />
+    <Content Include="Cliente\css\estilos.css" />
+    <Content Include="Cliente\fonts\fontawesome-webfont.svg" />
+    <Content Include="Cliente\images\banner.jpg" />
+    <Content Include="Cliente\images\pic02.jpg" />
+    <Content Include="Cliente\images\placeholder.png" />
+    <Content Include="Cliente\index2.aspx" />
+    <Content Include="Cliente\js\init.js" />
+    <Content Include="Cliente\js\jquery.dropotron.min.js" />
+    <Content Include="Cliente\js\jquery.min.js" />
+    <Content Include="Cliente\js\skel-layers.min.js" />
+    <Content Include="Cliente\js\skel.min.js" />
     <Content Include="login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -101,11 +101,11 @@
     <Compile Include="AdminPrincipal.aspx.designer.cs">
       <DependentUpon>AdminPrincipal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="index2.aspx.cs">
+    <Compile Include="Cliente\index2.aspx.cs">
       <DependentUpon>index2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index2.aspx.designer.cs">
+    <Compile Include="Cliente\index2.aspx.designer.cs">
       <DependentUpon>index2.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
@@ -115,22 +115,22 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Principal.Master.cs">
+    <Compile Include="Administracion\Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Principal.Master.designer.cs">
+    <Compile Include="Administracion\Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Cliente\fonts\fontawesome-webfont.eot" />
+    <Content Include="Cliente\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Cliente\fonts\fontawesome-webfont.woff" />
+    <Content Include="Cliente\fonts\FontAwesome.otf" />
     <None Include="packages.config" />
-    <Content Include="Principal.Master" />
+    <Content Include="Administracion\Principal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
