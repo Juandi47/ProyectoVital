@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminPrincipal.aspx" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
@@ -93,6 +94,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPrincipal.aspx.cs">
+      <DependentUpon>AdminPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPrincipal.aspx.designer.cs">
+      <DependentUpon>AdminPrincipal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index2.aspx.cs">
       <DependentUpon>index2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,6 +115,13 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +130,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="packages.config" />
+    <Content Include="Principal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
