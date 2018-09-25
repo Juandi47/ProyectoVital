@@ -11,7 +11,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 
-	<script src="Cliente/js/jquery.min.js"></script> Cliente/
+	<script src="Cliente/js/jquery.min.js"></script>
 	<script src="Cliente/js/jquery.dropotron.min.js"></script>
 	<script src="Cliente/js/skel.min.js"></script>
 	<script src="Cliente/js/skel-layers.min.js"></script>
