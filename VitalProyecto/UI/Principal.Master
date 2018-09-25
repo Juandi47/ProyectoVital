@@ -42,8 +42,8 @@
 								<li><a href="#">Actualización Cliente</a></li>			
 							</ul>
 						</li>
-						<li><a href="twocolumn2.html">Rutinas</a></li>
-                        <li><a href="twocolumn2.html">Notificación</a></li>
+						<li><a href="#">Rutinas</a></li>
+                        <li><a href="Notificacion.aspx">Notificación</a></li>
 					</ul>
 				</nav>
 
@@ -73,5 +73,5 @@
                 </div>				
 		</div>
 </body>
-     
+
 </html>

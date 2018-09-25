@@ -92,6 +92,7 @@
     <Content Include="js\skel.min.js" />
     <Content Include="Cliente\login.aspx" />
     <Content Include="Administracion\Registro.aspx" />
+    <Content Include="Notificacion.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +116,13 @@
     </Compile>
     <Compile Include="Cliente\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificacion.aspx.cs">
+      <DependentUpon>Notificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificacion.aspx.designer.cs">
+      <DependentUpon>Notificacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
