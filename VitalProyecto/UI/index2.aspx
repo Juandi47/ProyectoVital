@@ -14,6 +14,9 @@
     <script src="js/skel.min.js"></script>
     <script src="js/skel-layers.min.js"></script>
     <script src="js/init.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <noscript>
 
@@ -116,6 +119,9 @@
                 </div>
                 <div  class="col-6 col-s-12 column2"  ">
                     <img  class="image" alt="" src="images/pic02.jpg" />
+
+                    <button type="button" class="btn btn-success" style="margin-left:1em; position:;">Ver mas</button>
+                   <%-- <a href="#" style="color:#042c09" class="btn btn-info" role="button">Ver mas</a>--%>
                 </div>
 
             </div>
