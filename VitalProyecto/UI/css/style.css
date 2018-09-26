@@ -3,7 +3,7 @@
 
 
 body {
-    background: #1d9180;
+    background: #f2f2f2;
 }
 
 		body.loading * {
@@ -549,7 +549,8 @@ body {
 	#header {
 		color: white;
 		height: 4em;
-		background: rgba(0, 0, 0, 0.5);
+		/*background: rgba(0, 0, 0, 0.5);*/
+        background-color:darkolivegreen;
 	}
 
 		#header .container {
@@ -560,11 +561,7 @@ body {
 		display: none;
 	}
 
-	.homepage #nav {
-		position: static;
-		right: none;
-		text-align: center;
-	}
+
 
 	#logo {
 		line-height: 2em;
