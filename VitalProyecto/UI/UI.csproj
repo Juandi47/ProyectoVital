@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ActualizacionCliente.aspx" />
     <Content Include="admin_estilos.css" />
     <Content Include="AdminPrincipal.aspx" />
     <Content Include="css\font-awesome.min.css" />
@@ -83,6 +84,7 @@
     <Content Include="Cliente\estilos.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\banner_admin01.jpg" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
@@ -97,6 +99,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizacionCliente.aspx.cs">
+      <DependentUpon>ActualizacionCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizacionCliente.aspx.designer.cs">
+      <DependentUpon>ActualizacionCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPrincipal.aspx.cs">
       <DependentUpon>AdminPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

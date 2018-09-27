@@ -14,31 +14,44 @@
 
         <div class="form-container">
             <form action="/action_page.php">
+
                  <div class="row">
                     <div class="col-25">
-                        <label class="form-label" for="fname">Cedula</label>
+                        <label class="form-label" for="tced">Cédula</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="tced" name="ced" placeholder="(Sin espacios) Ej: 2 225 055">
+                        <input type="text" id="tced" name="tced" placeholder="(Sin espacios) Ej: 2 225 055">
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-25">
-                        <label class="form-label" for="fname">Nombre</label>
+                        <label class="form-label" for="tname">Nombre</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        <input type="text" id="tname" name="tname" placeholder="Juan">
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-25">
-                        <label class="form-label" for="lname">Apellidos</label>
+                        <label class="form-label" for="tlname1">Primer apellido</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                        <input type="text" id="tlname1" name="tlname1" placeholder="Arias">
                     </div>
                 </div>
-                <div class="row">
+
+                 <div class="row">
+                    <div class="col-25">
+                        <label class="form-label" for="tlname2">Segundo apellido</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="tlname2" name="tlname" placeholder="Rojas">
+                    </div>
+                </div>
+
+              <%--  <div class="row">
                     <div class="col-25">
                         <label class="form-label" for="country">Genero</label>
                     </div>
@@ -49,13 +62,32 @@
                             <option value="usa">Otros</option>
                         </select>
                     </div>
+                </div>--%>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label class="form-label" for="tphone">Telefono</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="tphone" name="tphone" placeholder="Ejm: 88956674"> 
+                    </div>
                 </div>
+
+                  <div class="row">
+                    <div class="col-25">
+                        <label class="form-label" for="temail">Correo</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="email" id="temail" name="temail">
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-25">
                         <label class="form-label" for="subject">Observaciones</label>
                     </div>
                     <div class="col-75">
-                        <textarea id="subject" name="subject" placeholder="Write something.." style="height: 200px"></textarea>
+                        <textarea id="tobs" name="tobs" placeholder="Consideraciones del cliente" style="height: 200px"></textarea>
                     </div>
                 </div>
                 <div >

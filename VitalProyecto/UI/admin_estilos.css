@@ -41,6 +41,7 @@ input[type=text], select, textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+    border-color:#4CAF50;
 }
 
 label {
@@ -106,4 +107,28 @@ text-align:center;
 
 .form-label {
     font: bold 20px 'Open Sans', sans-serif;
+}
+
+.form-label2 {
+    font: bold 20px 'Open Sans', sans-serif;
+    color:papayawhip;
+}
+
+.admin-banner {
+    background: #222222 url(../images/banner_admin01.jpg) no-repeat;
+    height: 20em;
+}
+
+/*PENDIENTE*/
+.N {
+
+}
+
+.previous {
+float:left;
+color:black;
+}
+
+.next {
+    float: right;
 }

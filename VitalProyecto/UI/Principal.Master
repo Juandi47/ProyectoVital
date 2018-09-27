@@ -44,7 +44,7 @@
                     <li><a href="AdminPrincipal.aspx">Clientes</a>
                         <ul>
                             <li><a href="RegistroCliente.aspx">Ingreso Cliente</a></li>
-                            <li><a href="#">Actualización Cliente</a></li>
+                            <li><a href="ActualizacionCliente.aspx">Actualización Cliente</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Rutinas</a></li>
@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <div id="banner" style="background-color: gainsboro">
+    <div id="banner" class="admin-banner"  style="background-color: gainsboro">
        <h1 class="title">BANNER</h1>
     </div>
 
