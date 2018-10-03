@@ -34,6 +34,7 @@
                 <li class="next"><a href="#"style="color:papayawhip; text-decoration:none; font: bold 20px 'Open Sans', sans-serif; background-color:#32a800; float:right;">Ver siguiente</a></li>
             </ul>--%>
            <%-- <h1 style="position:center; color:papayawhip">Octubre</h1>--%>
+
         </div>
 
         <form action="/action_page.php">

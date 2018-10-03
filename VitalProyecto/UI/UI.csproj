@@ -70,6 +70,9 @@
     <Content Include="ActualizacionCliente.aspx" />
     <Content Include="admin_estilos.css" />
     <Content Include="AdminPrincipal.aspx" />
+    <Content Include="Cliente\asistencia_page0.html" />
+    <Content Include="Cliente\js\html5-qrcode.js" />
+    <Content Include="Cliente\js\jquery-qrcode.js" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
