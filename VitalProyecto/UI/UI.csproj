@@ -67,7 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ActualizacionCliente.aspx" />
+    <Content Include="admin_estilos.css" />
     <Content Include="AdminPrincipal.aspx" />
+    <Content Include="Cliente\asistencia_page0.html" />
+    <Content Include="Cliente\js\html5-qrcode.js" />
+    <Content Include="Cliente\js\jquery-qrcode.js" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
@@ -79,23 +84,31 @@
     <Content Include="css\style-normal.css" />
     <Content Include="css\style-wide.css" />
     <Content Include="css\style.css" />
-    <Content Include="estilos.css" />
+    <Content Include="Cliente\estilos.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\banner_admin01.jpg" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
-    <Content Include="index2.aspx" />
+    <Content Include="Cliente\index2.aspx" />
     <Content Include="js\init.js" />
     <Content Include="js\jquery.dropotron.min.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\skel-layers.min.js" />
     <Content Include="js\skel.min.js" />
-    <Content Include="login.aspx" />
-    <Content Include="Administracion\Registro.aspx" />
+    <Content Include="Cliente\login.aspx" />
     <Content Include="Notificacion.aspx" />
+    <Content Include="RegistroCliente.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizacionCliente.aspx.cs">
+      <DependentUpon>ActualizacionCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizacionCliente.aspx.designer.cs">
+      <DependentUpon>ActualizacionCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPrincipal.aspx.cs">
       <DependentUpon>AdminPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,18 +116,18 @@
     <Compile Include="AdminPrincipal.aspx.designer.cs">
       <DependentUpon>AdminPrincipal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="index2.aspx.cs">
+    <Compile Include="Cliente\index2.aspx.cs">
       <DependentUpon>index2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index2.aspx.designer.cs">
+    <Compile Include="Cliente\index2.aspx.designer.cs">
       <DependentUpon>index2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="login.aspx.cs">
+    <Compile Include="Cliente\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="login.aspx.designer.cs">
+    <Compile Include="Cliente\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Notificacion.aspx.cs">
@@ -132,6 +145,13 @@
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroCliente.aspx.cs">
+      <DependentUpon>RegistroCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroCliente.aspx.designer.cs">
+      <DependentUpon>RegistroCliente.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -154,7 +174,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Cliente\" />
+    <Folder Include="Administracion\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
