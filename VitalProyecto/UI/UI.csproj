@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -73,6 +74,7 @@
     <Content Include="Cliente\asistencia_page0.html" />
     <Content Include="Cliente\js\html5-qrcode.js" />
     <Content Include="Cliente\js\jquery-qrcode.js" />
+    <Content Include="Crear_Admin.aspx" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
@@ -86,6 +88,7 @@
     <Content Include="css\style.css" />
     <Content Include="Cliente\estilos.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Gestion_Admin.aspx" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\banner_admin01.jpg" />
     <Content Include="images\pic02.jpg" />
@@ -129,6 +132,20 @@
     </Compile>
     <Compile Include="Cliente\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Crear_Admin.aspx.cs">
+      <DependentUpon>Crear_Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Crear_Admin.aspx.designer.cs">
+      <DependentUpon>Crear_Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion_Admin.aspx.cs">
+      <DependentUpon>Gestion_Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion_Admin.aspx.designer.cs">
+      <DependentUpon>Gestion_Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Notificacion.aspx.cs">
       <DependentUpon>Notificacion.aspx</DependentUpon>

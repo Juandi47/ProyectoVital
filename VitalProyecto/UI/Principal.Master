@@ -47,6 +47,12 @@
                             <li><a href="ActualizacionCliente.aspx">Actualización Cliente</a></li>
                         </ul>
                     </li>
+                    <li><a href="AdminPrincipal.aspx">Administrador</a>
+                        <ul>
+                            <li><a href="Crear_Admin.aspx">Crear Administrador</a></li>
+                            <li><a href="Gestion_Admin.aspx">Actualizar Administrador</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Rutinas</a></li>
                     <li><a href="Notificacion.aspx">Notificación</a></li>
                 </ul>
