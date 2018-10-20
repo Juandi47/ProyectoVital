@@ -1,4 +1,7 @@
-﻿body {
+﻿@import url("font-awesome.min.css");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+
+body {
     height:100%;
     background-color:white;
 }
@@ -18,8 +21,10 @@
 }
 
 .title {
-    font: bold 20px Arial, verdana;
-    margin:15px 0 15px 0;
+    font: bold 25px 'Open Sans', sans-serif;
+    margin: 15px 0 15px 15px;
+    text-transform: uppercase;
+    
 }
 
 .banner {
@@ -35,6 +40,7 @@ input[type=text], select, textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+    border-color:#4CAF50;
 }
 
 label {
@@ -90,6 +96,38 @@ input[type=submit] {
 }
 
 .btn-form {
+    margin: 15px 0px 0px 0%;
+    font-size: 20px;
+}
 
+.small-div {
+text-align:center;
+}
 
+.form-label {
+    font: bold 20px 'Open Sans', sans-serif;
+}
+
+.form-label2 {
+    font: bold 20px 'Open Sans', sans-serif;
+    color:papayawhip;
+}
+
+.admin-banner {
+    background: #222222 url(../images/banner_admin01.jpg) no-repeat;
+    height: 20em;
+}
+
+/*PENDIENTE*/
+.N {
+
+}
+
+.previous {
+float:left;
+color:black;
+}
+
+.next {
+    float: right;
 }

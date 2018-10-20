@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="RegistroCliente.aspx.cs" Inherits="UI.RegistroCliente" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Crear_Admin.aspx.cs" Inherits="UI.Crear_Admin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +9,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
     <div>
-        <h1 class="title">Registro de cliente</h1>
+        <h1 class="title">Registro de Administrador</h1>
 
         <div class="form-container">
             <form action="/action_page.php">
@@ -51,25 +50,12 @@
                     </div>
                 </div>
 
-              <%--  <div class="row">
-                    <div class="col-25">
-                        <label class="form-label" for="country">Genero</label>
-                    </div>
-                    <div class="col-75">
-                        <select id="country" name="country">
-                            <option value="australia">Femenino</option>
-                            <option value="canada">Masculino</option>
-                            <option value="usa">Otros</option>
-                        </select>
-                    </div>
-                </div>--%>
-
                 <div class="row">
                     <div class="col-25">
-                        <label class="form-label" for="tphone">Telefono</label>
+                        <label class="form-label" for="tphone">Clave</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="tphone" name="tphone" placeholder="Ejm: 88956674"> 
+                        <input type="text" id="tclave" name="tclave" placeholder="Ejm: Cla.123"> 
                     </div>
                 </div>
 
@@ -82,14 +68,6 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-25">
-                        <label class="form-label" for="subject">Observaciones</label>
-                    </div>
-                    <div class="col-75">
-                        <textarea id="tobs" name="tobs" placeholder="Consideraciones del cliente" style="height: 200px"></textarea>
-                    </div>
-                </div>
                 <div >
                   <button type="button" class="btn btn-success btn-form">Registrar</button>
                 </div>

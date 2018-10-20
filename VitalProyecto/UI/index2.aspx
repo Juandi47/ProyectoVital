@@ -14,24 +14,21 @@
     <script src="js/skel.min.js"></script>
     <script src="js/skel-layers.min.js"></script>
     <script src="js/init.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <noscript>
-
-    </noscript>
-    <link rel="stylesheet" type="text/css" href="estilos.css" />
-    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-
-    <style>
-       
-    </style>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+   
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+         <link href="estilos.css" rel="stylesheet" />
+    <link href="../css/skel.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+    
 
 
 </head>
 
-<body class="">
+<body class="homepage">
 
     <!-- Header Wrapper -->
     <div class="wrapper style1">
@@ -47,7 +44,7 @@
                 <nav id="nav">
                     <ul>
                         <li class="active"><a href="index2.aspx">Inicio</a></li>
-                       <%-- <li>
+                        <%-- <li>
                             <a href="">Servicios</a>
                             <ul>
                                 <li><a href="#">Clases funcionales</a></li>
@@ -89,10 +86,46 @@
 
     <%-------------------------------------------------- SECCION 1 --------------------------------------------------------%>
 
-    <div class="wrapper style4">
-        <div class="row sec1">
-            <%-- Noticias --%>
-            <div class="col-3 col-s-3 aside" >
+
+
+    <div class="container row">
+        <div class="left col-s-4">
+             <header class="major">
+          <h2 class="h2">Noticias</h2>
+                </header>
+                    <h2>02 Oct</h2>
+                    <p>Chania is a city on the island of Crete.</p>
+                    <h2>06 Oct</h2>
+                    <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                    <h2>24 Nov</h2>
+                    <p>You can reach Chania airport from all over Europegggg.</p>
+        </div>
+
+         <div class="center col-s-4">
+  
+               <h2 class="h2">Servicios</h2>
+
+                   <h1>Servicio 1</h1>
+                    <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula pellentesque.</p>
+
+                    <button type="button" class="btn btn-success" style="margin-left:1em;">Ver mas</button>
+        </div>
+
+              
+
+                      
+  
+            <div class="right col-s-4">
+                <img  class="image" alt="" src="../images/pic02.jpg" />
+        </div>
+       
+
+        </div>
+
+    <%--<div class="wrapper style4" style="background-color:yellowgreen">
+        <div class="row sec1" style="background-color:cornflowerblue">--%>
+    <%-- Noticias --%>
+    <%--   <div class="col-3 col-s-3 aside2" style="background-color:red">
                 <header class="major">
                 <h2 class="h2">Noticias</h2>
                 </header>
@@ -103,31 +136,31 @@
                     <h2>24 Nov</h2>
                     <p>You can reach Chania airport from all over Europegggg.</p>
 
-            </div>
+            </div>--%>
 
-             <%-- Servicios --%>
-            <%-- s1 --%>
-            <div class="col-7 col-s-12 right-div" runat="server">
+    <%-- Servicios --%>
+    <%-- s1 --%>
+    <%--    <div class="col-5 col-s-12 right-div" runat="server" style="background-color:brown">
 
                <header class="major">
                 <h2 class="h2">Servicios</h2>
                 </header>
                 
-                <div  class="col-5 col-s-12 column1" >
+                <div  class="col-5 col-s-12 column1">
                    <h1>Servicio 1</h1>
                     <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula pellentesque.</p>
                 </div>
                 <div  class="col-6 col-s-12 column2"  ">
                     <img  class="image" alt="" src="images/pic02.jpg" />
 
-                    <button type="button" class="btn btn-success" style="margin-left:1em; position:;">Ver mas</button>
-                   <%-- <a href="#" style="color:#042c09" class="btn btn-info" role="button">Ver mas</a>--%>
-                </div>
+                    <button type="button" class="btn btn-success" style="margin-left:1em; position:;">Ver mas</button>--%>
+    <%-- <a href="#" style="color:#042c09" class="btn btn-info" role="button">Ver mas</a>--%>
+    <%--  </div>
 
-            </div>
+            </div>--%>
 
-           <%-- s2 --%>
-            <div class="col-7 col-s-12 right-div" runat="server">
+    <%-- s2 --%>
+    <%-- <div class=" right-div" runat="server">
 
                 <div  class="col-5 col-s-12 column1" >
                    <h1>Servicio 2</h1>
@@ -137,9 +170,9 @@
                     <img  class="image" alt="" src="images/pic02.jpg" />
                 </div>
 
-            </div>
-            <%-- s3 --%>
-            <div class="col-7 col-s-12 right-div" runat="server">
+            </div>--%>
+    <%-- s3 --%>
+    <%--   <div class="col-7 col-s-12 right-div" runat="server">
 
                 <div  class="col-5 col-s-12 column1" >
                    <h1>Servicio 3</h1>
@@ -149,93 +182,93 @@
                     <img  class="image" alt="" src="images/pic02.jpg" />
                 </div>
 
-            </div>
-            <%-- s4 --%>
-            <div class="col-7 col-s-12 right-div" runat="server">
+            </div>--%>
+    <%-- s4 --%>
+    <%-- <div class="col-7 col-s-12 right-div" runat="server">
 
                 <div  class="col-5 col-s-12 column1" >
                    <h1>Servicio 5</h1>
                     <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula pellentesque.</p>
                 </div>
                 <div  class="col-6 col-s-12 column2"  ">
-                    <img  class="image" alt="" src="images/pic02.jpg" />
+                    <img  class="image" alt="" src="../images/pic02.jpg" />
                 </div>
 
-            </div>
+            </div>--%>
 
-            
-            
+
+
+    <%--        </div>--%>
+
+
+    <!-----------------------------------  <%-- SECCION 2 --%> --------------------------------------->
+
+    <section class="container">
+        <header class="major">
+            <h2>Seccion 2</h2>
+            <span class="byline">pulvinar mollis. Vestibulum sem magna, elementum vestibulum arcu.</span>
+        </header>
+        <div class="row flush">
+            <div class="4u">
+                <ul class="special-icons">
+                    <li>
+                        <span class="fa fa-cogs"></span>
+                        <h3>Nulla luctus eleifend</h3>
+                        <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula pellentesque.</p>
+                    </li>
+                    <li>
+                        <span class="fa fa-wrench"></span>
+                        <h3>Etiam posuere augue</h3>
+                        <p>Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat liguala.</p>
+                    </li>
+                    <li>
+                        <span class="fa fa-leaf"></span>
+                        <h3>Fusce ultrices fringilla</h3>
+                        <p>Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="4u">
+                <ul class="special-icons">
+                    <li>
+                        <span class="fa fa-cogs"></span>
+                        <h3>Nulla luctus eleifend</h3>
+                        <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula pellentesque.</p>
+                    </li>
+                    <li>
+                        <span class="fa fa-wrench"></span>
+                        <h3>Etiam posuere augue</h3>
+                        <p>Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat liguala.</p>
+                    </li>
+                    <li>
+                        <span class="fa fa-leaf"></span>
+                        <h3>Fusce ultrices fringilla</h3>
+                        <p>Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="4u">
+                <ul class="special-icons">
+                    <li>
+                        <span class="fa fa-cogs"></span>
+                        <h3>Nulla luctus eleifend</h3>
+                        <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula pellentesque.</p>
+                    </li>
+                    <li>
+                        <span class="fa fa-wrench"></span>
+                        <h3>Etiam posuere augue</h3>
+                        <p>Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat liguala.</p>
+                    </li>
+                    <li>
+                        <span class="fa fa-leaf"></span>
+                        <h3>Fusce ultrices fringilla</h3>
+                        <p>Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor.</p>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-
-        <!-----------------------------------  <%-- SECCION 2 --%> --------------------------------------->
-
-        <section class="container">
-            <header class="major">
-                <h2>Seccion 2</h2>
-                <span class="byline">pulvinar mollis. Vestibulum sem magna, elementum vestibulum arcu.</span>
-            </header>
-            <div class="row flush">
-                <div class="4u">
-                    <ul class="special-icons">
-                        <li>
-                            <span class="fa fa-cogs"></span>
-                            <h3>Nulla luctus eleifend</h3>
-                            <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula pellentesque.</p>
-                        </li>
-                        <li>
-                            <span class="fa fa-wrench"></span>
-                            <h3>Etiam posuere augue</h3>
-                            <p>Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat liguala.</p>
-                        </li>
-                        <li>
-                            <span class="fa fa-leaf"></span>
-                            <h3>Fusce ultrices fringilla</h3>
-                            <p>Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="4u">
-                    <ul class="special-icons">
-                        <li>
-                            <span class="fa fa-cogs"></span>
-                            <h3>Nulla luctus eleifend</h3>
-                            <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula pellentesque.</p>
-                        </li>
-                        <li>
-                            <span class="fa fa-wrench"></span>
-                            <h3>Etiam posuere augue</h3>
-                            <p>Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat liguala.</p>
-                        </li>
-                        <li>
-                            <span class="fa fa-leaf"></span>
-                            <h3>Fusce ultrices fringilla</h3>
-                            <p>Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="4u">
-                    <ul class="special-icons">
-                        <li>
-                            <span class="fa fa-cogs"></span>
-                            <h3>Nulla luctus eleifend</h3>
-                            <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula pellentesque.</p>
-                        </li>
-                        <li>
-                            <span class="fa fa-wrench"></span>
-                            <h3>Etiam posuere augue</h3>
-                            <p>Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat liguala.</p>
-                        </li>
-                        <li>
-                            <span class="fa fa-leaf"></span>
-                            <h3>Fusce ultrices fringilla</h3>
-                            <p>Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
+    </section>
+    
 
     <!-----------------------------------  <%-- SECCION 3 --%> --------------------------------------->
 
@@ -249,25 +282,25 @@
             <div class="row">
                 <div class="3u">
                     <a href="#" class="image">
-                        <img src="images/placeholder.png" alt=""></a>
+                      <img src="../images/placeholder.png" alt=""/></a>
                     <h3>Molly Millions</h3>
                     <p>In posuere eleifend odio quisque semper augue wisi ligula.</p>
                 </div>
                 <div class="3u">
                     <a href="#" class="image">
-                        <img src="images/placeholder.png" alt=""></a>
+                       <img src="../images/placeholder.png" alt=""/></a>
                     <h3>Henry Dorsett Case</h3>
                     <p>In posuere eleifend odio quisque semper augue wisi ligula.</p>
                 </div>
                 <div class="3u">
                     <a href="#" class="image">
-                        <img src="images/placeholder.png" alt=""></a>
+                       <img src="../images/placeholder.png" alt=""/></a>
                     <h3>Willis Corto</h3>
                     <p>In posuere eleifend odio quisque semper augue wisi ligula.</p>
                 </div>
                 <div class="3u">
                     <a href="#" class="image">
-                        <img src="images/placeholder.png" alt=""></a>
+                        <img src="../images/placeholder.png" alt=""/></a>
                     <h3>Linda Lee</h3>
                     <p>In posuere eleifend odio quisque semper augue wisi ligula.</p>
                 </div>
