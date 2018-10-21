@@ -21,6 +21,7 @@
     <noscript>
         <link rel="stylesheet" href="css/skel.css" />
         <link rel="stylesheet" href="css/style.css" />
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
         <%--<link rel="stylesheet" type="text/css" href="admin_estilos.css" />--%>
     </noscript>
     <link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen">
@@ -45,7 +46,12 @@
                             <li><a href="#">Actualización Cliente</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Rutinas</a></li>
+                    <li><a href="#">Rutinas</a>
+                        <ul>
+                            <li><a href="BancoRutinas.aspx">Banco de rutinas</a></li>
+                            <li><a href="#">Generar Rutina</a></li>
+                        </ul>
+                    </li>
                     <li><a href="Notificacion.aspx">Notificación</a></li>
                 </ul>
             </nav>
