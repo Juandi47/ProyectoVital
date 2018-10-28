@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -70,6 +71,8 @@
     <Content Include="ActualizacionCliente.aspx" />
     <Content Include="admin_estilos.css" />
     <Content Include="AdminPrincipal.aspx" />
+    <Content Include="BancoRutinas.aspx" />
+    <Content Include="Crear_Admin.aspx" />
     <Content Include="Asistencia.aspx" />
     <Content Include="Cliente\asistencia_page0.html" />
     <Content Include="Cliente\js\html5-qrcode.js" />
@@ -91,11 +94,13 @@
     <Content Include="css\theme.css" />
     <Content Include="css\triangle.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Gestion_Admin.aspx" />
     <Content Include="images\banner.jpg" />
-    <Content Include="images\banner_admin01.jpg" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
+    <Content Include="index2.aspx" />
+    <Content Include="InformacionAdministrador.aspx" />
     <Content Include="js\init.js" />
     <Content Include="js\jquery.dropotron.min.js" />
     <Content Include="js\jquery.min.js" />
@@ -103,6 +108,7 @@
     <Content Include="js\skel-layers.min.js" />
     <Content Include="js\skel.min.js" />
     <Content Include="Cliente\login.aspx" />
+    <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
     <Content Include="RegistroCliente.aspx" />
     <Content Include="Web.config" />
@@ -129,6 +135,13 @@
     <Compile Include="Asistencia.aspx.designer.cs">
       <DependentUpon>Asistencia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BancoRutinas.aspx.cs">
+      <DependentUpon>BancoRutinas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BancoRutinas.aspx.designer.cs">
+      <DependentUpon>BancoRutinas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cliente\index2.aspx.cs">
       <DependentUpon>index2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -142,6 +155,41 @@
     </Compile>
     <Compile Include="Cliente\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Crear_Admin.aspx.cs">
+      <DependentUpon>Crear_Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Crear_Admin.aspx.designer.cs">
+      <DependentUpon>Crear_Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion_Admin.aspx.cs">
+      <DependentUpon>Gestion_Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion_Admin.aspx.designer.cs">
+      <DependentUpon>Gestion_Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index2.aspx.cs">
+      <DependentUpon>index2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index2.aspx.designer.cs">
+      <DependentUpon>index2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InformacionAdministrador.aspx.cs">
+      <DependentUpon>InformacionAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InformacionAdministrador.aspx.designer.cs">
+      <DependentUpon>InformacionAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarRutina.aspx.cs">
+      <DependentUpon>MostrarRutina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarRutina.aspx.designer.cs">
+      <DependentUpon>MostrarRutina.aspx</DependentUpon>
     </Compile>
     <Compile Include="Notificacion.aspx.cs">
       <DependentUpon>Notificacion.aspx</DependentUpon>
