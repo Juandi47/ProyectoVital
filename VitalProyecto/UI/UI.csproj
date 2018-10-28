@@ -70,6 +70,7 @@
     <Content Include="ActualizacionCliente.aspx" />
     <Content Include="admin_estilos.css" />
     <Content Include="AdminPrincipal.aspx" />
+    <Content Include="Asistencia.aspx" />
     <Content Include="Cliente\asistencia_page0.html" />
     <Content Include="Cliente\js\html5-qrcode.js" />
     <Content Include="Cliente\js\jquery-qrcode.js" />
@@ -77,6 +78,8 @@
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
     <Content Include="css\ie\v8.css" />
+    <Content Include="css\pikaday.css" />
+    <Content Include="css\site.css" />
     <Content Include="css\skel.css" />
     <Content Include="css\style-mobile.css" />
     <Content Include="css\style-narrow.css" />
@@ -85,6 +88,8 @@
     <Content Include="css\style-wide.css" />
     <Content Include="css\style.css" />
     <Content Include="Cliente\estilos.css" />
+    <Content Include="css\theme.css" />
+    <Content Include="css\triangle.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\banner_admin01.jpg" />
@@ -94,6 +99,7 @@
     <Content Include="js\init.js" />
     <Content Include="js\jquery.dropotron.min.js" />
     <Content Include="js\jquery.min.js" />
+    <Content Include="js\pikaday.js" />
     <Content Include="js\skel-layers.min.js" />
     <Content Include="js\skel.min.js" />
     <Content Include="Cliente\login.aspx" />
@@ -115,6 +121,13 @@
     </Compile>
     <Compile Include="AdminPrincipal.aspx.designer.cs">
       <DependentUpon>AdminPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Asistencia.aspx.cs">
+      <DependentUpon>Asistencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Asistencia.aspx.designer.cs">
+      <DependentUpon>Asistencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cliente\index2.aspx.cs">
       <DependentUpon>index2.aspx</DependentUpon>
