@@ -10,7 +10,11 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
-
+    <script>
+        function guardarNombre(nombre) {            
+            __doPostBack("Nombre", nombre);
+        }
+    </script>
     <form id="form1" runat="server">
         <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover-cells">
         </asp:Table>

@@ -11,7 +11,7 @@ namespace UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+             Nombre.Text = Session["Rutina"] as String;
         }
     }
 }
