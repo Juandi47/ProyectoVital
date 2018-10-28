@@ -78,7 +78,7 @@ namespace DAO
             }
             catch (Exception e)
             {
-                int var1 = 0;
+                
             }
 
         }
