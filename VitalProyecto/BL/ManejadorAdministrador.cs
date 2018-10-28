@@ -34,6 +34,29 @@ namespace BL
         }
 
 
+        public void modificarAdmin(string cedula, string nombre, string clave, string apellido1, string apellido2) {
+            administradorDAO.modificarAdmin(new TOAdministrador(cedula, nombre, clave, apellido1, apellido2));
+        }
+
+
+        public void eliminarAdministrador(string cedula) {
+           int eliminado = administradorDAO.eliminarAdmin(cedula);
+            if (eliminado > 1)
+            {
+                //eliminado
+            }
+            else {
+                if (eliminado < 1)
+                {
+                    //error de ejecucion
+                }
+                else {
+                    //NonSerializedAttribute es posible eliminar as
+                }
+            }
+        }
+
+
     }
 
 
