@@ -37,6 +37,53 @@ namespace DAO
             }
             return listAdministrador;
         }
+
+
+
+        public void agregarAdmin(TOAdministrador administrador) {
+            try {
+                string qry = "insert into Administrador values ('@ced', '@nom', '@cla', '@ape1', '@ape2')";
+
+                SqlCommand sent = new SqlCommand(qry, conexion);
+                sent.Parameters.AddWithValue("@ced", administrador.Cedula);
+                sent.Parameters.AddWithValue("@nom", administrador.Nombre);
+                sent.Parameters.AddWithValue("@cla", administrador.Clave);
+                sent.Parameters.AddWithValue("@ape1", administrador.Apellido1);
+                sent.Parameters.AddWithValue("@ape2", administrador.Apellido2);
+                
+                conexion.Open();
+                sent.ExecuteNonQuery();
+            } catch (Exception e) {
+
+            }
+            
+        }
+
+
+        public void eliminarAdmin(TOAdministrador administrador)
+        {
+            try
+            {
+                string qry = "insert into Administrador values ('@ced', '@nom', '@cla', '@ape1', '@ape2')";
+
+                SqlCommand sent = new SqlCommand(qry, conexion);
+                sent.Parameters.AddWithValue("@ced", administrador.Cedula);
+                sent.Parameters.AddWithValue("@nom", administrador.Nombre);
+                sent.Parameters.AddWithValue("@cla", administrador.Clave);
+                sent.Parameters.AddWithValue("@ape1", administrador.Apellido1);
+                sent.Parameters.AddWithValue("@ape2", administrador.Apellido2);
+
+                conexion.Open();
+                sent.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+            }
+
+        }
+
+
     }
 
 }

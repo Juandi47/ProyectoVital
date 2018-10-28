@@ -8,19 +8,21 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
-    <div>
+    <div class="container">
+
         <h1 class="title">Registro de Administrador</h1>
 
         <div class="form-container">
-            <form action="/action_page.php">
+            <form runat="server">
 
                  <div class="row">
                     <div class="col-25">
                         <label class="form-label" for="tced">Cédula</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="tced" name="tced" placeholder="(Sin espacios) Ej: 2 225 055">
-                    </div>
+                        <%--<asp:TextBox runat="server" ID="tced" TextMode="Number" placeholder="(Sin espacios) Ej: 2 225 055"></asp:TextBox>--%>
+                   <asp:TextBox ID="tced" runat="server"  placeholder="20225055" TextMode="Number"></asp:TextBox>
+                   </div>
                 </div>
 
                 <div class="row">
@@ -28,7 +30,9 @@
                         <label class="form-label" for="tname">Nombre</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="tname" name="tname" placeholder="Juan">
+                        <input type="text" id="tname" name="tname" placeholder="María">
+                       
+
                     </div>
                 </div>
 
@@ -52,7 +56,7 @@
 
                 <div class="row">
                     <div class="col-25">
-                        <label class="form-label" for="tphone">Clave</label>
+                        <label class="form-label" for="tclave">Clave</label>
                     </div>
                     <div class="col-75">
                         <input type="text" id="tclave" name="tclave" placeholder="Ejm: Cla.123"> 
@@ -67,12 +71,14 @@
                         <input type="email" id="temail" name="temail">
                     </div>
                 </div>
-
-                <div >
-                  <button type="button" class="btn btn-success btn-form">Registrar</button>
-                </div>
+                <asp:Button id="btnCrear" Text="Crear" runat="server" OnClick="BtnRegistrar_Click"/>
             </form>
-        </div>
 
+        </div>
+            
+                    
     </div>
+
+    
+
 </asp:Content>

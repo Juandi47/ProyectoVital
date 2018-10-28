@@ -23,6 +23,17 @@ namespace BL
             }
             return listaBLAdministrador;
         }
+
+
+
+
+        public void agregarAdministrador(string cedula, string nombre, string clave, string apellido1, string apellido2) {
+
+            administradorDAO.agregarAdmin(new TOAdministrador( cedula, nombre, clave, apellido1, apellido2));
+
+        }
+
+
     }
 
 
