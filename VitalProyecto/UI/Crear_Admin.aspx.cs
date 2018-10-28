@@ -22,12 +22,18 @@ namespace UI
         {
 
             string cedula = tced.Text; 
-            string nombre = Request.Form["tname"];
-            string clave = Request.Form["tclave"];
-            string apellido1 = Request.Form["tlname1"];
-            string apellido2 = Request.Form["tlname2"];
-            
-            manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2);
+            string nombre = tname.Text;
+            string clave = tclave.Text;
+            string apellido1 = tlname1.Text;
+            string apellido2 = tlname2.Text;
+
+            if (cedula == null || nombre == null || clave == null || apellido1 == null || apellido2 == null)
+            {
+                //aqui va mensaje de error
+            }
+            else {
+                manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2);
+            }
 
         }
     }

@@ -42,7 +42,7 @@ namespace DAO
 
         public void agregarAdmin(TOAdministrador administrador) {
             try {
-                string qry = "insert into Administrador values ('@ced', '@nom', '@cla', '@ape1', '@ape2')";
+                string qry = "insert into Administrador values (@ced, @nom, @cla, @ape1, @ape2)";
 
                 SqlCommand sent = new SqlCommand(qry, conexion);
                 sent.Parameters.AddWithValue("@ced", administrador.Cedula);
