@@ -68,13 +68,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ActualizacionCliente.aspx" />
     <Content Include="admin_estilos.css" />
     <Content Include="AdminPrincipal.aspx" />
-    <Content Include="Cliente\asistencia_page0.html" />
-    <Content Include="Cliente\js\html5-qrcode.js" />
-    <Content Include="Cliente\js\jquery-qrcode.js" />
-    <Content Include="Crear_Admin.aspx" />
+    <Content Include="BancoRutinas.aspx" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
@@ -88,9 +84,7 @@
     <Content Include="css\style.css" />
     <Content Include="Cliente\estilos.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="Gestion_Admin.aspx" />
     <Content Include="images\banner.jpg" />
-    <Content Include="images\banner_admin01.jpg" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
@@ -105,19 +99,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActualizacionCliente.aspx.cs">
-      <DependentUpon>ActualizacionCliente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ActualizacionCliente.aspx.designer.cs">
-      <DependentUpon>ActualizacionCliente.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AdminPrincipal.aspx.cs">
       <DependentUpon>AdminPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminPrincipal.aspx.designer.cs">
       <DependentUpon>AdminPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BancoRutinas.aspx.cs">
+      <DependentUpon>BancoRutinas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BancoRutinas.aspx.designer.cs">
+      <DependentUpon>BancoRutinas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cliente\index2.aspx.cs">
       <DependentUpon>index2.aspx</DependentUpon>
@@ -132,20 +126,6 @@
     </Compile>
     <Compile Include="Cliente\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Crear_Admin.aspx.cs">
-      <DependentUpon>Crear_Admin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Crear_Admin.aspx.designer.cs">
-      <DependentUpon>Crear_Admin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Gestion_Admin.aspx.cs">
-      <DependentUpon>Gestion_Admin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Gestion_Admin.aspx.designer.cs">
-      <DependentUpon>Gestion_Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Notificacion.aspx.cs">
       <DependentUpon>Notificacion.aspx</DependentUpon>
