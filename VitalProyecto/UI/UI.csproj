@@ -91,6 +91,7 @@
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
+    <Content Include="index2.aspx" />
     <Content Include="InformacionAdministrador.aspx" />
     <Content Include="js\init.js" />
     <Content Include="js\jquery.dropotron.min.js" />
@@ -152,6 +153,13 @@
     </Compile>
     <Compile Include="Gestion_Admin.aspx.designer.cs">
       <DependentUpon>Gestion_Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index2.aspx.cs">
+      <DependentUpon>index2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index2.aspx.designer.cs">
+      <DependentUpon>index2.aspx</DependentUpon>
     </Compile>
     <Compile Include="InformacionAdministrador.aspx.cs">
       <DependentUpon>InformacionAdministrador.aspx</DependentUpon>
