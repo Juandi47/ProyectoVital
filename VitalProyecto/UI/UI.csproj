@@ -71,6 +71,7 @@
     <Content Include="admin_estilos.css" />
     <Content Include="AdminPrincipal.aspx" />
     <Content Include="BancoRutinas.aspx" />
+    <Content Include="Crear_Admin.aspx" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
@@ -84,6 +85,7 @@
     <Content Include="css\style.css" />
     <Content Include="Cliente\estilos.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Gestion_Admin.aspx" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
@@ -127,6 +129,20 @@
     </Compile>
     <Compile Include="Cliente\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Crear_Admin.aspx.cs">
+      <DependentUpon>Crear_Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Crear_Admin.aspx.designer.cs">
+      <DependentUpon>Crear_Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion_Admin.aspx.cs">
+      <DependentUpon>Gestion_Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion_Admin.aspx.designer.cs">
+      <DependentUpon>Gestion_Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="MostrarRutina.aspx.cs">
       <DependentUpon>MostrarRutina.aspx</DependentUpon>

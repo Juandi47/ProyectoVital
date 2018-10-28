@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BL;
 
 namespace UI
 {
@@ -12,6 +13,22 @@ namespace UI
         protected void Page_Load(object sender, EventArgs e)
         {
 
+       ManejadorAdministrador manenadorAdmin = new ManejadorAdministrador();
+
+            List<Administrador> listaAdmin = new List<Administrador>();
+            listaAdmin = manenadorAdmin.listaAdministrador();
+            TableRow fila;
+            TableCell celda;
+            foreach (Administrador x in listaAdmin)
+            {
+                fila = new TableRow();
+                celda = new TableCell();
+                celda.Text = x.Nombre;
+                fila.Cells.Add(celda);
+                Administradores.Rows.Add(fila);
+            }
+
         }
+
     }
 }

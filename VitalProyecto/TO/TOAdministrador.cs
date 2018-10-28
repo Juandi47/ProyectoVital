@@ -8,13 +8,14 @@ namespace TO
 {
     public class TOAdministrador
     {
-        public TOAdministrador(string cedula, string nombre, string apellido1, string apellido2, string clave)
+        public TOAdministrador(string cedula, string nombre, string clave, string apellido1, string apellido2)
         {
             Cedula = cedula;
             Nombre = nombre;
+            Clave = clave;
             Apellido1 = apellido1;
             Apellido2 = apellido2;
-            Clave = clave;
+            
         }
 
         public TOAdministrador()

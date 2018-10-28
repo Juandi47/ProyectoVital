@@ -8,19 +8,20 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
-    <div>
+    <div class="container">
+
         <h1 class="title">Registro de Administrador</h1>
 
         <div class="form-container">
-            <form action="/action_page.php">
+            <form runat="server">
 
                  <div class="row">
                     <div class="col-25">
                         <label class="form-label" for="tced">Cédula</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="tced" name="tced" placeholder="(Sin espacios) Ej: 2 225 055">
-                    </div>
+                   <asp:TextBox ID="tced" runat="server"  placeholder="(Sin espacios) Ej: 2 225 055" TextMode="Number"></asp:TextBox>
+                   </div>
                 </div>
 
                 <div class="row">
@@ -28,7 +29,7 @@
                         <label class="form-label" for="tname">Nombre</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="tname" name="tname" placeholder="Juan">
+                        <asp:TextBox ID="tname" runat="server"  placeholder="María"></asp:TextBox>
                     </div>
                 </div>
 
@@ -37,7 +38,7 @@
                         <label class="form-label" for="tlname1">Primer apellido</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="tlname1" name="tlname1" placeholder="Arias">
+                        <asp:TextBox ID="tlname1" runat="server"  placeholder="Arias"></asp:TextBox>
                     </div>
                 </div>
 
@@ -46,16 +47,16 @@
                         <label class="form-label" for="tlname2">Segundo apellido</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="tlname2" name="tlname" placeholder="Rojas">
+                        <asp:TextBox ID="tlname2" runat="server"  placeholder="Rojas"></asp:TextBox>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-25">
-                        <label class="form-label" for="tphone">Clave</label>
+                        <label class="form-label" for="tclave">Clave</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="tclave" name="tclave" placeholder="Ejm: Cla.123"> 
+                        <asp:TextBox ID="tclave" runat="server"  placeholder="Ejm: Cla.123" TextMode ="Password"></asp:TextBox>
                     </div>
                 </div>
 
@@ -64,15 +65,17 @@
                         <label class="form-label" for="temail">Correo</label>
                     </div>
                     <div class="col-75">
-                        <input type="email" id="temail" name="temail">
+                        <asp:TextBox ID="temail" runat="server"  placeholder="Ejm: maria.rojas@gmail.com" TextMode ="Email"></asp:TextBox>
                     </div>
                 </div>
-
-                <div >
-                  <button type="button" class="btn btn-success btn-form">Registrar</button>
-                </div>
+                <asp:Button id="btnCrear" Text="Crear" runat="server" OnClick="BtnRegistrar_Click"/>
             </form>
-        </div>
 
+        </div>
+            
+                    
     </div>
+
+    
+
 </asp:Content>
