@@ -1,9 +1,10 @@
-﻿using System;
+﻿
+using DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAO;
 using TO;
 
 namespace BL
@@ -52,8 +53,8 @@ namespace BL
         }
 
         public void llenarPersona() {
-            Class1 c = new Class1();
-            c.ActualizarRegistroPersona();
+            //Class1 c = new Class1();
+            //c.ActualizarRegistroPersona();
         }
 
 
