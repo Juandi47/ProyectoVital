@@ -23,6 +23,7 @@
     <h1 class="title">Registro de cliente</h1>
 
     <div class="form-container" runat="server">
+        <form id="form1" runat="server">
 
         <%-- CEDULA --%>
         <div class="row">
@@ -134,13 +135,14 @@
             <br />
         </div>
 
-    </div>
+
     <br/>
     <asp:Button ID="btnRegistrar" runat="server" Text="REGISTRAR" CssClass="center-block" Width="150px" OnClick="btnRegistrar_Click"/>
     <br />
     <br />
     <br />
-
+    </form>
+    </div>
 
 
 </asp:Content>

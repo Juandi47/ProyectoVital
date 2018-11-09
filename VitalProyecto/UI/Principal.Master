@@ -69,14 +69,14 @@
         <h1 class="title">BANNER</h1>
     </div>
 
-    <form id="form1" runat="server">
+    <%--<form id="form1" runat="server">--%>
     <div class="homepage">
 
         <asp:ContentPlaceHolder ID="Cuerpo" runat="server">
         </asp:ContentPlaceHolder>
 
     </div>
-   </form>
+  <%-- </form>--%>
 
     <footer class="footer">
         <h1 class="title">FOOTER</h1>
