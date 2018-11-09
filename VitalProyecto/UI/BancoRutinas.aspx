@@ -16,7 +16,7 @@
         }
     </script>
     <form id="form1" runat="server">
-        <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover-cells">
+        <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover">
         </asp:Table>
     </form>
 </asp:Content>

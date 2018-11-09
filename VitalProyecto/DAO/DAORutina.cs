@@ -42,6 +42,91 @@ namespace DAO
             return lista;
         }
 
+        public TORutina CargarRutina(String nombre)
+        {
+
+            DataTable tabla = new DataTable();
+
+            TORutina rutina = new TORutina();
+
+            String query = "select * from Rutina where Nombre = @nom";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
+
+            adapter.SelectCommand.Parameters.AddWithValue("@nom", nombre);
+
+            adapter.Fill(tabla);
+
+            foreach (DataRow x in tabla.Rows)
+            {                
+                rutina.Clave = Int32.Parse(x["Clave_Rutina"].ToString());
+                rutina.Fecha = x["Fecha_Creacion"].ToString();
+                rutina.Nombre = x["Nombre"].ToString();
+                rutina.Ejercicios = CargarEjercicioRutina(Int32.Parse(x["Clave_Rutina"].ToString()));
+                
+            }
+
+            return rutina;
+        }
+
+        public void EliminarRutina(String Nombre)
+        {
+
+            int clave = buscarClaveRutina(Nombre);
+
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+
+            String query = "delete from Rutina where Nombre = @nom";
+
+            String query2 = "delete from Ejercicios_Rutina where Clave_Rutina = @clave";
+
+            SqlCommand comando1 = new SqlCommand(query, conexion);
+
+            SqlCommand comando2 = new SqlCommand(query2, conexion);
+
+            comando1.Parameters.AddWithValue("@nom", Nombre);
+
+            comando2.Parameters.AddWithValue("@clave", clave);
+
+            comando2.ExecuteNonQuery();
+
+            comando1.ExecuteNonQuery();            
+
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+            
+        }
+
+        public int buscarClaveRutina(String Nombre) {
+
+            int clave;
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+
+            String query = "select Clave_Rutina from Rutina where Nombre = @nom";
+
+            SqlCommand comando1 = new SqlCommand(query, conexion);
+
+            comando1.Parameters.AddWithValue("@nom", Nombre);
+
+            clave = int.Parse(comando1.ExecuteScalar().ToString());
+
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+
+            return clave;
+
+        }
+
         public List<TOEjercicio> CargarEjercicioRutina(int claveRutina)
         {
             DataTable tabla = new DataTable();
