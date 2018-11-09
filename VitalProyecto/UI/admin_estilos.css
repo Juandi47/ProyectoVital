@@ -96,9 +96,10 @@ input[type=submit] {
 }
 
 .btn-form {
-    margin: 15px 0px 0px 0%;
-    font-size: 20px;
+    margin: 0px 15px 100px 0%;
+    font-size: 1px;
 }
+
 
 .small-div {
 text-align:center;
@@ -131,3 +132,14 @@ color:black;
 .next {
     float: right;
 }
+
+.center-block {
+
+}
+
+.link1 {
+    font: bold 20px 'Open Sans', sans-serif;
+    margin: 0px 0px 10px 10px;
+}
+
+
