@@ -16,7 +16,18 @@ namespace UI
 
         protected void btnAñadirExpediente_Click(object sender, EventArgs e)
         {
-            
-        }
-    }
+			string Cedula = txtCed.Text;
+			string Frec_Cardiaca = tfrec.Text;
+			decimal Peso = Convert.ToDecimal(tweigth.Text);
+			decimal Porcent_Grasa = Convert.ToDecimal(tpercentWeigth.Text);
+			decimal IMC = Convert.ToDecimal(timc.Text);
+			decimal Abdomen = Convert.ToDecimal(tabdomen.Text);
+			decimal Cadera = Convert.ToDecimal(thip.Text);
+			decimal Muslo = Convert.ToDecimal(tthigth.Text);
+			decimal Estatura = Convert.ToDecimal(theigth.Text);
+
+	}
+
+
+	}
 }
