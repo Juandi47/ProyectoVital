@@ -42,22 +42,38 @@ namespace DAO
 
         public Boolean registrarClienteDAO(TOCliente c) {
 
-            String query = "Insert into Cliente values(@ced,@nomb,@ape1,@ape2,@fecha_n,@tel,@cor,@obs);";
+            String query = "Insert into Cliente values(@ced,@fecha_n,@tel,@obs,@men);";
+            String query2 = "Insert into Usuario values(@ced,@cor,@nomb,@ape1,@ape2);";
+
             SqlCommand cmd = new SqlCommand(query, conexion);
+            SqlCommand cmd2 = new SqlCommand(query2, conexion);
 
             try
             {
+                //Cliente padre
+                //ced, fecha, tel, obs, mens
+
                 cmd.Parameters.AddWithValue("@ced", c.Cedula);
-                cmd.Parameters.AddWithValue("@nomb", c.Nombre);
-                cmd.Parameters.AddWithValue("@ape1", c.Apellido1);
-                cmd.Parameters.AddWithValue("@ape2", c.Apellido2);
                 cmd.Parameters.AddWithValue("@fecha_n", c.Fecha_Nacimiento);
                 cmd.Parameters.AddWithValue("@tel", c.Telefono);
-                cmd.Parameters.AddWithValue("@cor", c.Correo);
                 cmd.Parameters.AddWithValue("@obs", c.Observacion);
+                cmd.Parameters.AddWithValue("@men", System.DateTime.Now);
+
+                //Usuario
+                //ced, correo, nom, ape1, ape2
+                cmd2.Parameters.AddWithValue("@ced", c.Cedula);
+                cmd2.Parameters.AddWithValue("@cor", c.Correo);
+                cmd2.Parameters.AddWithValue("@nomb", c.Nombre);
+                cmd2.Parameters.AddWithValue("@ape1", c.Apellido1);
+                cmd2.Parameters.AddWithValue("@ape2", c.Apellido2);
+
 
                 conexion.Open();
+                //inserta hijo
+                cmd2.ExecuteNonQuery();
+                //inserta padre
                 cmd.ExecuteNonQuery();
+                
                 conexion.Close();
 
                 return true;

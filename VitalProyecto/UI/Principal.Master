@@ -31,23 +31,25 @@
     <!-- Header -->
 
     <div id="header">
+    
         <%-- Color seteado en style.css --%>
         <div class="container">
             <!-- Logo -->
             <div id="logo">
 
-                <h1><a style="text-decoration: none;" href="#">Vital</a></h1>
+                <h1><a style="text-decoration: none;" href="AdminPrincipal.aspx">Vital</a></h1>
                 <%-- Sin SUBRAYADO--%>
             </div>
-
+            
             <!-- Nav -->
             <nav id="nav">
                 <ul>
-                    <li><a href="AdminPrincipal.aspx">Clientes</a>
+                    <li><a>Clientes</a>
                         <ul>
                             <li><a href="RegistroCliente.aspx">Ingreso Cliente</a></li>
                             <li><a href="ActualizacionCliente.aspx">Actualización Cliente</a></li>
                             <li><a href="Asistencia.aspx">Módulo Asistencia</a></li>
+                            <li><a href="RegistroCliente.aspx?accion=mod" >Modificar</a></li>
                         </ul>
                     </li>
                     <li><a href="AdminPrincipal.aspx">Administrador</a>
@@ -65,8 +67,9 @@
                     <li><a href="Notificacion.aspx">Notificación</a></li>
                 </ul>
             </nav>
-
+           
         </div>
+             
     </div>
 
     <div id="banner" class="admin-banner" style="background-color: gainsboro">
@@ -75,14 +78,15 @@
 
     <%--<form id="form1" runat="server">--%>
     <div class="homepage">
-
+         
         <asp:ContentPlaceHolder ID="Cuerpo" runat="server">
+           
         </asp:ContentPlaceHolder>
 
     </div>
   <%-- </form>--%>
 
-    <footer class="footer">
+    <footer class="footer" style="position:page">
         <h1 class="title">FOOTER</h1>
     </footer>
 

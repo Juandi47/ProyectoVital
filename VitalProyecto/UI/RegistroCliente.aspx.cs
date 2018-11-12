@@ -17,12 +17,27 @@ namespace UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string accion = Convert.ToString(Request.QueryString["accion"]);
+            if (accion!= null && accion.Equals("mod")) {
+                cargarEdicionUsuario();
+            } else { 
             meses = new string[] { "MES","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
             "Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre"};
-            cargarFechas();
+
+            if (!Page.IsPostBack)
+                cargarFechas();
+            }
+
             cliente = new Cliente();
 
         }
+
+        private void cargarEdicionUsuario() {
+            tituloH1.Text = "MODIFICACION USUARIO";
+            btnFiltro.Text = "Buscar cliente";
+
+        }
+
 
         private void cargarFechas() {
 
@@ -40,14 +55,12 @@ namespace UI
                 anio++;
              }
 
+            for (int i = 0; i < meses.Length; i++){
+                ListItem mesItem = new ListItem(meses[i], (i + 1) + "", true);
+                DlMes.Items.Add(mesItem);
+            }
+
             for (int i = 0; i < 31; i++) {
-
-                if (i < 12)
-                {
-                    ListItem mesItem = new ListItem(meses[i], (i+1) + "", true);
-                    DlMes.Items.Add(mesItem);
-
-                }
                 ListItem diaItem = new ListItem((i+1) +"", (i + 1) + "", true);
                 DlDia.Items.Add(diaItem);
             }
@@ -100,28 +113,37 @@ namespace UI
 
         protected void btnFiltro_Click(object sender, EventArgs e)
         {
-            if (!txbced.Text.Equals(""))
-            {
-                cliente.Cedula = txbced.Text;
-                cliente = new ManejadorCliente().verificarClienteBL(cliente);
-                if (cliente.Cedula.Equals("!"))
-                {
-                    txbnombre.Text = "";
-                    txbape1.Text = "";
-                    txbape2.Text = "";
 
-                    Response.Write("<script>alert('Este cliente ya se encuentra registrado')</script>");
+            if (tituloH1.Text.Equals("Registro de cliente"))
+            {
+
+
+                if (!txbced.Text.Equals(""))
+                {
+                    cliente.Cedula = txbced.Text;
+                    cliente = new ManejadorCliente().verificarClienteBL(cliente);
+                    if (cliente.Cedula.Equals("!"))
+                    {
+                        txbnombre.Text = "";
+                        txbape1.Text = "";
+                        txbape2.Text = "";
+
+                        Response.Write("<script>alert('Este cliente ya se encuentra registrado')</script>");
+                    }
+                    else
+                    {
+                        txbnombre.Text = cliente.Nombre;
+                        txbape1.Text = cliente.Apellido1;
+                        txbape2.Text = cliente.Apellido2;
+                    }
                 }
                 else
                 {
-                    txbnombre.Text = cliente.Nombre;
-                    txbape1.Text = cliente.Apellido1;
-                    txbape2.Text = cliente.Apellido2;
+                    Response.Write("<script>alert('Debe ingresar una cedula')</script>");
                 }
             }
-            else
-            {
-                Response.Write("<script>alert('Debe ingresar una cedula')</script>");
+            else {
+
             }
         }
     }
