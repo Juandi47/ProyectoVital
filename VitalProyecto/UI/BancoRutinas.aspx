@@ -18,7 +18,7 @@
     </script>
     <form id="form1" runat="server">
         <div style="padding-right:50%">
-            <asp:Button ID="BtnCrearRutina" runat="server" Text="Button"/>
+            <asp:Button ID="BtnCrearRutina" runat="server" Text="Crear Rutina"/>
         </div>
         
         <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover">
