@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Crear_Admin.aspx.cs" Inherits="UI.Crear_Admin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
- <meta charset="utf-8">
+    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -20,7 +20,7 @@
                         <label class="form-label" for="tced">Cédula</label>
                     </div>
                     <div class="col-75">
-                   <asp:TextBox ID="tced" runat="server"  placeholder="(Sin espacios) Ej: 2 225 055" TextMode="Number"></asp:TextBox>
+                   <asp:TextBox ID="tced" runat="server"  placeholder="(Sin espacios) Ej: 2225055" TextMode="Number"></asp:TextBox>
                    </div>
                 </div>
 
@@ -65,7 +65,9 @@
                         <label class="form-label" for="temail">Correo</label>
                     </div>
                     <div class="col-75">
-                        <asp:TextBox ID="temail" runat="server"  placeholder="Ejm: maria.rojas@gmail.com" TextMode ="Email"></asp:TextBox>
+                        <asp:TextBox ID="temail" runat="server"  placeholder="Ejm: maria.rojas@gmail.com" TextMode ="Email" ValidationGroup="AllValidators"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="temail" Display="Dynamic" ErrorMessage="Se requiere la dirección de correo electrónico" ValidationGroup="AllValidators">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="temail" Display="Dynamic" ErrorMessage="Las direcciones de correo electrónico deben estar en el formato nombre@dominio.xyz." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="AllValidators">Formato no válido.</asp:RegularExpressionValidator>
                     </div>
                 </div>
                 <asp:Button id="btnCrear" Text="Crear" runat="server" OnClick="BtnRegistrar_Click"/>
