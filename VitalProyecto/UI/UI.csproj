@@ -101,6 +101,7 @@
     <Content Include="js\skel.min.js" />
     <Content Include="Cliente\login.aspx" />
     <Content Include="Notificacion.aspx" />
+    <Content Include="PrimerIngreso.aspx" />
     <Content Include="RegistroCliente.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -154,6 +155,13 @@
     <Compile Include="Notificacion.aspx.designer.cs">
       <DependentUpon>Notificacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PrimerIngreso.aspx.cs">
+      <DependentUpon>PrimerIngreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrimerIngreso.aspx.designer.cs">
+      <DependentUpon>PrimerIngreso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -192,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Administracion\" />
+    <Folder Include="Nutricion\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
