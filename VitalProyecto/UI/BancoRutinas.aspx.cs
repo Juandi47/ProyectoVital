@@ -11,7 +11,7 @@ namespace UI
     public partial class BancoRutinas : System.Web.UI.Page
     {        
 
-        ManejadorRutina manejo = new ManejadorRutina();
+        private ManejadorRutina manejo = new ManejadorRutina();
         protected void Page_Load(object sender, EventArgs e)
         {
             ClientScript.GetPostBackEventReference(this, string.Empty);
@@ -22,26 +22,29 @@ namespace UI
                 {
                     string dato = Page.Request.Params["__EVENTARGUMENT"].ToString();
                     Session["Rutina"] = dato;
-                }
-                Response.Redirect("~/MostrarRutina.aspx");
-
-
-            }
-            List<Rutina> lista = new List<Rutina>();
-            lista = manejo.CargarRutinas();
-           
-
-            Rutinas.BackColor = System.Drawing.Color.LightGray;
-
-            foreach (Rutina x in lista)
-            {
-                crearFila(x.Nombre);
+                    Response.Redirect("~/MostrarRutina.aspx");
+                }                
             }
 
+            llenarTablaRutinas();
 
         }
 
-        private void crearFila(String nombre)
+        private void llenarTablaRutinas() {
+            List<Rutina> lista = new List<Rutina>();
+            lista = manejo.CargarRutinas();
+
+            Rutinas.Rows.Clear();
+            Rutinas.BackColor = System.Drawing.Color.LightGray;
+            int idBotones = 0;
+            foreach (Rutina x in lista)
+            {
+                crearFila(x.Nombre, idBotones);
+                idBotones++;
+            }
+        }
+
+        private void crearFila(String nombre, int idBotones)
         {
             TableRow fila = new TableRow(); ;
 
@@ -51,23 +54,29 @@ namespace UI
             celdaNombre.Font.Bold = true;
             celdaNombre.BackColor = System.Drawing.Color.Gray;
             celdaNombre.Attributes.Add("onClick", "guardarNombre('" + nombre + "')");
-            //celdaNombre.Attributes.Add("onmouseover", "style+='background - color:blue;'");
             fila.Cells.Add(celdaNombre);
 
             TableCell botonCell = new TableCell();
             Button btnModificar = new Button();
             Button btnEliminar = new Button();
 
-            btnModificar.ID = "btnModificar";
-            btnEliminar.ID = "btnEliminar";
+            btnModificar.ID = "btnModificar" + idBotones;
+            btnEliminar.ID = "btnEliminar" + idBotones;
             btnModificar.Text = " Modificar ";
             btnModificar.ForeColor = System.Drawing.Color.Black;
             btnModificar.BackColor = System.Drawing.Color.LightYellow;
             btnEliminar.Text = " Eliminar ";
             btnEliminar.ForeColor = System.Drawing.Color.Black;
             btnEliminar.BackColor = System.Drawing.Color.LightPink;
+
             btnModificar.Click += delegate {  };
-            btnEliminar.Click += delegate { };
+
+            btnEliminar.Click += delegate {
+
+                manejo.eliminarRutina(nombre);
+                llenarTablaRutinas();
+
+            };
 
             botonCell.Controls.Add(btnEliminar);
             botonCell.Controls.Add(btnModificar);            

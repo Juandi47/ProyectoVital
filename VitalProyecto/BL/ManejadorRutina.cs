@@ -36,5 +36,42 @@ namespace BL
             return lista;
 
         }
+
+        public void eliminarRutina(String nombre) {
+            DAORutina dao = new DAORutina();
+            dao.EliminarRutina(nombre);
+        }
+
+        public List<HojaEjercicio> MostrarRutina(String nombre)
+        {
+
+            Rutina rutina = new Rutina();
+
+            List<Ejercicio> ejercicios;
+
+            List<HojaEjercicio> hojas = new List<HojaEjercicio>();
+
+            TORutina toRutina = new TORutina();
+
+            ManejadorEjercicio manejador = new ManejadorEjercicio();
+
+            DAORutina dao = new DAORutina();
+
+            toRutina = dao.CargarRutina(nombre);
+
+            ejercicios = manejador.pasarListaTOaBL(toRutina.Ejercicios);
+
+            foreach (Ejercicio x in ejercicios)
+            {
+                HojaEjercicio hoja = new HojaEjercicio();
+                hoja.Ejercicio = x.Nombre;
+                hoja.Repeticiones = x.Repeticiones;
+                hoja.Series = x.Series;
+
+                hojas.Add(hoja);
+            }
+
+            return hojas;
+        }
     }
 }

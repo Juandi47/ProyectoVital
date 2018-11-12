@@ -58,10 +58,10 @@
                             <li><a href="Gestion_Admin.aspx">Actualizar Administrador</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Rutinas</a>
+                    <li><a>Rutinas</a>
                         <ul>
-                            <li><a href="BancoRutinas.aspx">Banco de rutinas</a></li>
-                            <li><a href="#">Generar Rutina</a></li>
+                            <li><a href="BancoRutinas.aspx">Rutinas</a></li>
+                            <li><a href="#">Ejercicios</a></li>
                         </ul>
                     </li>
                     <li><a href="Notificacion.aspx">Notificación</a></li>

@@ -7,16 +7,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="admin_estilos.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
     <script>
-        function guardarNombre(nombre) {            
+        function guardarNombre(nombre) {
             __doPostBack("Nombre", nombre);
         }
     </script>
     <form id="form1" runat="server">
-        <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover-cells">
+        <div style="padding-right:50%">
+            <asp:Button ID="BtnCrearRutina" runat="server" Text="Crear Rutina"/>
+        </div>
+        
+        <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover">
         </asp:Table>
     </form>
 </asp:Content>

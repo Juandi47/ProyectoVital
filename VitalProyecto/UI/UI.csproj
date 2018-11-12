@@ -99,7 +99,6 @@
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
-    <Content Include="index2.aspx" />
     <Content Include="InformacionAdministrador.aspx" />
     <Content Include="js\init.js" />
     <Content Include="js\jquery.dropotron.min.js" />
@@ -110,6 +109,7 @@
     <Content Include="Cliente\login.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
+    <Content Include="PrimerIngreso.aspx" />
     <Content Include="RegistroCliente.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -170,13 +170,6 @@
     <Compile Include="Gestion_Admin.aspx.designer.cs">
       <DependentUpon>Gestion_Admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="index2.aspx.cs">
-      <DependentUpon>index2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="index2.aspx.designer.cs">
-      <DependentUpon>index2.aspx</DependentUpon>
-    </Compile>
     <Compile Include="InformacionAdministrador.aspx.cs">
       <DependentUpon>InformacionAdministrador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,6 +190,13 @@
     </Compile>
     <Compile Include="Notificacion.aspx.designer.cs">
       <DependentUpon>Notificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrimerIngreso.aspx.cs">
+      <DependentUpon>PrimerIngreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrimerIngreso.aspx.designer.cs">
+      <DependentUpon>PrimerIngreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
@@ -236,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Administracion\" />
+    <Folder Include="Nutricion\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
