@@ -10,7 +10,7 @@
 namespace UI {
     
     
-    public partial class Gestion_Admin {
+    public partial class BancoRutinas {
         
         /// <summary>
         /// form1 control.
@@ -22,12 +22,12 @@ namespace UI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Administrador control.
+        /// Rutinas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Administrador;
+        protected global::System.Web.UI.WebControls.Table Rutinas;
     }
 }

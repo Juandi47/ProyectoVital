@@ -21,6 +21,7 @@
     <noscript>
         <link rel="stylesheet" href="css/skel.css" />
         <link rel="stylesheet" href="css/style.css" />
+        
         <%--<link rel="stylesheet" type="text/css" href="admin_estilos.css" />--%>
     </noscript>
     <link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen">
@@ -28,14 +29,15 @@
 <body>
 
     <!-- Header -->
-  
-    <div id="header">   <%-- Color seteado en style.css --%>
+
+    <div id="header">
+        <%-- Color seteado en style.css --%>
         <div class="container">
             <!-- Logo -->
             <div id="logo">
-               
-                <h1><a style="text-decoration:none;" href="#">Vital</a></h1>    <%-- Sin SUBRAYADO--%> 
-              
+
+                <h1><a style="text-decoration: none;" href="#">Vital</a></h1>
+                <%-- Sin SUBRAYADO--%>
             </div>
 
             <!-- Nav -->
@@ -45,6 +47,7 @@
                         <ul>
                             <li><a href="RegistroCliente.aspx">Ingreso Cliente</a></li>
                             <li><a href="ActualizacionCliente.aspx">Actualización Cliente</a></li>
+                            <li><a href="Asistencia.aspx">Módulo Asistencia</a></li>
                         </ul>
                     </li>
                     <li><a href="AdminPrincipal.aspx">Administrador</a>
@@ -53,7 +56,8 @@
                             <li><a href="Gestion_Admin.aspx">Actualizar Administrador</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Rutinas</a></li>
+                    <li><a href="BancoRutinas.aspx">Rutinas</a>
+                    </li>
                     <li><a href="Notificacion.aspx">Notificación</a></li>
                 </ul>
             </nav>
@@ -61,14 +65,18 @@
         </div>
     </div>
 
-    <div id="banner" class="admin-banner"  style="background-color: gainsboro">
-       <h1 class="title">BANNER</h1>
+    <div id="banner" class="admin-banner" style="background-color: gainsboro">
+        <h1 class="title">BANNER</h1>
     </div>
 
+    <%--<form id="form1" runat="server">--%>
     <div class="homepage">
+
         <asp:ContentPlaceHolder ID="Cuerpo" runat="server">
         </asp:ContentPlaceHolder>
+
     </div>
+  <%-- </form>--%>
 
     <footer class="footer">
         <h1 class="title">FOOTER</h1>

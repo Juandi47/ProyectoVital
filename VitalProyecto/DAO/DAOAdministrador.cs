@@ -37,6 +37,83 @@ namespace DAO
             }
             return listAdministrador;
         }
+
+
+
+        public void agregarAdmin(TOAdministrador administrador) {
+            try {
+                string qry = "insert into Administrador values (@ced, @nom, @cla, @ape1, @ape2)";
+
+                SqlCommand sent = new SqlCommand(qry, conexion);
+                sent.Parameters.AddWithValue("@ced", administrador.Cedula);
+                sent.Parameters.AddWithValue("@nom", administrador.Nombre);
+                sent.Parameters.AddWithValue("@cla", administrador.Clave);
+                sent.Parameters.AddWithValue("@ape1", administrador.Apellido1);
+                sent.Parameters.AddWithValue("@ape2", administrador.Apellido2);
+                
+                conexion.Open();
+                sent.ExecuteNonQuery();
+            } catch (Exception e) {
+
+            }
+            
+        }
+
+
+        public int eliminarAdmin(string cedula)
+        {
+            int eliminado = -1;
+            try
+            {
+                int con = ListaAdministrador().Count();
+                if (ListaAdministrador().Count() > 1)
+                {
+                    string qry = "delete from Administrador where Cedula = @ced";
+
+                    SqlCommand sent = new SqlCommand(qry, conexion);
+                    sent.Parameters.AddWithValue("@ced", cedula);
+                    conexion.Open();
+                    sent.ExecuteNonQuery();
+                    eliminado = 2;
+                }
+                else {
+                    //NonSerializedAttribute deberia quedar sin al menos un administrador
+                    eliminado = 1;
+                }
+                
+            }
+            catch (Exception e)
+            {
+                
+            }
+
+            return eliminado;
+
+        }
+
+       
+
+        public void modificarAdmin(TOAdministrador administrador) {
+            try
+            {
+                string qry = "UPDATE Administrador SET Clave = @cla where Cedula = @ced;";
+
+                SqlCommand sent = new SqlCommand(qry, conexion);
+                sent.Parameters.AddWithValue("@ced", administrador.Cedula);
+                sent.Parameters.AddWithValue("@cla", administrador.Clave);
+
+                conexion.Open();
+                sent.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
+
+
+
     }
 
 }

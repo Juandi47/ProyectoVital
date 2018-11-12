@@ -6,29 +6,29 @@
     <script src="js/html5-qrcode.js"></script>
     <script src="js/jquery-qrcode.js"></script>
 </head>
-<body>
+<body style="background-color:#4cff00">
 
 
-    <form id="form1" runat="server">
-    Datos de codigo
+    <form id="form1" runat="server" style="background-color:#4cff00">
+    Datadsasd
     <textarea id="QRtext"></textarea>
-    <div id="reader" style="width:300px; height:300px; background-color:red">
+    <div id="r" style=" background-color:blue">
 
     </div>
 
     <script>
-    $(document).ready(function(){
-    $('#reader').html5_qrcode(function(data){
-        $('#' + document.getElementById('QRtext').nodeValue).val(data);
+    //$(document).ready(function(){
+    //$('#reader').html5_qrcode(function(data){
+    //    $('#' + document.getElementById('QRtext').nodeValue).val(data);
 
-    },
-    function(error){
-    $('#read_error').html(error);
-    }, function(videoError){
-        alert("No hay camara");
-    }
-    );
-    });
+    //},
+    //function(error){
+    //$('#read_error').html(error);
+    //}, function(videoError){
+    //    alert("No hay camara");
+    //}
+    //);
+    //});
          </script>
     </form>
 </body>

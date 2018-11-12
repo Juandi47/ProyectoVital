@@ -10,7 +10,7 @@
 namespace UI {
     
     
-    public partial class Gestion_Admin {
+    public partial class MostrarRutina {
         
         /// <summary>
         /// form1 control.
@@ -22,12 +22,24 @@ namespace UI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Administrador control.
+        /// grdEjercicios control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Administrador;
+        protected global::System.Web.UI.WebControls.GridView grdEjercicios;
+        
+        /// <summary>
+        /// PreviousPage property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new UI.BancoRutinas PreviousPage {
+            get {
+                return ((UI.BancoRutinas)(base.PreviousPage));
+            }
+        }
     }
 }
