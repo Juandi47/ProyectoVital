@@ -13,5 +13,10 @@ namespace UI
         {
 
         }
+
+        protected void btnAñadirExpediente_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

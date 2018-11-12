@@ -15,7 +15,7 @@
 
 
 
-    <div class="form-container" style="background-color: #081608">
+    <div class="form-container" style="background-color: #086668">
 
         <div class="row">
               <div class="col-25">
@@ -37,60 +37,60 @@
 
         </div>
 
-        <form action="/action_page.php">
+        <form id="form1" runat="server">
 
             <div class="row">
                 <div class="col-25">
                     <label class="form-label2" for="tfrec">Frecuencia cardiaca</label>
                 </div>
-                <div class="col-75">
-                    <input class="N" type="number" id="tfrec" name="tfrec">
-                </div>
+                 <div class="col-30">
+                         <asp:TextBox ID="tfrec" runat="server" TextMode="Number"></asp:TextBox>
+                 </div>
             </div>
 
             <div class="row">
-                <div class="col-25">
+                <div class="col-75">
                     <label class="form-label2" for="tweigth">Peso(Kg)</label>
                 </div>
-                <div class="col-75">
-                    <input class="N" type="number" id="tweigth" name="tweigth">
-                </div>
+                <div class="col-35">
+                    <asp:TextBox ID="tweigth" runat="server" TextMode="Number"></asp:TextBox>
+                 </div>
             </div>
 
             <div class="row">
                 <div class="col-25">
                     <label class="form-label2" for="tpercentWeigth">Porcentaje grasa(%)</label>
                 </div>
-                <div class="col-75">
-                    <input class="N" type="number" id="tpercentWeigth" name="tpercentWeigth">
-                </div>
+                 <div class="col-30">
+                         <asp:TextBox ID="tpercentWeigth" runat="server" TextMode="Number"></asp:TextBox>
+                 </div>
             </div>
 
             <div class="row">
                 <div class="col-25">
                     <label class="form-label2" for="timc">IMC</label>
                 </div>
-                <div class="col-75">
-                    <input class="N" type="number" id="timc" name="timc">
-                </div>
+                 <div class="col-30">
+                         <asp:TextBox ID="timc" runat="server" TextMode="Number"></asp:TextBox>
+                 </div>
             </div>
 
             <div class="row">
                 <div class="col-25">
                     <label class="form-label2" for="tabdomen">Abdomen(cm)</label>
                 </div>
-                <div class="col-75">
-                    <input class="N" type="number" id="tabdomen" name="tabdomen">
-                </div>
+                 <div class="col-30">
+                         <asp:TextBox ID="tabdomen" runat="server" TextMode="Number"></asp:TextBox>
+                 </div>               
             </div>
 
             <div class="row">
                 <div class="col-25">
                     <label class="form-label2" for="thip">Cadera(cm)</label>
                 </div>
-                <div class="col-75">
-                    <input class="N" type="number" id="thip" name="thip">
-                </div>
+                 <div class="col-30">
+                         <asp:TextBox ID="thip" runat="server" TextMode="Number"></asp:TextBox>
+                 </div>
             </div>
 
 
@@ -98,23 +98,31 @@
                 <div class="col-25">
                     <label class="form-label2" for="tthigth">Muslo(cm)</label>
                 </div>
-                <div class="col-75">
-                    <input class="N" type="number" id="tthigth" name="tthigth">
-                </div>
+                <div class="col-30">
+                         <asp:TextBox ID="tthigth" runat="server"  TextMode="Number"></asp:TextBox>
+                 </div>
             </div>
 
             <div class="row">
                 <div class="col-25">
                     <label class="form-label2" for="theigth">Estatura(cm)</label>
                 </div>
-                <div class="col-75">
-                    <input class="N" type="number" id="theigth" name="theigth">
-                </div>
+                 <div class="col-30">
+                         <asp:TextBox ID="theigth" runat="server" TextMode="Number"></asp:TextBox>
+                         <br />
+                         <br />
+                         <br />
+                         <br />
+             <%--<label class="form-label2" for="theigth">--%>     
+                <asp:Button id="btnAñadirExpediente" Text="Añadir a expediente" runat="server" OnClick="btnAñadirExpediente_Click" Height="51px" Width="216px" Font-Size="Small"/>
+                         <%--</label>--%>
+                         <br />
+                 </div>
             </div>
 
-            <div>
-                <button type="button" class="btn btn-success btn-form">Añadir a expediente</button>
-            </div>
+           
+                <%--<button type="button" class="btn btn-success btn-form">Añadir a expediente</button>--%>
+            
         </form>
     </div>
 
