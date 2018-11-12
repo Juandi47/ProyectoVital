@@ -27,13 +27,17 @@ namespace UI
             string apellido1 = tlname1.Text;
             string apellido2 = tlname2.Text;
 
-            if (cedula == null || nombre == null || clave == null || apellido1 == null || apellido2 == null)
-            {
-                //aqui va mensaje de error
-            }
-            else {
+            
                 manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2);
-            }
+
+
+            tced.Text = string.Empty;
+            tname.Text = string.Empty;
+            tclave.Text = string.Empty;
+            tlname1.Text = string.Empty;
+            tlname2.Text = string.Empty;
+            temail.Text = string.Empty;
+
 
         }
     }
