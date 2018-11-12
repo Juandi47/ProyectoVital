@@ -35,9 +35,9 @@
 				<div class="row">
 					<div class="col-md-6">
 						<br /><br /><br />
-						<label class="form-label2" for="tfrec">Cédula </label>
+						<label class="form-label2" for="tCed">Cédula </label>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<asp:TextBox ID="txtCed" runat="server" TextMode="Number"></asp:TextBox>
+						<asp:TextBox ID="tCed" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 						<label class="form-label2" for="tfrec">Frecuencia cardiaca </label>&nbsp;
 						<asp:TextBox ID="tfrec" runat="server" TextMode="Number"></asp:TextBox>
