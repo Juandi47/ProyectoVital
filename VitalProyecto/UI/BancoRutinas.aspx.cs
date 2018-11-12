@@ -23,10 +23,14 @@ namespace UI
                     string dato = Page.Request.Params["__EVENTARGUMENT"].ToString();
                     Session["Rutina"] = dato;
                     Response.Redirect("~/MostrarRutina.aspx");
-                }
-
-
+                }                
             }
+
+            llenarTablaRutinas();
+
+        }
+
+        private void llenarTablaRutinas() {
             List<Rutina> lista = new List<Rutina>();
             lista = manejo.CargarRutinas();
 
@@ -38,8 +42,6 @@ namespace UI
                 crearFila(x.Nombre, idBotones);
                 idBotones++;
             }
-
-
         }
 
         private void crearFila(String nombre, int idBotones)
@@ -66,11 +68,13 @@ namespace UI
             btnEliminar.Text = " Eliminar ";
             btnEliminar.ForeColor = System.Drawing.Color.Black;
             btnEliminar.BackColor = System.Drawing.Color.LightPink;
+
             btnModificar.Click += delegate {  };
+
             btnEliminar.Click += delegate {
 
                 manejo.eliminarRutina(nombre);
-
+                llenarTablaRutinas();
 
             };
 
