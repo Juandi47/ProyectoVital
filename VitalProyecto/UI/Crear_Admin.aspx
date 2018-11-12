@@ -20,7 +20,7 @@
                         <label class="form-label" for="tced">Cédula</label>
                     </div>
                     <div class="col-75">
-                   <asp:TextBox ID="tced" runat="server"  placeholder="(Sin espacios) Ej: 2225055" TextMode="Number"></asp:TextBox>
+                   <asp:TextBox ID="tced" runat="server"  placeholder="(Sin espacios) Ej: 2225055" TextMode="Number" MaskedTextBox="0-000-000"></asp:TextBox>
                    </div>
                 </div>
 
@@ -69,8 +69,10 @@
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="temail" Display="Dynamic" ErrorMessage="Se requiere la dirección de correo electrónico" ValidationGroup="AllValidators">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="temail" Display="Dynamic" ErrorMessage="Las direcciones de correo electrónico deben estar en el formato nombre@dominio.xyz." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="AllValidators">Formato no válido.</asp:RegularExpressionValidator>
                     </div>
+                      <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ValidationGroup="AllValidators" />
                 </div>
                 <asp:Button id="btnCrear" Text="Crear" runat="server" OnClick="BtnRegistrar_Click"/>
+                
             </form>
 
         </div>
