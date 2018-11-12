@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BL;
 
 namespace UI
 {
     public partial class ActualizacionCliente : System.Web.UI.Page
     {
+        ManejadorMedida manejador = new ManejadorMedida();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -25,8 +27,11 @@ namespace UI
 			decimal Cadera = Convert.ToDecimal(thip.Text);
 			decimal Muslo = Convert.ToDecimal(tthigth.Text);
 			decimal Estatura = Convert.ToDecimal(theigth.Text);
+            decimal Cintura = Convert.ToDecimal("73");
 
-	}
+            Boolean t = manejador.AgregarMedida(Frec_Cardiaca, Peso, Porcent_Grasa, IMC, Cintura, Abdomen, Cadera, Muslo, Estatura, Cedula);
+            Console.Write("Funciono? " + t);
+        }
 
 
 	}
