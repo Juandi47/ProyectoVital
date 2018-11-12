@@ -44,7 +44,7 @@
                     <label class="form-label2" for="tfrec">Frecuencia cardiaca</label>
                 </div>
                  <div class="col-30">
-                         <asp:TextBox ID="tfrec" runat="server" TextMode="Number"></asp:TextBox>
+                         <asp:TextBox ID="tfrec" runat="server" BackColor="White"></asp:TextBox>
                  </div>
             </div>
 
