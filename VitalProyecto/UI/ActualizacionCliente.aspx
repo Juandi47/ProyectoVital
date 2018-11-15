@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ActualizacionCliente.aspx.cs" Inherits="UI.ActualizacionCliente" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -35,9 +35,9 @@
 				<div class="row">
 					<div class="col-md-6">
 						<br /><br /><br />
-						<label class="form-label2" for="tfrec">Cédula </label>
+						<label class="form-label2" for="tCed">Cédula </label>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<asp:TextBox ID="txtCed" runat="server" BackColor="White" Height="5px" Width="150px"></asp:TextBox>
+						<asp:TextBox ID="txtCed" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 						<label class="form-label2" for="tfrec">Frecuencia cardiaca </label>&nbsp;
 						<asp:TextBox ID="tfrec" runat="server" BackColor="White" Height="5px" Width="150px"></asp:TextBox>

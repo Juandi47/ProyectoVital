@@ -21,7 +21,7 @@ namespace BL
             {
                 listaBLCliente.Add(new Cliente(toClient.Cedula, toClient.Nombre, toClient.Apellido1,
                     toClient.Apellido2, toClient.Fecha_Nacimiento, 
-                    toClient.Telefono, toClient.Correo, toClient.Observacion));
+                    toClient.Telefono, toClient.Correo, toClient.Observacion, toClient.Fecha_Mensualidad));
             }
             return listaBLCliente;
         }

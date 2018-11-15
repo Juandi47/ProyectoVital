@@ -13,12 +13,12 @@ namespace UI {
     public partial class Notificacion {
         
         /// <summary>
-        /// Button control.
+        /// Notif control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button;
+        protected global::System.Web.UI.WebControls.Literal Notif;
     }
 }
