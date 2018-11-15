@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ActualizacionCliente.aspx.cs" Inherits="UI.ActualizacionCliente" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <meta charset="utf-8">
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -37,18 +37,19 @@
 						<br /><br /><br />
 						<label class="form-label2" for="tfrec">Cédula </label>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<asp:TextBox ID="txtCed" runat="server" TextMode="Number"></asp:TextBox>
+						<asp:TextBox ID="txtCed" runat="server" BackColor="White" Height="5px" Width="150px"></asp:TextBox>
 						<br />
 						<label class="form-label2" for="tfrec">Frecuencia cardiaca </label>&nbsp;
-						<asp:TextBox ID="tfrec" runat="server" TextMode="Number"></asp:TextBox>
+						<asp:TextBox ID="tfrec" runat="server" BackColor="White" Height="5px" Width="150px"></asp:TextBox>
 						<br />
-						<label class="form-label2" for="tweigth">Peso(Kg)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<label class="form-label2" for="tweigth">Peso(Kg)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
 						<asp:TextBox ID="tweigth" runat="server" TextMode="Number"></asp:TextBox>
 						&nbsp;<br />
-						<label class="form-label2" for="tpercentWeigth">Porcentaje grasa(%)</label>
+						<label class="form-label2" for="tpercentWeigth">Porcentaje grasa(%)</label><br />
 						<asp:TextBox ID="tpercentWeigth" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 						<label class="form-label2" for="timc">IMC</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<br />
 						<asp:TextBox ID="timc" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 
@@ -57,15 +58,19 @@
 					<div class="col-md-6">
 						<br /><br /><br />
 						<label class="form-label2" for="tabdomen">Abdomen(cm)</label>
+						<br />
 						<asp:TextBox ID="tabdomen" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 						<label class="form-label2" for="thip">Cadera(cm)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<br />
 						<asp:TextBox ID="thip" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 						<label class="form-label2" for="tthigth">Muslo(cm)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<br />
 						<asp:TextBox ID="tthigth" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 						<label class="form-label2" for="theigth">Estatura(cm)</label>&nbsp;&nbsp;
+						<br />
 						<asp:TextBox ID="theigth" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 					</div>

@@ -6,6 +6,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
     <div>
          <h1>Pagina principal de administrador</h1>
+		
         <%--<asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"/>--%>
     </div>
+	<div>
+		<p>
+			<br />
+			<br /><br /><br /><br /><br />
+		</p>
+	</div>
 </asp:Content>

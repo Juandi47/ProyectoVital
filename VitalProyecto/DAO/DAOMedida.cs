@@ -13,7 +13,9 @@ namespace DAO
         SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
         public Boolean AgregarMedida(TOMedida medida)
         {
-            String query = "Insert into Medidas values(@freCard,@peso,@porcGrasa,@IMC,@cint,@abdmn,@cader,@muslo,@estat,@ced);";
+			try
+			{
+				String query = "Insert into Medidas values(@freCard,@peso,@porcGrasa,@IMC,@cint,@abdmn,@cader,@muslo,@estat,@ced);";
             SqlCommand cmd = new SqlCommand(query, conexion);
             cmd.Parameters.AddWithValue("@ced", medida.Ced_Cliente);
             cmd.Parameters.AddWithValue("@freCard", medida.Frec_Cardiaca);
@@ -25,8 +27,7 @@ namespace DAO
             cmd.Parameters.AddWithValue("@cader", medida.Cadera);
             cmd.Parameters.AddWithValue("@muslo", medida.Muslo);
             cmd.Parameters.AddWithValue("@estat", medida.Estatura);
-            try
-            {
+           
                 conexion.Open();
                 cmd.ExecuteNonQuery();
                 conexion.Close();
