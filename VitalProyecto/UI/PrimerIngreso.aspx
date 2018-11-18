@@ -23,7 +23,7 @@
                     background-color: #dddddd;
                 }
     </style>
-    <a href="PrimerIngreso.aspx.designer.cs">PrimerIngreso.aspx.designer.cs</a>
+    <%--<a href="PrimerIngreso.aspx.designer.cs">PrimerIngreso.aspx.designer.cs</a>--%>
 
 </asp:Content>
 
@@ -61,23 +61,13 @@
                         <label class="form-label" for="tSexo">Sexo</label>
                     </div>
                     <div class="col-25">
-                        <asp:DropDownList ID="tSex" runat="server">
-                            <asp:ListItem Text ="Femenino" Value="1" />
-                            <asp:ListItem Text ="Masculino" Value="2" />
-                            <asp:ListItem Text ="Otro" Value="3" />
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="tSex" runat="server"></asp:DropDownList>
                     </div>
                       <div class="col-25">
                         <label class="form-label" for="tEstCivil">Estado Civil</label>
                     </div>
                     <div class="col-25">
-                        <asp:DropDownList ID="tEstCivil" runat="server" Width="200px">
-                            <asp:ListItem Text ="Soltero" Value="1" />
-                            <asp:ListItem Text ="Casado" Value="2" />
-                            <asp:ListItem Text ="Unión Libre" Value="3" />
-                            <asp:ListItem Text ="Viudo" Value="4" />
-                            <asp:ListItem Text ="Otro" Value="5" />
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="tEstCivil" runat="server" Width="200px"></asp:DropDownList>
                     </div>
                 </div>
                   <div class="row">
@@ -126,10 +116,7 @@
                         <label class="form-label" for="tConsLicor">Consumo de Licor</label>
                     </div>
                     <div class="col-15">
-                        <asp:DropDownList ID="tConsLicr" runat="server">
-                            <asp:ListItem Text ="Sí" Value="1" />
-                            <asp:ListItem Text ="No" Value="2" />
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="tConsLicr" runat="server"></asp:DropDownList>
                     </div>
                       <div class="col-60">
                            <asp:TextBox ID="tFrecLicor" runat="server" placeholder="Frecuencia"></asp:TextBox>
@@ -140,10 +127,7 @@
                         <label class="form-label" for="tConsFuma">Fuma</label>
                     </div>
                     <div class="col-15">
-                        <asp:DropDownList ID="tConsFum" runat ="server">
-                             <asp:ListItem Text ="Sí" Value="1" />
-                            <asp:ListItem Text ="No" Value="2" />
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="tConsFum" runat ="server"></asp:DropDownList>
                     </div>
                       <div class="col-60">
                            <asp:TextBox ID="tFrecFuma" runat="server" placeholder="Frecuencia"></asp:TextBox>
@@ -199,6 +183,11 @@
                      </div>
                 </div>
                 <h2>Actividad Física</h2>
+                <div class="row">
+                    <div class="col-70">
+                         <asp:TextBox ID="ActFisica" runat="server"></asp:TextBox>
+                    </div>
+                </div>
                 <h2>Habitos Alimentarios</h2>
                  <div class="row">
                     <div class="col-30">
@@ -236,11 +225,54 @@
                         <label class="form-label" for="queComeAfuera">¿Generalmente que come fuera de la casa?</label>
                     </div>
                     <div class="col-70" aria-valuemin="0">
-                         <asp:TextBox ID="queComeAfuera" runat="server" TextMode="Number" ></asp:TextBox>
+                         <asp:TextBox ID="queComeAfuera" runat="server"></asp:TextBox>
                     </div>
                 </div>
-               
-                  <%--<asp:Button id="btnCrear" Text="Crear" runat="server" OnClick="b1_Click"/>--%>
+                <div class="row">
+                    <div class="col-30">
+                        <label class="form-label" for="CuantAzucar">¿Cuánta azucar le agrega a las bebidas?</label>
+                    </div>
+                    <div class="col-70" aria-valuemin="0">
+                         <asp:TextBox ID="CuantAzucar" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-30">
+                        <label class="form-label" for="cocinaElabora">¿Los alimentos que cocina los elabora generalmente?</label>
+                    </div>
+                    <div class="col-70" aria-valuemin="0">
+                         <asp:DropDownList ID="cocinaElabora" runat="server"></asp:DropDownList>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-30">
+                        <label class="form-label" for="aguAlDia">¿Cuántos vasos de agua toma al día?</label>
+                    </div>
+                    <div class="col-70" aria-valuemin="0">
+                         <asp:TextBox ID="aguAlDia" runat="server" TextMode="Number"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-30">
+                        <label class="form-label" for="Aderesos">¿Agrega salsa de tomate, mayonesa, mantequilla o natilla a la comida?</label>
+                    </div>
+                    <div class="col-70">
+                        <asp:DropDownList ID="Aderesos" runat="server">
+                            <asp:ListItem Text ="Sí" Value="1" />
+                            <asp:ListItem Text ="No" Value="2" />
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                  <div class="row">
+                    <div class="col-30">
+                        <label class="form-label" for="GustosComida">Le gustan la mayoría de: </label>
+                    </div>
+                    <div class="col-70">
+                        <asp:CheckBoxList runat="server" ID="checkListGustos" RepeatColumns="3" TextAlign="Right"> </asp:CheckBoxList>
+                    </div>
+                </div>
+
+                  <%--<asp:Button id="btnCrear" Text="Crear" runat="server" OnClick="btnAgreg_Click"/>--%>
             </form>
         </div>
         
