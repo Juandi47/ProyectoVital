@@ -29,6 +29,7 @@ namespace UI
 			decimal Estatura = Convert.ToDecimal(theigth.Text);
             decimal Cintura = Convert.ToDecimal("73");
 
+			
             Boolean t = manejador.AgregarMedida(Frec_Cardiaca, Peso, Porcent_Grasa, IMC, Cintura, Abdomen, Cadera, Muslo, Estatura, Cedula);
             Console.Write("Funciono? " + t);
         }
