@@ -37,6 +37,7 @@ namespace UI
             string clave = tclave.Text;
             string apellido1 = tlname1.Text;
             string apellido2 = tlname2.Text;
+            string correo = temail.Text;
             
 
             if (nombre.Equals("") || clave.Equals("") || apellido1.Equals("") || apellido1.Equals(""))
@@ -44,7 +45,7 @@ namespace UI
                 Response.Write("<script> alert('Debe completar los datos')</script>");
             }
             else {
-                mensaje = manejadorAdmin.modificarAdmin(cedula, nombre, clave, apellido1, apellido2);
+                mensaje = manejadorAdmin.modificarAdmin(cedula, nombre, clave, apellido1, apellido2, correo);
 
                 Response.Write("<script>alert(" + mensaje + ")</script>");
             }

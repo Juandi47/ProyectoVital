@@ -27,12 +27,12 @@ namespace UI
             Administrador.BackColor = System.Drawing.Color.LightGray;
             foreach (Administrador x in lista)
             {
-                crearFila(x.Cedula, x.Nombre, x.Clave, x.Apellido1, x.Apellido2);
+                crearFila(x.Cedula, x.Nombre, x.Clave, x.Apellido1, x.Apellido2, x.Correo);
             }
         }
 
 
-        private void crearFila(string cedula, string nombre, string clave, string apellido1, string apellido2)
+        private void crearFila(string cedula, string nombre, string clave, string apellido1, string apellido2, string correo)
         {
             TableRow fila = new TableRow(); ;
 
@@ -61,7 +61,7 @@ namespace UI
             btnEliminar.BackColor = System.Drawing.Color.LightPink;
             btnModificar.Click += delegate {
                 Response.Redirect("ModificarAdmin.aspx?Valor=" + cedula);
-                manejo.modificarAdmin(cedula, nombre, clave, apellido1, apellido2);
+                manejo.modificarAdmin(cedula, nombre, clave, apellido1, apellido2, correo);
             };
 
             btnEliminar.Click += delegate {

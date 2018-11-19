@@ -28,18 +28,18 @@ namespace UI
             string clave2 = tclave2.Text;
             string apellido1 = tlname1.Text;
             string apellido2 = tlname2.Text;
+            string correo = temail.Text;
 
-            //try
-            //{
+            
                 if (cedula.Equals("") || nombre.Equals("") || clave.Equals("") || apellido1.Equals("") || apellido1.Equals(""))
                 {
                 Response.Write( "<script> alert('Debe completar los datos')</script>");
             }
                 else {
-
+                //Se debe asegurar que las claves coincidan
                 if (clave2.Equals(clave))
                 {
-                    mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2);
+                    mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2, correo);
                     
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", mensaje, true);
                 }
@@ -48,11 +48,7 @@ namespace UI
                 }
                     
             }
-            //}
-            //catch {
-            //    Response.Write("<script>alert(hola)</script>");
-            //}
-          
+            
             tced.Text = string.Empty;
             tname.Text = string.Empty;
             tclave.Text = string.Empty;
