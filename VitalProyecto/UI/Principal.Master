@@ -73,7 +73,7 @@
     </div>
 
     <div id="banner" class="admin-banner" style="background-color: gainsboro">
-        <h1 class="title">BANNER</h1>
+      
     </div>
 
     <%--<form id="form1" runat="server">--%>
@@ -87,7 +87,8 @@
   <%-- </form>--%>
 
     <footer class="footer" style="position:page">
-        <h1 class="title">FOOTER</h1>
+        <h1 class="title">&nbsp;</h1>
+		<p class="title">&nbsp;</p>
     </footer>
 
 </body>

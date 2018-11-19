@@ -18,7 +18,7 @@ namespace UI
 
         protected void btnAñadirExpediente_Click(object sender, EventArgs e)
         {
-			string Cedula = tCed.Text;
+			string Cedula = txtCed.Text;
 			string Frec_Cardiaca = tfrec.Text;
 			decimal Peso = Convert.ToDecimal(tweigth.Text);
 			decimal Porcent_Grasa = Convert.ToDecimal(tpercentWeigth.Text);
