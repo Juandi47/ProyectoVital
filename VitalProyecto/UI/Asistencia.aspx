@@ -31,6 +31,7 @@
 
     </style>
     <h1>Listado de clientes:</h1>
+    <form runat="server">
     <asp:Table ID="TablaClientes" runat="server" CssClass="tablaAsistencia"></asp:Table>
-
+    </form>
 </asp:Content>

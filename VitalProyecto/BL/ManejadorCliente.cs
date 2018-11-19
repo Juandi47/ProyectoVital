@@ -19,9 +19,19 @@ namespace BL
             List<Cliente> listaBLCliente = new List<Cliente>();
             foreach (TOCliente toClient in listaTO)
             {
-                listaBLCliente.Add(new Cliente(toClient.Cedula, toClient.Nombre, toClient.Apellido1,
-                    toClient.Apellido2, toClient.Fecha_Nacimiento, 
-                    toClient.Telefono, toClient.Correo, toClient.Observacion, toClient.Fecha_Mensualidad));
+                Cliente c = new Cliente();
+                c.Cedula = toClient.Cedula;
+                c.Nombre = toClient.Nombre;
+                c.Apellido1 = toClient.Apellido1;
+                c.Apellido2 = toClient.Apellido2;
+
+
+
+                listaBLCliente.Add(c);
+
+                //listaBLCliente.Add(new Cliente(toClient.Cedula, toClient.Nombre, toClient.Apellido1,
+                //    toClient.Apellido2, toClient.Fecha_Nacimiento, 
+                //    toClient.Telefono, toClient.Correo, toClient.Observacion));
             }
             return listaBLCliente;
         }
@@ -53,8 +63,8 @@ namespace BL
         }
 
         public void llenarPersona() {
-            //Class1 c = new Class1();
-            //c.ActualizarRegistroPersona();
+            Class1 c = new Class1();
+            c.ActualizarRegistroPersona();
         }
 
 
