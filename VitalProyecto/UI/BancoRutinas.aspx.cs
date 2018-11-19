@@ -35,7 +35,7 @@ namespace UI
             lista = manejo.CargarRutinas();
 
             Rutinas.Rows.Clear();
-            Rutinas.BackColor = System.Drawing.Color.LightGray;
+            Rutinas.BackColor = System.Drawing.Color.Silver;
             int idBotones = 0;
             foreach (Rutina x in lista)
             {
