@@ -47,6 +47,7 @@
     <Compile Include="TOAdministrador.cs" />
     <Compile Include="TOCliente.cs" />
     <Compile Include="TOEjercicio.cs" />
+    <Compile Include="TOLogin.cs" />
     <Compile Include="TOMedida.cs" />
     <Compile Include="TORutina.cs" />
   </ItemGroup>

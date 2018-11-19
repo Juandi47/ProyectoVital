@@ -40,8 +40,8 @@ namespace UI
                 if (clave2.Equals(clave))
                 {
                     mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2);
-
-                    Response.Write("<script>alert(" + mensaje + ")</script>");
+                    
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", mensaje, true);
                 }
                 else {
                     Response.Write("<script>alert(Las contraseñas deben coincidir)</script>");

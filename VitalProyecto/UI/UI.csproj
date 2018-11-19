@@ -72,6 +72,9 @@
     <Content Include="admin_estilos.css" />
     <Content Include="AdminPrincipal.aspx" />
     <Content Include="BancoRutinas.aspx" />
+    <Content Include="ClientePrincipal.aspx" />
+    <Content Include="Contactenos.html" />
+    <Content Include="ControlSeguridad.aspx" />
     <Content Include="Crear_Admin.aspx" />
     <Content Include="Asistencia.aspx" />
     <Content Include="Cliente\asistencia_page0.html" />
@@ -100,6 +103,7 @@
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
     <Content Include="InformacionAdministrador.aspx" />
+    <Content Include="IniciarSesion.aspx" />
     <Content Include="js\init.js" />
     <Content Include="js\jquery.dropotron.min.js" />
     <Content Include="js\jquery.min.js" />
@@ -110,8 +114,10 @@
     <Content Include="ModificarAdmin.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
+    <Content Include="PagInicio.aspx" />
     <Content Include="PrimerIngreso.aspx" />
     <Content Include="RegistroCliente.aspx" />
+    <Content Include="SobreNosotros.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +149,12 @@
     <Compile Include="BancoRutinas.aspx.designer.cs">
       <DependentUpon>BancoRutinas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ClientePrincipal.aspx.cs">
+      <DependentUpon>ClientePrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientePrincipal.aspx.designer.cs">
+      <DependentUpon>ClientePrincipal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cliente\index2.aspx.cs">
       <DependentUpon>index2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -156,6 +168,12 @@
     </Compile>
     <Compile Include="Cliente\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlSeguridad.aspx.cs">
+      <DependentUpon>ControlSeguridad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlSeguridad.aspx.designer.cs">
+      <DependentUpon>ControlSeguridad.aspx</DependentUpon>
     </Compile>
     <Compile Include="Crear_Admin.aspx.cs">
       <DependentUpon>Crear_Admin.aspx</DependentUpon>
@@ -178,6 +196,12 @@
     <Compile Include="InformacionAdministrador.aspx.designer.cs">
       <DependentUpon>InformacionAdministrador.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IniciarSesion.aspx.cs">
+      <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IniciarSesion.aspx.designer.cs">
+      <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ModificarAdmin.aspx.cs">
       <DependentUpon>ModificarAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -198,6 +222,13 @@
     </Compile>
     <Compile Include="Notificacion.aspx.designer.cs">
       <DependentUpon>Notificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagInicio.aspx.cs">
+      <DependentUpon>PagInicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagInicio.aspx.designer.cs">
+      <DependentUpon>PagInicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrimerIngreso.aspx.cs">
       <DependentUpon>PrimerIngreso.aspx</DependentUpon>
