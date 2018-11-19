@@ -86,6 +86,11 @@ namespace UI
 
 
         }
+
+        protected void BtnCrearRutina_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CrearRutina.aspx");
+        }
     }
 
 

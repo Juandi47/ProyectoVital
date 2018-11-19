@@ -34,7 +34,7 @@ namespace UI
 
         private void cargarEdicionUsuario() {
             tituloH1.Text = "MODIFICACION USUARIO";
-            btnFiltro.Text = "Buscar cliente";
+            btnBusqueda.Text = "Buscar";
 
         }
 
@@ -106,13 +106,12 @@ namespace UI
             Boolean cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
 
             if (cliente_creado) { 
-                Response.Write("<script>alert('Cliente creado correctamente')</script>");
+                Response.Write("<script>alert('Cliente registrado correctamente')</script>");
             }
             else { 
                 Response.Write("<script>alert('Error en registro de cliente')</script>");
             }
-            txbced.Text = "";
-            txbnombre.Text = "";
+            limpiarCampos();
         }
 
 
@@ -135,6 +134,9 @@ namespace UI
 
                         Response.Write("<script>alert('Este cliente ya se encuentra registrado')</script>");
                     }
+                   else if (cliente.Cedula.Equals("")) {
+                        Response.Write("<script>alert('Cédula no registrada ')</script>");
+                    }
                     else
                     {
                         txbnombre.Text = cliente.Nombre;
@@ -151,5 +153,20 @@ namespace UI
 
             }
         }
+
+        private void limpiarCampos() {
+            txbced.Text = "";
+            txbnombre.Text = "";
+            txbape1.Text = "";
+            txbape2.Text = "";
+            txbtelefono.Text = "";
+            txbcorreo.Text = "";
+            txbobs.Text = "";
+            DlDia.SelectedIndex = 0;
+            DlMes.SelectedIndex = 0;
+            DLAnno.SelectedIndex = 0;
+
+        }
+
     }
 }

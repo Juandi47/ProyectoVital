@@ -42,14 +42,14 @@ namespace BL
             dao.EliminarRutina(nombre);
         }
 
-        public List<HojaEjercicio> MostrarRutina(String nombre)
+        public List<HojaRutina> MostrarRutina(String nombre)
         {
 
             Rutina rutina = new Rutina();
 
             List<Ejercicio> ejercicios;
 
-            List<HojaEjercicio> hojas = new List<HojaEjercicio>();
+            List<HojaRutina> hojas = new List<HojaRutina>();
 
             TORutina toRutina = new TORutina();
 
@@ -63,7 +63,7 @@ namespace BL
 
             foreach (Ejercicio x in ejercicios)
             {
-                HojaEjercicio hoja = new HojaEjercicio();
+                HojaRutina hoja = new HojaRutina();
                 hoja.Ejercicio = x.Nombre;
                 hoja.Repeticiones = x.Repeticiones;
                 hoja.Series = x.Series;

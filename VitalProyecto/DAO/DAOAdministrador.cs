@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TO;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace DAO
 {
@@ -26,7 +27,8 @@ namespace DAO
                 while (lector.Read())
                 {
                     listAdministrador.Add(new TOAdministrador(lector["Cedula"].ToString(), lector["Nombre"].ToString(),
-                        lector["Clave"].ToString(), lector["Apellido1"].ToString(), lector["Apellido2"].ToString()));
+                        lector["Clave"].ToString(), lector["Apellido1"].ToString(), lector["Apellido2"].ToString(),
+                        lector["Correo"].ToString()));
 
                 }
                 conexion.Close();
@@ -40,24 +42,48 @@ namespace DAO
 
 
 
-        public void agregarAdmin(TOAdministrador administrador) {
+        public string agregarAdmin(TOAdministrador administrador) {
             try {
-                string qry = "insert into Administrador values (@ced, @nom, @cla, @ape1, @ape2)";
+                string mensaje = "";
+                string qry = "insert into Usuario values (@ced, @cor, @nom, @ape1, @ape2)";
+                string qry2 = "insert into Login values( @cor, @cla, 'admin')";
 
                 SqlCommand sent = new SqlCommand(qry, conexion);
+                SqlCommand sent2 = new SqlCommand(qry2, conexion);
                 sent.Parameters.AddWithValue("@ced", administrador.Cedula);
+                sent.Parameters.AddWithValue("@cor", administrador.Correo);
                 sent.Parameters.AddWithValue("@nom", administrador.Nombre);
                 sent.Parameters.AddWithValue("@cla", administrador.Clave);
                 sent.Parameters.AddWithValue("@ape1", administrador.Apellido1);
                 sent.Parameters.AddWithValue("@ape2", administrador.Apellido2);
-                
+                sent2.Parameters.AddWithValue("@cor", administrador.Correo);
+                sent2.Parameters.AddWithValue("@cla", administrador.Clave);
+            
+            if (conexion.State != ConnectionState.Open)
+            {
                 conexion.Open();
-                sent.ExecuteNonQuery();
-            } catch (Exception e) {
-
             }
             
-        }
+            int numero =sent.ExecuteNonQuery();
+                int numero2 = (int) sent2.ExecuteNonQuery();
+
+            if (numero == 1 && numero2 == 1)
+            {
+                mensaje = "ADMINISTRADOR REGISTRADO";
+            }
+            else {
+                mensaje = "LA CEDULA YA SE ENCONTRABA REGISTRADA";
+            }
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+            return mensaje;
+        } catch (Exception e) {
+                return "LA CEDULA YA SE ENCONTRABA REGISTRADA";
+    }
+
+}
 
 
         public int eliminarAdmin(string cedula)
@@ -93,27 +119,64 @@ namespace DAO
 
        
 
-        public void modificarAdmin(TOAdministrador administrador) {
+        public string modificarAdmin(TOAdministrador administrador) {
+            string mensaje = "";
             try
             {
-                string qry = "UPDATE Administrador SET Clave = @cla where Cedula = @ced;";
+                
+                string qry = "UPDATE Administrador SET Nombre = @nom, Clave = @cla, Apellido1 = @ape1, Apellido2 = @ape2, Correo = @cor  where Cedula = @ced;";
 
                 SqlCommand sent = new SqlCommand(qry, conexion);
                 sent.Parameters.AddWithValue("@ced", administrador.Cedula);
                 sent.Parameters.AddWithValue("@cla", administrador.Clave);
+                sent.Parameters.AddWithValue("@nom", administrador.Nombre);
+                sent.Parameters.AddWithValue("@ape1", administrador.Apellido1);
+                sent.Parameters.AddWithValue("@ape2", administrador.Apellido2);
+                sent.Parameters.AddWithValue("@cor", administrador.Correo);
 
                 conexion.Open();
-                sent.ExecuteNonQuery();
+                int modificadas = sent.ExecuteNonQuery();
+                if (modificadas == 1) {
+                    mensaje = "Se ha modificado los datos del administrador";
+                }
             }
             catch (Exception e)
             {
 
             }
+            return mensaje;
+        }
+
+        public TOAdministrador consultaAdmin(string cedula) {
+            TOAdministrador administrador = new TOAdministrador();
+            string qry = "select * from Administrador where Cedula = @ced;";
+            SqlCommand sent = new SqlCommand(qry, conexion);
+            SqlDataReader lector;
+            sent.Parameters.AddWithValue("@ced", cedula);
+            conexion.Open();
+            lector = sent.ExecuteReader();
+            
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    administrador = new TOAdministrador(lector["Cedula"].ToString(), lector["Nombre"].ToString(),
+                        lector["Clave"].ToString(), lector["Apellido1"].ToString(), lector["Apellido2"].ToString(), 
+                        lector["Correo"].ToString());
+                }
+                conexion.Close();
+            }
+            else
+            {
+                conexion.Close();
+            }
+            return administrador;
         }
 
 
 
+        }
+
+   
 
     }
-
-}

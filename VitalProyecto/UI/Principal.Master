@@ -18,13 +18,14 @@
     <script src="js/skel.min.js"></script>
     <script src="js/skel-layers.min.js"></script>
     <script src="js/init.js"></script>
+    <link href="admin_estilos.css" rel="stylesheet" />
     <noscript>
         <link rel="stylesheet" href="css/skel.css" />
         <link rel="stylesheet" href="css/style.css" />
         
         <%--<link rel="stylesheet" type="text/css" href="admin_estilos.css" />--%>
     </noscript>
-    <link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen">
+    
 </head>
 <body>
 
@@ -49,7 +50,7 @@
                             <li><a href="RegistroCliente.aspx">Ingreso Cliente</a></li>
                             <li><a href="ActualizacionCliente.aspx">Actualización Cliente</a></li>
                             <li><a href="Asistencia.aspx">Módulo Asistencia</a></li>
-                            <li><a href="RegistroCliente.aspx?accion=mod" >Modificar</a></li>
+                            <li><a href="RegistroCliente.aspx?accion=mod">Modificar</a></li>
                         </ul>
                     </li>
                     <li><a href="AdminPrincipal.aspx">Administrador</a>
@@ -61,7 +62,7 @@
                     <li><a>Rutinas</a>
                         <ul>
                             <li><a href="BancoRutinas.aspx">Rutinas</a></li>
-                            <li><a href="#">Ejercicios</a></li>
+                            <li><a href="BancoEjercicios.aspx">Ejercicios</a></li>
                         </ul>
                     </li>
                     <li><a href="Notificacion.aspx">Notificación</a></li>
@@ -77,19 +78,25 @@
     </div>
 
     <%--<form id="form1" runat="server">--%>
-    <div class="homepage">
+    <div class="body">
          
         <asp:ContentPlaceHolder ID="Cuerpo" runat="server">
-           
         </asp:ContentPlaceHolder>
 
     </div>
-  <%-- </form>--%>
+    <br>
+    <br>
+    <div class="footer">
+        <h1 class="title">Vital San Ramón, mas que un gimnasio es tu espacio. Responde a la necesidad de mujeres contemporáneas de todas las edades. Brinda atención personalizada, servicio de terapia física y nutrición combinado con auriculoterapia, así como un acondicionamiento físico equilibrado y eficáz, lo cual garantiza su seguridad y confianza.
+            Contáctanos: (+506) 2445-xxxx
+        </h1>
+    </div>
+
 
     <footer class="footer" style="position:page">
-        <h1 class="title">&nbsp;</h1>
-		<p class="title">&nbsp;</p>
+        <h1 class="title">FOOTER</h1>
     </footer>
 
+    <%-- </form>--%>
 </body>
 </html>

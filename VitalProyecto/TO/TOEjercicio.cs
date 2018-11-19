@@ -12,12 +12,10 @@ namespace TO
 
         public TOEjercicio() { }
 
-        public TOEjercicio(int clave, string nombre, string categoria, string descripcion, int repeticiones, int series)
+        public TOEjercicio(int clave, string nombre, int repeticiones, int series)
         {
             Clave = clave;
             Nombre = nombre;
-            Categoria = categoria;
-            Descripcion = descripcion;
             Repeticiones = repeticiones;
             Series = series;
         }
@@ -25,10 +23,6 @@ namespace TO
         public int Clave { get; set; }
 
         public String Nombre { get; set; }
-
-        public String Categoria { get; set; }
-
-        public String Descripcion { get; set; }
 
         public int Repeticiones { get; set; }
 

@@ -1,16 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Crear_Admin.aspx.cs" Inherits="UI.Crear_Admin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ModificarAdmin.aspx.cs" Inherits="UI.ModificarAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <meta charset="utf-8">
+   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
+
     <div class="container">
 
-        <h1 class="title">Registro de Administrador</h1>
+        <h1 class="title">Modificar Administrador</h1>
 
         <div class="form-container">
             <form runat="server">
@@ -20,8 +20,7 @@
                         <label class="form-label" for="tced">Cédula</label>
                     </div>
                     <div class="col-75">
-                   <asp:TextBox ID="tced" runat="server"  placeholder="(Sin espacios) Ej: 2225055" TextMode="Number" MaskedTextBox="0-000-000"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tced" Display="Dynamic" ErrorMessage="Espacio obligatorio" ValidationGroup="AllValidators">*</asp:RequiredFieldValidator>
+                   <asp:TextBox ID="tced" runat="server"   TextMode="Number" MaskedTextBox="0-000-000" Enabled="false"></asp:TextBox>
                    </div>
                 </div>
 
@@ -57,16 +56,7 @@
                         <label class="form-label" for="tclave">Clave</label>
                     </div>
                     <div class="col-75">
-                        <asp:TextBox ID="tclave" runat="server"  placeholder="Ejm: Cla.123" TextMode ="Password"></asp:TextBox>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-25">
-                        <label class="form-label" for="tclave">Confirmar clave</label>
-                    </div>
-                    <div class="col-75">
-                        <asp:TextBox ID="tclave2" runat="server"  placeholder="Ejm: Cla.123" TextMode ="Password"></asp:TextBox>
+                        <asp:TextBox ID="tclave" runat="server"></asp:TextBox>
                     </div>
                 </div>
 
@@ -81,7 +71,7 @@
                     </div>
                       <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ValidationGroup="AllValidators" />
                 </div>
-                <asp:Button id="btnCrear" Text="Crear" runat="server" OnClick="BtnRegistrar_Click"/>
+                <asp:Button id="btnModificar" Text="Modificar" runat="server" OnClick="BtnModificar_Click"/>
                 
             </form>
 
@@ -89,7 +79,5 @@
             
                     
     </div>
-
-    
 
 </asp:Content>

@@ -71,10 +71,12 @@
     <Content Include="ActualizacionCliente.aspx" />
     <Content Include="admin_estilos.css" />
     <Content Include="AdminPrincipal.aspx" />
+    <Content Include="BancoEjercicios.aspx" />
     <Content Include="BancoRutinas.aspx" />
     <Content Include="ClientePrincipal.aspx" />
     <Content Include="Contactenos.html" />
     <Content Include="ControlSeguridad.aspx" />
+    <Content Include="CrearRutina.aspx" />
     <Content Include="Crear_Admin.aspx" />
     <Content Include="Asistencia.aspx" />
     <Content Include="Cliente\asistencia_page0.html" />
@@ -111,6 +113,7 @@
     <Content Include="js\skel-layers.min.js" />
     <Content Include="js\skel.min.js" />
     <Content Include="Cliente\login.aspx" />
+    <Content Include="ModificarAdmin.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
     <Content Include="PagInicio.aspx" />
@@ -140,6 +143,13 @@
     </Compile>
     <Compile Include="Asistencia.aspx.designer.cs">
       <DependentUpon>Asistencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BancoEjercicios.aspx.cs">
+      <DependentUpon>BancoEjercicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BancoEjercicios.aspx.designer.cs">
+      <DependentUpon>BancoEjercicios.aspx</DependentUpon>
     </Compile>
     <Compile Include="BancoRutinas.aspx.cs">
       <DependentUpon>BancoRutinas.aspx</DependentUpon>
@@ -176,6 +186,13 @@
     <Compile Include="ControlSeguridad.aspx.designer.cs">
       <DependentUpon>ControlSeguridad.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CrearRutina.aspx.cs">
+      <DependentUpon>CrearRutina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearRutina.aspx.designer.cs">
+      <DependentUpon>CrearRutina.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Crear_Admin.aspx.cs">
       <DependentUpon>Crear_Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -203,6 +220,13 @@
     </Compile>
     <Compile Include="IniciarSesion.aspx.designer.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarAdmin.aspx.cs">
+      <DependentUpon>ModificarAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarAdmin.aspx.designer.cs">
+      <DependentUpon>ModificarAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="MostrarRutina.aspx.cs">
       <DependentUpon>MostrarRutina.aspx</DependentUpon>
