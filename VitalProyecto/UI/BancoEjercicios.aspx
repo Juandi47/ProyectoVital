@@ -12,7 +12,7 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="background-color:lightgray">
         <div class="container">
             <div class="row">
                 <div class="col-md-2"></div>

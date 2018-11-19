@@ -49,6 +49,7 @@ namespace UI
             TableRow fila = new TableRow(); ;
 
             TableCell celdaNombre = new TableCell();
+            celdaNombre.CssClass = "celda";
             celdaNombre.Text = nombre;
             celdaNombre.Font.Size = 20;
             celdaNombre.Font.Bold = true;

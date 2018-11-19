@@ -42,6 +42,14 @@
     border-color:#4CAF50;
 }
 
+.celda {
+     padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    border-color:#4CAF50;
+}
+
 .label {
     padding: 12px 12px 12px 0;
     display: inline-block;
