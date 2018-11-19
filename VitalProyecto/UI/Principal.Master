@@ -62,7 +62,7 @@
                     <li><a>Rutinas</a>
                         <ul>
                             <li><a href="BancoRutinas.aspx">Rutinas</a></li>
-                            <li><a href="#">Ejercicios</a></li>
+                            <li><a href="BancoEjercicios.aspx">Ejercicios</a></li>
                         </ul>
                     </li>
                     <li><a href="Notificacion.aspx">Notificación</a></li>

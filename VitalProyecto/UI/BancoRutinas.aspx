@@ -17,11 +17,21 @@
         }
     </script>
     <form id="form1" runat="server">
-        <div style="padding-right:50%">
-            <asp:Button ID="BtnCrearRutina" runat="server" Text="Crear Rutina"/>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+
+
+                    <asp:Button ID="BtnCrearRutina" runat="server" Text="Crear Rutina" OnClick="BtnCrearRutina_Click" class="button"/>
+
+                    <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover">
+                    </asp:Table>
+
+                </div>
+                <div class="col-md-2"></div>
+            </div>
         </div>
-        
-        <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover">
-        </asp:Table>
     </form>
 </asp:Content>

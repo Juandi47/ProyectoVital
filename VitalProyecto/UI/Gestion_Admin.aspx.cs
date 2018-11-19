@@ -16,21 +16,23 @@ namespace UI
         int count = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            crearTabla();
+        }
+            
 
-
+        private void crearTabla() {
             List<Administrador> lista = new List<Administrador>();
             lista = manejo.listaAdministrador();
-
+            Administrador.Rows.Clear();
             Administrador.BackColor = System.Drawing.Color.LightGray;
-
             foreach (Administrador x in lista)
             {
-                crearFila(x.Cedula, x.Nombre, x.Clave, x.Apellido1, x.Apellido2);
+                crearFila(x.Cedula, x.Nombre, x.Clave, x.Apellido1, x.Apellido2, x.Correo);
             }
-            }
+        }
 
 
-        private void crearFila(string cedula, string nombre, string clave, string apellido1, string apellido2)
+        private void crearFila(string cedula, string nombre, string clave, string apellido1, string apellido2, string correo)
         {
             TableRow fila = new TableRow(); ;
 
@@ -57,8 +59,17 @@ namespace UI
             btnEliminar.Text = " Eliminar ";
             btnEliminar.ForeColor = System.Drawing.Color.Black;
             btnEliminar.BackColor = System.Drawing.Color.LightPink;
-            btnModificar.Click += delegate { manejo.modificarAdmin(cedula, nombre, clave, apellido1, apellido2); };
-            btnEliminar.Click += delegate { manejo.eliminarAdministrador(cedula); };
+            btnModificar.Click += delegate {
+                Response.Redirect("ModificarAdmin.aspx?Valor=" + cedula);
+                manejo.modificarAdmin(cedula, nombre, clave, apellido1, apellido2, correo);
+            };
+
+            btnEliminar.Click += delegate {
+
+                manejo.eliminarAdministrador(cedula);
+                crearTabla();
+
+            };
 
             botonCell.Controls.Add(btnEliminar);
             botonCell.Controls.Add(btnModificar);

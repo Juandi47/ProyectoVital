@@ -19,7 +19,7 @@ namespace BL
             foreach (TOAdministrador toAdministrador in listaTO)
             {
                 listaBLAdministrador.Add(new Administrador(toAdministrador.Cedula, toAdministrador.Nombre,
-                    toAdministrador.Clave, toAdministrador.Apellido1, toAdministrador.Apellido2));
+                    toAdministrador.Clave, toAdministrador.Apellido1, toAdministrador.Apellido2, toAdministrador.Correo));
             }
             return listaBLAdministrador;
         }
@@ -27,15 +27,15 @@ namespace BL
 
 
 
-        public void agregarAdministrador(string cedula, string nombre, string clave, string apellido1, string apellido2) {
-
-            administradorDAO.agregarAdmin(new TOAdministrador( cedula, nombre, clave, apellido1, apellido2));
-
+        public string agregarAdministrador(string cedula, string nombre, string clave, string apellido1, string apellido2, string correo) {
+            return administradorDAO.agregarAdmin(new TOAdministrador( cedula, nombre, clave, apellido1, apellido2, correo));
         }
 
 
-        public void modificarAdmin(string cedula, string nombre, string clave, string apellido1, string apellido2) {
-            administradorDAO.modificarAdmin(new TOAdministrador(cedula, nombre, clave, apellido1, apellido2));
+        public string modificarAdmin(string cedula, string nombre, string clave, string apellido1, string apellido2, string correo) {
+            string mensaje = administradorDAO.modificarAdmin(new TOAdministrador(cedula, nombre, clave, apellido1, apellido2, correo));
+            return mensaje;
+
         }
 
 
@@ -54,6 +54,14 @@ namespace BL
                     //NonSerializedAttribute es posible eliminar as
                 }
             }
+        }
+
+        public Administrador consultaAdministrador(string cedula) {
+
+            TOAdministrador admin = administradorDAO.consultaAdmin(cedula);
+            Administrador administrador = new Administrador(admin.Cedula, admin.Nombre, admin.Apellido1, admin.Apellido2, admin.Clave, admin.Correo);
+
+            return administrador;
         }
 
 

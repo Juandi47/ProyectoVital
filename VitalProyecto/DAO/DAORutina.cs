@@ -11,9 +11,7 @@ namespace DAO
 {
     public class DAORutina
     {
-        SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
-
-        
+        SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);       
 
 
         public List<TORutina> CargarRutinas() {
@@ -22,7 +20,7 @@ namespace DAO
 
             List<TORutina> lista = new List<TORutina>();
 
-            String query = "select * from Rutina";
+            String query = "select * from Rutina order by Fecha_Creacion desc";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query,conexion);
 
@@ -147,8 +145,6 @@ namespace DAO
                 TOEjercicio ejercicio = new TOEjercicio();
                 ejercicio.Clave = int.Parse(x["Clave_Ejercicio"].ToString());
                 ejercicio.Nombre = x["Nombre"].ToString();
-                ejercicio.Categoria = x["Categoria"].ToString();
-                ejercicio.Descripcion = x["Descripcion_Ejercicio"].ToString();
                 ejercicio.Series = Int32.Parse(x["Numero_Series"].ToString());
                 ejercicio.Repeticiones = Int32.Parse(x["Repeticiones"].ToString());
 
@@ -157,5 +153,51 @@ namespace DAO
 
             return lista;
         }
+
+        public List<TOEjercicio> CargarEjercicios()
+        {
+            DataTable tabla = new DataTable();
+
+            List<TOEjercicio> lista = new List<TOEjercicio>();
+
+            string query = "select * from Ejercicio order by Nombre";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
+
+            adapter.Fill(tabla);
+
+            foreach (DataRow x in tabla.Rows)
+            {
+
+                TOEjercicio ejercicio = new TOEjercicio();
+                ejercicio.Clave = int.Parse(x["Clave_Ejercicio"].ToString());
+                ejercicio.Nombre = x["Nombre"].ToString();
+
+                lista.Add(ejercicio);
+            }
+
+            return lista;
+        }
+
+        public void agregarEjercicio(String ejercicio) {
+            String query = "Insert into Ejercicio values(@ejer);";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            comando.Parameters.AddWithValue("@ejer",ejercicio);
+
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+
+            comando.ExecuteNonQuery();
+
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+        }
+
     }
 }
