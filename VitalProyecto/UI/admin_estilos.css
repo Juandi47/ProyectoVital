@@ -170,3 +170,8 @@ color:black;
 .container2 {
    padding-left:10px
 }
+
+.footerText {
+    font: 15px 'Open Sans', normal;
+    display: inline-block;
+}

@@ -10,11 +10,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="admin_estilos.css" rel="stylesheet" />
 
-    <%-- NECESARIOS PARA USO DE CALENDAR --%>
-    <%--<script src="js/pikaday.js" type="text/javascript"></script>
-    <link href="css/pikaday.css" rel="stylesheet" type="text/css" />
-    <link href="css/theme.css" rel="stylesheet" type="text/css" />
-    <link href="css/triangle.css" rel="stylesheet" type="text/css" />--%>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
@@ -30,7 +25,7 @@
 
             <div class="con">
 
-                <div class="col-md-4" style="; height:80px";>
+                <div class="col-md-4" style="height:80px";>
                      <asp:Label ID="lblCed" CssClass="form-label" runat="server" Text="Cédula"></asp:Label>
                             <asp:TextBox ID="txbced" runat="server"></asp:TextBox>
                 </div>
@@ -88,6 +83,23 @@
                             <asp:TextBox ID="txbcorreo" runat="server"></asp:TextBox>
                         </asp:TableCell>
                     </asp:TableRow>
+                     <asp:TableHeaderRow>
+                        <asp:TableCell>
+                            <asp:Label ID="Label8" CssClass="form-label" runat="server" Text="Contraseña"></asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:Label ID="Label9" CssClass="form-label" runat="server" Text="Confirmar contraseña"></asp:Label>
+                        </asp:TableCell>
+                    </asp:TableHeaderRow>
+                     <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:TextBox ID="pass1" runat="server" TextMode="Password"></asp:TextBox>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:TextBox ID="pass2" runat="server" TextMode="Password"></asp:TextBox>
+                        </asp:TableCell>
+                    </asp:TableRow>
+
                 </asp:Table>
             </div>
 
