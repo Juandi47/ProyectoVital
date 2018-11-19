@@ -8,6 +8,12 @@ namespace BL
 {
     public class Administrador
     {
+        public string Cedula { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido1 { get; set; }
+        public string Apellido2 { get; set; }
+        public string Clave { get; set; }
+
         public Administrador(string cedula, string nombre, string apellido1, string apellido2, string clave)
         {
             Cedula = cedula;
@@ -21,13 +27,6 @@ namespace BL
         public Administrador()
         {
         }
-
-        public string Cedula { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido1 { get; set; }
-        public string Apellido2 { get; set; }
-        public string Clave { get; set; }
-
 
 
     }

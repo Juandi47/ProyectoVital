@@ -21,10 +21,9 @@ body {
 }
 
 .title {
-    font: bold 25px 'Open Sans', sans-serif;
+    font: bold 20px 'Open Sans', sans-serif;
     margin: 15px 0 15px 15px;
     text-transform: uppercase;
-    
 }
 
 .banner {

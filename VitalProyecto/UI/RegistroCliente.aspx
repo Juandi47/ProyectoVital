@@ -11,19 +11,22 @@
     <link href="admin_estilos.css" rel="stylesheet" />
 
     <%-- NECESARIOS PARA USO DE CALENDAR --%>
-    <script src="js/pikaday.js" type="text/javascript"></script>
+    <%--<script src="js/pikaday.js" type="text/javascript"></script>
     <link href="css/pikaday.css" rel="stylesheet" type="text/css" />
     <link href="css/theme.css" rel="stylesheet" type="text/css" />
-    <link href="css/triangle.css" rel="stylesheet" type="text/css" />
+    <link href="css/triangle.css" rel="stylesheet" type="text/css" />--%>
 
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
 
-    <h1 class="title">Registro de cliente</h1>
+    <%--<h1 id="tituloH1" accesskey="tituloH1" class="title">Registro de cliente</h1>--%>
+    <asp:Label ID="tituloH1" CssClass="title" runat="server" Text="Registro de cliente"></asp:Label>
 
     <div class="form-container" runat="server">
         <form id="form1" runat="server">
+
+
 
         <%-- CEDULA --%>
         <div class="row">
@@ -34,7 +37,7 @@
                <%-- <asp:Table ID="Table2" runat="server">
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">--%>
-                            <asp:TextBox ID="txbced" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txbced" runat="server" ></asp:TextBox>
                        <%-- </asp:TableCell>--%>
                        <%-- <asp:TableCell runat="server">
                           
@@ -103,7 +106,7 @@
                 <asp:Label ID="lblobs" CssClass="form-label" runat="server" Text="Observaciones"></asp:Label>
             </div>
             <div class="col-75">
-                <asp:TextBox ID="txbobs" runat="server" Height="150px"></asp:TextBox>
+                <asp:TextBox ID="txbobs" runat="server" Height="150px" Rows="10" TextMode="MultiLine" Text="Observaciones" ToolTip="sasa"></asp:TextBox>
             </div>
         </div>
 
@@ -137,7 +140,8 @@
 
 
     <br/>
-    <asp:Button ID="btnRegistrar" runat="server" Text="REGISTRAR" CssClass="center-block" Width="150px" OnClick="btnRegistrar_Click"/>
+    <asp:Button ID="btnModificar" runat="server" Text="REGISTRAR" CssClass="center-block" Width="150px" OnClick="btnRegistrar_Click"/>
+    <%--<asp:Button ID="btnRegistrar" runat="server" Text="REGISTRAR" CssClass="center-block" Width="150px" OnClick="btnRegistrar_Click"/>--%>
     <br />
     <br />
     <br />

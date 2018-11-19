@@ -45,6 +45,7 @@ namespace DAO
             }
 
             SqlCommand cmd;
+            conexion.Open();
             foreach (Persona p in lista) {
 
                 cmd = new SqlCommand("insert into Persona values (@ced,@nom,@ap1,@ap2);", conexion);
@@ -56,14 +57,16 @@ namespace DAO
 
                 try
                 {
-                    conexion.Open();
+                   
                     cmd.ExecuteNonQuery();
-                    conexion.Close();
+                   
                 }
                 catch (Exception){
-
+                    conexion.Close();
                 }
+                
             }
+            conexion.Close();
 
 
 
