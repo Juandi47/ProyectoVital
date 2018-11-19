@@ -21,7 +21,7 @@ namespace UI
         }
 
         private void llenarGrid() {
-            List<HojaEjercicio> ejercicios = manejador.MostrarRutina(nombreRutina);
+            List<HojaRutina> ejercicios = manejador.MostrarRutina(nombreRutina);
             grdEjercicios.DataSource = ejercicios;
             grdEjercicios.DataBind();
         }
