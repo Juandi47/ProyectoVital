@@ -160,6 +160,7 @@
     </Compile>
     <Compile Include="ClientePrincipal.aspx.cs">
       <DependentUpon>ClientePrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ClientePrincipal.aspx.designer.cs">
       <DependentUpon>ClientePrincipal.aspx</DependentUpon>
@@ -180,6 +181,7 @@
     </Compile>
     <Compile Include="ControlSeguridad.aspx.cs">
       <DependentUpon>ControlSeguridad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ControlSeguridad.aspx.designer.cs">
       <DependentUpon>ControlSeguridad.aspx</DependentUpon>
@@ -214,6 +216,7 @@
     </Compile>
     <Compile Include="IniciarSesion.aspx.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="IniciarSesion.aspx.designer.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>

@@ -11,12 +11,13 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
+    
     <script>
         function guardarNombre(nombre) {
             __doPostBack("Nombre", nombre);
         }
     </script>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="background-color:lightgray">
 
         <div class="container">
             <div class="row">
@@ -24,9 +25,9 @@
                 <div class="col-md-8">
 
 
-                    <asp:Button ID="BtnCrearRutina" runat="server" Text="Crear Rutina" OnClick="BtnCrearRutina_Click" class="button"/>
+                    <asp:Button ID="BtnCrearRutina" runat="server" Text="Crear Rutina" OnClick="BtnCrearRutina_Click" class="button" BackColor="darkolivegreen"/>
 
-                    <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover">
+                    <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover ">
                     </asp:Table>
 
                 </div>
