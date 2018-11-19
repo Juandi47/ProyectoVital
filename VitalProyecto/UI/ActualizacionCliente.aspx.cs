@@ -18,7 +18,7 @@ namespace UI
 
         protected void btnAñadirExpediente_Click(object sender, EventArgs e)
         {
-			string Cedula = txtCed.Text;
+			string Cedula = tCed.Text;
 			string Frec_Cardiaca = tfrec.Text;
 			decimal Peso = Convert.ToDecimal(tweigth.Text);
 			decimal Porcent_Grasa = Convert.ToDecimal(tpercentWeigth.Text);
@@ -29,6 +29,7 @@ namespace UI
 			decimal Estatura = Convert.ToDecimal(theigth.Text);
             decimal Cintura = Convert.ToDecimal("73");
 
+			
             Boolean t = manejador.AgregarMedida(Frec_Cardiaca, Peso, Porcent_Grasa, IMC, Cintura, Abdomen, Cadera, Muslo, Estatura, Cedula);
             Console.Write("Funciono? " + t);
         }

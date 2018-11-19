@@ -17,6 +17,7 @@ namespace TO
         public int Telefono { get; set; }
         public string Correo { get; set; }
         public string Observacion { get; set; }
+        public DateTime Fecha_Mensualidad { get; set; }
 
         public TOCliente(string cedula, string nombre, string apellido1, string apellido2, DateTime fecha_Nacimiento, int telefono, string correo, string observacion)
         {
@@ -31,5 +32,18 @@ namespace TO
         }
 
         public TOCliente() { }
+
+        public TOCliente(string cedula, string nombre, string apellido1, string apellido2, DateTime fecha_Nacimiento, int telefono, string correo, string observacion, DateTime fecha_Mensualidad)
+        {
+            Cedula = cedula;
+            Nombre = nombre;
+            Apellido1 = apellido1;
+            Apellido2 = apellido2;
+            Fecha_Nacimiento = fecha_Nacimiento;
+            Telefono = telefono;
+            Correo = correo;
+            Observacion = observacion;
+            Fecha_Mensualidad = fecha_Mensualidad;
+        }
     }
 }

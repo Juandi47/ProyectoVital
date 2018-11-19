@@ -13,22 +13,24 @@ namespace DAO
         SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
         public Boolean AgregarMedida(TOMedida medida)
         {
-            String query = "Insert into Medidas values(@freCard,@peso,@porcGrasa,@IMC,@cint,@abdmn,@cader,@muslo,@estat,@ced);";
-            SqlCommand cmd = new SqlCommand(query, conexion);
-            cmd.Parameters.AddWithValue("@ced", medida.Ced_Cliente);
-            cmd.Parameters.AddWithValue("@freCard", medida.Frec_Cardiaca);
-            cmd.Parameters.AddWithValue("@peso", medida.Peso);
-            cmd.Parameters.AddWithValue("@porcGrasa", medida.Porcent_Grasa);
-            cmd.Parameters.AddWithValue("@IMC", medida.IMC);
-            cmd.Parameters.AddWithValue("@cint", medida.Cintura);
-            cmd.Parameters.AddWithValue("@adbmn", medida.Abdomen);
-            cmd.Parameters.AddWithValue("@cader", medida.Cadera);
-            cmd.Parameters.AddWithValue("@muslo", medida.Muslo);
-            cmd.Parameters.AddWithValue("@estat", medida.Estatura);
             try
             {
+                
+            String query = "Insert into Medidas values (@freCard, @peso, @porcGrasa, @IMC, @cint, @abdmn, @cader, @muslo, @estat, @ced);";
+            SqlCommand Insertar = new SqlCommand(query, conexion);
+            Insertar.Parameters.AddWithValue("@ced", medida.Ced_Cliente);
+            Insertar.Parameters.AddWithValue("@freCard", medida.Frec_Cardiaca);
+            Insertar.Parameters.AddWithValue("@peso", medida.Peso);
+            Insertar.Parameters.AddWithValue("@porcGrasa", medida.Porcent_Grasa);
+            Insertar.Parameters.AddWithValue("@IMC", medida.IMC);
+            Insertar.Parameters.AddWithValue("@cint", medida.Cintura);
+            Insertar.Parameters.AddWithValue("@adbmn", medida.Abdomen);
+            Insertar.Parameters.AddWithValue("@cader", medida.Cadera);
+            Insertar.Parameters.AddWithValue("@muslo", medida.Muslo);
+            Insertar.Parameters.AddWithValue("@estat", medida.Estatura);
+
                 conexion.Open();
-                cmd.ExecuteNonQuery();
+                Insertar.ExecuteNonQuery();
                 conexion.Close();
 
                 return true;

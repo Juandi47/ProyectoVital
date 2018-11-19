@@ -202,6 +202,15 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.TextBox tFechRevis;
         
         /// <summary>
+        /// ActFisica control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ActFisica;
+        
+        /// <summary>
         /// VecesComid control.
         /// </summary>
         /// <remarks>
@@ -245,5 +254,50 @@ namespace UI.Nutricion {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox queComeAfuera;
+        
+        /// <summary>
+        /// CuantAzucar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CuantAzucar;
+        
+        /// <summary>
+        /// cocinaElabora control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cocinaElabora;
+        
+        /// <summary>
+        /// aguAlDia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox aguAlDia;
+        
+        /// <summary>
+        /// Aderesos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Aderesos;
+        
+        /// <summary>
+        /// checkListGustos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList checkListGustos;
     }
 }
