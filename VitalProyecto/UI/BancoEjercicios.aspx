@@ -7,6 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="admin_estilos.css" rel="stylesheet" />
 </asp:Content>
 
 
@@ -18,7 +19,7 @@
                 <div class="col-md-8">
                     <div class="input-group">
                         <asp:TextBox ID="txtNuevoEjercicio" runat="server" Width="300px" Wrap="False" placeholder="NUEVO EJERCICIO" ></asp:TextBox>
-                        <asp:Button ID="btnAgregarEjercicio" runat="server" Text="Agregar Ejercicio" class="button input-group-addon" OnClick="btnAgregarEjercicio_Click" />
+                        <asp:Button ID="btnAgregarEjercicio" runat="server" Text="Agregar Ejercicio" class="button input-group-addon" OnClick="btnAgregarEjercicio_Click" BackColor="darkolivegreen" />
                     </div>                        
 
 
