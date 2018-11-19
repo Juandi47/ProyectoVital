@@ -68,9 +68,9 @@
 					<br />
 					Correo eléctronico:<asp:TextBox ID="txtCorreo" runat="server" TextMode="Email"></asp:TextBox>
 					<br />
-					Contraseña:<asp:TextBox ID="txtContra" runat="server" TextMode="Password" ></asp:TextBox>
+					Contraseña:<asp:TextBox ID="txtContra" runat="server" TextMode="Password" Font-Size="Small"></asp:TextBox>
 					<br />
-					<asp:Button class="btn btn-success" ID="btnIngresar" runat="server" Height="50px" Text="Ingresar" Width="160px" OnClick="btnIngresar_Click" />
+					<asp:Button class="btn btn-success" ID="btnIngresar" runat="server" Height="45px" Text="Ingresar" Width="120px" OnClick="btnIngresar_Click" CssClass="alert-success" Font-Size="Medium" />
 					<br />
 					<asp:Label ID="lblIncorrecto" runat="server"></asp:Label>
 					<br />

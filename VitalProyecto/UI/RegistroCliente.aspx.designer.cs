@@ -49,22 +49,49 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox txbced;
         
         /// <summary>
-        /// btnFiltro control.
+        /// btnBusqueda control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnFiltro;
+        protected global::System.Web.UI.WebControls.Button btnBusqueda;
         
         /// <summary>
-        /// lblnombre control.
+        /// Table2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblnombre;
+        protected global::System.Web.UI.WebControls.Table Table2;
+        
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
         /// txbnombre control.
@@ -76,15 +103,6 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox txbnombre;
         
         /// <summary>
-        /// lblape1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblape1;
-        
-        /// <summary>
         /// txbape1 control.
         /// </summary>
         /// <remarks>
@@ -92,15 +110,6 @@ namespace UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txbape1;
-        
-        /// <summary>
-        /// lblpae2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblpae2;
         
         /// <summary>
         /// txbape2 control.
@@ -112,13 +121,22 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox txbape2;
         
         /// <summary>
-        /// lbltelefono control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltelefono;
+        protected global::System.Web.UI.WebControls.Label Label5;
+        
+        /// <summary>
+        /// Label6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
         /// txbtelefono control.
@@ -130,15 +148,6 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox txbtelefono;
         
         /// <summary>
-        /// lblcorreo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblcorreo;
-        
-        /// <summary>
         /// txbcorreo control.
         /// </summary>
         /// <remarks>
@@ -148,13 +157,13 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox txbcorreo;
         
         /// <summary>
-        /// lblobs control.
+        /// Label7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblobs;
+        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
         /// txbobs control.
@@ -184,13 +193,13 @@ namespace UI {
         protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
-        /// DLAnno control.
+        /// DlDia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DLAnno;
+        protected global::System.Web.UI.WebControls.DropDownList DlDia;
         
         /// <summary>
         /// DlMes control.
@@ -202,13 +211,13 @@ namespace UI {
         protected global::System.Web.UI.WebControls.DropDownList DlMes;
         
         /// <summary>
-        /// DlDia control.
+        /// DLAnno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DlDia;
+        protected global::System.Web.UI.WebControls.DropDownList DLAnno;
         
         /// <summary>
         /// btnModificar control.
