@@ -13,21 +13,23 @@ namespace BL
         public string Apellido1 { get; set; }
         public string Apellido2 { get; set; }
         public string Clave { get; set; }
+        public string Correo { get; set; }
 
-        public Administrador(string cedula, string nombre, string apellido1, string apellido2, string clave)
-        {
-            Cedula = cedula;
-            Nombre = nombre;
-            Apellido1 = apellido1;
-            Apellido2 = apellido2;
-            Clave = clave;
-        }
+        
 
 
         public Administrador()
         {
         }
 
-
+        public Administrador(string cedula, string nombre, string clave, string apellido1, string apellido2, string correo)
+        {
+            Cedula = cedula;
+            Nombre = nombre;
+            Apellido1 = apellido1;
+            Apellido2 = apellido2;
+            Clave = clave;
+            Correo = correo;
+        }
     }
 }

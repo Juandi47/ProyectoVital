@@ -10,7 +10,7 @@
 namespace UI {
     
     
-    public partial class Crear_Admin {
+    public partial class ModificarAdmin {
         
         /// <summary>
         /// tced control.
@@ -20,15 +20,6 @@ namespace UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tced;
-        
-        /// <summary>
-        /// RequiredFieldValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
         /// tname control.
@@ -67,15 +58,6 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox tclave;
         
         /// <summary>
-        /// tclave2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tclave2;
-        
-        /// <summary>
         /// temail control.
         /// </summary>
         /// <remarks>
@@ -112,12 +94,12 @@ namespace UI {
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
-        /// btnCrear control.
+        /// btnModificar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrear;
+        protected global::System.Web.UI.WebControls.Button btnModificar;
     }
 }

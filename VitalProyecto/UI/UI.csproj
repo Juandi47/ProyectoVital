@@ -113,6 +113,7 @@
     <Content Include="js\skel-layers.min.js" />
     <Content Include="js\skel.min.js" />
     <Content Include="Cliente\login.aspx" />
+    <Content Include="ModificarAdmin.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
     <Content Include="PagInicio.aspx" />
@@ -159,7 +160,6 @@
     </Compile>
     <Compile Include="ClientePrincipal.aspx.cs">
       <DependentUpon>ClientePrincipal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ClientePrincipal.aspx.designer.cs">
       <DependentUpon>ClientePrincipal.aspx</DependentUpon>
@@ -180,7 +180,6 @@
     </Compile>
     <Compile Include="ControlSeguridad.aspx.cs">
       <DependentUpon>ControlSeguridad.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ControlSeguridad.aspx.designer.cs">
       <DependentUpon>ControlSeguridad.aspx</DependentUpon>
@@ -215,10 +214,16 @@
     </Compile>
     <Compile Include="IniciarSesion.aspx.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="IniciarSesion.aspx.designer.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarAdmin.aspx.cs">
+      <DependentUpon>ModificarAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarAdmin.aspx.designer.cs">
+      <DependentUpon>ModificarAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="MostrarRutina.aspx.cs">
       <DependentUpon>MostrarRutina.aspx</DependentUpon>
