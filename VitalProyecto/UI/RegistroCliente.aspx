@@ -141,7 +141,7 @@
 
     <br/>
     <asp:Button ID="btnModificar" runat="server" Text="REGISTRAR" CssClass="center-block" Width="150px" OnClick="btnRegistrar_Click"/>
-    <asp:Button ID="btnRegistrar" runat="server" Text="REGISTRAR" CssClass="center-block" Width="150px" OnClick="btnRegistrar_Click"/>
+    <%--<asp:Button ID="btnRegistrar" runat="server" Text="REGISTRAR" CssClass="center-block" Width="150px" OnClick="btnRegistrar_Click"/>--%>
     <br />
     <br />
     <br />

@@ -105,11 +105,16 @@ namespace UI
             cliente = new Cliente(ced,nombre,ape1,ape2,fecha_nac,tel,correo,obs);
             Boolean cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
 
-            if(cliente_creado)
+            if (cliente_creado) { 
                 Response.Write("<script>alert('Cliente creado correctamente')</script>");
-            else
+            }
+            else { 
                 Response.Write("<script>alert('Error en registro de cliente')</script>");
+            }
+            txbced.Text = "";
+            txbnombre.Text = "";
         }
+
 
         protected void btnFiltro_Click(object sender, EventArgs e)
         {
