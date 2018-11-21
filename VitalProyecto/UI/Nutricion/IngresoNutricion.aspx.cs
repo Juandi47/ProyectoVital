@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace UI.Nutricion
 {
-    public partial class PrimerIngreso : System.Web.UI.Page
+    public partial class IngresoNutricion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,6 +38,12 @@ namespace UI.Nutricion
             cocinaElabora.Items.Add("Horneadas");
             cocinaElabora.Items.Add("Hervidos");
             cocinaElabora.Items.Add("Microondas");
+            //Acostumbra a comer a las horas del dia
+            CostHorDia.Items.Add("Sí");
+            CostHorDia.Items.Add("No");
+            //Lista Aderezos
+            Aderezos.Items.Add("Sí");
+            Aderezos.Items.Add("No");
             //Lista de Gustos
             checkListGustos.Items.Add("Vegetales");
             checkListGustos.Items.Add("Frutas");
@@ -52,8 +58,8 @@ namespace UI.Nutricion
 
         protected void btnAgreg_Click(object sender, EventArgs e)
         {
-            Response.Write("<script>alert('Seleccionado: "+ checkListGustos.SelectedValue+"')</script>");
-            
+            Response.Write("<script>alert('Seleccionado: " + checkListGustos.SelectedValue + "')</script>");
+
         }
     }
 }

@@ -10,7 +10,7 @@
 namespace UI.Nutricion {
     
     
-    public partial class PrimerIngreso {
+    public partial class IngresoNutricion {
         
         /// <summary>
         /// Fecha control.
@@ -283,13 +283,13 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.TextBox aguAlDia;
         
         /// <summary>
-        /// Aderesos control.
+        /// Aderezos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Aderesos;
+        protected global::System.Web.UI.WebControls.DropDownList Aderezos;
         
         /// <summary>
         /// checkListGustos control.
