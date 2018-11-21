@@ -21,5 +21,15 @@ namespace BL
 			return new Login(usuarioTO.nombre_usuario, usuarioTO.clave, usuarioTO.rol);
 		}
 
+        public Boolean registrarLogin(Login login) {
+            TOLogin usuarioTO = new TOLogin(login.nombre_usuario, login.clave, login.rol);
+
+            int elementoAgregado = daoUsuar.registrarLogin(usuarioTO);
+
+            return elementoAgregado > 0 ? true : false;
+        }
+
+
+
 	}
 }

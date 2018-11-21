@@ -73,8 +73,8 @@
              
     </div>
 
-    <div id="banner" class="admin-banner" style="background-color: gainsboro">
-      
+    <div  style="background-color: gainsboro">
+        <img src="../images/banner_admin01.jpg" style="width:100%"/>
     </div>
 
     <%--<form id="form1" runat="server">--%>
@@ -87,13 +87,11 @@
     <br>
     <br>
     <div class="footer">
-        <h1 class="title">Vital San Ramón, mas que un gimnasio es tu espacio. Responde a la necesidad de mujeres contemporáneas de todas las edades. Brinda atención personalizada, servicio de terapia física y nutrición combinado con auriculoterapia, así como un acondicionamiento físico equilibrado y eficáz, lo cual garantiza su seguridad y confianza.
-            Contáctanos: (+506) 2445-xxxx
-        </h1>
+        Vital San Ramón, mas que un gimnasio es tu espacio.  Contáctanos: (+506) 2445-xxxx
     </div>
 
 
-    <footer class="footer" style="position:page">
+    <footer class="footer" style="position: page">
         <h1 class="title">FOOTER</h1>
     </footer>
 

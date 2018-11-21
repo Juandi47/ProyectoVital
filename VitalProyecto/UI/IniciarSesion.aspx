@@ -53,8 +53,8 @@
 		</div>
 	</div>
 
-	<div id="banner" class="admin-banner" style="background-color: gainsboro; background-size:cover">
-
+	<div   style="background-color: gainsboro; ">
+        <img src="../images/banner_admin01.jpg" style="width:100%"/>
 	</div>
 
 	<div>
