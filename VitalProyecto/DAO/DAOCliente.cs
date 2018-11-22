@@ -13,7 +13,7 @@ namespace DAO
     {
         SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
 
-        public List<TOCliente> ListaCliente()
+		public List<TOCliente> ListaCliente()
         {
             List<TOCliente> listClientes = new List<TOCliente>();
             string qry = "Select * from Usuario";
@@ -164,9 +164,40 @@ namespace DAO
             return cliente;
         }
 
+		public TOCliente buscarCliente(String cedula)
+		{
+			try
+			{
+				TOCliente cliente = new TOCliente();
+				
+				SqlCommand buscar = new SqlCommand("select * from cliente where cedula = @cedula", conexion);
+				buscar.Parameters.AddWithValue("@cedula", cedula);
+				conexion.Open();
+				SqlDataReader lector = buscar.ExecuteReader();
 
-        
+				if (lector.HasRows)
+				{
+					while (lector.Read())
+					{
+						cliente.Cedula = lector["Cedula"].ToString();
+						cliente.Fecha_Nacimiento = DateTime.Parse(lector["Fecha_nacimiento"].ToString());
+						cliente.Telefono = Int32.Parse(lector["Telefono"].ToString());
+						cliente.Observacion = lector["Observaciones"].ToString();
+						cliente.Fecha_Mensualidad = DateTime.Parse(lector["Fecha_mensualidad"].ToString());
 
-        //FIN
-    }
+					}
+					lector.Close();
+				}
+				conexion.Close();
+				return cliente;
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+		}
+
+
+		//FIN
+	}
 }

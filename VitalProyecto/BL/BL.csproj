@@ -46,19 +46,20 @@
     <Compile Include="ClienteNutricion.cs" />
     <Compile Include="HojaEjercicio.cs" />
     <Compile Include="HojaRutina.cs" />
-    <Compile Include="Login.cs" />
+    <Compile Include="Ingreso.cs" />
     <Compile Include="ManejadorAdministrador.cs" />
     <Compile Include="Ejercicio.cs" />
     <Compile Include="ManejadorCliente.cs" />
     <Compile Include="ManejadorEjercicio.cs" />
-    <Compile Include="ManejadorLogin.cs" />
+    <Compile Include="ManejadorIngreso.cs" />
     <Compile Include="ManejadorMedida.cs" />
-    <Compile Include="ManejadorNutrición.cs" />
     <Compile Include="ManejadorRutina.cs" />
-    <Compile Include="Medicamento.cs" />
+    <Compile Include="ManejadorUsuario.cs" />
     <Compile Include="Medida.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rutina.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
@@ -69,6 +70,9 @@
       <Project>{1747a462-d8e3-4ba2-adb9-065b5a114a34}</Project>
       <Name>TO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DiagramaBL.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

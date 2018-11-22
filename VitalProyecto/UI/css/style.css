@@ -46,7 +46,8 @@ body {
 
 	p {
 		line-height: 1.8em;
-	}
+	height: 111px;
+}
 
 		p.medium {
 			font-size: 1.4em;

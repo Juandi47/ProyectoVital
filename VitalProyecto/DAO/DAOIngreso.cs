@@ -8,15 +8,15 @@ using TO;
 
 namespace DAO
 {
-	public class DAOLogin
+	public class DAOIngreso
 	{
 		SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
 
-		public TOLogin buscarUsuario(String correo_usuario, String contra)
+		public TOIngreso buscarUsuario(String correo_usuario, String contra)
 		{
 			try
 			{
-				TOLogin usuario = new TOLogin();
+				TOIngreso usuario = new TOIngreso();
 				SqlCommand buscar = new SqlCommand("SELECT * FROM Login WHERE Nombre_usuario = @corrusu and Clave = @contus", conexion);
 				buscar.Parameters.AddWithValue("@corrusu", correo_usuario);
 				buscar.Parameters.AddWithValue("@contus", contra);
@@ -43,7 +43,7 @@ namespace DAO
 			}
 		}
 
-        public int registrarLogin(TOLogin tOlogin) {
+        public int registrarLogin(TOIngreso tOlogin) {
             SqlCommand cmd = new SqlCommand("insert into Login values (@nomUs,@pass,@rol)", conexion);
             cmd.Parameters.AddWithValue("@nomUs", tOlogin.nombre_usuario);
             cmd.Parameters.AddWithValue("@pass", tOlogin.clave);
