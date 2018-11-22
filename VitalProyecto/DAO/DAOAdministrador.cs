@@ -57,17 +57,18 @@ namespace DAO
             {
                 string mensaje = "";
                 string qry = "insert into Usuario values (@ced, @cor, @nom, @ape1, @ape2)";
-                string qry2 = "insert into Login values( @cor, @cla, 'admin')";
+                string qry2 = "insert into Login values( @cor2, @cla, 'admin')";
 
                 SqlCommand sent = new SqlCommand(qry, conexion);
                 SqlCommand sent2 = new SqlCommand(qry2, conexion);
                 sent.Parameters.AddWithValue("@ced", administrador.Cedula);
-                sent.Parameters.AddWithValue("@cor", administrador.Correo);
                 sent.Parameters.AddWithValue("@nom", administrador.Nombre);
                 sent.Parameters.AddWithValue("@cla", administrador.Clave);
                 sent.Parameters.AddWithValue("@ape1", administrador.Apellido1);
                 sent.Parameters.AddWithValue("@ape2", administrador.Apellido2);
-                sent2.Parameters.AddWithValue("@cor", administrador.Correo);
+                sent.Parameters.AddWithValue("@cor", administrador.Correo);
+
+                sent2.Parameters.AddWithValue("@cor2", administrador.Correo);
                 sent2.Parameters.AddWithValue("@cla", administrador.Clave);
 
                 if (conexion.State != ConnectionState.Open)
@@ -149,29 +150,35 @@ namespace DAO
             try
             {
 
-                string qry = "UPDATE Administrador SET Nombre = @nom, Clave = @cla, Apellido1 = @ape1, Apellido2 = @ape2, Correo = @cor  where Cedula = @ced;";
+                string qry = "UPDATE Usuario SET Nombre = @nom, Apellido1 = @ape1, Apellido2 = @ape2, Correo = @cor  where Cedula = @ced;";
+                string qry2 = "UPDATE Login SET Clave = @cla  where Nombre_usuario = @cor;";
+               
 
                 SqlCommand sent = new SqlCommand(qry, conexion);
+                SqlCommand sent2 = new SqlCommand(qry2, conexion);
                 sent.Parameters.AddWithValue("@ced", administrador.Cedula);
-                sent.Parameters.AddWithValue("@cla", administrador.Clave);
                 sent.Parameters.AddWithValue("@nom", administrador.Nombre);
                 sent.Parameters.AddWithValue("@ape1", administrador.Apellido1);
                 sent.Parameters.AddWithValue("@ape2", administrador.Apellido2);
                 sent.Parameters.AddWithValue("@cor", administrador.Correo);
+
+                sent2.Parameters.AddWithValue("@cor", administrador.Correo);
+                sent2.Parameters.AddWithValue("@cla", administrador.Clave);
 
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();
                 }
                 int modificadas = sent.ExecuteNonQuery();
-                if (modificadas == 1)
+                int modificada2 = sent2.ExecuteNonQuery();
+                if (modificadas == 1 && modificada2 == 1)
                 {
                     mensaje = "Se ha modificado los datos del administrador";
                 }
             }
             catch (Exception e)
             {
-
+                return "No se pudo realizar la actualización";
             }
             if (conexion.State != ConnectionState.Closed)
             {

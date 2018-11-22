@@ -45,7 +45,7 @@
             <!-- Nav -->
             <nav id="nav">
                 <ul>
-                    <li><a>Clientes</a>
+                    <li><a href=#>Clientes</a>
                         <ul>
                             <li><a href="RegistroCliente.aspx">Ingreso Cliente</a></li>
                             <li><a href="ActualizacionCliente.aspx">Actualización Cliente</a></li>
@@ -86,14 +86,14 @@
     </div>
     <br>
     <br>
-    <div class="footer">
+    <footer class="footer">
         Vital San Ramón, mas que un gimnasio es tu espacio.  Contáctanos: (+506) 2445-xxxx
-    </div>
-
-
-    <footer class="footer" style="position: page">
-        <h1 class="title">FOOTER</h1>
     </footer>
+
+
+<%--    <footer class="footer" >
+        <h1 class="title">FOOTER</h1>
+    </footer>--%>
 
     <%-- </form>--%>
 </body>
