@@ -47,6 +47,7 @@
                 <ul>
                     <li><a href=#>Clientes</a>
                         <ul>
+                            <li><a href="ListaClientesAdmin.aspx">Ver clientes</a></li>
                             <li><a href="RegistroCliente.aspx">Ingreso Cliente</a></li>
                             <li><a href="ActualizacionCliente.aspx">Actualización Cliente</a></li>
                             <li><a href="Asistencia.aspx">Módulo Asistencia</a></li>

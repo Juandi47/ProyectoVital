@@ -225,3 +225,7 @@ margin-top:10px;
 .tablerow {
 margin-left:0%;
 }
+
+.radio {
+    border-radius: 50%;
+}
