@@ -113,6 +113,7 @@
     <Content Include="js\skel-layers.min.js" />
     <Content Include="js\skel.min.js" />
     <Content Include="Cliente\login.aspx" />
+    <Content Include="ListaClientesAdmin.aspx" />
     <Content Include="ModificarAdmin.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
@@ -220,6 +221,13 @@
     </Compile>
     <Compile Include="IniciarSesion.aspx.designer.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaClientesAdmin.aspx.cs">
+      <DependentUpon>ListaClientesAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaClientesAdmin.aspx.designer.cs">
+      <DependentUpon>ListaClientesAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModificarAdmin.aspx.cs">
       <DependentUpon>ModificarAdmin.aspx</DependentUpon>
