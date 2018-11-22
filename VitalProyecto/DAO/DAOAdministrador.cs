@@ -233,7 +233,7 @@ namespace DAO
             Boolean mensaje = false;
             int admin = 0;
 
-            string qry = "SELECT COUNT (*) FROM Usuario WHERE cedula = @ced;";
+            string qry = "SELECT COUNT (*) as numero FROM Usuario WHERE cedula = @ced;";
             SqlCommand sent = new SqlCommand(qry, conexion);
             sent.Parameters.AddWithValue("@ced", cedula);
 
@@ -241,12 +241,7 @@ namespace DAO
             {
                 conexion.Open();
             }
-            SqlDataReader cantidad = sent.ExecuteReader();
-
-            if (cantidad.HasRows)
-            {
-                admin = cantidad.GetInt32(0);
-            }
+                admin = sent.ExecuteNonQuery();
 
             if (conexion.State != ConnectionState.Closed)
             {
