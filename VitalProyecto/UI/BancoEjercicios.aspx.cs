@@ -33,9 +33,8 @@ namespace UI
             txtNuevoEjercicio.Text = "";
         }
 
-        protected void grdEjercicios_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            //List<String> a =  e.Values.Values;
-        }
+
+
+        
     }
 }
