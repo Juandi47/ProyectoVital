@@ -4,15 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BL;
 
 namespace UI.Nutricion
 {
     public partial class IngresoNutricion : System.Web.UI.Page
     {
+        ManejadorNutrición manejadorNutri = new ManejadorNutrición();
+        List<Medicamento> ListaMedicamSuplem; 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                ListaMedicamSuplem = new List<Medicamento>();
                 Fecha.Text = "Fecha: " + DateTime.Now;
                 LlenarListas();
                 tSuplementoMedico.Text = "<tr><th>Nombre</th><th>Motivo</th><th>Frecuencia</th><th>Dosis</th></tr>";
@@ -63,9 +67,17 @@ namespace UI.Nutricion
 
         protected void BtnAgreg_Click(object sender, EventArgs e)
         {
+            Medicamento medicamSupl = new Medicamento();
             string tabla = tSuplementoMedico.Text;
             tabla += "<tr><td>" + tNomMed.Text + "</td><td>" + tMotvMed.Text +"</td><td>"+ tFrecMed.Text +"</td><td>"+ tDosisMed.Text +"</td></tr>";
             tSuplementoMedico.Text = tabla;
+            medicamSupl.Cedula = tCedula.Text;
+            medicamSupl.Nombre = tNomMed.Text;
+            medicamSupl.Motivo = tMotvMed.Text;
+            medicamSupl.Frecuencia = tFrecMed.Text;
+            medicamSupl.Dosis = tDosisMed.Text;
+            ListaMedicamSuplem.Add(medicamSupl);
+
             tNomMed.Text = "";
             tMotvMed.Text = "";
             tFrecMed.Text = "";

@@ -22,6 +22,15 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.Label Fecha;
         
         /// <summary>
+        /// tCedula control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tCedula;
+        
+        /// <summary>
         /// tnombre control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,24 @@ namespace UI.Nutricion {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tnombre;
+        
+        /// <summary>
+        /// tApellid1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tApellid1;
+        
+        /// <summary>
+        /// tApellid2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tApellid2;
         
         /// <summary>
         /// tFechNac control.

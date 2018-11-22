@@ -15,13 +15,25 @@
             <form runat="server">
         <h3>Datos Personales:</h3>
                  <div class="row">
-                    <div class="col-15">
+                     <div class="col-10">
+                        <label class="form-label" for="tCedula">Cedula</label>
+                       <asp:TextBox ID="tCedula" runat="server"  placeholder="Cédula" Width="100"></asp:TextBox>
+                    </div>
+                    <div class="col-10">
                         <label class="form-label" for="tnombre">Nombre</label>
-                     </div>
-                    <div class="col-35">
-                       <asp:TextBox ID="tnombre" runat="server"  placeholder="Nombre Completo" Width="350"></asp:TextBox>
+                       <asp:TextBox ID="tnombre" runat="server"  placeholder="Nombre" Width="150"></asp:TextBox>
                     </div>
                      <div class="col-15">
+                         <label class="form-label" for="tApellid1">Apellido 1</label>
+                       <asp:TextBox ID="tApellid1" runat="server"  placeholder="Apellido 1" Width="150"></asp:TextBox>
+                    </div>
+                 <div class="col-15">
+                         <label class="form-label" for="tApellid2">Apellido 2</label>
+                       <asp:TextBox ID="tApellid2" runat="server"  placeholder="Apellido 2" Width="150"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col-10">
                         <label class="form-label" for="tFechNac">Fecha Nacimiento</label>
                       </div>
                      <div class="col-35">
@@ -62,6 +74,8 @@
                 <div class="row">
                     <div class="col-25">
                         <label class="form-label" for="tOcupacion">Ocupación</label>
+                    </div>
+                    <div class="col-10">
                         <asp:TextBox ID="tOcupacion" runat="server"></asp:TextBox>
                     </div>
                     
