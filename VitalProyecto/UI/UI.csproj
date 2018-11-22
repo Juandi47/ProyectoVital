@@ -96,11 +96,14 @@
     <Content Include="css\style-wide.css" />
     <Content Include="css\style.css" />
     <Content Include="Cliente\estilos.css" />
+    <Content Include="css\tabla.css" />
     <Content Include="css\theme.css" />
     <Content Include="css\triangle.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Gestion_Admin.aspx" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\nutriGym.jpg" />
+    <Content Include="images\nutrImg.png" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
@@ -116,8 +119,8 @@
     <Content Include="ModificarAdmin.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
+    <Content Include="Nutricion\IngresoNutricion.aspx" />
     <Content Include="PagInicio.aspx" />
-    <Content Include="PrimerIngreso.aspx" />
     <Content Include="RegistroCliente.aspx" />
     <Content Include="SobreNosotros.html" />
     <Content Include="Web.config" />
@@ -242,19 +245,26 @@
     <Compile Include="Notificacion.aspx.designer.cs">
       <DependentUpon>Notificacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Nutricion\IngresoNutricion.aspx.cs">
+      <DependentUpon>IngresoNutricion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutricion\IngresoNutricion.aspx.designer.cs">
+      <DependentUpon>IngresoNutricion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nutricion\NutricionMaster.Master.cs">
+      <DependentUpon>NutricionMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutricion\NutricionMaster.Master.designer.cs">
+      <DependentUpon>NutricionMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="PagInicio.aspx.cs">
       <DependentUpon>PagInicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PagInicio.aspx.designer.cs">
       <DependentUpon>PagInicio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PrimerIngreso.aspx.cs">
-      <DependentUpon>PrimerIngreso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PrimerIngreso.aspx.designer.cs">
-      <DependentUpon>PrimerIngreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
@@ -277,6 +287,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Nutricion\NutricionMaster.Master" />
     <None Include="packages.config" />
     <Content Include="Principal.Master" />
     <None Include="Web.Debug.config">
@@ -294,7 +305,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Administracion\" />
-    <Folder Include="Nutricion\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
