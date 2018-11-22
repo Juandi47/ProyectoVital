@@ -59,7 +59,7 @@ namespace BL
         public Administrador consultaAdministrador(string cedula) {
 
             TOAdministrador admin = administradorDAO.consultaAdmin(cedula);
-            Administrador administrador = new Administrador(admin.Cedula, admin.Nombre, admin.Apellido1, admin.Apellido2, admin.Clave, admin.Correo);
+            Administrador administrador = new Administrador(admin.Cedula, admin.Nombre, admin.Clave, admin.Apellido1, admin.Apellido2, admin.Correo);
 
             return administrador;
         }

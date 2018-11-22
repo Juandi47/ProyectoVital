@@ -18,9 +18,9 @@ namespace TO
         {
             Cedula = cedula;
             Nombre = nombre;
+            Clave = clave;
             Apellido1 = apellido1;
             Apellido2 = apellido2;
-            Clave = clave;
             Correo = correo;
         }
 
