@@ -112,7 +112,7 @@ namespace UI
                 DateTime fecha_nac = new DateTime(int.Parse(DLAnno.SelectedValue), int.Parse(DlMes.SelectedValue), int.Parse(DlDia.SelectedItem.Text));
                 String correo = txbcorreo.Text;
                 String obs = txbobs.Text;
-                //String pass = pass1.Text;
+                String pass = pass1.Text;
 
                 cliente = new Cliente(ced, nombre, ape1, ape2, fecha_nac, tel, correo, obs);
                 Boolean cliente_creado;
