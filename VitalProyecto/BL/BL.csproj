@@ -53,6 +53,7 @@
     <Compile Include="ManejadorEjercicio.cs" />
     <Compile Include="ManejadorLogin.cs" />
     <Compile Include="ManejadorMedida.cs" />
+    <Compile Include="ManejadorNutrición.cs" />
     <Compile Include="ManejadorRutina.cs" />
     <Compile Include="Medida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
