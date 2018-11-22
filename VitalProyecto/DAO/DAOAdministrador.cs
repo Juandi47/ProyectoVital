@@ -75,7 +75,7 @@ namespace DAO
                     conexion.Open();
                 }
 
-                int numero = sent.ExecuteNonQuery();
+                int numero = (int)sent.ExecuteNonQuery();
                 int numero2 = (int)sent2.ExecuteNonQuery();
 
                 if (numero == 1 && numero2 == 1)
