@@ -115,7 +115,7 @@ namespace UI
             {
                 String pass = pass1.Text;
                 //registrar login
-                Login log = new Login(correo, pass, "cliente");
+                Ingreso log = new Ingreso(correo, pass, "cliente");
                 new ManejadorIngreso().registrarLogin(log);
 
                 cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
