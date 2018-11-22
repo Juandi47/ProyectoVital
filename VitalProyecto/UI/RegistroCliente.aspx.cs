@@ -228,7 +228,8 @@ namespace UI
             txbobs.Text = "";
             DlDia.SelectedIndex = 0;
             DlMes.SelectedIndex = 0;
-            DLAnno.SelectedIndex = 0;
+            DLAnno.SelectedIndex = 0; 
+
 
         }
 
