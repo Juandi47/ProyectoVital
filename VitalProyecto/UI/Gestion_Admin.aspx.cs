@@ -16,6 +16,17 @@ namespace UI
         int count = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            ClientScript.GetPostBackEventReference(this, string.Empty);
+            if (IsPostBack)
+            {
+                if (Page.Request.Params["__EVENTTARGET"] == "Cedula")
+                {
+                    string dato = Page.Request.Params["__EVENTARGUMENT"].ToString();
+                    Session["Administrador"] = dato;
+                    Response.Redirect("~/InformacionAdministrador.aspx");
+                }
+            }
+
             crearTabla();
         }
             
@@ -37,12 +48,12 @@ namespace UI
             TableRow fila = new TableRow(); ;
 
             TableCell celdaNombre = new TableCell();
+            celdaNombre.CssClass = "celda";
             celdaNombre.Text = nombre;
             celdaNombre.Font.Size = 20;
             celdaNombre.Font.Bold = true;
             celdaNombre.BackColor = System.Drawing.Color.Gray;
-            celdaNombre.Attributes.Add("onClick", "location.href='InformacionAdministrador.aspx/?Nombre=" + nombre + "'");
-            //celdaNombre.Attributes.Add("onmouseover", "style+='background - color:blue;'");
+            celdaNombre.Attributes.Add("onClick", "guardarCedula('" + cedula + "')");
             fila.Cells.Add(celdaNombre);
 
             TableCell botonCell = new TableCell();
@@ -66,7 +77,7 @@ namespace UI
 
             btnEliminar.Click += delegate {
 
-                manejo.eliminarAdministrador(cedula);
+                manejo.eliminarAdministrador(cedula, correo);
                 crearTabla();
 
             };
