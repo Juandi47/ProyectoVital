@@ -16,7 +16,7 @@ namespace DAO
 		public List<TOCliente> ListaCliente()
         {
             List<TOCliente> listClientes = new List<TOCliente>();
-            string qry = "Select * from Usuario";
+            string qry = "select * from Cliente c, Usuario u where c.Cedula = u.Cedula;";
             SqlCommand sent = new SqlCommand(qry, conexion);
             SqlDataReader lector;
             conexion.Open();
@@ -30,7 +30,7 @@ namespace DAO
                     c.Nombre = lector["Nombre"].ToString();
                     c.Apellido1 = lector["Apellido1"].ToString();
                     c.Apellido2= lector["Apellido2"].ToString();
-
+                    c.Fecha_Mensualidad = DateTime.Parse(lector["Fecha_mensualidad"].ToString());
 
 
                     listClientes.Add(c);
