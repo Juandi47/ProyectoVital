@@ -55,10 +55,10 @@
     <Compile Include="ManejadorMedida.cs" />
     <Compile Include="ManejadorNutrición.cs" />
     <Compile Include="ManejadorRutina.cs" />
+    <Compile Include="Medicamento.cs" />
     <Compile Include="Medida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rutina.cs" />
-    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">

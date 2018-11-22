@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BL
+namespace TO
 {
-    public class ClienteNutricion
+    public class TOClienteNutricion
     {
-
         public string Cedula { set; get; }
         public string Nombre { set; get; }
         public string Apellido1 { set; get; }
@@ -21,7 +20,7 @@ namespace BL
         public string Ocupacion { set; get; }
 
 
-        public ClienteNutricion(string cedula, string nombre, string apellido1, string apellido2, DateTime fecha_Nacimiento, char sexo, string estado_Civil, int telefono, string residencia, string ocupacion)
+        public TOClienteNutricion(string cedula, string nombre, string apellido1, string apellido2, DateTime fecha_Nacimiento, char sexo, string estado_Civil, int telefono, string residencia, string ocupacion)
         {
             Cedula = cedula;
             Nombre = nombre;
@@ -35,12 +34,11 @@ namespace BL
             Ocupacion = ocupacion;
         }
 
-       
-  
-        public ClienteNutricion()
+
+
+        public TOClienteNutricion()
         {
         }
-       
 
     }
 }
