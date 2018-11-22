@@ -24,6 +24,19 @@
 </head>
 
 <body>
+	<style>
+		.estiloFila {
+			
+			border: 2px solid;
+			border-color: darkolivegreen;
+		}
+
+			.estiloFila :only-child {
+				margin-top: 1000px;
+			}
+
+	</style>
+
 	<form id="form1" runat="server">
 
 		<!-- Header -->
@@ -34,26 +47,114 @@
 				</div>
 				<div>
 					<nav id="nav">
-						<ul>
+						<%--<ul>
 							<li><a href="#">Modificar perfil</a></li>
-						</ul>
+						</ul>--%>
 					</nav>
 				</div>
 			</div>
 		</div>
 
-		<div id="banner" class="admin-banner" style="background-color: gainsboro; background-size: cover">
+		<div style="background-color: gainsboro;">
+			<img src="../images/banner_admin01.jpg" style="width: 100%" />
 		</div>
+
+		<%--	<div id="banner" class="admin-banner" style="background-color: gainsboro; background-size: cover">
+		</div>--%>
 
 
 		<div>
-			<br /><br /><br /><br />
-			<h1>AQUI VA LA INFORMACION DEL EXPEDIENTE DEL CLIENTE</h1>
-			<br /><br /><br /><br />
+
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5"></div>
+					<div class="col-md-4">
+						<asp:TextBox ID="txtTitulo" BackColor="DarkOliveGreen" Text="Expediente del cliente" runat="server" Font-Overline="False" Font-Size="Medium" ForeColor="White" Width="200px"></asp:TextBox>
+						<br />
+						<br />
+					</div>
+					<div class="col-md-3"></div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<br />
+
+						<asp:Table runat="server" CssClass="table-responsive estiloFila">
+							<asp:TableRow CssClass="estiloFila">
+								<asp:TableCell>
+									Cédula: <asp:Label ID="lbCedula" runat="server"></asp:Label>
+								</asp:TableCell>
+
+								<asp:TableCell>
+									Correo: <asp:Label ID="lbCorreo" runat="server"></asp:Label>
+								</asp:TableCell>
+
+								<asp:TableCell>
+									Teléfono: <asp:Label ID="lbTelefono" runat="server"></asp:Label>
+								</asp:TableCell>
+
+							</asp:TableRow>
+
+
+							<asp:TableRow>
+								<asp:TableCell>
+									Nombre: <asp:Label ID="lbNombre" runat="server"></asp:Label>
+								</asp:TableCell>
+
+								<asp:TableCell>
+									Primer apellido: <asp:Label ID="lbApe1" runat="server"></asp:Label>
+								</asp:TableCell>
+
+								<asp:TableCell>
+									Segundo apellido: <asp:Label ID="lbApe2" runat="server"></asp:Label>
+								</asp:TableCell>
+							</asp:TableRow>
+
+							<asp:TableRow>
+								<asp:TableCell>
+									Fecha de nacimiento: <asp:Label ID="lbFecNac" runat="server"></asp:Label>
+								</asp:TableCell>
+
+								<asp:TableCell>
+									Fecha de mensualidad: <asp:Label ID="lbFecMens" runat="server"></asp:Label>
+								</asp:TableCell>
+								
+							</asp:TableRow>
+
+							<asp:TableRow>
+								<asp:TableCell>
+									Observaciones: <asp:Label ID="lbObserva" runat="server"></asp:Label>
+								</asp:TableCell>
+							</asp:TableRow>
+
+						</asp:Table>
+
+						<%--<asp:TextBox ID="txtMedidas" BackColor="DarkOliveGreen" Text="Medidas del cliente" runat="server" Font-Overline="False" Font-Size="Medium" ForeColor="White" Width="200px"></asp:TextBox>--%>
+						<br />
+
+						<br />
+						<br />
+						<br />
+						<br />
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+			</div>
+
 		</div>
 
 	</form>
-	<footer class="footer"></footer>
+
+	<%-- <footer class="footer" style="position: page">
+        <h1 class="title">
+			<br /><br /><br />
+        </h1>
+    </footer>--%>
 </body>
 </html>
 

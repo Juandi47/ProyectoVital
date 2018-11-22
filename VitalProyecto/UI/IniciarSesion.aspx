@@ -10,15 +10,12 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.dropotron.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/skel-layers.min.js"></script>
-	<script src="js/init.js"></script>
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="css/skel.css" />
+	
+		<link rel="stylesheet" href="css/style.css" />
 
 	<link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen"/>
 </head>
@@ -69,7 +66,7 @@
 					<br />
 					Contraseña:<asp:TextBox ID="txtContra" runat="server" TextMode="Password" Font-Size="Small"></asp:TextBox>
 					<br />
-					<asp:Button class="btn btn-success" ID="btnIngresar" runat="server" Height="45px" Text="Ingresar" Width="120px" OnClick="btnIngresar_Click" CssClass="alert-success" Font-Size="Medium" />
+					<asp:Button class="btn btn-success" ID="btnIngresar" runat="server" Height="45px" Text="Ingresar" Width="120px" OnClick="btnIngresar_Click" CssClass="alert-success" Font-Size="Small" />
 					<br />
 					<asp:Label ID="lblIncorrecto" runat="server"></asp:Label>
 					<br />
@@ -85,8 +82,11 @@
 	
 	</div>
 
+
     </form>
 
-	<footer class="footer"></footer>
+	 
+
 </body>
+
 </html>

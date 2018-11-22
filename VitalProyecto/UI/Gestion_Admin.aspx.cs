@@ -10,12 +10,12 @@ namespace UI
 {
     public partial class Gestion_Admin : System.Web.UI.Page
     {
-
-
+        
         ManejadorAdministrador manejo = new ManejadorAdministrador();
         int count = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //datosUsuario.Style: display = "none";
             crearTabla();
         }
             
@@ -35,15 +35,15 @@ namespace UI
         private void crearFila(string cedula, string nombre, string clave, string apellido1, string apellido2, string correo)
         {
             TableRow fila = new TableRow(); ;
-
+            string correoV = correo;
             TableCell celdaNombre = new TableCell();
+            celdaNombre.CssClass = "celda";
             celdaNombre.Text = nombre;
             celdaNombre.Font.Size = 20;
             celdaNombre.Font.Bold = true;
             celdaNombre.BackColor = System.Drawing.Color.Gray;
-            celdaNombre.Attributes.Add("onClick", "location.href='InformacionAdministrador.aspx/?Nombre=" + nombre + "'");
-            //celdaNombre.Attributes.Add("onmouseover", "style+='background - color:blue;'");
-            fila.Cells.Add(celdaNombre);
+            celdaNombre.Attributes.Add("onClick", "mostrarDatosUsuario('" + "Cedula: " + cedula + "', '" + "Nombre completo: " + nombre + " " + apellido1 + " " + apellido2 + "', '" + "correo electronico: " + correo + "','" + datosUsuario.ID + "')");
+            fila.Cells.Add(celdaNombre); 
 
             TableCell botonCell = new TableCell();
             Button btnModificar = new Button();
@@ -66,7 +66,7 @@ namespace UI
 
             btnEliminar.Click += delegate {
 
-                manejo.eliminarAdministrador(cedula);
+                manejo.eliminarAdministrador(cedula, correo);
                 crearTabla();
 
             };
@@ -81,6 +81,18 @@ namespace UI
         }
 
 
+        private void datosAdmin(string cedula, string nombre, string correo) {
+            LabelCedula.Text = cedula;
+            LabelNombre.Text = nombre;
+            LabelCorreo.Text = correo;
+
+            datosUsuario.Visible = true;
+        }
+
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            datosUsuario.Visible = false;
+        }
     }
 
     }

@@ -4,22 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BL
+namespace TO
 {
-	public class Login
+	public class TOIngreso
 	{
 		public string nombre_usuario { set; get; }
 		public string clave { set; get; }
 		public string rol { set; get; }
 
-		public Login(string nombre_Usua, string clave, string rol)
+		public TOIngreso(string nombre_Usua, string clave, string rol)
 		{
 			this.nombre_usuario = nombre_Usua;
 			this.clave = clave;
 			this.rol = rol;
 		}
 
-		public Login()
+		public TOIngreso()
 		{
 
 		}
