@@ -7,14 +7,13 @@
 }
 
 .footer {
-    position: absolute;
     background-color: darkolivegreen;
     bottom: 0;
     width: 100%;
-    height: auto;
+    position: fixed;
     color: white;
     text-align: center;
-    margin-top: 5%;
+    /*margin-top: 5%;*/
 }
 .homepage {
     background-color: white;
@@ -73,8 +72,10 @@
 .form-container {
     border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 20px;
-    
+    padding: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: auto;
 }
 
 .col-25 {
@@ -167,8 +168,8 @@ color:black;
 }*/
 
 .btnn {
-    margin-right: 75%;
-    margin-top: 7%;
+    margin-left: 2%;
+    margin-top: 0%;
 }
 
 .btnn2 {
@@ -196,17 +197,15 @@ color:black;
 }
 
 .ingresoDiv {
-    align-content: center;
-    position: fixed;
+    /*align-content: center;*/
+    /*position:;*/
+    display:inline-block;
     border-radius: 16px;
-    top: 35%;
+    top: 25%;
     background-color: #f2f2f2;
     border: groove 5px #45a049;
     padding: 0px 1% 2% 1%;
-    left: 5%;
-
- 
-    
+    left: 2%;
 }
 
     .ingresoDiv h3 {
@@ -215,4 +214,14 @@ color:black;
 
 .tablaRes :only-child {
 margin-top:10px;
+}
+
+
+
+.cellIzqP {
+   margin-right:5px;
+}
+
+.tablerow {
+margin-left:0%;
 }
