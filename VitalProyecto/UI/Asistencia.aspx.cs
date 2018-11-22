@@ -12,7 +12,11 @@ namespace UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargarClientes();
+			if (new ControlSeguridad().validarAsist() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+			cargarClientes();
         }
 
 

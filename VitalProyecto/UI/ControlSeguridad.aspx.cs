@@ -20,9 +20,9 @@ namespace UI
 			Session["usuario"] = null;
 		}
 
-		public BL.Login usuario()
+		public BL.Ingreso usuario()
 		{
-			return (BL.Login)Session["usuario"];
+			return (BL.Ingreso)Session["usuario"];
 		}
 
 		public Boolean validarCliente()

@@ -51,5 +51,10 @@ namespace TO
             Ced_Cliente = ced_Cliente;
         }
 
+		public TOMedida ()
+		{
+
+		}
+
     }
 }

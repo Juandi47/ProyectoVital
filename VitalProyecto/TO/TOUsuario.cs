@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BL
+namespace TO
 {
-	public class Usuario
+	public class TOUsuario
 	{
 		public string cedula { set; get; }
 		public string correo { set; get; }
@@ -15,7 +15,7 @@ namespace BL
 		public string apellido2 { set; get; }
 		public string rol { set; get; }
 
-		public Usuario(string cedula, string correo, string nombre, string apellido1, string apellido2, string rol)
+		public TOUsuario(string cedula, string correo, string nombre, string apellido1, string apellido2, string rol)
 		{
 			this.cedula = cedula;
 			this.correo = correo;
@@ -25,9 +25,11 @@ namespace BL
 			this.rol = rol;
 		}
 
-		public Usuario()
+		public TOUsuario()
 		{
 
+
 		}
+
 	}
 }

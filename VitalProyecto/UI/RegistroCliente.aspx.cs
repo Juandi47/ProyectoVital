@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BL;
-using Login = BL.Login;
+using Ingreso = BL.Ingreso;
 
 namespace UI
 {
@@ -123,8 +123,8 @@ namespace UI
                     {
                         Response.Write("<script>alert('Cliente registrado correctamente')</script>");
 
-                        Login log = new Login(correo, pass, "cliente");
-                        new ManejadorLogin().registrarLogin(log);
+                        Ingreso log = new Ingreso(correo, pass, "cliente");
+                        new ManejadorIngreso().registrarLogin(log);
                     }
                     else
                     {
