@@ -16,17 +16,7 @@ namespace UI
         int count = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ClientScript.GetPostBackEventReference(this, string.Empty);
-            if (IsPostBack)
-            {
-                if (Page.Request.Params["__EVENTTARGET"] == "Cedula")
-                {
-                    string dato = Page.Request.Params["__EVENTARGUMENT"].ToString();
-                    Session["Administrador"] = dato;
-                    Response.Redirect("~/InformacionAdministrador.aspx");
-                }
-            }
-
+            //datosUsuario.Style: display = "none";
             crearTabla();
         }
             
@@ -53,8 +43,8 @@ namespace UI
             celdaNombre.Font.Size = 20;
             celdaNombre.Font.Bold = true;
             celdaNombre.BackColor = System.Drawing.Color.Gray;
-            celdaNombre.Attributes.Add("onClick", "guardarCedula('" + cedula + "')");
-            fila.Cells.Add(celdaNombre);
+            celdaNombre.Attributes.Add("onClick", "mostrarDatosUsuario('" + cedula + "', '" + nombre + " " + apellido1 + " " + apellido2 + "', '" + correo + "','" + datosUsuario.ID + "')");
+            fila.Cells.Add(celdaNombre); 
 
             TableCell botonCell = new TableCell();
             Button btnModificar = new Button();
@@ -92,6 +82,18 @@ namespace UI
         }
 
 
+        private void datosAdmin(string cedula, string nombre, string correo) {
+            LabelCedula.Text = cedula;
+            LabelNombre.Text = nombre;
+            LabelCorreo.Text = correo;
+
+            datosUsuario.Visible = true;
+        }
+
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            datosUsuario.Visible = false;
+        }
     }
 
     }
