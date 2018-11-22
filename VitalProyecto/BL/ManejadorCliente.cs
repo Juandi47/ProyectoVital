@@ -29,7 +29,7 @@ namespace BL
                 c.Nombre = toClient.Nombre;
                 c.Apellido1 = toClient.Apellido1;
                 c.Apellido2 = toClient.Apellido2;
-
+                c.Fecha_Mensualidad = toClient.Fecha_Mensualidad;
 
 
                 listaBLCliente.Add(c);

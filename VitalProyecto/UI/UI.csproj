@@ -113,9 +113,11 @@
     <Content Include="js\skel-layers.min.js" />
     <Content Include="js\skel.min.js" />
     <Content Include="Cliente\login.aspx" />
+    <Content Include="ListaClientesAdmin.aspx" />
     <Content Include="ModificarAdmin.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
+    <Content Include="Nutricion\IngresoNutricion.aspx" />
     <Content Include="PagInicio.aspx" />
     <Content Include="RegistroCliente.aspx" />
     <Content Include="SobreNosotros.html" />
@@ -220,6 +222,13 @@
     <Compile Include="IniciarSesion.aspx.designer.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListaClientesAdmin.aspx.cs">
+      <DependentUpon>ListaClientesAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaClientesAdmin.aspx.designer.cs">
+      <DependentUpon>ListaClientesAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ModificarAdmin.aspx.cs">
       <DependentUpon>ModificarAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -240,6 +249,20 @@
     </Compile>
     <Compile Include="Notificacion.aspx.designer.cs">
       <DependentUpon>Notificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nutricion\IngresoNutricion.aspx.cs">
+      <DependentUpon>IngresoNutricion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutricion\IngresoNutricion.aspx.designer.cs">
+      <DependentUpon>IngresoNutricion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nutricion\NutricionMaster.Master.cs">
+      <DependentUpon>NutricionMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutricion\NutricionMaster.Master.designer.cs">
+      <DependentUpon>NutricionMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="PagInicio.aspx.cs">
       <DependentUpon>PagInicio.aspx</DependentUpon>
@@ -270,6 +293,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="DiagramaUI.cd" />
+    <Content Include="Nutricion\NutricionMaster.Master" />
     <None Include="packages.config" />
     <Content Include="Principal.Master" />
     <None Include="Web.Debug.config">
@@ -287,7 +311,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Administracion\" />
-    <Folder Include="Nutricion\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

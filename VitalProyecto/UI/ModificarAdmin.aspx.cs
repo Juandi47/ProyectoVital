@@ -18,12 +18,15 @@ namespace UI
                 string valor = Request.QueryString["Valor"];
              
                 Administrador admin = manejadorAdmin.consultaAdministrador(valor);
-                
+
+            if (!IsPostBack) {
                 tced.Text = admin.Cedula;
                 tname.Text = admin.Nombre;
                 tlname1.Text = admin.Apellido1;
-                tlname2.Text = admin.Clave;
+                tlname2.Text = admin.Apellido2;
                 temail.Text = admin.Correo;
+            }
+               
 
         }
 
