@@ -38,14 +38,20 @@ namespace UI
                 //Se debe asegurar que las claves coincidan
                 if (clave2.Equals(clave))
                 {
-                    //se debe verificar que la contraseña no haya sido ingresada anteriormente
-                    if (!manejadorAdmin.existeAdmin(cedula))
+                    if (cedula.Contains("-"))
                     {
-                        mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2, correo);
-                        Response.Write("<script>alert('Usuario registrado correctamente')</script>");
+                        Response.Write("<script>alert('Formato de cedula inválida')</script>");
                     }
                     else {
-                        Response.Write("<script>alert('Ya existe la cedula registrada en el sistema')</script>");
+                        //se debe verificar que la contraseña no haya sido ingresada anteriormente
+                        if (!manejadorAdmin.existeAdmin(cedula))
+                        {
+                            mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2, correo);
+                            Response.Write("<script>alert('Usuario registrado correctamente')</script>");
+                        }
+                        else {
+                            Response.Write("<script>alert('Ya existe la cedula registrada en el sistema')</script>");
+                        }
                     }
                 }
                 else {

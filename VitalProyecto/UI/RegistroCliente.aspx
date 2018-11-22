@@ -33,25 +33,23 @@
                 <asp:Table ID="Table2" runat="server" CssClass="table-responsive">
                     <asp:TableRow runat="server">
                     </asp:TableRow>
-
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">
-                            <asp:Label ID="Label2" CssClass="form-label" runat="server" Text="Nombre"></asp:Label>
+                            <asp:Label ID="Label2" CssClass="form-label" runat="server" Text="Nombre" ></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell runat="server">
-                            <asp:Label ID="Label3" CssClass="form-label" runat="server" Text="1er Apellido"></asp:Label>
+                            <asp:Label ID="Label3" CssClass="form-label" runat="server" Text="1er Apellido" ></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell runat="server">
-                            <asp:Label ID="Label4" CssClass="form-label" runat="server" Text="2do Apellido"></asp:Label>
+                            <asp:Label ID="Label4" CssClass="form-label" runat="server" Text="2do Apellido" ></asp:Label>
                         </asp:TableCell>
                     </asp:TableRow>
-
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">
                             <asp:TextBox ID="txbnombre" runat="server"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell runat="server">
-                            <asp:TextBox ID="txbape1" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txbape1" runat="server" ></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell runat="server">
                             <asp:TextBox ID="txbape2" runat="server"></asp:TextBox>
