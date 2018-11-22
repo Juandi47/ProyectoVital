@@ -13,7 +13,7 @@ namespace BL
 		public DAOLogin daoUsuar = new DAOLogin();
 		public BL.Login buscarUsuario(string correo, string contra)
 		{
-			TOLogin usuarioTO = daoUsuar.BuscarUsuario(correo, contra);
+			TOLogin usuarioTO = daoUsuar.buscarUsuario(correo, contra);
 			if (usuarioTO == null)
 			{
 				return null;

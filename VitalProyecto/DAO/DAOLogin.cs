@@ -12,7 +12,7 @@ namespace DAO
 	{
 		SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
 
-		public TOLogin BuscarUsuario(String correo_usuario, String contra)
+		public TOLogin buscarUsuario(String correo_usuario, String contra)
 		{
 			try
 			{
