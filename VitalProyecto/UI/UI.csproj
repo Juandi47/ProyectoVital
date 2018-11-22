@@ -116,8 +116,8 @@
     <Content Include="ModificarAdmin.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
+    <Content Include="Nutricion\IngresoNutricion.aspx" />
     <Content Include="PagInicio.aspx" />
-    <Content Include="PrimerIngreso.aspx" />
     <Content Include="RegistroCliente.aspx" />
     <Content Include="SobreNosotros.html" />
     <Content Include="Web.config" />
@@ -242,18 +242,26 @@
     <Compile Include="Notificacion.aspx.designer.cs">
       <DependentUpon>Notificacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Nutricion\IngresoNutricion.aspx.cs">
+      <DependentUpon>IngresoNutricion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutricion\IngresoNutricion.aspx.designer.cs">
+      <DependentUpon>IngresoNutricion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nutricion\NutricionMaster.Master.cs">
+      <DependentUpon>NutricionMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutricion\NutricionMaster.Master.designer.cs">
+      <DependentUpon>NutricionMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="PagInicio.aspx.cs">
       <DependentUpon>PagInicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PagInicio.aspx.designer.cs">
       <DependentUpon>PagInicio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PrimerIngreso.aspx.cs">
-      <DependentUpon>PrimerIngreso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PrimerIngreso.aspx.designer.cs">
-      <DependentUpon>PrimerIngreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
@@ -277,6 +285,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="DiagramaUI.cd" />
+    <Content Include="Nutricion\NutricionMaster.Master" />
     <None Include="packages.config" />
     <Content Include="Principal.Master" />
     <None Include="Web.Debug.config">
@@ -294,7 +303,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Administracion\" />
-    <Folder Include="Nutricion\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

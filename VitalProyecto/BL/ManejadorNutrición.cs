@@ -17,7 +17,7 @@ namespace BL
 		public string apellido2 { set; get; }
 		public string rol { set; get; }
 
-		public Usuario(string cedula, string correo, string nombre, string apellido1, string apellido2, string rol)
+        
         DAOClienteNutricion daoClienteNutricion = new DAOClienteNutricion();
         public Boolean CrearCliente(string cedula, string nombre, string apellido1, string apellido2, DateTime fecha_Nacimiento, char sexo, string estado_Civil, int telefono, string residencia, string ocupacion)
         {

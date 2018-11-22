@@ -124,7 +124,7 @@ namespace UI
                     {
                         Response.Write("<script>alert('Cliente registrado correctamente')</script>");
 
-                        Ingreso log = new Ingreso(correo, pass, "cliente");
+                        Ingreso log = new Ingreso(correo, "", "cliente");
                         new ManejadorIngreso().registrarLogin(log);
                     }
                     else

@@ -23,7 +23,7 @@ namespace UI
 
 		public void llenarCampos()
 		{
-			Usuario usuarioSesion = Session["usuarioSesion"] as Usuario;
+            BL.Usuario usuarioSesion = Session["usuarioSesion"] as Usuario;
 			lbNombre.Text = usuarioSesion.nombre;
 			lbApe1.Text = usuarioSesion.apellido1;
 			lbApe2.Text = usuarioSesion.apellido2;
