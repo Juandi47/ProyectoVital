@@ -251,7 +251,6 @@
     </Compile>
     <Compile Include="PrimerIngreso.aspx.cs">
       <DependentUpon>PrimerIngreso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PrimerIngreso.aspx.designer.cs">
       <DependentUpon>PrimerIngreso.aspx</DependentUpon>

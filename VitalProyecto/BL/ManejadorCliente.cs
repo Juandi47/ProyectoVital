@@ -85,10 +85,10 @@ namespace BL
             return clienteDAO.registrarClienteDAO(cliente);
         }
 
-        public void llenarPersona() {
-            Class1 c = new Class1();
-            c.ActualizarRegistroPersona();
-        }
+        //public void llenarPersona() {
+        //    Class1 c = new Class1();
+        //    c.ActualizarRegistroPersona();
+        //}
 
 
         private Cliente parsearClienteTO (TOCliente tocliente) {

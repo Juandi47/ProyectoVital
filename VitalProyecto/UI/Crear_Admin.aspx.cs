@@ -14,7 +14,6 @@ namespace UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
 
@@ -30,25 +29,31 @@ namespace UI
             string apellido2 = tlname2.Text;
             string correo = temail.Text;
 
-            
-                if (cedula.Equals("") || nombre.Equals("") || clave.Equals("") || apellido1.Equals("") || apellido1.Equals(""))
-                {
-                Response.Write( "<script> alert('Debe completar los datos')</script>");
+            //se debe verificar que no hayan espacios incompleto 
+            if (cedula.Equals("") || nombre.Equals("") || clave.Equals("") || apellido1.Equals("") || apellido1.Equals(""))
+            {
+                Response.Write("<script>alert('No deben haber espacios en blanco')</script>");
             }
-                else {
+            else {
                 //Se debe asegurar que las claves coincidan
                 if (clave2.Equals(clave))
                 {
-                    mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2, correo);
-                    
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", mensaje, true);
+                    //se debe verificar que la contraseña no haya sido ingresada anteriormente
+                    if (!manejadorAdmin.existeAdmin(cedula))
+                    {
+                        mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2, correo);
+                        Response.Write("<script>alert('Usuario registrado correctamente')</script>");
+                    }
+                    else {
+                        Response.Write("<script>alert('Ya existe la cedula registrada en el sistema')</script>");
+                    }
                 }
                 else {
-                    Response.Write("<script>alert(Las contraseñas deben coincidir)</script>");
+                    Response.Write("<script>alert('Las claves deben coincidir')</script>");
                 }
-                    
+
             }
-            
+
             tced.Text = string.Empty;
             tname.Text = string.Empty;
             tclave.Text = string.Empty;
@@ -56,7 +61,8 @@ namespace UI
             tlname1.Text = string.Empty;
             tlname2.Text = string.Empty;
             temail.Text = string.Empty;
-            
         }
+
+    
     }
 }

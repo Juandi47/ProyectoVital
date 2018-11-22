@@ -19,15 +19,16 @@ namespace UI
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (new ControlSeguridad().validarAdmin() == true)
-            {
-                Response.Redirect("~/IniciarSesion.aspx");
-            }
+            //if (new ControlSeguridad().validarAdmin() == true)
+            //{
+            //    Response.Redirect("~/IniciarSesion.aspx");
+            //}
 
             string accion = Convert.ToString(Request.QueryString["accion"]);
             if (accion != null && accion.Equals("mod")) {
                 cargarEdicionUsuario();
             } else {
+                ingresoDIV.Visible = false;
                 meses = new string[] { "MES","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
             "Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre"};
 
@@ -111,13 +112,13 @@ namespace UI
                 DateTime fecha_nac = new DateTime(int.Parse(DLAnno.SelectedValue), int.Parse(DlMes.SelectedValue), int.Parse(DlDia.SelectedItem.Text));
                 String correo = txbcorreo.Text;
                 String obs = txbobs.Text;
-                String pass = pass1.Text;
+                //String pass = pass1.Text;
 
                 cliente = new Cliente(ced, nombre, ape1, ape2, fecha_nac, tel, correo, obs);
                 Boolean cliente_creado;
 
-                if (pass1.Text.Equals(pass2.Text) || pass1.Text.Equals("") || pass2.Text.Equals(""))
-                {
+                //if (pass1.Text.Equals(pass2.Text) || pass1.Text.Equals("") || pass2.Text.Equals(""))
+                //{
                     cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
                     if (cliente_creado)
                     {
@@ -130,11 +131,11 @@ namespace UI
                     {
                         Response.Write("<script>alert('Error en registro de cliente')</script>");
                     }
-                }
-                else
-                {
-                    Response.Write("<script>alert('Contraseñas invalidas')</script>");
-                }
+                //}
+                //else
+                //{
+                //    Response.Write("<script>alert('Contraseñas invalidas')</script>");
+                //}
             }
             else {
                 Response.Write("<script>alert('Campos incompletos')</script>");
@@ -198,8 +199,8 @@ namespace UI
             txbape2.Text = "";
             txbtelefono.Text = "";
             txbcorreo.Text = "";
-            pass1.Text = "";
-            pass2.Text = "";
+            //pass1.Text = "";
+            //pass2.Text = "";
             txbobs.Text = "";
             DlDia.SelectedIndex = 0;
             DlMes.SelectedIndex = 0;
@@ -213,7 +214,7 @@ namespace UI
                 txbced.Text.Equals("") || txbnombre.Text.Equals("")||
                 txbape1.Text.Equals("") || txbape2.Text.Equals("") ||
                 txbtelefono.Text.Equals("") || txbcorreo.Text.Equals("")||
-                pass1.Text.Equals("") || pass2.Text.Equals("") ||
+                //pass1.Text.Equals("") || pass2.Text.Equals("") ||
                 DlDia.SelectedIndex == 0 || DlMes.SelectedIndex == 0 ||
                 DLAnno.SelectedIndex == 0 || txbobs.Text.Equals("")
                 ) {
@@ -222,5 +223,8 @@ namespace UI
             return cond;
         }
 
+        protected void habilitarCredenciales_Click(object sender, EventArgs e) {
+            ingresoDIV.Visible=true;
+        }
     }
 }
