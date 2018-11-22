@@ -149,7 +149,8 @@ namespace DAO
             try
             {
 
-                string qry = "UPDATE Administrador SET Nombre = @nom, Clave = @cla, Apellido1 = @ape1, Apellido2 = @ape2, Correo = @cor  where Cedula = @ced;";
+                string qry = "UPDATE Usuario SET Nombre = @nom, Apellido1 = @ape1, Apellido2 = @ape2, Correo = @cor  where Cedula = @ced;";
+               
 
                 SqlCommand sent = new SqlCommand(qry, conexion);
                 sent.Parameters.AddWithValue("@ced", administrador.Cedula);
@@ -171,7 +172,7 @@ namespace DAO
             }
             catch (Exception e)
             {
-
+                return "No se pudo realizar la actualización";
             }
             if (conexion.State != ConnectionState.Closed)
             {

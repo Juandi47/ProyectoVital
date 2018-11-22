@@ -34,8 +34,7 @@ namespace BL
 
 
         public string modificarAdmin(string cedula, string nombre, string clave, string apellido1, string apellido2, string correo) {
-            string mensaje = administradorDAO.modificarAdmin(new TOAdministrador(cedula, nombre, clave, apellido1, apellido2, correo));
-            return mensaje;
+            return administradorDAO.modificarAdmin(new TOAdministrador(cedula, nombre, clave, apellido1, apellido2, correo));
 
         }
 

@@ -20,7 +20,6 @@ namespace BL
             TOClienteNutricion usuario = new TOClienteNutricion(cedula, nombre, apellido1, apellido2,fecha_Nacimiento,sexo,estado_Civil,telefono,residencia,ocupacion);
             return daoClienteNutricion.CrearUsuario(usuario);
         }
-
-        public 
+        
     }
 }
