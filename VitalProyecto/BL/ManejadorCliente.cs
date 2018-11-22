@@ -52,6 +52,24 @@ namespace BL
             return cliente;
         }
 
+        //public Cliente verificarClienteBLMod(Cliente cliente)
+        //{
+
+        //    Boolean exist = clienteDAO.verificarCliente(cliente.Cedula);
+
+        //    if (!exist)
+        //    {
+        //        TOCliente clienteTO = clienteDAO.filtrarDatosCliente(cliente.Cedula);
+        //        cliente = parsearClienteTO(clienteTO);
+        //    }
+        //    else
+        //    {
+        //        cliente.Cedula = "!";
+        //    }
+        //    return cliente;
+        //}
+
+
         public Boolean registrarClienteBL(Cliente c) {
 
             if (c.Cedula.Equals("") || c.Nombre.Equals("")) {
@@ -62,10 +80,10 @@ namespace BL
             return clienteDAO.registrarClienteDAO(cliente);
         }
 
-        public void llenarPersona() {
-            Class1 c = new Class1();
-            c.ActualizarRegistroPersona();
-        }
+        //public void llenarPersona() {
+        //    Class1 c = new Class1();
+        //    c.ActualizarRegistroPersona();
+        //}
 
 
         private Cliente parsearClienteTO (TOCliente tocliente) {

@@ -12,7 +12,7 @@ namespace DAO
 	{
 		SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
 
-		public TOLogin BuscarUsuario(String correo_usuario, String contra)
+		public TOLogin buscarUsuario(String correo_usuario, String contra)
 		{
 			try
 			{
@@ -42,5 +42,24 @@ namespace DAO
 				return null;
 			}
 		}
+
+        public int registrarLogin(TOLogin tOlogin) {
+            SqlCommand cmd = new SqlCommand("insert into Login values (@nomUs,@pass,@rol)", conexion);
+            cmd.Parameters.AddWithValue("@nomUs", tOlogin.nombre_usuario);
+            cmd.Parameters.AddWithValue("@pass", tOlogin.clave);
+            cmd.Parameters.AddWithValue("@rol", tOlogin.rol);
+
+            conexion.Open();
+
+            int res = 0;
+            try {
+                res = cmd.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch (Exception e) {
+                conexion.Close();
+            }
+            return res;
+        }
 	}
 }

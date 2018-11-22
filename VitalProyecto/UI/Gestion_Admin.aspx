@@ -9,6 +9,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
 
+    <script>
+        function guardarCedula(cedula) {
+            __doPostBack("Cedula", cedula);
+        }
+    </script>
+
  <form id="form1" runat="server">
         <asp:Table ID="Administrador" runat="server" class="table table-bordered text-center table-hover-cells">
         </asp:Table>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BL;
+using Login = BL.Login;
 
 namespace UI
 {
@@ -17,15 +18,22 @@ namespace UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            //if (new ControlSeguridad().validarAdmin() == true)
+            //{
+            //    Response.Redirect("~/IniciarSesion.aspx");
+            //}
+
             string accion = Convert.ToString(Request.QueryString["accion"]);
-            if (accion!= null && accion.Equals("mod")) {
+            if (accion != null && accion.Equals("mod")) {
                 cargarEdicionUsuario();
-            } else { 
-            meses = new string[] { "MES","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+            } else {
+                ingresoDIV.Visible = false;
+                meses = new string[] { "MES","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
             "Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre"};
 
-            if (!Page.IsPostBack)
-                cargarFechas();
+                if (!Page.IsPostBack)
+                    cargarFechas();
             }
 
             cliente = new Cliente();
@@ -42,9 +50,9 @@ namespace UI
         private void cargarFechas() {
 
             int anio = 1900;
-            int maxAnio =2100;
+            int maxAnio = 2100;
 
-            ListItem anioItem = new ListItem("AÑO", "" , true);
+            ListItem anioItem = new ListItem("AÑO", "", true);
             DLAnno.Items.Add(anioItem);
 
             ListItem diaItem0 = new ListItem("DIA", "", true);
@@ -53,21 +61,21 @@ namespace UI
             while (anio <= maxAnio) {
                 DLAnno.Items.Add(anio.ToString());
                 anio++;
-             }
+            }
 
-            for (int i = 0; i < meses.Length; i++){
+            for (int i = 0; i < meses.Length; i++) {
                 ListItem mesItem = new ListItem(meses[i], (i + 1) + "", true);
                 DlMes.Items.Add(mesItem);
             }
 
             for (int i = 0; i < 31; i++) {
-                ListItem diaItem = new ListItem((i+1) +"", (i + 1) + "", true);
+                ListItem diaItem = new ListItem((i + 1) + "", (i + 1) + "", true);
                 DlDia.Items.Add(diaItem);
             }
 
             DlMes.DataBind();
             DlDia.DataBind();
-           
+
         }
 
         protected void DlMes_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,7 +92,7 @@ namespace UI
             } else if (mesSeleccionado == 4 || mesSeleccionado == 6 || mesSeleccionado == 9 || mesSeleccionado == 11) {
 
                 DlDia.Items[31].Enabled = false;
-              
+
             }
             DlDia.DataBind();
         }
@@ -92,28 +100,49 @@ namespace UI
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
 
-            String ced = txbced.Text;
-            String nombre = txbnombre.Text;
-            String ape1 = txbape1.Text;
-            String ape2 = txbape2.Text;
-            int tel = int.Parse(txbtelefono.Text);
+            if (camposVacios())
+            {
 
-            DateTime fecha_nac = new DateTime(int.Parse(DLAnno.SelectedValue), int.Parse(DlMes.SelectedValue), int.Parse(DlDia.SelectedItem.Text));
-            String correo = txbcorreo.Text;
-            String obs = txbobs.Text;
+                String ced = txbced.Text;
+                String nombre = txbnombre.Text;
+                String ape1 = txbape1.Text;
+                String ape2 = txbape2.Text;
+                int tel = int.Parse(txbtelefono.Text);
 
-            cliente = new Cliente(ced,nombre,ape1,ape2,fecha_nac,tel,correo,obs);
-            Boolean cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
+                DateTime fecha_nac = new DateTime(int.Parse(DLAnno.SelectedValue), int.Parse(DlMes.SelectedValue), int.Parse(DlDia.SelectedItem.Text));
+                String correo = txbcorreo.Text;
+                String obs = txbobs.Text;
+                //String pass = pass1.Text;
 
-            if (cliente_creado) { 
-                Response.Write("<script>alert('Cliente registrado correctamente')</script>");
+                cliente = new Cliente(ced, nombre, ape1, ape2, fecha_nac, tel, correo, obs);
+                Boolean cliente_creado;
+
+                //if (pass1.Text.Equals(pass2.Text) || pass1.Text.Equals("") || pass2.Text.Equals(""))
+                //{
+                    cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
+                    if (cliente_creado)
+                    {
+                        Response.Write("<script>alert('Cliente registrado correctamente')</script>");
+
+                        Login log = new Login(correo, "", "cliente");
+                        new ManejadorLogin().registrarLogin(log);
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Error en registro de cliente')</script>");
+                    }
+                //}
+                //else
+                //{
+                //    Response.Write("<script>alert('Contraseñas invalidas')</script>");
+                //}
             }
-            else { 
-                Response.Write("<script>alert('Error en registro de cliente')</script>");
+            else {
+                Response.Write("<script>alert('Campos incompletos')</script>");
             }
             limpiarCampos();
         }
-
+        
 
         protected void btnFiltro_Click(object sender, EventArgs e)
         {
@@ -150,7 +179,16 @@ namespace UI
                 }
             }
             else {
-
+                //busqueda para la modificacion
+                cliente.Cedula = txbced.Text;
+                cliente = new ManejadorCliente().verificarClienteBL(cliente);
+                if (!cliente.Cedula.Equals(""))
+                {
+                    txbnombre.Text = cliente.Nombre;
+                    txbape1.Text = cliente.Apellido1;
+                    txbape2.Text = cliente.Apellido2;
+                    
+                }
             }
         }
 
@@ -161,6 +199,8 @@ namespace UI
             txbape2.Text = "";
             txbtelefono.Text = "";
             txbcorreo.Text = "";
+            //pass1.Text = "";
+            //pass2.Text = "";
             txbobs.Text = "";
             DlDia.SelectedIndex = 0;
             DlMes.SelectedIndex = 0;
@@ -168,5 +208,23 @@ namespace UI
 
         }
 
+        public Boolean camposVacios() {
+            Boolean cond = true;
+            if (
+                txbced.Text.Equals("") || txbnombre.Text.Equals("")||
+                txbape1.Text.Equals("") || txbape2.Text.Equals("") ||
+                txbtelefono.Text.Equals("") || txbcorreo.Text.Equals("")||
+                //pass1.Text.Equals("") || pass2.Text.Equals("") ||
+                DlDia.SelectedIndex == 0 || DlMes.SelectedIndex == 0 ||
+                DLAnno.SelectedIndex == 0 || txbobs.Text.Equals("")
+                ) {
+                cond = false;
+            }
+            return cond;
+        }
+
+        protected void habilitarCredenciales_Click(object sender, EventArgs e) {
+            ingresoDIV.Visible=true;
+        }
     }
 }
