@@ -67,10 +67,7 @@
                         </ul>
                     </li>
                     <li><a href="/Notificacion.aspx">Notificación</a></li>
-                     <li><a>Nutrición</a>
-                         <div  style="background-color: gainsboro">
-                                   <img src="../images/nutrImg.png" style="width:100%"/>
-                         </div>  
+                     <li><a>Nutrición</a> 
                         <ul>
                             <li><a href="IngresoNutricion.aspx">Primer Ingreso</a></li>
                             <li><a href="/BancoEjercicios.aspx">Seguimineto Semanal</a></li>
@@ -82,7 +79,7 @@
                     </li>
                 </ul>
                  <div  style="background-color: gainsboro">
-                             <img src="../images/banner_admin01.jpg" style="width:100%"/>
+                             <img src="../images/nutriGym.jpg" style="width:100%"/>
                  </div>
             </nav>
            

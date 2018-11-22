@@ -96,11 +96,13 @@
     <Content Include="css\style-wide.css" />
     <Content Include="css\style.css" />
     <Content Include="Cliente\estilos.css" />
+    <Content Include="css\tabla.css" />
     <Content Include="css\theme.css" />
     <Content Include="css\triangle.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Gestion_Admin.aspx" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\nutriGym.jpg" />
     <Content Include="images\nutrImg.png" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
