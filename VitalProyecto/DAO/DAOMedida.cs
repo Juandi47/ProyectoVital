@@ -66,5 +66,44 @@ namespace DAO
             }
             return ListaMedidas;
         }
-    }
+
+		public TOMedida buscarMedidasCliente(String cedula)
+		{
+			try
+			{
+				TOMedida medida = new TOMedida();
+
+				SqlCommand buscar = new SqlCommand("select *  from Medidas where cedula = @cedula", conexion);
+				buscar.Parameters.AddWithValue("@cedula", cedula);
+				conexion.Open();
+				SqlDataReader lector = buscar.ExecuteReader();
+
+				if (lector.HasRows)
+				{
+					while (lector.Read())
+					{
+						//medida.Clave = Int32.Parse(lector["Clave_Medida"].ToString());
+						medida.Frec_Cardiaca = lector["Frecuencia_Cardiaca"].ToString();
+						medida.Peso = decimal.Parse(lector["Peso"].ToString());
+						medida.Porcent_Grasa = decimal.Parse(lector["Porcentaje_Grasa"].ToString());
+						medida.IMC = decimal.Parse(lector["IMC"].ToString());
+						medida.Cintura = decimal.Parse(lector["Cintura"].ToString());
+						medida.Abdomen = decimal.Parse(lector["Abdomen"].ToString());
+						medida.Cadera = decimal.Parse(lector["Cadera"].ToString());
+						medida.Muslo = decimal.Parse(lector["Muslo"].ToString());
+						medida.Estatura = decimal.Parse(lector["Estatura"].ToString());
+						medida.Ced_Cliente = lector["Cedula"].ToString();
+						medida.fecha_medida = DateTime.Parse(lector["Fecha_Medida"].ToString());
+					}
+					lector.Close();
+				}
+				conexion.Close();
+				return medida;
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+		}
+	}
 }

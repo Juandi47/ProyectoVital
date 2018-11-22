@@ -24,7 +24,7 @@
 </head>
 
 <body>
-	<style>
+	<%--<style>
 		.estiloFila {
 			
 			border: 2px solid;
@@ -35,7 +35,7 @@
 				margin-top: 1000px;
 			}
 
-	</style>
+	</style>--%>
 
 	<form id="form1" runat="server">
 
@@ -103,15 +103,15 @@
 
 							<asp:TableRow>
 								<asp:TableCell>
-									Nombre: <asp:Label ID="lbNombre" runat="server"></asp:Label>
+									<asp:Label ID="lbNombre" runat="server"></asp:Label>
 								</asp:TableCell>
 
 								<asp:TableCell>
-									Primer apellido: <asp:Label ID="lbApe1" runat="server"></asp:Label>
+									<asp:Label ID="lbApe1" runat="server"></asp:Label>
 								</asp:TableCell>
 
 								<asp:TableCell>
-									Segundo apellido: <asp:Label ID="lbApe2" runat="server"></asp:Label>
+									<asp:Label ID="lbApe2" runat="server"></asp:Label>
 								</asp:TableCell>
 							</asp:TableRow>
 
@@ -134,8 +134,49 @@
 
 						</asp:Table>
 
-						<%--<asp:TextBox ID="txtMedidas" BackColor="DarkOliveGreen" Text="Medidas del cliente" runat="server" Font-Overline="False" Font-Size="Medium" ForeColor="White" Width="200px"></asp:TextBox>--%>
-						<br />
+						<asp:TextBox ID="txtMedidas" BackColor="DarkOliveGreen" Text="Medidas del cliente" runat="server" Font-Overline="False" Font-Size="Medium" ForeColor="White" Width="200px"></asp:TextBox>
+						<asp:Table runat="server">
+							<asp:TableRow>
+								<asp:TableCell>
+									Frecuencia cardiaca: <asp:Label ID="lbFrec" runat="server"></asp:Label>
+								</asp:TableCell>
+
+								<asp:TableCell>
+									Peso: <asp:Label ID="lbPeso" runat="server"></asp:Label>
+								</asp:TableCell>
+
+								<asp:TableCell>
+									Porcentaje Grasa: <asp:Label ID="lbGrasa" runat="server"></asp:Label>
+								</asp:TableCell>
+							</asp:TableRow>
+
+							<asp:TableRow>
+								<asp:TableCell>
+									IMC: <asp:Label ID="lbIMC" runat="server"></asp:Label>
+								</asp:TableCell>
+
+								<asp:TableCell>
+									Cintura: <asp:Label ID="lbCintura" runat="server"></asp:Label>
+								</asp:TableCell>
+
+								<asp:TableCell>
+									Abdomen: <asp:Label ID="lbAbdomen" runat="server"></asp:Label>
+								</asp:TableCell>
+
+								<asp:TableCell>
+									Cadera: <asp:Label ID="lbCadera" runat="server"></asp:Label>
+								</asp:TableCell>
+							</asp:TableRow>
+
+							<asp:TableRow>
+								<asp:TableCell>
+									Muslo: <asp:Label ID="lbMuslo" runat="server"></asp:Label>
+								</asp:TableCell>
+								<asp:TableCell>
+									Estatura: <asp:Label ID="lbEstatura" runat="server"></asp:Label>
+								</asp:TableCell>
+							</asp:TableRow>
+						</asp:Table>
 
 						<br />
 						<br />
