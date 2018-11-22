@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BL;
-using Login = BL.Login;
 
 namespace UI
 {
@@ -115,8 +114,8 @@ namespace UI
             {
                 String pass = pass1.Text;
                 //registrar login
-                Login log = new Login(correo, pass, "cliente");
-                new ManejadorLogin().registrarLogin(log);
+                Ingreso log = new Ingreso(correo, pass, "cliente");
+                new ManejadorIngreso().registrarLogin(log);
 
                 cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
                 if (cliente_creado)

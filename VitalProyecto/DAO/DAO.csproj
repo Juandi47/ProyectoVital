@@ -44,7 +44,6 @@
     <Compile Include="DAOAdministrador.cs" />
     <Compile Include="DAOCliente.cs" />
     <Compile Include="DAOClienteNutricion.cs" />
-    <Compile Include="DAOLogin.cs" />
     <Compile Include="DAOIngreso.cs" />
     <Compile Include="DAOMedida.cs" />
     <Compile Include="DAORutina.cs" />
