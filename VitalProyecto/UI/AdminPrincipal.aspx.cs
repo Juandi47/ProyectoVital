@@ -19,9 +19,9 @@ namespace UI
 			}
 		}
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            new ManejadorCliente().llenarPersona();
-        }
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{
+        //    new ManejadorCliente().llenarPersona();
+        //}
     }
 }

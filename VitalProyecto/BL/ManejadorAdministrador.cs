@@ -27,6 +27,7 @@ namespace BL
 
 
 
+
         public string agregarAdministrador(string cedula, string nombre, string clave, string apellido1, string apellido2, string correo) {
             return administradorDAO.agregarAdmin(new TOAdministrador( cedula, nombre, clave, apellido1, apellido2, correo));
         }
@@ -39,8 +40,8 @@ namespace BL
         }
 
 
-        public void eliminarAdministrador(string cedula) {
-           int eliminado = administradorDAO.eliminarAdmin(cedula);
+        public void eliminarAdministrador(string cedula, string correo) {
+           int eliminado = administradorDAO.eliminarAdmin(cedula, correo);
             if (eliminado > 1)
             {
                 //eliminado
@@ -62,6 +63,10 @@ namespace BL
             Administrador administrador = new Administrador(admin.Cedula, admin.Nombre, admin.Apellido1, admin.Apellido2, admin.Clave, admin.Correo);
 
             return administrador;
+        }
+
+        public Boolean existeAdmin(string cedula) {
+            return administradorDAO.existeAdmin(cedula);
         }
 
 
