@@ -35,7 +35,7 @@ namespace UI
             lista = manejo.CargarRutinas();
 
             Rutinas.Rows.Clear();
-            Rutinas.BackColor = System.Drawing.Color.LightGray;
+            Rutinas.BackColor = System.Drawing.Color.Silver;
             int idBotones = 0;
             foreach (Rutina x in lista)
             {
@@ -49,6 +49,7 @@ namespace UI
             TableRow fila = new TableRow(); ;
 
             TableCell celdaNombre = new TableCell();
+            celdaNombre.CssClass = "celda";
             celdaNombre.Text = nombre;
             celdaNombre.Font.Size = 20;
             celdaNombre.Font.Bold = true;
@@ -85,6 +86,11 @@ namespace UI
             Rutinas.Rows.Add(fila);
 
 
+        }
+
+        protected void BtnCrearRutina_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CrearRutina.aspx");
         }
     }
 

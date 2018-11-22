@@ -18,13 +18,14 @@
     <script src="js/skel.min.js"></script>
     <script src="js/skel-layers.min.js"></script>
     <script src="js/init.js"></script>
+    <link href="admin_estilos.css" rel="stylesheet" />
     <noscript>
         <link rel="stylesheet" href="css/skel.css" />
         <link rel="stylesheet" href="css/style.css" />
         
         <%--<link rel="stylesheet" type="text/css" href="admin_estilos.css" />--%>
     </noscript>
-    <link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen">
+    
 </head>
 <body>
 
@@ -49,7 +50,7 @@
                             <li><a href="RegistroCliente.aspx">Ingreso Cliente</a></li>
                             <li><a href="ActualizacionCliente.aspx">Actualización Cliente</a></li>
                             <li><a href="Asistencia.aspx">Módulo Asistencia</a></li>
-                            <li><a href="RegistroCliente.aspx?accion=mod" >Modificar</a></li>
+                            <li><a href="RegistroCliente.aspx?accion=mod">Modificar</a></li>
                         </ul>
                     </li>
                     <li><a href="AdminPrincipal.aspx">Administrador</a>
@@ -61,7 +62,7 @@
                     <li><a>Rutinas</a>
                         <ul>
                             <li><a href="BancoRutinas.aspx">Rutinas</a></li>
-                            <li><a href="#">Ejercicios</a></li>
+                            <li><a href="BancoEjercicios.aspx">Ejercicios</a></li>
                         </ul>
                     </li>
                     <li><a href="Notificacion.aspx">Notificación</a></li>
@@ -72,23 +73,28 @@
              
     </div>
 
-    <div id="banner" class="admin-banner" style="background-color: gainsboro">
-        <h1 class="title">BANNER</h1>
+    <div  style="background-color: gainsboro">
+        <img src="../images/banner_admin01.jpg" style="width:100%"/>
     </div>
 
     <%--<form id="form1" runat="server">--%>
-    <div class="homepage">
+    <div class="body">
          
         <asp:ContentPlaceHolder ID="Cuerpo" runat="server">
-           
         </asp:ContentPlaceHolder>
 
     </div>
-  <%-- </form>--%>
+    <br>
+    <br>
+    <div class="footer">
+        Vital San Ramón, mas que un gimnasio es tu espacio.  Contáctanos: (+506) 2445-xxxx
+    </div>
 
-    <footer class="footer" style="position:page">
+
+    <footer class="footer" style="position: page">
         <h1 class="title">FOOTER</h1>
     </footer>
 
+    <%-- </form>--%>
 </body>
 </html>

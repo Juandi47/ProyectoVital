@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TO;
+using DAO;
 
 namespace BL
 {
@@ -18,8 +19,6 @@ namespace BL
 
                 ejercicio.Clave = x.Clave;
                 ejercicio.Nombre = x.Nombre;
-                ejercicio.Categoria = x.Categoria;
-                ejercicio.Descripcion = x.Descripcion;
                 ejercicio.Series = x.Series;
                 ejercicio.Repeticiones = x.Repeticiones;
 
@@ -28,6 +27,32 @@ namespace BL
 
 
             return lista;
+        }
+
+        public List<HojaEjercicio> mostrarEjercicios()
+        {
+            DAORutina dao = new DAORutina();
+
+            List<HojaEjercicio> lista = new List<HojaEjercicio>();
+
+            List<TOEjercicio> to = dao.CargarEjercicios();
+
+            foreach (TOEjercicio x in to)
+            {
+                HojaEjercicio hojaEjercicio = new HojaEjercicio();
+                hojaEjercicio.Ejercicio = x.Nombre;
+
+                lista.Add(hojaEjercicio);
+            }
+
+
+            return lista;
+        }
+
+        public void agregarEjercicio(String ejercicio) {
+            DAORutina dao = new DAORutina();
+
+            dao.agregarEjercicio(ejercicio);
         }
     }
 }

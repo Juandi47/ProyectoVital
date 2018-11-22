@@ -4,30 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TO
+namespace BL
 {
-    public class TOEjercicio
+    public class HojaRutina
     {
-        
 
-        public TOEjercicio() { }
-
-        public TOEjercicio(int clave, string nombre, int repeticiones, int series)
+        public HojaRutina(string ejercicio, int repeticiones, int series)
         {
-            Clave = clave;
-            Nombre = nombre;
+            Ejercicio = ejercicio;
             Repeticiones = repeticiones;
             Series = series;
         }
 
-        public int Clave { get; set; }
+        public HojaRutina() { }
+        
 
-        public String Nombre { get; set; }
+        public String Ejercicio { get; set; }
 
         public int Repeticiones { get; set; }
 
         public int Series { get; set; }
-
     }
 }
-

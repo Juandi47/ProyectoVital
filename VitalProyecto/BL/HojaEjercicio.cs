@@ -8,21 +8,14 @@ namespace BL
 {
     public class HojaEjercicio
     {
-
-        public HojaEjercicio(string ejercicio, int repeticiones, int series)
+        public HojaEjercicio(string ejercicio)
         {
             Ejercicio = ejercicio;
-            Repeticiones = repeticiones;
-            Series = series;
         }
 
         public HojaEjercicio() { }
-        
+
 
         public String Ejercicio { get; set; }
-
-        public int Repeticiones { get; set; }
-
-        public int Series { get; set; }
     }
 }

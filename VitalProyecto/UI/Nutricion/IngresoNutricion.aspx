@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="PrimerIngreso.aspx.cs" Inherits="UI.Nutricion.PrimerIngreso" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nutricion/NutricionMaster.Master" AutoEventWireup="true" CodeBehind="IngresoNutricion.aspx.cs" Inherits="UI.Nutricion.IngresoNutricion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
- <meta charset="utf-8">
+    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,12 +23,9 @@
                     background-color: #dddddd;
                 }
     </style>
-    <%--<a href="PrimerIngreso.aspx.designer.cs">PrimerIngreso.aspx.designer.cs</a>--%>
-
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
-    <div class="container">
+     <div class="container">
         <h1 class="title">Historial Nutrición Anamnesis</h1>
          <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
         <div class="form-container">
@@ -202,10 +199,7 @@
                         <label class="form-label" for="CostHordia">¿Acostumbra a comer a las horas al día?</label>
                     </div>
                     <div class="col-70">
-                        <asp:DropDownList ID="CostHorDia" runat="server">
-                            <asp:ListItem Text ="Sí" Value="1" />
-                            <asp:ListItem Text ="No" Value="2" />
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="CostHorDia" runat="server"> </asp:DropDownList>
                     </div>
                 </div>
                  <div class="row">
@@ -254,13 +248,10 @@
                 </div>
                 <div class="row">
                     <div class="col-30">
-                        <label class="form-label" for="Aderesos">¿Agrega salsa de tomate, mayonesa, mantequilla o natilla a la comida?</label>
+                        <label class="form-label" for="Aderezos">¿Agrega salsa de tomate, mayonesa, mantequilla o natilla a la comida?</label>
                     </div>
                     <div class="col-70">
-                        <asp:DropDownList ID="Aderesos" runat="server">
-                            <asp:ListItem Text ="Sí" Value="1" />
-                            <asp:ListItem Text ="No" Value="2" />
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="Aderezos" runat="server"> </asp:DropDownList>
                     </div>
                 </div>
                   <div class="row">
@@ -274,9 +265,7 @@
 
                   <%--<asp:Button id="btnCrear" Text="Crear" runat="server" OnClick="btnAgreg_Click"/>--%>
             </form>
-        </div>
-        
-       
-       
+        </div>    
    </div>
+
 </asp:Content>
