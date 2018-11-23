@@ -39,10 +39,10 @@ namespace UI
                 if (clave2.Equals(clave))
                 {
                     //se debe verificar que la contraseña no haya sido ingresada anteriormente
-                    if (!manejadorAdmin.existeAdmin(cedula))
+                    if (manejadorAdmin.existeAdmin(cedula)!= true)
                     {
                         mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2, correo);
-                        Response.Write("<script>alert('Usuario registrado correctamente')</script>");
+                        Response.Write("<script>alert('" + mensaje + "')</script>");
                     }
                     else {
                         Response.Write("<script>alert('Ya existe la cedula registrada en el sistema')</script>");

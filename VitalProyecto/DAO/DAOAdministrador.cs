@@ -228,36 +228,77 @@ namespace DAO
         }
 
 
+        //public Boolean existeAdmin(string cedula)
+        //{
+        //    Boolean mensaje = false;
+        //    int admin = 0;
+
+        //    string qry = "SELECT COUNT (*) as numero FROM Usuario WHERE cedula = @ced;";
+        //    SqlCommand sent = new SqlCommand(qry, conexion);
+        //    sent.Parameters.AddWithValue("@ced", cedula);
+
+        //    if (conexion.State != ConnectionState.Open)
+        //    {
+        //        conexion.Open();
+        //    }
+        //        admin = sent.ExecuteNonQuery();
+           
+
+        //    if (conexion.State != ConnectionState.Closed)
+        //    {
+        //        conexion.Close();
+        //    }
+
+        //    if (admin > 0)
+        //    {
+        //        mensaje = true;
+        //    }
+        //    else {
+        //        mensaje = false;
+        //    }
+        //    return mensaje;
+        //}
+
+
         public Boolean existeAdmin(string cedula)
         {
-            Boolean mensaje = false;
-            int admin = 0;
-
-            string qry = "SELECT COUNT (*) as numero FROM Usuario WHERE cedula = @ced;";
-            SqlCommand sent = new SqlCommand(qry, conexion);
-            sent.Parameters.AddWithValue("@ced", cedula);
-
-            if (conexion.State != ConnectionState.Open)
+            Boolean existe = false;
+            try
             {
-                conexion.Open();
-            }
-                admin = sent.ExecuteNonQuery();
+                TOAdministrador admin;
 
-            if (conexion.State != ConnectionState.Closed)
-            {
-                conexion.Close();
-            }
+                string qry = "select * from Usuario where Cedula = @ced";
+                SqlCommand sent = new SqlCommand(qry, conexion);
+                SqlDataReader lector;
+                sent.Parameters.AddWithValue("@ced", cedula);
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                lector = sent.ExecuteReader();
 
-            if (admin > 0)
+                if (lector.HasRows)
+                {
+                    admin = new TOAdministrador(lector["Cedula"].ToString(), lector["Nombre"].ToString(),
+                             lector["Clave"].ToString(), lector["Apellido1"].ToString(), lector["Apellido2"].ToString(),
+                             lector["Correo"].ToString());
+                    conexion.Close();
+                    existe = true;
+                }
+
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+               
+            }
+            catch (Exception e)
             {
-                mensaje = true;
+                return false;
             }
-            else {
-                mensaje = false;
-            }
-            return mensaje;
+            return existe;
         }
-        
+
 
     }
 

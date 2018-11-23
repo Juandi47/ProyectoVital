@@ -33,8 +33,10 @@ namespace UI
             txtNuevoEjercicio.Text = "";
         }
 
-
-
-        
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            manejador.eliminarEjercicio((sender as LinkButton).CommandArgument);
+            llenarGrid();
+        }
     }
 }

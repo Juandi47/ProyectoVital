@@ -21,8 +21,8 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
 
 
                     <asp:Button ID="BtnCrearRutina" runat="server" Text="Crear Rutina" OnClick="BtnCrearRutina_Click" class="button" BackColor="darkolivegreen"/>
@@ -31,7 +31,7 @@
                     </asp:Table>
 
                 </div>
-                <div class="col-md-2"></div>
+                <div class="col-md-1"></div>
             </div>
         </div>
     </form>
