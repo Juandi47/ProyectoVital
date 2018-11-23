@@ -19,7 +19,20 @@ namespace BL
                 return (medidaDAO.AgregarMedida(nuevaMedida));
         }
 
-       
+		public Medida buscarMedidaCliente(string cedula)
+		{
+			TOMedida medidaTO = medidaDAO.buscarMedidasCliente(cedula);
+			if (medidaTO == null)
+			{
+				return null;
+			}
+			return new Medida (medidaTO.Frec_Cardiaca, 
+				medidaTO.Peso, medidaTO.Porcent_Grasa, medidaTO.IMC, 
+				medidaTO.Cintura, medidaTO.Abdomen, medidaTO.Cadera, 
+				medidaTO.Muslo, medidaTO.Estatura, medidaTO.Ced_Cliente);
+		}
 
-    }
+	}
+
 }
+

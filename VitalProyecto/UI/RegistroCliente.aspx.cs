@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BL;
+using Login = BL.Ingreso;
 
 namespace UI
 {
@@ -38,14 +39,14 @@ namespace UI
                 {
                     cargarFechas();
                     cliente = new Cliente();
-                }
+            }
                 else {
                     cliente = Session["cliente"] as Cliente;
                 }
-                    
-               
-            }
-        
+
+
+        }
+
 
         
 
@@ -119,7 +120,7 @@ namespace UI
 
                 cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
                 if (cliente_creado)
-                {
+            {
                     Response.Write("<script>alert('Cliente registrado correctamente CON CUENTA')</script>");
                 }
                 else
@@ -140,8 +141,11 @@ namespace UI
 
            
 
-            //|| pass1.Text.Equals("") || pass2.Text.Equals("")
-        
+                DateTime fecha_nac = new DateTime(int.Parse(DLAnno.SelectedValue), int.Parse(DlMes.SelectedValue), int.Parse(DlDia.SelectedItem.Text));
+                String correo = txbcorreo.Text;
+                String obs = txbobs.Text;
+                //String pass = pass1.Text;
+
                 if (camposVacios())
                 {
                     crearRegistroCliente();
@@ -155,10 +159,10 @@ namespace UI
                     {
                         Response.Write("<script>alert('Error en registro de cliente')</script>");
                     }
-                }
+            }
                 else
                 {
-                    Response.Write("<script>alert('Campos incompletos')</script>");
+                Response.Write("<script>alert('Campos incompletos')</script>");
             }
             
             //ingresoDIV.Visible = false;
@@ -227,7 +231,7 @@ namespace UI
             txbobs.Text = "";
             DlDia.SelectedIndex = 0;
             DlMes.SelectedIndex = 0;
-            DLAnno.SelectedIndex = 0; 
+            DLAnno.SelectedIndex = 0;
 
 
         }

@@ -127,10 +127,10 @@
 
                         <asp:TableRow CssClass="tablerow">
                             <asp:TableCell>
-                                <asp:TextBox ID="txbtelefono" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txbtelefono" runat="server" MaxLength="8" CssClass="form-control"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <asp:TextBox ID="txbcorreo" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txbcorreo" runat="server" ></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
 

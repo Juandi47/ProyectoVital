@@ -199,5 +199,25 @@ namespace DAO
             }
         }
 
+        public void eliminarEjercicio(String ejercicio) {
+            String query = "delete from Ejercicio where Nombre= @ejer;";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            comando.Parameters.AddWithValue("@ejer", ejercicio);
+
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+
+            comando.ExecuteNonQuery();
+
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+        }
+
     }
 }

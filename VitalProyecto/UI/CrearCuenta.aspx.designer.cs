@@ -10,7 +10,7 @@
 namespace UI {
     
     
-    public partial class CrearRutina {
+    public partial class CrearCuenta {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,39 @@ namespace UI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtNuevaRutina control.
+        /// txtCorreo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNuevaRutina;
+        protected global::System.Web.UI.WebControls.TextBox txtCorreo;
         
         /// <summary>
-        /// btnCrearRutina control.
+        /// txtContra control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrearRutina;
+        protected global::System.Web.UI.WebControls.TextBox txtContra;
         
         /// <summary>
-        /// grdEjercicios control.
+        /// txtRepetir control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdEjercicios;
+        protected global::System.Web.UI.WebControls.TextBox txtRepetir;
+        
+        /// <summary>
+        /// btnCrearCuenta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCrearCuenta;
     }
 }

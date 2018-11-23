@@ -54,5 +54,11 @@ namespace BL
 
             dao.agregarEjercicio(ejercicio);
         }
+
+        public void eliminarEjercicio(String ejercicio) {
+            DAORutina dao = new DAORutina();
+
+            dao.eliminarEjercicio(ejercicio);
+        }
     }
 }
