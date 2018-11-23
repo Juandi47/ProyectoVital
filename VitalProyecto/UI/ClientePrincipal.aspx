@@ -68,13 +68,13 @@
 
 			<div class="container">
 				<div class="row">
-					<div class="col-md-5"></div>
+					<div class="col-md-4"></div>
 					<div class="col-md-4">
-						<asp:TextBox ID="txtTitulo" BackColor="DarkOliveGreen" Text="Expediente del cliente" runat="server" Font-Overline="False" Font-Size="Medium" ForeColor="White" Width="200px"></asp:TextBox>
+						<asp:TextBox ID="txtTitulo" BackColor="DarkOliveGreen" Text="Expediente del cliente" runat="server" Font-Overline="False" Font-Size="Medium" ForeColor="White" ></asp:TextBox>
 						<br />
 						<br />
 					</div>
-					<div class="col-md-3"></div>
+					<div class="col-md-4"></div>
 				</div>
 			</div>
 
