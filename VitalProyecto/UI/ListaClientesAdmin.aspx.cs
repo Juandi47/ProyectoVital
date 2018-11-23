@@ -92,9 +92,10 @@ namespace UI
                 //control.Controls.Add(btn);
 
                 Button btnMod = new Button();
-                btnMod.Text = "Agregar";
-                btnMod.CssClass = "radio small";
+                btnMod.Text = "Modificar";
+                btnMod.CssClass = "radio-mod";
                 btnMod.ID = c.Cedula;
+                btnMod.BackColor = System.Drawing.Color.LightYellow;
                 btnMod.Click += delegate { agregarElemento(btnMod.ID); }; //linea sayayin
                 controlMOd.Controls.Add(btnMod);
                 fila.Cells.Add(controlMOd);
@@ -102,11 +103,12 @@ namespace UI
                 controlEli = new TableCell();
                 controlEli.CssClass = "cell";
                 Button btnEli = new Button();
-                btnMod.Text = "Agregar";
-                btnMod.CssClass = "radio small";
-                btnMod.ID = c.Cedula;
-                btnMod.Click += delegate { agregarElemento(btnMod.ID); }; //linea sayayin
-                controlEli.Controls.Add(btnMod);
+                btnEli.Text = "Eliminar";
+                btnEli.CssClass = "radio-eli";
+                btnEli.ID = c.Cedula;
+                btnEli.BackColor = System.Drawing.Color.LightPink;
+                btnEli.Click += delegate { agregarElemento(btnEli.ID); }; //linea sayayin
+                controlEli.Controls.Add(btnEli);
                 fila.Cells.Add(controlEli);
 
                 tablaClientes.Rows.Add(fila);
