@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BL;
-using Login = BL.Login;
+using Login = BL.Ingreso;
 
 namespace UI
 {
@@ -14,6 +14,8 @@ namespace UI
 
         private String[] meses;
         private Cliente cliente;
+        String correo = "";
+        Boolean cliente_creado;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -27,16 +29,26 @@ namespace UI
             string accion = Convert.ToString(Request.QueryString["accion"]);
             if (accion != null && accion.Equals("mod")) {
                 cargarEdicionUsuario();
+                ingresoDIV.Visible = false;
             } else {
                 ingresoDIV.Visible = false;
                 meses = new string[] { "MES","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
             "Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre"};
 
                 if (!Page.IsPostBack)
+                {
                     cargarFechas();
+                    cliente = new Cliente();
             }
+                else {
+                    cliente = Session["cliente"] as Cliente;
+                }
 
-            cliente = new Cliente();
+
+        }
+
+
+        
 
         }
 
@@ -97,62 +109,78 @@ namespace UI
             DlDia.DataBind();
         }
 
-        protected void btnRegistrar_Click(object sender, EventArgs e)
+        protected void btnRegistrarConCuenta_Click(object sender, EventArgs e)
         {
-
-            if (camposVacios())
+            if (pass1.Text.Equals(pass2.Text))
             {
+                String pass = pass1.Text;
+                //registrar login
+                Ingreso log = new Ingreso(correo, pass, "cliente");
+                new ManejadorIngreso().registrarLogin(log);
 
-                String ced = txbced.Text;
-                String nombre = txbnombre.Text;
-                String ape1 = txbape1.Text;
-                String ape2 = txbape2.Text;
-                int tel = int.Parse(txbtelefono.Text);
+                cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
+                if (cliente_creado)
+            {
+                    Response.Write("<script>alert('Cliente registrado correctamente CON CUENTA')</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Error en registro de cliente')</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script>alert('Contraseñas invalidas CON CUENTA')</script>");
+            }
+            //ingresoDIV.Visible = false;
+            //habilitarCampos();
+            limpiarCampos();
+        }
+
+            protected void btnRegistrar_Click(object sender, EventArgs e){
+
+           
 
                 DateTime fecha_nac = new DateTime(int.Parse(DLAnno.SelectedValue), int.Parse(DlMes.SelectedValue), int.Parse(DlDia.SelectedItem.Text));
                 String correo = txbcorreo.Text;
                 String obs = txbobs.Text;
                 //String pass = pass1.Text;
 
-                cliente = new Cliente(ced, nombre, ape1, ape2, fecha_nac, tel, correo, obs);
-                Boolean cliente_creado;
+                if (camposVacios())
+                {
+                    crearRegistroCliente();
 
-                //if (pass1.Text.Equals(pass2.Text) || pass1.Text.Equals("") || pass2.Text.Equals(""))
-                //{
                     cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
                     if (cliente_creado)
                     {
-                        Response.Write("<script>alert('Cliente registrado correctamente')</script>");
-
-                        Login log = new Login(correo, "", "cliente");
-                        new ManejadorLogin().registrarLogin(log);
+                        Response.Write("<script>alert('Cliente registrado correctamente SIN CUENTA')</script>");
                     }
                     else
                     {
                         Response.Write("<script>alert('Error en registro de cliente')</script>");
                     }
-                //}
-                //else
-                //{
-                //    Response.Write("<script>alert('Contraseñas invalidas')</script>");
-                //}
             }
-            else {
+                else
+                {
                 Response.Write("<script>alert('Campos incompletos')</script>");
             }
+            
+            //ingresoDIV.Visible = false;
+            //habilitarCampos();
             limpiarCampos();
         }
         
 
         protected void btnFiltro_Click(object sender, EventArgs e)
         {
-
+            //REGISTRO
             if (tituloH1.Text.Equals("Registro de cliente"))
             {
-
-
                 if (!txbced.Text.Equals(""))
                 {
+                    if (cliente == null)
+                        cliente = new Cliente();
+
                     cliente.Cedula = txbced.Text;
                     cliente = new ManejadorCliente().verificarClienteBL(cliente);
                     if (cliente.Cedula.Equals("!"))
@@ -181,6 +209,7 @@ namespace UI
             else {
                 //busqueda para la modificacion
                 cliente.Cedula = txbced.Text;
+                Session["cliente"] = cliente;
                 cliente = new ManejadorCliente().verificarClienteBL(cliente);
                 if (!cliente.Cedula.Equals(""))
                 {
@@ -199,13 +228,17 @@ namespace UI
             txbape2.Text = "";
             txbtelefono.Text = "";
             txbcorreo.Text = "";
-            //pass1.Text = "";
-            //pass2.Text = "";
             txbobs.Text = "";
             DlDia.SelectedIndex = 0;
             DlMes.SelectedIndex = 0;
             DLAnno.SelectedIndex = 0;
 
+
+        }
+
+        private void limpiarIngreso() {
+            pass1.Text = "";
+            pass2.Text = "";
         }
 
         public Boolean camposVacios() {
@@ -223,8 +256,94 @@ namespace UI
             return cond;
         }
 
+
+        private void crearRegistroCliente() {
+            String ced = txbced.Text;
+            String nombre = txbnombre.Text;
+            String ape1 = txbape1.Text;
+            String ape2 = txbape2.Text;
+            int tel = int.Parse(txbtelefono.Text);
+            DateTime fecha_nac = new DateTime(int.Parse(DLAnno.SelectedValue), int.Parse(DlMes.SelectedValue), int.Parse(DlDia.SelectedItem.Text));
+            String correo = txbcorreo.Text;
+            String obs = txbobs.Text;
+            cliente = new Cliente(ced, nombre, ape1, ape2, fecha_nac, tel, correo, obs);
+            Session["cliente"] = cliente;
+
+        }
+
         protected void habilitarCredenciales_Click(object sender, EventArgs e) {
-            ingresoDIV.Visible=true;
+
+            if (camposVacios())
+            {
+
+                crearRegistroCliente();
+                TextBoxCorreo2.Text = txbcorreo.Text;
+                desabilitarCampos();
+                TextBoxCorreo2.DataBind();
+
+                ingresoDIV.Visible = true;
+            }
+            else
+            {
+                Response.Write("<script>alert('Campos incompletos CON CUENTA')</script>");
+            }            
+        }
+
+        private void desabilitarCampos() {
+
+
+            lblCed.Visible = false;
+            Label1.Visible = false;
+            Label10.Visible = false;
+            Label3.Visible = false;
+            Label4.Visible = false;
+            Label5.Visible = false;
+            Label6.Visible = false;
+            Label7.Visible = false;
+
+            txbced.Visible = false;
+            txbnombre.Visible = false;
+            txbape1.Visible = false;
+            txbape2.Visible = false;
+            txbtelefono.Visible = false;
+            txbcorreo.Visible = false;
+            //pass1.Visible = false;
+            //pass2.Visible = false;
+            txbobs.Visible = false;
+            DlDia.Visible = false;
+            DlMes.Visible = false;
+            DLAnno.Visible = false;
+
+            btnBusqueda.Visible = false;
+            btnModificar.Visible = false;
+        }
+
+        private void habilitarCampos()
+        {
+            lblCed.Visible = true;
+            Label1.Visible = true;
+            Label10.Visible = true;
+            Label3.Visible = true;
+            Label4.Visible = true;
+            Label5.Visible = true;
+            Label6.Visible = true;
+            Label7.Visible = true;
+
+            txbced.Visible = true;
+            txbnombre.Visible = true;
+            txbape1.Visible = true;
+            txbape2.Visible = true;
+            txbtelefono.Visible = true;
+            txbcorreo.Visible = true;
+            //pass1.Visible = true;
+            //pass2.Visible = true;
+            txbobs.Visible = true;
+            DlDia.Visible = true;
+            DlMes.Visible = true;
+            DLAnno.Visible = true;
+
+            btnBusqueda.Visible = true;
+            btnModificar.Visible = true;
         }
     }
 }

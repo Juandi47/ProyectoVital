@@ -19,10 +19,11 @@ namespace TO
         public decimal Muslo { set; get; }
         public decimal Estatura { set; get; }
         public String Ced_Cliente { set; get; }
+		public DateTime fecha_medida { set; get; }
 
 
 
-        public TOMedida(int clave, string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente)
+		public TOMedida(int clave, string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente, DateTime fecha)
         {
             Clave = clave;
             Frec_Cardiaca = frec_Cardiaca;
@@ -35,9 +36,26 @@ namespace TO
             Muslo = muslo;
             Estatura = estatura;
             Ced_Cliente = ced_Cliente;
+			fecha_medida = fecha;
         }
 
-        public TOMedida(string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente)
+		public TOMedida(int clave, string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente)
+		{
+			Clave = clave;
+			Frec_Cardiaca = frec_Cardiaca;
+			Peso = peso;
+			Porcent_Grasa = porcent_Grasa;
+			IMC = iMC;
+			Cintura = cintura;
+			Abdomen = abdomen;
+			Cadera = cadera;
+			Muslo = muslo;
+			Estatura = estatura;
+			Ced_Cliente = ced_Cliente;
+
+		}
+
+		public TOMedida(string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente)
         {
             Frec_Cardiaca = frec_Cardiaca;
             Peso = peso;
@@ -49,7 +67,13 @@ namespace TO
             Muslo = muslo;
             Estatura = estatura;
             Ced_Cliente = ced_Cliente;
+			
         }
+
+		public TOMedida ()
+		{
+
+		}
 
     }
 }

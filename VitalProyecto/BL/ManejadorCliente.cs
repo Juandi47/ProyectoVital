@@ -11,9 +11,14 @@ namespace BL
 {
     public class ManejadorCliente
     {
+		public ManejadorCliente()
+		{
+
+		}
+
         DAOCliente clienteDAO = new DAOCliente();
 
-        public List<Cliente> listaClientes()
+		public List<Cliente> listaClientes()
         {
             List<TOCliente> listaTO = clienteDAO.ListaCliente();
             List<Cliente> listaBLCliente = new List<Cliente>();
@@ -24,7 +29,7 @@ namespace BL
                 c.Nombre = toClient.Nombre;
                 c.Apellido1 = toClient.Apellido1;
                 c.Apellido2 = toClient.Apellido2;
-
+                c.Fecha_Mensualidad = toClient.Fecha_Mensualidad;
 
 
                 listaBLCliente.Add(c);
@@ -97,5 +102,18 @@ namespace BL
 
             return c;
         }
-    }
+
+		public Cliente buscarCliente(string cedula)
+		{
+			TOCliente clienTO = clienteDAO.buscarCliente(cedula);
+			if (clienTO == null)
+			{
+				return null;
+			}
+			return new Cliente(clienTO.Cedula, clienTO.Nombre, clienTO.Apellido1, 
+				clienTO.Apellido2, clienTO.Fecha_Nacimiento, clienTO.Telefono, clienTO.Correo,
+				clienTO.Observacion, clienTO.Fecha_Mensualidad);
+		}
+
+	}
 }

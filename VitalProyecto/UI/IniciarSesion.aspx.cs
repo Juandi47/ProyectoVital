@@ -20,12 +20,21 @@ namespace UI
 			String correo = txtCorreo.Text;
 			String contra = txtContra.Text;
 
-			BL.Login usua = new ManejadorLogin().buscarUsuario(correo, contra);
+			BL.Ingreso usua = new ManejadorIngreso().buscarUsuario(correo, contra);
+			
+
+			//if (usuarioSesion != null)
+			//{
+				
+			//}
+
 			if (usua.nombre_usuario != null && !usua.clave.Equals(""))
 			{
 				Session["usuario"] = usua;
 				if (usua.rol.Equals("cliente")) 
 				{
+					Usuario usuarioSesion = new ManejadorUsuario().buscarUsuario(correo);
+					Session["usuarioSesion"] = usuarioSesion;
 					Response.Redirect("~/ClientePrincipal.aspx");
 				}
 				else if (usua.rol.Equals("admin"))

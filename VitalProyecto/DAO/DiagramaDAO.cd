@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DAO.DAOAdministrador">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIgAAAAAAAAAAQAAAAAAAAAAAAAAggAAAAAAAE=</HashCode>
+      <FileName>DAOAdministrador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.DAOCliente" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAACAAAAAAgAAAAAAAAAABAAAAE=</HashCode>
+      <FileName>DAOCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.DAOLogin" Collapsed="true">
+    <Position X="3.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAE=</HashCode>
+      <FileName>DAOLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.DAOMedida" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>DAOMedida.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.DAORutina" Collapsed="true">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAACAAAgAACAAAABAAAAAAAAAAAAAAQE=</HashCode>
+      <FileName>DAORutina.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAO.Persona" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAJAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

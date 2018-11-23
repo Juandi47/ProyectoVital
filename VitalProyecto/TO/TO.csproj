@@ -48,9 +48,13 @@
     <Compile Include="TOCliente.cs" />
     <Compile Include="TOClienteNutricion.cs" />
     <Compile Include="TOEjercicio.cs" />
-    <Compile Include="TOLogin.cs" />
+    <Compile Include="TOIngreso.cs" />
     <Compile Include="TOMedida.cs" />
     <Compile Include="TORutina.cs" />
+    <Compile Include="TOUsuario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DiagramaTO.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
