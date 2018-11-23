@@ -52,10 +52,17 @@ namespace UI
             apellidoS.Text = "APELLIDOS";
             apellidoS.CssClass = "cell";
             encabezado.Cells.Add(apellidoS);
-            TableCell control = new TableCell();
-            control.Text = "ASISTENCIA";
-            control.CssClass = "cell";
-            encabezado.Cells.Add(control);
+
+            TableCell controlMOd = new TableCell();
+            controlMOd.Text = "";
+            controlMOd.CssClass = "cell";
+            encabezado.Cells.Add(controlMOd);
+            TableCell controlEli = new TableCell();
+            controlEli.Text = "";
+            controlEli.CssClass = "cell";
+            encabezado.Cells.Add(controlEli);
+
+            tablaClientes.Rows.Add(encabezado);
             tablaClientes.Rows.Add(encabezado);
 
 
@@ -75,16 +82,32 @@ namespace UI
                 apellidoS.CssClass = "cell";
                 apellidoS.Text = c.Apellido1 + " " + c.Apellido2;
                 fila.Cells.Add(apellidoS);
-                control = new TableCell();
-                control.CssClass = "cell";
-                Button btn = new Button();
-                btn.Text = "Agregar";
-                btn.CssClass = "radio small";
-                btn.ID = c.Cedula;
-                btn.Click+= delegate { agregarElemento(btn.ID); };
-                //btn.Attributes.Add("onClick", "agregarElemento(" + btn.ID + ")");
-                control.Controls.Add(btn);
-                fila.Cells.Add(control);
+                controlMOd = new TableCell();
+                controlMOd.CssClass = "cell";
+                //Button btn = new Button();
+                //btn.Text = "Agregar";
+                //btn.CssClass = "radio small";
+                //btn.ID = c.Cedula;
+                //btn.Click+= delegate { agregarElemento(btn.ID); }; //linea sayayin
+                //control.Controls.Add(btn);
+
+                Button btnMod = new Button();
+                btnMod.Text = "Agregar";
+                btnMod.CssClass = "radio small";
+                btnMod.ID = c.Cedula;
+                btnMod.Click += delegate { agregarElemento(btnMod.ID); }; //linea sayayin
+                controlMOd.Controls.Add(btnMod);
+                fila.Cells.Add(controlMOd);
+
+                controlEli = new TableCell();
+                controlEli.CssClass = "cell";
+                Button btnEli = new Button();
+                btnMod.Text = "Agregar";
+                btnMod.CssClass = "radio small";
+                btnMod.ID = c.Cedula;
+                btnMod.Click += delegate { agregarElemento(btnMod.ID); }; //linea sayayin
+                controlEli.Controls.Add(btnMod);
+                fila.Cells.Add(controlEli);
 
                 tablaClientes.Rows.Add(fila);
 
@@ -94,19 +117,8 @@ namespace UI
 
         protected void addBTN_Click(object sender, EventArgs e)
         {
-            //String text = "";
-
-            //    cedulasAgregadas = "";
-
-            //cedulasAgregadas = Session["lista"] as String;
-
-            //String[] listaT = cedulasAgregadas.Split(',');
-
-            //List<String> productos = new List<String>();
 
             String text = "";
-            //if (Session["lista"] != null)
-            //    productos = (List<String>)Session["lista"];
 
             foreach (String ced in cedulasAgregadas)
             {
@@ -114,23 +126,10 @@ namespace UI
                 
             }
             ListaTotal.Text = text;
-            //li
-            //Label1.InnerText = text;
-            //Label1.DataBind();
-
-           
         }
 
         private void agregarElemento(String id) {
-
             cedulasAgregadas.Add(id);
-            //ListaTotal.Text= "QWEQ" + id;
-            //Label1.InnerText = "2q321dasd" + id;
-            //List<String> productos = new List<String>();
-            //if (Session["lista"] != null)
-            //    productos = (List<String>)Session["lista"];
-            //productos.Add(nombre);
-            //Session["lista"] = productos;
         }
 
 
