@@ -9,13 +9,13 @@ using BL;
 namespace UI
 {
     public partial class BancoRutinas : System.Web.UI.Page
-    {        
+    {
 
         private ManejadorRutina manejo = new ManejadorRutina();
         protected void Page_Load(object sender, EventArgs e)
         {
             ClientScript.GetPostBackEventReference(this, string.Empty);
-            
+
             if (IsPostBack)
             {
                 if (Page.Request.Params["__EVENTTARGET"] == "Nombre")
@@ -23,14 +23,15 @@ namespace UI
                     string dato = Page.Request.Params["__EVENTARGUMENT"].ToString();
                     Session["Rutina"] = dato;
                     Response.Redirect("~/MostrarRutina.aspx");
-                }                
+                }
             }
 
             llenarTablaRutinas();
 
         }
 
-        private void llenarTablaRutinas() {
+        private void llenarTablaRutinas()
+        {
             List<Rutina> lista = new List<Rutina>();
             lista = manejo.CargarRutinas();
 
@@ -70,9 +71,10 @@ namespace UI
             btnEliminar.ForeColor = System.Drawing.Color.Black;
             btnEliminar.BackColor = System.Drawing.Color.LightPink;
 
-            btnModificar.Click += delegate {  };
+            btnModificar.Click += delegate { };
 
-            btnEliminar.Click += delegate {
+            btnEliminar.Click += delegate
+            {
 
                 manejo.eliminarRutina(nombre);
                 llenarTablaRutinas();
@@ -80,7 +82,7 @@ namespace UI
             };
 
             botonCell.Controls.Add(btnEliminar);
-            botonCell.Controls.Add(btnModificar);            
+            botonCell.Controls.Add(btnModificar);
             fila.Cells.Add(botonCell);
 
             Rutinas.Rows.Add(fila);

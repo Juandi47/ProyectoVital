@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IniciarSesion.aspx.cs" Inherits="UI.IniciarSesion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CrearCuenta.aspx.cs" Inherits="UI.CrearCuenta" %>
 
 <!DOCTYPE html>
 
@@ -63,14 +63,19 @@
 
 					<br />
 					Correo eléctronico:<asp:TextBox ID="txtCorreo" runat="server" TextMode="Email"></asp:TextBox>
-					<asp:RequiredFieldValidator CssClass="text-danger" ID="reqFieCorreo" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
 					<br />
 					Contraseña:<asp:TextBox ID="txtContra" runat="server" TextMode="Password" Font-Size="Small"></asp:TextBox>
-					<asp:RequiredFieldValidator CssClass="text-danger" ID="reqFieContras" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
 					<br />
-					<asp:Button class="btn btn-success" ID="btnIngresar" runat="server" Height="45px" Text="Ingresar" Width="120px" OnClick="btnIngresar_Click" CssClass="alert-success" Font-Size="Small" />
+					Repetir contraseña:<asp:TextBox ID="txtRepetir" runat="server" TextMode="Password" Font-Size="Small"></asp:TextBox>
+					<br />
+
+
+					<%--<asp:Button class="btn btn-success" ID="btnIngresar" runat="server" Height="45px" Text="Ingresar" Width="120px" OnClick="btnIngresar_Click" CssClass="alert-success" Font-Size="Small" />
 					<br />
 					<asp:Label ID="lblIncorrecto" runat="server"></asp:Label>
+					<br />
+					<br />--%>
+					<asp:Button ID="btnCrearCuenta" runat="server" Font-Size="Small" OnClick="btnCrearCuenta_Click" Text="Crear Cuenta" />
 					<br />
 					<br />
 
@@ -90,5 +95,6 @@
 	 
 
 </body>
+
 
 </html>

@@ -45,6 +45,11 @@
                     <div class="col-35">
                        <asp:TextBox ID="tEdad" runat="server" TextMode="Number"></asp:TextBox>
                     </div>
+                    
+                    <div class="col-10">
+                        <label class="form-label" for="tTelef">Telefono</label>
+                        <asp:TextBox ID="tTelef" runat="server" TextMode="Phone"></asp:TextBox>
+                    </div>
                 </div>
                
                
@@ -58,10 +63,6 @@
                         <asp:DropDownList ID="tEstCivil" runat="server" Width="150px" Height="45px"></asp:DropDownList>
                     </div>
                 
-                    <div class="col-10">
-                        <label class="form-label" for="tTelef">Telefono</label>
-                        <asp:TextBox ID="tTelef" runat="server" TextMode="Phone"></asp:TextBox>
-                    </div>
                     
                       <div class="col-10">
                         <label class="form-label" for="tResid">Residencia</label>

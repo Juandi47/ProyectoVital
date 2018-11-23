@@ -19,8 +19,9 @@ namespace BL
         public decimal Muslo { set; get; }
         public decimal Estatura { set; get; }
         public String Ced_Cliente { set; get; }
+		public DateTime fecha_Medida { set; get; }
 
-        public Medida(int clave, string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente)
+		public Medida(int clave, string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente, DateTime fecha)
         {
             Clave = clave;
             Frec_Cardiaca = frec_Cardiaca;
@@ -33,6 +34,7 @@ namespace BL
             Muslo = muslo;
             Estatura = estatura;
             Ced_Cliente = ced_Cliente;
+			this.fecha_Medida = fecha;
         }
 
         public Medida(string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente)
@@ -47,7 +49,7 @@ namespace BL
             Muslo = muslo;
             Estatura = estatura;
             Ced_Cliente = ced_Cliente;
-        }
+		}
 
     }
 }

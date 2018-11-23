@@ -166,7 +166,7 @@ namespace UI.Nutricion
                 {
                     lico = 1;
                 }
-                HistorialMedico historMed = new HistorialMedico(tCedula.Text, tAnteced.Text, tPatolog.Text, lico, fuma, tFrecFuma.Text, tFrecLicor.Text, Convert.ToDateTime(tFechRevis.Text));
+                HistorialMedico historMed = new HistorialMedico(tCedula.Text, tAnteced.Text, tPatolog.Text, lico, fuma, tFrecFuma.Text, tFrecLicor.Text, Convert.ToDateTime(tFechRevis.Text),ActFisica.Text);
                 manejadorNutri.AgregarHistorialMedico(historMed, ListaMedicamSuplem);
 
 

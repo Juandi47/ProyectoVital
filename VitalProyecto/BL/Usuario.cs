@@ -13,7 +13,7 @@ namespace BL
 		public string nombre { set; get; }
 		public string apellido1 { set; get; }
 		public string apellido2 { set; get; }
-        public string rol { get; set; }
+        public string rol { set; get; }
 
 		public Usuario(string cedula, string correo, string nombre, string apellido1, string apellido2)
 		{
@@ -24,12 +24,8 @@ namespace BL
 			this.apellido2 = apellido2;
 		}
 
-		public Usuario()
-		{
 
-		}
-
-        public Usuario(string cedula, string correo, string nombre, string apellido1, string apellido2, string rol) : this(cedula, correo, nombre, apellido1, apellido2)
+        public Usuario(string cedula, string correo, string nombre, string apellido1, string apellido2, string rol)
         {
             this.cedula = cedula;
             this.correo = correo;
@@ -38,5 +34,9 @@ namespace BL
             this.apellido2 = apellido2;
             this.rol = rol;
         }
-    }
+
+        public Usuario()
+		{
+		}
+	}
 }

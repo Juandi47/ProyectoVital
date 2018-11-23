@@ -21,14 +21,8 @@ namespace UI
 			String contra = txtContra.Text;
 
 			BL.Ingreso usua = new ManejadorIngreso().buscarUsuario(correo, contra);
-			
 
-			//if (usuarioSesion != null)
-			//{
-				
-			//}
-
-			if (usua.nombre_usuario != null && !usua.clave.Equals(""))
+			if (usua.nombre_usuario != null && usua.nombre_usuario.Equals("") && usua.clave != null && !usua.clave.Equals(""))
 			{
 				Session["usuario"] = usua;
 				if (usua.rol.Equals("cliente")) 
@@ -49,7 +43,7 @@ namespace UI
 			}
 			else
 			{
-				lblIncorrecto.Text = "Usuario o contraseña incorrecto";
+				lblIncorrecto.Text = "Datos incompletos";
 			}
 		}
 	}

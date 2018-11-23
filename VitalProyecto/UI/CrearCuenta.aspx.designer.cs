@@ -10,7 +10,7 @@
 namespace UI {
     
     
-    public partial class IniciarSesion {
+    public partial class CrearCuenta {
         
         /// <summary>
         /// form1 control.
@@ -31,15 +31,6 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
         
         /// <summary>
-        /// reqFieCorreo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqFieCorreo;
-        
-        /// <summary>
         /// txtContra control.
         /// </summary>
         /// <remarks>
@@ -49,30 +40,21 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox txtContra;
         
         /// <summary>
-        /// reqFieContras control.
+        /// txtRepetir control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqFieContras;
+        protected global::System.Web.UI.WebControls.TextBox txtRepetir;
         
         /// <summary>
-        /// btnIngresar control.
+        /// btnCrearCuenta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIngresar;
-        
-        /// <summary>
-        /// lblIncorrecto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIncorrecto;
+        protected global::System.Web.UI.WebControls.Button btnCrearCuenta;
     }
 }

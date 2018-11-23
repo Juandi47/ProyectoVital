@@ -76,6 +76,15 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.TextBox tEdad;
         
         /// <summary>
+        /// tTelef control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tTelef;
+        
+        /// <summary>
         /// tSex control.
         /// </summary>
         /// <remarks>
@@ -92,15 +101,6 @@ namespace UI.Nutricion {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList tEstCivil;
-        
-        /// <summary>
-        /// tTelef control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tTelef;
         
         /// <summary>
         /// tResid control.

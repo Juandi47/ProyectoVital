@@ -59,7 +59,7 @@
 
 	<div>
 		<br /><br /><br />
-		<h1 style="text-align:center">Si eres cliente de nuestro gimnasio y no te has registrado, haz click <u><a style="color:darkolivegreen" href="#">aquí</a></u></h1>
+		<h1 style="text-align:center">Si eres cliente de nuestro gimnasio y no te has registrado, haz click <u><a style="color:darkolivegreen" href="CrearCuenta.aspx">aquí</a></u></h1>
 		<br /><br /><br /><br />
 	</div>
 

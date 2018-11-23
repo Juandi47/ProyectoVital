@@ -33,9 +33,10 @@ namespace UI
             txtNuevoEjercicio.Text = "";
         }
 
-        protected void grdEjercicios_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            //List<String> a =  e.Values.Values;
+            manejador.eliminarEjercicio((sender as LinkButton).CommandArgument);
+            llenarGrid();
         }
     }
 }
