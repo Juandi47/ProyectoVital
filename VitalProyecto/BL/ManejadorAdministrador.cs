@@ -68,6 +68,9 @@ namespace BL
             return administradorDAO.existeAdmin(cedula);
         }
 
+        public Boolean existeCorreo(string correo) {
+            return administradorDAO.existeCorreo(correo);
+        }
 
     }
 

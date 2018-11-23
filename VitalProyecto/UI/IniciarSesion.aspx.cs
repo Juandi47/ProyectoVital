@@ -28,7 +28,7 @@ namespace UI
 				
 			//}
 
-			if (usua.nombre_usuario != null && !usua.clave.Equals(""))
+			if (usua.nombre_usuario != null && usua.nombre_usuario.Equals("") && usua.clave != null && !usua.clave.Equals(""))
 			{
 				Session["usuario"] = usua;
 				if (usua.rol.Equals("cliente")) 
@@ -49,7 +49,7 @@ namespace UI
 			}
 			else
 			{
-				lblIncorrecto.Text = "Usuario o contraseña incorrecto";
+				lblIncorrecto.Text = "Datos incompletos";
 			}
 		}
 	}

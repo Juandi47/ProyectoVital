@@ -44,10 +44,16 @@ namespace UI
                     }
                     else {
                         //se debe verificar que la contraseña no haya sido ingresada anteriormente
-                        if (!manejadorAdmin.existeAdmin(cedula))
+                        if (manejadorAdmin.existeAdmin(cedula) == false)
                         {
-                            mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2, correo);
-                            Response.Write("<script>alert('Usuario registrado correctamente')</script>");
+                            if (manejadorAdmin.existeCorreo(correo))
+                            {
+                                Response.Write("<script>alert('El correo electrónico ha sido registrado')</script>");
+                            }
+                            else {
+                                mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2, correo);
+                                Response.Write("<script>alert('Usuario registrado correctamente')</script>");
+                            }
                         }
                         else {
                             Response.Write("<script>alert('Ya existe la cedula registrada en el sistema')</script>");
@@ -59,7 +65,10 @@ namespace UI
                 }
 
             }
+            limpiarControles();
+        }
 
+        private void limpiarControles() {
             tced.Text = string.Empty;
             tname.Text = string.Empty;
             tclave.Text = string.Empty;

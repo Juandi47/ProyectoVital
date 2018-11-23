@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TO;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace DAO
 {
@@ -53,50 +54,64 @@ namespace DAO
 
         public string agregarAdmin(TOAdministrador administrador)
         {
-            try
+            //try
+            //{
+            string mensaje = "";
+            string qry = "insert into Usuario values (@ced, @cor, @nom, @ape1, @ape2)";
+            string qry2 = "insert into Login values( @cor2, @cla, 'admin')";
+
+            SqlCommand sent = new SqlCommand(qry, conexion);
+            SqlCommand sent2 = new SqlCommand(qry2, conexion);
+            sent.Parameters.AddWithValue("@ced", administrador.Cedula);
+            sent.Parameters.AddWithValue("@nom", administrador.Nombre);
+            sent.Parameters.AddWithValue("@cla", administrador.Clave);
+            sent.Parameters.AddWithValue("@ape1", administrador.Apellido1);
+            sent.Parameters.AddWithValue("@ape2", administrador.Apellido2);
+            sent.Parameters.AddWithValue("@cor", administrador.Correo);
+
+            sent2.Parameters.AddWithValue("@cor2", administrador.Correo);
+            //se esta encriptando antes de guardar
+            string contra = Helper.EncodePassword(string.Concat(administrador.Nombre, administrador.Clave));
+            sent2.Parameters.AddWithValue("@cla", contra);
+
+            if (conexion.State != ConnectionState.Open)
             {
-                string mensaje = "";
-                string qry = "insert into Usuario values (@ced, @cor, @nom, @ape1, @ape2)";
-                string qry2 = "insert into Login values( @cor2, @cla, 'admin')";
-
-                SqlCommand sent = new SqlCommand(qry, conexion);
-                SqlCommand sent2 = new SqlCommand(qry2, conexion);
-                sent.Parameters.AddWithValue("@ced", administrador.Cedula);
-                sent.Parameters.AddWithValue("@nom", administrador.Nombre);
-                sent.Parameters.AddWithValue("@cla", administrador.Clave);
-                sent.Parameters.AddWithValue("@ape1", administrador.Apellido1);
-                sent.Parameters.AddWithValue("@ape2", administrador.Apellido2);
-                sent.Parameters.AddWithValue("@cor", administrador.Correo);
-
-                sent2.Parameters.AddWithValue("@cor2", administrador.Correo);
-                sent2.Parameters.AddWithValue("@cla", administrador.Clave);
-
-                if (conexion.State != ConnectionState.Open)
-                {
-                    conexion.Open();
-                }
-
-                int numero = sent.ExecuteNonQuery();
-                int numero2 = (int)sent2.ExecuteNonQuery();
-
-                if (numero == 1 && numero2 == 1)
-                {
-                    mensaje = "ADMINISTRADOR REGISTRADO";
-                }
-                else {
-                    mensaje = "LA CEDULA YA SE ENCONTRABA REGISTRADA";
-                }
-                if (conexion.State != ConnectionState.Closed)
-                {
-                    conexion.Close();
-                }
-                return mensaje;
-            }
-            catch (Exception e)
-            {
-                return "LA CEDULA YA SE ENCONTRABA REGISTRADA";
+                conexion.Open();
             }
 
+            int numero = sent.ExecuteNonQuery();
+            int numero2 = Convert.ToInt32(sent2.ExecuteNonQuery());
+
+            if (numero == 1 && numero2 == 1)
+            {
+                mensaje = "ADMINISTRADOR REGISTRADO";
+            }
+            else {
+                mensaje = "LA CEDULA YA SE ENCONTRABA REGISTRADA";
+            }
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+            return mensaje;
+            //catch (Exception e)
+            //{
+            //    return "LA CEDULA YA SE ENCONTRABA REGISTRADA";
+            //}
+
+        }
+
+        internal class Helper
+        {
+            public static string EncodePassword(string originalPassword)
+            {
+                SHA1 sha1 = new SHA1CryptoServiceProvider();
+
+                byte[] inputBytes = (new UnicodeEncoding()).GetBytes(originalPassword);
+                byte[] hash = sha1.ComputeHash(inputBytes);
+
+                return Convert.ToBase64String(hash);
+            }
         }
 
 
@@ -152,7 +167,7 @@ namespace DAO
 
                 string qry = "UPDATE Usuario SET Nombre = @nom, Apellido1 = @ape1, Apellido2 = @ape2, Correo = @cor  where Cedula = @ced;";
                 string qry2 = "UPDATE Login SET Clave = @cla  where Nombre_usuario = @cor;";
-               
+
 
                 SqlCommand sent = new SqlCommand(qry, conexion);
                 SqlCommand sent2 = new SqlCommand(qry2, conexion);
@@ -163,7 +178,10 @@ namespace DAO
                 sent.Parameters.AddWithValue("@cor", administrador.Correo);
 
                 sent2.Parameters.AddWithValue("@cor", administrador.Correo);
-                sent2.Parameters.AddWithValue("@cla", administrador.Clave);
+
+                string contra = Helper.EncodePassword(string.Concat(administrador.Nombre, administrador.Clave));
+                sent2.Parameters.AddWithValue("@cla", contra);
+                
 
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -237,34 +255,84 @@ namespace DAO
 
         public Boolean existeAdmin(string cedula)
         {
-            Boolean mensaje = false;
-            int admin = 0;
+            TOAdministrador administrador = new TOAdministrador();
 
-            string qry = "SELECT COUNT (*) as numero FROM Usuario WHERE cedula = @ced;";
-            SqlCommand sent = new SqlCommand(qry, conexion);
-            sent.Parameters.AddWithValue("@ced", cedula);
-
-            if (conexion.State != ConnectionState.Open)
+            try
             {
-                conexion.Open();
-            }
-                admin = sent.ExecuteNonQuery();
+                string qry = "SELECT * FROM Usuario WHERE cedula = @ced;";
+                SqlCommand sent = new SqlCommand(qry, conexion);
+                sent.Parameters.AddWithValue("@ced", cedula);
 
-            if (conexion.State != ConnectionState.Closed)
-            {
-                conexion.Close();
-            }
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader admin;
+                admin = sent.ExecuteReader();
 
-            if (admin > 0)
+                if (admin.HasRows)
+                {
+                    while (admin.Read())
+                    {
+                        administrador = new TOAdministrador(admin["Cedula"].ToString(), admin["Nombre"].ToString(),
+                            admin["Clave"].ToString(), admin["Apellido1"].ToString(), admin["Apellido2"].ToString(),
+                            admin["Correo"].ToString());
+                    }
+                    if (conexion.State != ConnectionState.Closed)
+                    {
+                        conexion.Close();
+                    }
+                    return true;
+
+                }
+                else {
+                    return false;
+                }
+            }
+            catch (Exception e)
             {
-                mensaje = true;
+                return true;
             }
-            else {
-                mensaje = false;
-            }
-            return mensaje;
         }
-        
+
+        public Boolean existeCorreo(string correo) {
+            string administrador = "";
+
+            try
+            {
+                string qry = "SELECT * FROM Login WHERE Nombre_usuario = @cor;";
+                SqlCommand sent = new SqlCommand(qry, conexion);
+                sent.Parameters.AddWithValue("@cor", correo);
+
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader admin;
+                admin = sent.ExecuteReader();
+
+                if (admin.HasRows)
+                {
+                    while (admin.Read())
+                    {
+                        administrador = admin["Nombre_usuario"].ToString();
+                    }
+                    if (conexion.State != ConnectionState.Closed)
+                    {
+                        conexion.Close();
+                    }
+                    return true;
+
+                }
+                else {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return true;
+            }
+        }
 
     }
 
