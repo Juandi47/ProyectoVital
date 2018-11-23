@@ -31,7 +31,7 @@ namespace DAO
                     c.Apellido1 = lector["Apellido1"].ToString();
                     c.Apellido2= lector["Apellido2"].ToString();
                     c.Fecha_Mensualidad = DateTime.Parse(lector["Fecha_mensualidad"].ToString());
-
+                    c.Telefono = Int32.Parse(lector["Telefono"].ToString());
 
                     listClientes.Add(c);
 
