@@ -35,7 +35,7 @@ namespace UI
                 Response.Write("<script>alert('No deben haber espacios en blanco')</script>");
             }
             else {
-                //Se debe asegurar que las claves coincidan
+                //Se debe asegurar que las claves coincidan.
                 if (clave2.Equals(clave))
                 {
                     if (cedula.Contains("-"))
