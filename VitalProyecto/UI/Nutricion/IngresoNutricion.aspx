@@ -17,7 +17,7 @@
                  <div class="row">
                      <div class="col-10">
                         <label class="form-label" for="tCedula">Cedula</label>
-                       <asp:TextBox ID="tCedula" runat="server"  placeholder="Cédula" Width="100"></asp:TextBox>
+                       <asp:TextBox ID="tCedula" runat="server" TextMode="Number" placeholder="Cédula" Width="100"></asp:TextBox>
                     </div>
                     <div class="col-10">
                         <label class="form-label" for="tnombre">Nombre</label>
@@ -45,6 +45,11 @@
                     <div class="col-35">
                        <asp:TextBox ID="tEdad" runat="server" TextMode="Number"></asp:TextBox>
                     </div>
+                    
+                    <div class="col-10">
+                        <label class="form-label" for="tTelef">Telefono</label>
+                        <asp:TextBox ID="tTelef" runat="server" TextMode="Phone"></asp:TextBox>
+                    </div>
                 </div>
                
                
@@ -58,10 +63,6 @@
                         <asp:DropDownList ID="tEstCivil" runat="server" Width="150px" Height="45px"></asp:DropDownList>
                     </div>
                 
-                    <div class="col-10">
-                        <label class="form-label" for="tTelef">Telefono</label>
-                        <asp:TextBox ID="tTelef" runat="server" TextMode="Phone"></asp:TextBox>
-                    </div>
                     
                       <div class="col-10">
                         <label class="form-label" for="tResid">Residencia</label>
@@ -143,9 +144,9 @@
                 </div>
                
                 <div class="row">
-                            <table>
-                                <asp:Literal ID="tSuplementoMedico" runat="server"></asp:Literal>
-                            </table>     
+                    <table>
+                        <asp:Literal ID="tSuplementoMedico" runat="server"></asp:Literal>
+                    </table>     
                 </div>
                 <div class="row">
                     <div class="col-55">

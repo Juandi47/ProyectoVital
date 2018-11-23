@@ -48,6 +48,7 @@
     <Compile Include="TOCliente.cs" />
     <Compile Include="TOClienteNutricion.cs" />
     <Compile Include="TOEjercicio.cs" />
+    <Compile Include="TOHistorialMedico.cs" />
     <Compile Include="TOIngreso.cs" />
     <Compile Include="TOMedida.cs" />
     <Compile Include="TORutina.cs" />

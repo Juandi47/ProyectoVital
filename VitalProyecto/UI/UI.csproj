@@ -76,6 +76,7 @@
     <Content Include="ClientePrincipal.aspx" />
     <Content Include="Contactenos.html" />
     <Content Include="ControlSeguridad.aspx" />
+    <Content Include="CrearCuenta.aspx" />
     <Content Include="CrearRutina.aspx" />
     <Content Include="Crear_Admin.aspx" />
     <Content Include="Asistencia.aspx" />
@@ -86,6 +87,7 @@
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
     <Content Include="css\ie\v8.css" />
+    <Content Include="css\NotifB.css" />
     <Content Include="css\pikaday.css" />
     <Content Include="css\site.css" />
     <Content Include="css\skel.css" />
@@ -113,6 +115,7 @@
     <Content Include="js\skel-layers.min.js" />
     <Content Include="js\skel.min.js" />
     <Content Include="Cliente\login.aspx" />
+    <Content Include="ListaClientesAdmin.aspx" />
     <Content Include="ModificarAdmin.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
@@ -186,6 +189,13 @@
     <Compile Include="ControlSeguridad.aspx.designer.cs">
       <DependentUpon>ControlSeguridad.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CrearCuenta.aspx.cs">
+      <DependentUpon>CrearCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearCuenta.aspx.designer.cs">
+      <DependentUpon>CrearCuenta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CrearRutina.aspx.cs">
       <DependentUpon>CrearRutina.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -220,6 +230,13 @@
     </Compile>
     <Compile Include="IniciarSesion.aspx.designer.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaClientesAdmin.aspx.cs">
+      <DependentUpon>ListaClientesAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaClientesAdmin.aspx.designer.cs">
+      <DependentUpon>ListaClientesAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModificarAdmin.aspx.cs">
       <DependentUpon>ModificarAdmin.aspx</DependentUpon>

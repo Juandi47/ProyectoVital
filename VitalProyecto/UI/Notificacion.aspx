@@ -2,48 +2,33 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/NotifB.css"
      <script src="http://ajax.googleapis.com/ajax/libs/jquery/x.x.x/jquery.min.js"></script>
     <script src="jquery.bpopup-x.x.x.min.js"></script>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
-    <form runat="server">   
-         <%--<asp:Button  ID="Button" runat="server" OnClick="Button_Click" Text="Enviar MSJ" />
-            $('Button').bPopup({
-            autoClose: 1000 //Auto closes after 1000ms/1sec
-        });--%>
-             
-    </form>
-   <%-- <a href="https://wa.me/50683955544?text=esto%20es%20una%20prueba%20para%20la%20api%20de%20whatsapp">Whatsapp</a>--%>
-
-    <div class="w3-container" id="listaPed">
-    <asp:literal runat="server" ID="Notif"></asp:literal> 
+    <div class="container">
+       <form runat="server">
+        <h1 class="title">Notificación de mensualidad</h1>
+           <asp:Label ID="Fecha" Text="Fecha del Servidor:" runat="server"></asp:Label>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <asp:Button ID="RecargarNotif" runat="server" Text="Cargar Lista" OnClick="RecargarNotif_Click" CssClass="button button1" Height="51px" Width="216px" Font-Size="Small"/>         
+         <div class="form-container">
+            <div class="w3-container" id="listaPed">
+                <table class="w3-table-allw3-hoverable">
+                    <asp:literal runat="server" ID="Notif"></asp:literal> 
+                </table>
+           </div>
+        </div>
+       </form>
+        
     </div>
-   
 
- <%-- <table class="w3-table-all w3-hoverable" >
-    <thead>
-      <tr class="w3-light-grey">
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Points</th>
-      </tr>
-    </thead>--%>
-   <%-- <tr>
-      <td>Jill</td>
-      <td>Smith</td>
-      <td>50</td>
-    </tr>
-    <tr>
-      <td>Eve</td>
-      <td>Jackson</td>
-      <td>94</td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-    </tr>
-  </table>
-</div>--%>
 
 </asp:Content>
