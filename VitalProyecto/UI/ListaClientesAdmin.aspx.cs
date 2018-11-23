@@ -42,6 +42,7 @@ namespace UI
             encabezado.CssClass = "encabezadoTablaAsistencia";
             TableCell cedula = new TableCell();
             cedula.Text = "CEDULA";
+            
             cedula.CssClass = "cell";
             encabezado.Cells.Add(cedula);
             TableCell nombre = new TableCell();
@@ -93,9 +94,10 @@ namespace UI
 
                 Button btnMod = new Button();
                 btnMod.Text = "Modificar";
-                btnMod.CssClass = "radio-mod";
+                btnMod.CssClass = "radio-mod small" ;
                 btnMod.ID = c.Cedula;
-                btnMod.BackColor = System.Drawing.Color.LightYellow;
+                //btnMod.BackColor = System.Drawing.Color.LightYellow;
+                //btnMod.Width;
                 btnMod.Click += delegate { agregarElemento(btnMod.ID); }; //linea sayayin
                 controlMOd.Controls.Add(btnMod);
                 fila.Cells.Add(controlMOd);
@@ -104,9 +106,10 @@ namespace UI
                 controlEli.CssClass = "cell";
                 Button btnEli = new Button();
                 btnEli.Text = "Eliminar";
-                btnEli.CssClass = "radio-eli";
+                btnEli.CssClass = "radio-eli small";
                 btnEli.ID = c.Cedula;
                 btnEli.BackColor = System.Drawing.Color.LightPink;
+                
                 btnEli.Click += delegate { agregarElemento(btnEli.ID); }; //linea sayayin
                 controlEli.Controls.Add(btnEli);
                 fila.Cells.Add(controlEli);
