@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="CrearRutina.aspx.cs" Inherits="UI.CrearRutina" EnableEventValidation="false"  %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="CrearRutina.aspx.cs" Inherits="UI.CrearRutina" EnableEventValidation="false"  %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
@@ -84,7 +84,8 @@
 
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:Button Enabled="false" Font-Size="Small" BackColor="#98989a" runat="server" commandargument='<%#Container.DataItemIndex%>' xmlns:asp="#unknown" OnClick="GuardarLinea_Click" Width="100px" Height="35px" Wrap="false"  id="GuardarLinea" Text="Guardar"/>
+                                    <asp:Button Enabled="false" Font-Size="Small" BackColor="#98989a" runat="server" CommandArgument='<%# Container.DataItemIndex  %>' OnClick="GuardarLinea_Click " Width="100px" Height="35px" Wrap="false"  id="GuardarLinea" Text="Guardar"/>
+                               
                                 </ItemTemplate>
                                 <ItemStyle HorizontalAlign="Center" Wrap="false" Width="55px" />
                             </asp:TemplateField>

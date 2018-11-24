@@ -47,20 +47,47 @@ namespace UI
 
         private void crearFila(String nombre, int idBotones)
         {
-            TableRow fila = new TableRow(); ;
+            TableRow fila = new TableRow(); ;            
 
             TableCell celdaNombre = new TableCell();
+
+            celdaNombre.Attributes.Add("HorizontalAlign", "Center");
+            celdaNombre.Attributes.Add("Wrap", "false");
+            celdaNombre.Attributes.Add("Width", "355px");
+            celdaNombre.Attributes.Add("VerticalAlign", "Middle");
+
             celdaNombre.CssClass = "celda";
             celdaNombre.Text = nombre;
-            celdaNombre.Font.Size = 20;
+            celdaNombre.Font.Size = FontUnit.Medium;
             celdaNombre.Font.Bold = true;
             celdaNombre.BackColor = System.Drawing.Color.Gray;
             celdaNombre.Attributes.Add("onClick", "guardarNombre('" + nombre + "')");
             fila.Cells.Add(celdaNombre);
 
             TableCell botonCell = new TableCell();
+
+            
+            botonCell.Attributes.Add("HorizontalAlign", "Center");
+            botonCell.Attributes.Add("Wrap", "false");
+            botonCell.Attributes.Add("Width", "55px");
+            botonCell.Attributes.Add("VerticalAlign", "Middle");
+
             Button btnModificar = new Button();
             Button btnEliminar = new Button();
+
+            btnModificar.Attributes.Add("HorizontalAlign", "Center");
+            btnModificar.Attributes.Add("HorizontalAlign", "Center");
+            btnModificar.Attributes.Add("Wrap", "false");
+            btnModificar.Attributes.Add("VerticalAlign", "Middle");
+
+            btnModificar.Width = 125;
+            btnEliminar.Width = 120;
+
+            btnModificar.Height = 35;
+            btnEliminar.Height = 35;
+
+            btnModificar.Font.Size = FontUnit.Small;
+            btnEliminar.Font.Size = FontUnit.Small;
 
             btnModificar.ID = "btnModificar" + idBotones;
             btnEliminar.ID = "btnEliminar" + idBotones;
