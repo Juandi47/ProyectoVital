@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,10 @@ namespace DAO
     {
         SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
 
-        public Boolean CrearUsuario(TOClienteNutricion tOCliente)
+        public bool CrearUsuario(TOClienteNutricion tOCliente)
         {
             String query1 = "Insert into Usuario values(@ced,@cor,@nomb,@ape1,@ape2,@rol);";
-            String query2 = "Insert into Cliente_Nutricion values(@fechNac,@sexo,@estCiv,@tel,@resid,@ocup,@ced);";
+            String query2 = "Insert into Cliente_Nutricion values(@fechNac,@sexo,@estCiv,@tel,@resid,@ocup,@ced,@ingres);";
 
             SqlCommand cmd = new SqlCommand(query1, conexion);
             SqlCommand cmd2 = new SqlCommand(query2, conexion);
@@ -32,8 +33,7 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@ape2", tOCliente.Apellido2);
                 cmd.Parameters.AddWithValue("@rol", "ClienteNutricion");
 
-                //Usuario
-                //ced, correo, nom, ape1, ape2
+                
                 cmd2.Parameters.AddWithValue("@fechNac", tOCliente.Fecha_Nacimiento);
                 cmd2.Parameters.AddWithValue("@sexo", tOCliente.Sexo);
                 cmd2.Parameters.AddWithValue("@estCiv", tOCliente.Estado_Civil);
@@ -41,8 +41,12 @@ namespace DAO
                 cmd2.Parameters.AddWithValue("@resid", tOCliente.Residencia);
                 cmd2.Parameters.AddWithValue("@ocup", tOCliente.Ocupacion);
                 cmd2.Parameters.AddWithValue("@ced", tOCliente.Cedula);
+            cmd2.Parameters.AddWithValue("@ingres", DateTime.Now);
 
-                conexion.Open();
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
                 //inserta padre
                 cmd.ExecuteNonQuery();
                 //inserta hijo
@@ -57,5 +61,121 @@ namespace DAO
                 return false;
             }
         }
+
+        public bool GuardarHabitos(TOHabitoAlimentario HabitosAlimentario, List<TORecordatorio24H> listaR)
+        {
+            String query1 = "Insert into HabitosAlimentario values(@ced,@comDi,@ComHD,@express,@comFue,@azuc,@comElab,@agua,@ader,@frut,@verd,@lech,@huev,@yogurt,@carn,@ques,@aguacat,@semil);";
+            String query2 = "Insert into Recordat24H values(@ced,@tiempC,@comid,@cant,@descrip);";
+            SqlCommand cmd = new SqlCommand(query1, conexion);
+            SqlCommand cmd2 = new SqlCommand(query2, conexion);
+            try
+            {
+                //Cliente padre
+                //ced, fecha, tel, obs, mens
+
+                cmd.Parameters.AddWithValue("@ced", HabitosAlimentario.Cedula);
+                cmd.Parameters.AddWithValue("@comDi", HabitosAlimentario.ComidaDiaria);
+                cmd.Parameters.AddWithValue("@ComHD", HabitosAlimentario.ComidaHorasDia);
+                cmd.Parameters.AddWithValue("@express", HabitosAlimentario.AfueraExpress);
+                cmd.Parameters.AddWithValue("@comFue", HabitosAlimentario.ComidaFuera);
+                cmd.Parameters.AddWithValue("@azuc", HabitosAlimentario.AzucarBebida);
+                cmd.Parameters.AddWithValue("@comElab", HabitosAlimentario.ComidaElaboradCon);
+                cmd.Parameters.AddWithValue("@agua", HabitosAlimentario.AguaDiaria);
+                cmd.Parameters.AddWithValue("@ader", HabitosAlimentario.Aderezos);
+                cmd.Parameters.AddWithValue("@frut", HabitosAlimentario.Fruta);
+                cmd.Parameters.AddWithValue("@verd", HabitosAlimentario.Verdura);
+                cmd.Parameters.AddWithValue("@lech", HabitosAlimentario.Leche);
+                cmd.Parameters.AddWithValue("@yogurt", HabitosAlimentario.Yogurt);
+                cmd.Parameters.AddWithValue("@carn", HabitosAlimentario.Carne);
+                cmd.Parameters.AddWithValue("@ques", HabitosAlimentario.Queso);
+                cmd.Parameters.AddWithValue("@aguacat", HabitosAlimentario.Aguacate);
+                cmd.Parameters.AddWithValue("@semil", HabitosAlimentario.Semillas);
+                
+
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                //inserta padre
+                cmd.ExecuteNonQuery();
+                if (listaR != null)
+                {
+                    foreach (TORecordatorio24H recordatorio in listaR)
+                    {
+                        cmd2.Parameters.AddWithValue("@ced", recordatorio.Cedula);
+                        cmd2.Parameters.AddWithValue("@tiempC", recordatorio.TiempoComida);
+                        cmd2.Parameters.AddWithValue("@comid", recordatorio.Comida);
+                        cmd2.Parameters.AddWithValue("@cant", recordatorio.Cantidad);
+                        cmd2.Parameters.AddWithValue("@descrip", recordatorio.Descripcion);
+
+                        cmd2.ExecuteNonQuery();
+                    }
+                }
+
+                conexion.Close();
+
+                return true;
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+        }
+
+        public bool GuardarHistorial(TOHistorialMedico historial, List<TOMedicamento> listaMedicamento)
+        {
+            String query1 = "Insert into Historial_Medico values(@antec,@patol,@consLic,@fum,@fechEx,@ced,@frecFum,@frecTom,@actvFis);";
+            String query2 = "Insert into Medic_Suplem values(@ced,@nomb,@mot,@frec,@dosis);";
+
+            SqlCommand cmd = new SqlCommand(query1, conexion);
+            SqlCommand cmd2 = new SqlCommand(query2, conexion);
+
+            try
+            {
+                //Historial Medico.
+                //Asignacion de parametros.
+                cmd.Parameters.AddWithValue("@antec", historial.Antecedentes);
+                cmd.Parameters.AddWithValue("@patol", historial.Patologias);
+                cmd.Parameters.AddWithValue("@consLic", historial.ConsumeLicor);
+                cmd.Parameters.AddWithValue("@fum", historial.Fuma);
+                cmd.Parameters.AddWithValue("@fechEx", historial.UltimoExamen);
+                cmd.Parameters.AddWithValue("@ced", historial.Cedula);
+                cmd.Parameters.AddWithValue("@frecFum", historial.FrecFuma);
+                cmd.Parameters.AddWithValue("@frecTom", historial.FrecLicor);
+                cmd.Parameters.AddWithValue("@actvFis", historial.ActividadFisica);
+                //Validacion del estado de la conexion.
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                //Insercion del historial medico.
+                cmd.ExecuteNonQuery();
+                //Insercion de los medicamentos o suplementos del cliente.
+                if(listaMedicamento != null)
+                {
+                    foreach (TOMedicamento medicamento in listaMedicamento)
+                    {
+                        cmd2.Parameters.AddWithValue("@ced", medicamento.Cedula);
+                        cmd2.Parameters.AddWithValue("@nomb", medicamento.Nombre);
+                        cmd2.Parameters.AddWithValue("@mot", medicamento.Motivo);
+                        cmd2.Parameters.AddWithValue("@frec", medicamento.Frecuencia);
+                        cmd2.Parameters.AddWithValue("@dosis", medicamento.Dosis);
+
+                        cmd2.ExecuteNonQuery();
+                    }
+                }
+              
+
+                conexion.Close();
+
+                return true;
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+
+        }
+
     }
 }

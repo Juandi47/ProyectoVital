@@ -9,7 +9,7 @@ namespace TO
     public class TOMedida
     {
         public int Clave { set; get; }
-        public String Frec_Cardiaca { set; get; }
+        public string Frec_Cardiaca { set; get; }
         public decimal Peso { set; get; }
         public decimal Porcent_Grasa { set; get; }
         public decimal IMC { set; get; }
@@ -18,14 +18,13 @@ namespace TO
         public decimal Cadera { set; get; }
         public decimal Muslo { set; get; }
         public decimal Estatura { set; get; }
-        public String Ced_Cliente { set; get; }
-		public DateTime fecha_medida { set; get; }
+        public string Ced_Cliente { set; get; }
+		public DateTime Fecha_medida { set; get; }
 
 
 
-		public TOMedida(int clave, string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente, DateTime fecha)
+		public TOMedida(string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente, DateTime fecha)
         {
-            Clave = clave;
             Frec_Cardiaca = frec_Cardiaca;
             Peso = peso;
             Porcent_Grasa = porcent_Grasa;
@@ -36,7 +35,7 @@ namespace TO
             Muslo = muslo;
             Estatura = estatura;
             Ced_Cliente = ced_Cliente;
-			fecha_medida = fecha;
+			Fecha_medida = fecha;
         }
 
 		public TOMedida(int clave, string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente)

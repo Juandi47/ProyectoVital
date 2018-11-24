@@ -13,3 +13,12 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+.tabla {
+    width: 600px;
+    height: 400px;
+    padding: 0;
+}
+.tr{
+    vertical-align:top;
+}

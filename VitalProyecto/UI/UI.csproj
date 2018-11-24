@@ -98,6 +98,7 @@
     <Content Include="css\style-wide.css" />
     <Content Include="css\style.css" />
     <Content Include="Cliente\estilos.css" />
+    <Content Include="css\tabla.css" />
     <Content Include="css\theme.css" />
     <Content Include="css\triangle.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -108,6 +109,7 @@
     <Content Include="Cliente\index2.aspx" />
     <Content Include="InformacionAdministrador.aspx" />
     <Content Include="IniciarSesion.aspx" />
+    <Content Include="js\alertify.js" />
     <Content Include="js\init.js" />
     <Content Include="js\jquery.dropotron.min.js" />
     <Content Include="js\jquery.min.js" />
