@@ -60,5 +60,25 @@ namespace BL
 
             dao.eliminarEjercicio(ejercicio);
         }
+
+        public List<TOEjercicio> pasarListaBLaTO(List<Ejercicio> ejercicios)
+        {
+            List<TOEjercicio> lista = new List<TOEjercicio>();
+
+            foreach (Ejercicio x in ejercicios)
+            {
+                TOEjercicio toEjercicio = new TOEjercicio();
+
+                toEjercicio.Clave = x.Clave;
+                toEjercicio.Nombre = x.Nombre;
+                toEjercicio.Series = x.Series;
+                toEjercicio.Repeticiones = x.Repeticiones;
+
+                lista.Add(toEjercicio);
+            }
+
+
+            return lista;
+        }
     }
 }

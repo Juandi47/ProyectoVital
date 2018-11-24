@@ -10,10 +10,11 @@ namespace UI
 {
     public partial class CrearRutina : System.Web.UI.Page
     {
-        private static List<HojaEjercicio> lista = new List<HojaEjercicio>();
+        private static List<HojaRutina> lista = new List<HojaRutina>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            llenarGrid();
+            if (!IsPostBack)
+                llenarGrid();
         }
         private void llenarGrid()
         {
@@ -26,33 +27,27 @@ namespace UI
 
         protected void btnCrearRutina_Click(object sender, EventArgs e)
         {
+            String nombreRutina = txtNuevaRutina.Text;
 
+            DateTime Hoy = DateTime.Today;
+            string fecha_actual = Hoy.ToString("yyyy-MM-dd");
+            ManejadorRutina manejador = new ManejadorRutina();
+            List<Ejercicio> ejercicios = manejador.pasarAEjercicios(lista);
+            Rutina rutina = new Rutina(0, fecha_actual,nombreRutina,ejercicios);
+            manejador.agregarRutina(rutina);
             
-
-            
-            //foreach (GridViewRow row in grdEjercicios.Rows)
-            //{
-
-            //    CheckBox check1 = row.FindControl("chkSeleccion") as CheckBox;
-
-            //    if (check1.Checked)
-            //    {
-
-            //        int x = 0;
-            //    }
-
-            //}
         }
 
         protected void GuardarLinea_Click(object sender, EventArgs e)
         {
-            //String ejercicio = (sender as Button).CommandArgument;
-            //int index = Convert.ToInt32(e.);
-            //Label xyz = (Label)grdEjercicios.Rows[i].Cells[j].FindControl("Label" + j);
-            //TextBox txtRepeticion = grdEjercicios.FindControl("txtRepeticiones") as TextBox;
-            //String repeticion = txtRepeticion.Text;
-            //TextBox txtSeries = grdEjercicios.FindControl("txtSeries") as TextBox;
-            //String serie = txtSeries.Text;
+            int rowIndex = Convert.ToInt32((sender as Button).CommandArgument);
+            String ejercicio = grdEjercicios.Rows[rowIndex].Cells[1].Text;
+            TextBox txtRepeticiones = (TextBox)grdEjercicios.Rows[rowIndex].FindControl("txtRepeticiones");
+            String repeticiones = txtRepeticiones.Text;            
+            TextBox txtSeries = (TextBox)grdEjercicios.Rows[rowIndex].FindControl("txtSeries");
+            String serie = txtSeries.Text;
+
+            lista.Add(new HojaRutina(ejercicio, int.Parse(repeticiones), int.Parse(serie)));
         }
     }
 }
