@@ -29,12 +29,12 @@ namespace BL
 
         private List<Ejercicio> ejercicios = new List<Ejercicio>();
 
-        public Rutina(int clave, string fecha, string nombre, List<Ejercicio> ejecicios)
+        public Rutina(int clave, string fecha, string nombre, List<Ejercicio> ejercicios)
         {
             Clave = clave;
             Fecha = fecha;
             Nombre = nombre;
-            this.ejercicios = ejecicios;
+            this.ejercicios = ejercicios;
         }
 
         public Rutina() { }
