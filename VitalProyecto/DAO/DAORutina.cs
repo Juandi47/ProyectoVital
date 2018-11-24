@@ -187,7 +187,7 @@ namespace DAO
 
             SqlCommand comando = new SqlCommand(query, conexion);
 
-            comando.Parameters.AddWithValue("@ejer", ejercicio);
+            comando.Parameters.AddWithValue("@ejer", ejercicio.ToUpper());
 
             if (conexion.State != ConnectionState.Open)
             {

@@ -10,9 +10,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
 
     <form id="form1" runat="server">
-        <asp:GridView ID="grdEjercicios" runat="server" CssClass="table table-bordered text-center" BackColor="Silver" Font-Size="X-Large">
-            <HeaderStyle BackColor="#999999" BorderStyle="Double" Font-Bold="True" Font-Size="X-Large" />
-        </asp:GridView>
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <asp:GridView ID="grdEjercicios" runat="server" CssClass="table table-bordered text-center" BackColor="Silver" Font-Size="X-Large">
+                <HeaderStyle BackColor="#999999" BorderStyle="Double" Font-Bold="True" Font-Size="X-Large" />
+            </asp:GridView>
+        </div>
+        <div class="col-md-1"></div>
     </form>
 
 </asp:Content>
