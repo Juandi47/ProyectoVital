@@ -123,6 +123,8 @@
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
     <Content Include="Nutricion\IngresoNutricion.aspx" />
+    <Content Include="Nutricion\SeguimientoNutricion.aspx" />
+    <Content Include="Nutricion\SeguimientoSemanal.aspx" />
     <Content Include="PagInicio.aspx" />
     <Content Include="RegistroCliente.aspx" />
     <Content Include="SobreNosotros.html" />
@@ -276,6 +278,20 @@
     <Compile Include="Nutricion\NutricionMaster.Master.designer.cs">
       <DependentUpon>NutricionMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="Nutricion\SeguimientoNutricion.aspx.cs">
+      <DependentUpon>SeguimientoNutricion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutricion\SeguimientoNutricion.aspx.designer.cs">
+      <DependentUpon>SeguimientoNutricion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nutricion\SeguimientoSemanal.aspx.cs">
+      <DependentUpon>SeguimientoSemanal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutricion\SeguimientoSemanal.aspx.designer.cs">
+      <DependentUpon>SeguimientoSemanal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PagInicio.aspx.cs">
       <DependentUpon>PagInicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -316,13 +332,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Administracion\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{2edd9020-f105-4dfb-a3b0-73eda8a8ff25}</Project>
       <Name>BL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Administracion\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

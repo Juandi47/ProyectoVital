@@ -45,36 +45,14 @@
             <nav id="nav">
                
                 <ul>
-                    <li><a>Clientes</a>
-                        <ul>
-                            <li><a href="/RegistroCliente.aspx">Ingreso Cliente</a></li>
-                            <li><a href="/ActualizacionCliente.aspx">Actualización Cliente</a></li>
-                            <li><a href="/Asistencia.aspx">Módulo Asistencia</a></li>
-                            <li><a href="/RegistroCliente.aspx?accion=mod">Modificar</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/AdminPrincipal.aspx">Administrador</a>
-                        <ul>
-                            <li><a href="/Crear_Admin.aspx">Crear Administrador</a></li>
-                            <li><a href="/Gestion_Admin.aspx">Actualizar Administrador</a></li>
-                        </ul>
-                    </li>
-                    <li><a>Rutinas</a>
-                        <div  style="background-color: gainsboro">
-                        <ul>
-                            <li><a href="/BancoRutinas.aspx">Rutinas</a></li>
-                            <li><a href="/BancoEjercicios.aspx">Ejercicios</a></li>
-                        </ul>
-                    </li>
                     
                      <li><a>Nutrición</a> 
                         <ul>
                             <li><a href="IngresoNutricion.aspx">Primer Ingreso</a></li>
-                            <li><a href="/BancoEjercicios.aspx">Seguimineto Semanal</a></li>
-                            <li><a href="/BancoEjercicios.aspx">Seguimineto Mensual</a></li>
-                            <li><a href="/BancoEjercicios.aspx">Intercambio Hombre</a></li>
-                            <li><a href="/BancoEjercicios.aspx">Intercambio Mujer</a></li>
-                                
+                            <li><a href="SeguimientoSemanal.aspx">Seguimineto Semanal</a></li>
+                            <li><a href="SeguimientoNutricion.aspx">Seguimineto Mensual</a></li>
+                            <%--<li><a href="/BancoEjercicios.aspx">Intercambio Hombre</a></li>
+                            <li><a href="/BancoEjercicios.aspx">Intercambio Mujer</a></li>--%>
                         </ul>
                     </li>
                 </ul>
