@@ -11,25 +11,31 @@ namespace BL
 	public class ManejadorIngreso
 	{
 		public DAOIngreso daoUsuar = new DAOIngreso();
-		public BL.Ingreso buscarUsuario(string correo, string contra)
+        Encripcion encripta = new Encripcion();
+
+		public Ingreso buscarUsuario(string correo, string contra)
 		{
-			TOIngreso usuarioTO = daoUsuar.buscarUsuario(correo, contra);
-			if (usuarioTO == null)
-			{
-				return null;
-			}
-			return new Ingreso(usuarioTO.nombre_usuario, usuarioTO.clave, usuarioTO.rol);
-		}
+            TOIngreso usuarioTO = daoUsuar.buscarUsuario(correo, contra);
+            if (usuarioTO.nombre_usuario != null && usuarioTO.clave != null) {
+                if (encripta.desEncode(usuarioTO.clave, contra))
+                {
+                    return new Ingreso(usuarioTO.nombre_usuario, usuarioTO.clave, usuarioTO.rol);
+            }
+            else {
+                return null;
+            }
+        }
+            return null;
+        }
 
         public Boolean registrarLogin(Ingreso login) {
-            TOIngreso usuarioTO = new TOIngreso(login.nombre_usuario, login.clave, login.rol);
+            string cla = encripta.EncodePassword(login.clave);
+            TOIngreso usuarioTO = new TOIngreso(login.nombre_usuario, cla, login.rol);
 
             int elementoAgregado = daoUsuar.registrarLogin(usuarioTO);
 
             return elementoAgregado > 0 ? true : false;
         }
-
-
-
+        
 	}
 }

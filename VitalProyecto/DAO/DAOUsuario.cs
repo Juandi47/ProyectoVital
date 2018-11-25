@@ -34,7 +34,7 @@ namespace DAO
 						usuario.apellido1 = lector.GetString(3);
 						usuario.apellido2 = lector.GetString(4);
 						usuario.rol = lector.GetString(5);
-						string rol = usuario.rol;
+						//string rol = usuario.rol;
 					}
 					lector.Close();
 				}

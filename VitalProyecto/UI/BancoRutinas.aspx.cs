@@ -18,13 +18,29 @@ namespace UI
 
             if (IsPostBack)
             {
-                if (Page.Request.Params["__EVENTTARGET"] == "Nombre")
+                if (Page.Request.Params["__EVENTTARGET"] == "NombreYBoton")
                 {
-                    string dato = Page.Request.Params["__EVENTARGUMENT"].ToString();
-                    Session["Rutina"] = dato;
-                    Response.Redirect("~/MostrarRutina.aspx");
+                    string datos = Page.Request.Params["__EVENTARGUMENT"].ToString();
+                    string[] args = Request.Params["__EVENTARGUMENT"].Split(';');
+
+                    Session["Rutina"] = args[0];
+
+                    if (args[1].Equals("celda"))
+                    {
+                        Response.Redirect("~/MostrarRutina.aspx");
+                    }
+                    else
+                        Response.Redirect("~/CrearRutina.aspx");
+
+
                 }
             }
+            else {
+                Session.Remove("Rutina");
+            }
+
+
+
 
             llenarTablaRutinas();
 
@@ -61,7 +77,7 @@ namespace UI
             celdaNombre.Font.Size = FontUnit.Medium;
             celdaNombre.Font.Bold = true;
             celdaNombre.BackColor = System.Drawing.Color.Gray;
-            celdaNombre.Attributes.Add("onClick", "guardarNombre('" + nombre + "')");
+            celdaNombre.Attributes.Add("onClick", "guardarNombre('" + nombre + "','" + "celda" + "')");
             fila.Cells.Add(celdaNombre);
 
             TableCell botonCell = new TableCell();
@@ -97,8 +113,10 @@ namespace UI
             btnEliminar.Text = " Eliminar ";
             btnEliminar.ForeColor = System.Drawing.Color.Black;
             btnEliminar.BackColor = System.Drawing.Color.LightPink;
-
-            btnModificar.Click += delegate { };
+            btnModificar.Attributes.Add("onClick", "guardarNombre('" + nombre + "','" + "botonModificar" + "')");
+            btnModificar.Click += delegate {
+                
+            };
 
             btnEliminar.Click += delegate
             {

@@ -31,6 +31,24 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox txtTitulo;
         
         /// <summary>
+        /// btnExpediente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExpediente;
+        
+        /// <summary>
+        /// lbNomCompleto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbNomCompleto;
+        
+        /// <summary>
         /// lbCedula control.
         /// </summary>
         /// <remarks>
@@ -49,67 +67,40 @@ namespace UI {
         protected global::System.Web.UI.WebControls.Label lbCorreo;
         
         /// <summary>
-        /// lbTelefono control.
+        /// lbNacim control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTelefono;
+        protected global::System.Web.UI.WebControls.Label lbNacim;
         
         /// <summary>
-        /// lbNombre control.
+        /// lbTel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbNombre;
+        protected global::System.Web.UI.WebControls.Label lbTel;
         
         /// <summary>
-        /// lbApe1 control.
+        /// lbObs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbApe1;
+        protected global::System.Web.UI.WebControls.Label lbObs;
         
         /// <summary>
-        /// lbApe2 control.
+        /// lbMens control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbApe2;
-        
-        /// <summary>
-        /// lbFecNac control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbFecNac;
-        
-        /// <summary>
-        /// lbFecMens control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbFecMens;
-        
-        /// <summary>
-        /// lbObserva control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbObserva;
+        protected global::System.Web.UI.WebControls.Label lbMens;
         
         /// <summary>
         /// txtMedidas control.
@@ -119,86 +110,5 @@ namespace UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMedidas;
-        
-        /// <summary>
-        /// lbFrec control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbFrec;
-        
-        /// <summary>
-        /// lbPeso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbPeso;
-        
-        /// <summary>
-        /// lbGrasa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbGrasa;
-        
-        /// <summary>
-        /// lbIMC control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbIMC;
-        
-        /// <summary>
-        /// lbCintura control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbCintura;
-        
-        /// <summary>
-        /// lbAbdomen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbAbdomen;
-        
-        /// <summary>
-        /// lbCadera control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbCadera;
-        
-        /// <summary>
-        /// lbMuslo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbMuslo;
-        
-        /// <summary>
-        /// lbEstatura control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbEstatura;
     }
 }

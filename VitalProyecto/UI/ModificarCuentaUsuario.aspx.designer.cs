@@ -10,7 +10,7 @@
 namespace UI {
     
     
-    public partial class CrearRutina {
+    public partial class ModificarCuentaUsuario {
         
         /// <summary>
         /// form1 control.
@@ -22,57 +22,93 @@ namespace UI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtNuevaRutina control.
+        /// txtTitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNuevaRutina;
+        protected global::System.Web.UI.WebControls.TextBox txtTitulo;
         
         /// <summary>
-        /// btnCrearRutina control.
+        /// tnombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrearRutina;
+        protected global::System.Web.UI.WebControls.TextBox tnombre;
         
         /// <summary>
-        /// lbBuscarEjercicio control.
+        /// tcedula control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbBuscarEjercicio;
+        protected global::System.Web.UI.WebControls.TextBox tcedula;
         
         /// <summary>
-        /// txtBuscarEjercicio control.
+        /// tcorreo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBuscarEjercicio;
+        protected global::System.Web.UI.WebControls.TextBox tcorreo;
         
         /// <summary>
-        /// btnBuscar control.
+        /// tfehcaN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscar;
+        protected global::System.Web.UI.WebControls.TextBox tfehcaN;
         
         /// <summary>
-        /// grdEjercicios control.
+        /// tTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdEjercicios;
+        protected global::System.Web.UI.WebControls.TextBox tTelefono;
+        
+        /// <summary>
+        /// tclave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tclave;
+        
+        /// <summary>
+        /// tclave2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tclave2;
+        
+        /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        
+        /// <summary>
+        /// btnModificar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModificar;
     }
 }

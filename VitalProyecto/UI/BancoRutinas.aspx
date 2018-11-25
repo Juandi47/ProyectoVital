@@ -13,8 +13,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
     
     <script>
-        function guardarNombre(nombre) {
-            __doPostBack("Nombre", nombre);
+        function guardarNombre(nombre,boton) {
+            __doPostBack("NombreYBoton", nombre + ";" + boton);
         }
     </script>
     <form id="form1" runat="server" style="background-color:lightgray">

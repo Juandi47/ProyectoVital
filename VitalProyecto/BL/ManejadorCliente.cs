@@ -123,4 +123,11 @@ namespace BL
             return clienteDAO.modificarClienteDAO(ced,corr,obs, tel, clave);
         }
     }
+
+        public Boolean existeCliente(string correo) {
+            return clienteDAO.existeCliente(correo);
+        }
+
+
+    }
 }

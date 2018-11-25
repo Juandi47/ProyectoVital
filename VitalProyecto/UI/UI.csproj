@@ -45,6 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -103,6 +104,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Gestion_Admin.aspx" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\nutriGym.jpg" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
@@ -110,17 +112,22 @@
     <Content Include="IniciarSesion.aspx" />
     <Content Include="js\alertify.js" />
     <Content Include="js\init.js" />
+    <Content Include="js\jquery-1.4.1.min.js" />
     <Content Include="js\jquery.dropotron.min.js" />
     <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.quicksearch.js" />
     <Content Include="js\pikaday.js" />
     <Content Include="js\skel-layers.min.js" />
     <Content Include="js\skel.min.js" />
     <Content Include="Cliente\login.aspx" />
     <Content Include="ListaClientesAdmin.aspx" />
     <Content Include="ModificarAdmin.aspx" />
+    <Content Include="ModificarCuentaUsuario.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
     <Content Include="Nutricion\IngresoNutricion.aspx" />
+    <Content Include="Nutricion\SeguimientoNutricion.aspx" />
+    <Content Include="Nutricion\SeguimSemanal.aspx" />
     <Content Include="PagInicio.aspx" />
     <Content Include="RegistroCliente.aspx" />
     <Content Include="SobreNosotros.html" />
@@ -246,6 +253,13 @@
     <Compile Include="ModificarAdmin.aspx.designer.cs">
       <DependentUpon>ModificarAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ModificarCuentaUsuario.aspx.cs">
+      <DependentUpon>ModificarCuentaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarCuentaUsuario.aspx.designer.cs">
+      <DependentUpon>ModificarCuentaUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MostrarRutina.aspx.cs">
       <DependentUpon>MostrarRutina.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -273,6 +287,20 @@
     </Compile>
     <Compile Include="Nutricion\NutricionMaster.Master.designer.cs">
       <DependentUpon>NutricionMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Nutricion\SeguimientoNutricion.aspx.cs">
+      <DependentUpon>SeguimientoNutricion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutricion\SeguimientoNutricion.aspx.designer.cs">
+      <DependentUpon>SeguimientoNutricion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nutricion\SeguimSemanal.aspx.cs">
+      <DependentUpon>SeguimSemanal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutricion\SeguimSemanal.aspx.designer.cs">
+      <DependentUpon>SeguimSemanal.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagInicio.aspx.cs">
       <DependentUpon>PagInicio.aspx</DependentUpon>
@@ -314,13 +342,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Administracion\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{2edd9020-f105-4dfb-a3b0-73eda8a8ff25}</Project>
       <Name>BL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Administracion\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

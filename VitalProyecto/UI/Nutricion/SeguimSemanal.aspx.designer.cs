@@ -7,72 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UI {
+namespace UI.Nutricion {
     
     
-    public partial class CrearRutina {
+    public partial class SeguimSemanal {
         
         /// <summary>
-        /// form1 control.
+        /// Fecha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label Fecha;
         
         /// <summary>
-        /// txtNuevaRutina control.
+        /// sCedula control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNuevaRutina;
+        protected global::System.Web.UI.WebControls.TextBox sCedula;
         
         /// <summary>
-        /// btnCrearRutina control.
+        /// sPEso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrearRutina;
+        protected global::System.Web.UI.WebControls.TextBox sPEso;
         
         /// <summary>
-        /// lbBuscarEjercicio control.
+        /// sOreja control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbBuscarEjercicio;
+        protected global::System.Web.UI.WebControls.TextBox sOreja;
         
         /// <summary>
-        /// txtBuscarEjercicio control.
+        /// sEjercicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBuscarEjercicio;
+        protected global::System.Web.UI.WebControls.TextBox sEjercicio;
         
         /// <summary>
-        /// btnBuscar control.
+        /// btnAgreg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscar;
+        protected global::System.Web.UI.WebControls.Button btnAgreg;
         
         /// <summary>
-        /// grdEjercicios control.
+        /// tSuplementoMedico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdEjercicios;
+        protected global::System.Web.UI.WebControls.Literal tSuplementoMedico;
     }
 }
