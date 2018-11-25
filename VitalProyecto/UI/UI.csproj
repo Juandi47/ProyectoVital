@@ -103,7 +103,12 @@
     <Content Include="css\triangle.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Gestion_Admin.aspx" />
+    <Content Include="images\a.jpg" />
+    <Content Include="images\b.jpg" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\c.jpg" />
+    <Content Include="images\d.jpg" />
+    <Content Include="images\e.jpg" />
     <Content Include="images\elky.jpg" />
     <Content Include="images\nutriGym.jpg" />
     <Content Include="images\pic02.jpg" />
