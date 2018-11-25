@@ -45,6 +45,8 @@
     <Compile Include="Antropometria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteNutricion.cs" />
+    <Compile Include="Encripcion.cs" />
+    <Compile Include="DistribucionPorciones.cs" />
     <Compile Include="HabitoAlimentario.cs" />
     <Compile Include="HistorialMedico.cs" />
     <Compile Include="HojaEjercicio.cs" />
@@ -62,6 +64,7 @@
     <Compile Include="Medicamento.cs" />
     <Compile Include="Medida.cs" />
     <Compile Include="Persona.cs" />
+    <Compile Include="Porciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recordatorio24H.cs" />
     <Compile Include="Rutina.cs" />
