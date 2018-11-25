@@ -20,8 +20,9 @@ namespace DAO
 				TOIngreso usuario = new TOIngreso();
 				SqlCommand buscar = new SqlCommand("SELECT * FROM Login WHERE Nombre_usuario = @corrusu and Clave = @contus", conexion);
 				buscar.Parameters.AddWithValue("@corrusu", correo_usuario);
-                string hash = Helper.EncodePassword(string.Concat(usuario, contra));
-                buscar.Parameters.AddWithValue("@contus", hash);
+                //string hash = Helper.EncodePassword(string.Concat(usuario, contra));
+				buscar.Parameters.AddWithValue("@contus", contra);
+				//buscar.Parameters.AddWithValue("@contus", hash);
 				conexion.Open();
 				SqlDataReader lector = buscar.ExecuteReader();
 

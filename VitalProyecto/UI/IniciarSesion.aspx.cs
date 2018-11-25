@@ -22,7 +22,7 @@ namespace UI
 
 			BL.Ingreso usua = new ManejadorIngreso().buscarUsuario(correo, contra);
 
-			if (usua.nombre_usuario != null && usua.nombre_usuario.Equals("") && usua.clave != null && !usua.clave.Equals(""))
+			if (usua.nombre_usuario != null  && !usua.clave.Equals(""))
 			{
 				Session["usuario"] = usua;
 				if (usua.rol.Equals("cliente")) 
@@ -43,7 +43,7 @@ namespace UI
 			}
 			else
 			{
-				lblIncorrecto.Text = "Datos incompletos";
+				lblIncorrecto.Text = "Correo o contraseña incorrecto";
 			}
 		}
 	}

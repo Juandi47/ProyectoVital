@@ -41,10 +41,10 @@ namespace DAO
             }
         }
 
-        public List<TOMedida> ListaCliente()
+        public List<TOMedida> ListaMedidas(string cedula)
         {
             List<TOMedida> ListaMedidas = new List<TOMedida>();
-            string qry = "Select * from Medidas";
+            string qry = "Select * from Medidas where Cedula = "+cedula;
             SqlCommand sent = new SqlCommand(qry, conexion);
             SqlDataReader lector;
             conexion.Open();
@@ -105,5 +105,6 @@ namespace DAO
 				return null;
 			}
 		}
+
 	}
 }
