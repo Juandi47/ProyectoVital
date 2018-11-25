@@ -31,40 +31,49 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox txtCed;
         
         /// <summary>
-        /// tfrec control.
+        /// tfrecCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tfrec;
+        protected global::System.Web.UI.WebControls.TextBox tfrecCard;
         
         /// <summary>
-        /// tweigth control.
+        /// tPeso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tweigth;
+        protected global::System.Web.UI.WebControls.TextBox tPeso;
         
         /// <summary>
-        /// tpercentWeigth control.
+        /// tpercentGrasa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tpercentWeigth;
+        protected global::System.Web.UI.WebControls.TextBox tpercentGrasa;
         
         /// <summary>
-        /// timc control.
+        /// tImc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox timc;
+        protected global::System.Web.UI.WebControls.TextBox tImc;
+        
+        /// <summary>
+        /// tcintura control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tcintura;
         
         /// <summary>
         /// tabdomen control.
@@ -76,31 +85,31 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox tabdomen;
         
         /// <summary>
-        /// thip control.
+        /// tCadera control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox thip;
+        protected global::System.Web.UI.WebControls.TextBox tCadera;
         
         /// <summary>
-        /// tthigth control.
+        /// tMuslo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tthigth;
+        protected global::System.Web.UI.WebControls.TextBox tMuslo;
         
         /// <summary>
-        /// theigth control.
+        /// tEstatura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox theigth;
+        protected global::System.Web.UI.WebControls.TextBox tEstatura;
         
         /// <summary>
         /// btnAñadirExpediente control.
