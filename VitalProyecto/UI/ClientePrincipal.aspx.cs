@@ -72,7 +72,7 @@ namespace UI
 
 			}
 
-	
+
 		}
 
 		public string mostrarMes(int mes)
@@ -129,6 +129,9 @@ namespace UI
 			}
 		}
 
+        protected void btnExpediente_Click(object sender, EventArgs e)
+        {
 
 	}
+}
 }

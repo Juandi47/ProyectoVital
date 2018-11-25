@@ -43,9 +43,9 @@
 				</div>
 				<div>
 					<nav id="nav">
-						<%--<ul>
-							<li><a href="#">Modificar perfil</a></li>
-						</ul>--%>
+						<ul>
+							<li><a href="ModificarCuentaUsuario.apsx">Modificar perfil</a></li>
+						</ul>
 					</nav>
 				</div>
 			</div>
@@ -61,7 +61,8 @@
 					<div class="col-md-4"></div>
 					<div class="col-md-4">
 						<asp:TextBox ID="txtTitulo" BackColor="DarkOliveGreen" Text="Expediente del cliente" runat="server" Font-Overline="False" Font-Size="Medium" ForeColor="White" ></asp:TextBox>
-						<br />
+						<asp:Button ID="btnExpediente" Text="Ver mi expediente" runat="server" OnClick="btnExpediente_Click" />
+                        <br />
 						<br />
 					</div>
 					<div class="col-md-4"></div>

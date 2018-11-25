@@ -52,7 +52,7 @@
                             <li><a href="RegistroCliente.aspx">Ingreso Cliente</a></li>
                             <li><a href="ActualizacionCliente.aspx">Actualización Cliente</a></li>
                             <li><a href="Asistencia.aspx">Módulo Asistencia</a></li>
-                            <li><a href="RegistroCliente.aspx?accion=mod">Modificar</a></li>
+                            <%--<li><a href="RegistroCliente.aspx?accion=mod">Modificar</a></li>--%>
                         </ul>
                     </li>
                     <li><a href="AdminPrincipal.aspx">Administrador</a>
@@ -75,7 +75,7 @@
              
     </div>
 
-    <div  style="background-color: gainsboro">
+    <div  style="background-color: gainsboro" >
         <img src="../images/banner_admin01.jpg" style="width:100%"/>
     </div>
 

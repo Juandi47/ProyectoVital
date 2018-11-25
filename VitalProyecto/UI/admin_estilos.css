@@ -204,7 +204,7 @@ color:black;
     top: 25%;
     background-color: #f2f2f2;
     border: groove 5px #45a049;
-    padding: 0px 1% 2% 1%;
+    padding: 0px 0% 2% 0%;
     left: 2%;
 }
 
@@ -213,7 +213,8 @@ color:black;
     }
 
 .tablaRes :only-child {
-margin-top:10px;
+    margin-top: 5px;
+    /*width: 20%;*/
 }
 
 
@@ -222,10 +223,18 @@ margin-top:10px;
    margin-right:5px;
 }
 
-.tablerow {
+/*.tablerow {
 margin-left:0%;
-}
+width:20%;
+}*/
 
+.filaExtra {
+margin-top: 5px;
+
+}
+    .filaExtra:first-child {
+    text-align:right;
+    }
 
 
 

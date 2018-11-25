@@ -58,6 +58,63 @@ namespace BL
                 habito.Aderezos, habito.Fruta, habito.Verdura, habito.Leche, habito.Huevo, habito.Yogurt, habito.Carne,
                 habito.Queso, habito.Aguacate, habito.Semillas), lista);
         }
-        
+
+        public bool AgregarAntropometria(Antropometria antrop, Porciones porcion, DistribucionPorciones distrib)
+        {
+            TOAntropometria antropom = new TOAntropometria();
+            antropom.Cedula = antrop.Cedula;
+            antropom.Talla = antrop.Talla;
+            antropom.PesoIdeal = antrop.PesoIdeal;
+            antropom.Edad = antrop.Edad;
+            antropom.PMB = antrop.PMB;
+            antropom.Peso = antrop.Peso;
+            antropom.PesoMaxTeoria = antrop.PesoMaxTeoria;
+            antropom.IMC = antrop.IMC;
+            antropom.PorcGrasaAnalizador = antrop.PorcGrasaAnalizador;
+            antropom.PorcGr_Bascula = antrop.PorcGr_Bascula;
+            antropom.GB_BI = antrop.GB_BI;
+            antropom.GB_BD = antrop.GB_BD;
+            antropom.GB_PI = antrop.GB_PI;
+            antropom.GB_PD = antrop.GB_PD;
+            antropom.GB_Tronco = antrop.GB_Tronco;
+            antropom.AguaCorporal = antrop.AguaCorporal;
+            antropom.MasaOsea = antrop.MasaOsea;
+            antropom.Complexión = antrop.Complexión;
+            antropom.EdadMetabolica = antrop.EdadMetabolica;
+            antropom.Cintura = antrop.Cintura;
+            antropom.Abdomen = antrop.Abdomen;
+            antropom.Cadera = antrop.Cadera;
+            antropom.Muslo = antrop.Muslo;
+            antropom.CBM = antrop.CBM;
+            antropom.CircunfMunneca = antrop.CircunfMunneca;
+            antropom.PorcentMusculo = antrop.PorcentMusculo;
+            antropom.PM_BI = antrop.PM_BI;
+            antropom.PM_PD = antrop.PM_PD;
+            antropom.PM_BD = antrop.PM_BD;
+            antropom.PM_PI = antrop.PM_PI;
+            antropom.PM_Tronco = antrop.PM_Tronco;
+            antropom.Observaciones = antrop.Observaciones;
+            antropom.GEB = antrop.GEB;
+            antropom.GET = antrop.GET;
+            antropom.CHOPorc = antrop.CHOPorc;
+            antropom.CHOGram = antrop.CHOGram;
+            antropom.CHO_kcal = antrop.CHO_kcal;
+            antropom.ProteinaPorc = antrop.ProteinaPorc;
+            antropom.ProteinaGram = antrop.ProteinaGram;
+            antropom.Proteinakcal = antrop.Proteinakcal;
+            antropom.GrasaPorc = antrop.GrasaPorc;
+            antropom.GrasaGram = antrop.GrasaGram;
+            antropom.Grasakcal = antrop.Grasakcal;
+            TOPorciones porci = new TOPorciones(porcion.Cedula, porcion.Leche, porcion.Carne, porcion.Vegetales, porcion.Grasa,
+               porcion.Fruta, porcion.Azucar, porcion.Harina, porcion.Suplemento);
+
+            TODistribucionPorciones distribuc = new TODistribucionPorciones(distrib.Cedula, distrib.Ayunas, distrib.Desayuno,
+                distrib.MediaMañana, distrib.Almuerzo, distrib.MediaTarde, distrib.Cena, distrib.ColacionNocturna);
+            
+            return daoClienteNutricion.GuardarAntropometria( antropom, porci, distribuc);
+
+        }
+
+
     }
 }

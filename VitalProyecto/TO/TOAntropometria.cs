@@ -8,6 +8,8 @@ namespace TO
 {
     public class TOAntropometria
     {
+
+
         public string Cedula { set; get; }
         public decimal Talla { set; get; }
         public decimal PesoIdeal { set; get; }
@@ -33,13 +35,14 @@ namespace TO
         public string Muslo { set; get; }
         public decimal CBM { set; get; }
         public decimal CircunfMunneca { set; get; }
+        public decimal PorcentGViceral { set; get; }
         public decimal PorcentMusculo { set; get; }
         public decimal PM_BI { set; get; }
         public decimal PM_PD { set; get; }
         public decimal PM_BD { set; get; }
         public decimal PM_PI { set; get; }
         public decimal PM_Tronco { set; get; }
-        public decimal Observaciones { set; get; }
+        public string Observaciones { set; get; }
         public decimal GEB { set; get; }
         public decimal GET { set; get; }
         public decimal CHOPorc { set; get; }
@@ -52,7 +55,7 @@ namespace TO
         public decimal GrasaGram { set; get; }
         public decimal Grasakcal { set; get; }
 
-        public TOAntropometria(string cedula, decimal talla, decimal pesoIdeal, decimal edad, decimal pMB, decimal peso, decimal pesoMaxTeoria, decimal iMC, decimal porcGrasaAnalizador, decimal porcGr_Bascula, decimal gB_BI, decimal gB_BD, decimal gB_PI, decimal gB_PD, decimal gB_Tronco, decimal aguaCorporal, decimal masaOsea, decimal complexión, decimal edadMetabolica, decimal cintura, decimal abdomen, decimal cadera, string muslo, decimal cBM, decimal circunfMunneca, decimal porcentMusculo, decimal pM_BI, decimal pM_PD, decimal pM_BD, decimal pM_PI, decimal pM_Tronco, decimal observaciones, decimal gEB, decimal gET, decimal cHOPorc, decimal cHOGram, decimal cHO_kcal, decimal proteinaPorc, decimal proteinaGram, decimal proteinakcal, decimal grasaPorc, decimal grasaGram, decimal grasakcal)
+        public TOAntropometria(string cedula, decimal talla, decimal pesoIdeal, decimal edad, decimal pMB, decimal peso, decimal pesoMaxTeoria, decimal iMC, decimal porcGrasaAnalizador, decimal porcGr_Bascula, decimal gB_BI, decimal gB_BD, decimal gB_PI, decimal gB_PD, decimal gB_Tronco, decimal aguaCorporal, decimal masaOsea, decimal complexión, decimal edadMetabolica, decimal cintura, decimal abdomen, decimal cadera, string muslo, decimal cBM, decimal circunfMunneca, decimal porcentGViceral, decimal porcentMusculo, decimal pM_BI, decimal pM_PD, decimal pM_BD, decimal pM_PI, decimal pM_Tronco, string observaciones, decimal gEB, decimal gET, decimal cHOPorc, decimal cHOGram, decimal cHO_kcal, decimal proteinaPorc, decimal proteinaGram, decimal proteinakcal, decimal grasaPorc, decimal grasaGram, decimal grasakcal)
         {
             Cedula = cedula;
             Talla = talla;
@@ -79,6 +82,7 @@ namespace TO
             Muslo = muslo;
             CBM = cBM;
             CircunfMunneca = circunfMunneca;
+            PorcentGViceral = porcentGViceral;
             PorcentMusculo = porcentMusculo;
             PM_BI = pM_BI;
             PM_PD = pM_PD;
@@ -98,7 +102,7 @@ namespace TO
             GrasaGram = grasaGram;
             Grasakcal = grasakcal;
         }
-
         public TOAntropometria() { }
+
     }
 }

@@ -22,7 +22,7 @@ namespace UI
 
 			BL.Ingreso usua = new ManejadorIngreso().buscarUsuario(correo, contra);
 
-			if (usua.nombre_usuario != null  && !usua.clave.Equals(""))
+			if (usua != null)
 			{
 				Session["usuario"] = usua;
 				if (usua.rol.Equals("cliente")) 
