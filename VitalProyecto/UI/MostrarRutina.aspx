@@ -9,14 +9,22 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
 
-    <form id="form1" runat="server">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <asp:GridView ID="grdEjercicios" runat="server" CssClass="table table-bordered text-center" BackColor="Silver" Font-Size="X-Large">
-                <HeaderStyle BackColor="#999999" BorderStyle="Double" Font-Bold="True" Font-Size="X-Large" />
-            </asp:GridView>
-        </div>
-        <div class="col-md-1"></div>
-    </form>
+    <form id="form2" runat="server" style="background-color: lightgray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                     <asp:GridView ID="grdEjercicios" runat="server" class="table-responsive-lg table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False" HeaderStyle-Font-Size="130%" RowStyle-Height="50px">
+                        <Columns>
+                            <asp:BoundField DataField="Ejercicio" HeaderText="EJERCICIO" ItemStyle-VerticalAlign="Middle" />
+                            <asp:BoundField DataField="Repeticiones" HeaderText="REPETICIONES" ItemStyle-VerticalAlign="Middle"  />
+                            <asp:BoundField DataField="Series" HeaderText="SERIES" ItemStyle-VerticalAlign="Middle"  />
 
+                        </Columns>
+                        <HeaderStyle BackColor="#999999" BorderStyle="Double" Font-Bold="True" />
+                    </asp:GridView>
+
+                </div>
+            </div>
+        </div>
+    </form>
 </asp:Content>
