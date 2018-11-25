@@ -86,11 +86,10 @@ namespace UI
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            ManejadorEjercicio manejador = new ManejadorEjercicio();
+            ManejadorEjercicio manejador = new ManejadorEjercicio();            
 
-            // manejador.agregarEjercicio();
-
-
+            grdEjercicios.DataSource = manejador.buscarEjercicio(txtBuscarEjercicio.Text); ;
+            grdEjercicios.DataBind();
         }
     }
 }

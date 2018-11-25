@@ -115,7 +115,7 @@
                         <br />
                         <asp:Label ID="lbBuscarEjercicio" runat="server" Text="BUSCAR:" Font-Bold="true"></asp:Label>
                         <div class="input-group">
-                            <asp:TextBox ID="txtBuscarEjercicio" class="form-control" runat="server" Width="300px" Height="45px" Wrap="False" placeholder="EJERCICIO" BackColor="WhiteSmoke"></asp:TextBox>
+                            <asp:TextBox ID="txtBuscarEjercicio" class="form-control" runat="server" Width="150px" Height="45px" Wrap="False" placeholder="EJERCICIO" BackColor="WhiteSmoke"></asp:TextBox>
                             <asp:Button ID="btnBuscar" runat="server" Font-Size="Medium" Text="BUSCAR" Width="100px" Height="45px" BackColor="darkolivegreen" OnClick="btnBuscar_Click" />
                         </div>
 
@@ -129,7 +129,7 @@
                                 <ItemStyle HorizontalAlign="Center" Wrap="false" Width="55px" VerticalAlign="Middle" />
                             </asp:TemplateField>
 
-                            <asp:BoundField DataField="Ejercicio" HeaderText="Ejercicio" ItemStyle-VerticalAlign="Middle" />
+                            <asp:BoundField DataField="Ejercicio" HeaderText="EJERCICIO" ItemStyle-VerticalAlign="Middle" />
 
                             <asp:TemplateField HeaderText="REPETICIONES">
                                 <ItemTemplate>

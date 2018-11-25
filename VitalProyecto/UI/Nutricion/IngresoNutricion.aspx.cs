@@ -197,17 +197,17 @@ namespace UI.Nutricion
                     //        Geb, GETStat, Convert.ToDecimal(PorcCHO.Text), Convert.ToDecimal(GramCHO.Text), Convert.ToDecimal(kcalCHO.Text), Convert.ToDecimal(PorcProteinas.Text),
                     //        Convert.ToDecimal(GramProteinas.Text), Convert.ToDecimal(kcalProteinas.Text), Convert.ToDecimal(PorcGrasas.Text), Convert.ToDecimal(GramGrasas.Text), Convert.ToDecimal(kcalGrasas.Text));
 
-                        Porciones porc = new Porciones(tCedula.Text, Convert.ToDecimal(pLeche.Text), Convert.ToDecimal(pCarnes.Text),
-                            Convert.ToDecimal(pVegetales.Text), Convert.ToDecimal(pGrasas.Text),Convert.ToDecimal(pFrutas.Text), 
-                            Convert.ToDecimal(pAzúcares.Text),Convert.ToDecimal(pHarinas.Text),Convert.ToDecimal(pSuplemento.Text));
+                       // Porciones porc = new Porciones(tCedula.Text, Convert.ToDecimal(pLeche.Text), Convert.ToDecimal(pCarnes.Text),
+                            //Convert.ToDecimal(pVegetales.Text), Convert.ToDecimal(pGrasas.Text),Convert.ToDecimal(pFrutas.Text), 
+                            //Convert.ToDecimal(pAzúcares.Text),Convert.ToDecimal(pHarinas.Text),Convert.ToDecimal(pSuplemento.Text));
 
                         DistribucionPorciones distrib = new DistribucionPorciones(tCedula.Text, TCAyunas.Text, TCDesayuno.Text, TCMediaMa.Text,
                             TCAlmuerzo.Text, TCMediaTard.Text, TCCena.Text, TCColacNocturna.Text);
 
-                        bool agreTot = manejadorNutri.AgregarAntropometria(antropom, porc, distrib);
-                        if(agreTot == true)
-                        { Response.Write("Cliente Registrado!"); }
-                        else { Response.Write("Cliente No Registrado"); }
+                        //bool agreTot = manejadorNutri.AgregarAntropometria(antropom, porc, distrib);
+                        //if(agreTot == true)
+                        //{ Response.Write("Cliente Registrado!"); }
+                        //else { Response.Write("Cliente No Registrado"); }
 
                     //}
                 } else { Response.Write("<script>alertify.notify('Registro no se realizó correctamente', 'error', 5, null); </script>");}
