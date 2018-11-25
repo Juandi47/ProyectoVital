@@ -103,6 +103,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Gestion_Admin.aspx" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\nutriGym.jpg" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
@@ -122,7 +123,7 @@
     <Content Include="Notificacion.aspx" />
     <Content Include="Nutricion\IngresoNutricion.aspx" />
     <Content Include="Nutricion\SeguimientoNutricion.aspx" />
-    <Content Include="Nutricion\SeguimientoSemanal.aspx" />
+    <Content Include="Nutricion\SeguimSemanal.aspx" />
     <Content Include="PagInicio.aspx" />
     <Content Include="RegistroCliente.aspx" />
     <Content Include="SobreNosotros.html" />
@@ -283,12 +284,12 @@
     <Compile Include="Nutricion\SeguimientoNutricion.aspx.designer.cs">
       <DependentUpon>SeguimientoNutricion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Nutricion\SeguimientoSemanal.aspx.cs">
-      <DependentUpon>SeguimientoSemanal.aspx</DependentUpon>
+    <Compile Include="Nutricion\SeguimSemanal.aspx.cs">
+      <DependentUpon>SeguimSemanal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Nutricion\SeguimientoSemanal.aspx.designer.cs">
-      <DependentUpon>SeguimientoSemanal.aspx</DependentUpon>
+    <Compile Include="Nutricion\SeguimSemanal.aspx.designer.cs">
+      <DependentUpon>SeguimSemanal.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagInicio.aspx.cs">
       <DependentUpon>PagInicio.aspx</DependentUpon>
