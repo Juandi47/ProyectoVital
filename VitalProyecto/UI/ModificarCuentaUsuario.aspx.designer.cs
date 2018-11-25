@@ -10,7 +10,7 @@
 namespace UI {
     
     
-    public partial class ClientePrincipal {
+    public partial class ModificarCuentaUsuario {
         
         /// <summary>
         /// form1 control.
@@ -31,84 +31,84 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox txtTitulo;
         
         /// <summary>
-        /// btnExpediente control.
+        /// tnombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExpediente;
+        protected global::System.Web.UI.WebControls.TextBox tnombre;
         
         /// <summary>
-        /// lbNomCompleto control.
+        /// tcedula control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbNomCompleto;
+        protected global::System.Web.UI.WebControls.TextBox tcedula;
         
         /// <summary>
-        /// lbCedula control.
+        /// tcorreo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbCedula;
+        protected global::System.Web.UI.WebControls.TextBox tcorreo;
         
         /// <summary>
-        /// lbCorreo control.
+        /// tfehcaN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbCorreo;
+        protected global::System.Web.UI.WebControls.TextBox tfehcaN;
         
         /// <summary>
-        /// lbNacim control.
+        /// tTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbNacim;
+        protected global::System.Web.UI.WebControls.TextBox tTelefono;
         
         /// <summary>
-        /// lbTel control.
+        /// tclave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTel;
+        protected global::System.Web.UI.WebControls.TextBox tclave;
         
         /// <summary>
-        /// lbObs control.
+        /// tclave2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbObs;
+        protected global::System.Web.UI.WebControls.TextBox tclave2;
         
         /// <summary>
-        /// lbMens control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbMens;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
-        /// txtMedidas control.
+        /// btnModificar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMedidas;
+        protected global::System.Web.UI.WebControls.Button btnModificar;
     }
 }

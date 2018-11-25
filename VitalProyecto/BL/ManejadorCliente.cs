@@ -115,5 +115,11 @@ namespace BL
 				clienTO.Observacion, clienTO.Fecha_Mensualidad);
 		}
 
-	}
+
+        public Boolean existeCliente(string correo) {
+            return clienteDAO.existeCliente(correo);
+        }
+
+
+    }
 }
