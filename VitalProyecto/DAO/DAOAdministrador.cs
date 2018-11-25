@@ -58,7 +58,7 @@ namespace DAO
             try
             {
 
-                string qry = "insert into Usuario values (@ced, @cor, @nom, @ape1, @ape2)";
+                string qry = "insert into Usuario values (@ced, @cor, @nom, @ape1, @ape2, 'admin')";
                 string qry2 = "insert into Login values( @cor2, @cla, 'admin')";
 
                 SqlCommand sent = new SqlCommand(qry, conexion);
@@ -272,7 +272,15 @@ namespace DAO
 
                 }
                 else {
+                    if (conexion.State != ConnectionState.Closed)
+                    {
+                        conexion.Close();
+                    }
                     return false;
+                }
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
                 }
             }
             catch (Exception e)
@@ -285,42 +293,46 @@ namespace DAO
         {
             string administrador = "";
 
-            try
+            //try
+            //{
+            string qry = "SELECT * FROM Login WHERE Nombre_usuario = @cor;";
+            SqlCommand sent = new SqlCommand(qry, conexion);
+            sent.Parameters.AddWithValue("@cor", correo);
+
+            if (conexion.State != ConnectionState.Open)
             {
-                string qry = "SELECT * FROM Login WHERE Nombre_usuario = @cor;";
-                SqlCommand sent = new SqlCommand(qry, conexion);
-                sent.Parameters.AddWithValue("@cor", correo);
-
-                if (conexion.State != ConnectionState.Open)
-                {
-                    conexion.Open();
-                }
-                SqlDataReader admin;
-                admin = sent.ExecuteReader();
-
-                if (admin.HasRows)
-                {
-                    while (admin.Read())
-                    {
-                        administrador = admin["Nombre_usuario"].ToString();
-                    }
-                    if (conexion.State != ConnectionState.Closed)
-                    {
-                        conexion.Close();
-                    }
-                    return true;
-
-                }
-                else {
-                    return false;
-                }
+                conexion.Open();
             }
-            catch (Exception e)
+            SqlDataReader admin;
+            admin = sent.ExecuteReader();
+
+            if (admin.HasRows)
             {
+                while (admin.Read())
+                {
+                    administrador = admin["Nombre_usuario"].ToString();
+                }
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
                 return true;
+
+            }
+            else {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+                return false;
             }
         }
-
+        //catch (Exception e)
+        //{
+        //    return true;
+        //}
     }
+
+
 
 }
