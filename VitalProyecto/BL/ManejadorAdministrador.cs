@@ -11,6 +11,7 @@ namespace BL
     public class ManejadorAdministrador
     {
         DAOAdministrador administradorDAO = new DAOAdministrador();
+        Encripcion encripta = new Encripcion();
 
         public List<Administrador> listaAdministrador()
         {
@@ -29,12 +30,14 @@ namespace BL
 
 
         public string agregarAdministrador(string cedula, string nombre, string clave, string apellido1, string apellido2, string correo) {
-            return administradorDAO.agregarAdmin(new TOAdministrador( cedula, nombre, clave, apellido1, apellido2, correo));
+            string contrasenna = encripta.EncodePassword(clave);
+            return administradorDAO.agregarAdmin(new TOAdministrador( cedula, nombre, contrasenna, apellido1, apellido2, correo));
         }
 
 
         public string modificarAdmin(string cedula, string nombre, string clave, string apellido1, string apellido2, string correo) {
-            return administradorDAO.modificarAdmin(new TOAdministrador(cedula, nombre, clave, apellido1, apellido2, correo));
+            string contrasenna = encripta.EncodePassword(clave);
+            return administradorDAO.modificarAdmin(new TOAdministrador(cedula, nombre, contrasenna, apellido1, apellido2, correo));
 
         }
 
