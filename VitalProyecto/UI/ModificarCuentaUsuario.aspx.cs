@@ -15,6 +15,11 @@ namespace UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            //if (new ControlSeguridad().validarCliente() == true)
+            //{
+            //    Response.Redirect("~/IniciarSesion.aspx");
+            //}
             BL.Usuario usuarioSesion = Session["usuarioSesion"] as Usuario;
 
 
@@ -62,7 +67,7 @@ namespace UI
 
                 //valida que las contraseñas coincidan
                 if (contr.Equals(contra2)) {
-                    
+                    //aca va el metodo que le falta a Tony
                 } else {
                     Response.Write("<script>alert('Las contraseñas deben coincidir')</script>");
                 }
