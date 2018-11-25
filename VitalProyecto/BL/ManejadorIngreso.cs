@@ -20,16 +20,17 @@ namespace BL
                 if (encripta.desEncode(usuarioTO.clave, contra))
                 {
                     return new Ingreso(usuarioTO.nombre_usuario, usuarioTO.clave, usuarioTO.rol);
-                }
-                else {
-                    return null;
-                }
             }
+            else {
+                return null;
+            }
+        }
             return null;
         }
 
         public Boolean registrarLogin(Ingreso login) {
-            TOIngreso usuarioTO = new TOIngreso(login.nombre_usuario, login.clave, login.rol);
+            string cla = encripta.EncodePassword(login.clave);
+            TOIngreso usuarioTO = new TOIngreso(login.nombre_usuario, cla, login.rol);
 
             int elementoAgregado = daoUsuar.registrarLogin(usuarioTO);
 

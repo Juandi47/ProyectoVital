@@ -50,7 +50,7 @@ namespace UI
                             //se debe verificar que la correo  no haya sido ingresada anteriormente
                             if (manejadorAdmin.existeCorreo(correo))
                             {
-                                Response.Write("<script>alert('El correo electrónico ha sido registrado')</script>");
+                                Response.Write("<script>alert('El correo electrónico ya ha sido registrado anteriormente')</script>");
                             }
                             else {
                                 mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2, correo);
