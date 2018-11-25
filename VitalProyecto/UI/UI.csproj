@@ -110,8 +110,10 @@
     <Content Include="IniciarSesion.aspx" />
     <Content Include="js\alertify.js" />
     <Content Include="js\init.js" />
+    <Content Include="js\jquery-1.4.1.min.js" />
     <Content Include="js\jquery.dropotron.min.js" />
     <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.quicksearch.js" />
     <Content Include="js\pikaday.js" />
     <Content Include="js\skel-layers.min.js" />
     <Content Include="js\skel.min.js" />

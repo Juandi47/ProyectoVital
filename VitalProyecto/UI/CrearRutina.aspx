@@ -8,11 +8,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link href="admin_estilos.css" rel="stylesheet" />
+    <script src="js/jquery.quicksearch.js"></script>
+    <script src="js/jquery-1.4.1.min.js"></script>
+    <script  type="text/javascript">
+        $(document).ready(function () {
+            $('input#<%=txtBuscarEjercicio.ClientID%>').quicksearch('table#<%=grdEjercicios.ClientID%> tbody tr');
+        });
+    </script>
 </asp:Content>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
+
+
     <script>
         function valida(esto, checkbox) {
 
@@ -107,10 +115,10 @@
                         <br />
                         <asp:Label ID="lbBuscarEjercicio" runat="server" Text="BUSCAR:" Font-Bold="true"></asp:Label>
                         <div class="input-group">
-                            <asp:TextBox ID="txtBuscarEjercicio" runat="server" Width="300px" Height="45px" Wrap="False" placeholder="EJERCICIO" BackColor="WhiteSmoke"></asp:TextBox>
-                            <asp:Button ID="btnBuscar" runat="server" Font-Size="Medium" Text="BUSCAR" Width="100px"  Height="45px" BackColor="darkolivegreen" OnClick="btnBuscar_Click" />
+                            <asp:TextBox ID="txtBuscarEjercicio" class="form-control" runat="server" Width="300px" Height="45px" Wrap="False" placeholder="EJERCICIO" BackColor="WhiteSmoke"></asp:TextBox>
+                            <asp:Button ID="btnBuscar" runat="server" Font-Size="Medium" Text="BUSCAR" Width="100px" Height="45px" BackColor="darkolivegreen" OnClick="btnBuscar_Click" />
                         </div>
-                        
+
                     </div>
                     <asp:GridView ID="grdEjercicios" runat="server" class="table-responsive-lg table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False">
                         <Columns>

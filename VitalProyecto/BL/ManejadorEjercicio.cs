@@ -87,15 +87,15 @@ namespace BL
 
             List<HojaEjercicio> lista = new List<HojaEjercicio>();
 
-            List<TOEjercicio> to = dao.buscarEjercicios();
+            //List<TOEjercicio> to = dao.buscarEjercicios();
 
-            foreach (TOEjercicio x in to)
-            {
-                HojaEjercicio hojaEjercicio = new HojaEjercicio();
-                hojaEjercicio.Ejercicio = x.Nombre;
+            //foreach (TOEjercicio x in to)
+            //{
+            //    HojaEjercicio hojaEjercicio = new HojaEjercicio();
+            //    hojaEjercicio.Ejercicio = x.Nombre;
 
-                lista.Add(hojaEjercicio);
-            }
+            //    lista.Add(hojaEjercicio);
+            //}
 
 
             return lista;
