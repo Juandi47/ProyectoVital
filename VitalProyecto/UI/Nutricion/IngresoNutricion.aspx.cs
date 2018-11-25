@@ -99,7 +99,7 @@ namespace UI.Nutricion
             Recordatorio24H record = new Recordatorio24H();
             string tabla = r24Tabla.Text;
             tabla += "<tr><td>" + r24TiempoComida.Text + "</td><td>" + r24Alimento.Text + "</td><td>" + r24Cantidad.Text + "</td><td>" + r24Descripcion.Text + "</td></tr>";
-            tSuplementoMedico.Text = tabla;
+            r24Tabla.Text = tabla;
             record.Cedula = tCedula.Text;
             record.TiempoComida = r24TiempoComida.Text;
             record.Comida = r24Alimento.Text;
@@ -145,11 +145,16 @@ namespace UI.Nutricion
 
         protected void GETBoton_Click(object sender, EventArgs e)
         {
+            
             GETStat = 0;
         }
 
         protected void btnCrear_Click(object sender, EventArgs e)
         {
+            if (tCedula.Text.Equals("") || tnombre.Text.Equals("") || tApellid1.Text.Equals("") || tApellid2.Text.Equals("") || tSex.Text.Equals(""))
+            {
+                Response.Write("<script>alert('No deben haber espacios en blanco')</script>");
+            }
             string sexo = "";
             if (tSex.Text.Equals("Femenino")) { sexo = "F"; } else if (tSex.Text.Equals("Masculino")) { sexo = "M"; } else { sexo = "O"; };
             Boolean creado = manejadorNutri.CrearCliente(tCedula.Text, tnombre.Text, tApellid1.Text, tApellid2.Text,
@@ -192,11 +197,17 @@ namespace UI.Nutricion
                             Geb, GETStat, Convert.ToDecimal(PorcCHO.Text), Convert.ToDecimal(GramCHO.Text), Convert.ToDecimal(kcalCHO.Text), Convert.ToDecimal(PorcProteinas.Text),
                             Convert.ToDecimal(GramProteinas.Text), Convert.ToDecimal(kcalProteinas.Text), Convert.ToDecimal(PorcGrasas.Text), Convert.ToDecimal(GramGrasas.Text), Convert.ToDecimal(kcalGrasas.Text));
 
+                        Porciones porc = new Porciones(tCedula.Text, Convert.ToDecimal(pLeche.Text), Convert.ToDecimal(pCarnes.Text),
+                            Convert.ToDecimal(pVegetales.Text), Convert.ToDecimal(pGrasas.Text),Convert.ToDecimal(pFrutas.Text), 
+                            Convert.ToDecimal(pAzúcares.Text),Convert.ToDecimal(pHarinas.Text),Convert.ToDecimal(pSuplemento.Text));
 
+                        DistribucionPorciones distrib = new DistribucionPorciones(tCedula.Text, TCAyunas.Text, TCDesayuno.Text, TCMediaMa.Text,
+                            TCAlmuerzo.Text, TCMediaTard.Text, TCCena.Text, TCColacNocturna.Text);
 
-
-
-
+                        bool agreTot = manejadorNutri.AgregarAntropometria(antropom, porc, distrib);
+                        if(agreTot == true)
+                        { Response.Write("Cliente Registrado!"); }
+                        else { Response.Write("Cliente No Registrado"); }
 
                     }
                 } else { Response.Write("<script>alertify.notify('Registro no se realizó correctamente', 'error', 5, null); </script>");}

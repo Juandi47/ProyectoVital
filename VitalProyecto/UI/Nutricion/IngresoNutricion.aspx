@@ -618,49 +618,49 @@
                                     <label class="form-label" for="pLeche">Leche:</label>
                                 </div>
                                 <div class="col-35">
-                                    <asp:TextBox ID="pLeche" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="pLeche" runat="server" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pVegetales">Vegetales:</label>
                                 </div>
                                 <div class="col-35">
-                                    <asp:TextBox ID="pVegetales" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="pVegetales" runat="server" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pFrutas">Frutas:</label>
                                 </div>
                                 <div class="col-35">
-                                    <asp:TextBox ID="pFrutas" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="pFrutas" runat="server" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pHarinas">Harinas:</label>
                                 </div>
                                 <div class="col-35">
-                                    <asp:TextBox ID="pHarinas" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="pHarinas" runat="server" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pCarnes">Carnes:</label>
                                 </div>
                                 <div class="col-35">
-                                    <asp:TextBox ID="pCarnes" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="pCarnes" runat="server" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pGrasas">Grasas:</label>
                                 </div>
                                 <div class="col-35">
-                                    <asp:TextBox ID="pGrasas" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="pGrasas" runat="server" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pAzúcares">Azúcares:</label>
                                 </div>
                                 <div class="col-35">
-                                    <asp:TextBox ID="pAzúcares" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="pAzúcares" runat="server" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pSuplemento">Suplemento:</label>
                                 </div>
                                 <div class="col-35">
-                                    <asp:TextBox ID="pSuplemento" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="pSuplemento" runat="server" TextMode="Number"></asp:TextBox>
                                 </div>
                             </div>
 

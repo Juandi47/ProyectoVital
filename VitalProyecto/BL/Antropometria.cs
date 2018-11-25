@@ -12,9 +12,9 @@ namespace BL
         public decimal Talla { set; get; }
         public decimal PesoIdeal { set; get; }
         public decimal Edad { set; get; }
-        public decimal PMB { set; get; }
+        public decimal PMB { set; get; }//+fecha
         public decimal Peso { set; get; }
-        public decimal PesoMaxTeoria { set; get; }
+        public decimal PesoMaxTeoria { set; get; }//
         public decimal IMC { set; get; }
         public decimal PorcGrasaAnalizador { set; get; }
         public decimal PorcGr_Bascula { set; get; }
@@ -31,18 +31,18 @@ namespace BL
         public decimal Abdomen { set; get; }
         public decimal Cadera { set; get; }
         public string Muslo { set; get; }
-        public decimal CBM { set; get; }
-        public decimal CircunfMunneca { set; get; }
-        public decimal PorcentGViceral { set; get; }
+        public decimal CBM { set; get; }//Brazo
+        public decimal CircunfMunneca { set; get; }//
+        public decimal PorcentGViceral { set; get; }//
         public decimal PorcentMusculo { set; get; }
         public decimal PM_BI { set; get; }
         public decimal PM_PD { set; get; }
         public decimal PM_BD { set; get; }
         public decimal PM_PI { set; get; }
         public decimal PM_Tronco { set; get; }
-        public string Observaciones { set; get; }
-        public decimal GEB { set; get; }
-        public decimal GET { set; get; }
+        public string Observaciones { set; get; }//
+        public decimal GEB { set; get; }//
+        public decimal GET { set; get; }//
         public decimal CHOPorc { set; get; }
         public decimal CHOGram { set; get; }
         public decimal CHO_kcal { set; get; }
