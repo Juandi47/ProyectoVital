@@ -45,6 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -103,6 +104,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Gestion_Admin.aspx" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\nutriGym.jpg" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
@@ -120,11 +122,12 @@
     <Content Include="Cliente\login.aspx" />
     <Content Include="ListaClientesAdmin.aspx" />
     <Content Include="ModificarAdmin.aspx" />
+    <Content Include="ModificarCuentaUsuario.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
     <Content Include="Nutricion\IngresoNutricion.aspx" />
     <Content Include="Nutricion\SeguimientoNutricion.aspx" />
-    <Content Include="Nutricion\SeguimientoSemanal.aspx" />
+    <Content Include="Nutricion\SeguimSemanal.aspx" />
     <Content Include="PagInicio.aspx" />
     <Content Include="RegistroCliente.aspx" />
     <Content Include="SobreNosotros.html" />
@@ -250,6 +253,13 @@
     <Compile Include="ModificarAdmin.aspx.designer.cs">
       <DependentUpon>ModificarAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ModificarCuentaUsuario.aspx.cs">
+      <DependentUpon>ModificarCuentaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarCuentaUsuario.aspx.designer.cs">
+      <DependentUpon>ModificarCuentaUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MostrarRutina.aspx.cs">
       <DependentUpon>MostrarRutina.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -285,12 +295,12 @@
     <Compile Include="Nutricion\SeguimientoNutricion.aspx.designer.cs">
       <DependentUpon>SeguimientoNutricion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Nutricion\SeguimientoSemanal.aspx.cs">
-      <DependentUpon>SeguimientoSemanal.aspx</DependentUpon>
+    <Compile Include="Nutricion\SeguimSemanal.aspx.cs">
+      <DependentUpon>SeguimSemanal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Nutricion\SeguimientoSemanal.aspx.designer.cs">
-      <DependentUpon>SeguimientoSemanal.aspx</DependentUpon>
+    <Compile Include="Nutricion\SeguimSemanal.aspx.designer.cs">
+      <DependentUpon>SeguimSemanal.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagInicio.aspx.cs">
       <DependentUpon>PagInicio.aspx</DependentUpon>

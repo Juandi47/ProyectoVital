@@ -47,9 +47,9 @@
 				</div>
 				<div>
 					<nav id="nav">
-						<%--<ul>
-							<li><a href="#">Modificar perfil</a></li>
-						</ul>--%>
+						<ul>
+							<li><a href="ModificarCuentaUsuario.apsx">Modificar perfil</a></li>
+						</ul>
 					</nav>
 				</div>
 			</div>

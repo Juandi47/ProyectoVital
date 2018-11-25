@@ -58,6 +58,7 @@
     <Compile Include="TOPorciones.cs" />
     <Compile Include="TORecordatorio24H.cs" />
     <Compile Include="TORutina.cs" />
+    <Compile Include="TOSeguimientoSemanal.cs" />
     <Compile Include="TOUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
