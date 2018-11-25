@@ -23,10 +23,10 @@
                     </div>                        
                     <asp:GridView ID="grdEjercicios" runat="server" class="table table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False">
                         <Columns>
-                            <asp:BoundField DataField="Ejercicio" HeaderText="Ejercicio" ItemStyle-VerticalAlign="Middle"/>
+                            <asp:BoundField DataField="Ejercicio" HeaderText="EJERCICIO" ItemStyle-VerticalAlign="Middle"/>
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="btnEliminar" Text="Eliminar" runat="server" CommandArgument='<%#Eval("Ejercicio")%>' OnClick="btnEliminar_Click" ForeColor="RoyalBlue"/>
+                                    <asp:LinkButton ID="btnEliminar" Text="ELIMINAR" runat="server" CommandArgument='<%#Eval("Ejercicio")%>' OnClick="btnEliminar_Click" ForeColor="RoyalBlue"/>
                                 </ItemTemplate>
                                 <ItemStyle HorizontalAlign="Center" Wrap="false" />
                             </asp:TemplateField>
