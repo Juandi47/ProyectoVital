@@ -118,6 +118,7 @@
     <Content Include="Cliente\login.aspx" />
     <Content Include="ListaClientesAdmin.aspx" />
     <Content Include="ModificarAdmin.aspx" />
+    <Content Include="ModificarCuentaUsuario.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
     <Content Include="Nutricion\IngresoNutricion.aspx" />
@@ -247,6 +248,13 @@
     </Compile>
     <Compile Include="ModificarAdmin.aspx.designer.cs">
       <DependentUpon>ModificarAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarCuentaUsuario.aspx.cs">
+      <DependentUpon>ModificarCuentaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarCuentaUsuario.aspx.designer.cs">
+      <DependentUpon>ModificarCuentaUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="MostrarRutina.aspx.cs">
       <DependentUpon>MostrarRutina.aspx</DependentUpon>
