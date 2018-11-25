@@ -145,11 +145,16 @@ namespace UI.Nutricion
 
         protected void GETBoton_Click(object sender, EventArgs e)
         {
+            
             GETStat = 0;
         }
 
         protected void btnCrear_Click(object sender, EventArgs e)
         {
+            if (tCedula.Text.Equals("") || tnombre.Text.Equals("") || tApellid1.Text.Equals("") || tApellid2.Text.Equals("") || tSex.Text.Equals(""))
+            {
+                Response.Write("<script>alert('No deben haber espacios en blanco')</script>");
+            }
             string sexo = "";
             if (tSex.Text.Equals("Femenino")) { sexo = "F"; } else if (tSex.Text.Equals("Masculino")) { sexo = "M"; } else { sexo = "O"; };
             Boolean creado = manejadorNutri.CrearCliente(tCedula.Text, tnombre.Text, tApellid1.Text, tApellid2.Text,
