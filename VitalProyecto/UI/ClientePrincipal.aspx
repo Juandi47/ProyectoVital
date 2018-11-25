@@ -59,14 +59,8 @@
 			<img src="../images/banner_admin01.jpg" style="width: 100%" />
 		</div>
 
-		<%--	<div id="banner" class="admin-banner" style="background-color: gainsboro; background-size: cover">
-		</div>--%>
-
-
-		<div>
-
-
-			<div class="container">
+		
+			<div class="container" >
 				<div class="row">
 					<div class="col-md-4"></div>
 					<div class="col-md-4">
@@ -78,10 +72,89 @@
 				</div>
 			</div>
 
+
 			<div class="container">
 				<div class="row">
 					<div class="col-md-2"></div>
-					<div class="col-md-8">
+					<div class="col-md-8" style="background-color:silver">
+						<asp:Label ID="lbNomCompleto" runat="server" Text="Label"></asp:Label>
+						
+						<br />
+						Cédula:
+						<asp:Label ID="lbCedula" runat="server" Text="Label"></asp:Label>
+						<br />
+						Correo:
+						<asp:Label ID="lbCorreo" runat="server" Text="Label"></asp:Label>
+						
+						<br />
+						Fecha de nacimiento:
+						<asp:Label ID="lbNacim" runat="server" Text="Label"></asp:Label>
+						<br />
+						Teléfono:
+						<asp:Label ID="lbTel" runat="server" Text="Label"></asp:Label>
+						<br />
+						Observaciones:
+						<asp:Label ID="lbObs" runat="server" Text="Label"></asp:Label>
+						<br />
+						Fecha de mensualidad:
+						<asp:Label ID="lbMens" runat="server" Text="Label"></asp:Label>
+						
+					</div>
+					<div class="col-md-2">
+						<br />
+						<br />
+					</div>
+				</div>
+			</div>
+
+		<div class="container" >
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<br /><br /><br />
+						<asp:TextBox ID="txtMedidas" BackColor="DarkOliveGreen" Text="Medidas del cliente" runat="server" Font-Overline="False" Font-Size="Medium" ForeColor="White"></asp:TextBox><br />
+						<br />
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+			</div>
+
+		<div class="container">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8" style="background-color:silver">
+						
+			
+					</div>
+					<div class="col-md-2">
+						<br />
+						<br />
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+			<%--<div class="container">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8" style="background-color:silver">
+						<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+						<br />
+						<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+						<br />
+						<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+						<br />
+						<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+						<br />
+						<asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
 						<br />
 
 						<asp:Table runat="server" CssClass="table-responsive estiloFila">
@@ -135,6 +208,8 @@
 						</asp:Table>
 
 						<asp:TextBox ID="txtMedidas" BackColor="DarkOliveGreen" Text="Medidas del cliente" runat="server" Font-Overline="False" Font-Size="Medium" ForeColor="White" Width="200px"></asp:TextBox>
+						<br />
+						<asp:Label ID="lbNoMedidas" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="Red"></asp:Label>
 						<asp:Table runat="server">
 							<asp:TableRow>
 								<asp:TableCell>
@@ -176,18 +251,15 @@
 									Estatura: <asp:Label ID="lbEstatura" runat="server"></asp:Label>
 								</asp:TableCell>
 							</asp:TableRow>
-						</asp:Table>
-
-						<br />
+						</asp:Table>--%>			<%--			<br />
 						<br />
 						<br />
 						<br />
 					</div>
 					<div class="col-md-2"></div>
 				</div>
-			</div>
+			</div>--%>
 
-		</div>
 
 	</form>
 
@@ -196,6 +268,8 @@
 			<br /><br /><br />
         </h1>
     </footer>--%>
+	<p>
+		&nbsp;</p>
 </body>
 </html>
 

@@ -11,39 +11,39 @@ namespace DAO
 {
 	public class DAOIngreso
 	{
-        SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
+		SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
 
-        public TOIngreso buscarUsuario(String correo_usuario, String contra)
-        {
-            try
-            {
-                TOIngreso usuario = new TOIngreso();
+		public TOIngreso buscarUsuario(String correo_usuario, String contra)
+		{
+			try
+			{
+				TOIngreso usuario = new TOIngreso();
 
                 SqlCommand buscar = new SqlCommand("SELECT * FROM Login WHERE Nombre_usuario = @corrusu", conexion);
-                buscar.Parameters.AddWithValue("@corrusu", correo_usuario);
-                conexion.Open();
-                SqlDataReader lector = buscar.ExecuteReader();
+				buscar.Parameters.AddWithValue("@corrusu", correo_usuario);
+				conexion.Open();
+				SqlDataReader lector = buscar.ExecuteReader();
 
-                if (lector.HasRows)
-                {
-                    while (lector.Read())
-                    {
+				if (lector.HasRows)
+				{
+					while (lector.Read())
+					{
                         usuario.nombre_usuario = lector.GetString(0);
-                        usuario.clave = lector.GetString(1);
-                       usuario.rol = lector.GetString(2);
-
-                    }
-                    lector.Close();
-                }
+						usuario.clave = lector.GetString(1);
+						usuario.rol = lector.GetString(2);
+						
+					}
+					lector.Close();
+				}
                 
-                conexion.Close();
-                return usuario;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
+				conexion.Close();
+				return usuario;
+			}
+			catch (Exception)
+			{
+				return null;
+			}
+		}
 
 
         public int registrarLogin(TOIngreso tOlogin)
@@ -67,5 +67,5 @@ namespace DAO
             }
             return res;
         }
-    }
+	}
 }
