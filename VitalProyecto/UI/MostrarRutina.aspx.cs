@@ -15,9 +15,11 @@ namespace UI
         private ManejadorRutina manejador = new ManejadorRutina();
         protected void Page_Load(object sender, EventArgs e)
         {
-            nombreRutina = Session["Rutina"] as String;
-            Session.Remove("Rutina");
-            llenarGrid();
+            
+                nombreRutina = Session["Rutina"] as String;
+                llenarGrid();
+            
+            
         }
 
         private void llenarGrid() {
