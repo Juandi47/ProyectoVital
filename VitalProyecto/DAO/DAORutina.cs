@@ -331,6 +331,10 @@ namespace DAO
             return lista;
         }
 
+        //public Boolean verificarExistenciaRutina() {
+
+        //}
+
 
 
     }

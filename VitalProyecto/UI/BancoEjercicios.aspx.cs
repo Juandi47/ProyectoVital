@@ -26,7 +26,7 @@ namespace UI
         protected void btnAgregarEjercicio_Click(object sender, EventArgs e)
         {
             if (!txtNuevoEjercicio.Text.Equals("") && txtNuevoEjercicio != null)  {
-                manejador.agregarEjercicio(txtNuevoEjercicio.Text);
+                manejador.agregarEjercicio(Controlador.RemoveAccentsWithRegEx(txtNuevoEjercicio.Text));
                 grdEjercicios.DataSource = null;
                 llenarGrid();
             }
