@@ -29,6 +29,15 @@ namespace UI
 
             ClientScript.GetPostBackEventReference(this, string.Empty);
 
+            string accion = Convert.ToString(Request.QueryString["con"]);
+
+            if(!IsPostBack)
+            if ( accion != null) {
+                    if (accion.Equals("true"))
+                        Response.Write("<script>alert('Cliente modificado correctamente.')</script>");
+                }
+                  
+
             //if (IsPostBack)
             //{
             //    if (Page.Request.Params["__EVENTTARGET"] == "id")

@@ -33,8 +33,17 @@ namespace UI
             string accion = Convert.ToString(Request.QueryString["accion"]);
 
             if (accion != null && accion.Equals("mod")) {
+                if (IsPostBack)
+                {
+                    Session["telefono"] = txbtelefono.Text;
+                    Session["obs"] = txbobs.Text;
+                    Session["clave"] = textBoxClave.Text;
+                }
                 cargarEdicionUsuario();
                 ingresoDIV.Visible = false;
+
+                
+
             } else {
                 ingresoDIV.Visible = false;
                 divExtra.Visible = false;
@@ -45,7 +54,7 @@ namespace UI
                 {
                     cargarFechas();
                     cliente = new Cliente();
-            }
+                }
                 else {
                     cliente = Session["cliente"] as Cliente;
                 }
@@ -53,6 +62,9 @@ namespace UI
         }
 
         private void cargarEdicionUsuario() {
+
+            
+
 
             string idEn = Convert.ToString(Request.QueryString["key"]);
             
@@ -138,8 +150,9 @@ namespace UI
             if (pass1.Text.Equals(pass2.Text))
             {
                 String pass = pass1.Text;
+                String corr = txbcorreo.Text;
                 //registrar login
-                Ingreso log = new Ingreso(correo, pass, "cliente");
+                Ingreso log = new Ingreso(corr, pass, "cliente");
                 new ManejadorIngreso().registrarLogin(log);
 
                 cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
@@ -166,10 +179,9 @@ namespace UI
                 DateTime fecha_nac;
                 String correo = txbcorreo.Text;
                 String obs = txbobs.Text;
-                //String pass = pass1.Text;
 
               
-            if (!btnModificar.Text.Equals("Actualizar"))
+            if (!btnModificar.Text.Equals("Actualizar"))        // SE VA A REGISTRAR UN CLIENTE sin crearle la cuenta
             {
                 if (camposVacios())
                 {
@@ -190,17 +202,22 @@ namespace UI
                     Response.Write("<script>alert('Error: Campos incompletos')</script>");
                 }
             }
-            else
+            else // SE VA A MODIFICAR UN CLIENTE
             {
-                if (!txbobs.Equals("") && !txbtelefono.Equals(""))
+                if (!txbobs.Equals("") && !txbtelefono.Equals("")) // VALIDAR QUE NO DEJE EN BLANCO
                 {
-                    cliente.Observacion = txbobs.Text;
-                    cliente.Telefono = int.Parse(txbtelefono.Text);
-                    Boolean modificado = new ManejadorCliente().modificarCliente(cliente, textBoxClave.Text);
+
+                    String observaciones = (String)Session["obs"];
+
+                        int tel = int.Parse((String)Session["telefono"]);
+
+                    
+                    String clave = (String)Session["clave"];
+                                                                                // prevalece     prevalece        sesion        sesion sesion
+                    Boolean modificado = new ManejadorCliente().modificarCliente(cliente.Cedula, cliente.Correo, observaciones, tel, clave);
                     if (modificado)
                     {
-                        Response.Write("<script>alert('Cliente modificado correctamente.')</script>");
-                        Response.Redirect("ListaClientesAdmin.aspx");
+                        Response.Redirect("ListaClientesAdmin.aspx?con=true");
                     }
                        
 
@@ -258,6 +275,7 @@ namespace UI
             }
             else {
                 //busqueda para la modificacion
+
                 cliente.Cedula = txbced.Text;
                 Session["cliente"] = cliente;
                 cliente = new ManejadorCliente().verificarClienteBL(cliente);

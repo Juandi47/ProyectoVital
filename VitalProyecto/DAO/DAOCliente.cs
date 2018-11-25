@@ -124,17 +124,17 @@ namespace DAO
 
         }
 
-        public bool modificarClienteDAO(TOCliente clienTO, String clave)
+        public bool modificarClienteDAO(String ced, String corr, String obs, int tel, String clave)
         {
             SqlCommand cmdCliente = new SqlCommand("update Cliente set Telefono = @tel, Observaciones = @obs where Cedula = @ced", conexion);
             SqlCommand cmdLogin = new SqlCommand("update Login set Clave = @con where Nombre_usuario = @correo", conexion);
 
-            cmdCliente.Parameters.AddWithValue("@tel", clienTO.Telefono);
-            cmdCliente.Parameters.AddWithValue("@obs", clienTO.Observacion);
-            cmdCliente.Parameters.AddWithValue("@ced", clienTO.Cedula);
+            cmdCliente.Parameters.AddWithValue("@tel", tel);
+            cmdCliente.Parameters.AddWithValue("@obs", obs);
+            cmdCliente.Parameters.AddWithValue("@ced", ced);
 
             cmdLogin.Parameters.AddWithValue("@con", clave);
-            cmdLogin.Parameters.AddWithValue("@correo", clienTO.Correo);
+            cmdLogin.Parameters.AddWithValue("@correo", corr);
             Boolean modificacionClienteCorrecta = false;
             try {
                 conexion.Open();

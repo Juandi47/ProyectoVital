@@ -14,7 +14,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
-
+    
     <asp:Label ID="tituloH1" CssClass="title" runat="server" Text="Registro de cliente"></asp:Label>
 
     <div class="form-container" runat="server">
@@ -119,7 +119,7 @@
 
                         <asp:TableRow CssClass="tablerow">
                             <asp:TableCell>
-                                <asp:Label ID="Label5" CssClass="form-label" runat="server" Text="Telefono"></asp:Label>
+                                <asp:Label ID="Label5" CssClass="form-label" runat="server" Text="Telefono" ></asp:Label>
                             </asp:TableCell>
                             <asp:TableCell>
                                 <asp:Label ID="Label6" CssClass="form-label" runat="server" Text="Correo"></asp:Label>
@@ -128,7 +128,7 @@
 
                         <asp:TableRow CssClass="tablerow">
                             <asp:TableCell>
-                                <asp:TextBox ID="txbtelefono" runat="server" MaxLength="8"></asp:TextBox>
+                                <asp:TextBox ID="txbtelefono" runat="server" MaxLength="8" ViewStateMode="Enabled"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
                                 <asp:TextBox ID="txbcorreo" runat="server"></asp:TextBox>
@@ -150,7 +150,7 @@
                             <asp:Label ID="Label2" CssClass="form-label" runat="server" Text="Contraseña"></asp:Label>
                         </div>
                         <div class="col-md-6">
-                            <asp:TextBox ID="textBoxClave" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="textBoxClave" runat="server" TextMode="Password" ViewStateMode="Enabled"></asp:TextBox>
                         </div>
                     </div>
 
@@ -168,7 +168,7 @@
 
                         <asp:TableRow>
                             <asp:TableCell>
-                                <asp:TextBox ID="txbobs" runat="server" Rows="10" TextMode="MultiLine" ToolTip="Observaciones" Height="110px"></asp:TextBox>
+                                <asp:TextBox ID="txbobs" runat="server" Rows="10" TextMode="MultiLine" ToolTip="Observaciones" Height="110px" ViewStateMode="Disabled"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
 
