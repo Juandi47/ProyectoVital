@@ -73,5 +73,43 @@ namespace BL
 
             return hojas;
         }
+
+        public List<Ejercicio> pasarAEjercicios(List<HojaRutina> hojas)
+        {
+
+            Rutina rutina = new Rutina();
+
+            List<Ejercicio> ejercicios = new List<Ejercicio>();
+
+            ManejadorEjercicio manejador = new ManejadorEjercicio();
+
+            DAORutina dao = new DAORutina();
+
+            foreach (HojaRutina x in hojas)
+            {
+                Ejercicio ejercicio = new Ejercicio();
+                ejercicio.Clave = 0;
+                ejercicio.Nombre = x.Ejercicio;
+                ejercicio.Repeticiones = x.Repeticiones;
+                ejercicio.Series = x.Series;
+
+                ejercicios.Add(ejercicio);
+            }
+
+            return ejercicios;
+        }
+
+        public TORutina rutinaATO(Rutina rutina) {
+            ManejadorEjercicio manejo = new ManejadorEjercicio();
+            List<TOEjercicio> toEjercicio = manejo.pasarListaBLaTO(rutina.Ejercicios);
+
+            return new TORutina(0,rutina.Fecha,rutina.Nombre,toEjercicio);
+        }
+
+        public void agregarRutina(Rutina rutina) {
+            DAORutina dao = new DAORutina();
+            dao.agregarRutina(rutinaATO(rutina));
+
+        }
     }
 }

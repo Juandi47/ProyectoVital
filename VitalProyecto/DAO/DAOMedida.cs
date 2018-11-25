@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -13,32 +14,37 @@ namespace DAO
         SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
         public Boolean AgregarMedida(TOMedida medida)
         {
-            try
-            {
+            //    try
+            //    {
                 
-            String query = "Insert into Medidas values (@freCard, @peso, @porcGrasa, @IMC, @cint, @abdmn, @cader, @muslo, @estat, @ced);";
+            String query = "Insert into Medidas values (@freCard, @peso, @porcGrasa, @IMC, @cint, @abdom, @cader, @muslo, @estat, @ced, @fechM)";
             SqlCommand Insertar = new SqlCommand(query, conexion);
-            Insertar.Parameters.AddWithValue("@ced", medida.Ced_Cliente);
+              
             Insertar.Parameters.AddWithValue("@freCard", medida.Frec_Cardiaca);
             Insertar.Parameters.AddWithValue("@peso", medida.Peso);
             Insertar.Parameters.AddWithValue("@porcGrasa", medida.Porcent_Grasa);
             Insertar.Parameters.AddWithValue("@IMC", medida.IMC);
             Insertar.Parameters.AddWithValue("@cint", medida.Cintura);
-            Insertar.Parameters.AddWithValue("@adbmn", medida.Abdomen);
+                Insertar.Parameters.AddWithValue("@adbom", medida.Abdomen);
             Insertar.Parameters.AddWithValue("@cader", medida.Cadera);
             Insertar.Parameters.AddWithValue("@muslo", medida.Muslo);
             Insertar.Parameters.AddWithValue("@estat", medida.Estatura);
+                Insertar.Parameters.AddWithValue("@ced", medida.Ced_Cliente);
+                Insertar.Parameters.AddWithValue("@fechM", medida.Fecha_medida);
 
+                if (conexion.State != ConnectionState.Open)
+                {
                 conexion.Open();
+                }
                 Insertar.ExecuteNonQuery();
                 conexion.Close();
 
                 return true;
-            }
-            catch (SqlException)
-            {
-                return false;
-            }
+            //}
+            //catch (SqlException)
+            //{
+            //    return false;
+            //}
         }
 
         public List<TOMedida> ListaMedidas(string cedula)
@@ -93,7 +99,7 @@ namespace DAO
 						medida.Muslo = decimal.Parse(lector["Muslo"].ToString());
 						medida.Estatura = decimal.Parse(lector["Estatura"].ToString());
 						medida.Ced_Cliente = lector["Cedula"].ToString();
-						medida.fecha_medida = DateTime.Parse(lector["Fecha_Medida"].ToString());
+                        medida.Fecha_medida = DateTime.Parse(lector["Fecha_Medida"].ToString());
 					}
 					lector.Close();
 				}
@@ -105,6 +111,5 @@ namespace DAO
 				return null;
 			}
 		}
-
 	}
 }

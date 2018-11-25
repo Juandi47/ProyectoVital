@@ -16,6 +16,13 @@ namespace BL
 
         public Ejercicio() { }
 
+        public Ejercicio(string nombre, int repeticiones, int series) {
+            Clave = 0;
+            Nombre = nombre;
+            Repeticiones = repeticiones;
+            Series = series;
+        }
+
         public int Clave { get; set; }
 
         public String Nombre { get; set; }
