@@ -7,6 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
      <link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen">
+    <script src="js/alertify.min.js"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
@@ -25,21 +26,25 @@
 						<asp:TextBox ID="txtCed" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 						Frecuencia cardiaca
-						<asp:TextBox ID="tfrec" runat="server" BackColor="White" Height="10px" Width="180px" BorderColor="Silver"></asp:TextBox>
+						<asp:TextBox ID="tfrecCard" runat="server" BackColor="White" Height="10px" Width="180px" BorderColor="Silver"></asp:TextBox>
 						<br />
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
 						Peso(Kg)
-						<asp:TextBox ID="tweigth" runat="server" TextMode="Number"></asp:TextBox>
+						<asp:TextBox ID="tPeso" runat="server" TextMode="Number"></asp:TextBox>
 						&nbsp;<br />
 						<br />
-						Porcentaje grasa(%)<asp:TextBox ID="tpercentWeigth" runat="server" TextMode="Number"></asp:TextBox>
+						Porcentaje grasa(%)<asp:TextBox ID="tpercentGrasa" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<br />
 						IMC
-						<asp:TextBox ID="timc" runat="server" TextMode="Number"></asp:TextBox>
+						<asp:TextBox ID="tImc" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
-
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<br />
+                        Cintura(cm)
+						<asp:TextBox ID="tcintura" runat="server" TextMode="Number"></asp:TextBox>
+						<br />
 					</div>
 
 					<div class="col-md-6">
@@ -50,15 +55,15 @@
 						<br />
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<br />
-						Cadera(cm)<asp:TextBox ID="thip" runat="server" TextMode="Number"></asp:TextBox>
+						Cadera(cm)<asp:TextBox ID="tCadera" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<br />
-						Muslo(cm)<asp:TextBox ID="tthigth" runat="server" TextMode="Number"></asp:TextBox>
+						Muslo(cm)<asp:TextBox ID="tMuslo" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 						&nbsp;&nbsp;
 						<br />
-						Estatura(cm)<asp:TextBox ID="theigth" runat="server" TextMode="Number"></asp:TextBox>
+						Estatura(cm)<asp:TextBox ID="tEstatura" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 					</div>
 				</div>
@@ -73,7 +78,7 @@
 					<div class="col-md-4"></div>
 				</div>
 			</div>
-
+             
         </form>
     </div>
 

@@ -63,8 +63,10 @@
 
 					<br />
 					Correo eléctronico:<asp:TextBox ID="txtCorreo" runat="server" TextMode="Email"></asp:TextBox>
+					<asp:RequiredFieldValidator CssClass="text-danger" ID="reqFieCorreo" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
 					<br />
 					Contraseña:<asp:TextBox ID="txtContra" runat="server" TextMode="Password" Font-Size="Small"></asp:TextBox>
+					<asp:RequiredFieldValidator CssClass="text-danger" ID="reqFieContras" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
 					<br />
 					<asp:Button class="btn btn-success" ID="btnIngresar" runat="server" Height="45px" Text="Ingresar" Width="120px" OnClick="btnIngresar_Click" CssClass="alert-success" Font-Size="Small" />
 					<br />

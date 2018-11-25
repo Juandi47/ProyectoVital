@@ -12,10 +12,10 @@ namespace BL
     {
         DAOMedida medidaDAO = new DAOMedida();
 
-        public Boolean AgregarMedida(string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente)
+        public Boolean AgregarMedida(string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, string ced_Cliente, DateTime fechaMedida)
         {
             TOMedida nuevaMedida = new TOMedida(frec_Cardiaca, peso, porcent_Grasa, iMC, cintura, abdomen,
-                cadera, muslo, estatura, ced_Cliente);
+                cadera, muslo, estatura, ced_Cliente, fechaMedida);
                 return (medidaDAO.AgregarMedida(nuevaMedida));
         }
 

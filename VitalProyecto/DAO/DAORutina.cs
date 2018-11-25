@@ -11,10 +11,11 @@ namespace DAO
 {
     public class DAORutina
     {
-        SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);       
+        SqlConnection conexion = new SqlConnection(Properties.Settings.Default.conexion);
 
 
-        public List<TORutina> CargarRutinas() {
+        public List<TORutina> CargarRutinas()
+        {
 
             DataTable tabla = new DataTable();
 
@@ -22,7 +23,7 @@ namespace DAO
 
             String query = "select * from Rutina order by Fecha_Creacion desc";
 
-            SqlDataAdapter adapter = new SqlDataAdapter(query,conexion);
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
 
             adapter.Fill(tabla);
 
@@ -56,12 +57,12 @@ namespace DAO
             adapter.Fill(tabla);
 
             foreach (DataRow x in tabla.Rows)
-            {                
+            {
                 rutina.Clave = Int32.Parse(x["Clave_Rutina"].ToString());
                 rutina.Fecha = x["Fecha_Creacion"].ToString();
                 rutina.Nombre = x["Nombre"].ToString();
                 rutina.Ejercicios = CargarEjercicioRutina(Int32.Parse(x["Clave_Rutina"].ToString()));
-                
+
             }
 
             return rutina;
@@ -91,16 +92,17 @@ namespace DAO
 
             comando2.ExecuteNonQuery();
 
-            comando1.ExecuteNonQuery();            
+            comando1.ExecuteNonQuery();
 
             if (conexion.State != ConnectionState.Closed)
             {
                 conexion.Close();
             }
-            
+
         }
 
-        public int buscarClaveRutina(String Nombre) {
+        public int buscarClaveRutina(String Nombre)
+        {
 
             int clave;
             if (conexion.State != ConnectionState.Open)
@@ -135,13 +137,13 @@ namespace DAO
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
 
-            adapter.SelectCommand.Parameters.AddWithValue("@claRu",claveRutina);
+            adapter.SelectCommand.Parameters.AddWithValue("@claRu", claveRutina);
 
             adapter.Fill(tabla);
 
             foreach (DataRow x in tabla.Rows)
             {
-                
+
                 TOEjercicio ejercicio = new TOEjercicio();
                 ejercicio.Clave = int.Parse(x["Clave_Ejercicio"].ToString());
                 ejercicio.Nombre = x["Nombre"].ToString();
@@ -179,12 +181,13 @@ namespace DAO
             return lista;
         }
 
-        public void agregarEjercicio(String ejercicio) {
+        public void agregarEjercicio(String ejercicio)
+        {
             String query = "Insert into Ejercicio values(@ejer);";
 
             SqlCommand comando = new SqlCommand(query, conexion);
 
-            comando.Parameters.AddWithValue("@ejer",ejercicio);
+            comando.Parameters.AddWithValue("@ejer", ejercicio.ToUpper());
 
             if (conexion.State != ConnectionState.Open)
             {
@@ -199,7 +202,8 @@ namespace DAO
             }
         }
 
-        public void eliminarEjercicio(String ejercicio) {
+        public void eliminarEjercicio(String ejercicio)
+        {
             String query = "delete from Ejercicio where Nombre= @ejer;";
 
             SqlCommand comando = new SqlCommand(query, conexion);
@@ -217,6 +221,94 @@ namespace DAO
             {
                 conexion.Close();
             }
+        }
+
+        public int buscarClaveEjercicio(String Nombre)
+        {
+
+            int clave;
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+
+            String query = "select Clave_Ejercicio from Ejercicio where Nombre = @nom";
+
+            SqlCommand comando1 = new SqlCommand(query, conexion);
+
+            comando1.Parameters.AddWithValue("@nom", Nombre);
+
+            clave = int.Parse(comando1.ExecuteScalar().ToString());
+
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+
+            return clave;
+
+        }
+
+        public void agregarRutina(TORutina rutina)
+        {
+
+            String query = "insert into Rutina values(@fecha,@nom);";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            comando.Parameters.AddWithValue("@fecha", rutina.Fecha);
+            comando.Parameters.AddWithValue("@nom", rutina.Nombre.ToUpper());
+
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+
+            comando.ExecuteNonQuery();
+
+            int claveRutina = buscarClaveRutina(rutina.Nombre);
+
+            agregarEjerciciosRutina(rutina, claveRutina);
+
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+
+
+
+
+        }
+
+        public void agregarEjerciciosRutina(TORutina rutina, int claveRutina)
+        {
+
+
+
+            for (int i = 0; i < rutina.Ejercicios.Count; i++)
+            {
+                String query = "insert into Ejercicios_Rutina values(@claRu,@claEjer,@numSer,@numRep );";
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                comando.Parameters.AddWithValue("@claRu", claveRutina);
+                comando.Parameters.AddWithValue("@claEjer", buscarClaveEjercicio(rutina.Ejercicios[i].Nombre.ToUpper()));
+                comando.Parameters.AddWithValue("@numSer", rutina.Ejercicios[i].Series);
+                comando.Parameters.AddWithValue("@numRep", rutina.Ejercicios[i].Repeticiones);
+
+                conexion.Open();
+                comando.ExecuteNonQuery();
+                conexion.Close();
+            }
+
+
+        }
+
+
+
+        public List<TOEjercicio> buscarEjercicios()
+        {
+            List<TOEjercicio> lis = new List<TOEjercicio>();
+            return lis;
         }
 
     }
