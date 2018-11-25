@@ -115,5 +115,12 @@ namespace BL
 				clienTO.Observacion, clienTO.Fecha_Mensualidad);
 		}
 
-	}
+        public bool modificarCliente(Cliente cliente, String clave)
+        {
+            TOCliente clienTO = new TOCliente(cliente.Cedula, cliente.Nombre, cliente.Apellido1,
+                cliente.Apellido2, cliente.Fecha_Nacimiento, cliente.Telefono, cliente.Correo,
+                cliente.Observacion, cliente.Fecha_Mensualidad);
+            return clienteDAO.modificarClienteDAO(clienTO, clave);
+        }
+    }
 }
