@@ -242,7 +242,7 @@ namespace UI.Nutricion
                         {
                             decimal Geb = 0;
                             if (GEBMStat != 0) { Geb = GEBMStat; } else if (GEBHStat != 0) { Geb = GEBHStat; } else { Geb = GEBMenStat; };
-                            Antropometria antropom = new Antropometria(tCedula.Text, Convert.ToDecimal(tTalla.Text), Convert.ToDecimal(tPesoMeta.Text),
+                                Antropometria antropom = new Antropometria(tCedula.Text, Convert.ToDecimal(tTalla.Text), Convert.ToDecimal(tPesoMeta.Text),
                                 Convert.ToDecimal(tEdadNut.Text), Convert.ToDecimal(tPMB.Text), Convert.ToDecimal(tPesoActual.Text), Convert.ToDecimal(tPesoMaxTeoria.Text), Convert.ToDecimal(tIMC.Text),
                                 Convert.ToDecimal(tPorcGAnalizador.Text), Convert.ToDecimal(tPorcGBascula.Text), Convert.ToDecimal(tGBascBI.Text), Convert.ToDecimal(tGBascBD.Text),
                                 Convert.ToDecimal(tGBascPI.Text), Convert.ToDecimal(tGBascPD.Text), Convert.ToDecimal(tGBascTronco.Text), Convert.ToDecimal(tAguaNut.Text), Convert.ToDecimal(tMasaOsea.Text),
