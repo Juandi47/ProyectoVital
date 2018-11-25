@@ -303,5 +303,10 @@ namespace DAO
             
         }
 
-    }
+		public List<TOEjercicio> buscarEjercicios()
+		{
+			return null;
+		}
+
+	}
 }

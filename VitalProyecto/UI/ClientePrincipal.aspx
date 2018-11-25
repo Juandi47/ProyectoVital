@@ -21,21 +21,17 @@
 	<link rel="stylesheet" href="css/skel.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen" />
+
+	<link rel="stylesheet" href="css/tabla.css" />
 </head>
 
 <body>
-	<%--<style>
-		.estiloFila {
-			
-			border: 2px solid;
-			border-color: darkolivegreen;
+	<style>
+		#div1 {
+			overflow: scroll;
+			width: 800px;
 		}
-
-			.estiloFila :only-child {
-				margin-top: 1000px;
-			}
-
-	</style>--%>
+	</style>
 
 	<form id="form1" runat="server">
 
@@ -124,6 +120,15 @@
 					<div class="col-md-2"></div>
 					<div class="col-md-8" style="background-color:silver">
 						
+						<div id="div1">
+						<table>
+								<asp:Literal ID="tablaExped" runat="server"></asp:Literal>
+
+
+						</table>
+							</div>
+					
+						
 			
 					</div>
 					<div class="col-md-2">
@@ -131,13 +136,9 @@
 						<br />
 					</div>
 				</div>
-			</div>
 
 
-
-
-
-
+		</div>
 
 
 
@@ -158,22 +159,7 @@
 						<br />
 
 						<asp:Table runat="server" CssClass="table-responsive estiloFila">
-							<asp:TableRow CssClass="estiloFila">
-								<asp:TableCell>
-									Cédula: <asp:Label ID="lbCedula" runat="server"></asp:Label>
-								</asp:TableCell>
-
-								<asp:TableCell>
-									Correo: <asp:Label ID="lbCorreo" runat="server"></asp:Label>
-								</asp:TableCell>
-
-								<asp:TableCell>
-									Teléfono: <asp:Label ID="lbTelefono" runat="server"></asp:Label>
-								</asp:TableCell>
-
-							</asp:TableRow>
-
-
+	
 							<asp:TableRow>
 								<asp:TableCell>
 									<asp:Label ID="lbNombre" runat="server"></asp:Label>

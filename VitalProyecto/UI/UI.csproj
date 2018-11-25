@@ -103,9 +103,10 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Gestion_Admin.aspx" />
     <Content Include="images\banner.jpg" />
-    <Content Include="images\pic02.jpg" />
+    <Content Include="images\elky.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
+    <Content Include="images\yen.jpg" />
     <Content Include="InformacionAdministrador.aspx" />
     <Content Include="IniciarSesion.aspx" />
     <Content Include="js\alertify.js" />

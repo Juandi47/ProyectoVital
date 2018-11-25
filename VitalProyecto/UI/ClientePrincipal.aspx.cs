@@ -10,6 +10,9 @@ namespace UI
 {
 	public partial class ClientePrincipal : System.Web.UI.Page
 	{
+		private static List<Medida> lista = new List<Medida>();
+
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			if (new ControlSeguridad().validarCliente() == true)
@@ -19,6 +22,7 @@ namespace UI
 
 			llenarCampos();
 			informacionCliente();
+
 		}
 
 		public void llenarCampos()
@@ -28,6 +32,7 @@ namespace UI
 				" " + usuarioSesion.apellido2;
 			lbCedula.Text = usuarioSesion.cedula;
 			lbCorreo.Text = usuarioSesion.correo;
+			
 		}
 
 		public void informacionCliente()
@@ -35,6 +40,7 @@ namespace UI
 			Usuario usuarioSesion = Session["usuarioSesion"] as Usuario;
 			Cliente clien = new ManejadorCliente().buscarCliente(usuarioSesion.cedula);
 			Medida medida = new ManejadorMedida().buscarMedidaCliente(usuarioSesion.cedula);
+			lista = new ManejadorMedida().listaMedidas(usuarioSesion.cedula);
 
 			try
 			{
@@ -51,31 +57,76 @@ namespace UI
 
 				}
 
-				//if (medida != null || medida.Ced_Cliente != null)
-				//{
-				//	lbFrec.Text = medida.Frec_Cardiaca.ToString();
-				//	lbPeso.Text = medida.Peso.ToString();
-				//	lbGrasa.Text = medida.Porcent_Grasa.ToString();
-				//	lbIMC.Text = medida.IMC.ToString();
-				//	lbCintura.Text = medida.Cintura.ToString();
-				//	lbAbdomen.Text = medida.Abdomen.ToString();
-				//	lbCadera.Text = medida.Cadera.ToString();
-				//	lbMuslo.Text = medida.Muslo.ToString();
-				//	lbEstatura.Text = medida.Estatura.ToString();
-				//}
-				//else
-				//{
-				//	lbNoMedidas.Text = "No existe un expediente registrado";
-				//}
+				tablaExped.Text = "<tr><th>Frecuencia cardiaca</th><th>Peso</th><th>Porcentaje de grasa</th><th>IMC</th><th>Cintura</th><th>Abdomen</th><th>Cadera</th><th>Muslo</th><th>Estatura</th><th>Fecha</th><th>Mensualidad</th></tr>";
+				foreach (Medida med in lista)
+				{
+					string tabla = tablaExped.Text;
+					tabla += "<tr><td>" + med.Frec_Cardiaca + "</td><td>" + med.Peso + "</td><td>" + med.Porcent_Grasa + "</td><td>" + med.IMC + "</td><td>" + med.Cintura + "</td><td>" + med.Abdomen + "</td><td>" + med.Cadera + "</td><td>" + med.Muslo + "</td><td>" + med.Estatura + "</td><td>" + med.Fecha_Medida + "</td><td>" + mostrarMes(med.Fecha_Medida.Month) + "</td></tr>";
+					tablaExped.Text = tabla;
+				}
 
+				
 			}
 			catch (Exception)
 			{
 
 			}
 
+	
+		}
 
-
+		public string mostrarMes(int mes)
+		{
+			if (mes == 01)
+			{
+				return "Enero";
+			} else if (mes == 02) {
+				return "Febrero";
+			}
+			else if (mes == 03)
+			{
+				return "Marzo";
+			}
+			else if (mes == 04)
+			{
+				return "Abril";
+			}
+			else if (mes == 05)
+			{
+				return "Mayo";
+			}
+			else if (mes == 06)
+			{
+				return "Junio";
+			}
+			else if (mes == 07)
+			{
+				return "Julio";
+			}
+			else if (mes == 08)
+			{
+				return "Agosto";
+			}
+			else if (mes == 09)
+			{
+				return "Setiembre";
+			}
+			else if (mes == 10)
+			{
+				return "Octubre";
+			}
+			else if (mes == 11)
+			{
+				return "Noviembre";
+			}
+			else if (mes == 12)
+			{
+				return "Diciembre";
+			}
+			else
+			{
+				return null;
+			}
 		}
 
 

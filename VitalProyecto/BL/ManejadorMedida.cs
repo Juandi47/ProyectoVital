@@ -32,6 +32,31 @@ namespace BL
 				medidaTO.Muslo, medidaTO.Estatura, medidaTO.Ced_Cliente);
 		}
 
+
+		public List<Medida> listaMedidas(string cedula)
+		{
+			List<TOMedida> listaTO = medidaDAO.ListaMedidas(cedula);
+			List<Medida> listaBLMedida = new List<Medida>();
+			foreach (TOMedida toMedida in listaTO)
+			{
+				Medida m = new Medida();
+				m.Frec_Cardiaca = toMedida.Frec_Cardiaca;
+				m.Peso = toMedida.Peso;
+				m.Porcent_Grasa = toMedida.Porcent_Grasa;
+				m.IMC = toMedida.IMC;
+				m.Cintura = toMedida.Cintura;
+				m.Abdomen = toMedida.Abdomen;
+				m.Cadera = toMedida.Cadera;
+				m.Muslo = toMedida.Muslo;
+				m.Estatura = toMedida.Estatura;
+				m.Fecha_Medida = toMedida.Fecha_medida;
+			
+				listaBLMedida.Add(m);
+
+			}
+			return listaBLMedida;
+		}
+
 	}
 
 }
