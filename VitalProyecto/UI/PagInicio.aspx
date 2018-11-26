@@ -4,25 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-   <title>Gimnasio Vital y Nutrición</title>
-	
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.dropotron.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/skel-layers.min.js"></script>
-	<script src="js/init.js"></script>
+	<title>Gimnasio Vital y Nutrición </title>
+  <meta charset="utf-8"/>
 	
-		<link rel="stylesheet" href="css/skel.css" />
 		<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -64,31 +56,29 @@
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
+					
 				</ol>
 
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner">
 					<div class="item active">
-						<img src="images/a.jpg" alt="Los Angeles" style="width: 100%;"/>
+						<img src="images/a.jpg"  style="width: 100%;"/>
 					</div>
 
 					<div class="item">
-						<img src="images/b.jpg" alt="Chicago" style="width: 100%;"/>
+						<img src="images/b.jpg" style="width: 100%;"/>
 					</div>
 
 					<div class="item">
-						<img src="images/c.jpg" alt="New york" style="width: 100%;"/>
+						<img src="images/c.jpg" style="width: 100%;"/>
 					</div>
 					
 					<div class="item">
-						<img src="images/d.jpg" alt="New york" style="width: 100%;"/>
+						<img src="images/d.jpg" style="width: 100%;"/>
 					</div>
 
 					<div class="item">
-						<img src="images/e.jpg" alt="New york" style="width: 100%;"/>
+						<img src="images/e.jpg" style="width: 100%;"/>
 					</div>
 				</div>
 
@@ -110,7 +100,7 @@
 
 	<div>
 		<br /><br /><br />
-		<h1 style="text-align:center">Si eres cliente de nuestro gimnasio y no te has registrado, haz click <u><a style="color:darkolivegreen" href="CrearCuenta.aspx">aquí</a></u></h1>
+		<h3 style="text-align:center">Si eres cliente de nuestro gimnasio y no te has registrado, haz click <u><a style="color:darkolivegreen" href="CrearCuenta.aspx">aquí</a></u></h3>
 		<br /><br /><br /><br />
 	</div>
 

@@ -13,7 +13,12 @@ namespace UI
         private ManejadorCliente manejCliente = new ManejadorCliente();
         protected void Page_Load(object sender, EventArgs e)
         {
-            CrearTablaDatos();
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+
+			CrearTablaDatos();
             Fecha.Text = "Fecha del Servidor: " + DateTime.Now;
         }
 

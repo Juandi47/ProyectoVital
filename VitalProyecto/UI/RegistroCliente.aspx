@@ -8,13 +8,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-    <%--  <link href="admin_estilos.css" rel="stylesheet" />--%>
+    <link href="admin_estilos.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
-    
+
     <asp:Label ID="tituloH1" CssClass="title" runat="server" Text="Registro de cliente"></asp:Label>
 
     <div class="form-container" runat="server">
@@ -25,14 +23,21 @@
 
                 <asp:Label ID="LabelCredenciales" runat="server" Text="Label" CssClass="h3">Credenciales de ingreso</asp:Label>
 
-                <asp:Table runat="server" CssClass="tablaRes">
+                <asp:Table runat="server" CssClass="table-responsive">
 
-                    <asp:TableRow>
+                    <asp:TableRow CssClass="tablerow">
                         <asp:TableCell>
                             <asp:Label ID="LabelCorreo" CssClass="form-label" runat="server" Text="Correo"></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:TextBox ID="TextBoxCorreo2" runat="server"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server"
+                                ControlToValidate="txbcorreo" Display="Dynamic"
+                                ErrorMessage="Formato de correo invalido"
+                                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                ValidationGroup="AllValidators" ForeColor="Red" Font-Bold="True">
+                                    Formato no válido.
+                            </asp:RegularExpressionValidator>
                         </asp:TableCell>
                     </asp:TableRow>
 
@@ -42,6 +47,10 @@
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:TextBox ID="pass2" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="pass2"
+                                ID="RegularExpressionValidator6" ValidationExpression="^[\s\S]{4,}$" runat="server"
+                                ErrorMessage="La contraseña debe tener mínimo 4 caracteres.">
+                            </asp:RegularExpressionValidator>
                         </asp:TableCell>
                     </asp:TableRow>
 
@@ -51,6 +60,10 @@
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:TextBox ID="pass1" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="pass1"
+                                ID="RegularExpressionValidator7" ValidationExpression="^[\s\S]{4,}$" runat="server"
+                                ErrorMessage="La contraseña debe tener mínimo 4 caracteres.">
+                            </asp:RegularExpressionValidator>
                         </asp:TableCell>
                     </asp:TableRow>
 
@@ -62,15 +75,15 @@
             <%-- DIV CON TODOS LOS CAMPOS DE REGISTRO --%>
             <div id="principalDiv" runat="server" class="con">
 
-                <asp:Table runat="server" CssClass="table">
+                <asp:Table runat="server" CssClass="table-responsive">
 
-                    <asp:TableRow>
+                    <asp:TableRow CssClass="tablerow">
                         <asp:TableCell CssClass="cellIzqP">
                             <asp:Label ID="lblCed" CssClass="form-label" runat="server" Text="Cédula"></asp:Label>
                         </asp:TableCell>
                     </asp:TableRow>
 
-                    <asp:TableRow>
+                      <asp:TableRow CssClass="tablerow">
                         <asp:TableCell>
                             <asp:TextBox ID="txbced" runat="server"></asp:TextBox>
                         </asp:TableCell>
@@ -87,6 +100,11 @@
                     </div>
                     <div class="col-md-6">
                         <asp:TextBox ID="txbnombre" runat="server"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"
+                            ControlToValidate="txbnombre" ErrorMessage="*Ingrese solo letras"
+                            ForeColor="Red"
+                            ValidationExpression="^[A-Za-z]*$">
+                        </asp:RegularExpressionValidator>
                     </div>
                 </div>
 
@@ -101,48 +119,60 @@
                         </asp:TableCell>
                     </asp:TableRow>
 
-                    <asp:TableRow runat="server">
+                     <asp:TableRow CssClass="tablerow">
                         <asp:TableCell runat="server">
                             <asp:TextBox ID="txbape1" runat="server"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server"
+                                ControlToValidate="txbape1" ErrorMessage="*Ingrese solo letras"
+                                ForeColor="Red"
+                                ValidationExpression="^[A-Za-z]*$">
+                            </asp:RegularExpressionValidator>
                         </asp:TableCell>
                         <asp:TableCell runat="server">
                             <asp:TextBox ID="txbape2" runat="server"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server"
+                                ControlToValidate="txbape2" ErrorMessage="*Ingrese solo letras"
+                                ForeColor="Red"
+                                ValidationExpression="^[A-Za-z]*$">
+                            </asp:RegularExpressionValidator>
                         </asp:TableCell>
                     </asp:TableRow>
 
                 </asp:Table>
-
-
 
                 <div>
                     <asp:Table runat="server" CssClass="table-responsive">
 
                         <asp:TableRow CssClass="tablerow">
                             <asp:TableCell>
-                                <asp:Label ID="Label5" CssClass="form-label" runat="server" Text="Telefono" ></asp:Label>
+                                <asp:Label ID="Label5" CssClass="form-label" runat="server" Text="Telefono"></asp:Label>
                             </asp:TableCell>
                             <asp:TableCell>
                                 <asp:Label ID="Label6" CssClass="form-label" runat="server" Text="Correo"></asp:Label>
+
                             </asp:TableCell>
                         </asp:TableRow>
 
                         <asp:TableRow CssClass="tablerow">
                             <asp:TableCell>
                                 <asp:TextBox ID="txbtelefono" runat="server" MaxLength="8" ViewStateMode="Enabled"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+                                    ControlToValidate="txbtelefono" ErrorMessage="*Ingrese Valores Numericos"
+                                    ForeColor="Red"
+                                    ValidationExpression="^[0-9]*">
+                                </asp:RegularExpressionValidator>
                             </asp:TableCell>
                             <asp:TableCell>
                                 <asp:TextBox ID="txbcorreo" runat="server"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server"
+                                    ControlToValidate="txbcorreo" Display="Dynamic"
+                                    ErrorMessage="Formato de correo invalido"
+                                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                    ValidationGroup="AllValidators" ForeColor="Red" Font-Bold="True">
+                                    Formato no válido.
+                                </asp:RegularExpressionValidator>
                             </asp:TableCell>
                         </asp:TableRow>
-
-                        <%--  <asp:TableRow ID="filaExtraMod" CssClass="filaExtra">
-                            <asp:TableCell>--%>
-                        <%-- <asp:Label runat="server" Text="Contraseña"></asp:Label>--%>
-                        <%-- </asp:TableCell>
-                            <asp:TableCell>
-                                 <asp:TextBox ID="textBoxClave" runat="server" ></asp:TextBox>
-                            </asp:TableCell>
-                        </asp:TableRow>--%>
                     </asp:Table>
 
                     <div id="divExtra" accesskey="divExtra" class="row" style="margin-bottom: 5px" runat="server">
@@ -151,6 +181,10 @@
                         </div>
                         <div class="col-md-6">
                             <asp:TextBox ID="textBoxClave" runat="server" TextMode="Password" ViewStateMode="Enabled"></asp:TextBox>
+                            <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="textBoxClave"
+                                ID="MyPassordMinLengthValidator" ValidationExpression="^[\s\S]{4,}$" runat="server"
+                                ErrorMessage="La contraseña debe tener mínimo 4 caracteres.">
+                            </asp:RegularExpressionValidator>
                         </div>
                     </div>
 
@@ -166,7 +200,7 @@
                             </asp:TableCell>
                         </asp:TableHeaderRow>
 
-                        <asp:TableRow>
+                      <asp:TableRow CssClass="tablerow">
                             <asp:TableCell>
                                 <asp:TextBox ID="txbobs" runat="server" Rows="10" TextMode="MultiLine" ToolTip="Observaciones" Height="110px" ViewStateMode="Disabled"></asp:TextBox>
                             </asp:TableCell>

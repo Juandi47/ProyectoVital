@@ -15,7 +15,11 @@ namespace UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            cedulaAdmin = Session["Administrador"] as String;
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+			cedulaAdmin = Session["Administrador"] as String;
             Session.Remove("Administrador");
             
         }

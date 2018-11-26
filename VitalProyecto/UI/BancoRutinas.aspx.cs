@@ -14,7 +14,12 @@ namespace UI
         private ManejadorRutina manejo = new ManejadorRutina();
         protected void Page_Load(object sender, EventArgs e)
         {
-            ClientScript.GetPostBackEventReference(this, string.Empty);
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+
+			ClientScript.GetPostBackEventReference(this, string.Empty);
 
             if (IsPostBack)
             {
@@ -69,7 +74,7 @@ namespace UI
 
             celdaNombre.Attributes.Add("HorizontalAlign", "Center");
             celdaNombre.Attributes.Add("Wrap", "false");
-            celdaNombre.Attributes.Add("Width", "355px");
+            celdaNombre.Attributes.Add("Width", "95px");
             celdaNombre.Attributes.Add("VerticalAlign", "Middle");
 
             celdaNombre.CssClass = "celda";

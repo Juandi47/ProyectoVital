@@ -12,28 +12,36 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
-    <form id="form1" runat="server" style="background-color:lightgray">
+    <style>
+		#div1 {
+			overflow: scroll;
+            height: 600px;
+		}
+	</style>
+    <form id="form1" runat="server" style="background-color: lightgray">
         <div class="container">
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="input-group">
                         <asp:TextBox ID="txtNuevoEjercicio" runat="server" Width="300px" Height="45px" Wrap="False" placeholder="NUEVO EJERCICIO" BackColor="WhiteSmoke"></asp:TextBox>
-                        <asp:Button ID="btnAgregarEjercicio" runat="server" Font-Size="Medium" Width="250px" Height="55px" Text="Agregar Ejercicio" class="button input-group-addon" OnClick="btnAgregarEjercicio_Click" BackColor="darkolivegreen" />
-                    </div>                        
-                    <asp:GridView ID="grdEjercicios" runat="server" class="table table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False">
-                        <Columns>
-                            <asp:BoundField DataField="Ejercicio" HeaderText="EJERCICIO" ItemStyle-VerticalAlign="Middle"/>
-                            <asp:TemplateField>
-                                <ItemTemplate>
-                                    <asp:LinkButton ID="btnEliminar" Text="ELIMINAR" runat="server" CommandArgument='<%#Eval("Ejercicio")%>' OnClick="btnEliminar_Click" ForeColor="RoyalBlue"/>
-                                </ItemTemplate>
-                                <ItemStyle HorizontalAlign="Center" Wrap="false" />
-                            </asp:TemplateField>
-                        </Columns>
-                        <HeaderStyle BackColor="#999999" BorderStyle="Double" Font-Bold="True" />
-                    </asp:GridView>
-
+                         <asp:Button ID="btnAgregarEjercicio" runat="server" Font-Size="Medium" Width="250px" Height="55px" Text="Agregar Ejercicio" class="button input-group-addon" OnClick="btnAgregarEjercicio_Click" BackColor="darkolivegreen" />
+                    </div>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1"  ForeColor="Red" ControlToValidate="txtNuevoEjercicio" runat="server" SetFocusOnError="true" ErrorMessage="Debe escribir el nombre de la rutina"></asp:RequiredFieldValidator>
+                    <div id="div1">
+                        <asp:GridView ID="grdEjercicios" runat="server" class="table table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False">
+                            <Columns>
+                                <asp:BoundField DataField="Ejercicio" HeaderText="EJERCICIO" ItemStyle-VerticalAlign="Middle" />
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="btnEliminar" Text="ELIMINAR" runat="server" CommandArgument='<%#Eval("Ejercicio")%>' OnClick="btnEliminar_Click" ForeColor="RoyalBlue" />
+                                    </ItemTemplate>
+                                    <ItemStyle HorizontalAlign="Center" Wrap="false" />
+                                </asp:TemplateField>
+                            </Columns>
+                            <HeaderStyle BackColor="#999999" BorderStyle="Double" Font-Bold="True" />
+                        </asp:GridView>
+                    </div>
                 </div>
                 <div class="col-md-1">
                 </div>
