@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nutricion/NutricionMaster.Master" AutoEventWireup="true"  MaintainScrollPositionOnPostback="true" CodeBehind="SeguimSemanal.aspx.cs" Inherits="UI.Nutricion.SeguimSemanal" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nutricion/NutricionMaster.Master" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="SeguimSemanal.aspx.cs" Inherits="UI.Nutricion.SeguimSemanal" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta charset="utf-8">
@@ -6,7 +6,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/tabla.css" />
+    <link rel="stylesheet" href="/css/tabla.css" />
+    <style>
+        #div1 {
+            overflow: scroll;
+            height: 350px;
+            width: 100%;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: initial;
+            width: 50%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 6px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
     <div class="container">
@@ -44,18 +67,20 @@
 
                                 </div>
                             </div>
+                            <br />
+                            <br />
+                            <div id="div1">
 
-                            <div class="row">
                                 <table>
                                     <asp:Literal ID="LitSeguimiento" runat="server"></asp:Literal>
                                 </table>
+
                             </div>
+
                         </div>
                     </div>
                 </div>
             </form>
-            <br />
-            <br />
             <br />
             <br />
             <br />
