@@ -22,8 +22,7 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="tced" runat="server" placeholder="(Sin espacios) Ej: 2225055" TextMode="Number" MaskedTextBox="0-000-000" MaxLength="50"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tced" Display="Dynamic" ErrorMessage="Espacio obligatorio" ValidationGroup="AllValidators">*</asp:RequiredFieldValidator>
-
+                        
                     </div>
                 </div>
 
