@@ -47,7 +47,9 @@
             <img src="../images/banner_admin01.jpg" style="width: 100%" />
         </div>
 
+        &nbsp;&nbsp;&nbsp;&nbsp;
 
+        <asp:Button ID="Button1" Text="Regresar" runat="server" OnClick="Button1_Click" Font-Size="Small" />
         <div class="container">
             <div class="row">
                 <div class="col-md-4"></div>
@@ -108,7 +110,7 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="tTelefono" runat="server" TextMode="Number" placeholder="Ejm: 83978140"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="tTelefono" SetFocusOnError="true" ForeColor="red" runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="tTelefono" SetFocusOnError="true" ForeColor="red" runat="server" ErrorMessage="Se deben completar todos los espacios" ValidationGroup="validaciones"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -118,7 +120,7 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="tclave" runat="server" TextMode="Password" placeholder="Ejm: Cla.123"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="tclave" SetFocusOnError="true" ForeColor="red" runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="tclave" SetFocusOnError="true" ForeColor="red" runat="server" ErrorMessage="Se deben completar todos los espacios" ValidationGroup="validaciones"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -128,7 +130,7 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="tclave2" runat="server" TextMode="Password" placeholder="Ejm: Cla.123"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="tclave2" SetFocusOnError="true" ForeColor="red"  runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="tclave2" SetFocusOnError="true" ForeColor="red"  runat="server" ErrorMessage="Se deben completar todos los espacios" ValidationGroup="validaciones"></asp:RequiredFieldValidator>
                     <asp:Label ID="ValidadorClaves" runat="server" visible="false" Text="Las claves no coinciden" ForeColor="Red"></asp:Label>
                         
                     </div>
@@ -136,7 +138,7 @@
 
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ValidationGroup="AllValidators" />
             </div>
-            <asp:Button ID="btnModificar" Text="Modificar" runat="server" OnClick="btnModificar_Click" Font-Size="Small" />
+            <asp:Button ID="btnModificar" Text="Modificar" runat="server" OnClick="btnModificar_Click" Font-Size="Small" ValidationGroup="validaciones" />
 
         </div>
 

@@ -93,5 +93,10 @@ namespace UI
             tclave.Text = string.Empty;
             tclave2.Text = string.Empty;
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ClientePrincipal.aspx");
+        }
     }
 }
