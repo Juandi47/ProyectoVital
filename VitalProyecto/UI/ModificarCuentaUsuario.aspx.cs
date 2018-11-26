@@ -20,8 +20,7 @@ namespace UI
 			{
 				Response.Redirect("~/IniciarSesion.aspx");
 			}
-			BL.Usuario usuarioSesion = Session["usuarioSesion"] as Usuario;
-
+            BL.Usuario usuarioSesion = Session["usuarioSesion"] as Usuario;
 
             tcedula.Text = usuarioSesion.cedula;
             tnombre.Text = usuarioSesion.nombre;
@@ -42,7 +41,6 @@ namespace UI
                 if (clien != null)
                 {
                     tfehcaN.Text = clien.Fecha_Nacimiento.ToString();
-                    tTelefono.Text = clien.Telefono.ToString();
                 }
                 else
                 {
@@ -62,15 +60,23 @@ namespace UI
             string tel = tTelefono.Text;
             string contr = tclave.Text;
             string contra2 = tclave2.Text;
+            string cedula = tcedula.Text;
+            string correo = tcorreo.Text;
+            Usuario usuarioSesion = Session["usuarioSesion"] as Usuario;
+            Cliente clien = new ManejadorCliente().buscarCliente(usuarioSesion.cedula);
+            string observaciones = clien.Observacion;
+            string telefono = tTelefono.Text;
+
             //valida espacios vacio
             if (tel != "" || contr != "" || contra2 != "") {
 
                 //valida que las contraseñas coincidan
                 if (contr.Equals(contra2)) {
-                    //aca va el metodo que le falta a Tony
-                    
+                    maneja.modificarCliente(cedula, correo, observaciones, Int32.Parse(telefono), contr);
+                    Response.Write("<script>alert('Su perfil ha sido modificado')</script>");
                 } else {
-                    Response.Write("<script>alert('Las contraseñas deben coincidir')</script>");
+                    ValidadorClaves.Visible = true;
+                    //Response.Write("<script>alert('Las contraseñas deben coincidir')</script>");
                 }
             } else {
                 Response.Write("<script>alert('Se debe completar los espacios')</script>");
