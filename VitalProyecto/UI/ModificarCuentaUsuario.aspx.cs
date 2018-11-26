@@ -40,7 +40,7 @@ namespace UI
 
                 if (clien != null)
                 {
-                    tfehcaN.Text = clien.Fecha_Nacimiento.ToString();
+                    tfehcaN.Text = clien.Fecha_Nacimiento.Day + "/" + clien.Fecha_Nacimiento.Month + "/" + clien.Fecha_Nacimiento.Year;
                 }
                 else
                 {
