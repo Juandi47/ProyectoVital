@@ -22,9 +22,9 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="tced" runat="server" placeholder="(Sin espacios) Ej: 2225055" TextMode="Number" MaskedTextBox="0-000-000" MaxLength="50"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="tced" SetFocusOnError="true" ForeColor="red"  runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
-                        <asp:Label ID="ValidadorCedulaExistente" runat="server" visible="false" Text="Ya existe esta cédula" ForeColor="Red"></asp:Label>
-                        <asp:Label ID="ValidadorCedulaFormato" runat="server" visible="false" Text="Formato cédula inválido" ForeColor="Red"></asp:Label>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="tced" SetFocusOnError="true" ForeColor="red" runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
+                        <asp:Label ID="ValidadorCedulaExistente" runat="server" Visible="false" Text="Ya existe esta cédula" ForeColor="Red"></asp:Label>
+                        <asp:Label ID="ValidadorCedulaFormato" runat="server" Visible="false" Text="Formato cédula inválido" ForeColor="Red"></asp:Label>
                     </div>
                 </div>
 
@@ -34,12 +34,12 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="tname" runat="server" placeholder="María" MaxLength="50"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="tname" SetFocusOnError="true" ForeColor="red"  runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="tname" SetFocusOnError="true" ForeColor="red" runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ForeColor="Red"
                             ControlToValidate="tname" runat="server"
                             ErrorMessage="RegularExpressionValidator" ValidationExpression="^[a-zA-Z ]*$" Font-Bold="True">
                                         Sólo se admiten letras
-                                    </asp:RegularExpressionValidator>
+                        </asp:RegularExpressionValidator>
                     </div>
                 </div>
 
@@ -49,12 +49,12 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="tlname1" runat="server" placeholder="Arias" MaxLength="20"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="tlname1" SetFocusOnError="true" ForeColor="red"  runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="tlname1" SetFocusOnError="true" ForeColor="red" runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ForeColor="Red"
                             ControlToValidate="tlname1" runat="server"
                             ErrorMessage="RegularExpressionValidator" ValidationExpression="^[a-zA-Z ]*$" Font-Bold="True">
                                         Sólo se admiten letras
-                         </asp:RegularExpressionValidator>
+                        </asp:RegularExpressionValidator>
                     </div>
                 </div>
 
@@ -64,12 +64,12 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="tlname2" runat="server" placeholder="Rojas" MaxLength="20"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="tlname2" SetFocusOnError="true" ForeColor="red"  runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="tlname2" SetFocusOnError="true" ForeColor="red" runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator4" ForeColor="Red"
                             ControlToValidate="tlname2" runat="server"
                             ErrorMessage="RegularExpressionValidator" ValidationExpression="^[a-zA-Z ]*$" Font-Bold="True">
                                         Sólo se admiten letras
-                         </asp:RegularExpressionValidator>
+                        </asp:RegularExpressionValidator>
                     </div>
                 </div>
 
@@ -79,7 +79,7 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="tclave" runat="server" placeholder="Ejm: Cla.123" TextMode="Password" MaxLength="50"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate="tclave" SetFocusOnError="true" ForeColor="red"  runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate="tclave" SetFocusOnError="true" ForeColor="red" runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -89,9 +89,9 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="tclave2" runat="server" placeholder="Ejm: Cla.123" TextMode="Password" MaxLength="50"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate="tclave2" SetFocusOnError="true" ForeColor="red"  runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
-                   <asp:Label ID="ValidadorClaves" runat="server" visible="false" Text="Las claves no coinciden" ForeColor="Red"></asp:Label>
-                         </div>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate="tclave2" SetFocusOnError="true" ForeColor="red" runat="server" ErrorMessage="Se deben completar todos los espacios"></asp:RequiredFieldValidator>
+                        <asp:Label ID="ValidadorClaves" runat="server" Visible="false" Text="Las claves no coinciden" ForeColor="Red"></asp:Label>
+                    </div>
                 </div>
 
                 <div class="row">
@@ -100,8 +100,8 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="temail" runat="server" placeholder="Ejm: maria.rojas@gmail.com" TextMode="Email" ValidationGroup="AllValidators" MaxLength="50"></asp:TextBox>
-                        <asp:Label ID="ValidadorExistenciaCorreo" runat="server" visible="false" Text="Este correo ya existe" ForeColor="Red"></asp:Label>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="temail"  ErrorMessage="Se deben completar todos los espacios">*</asp:RequiredFieldValidator>
+                        <asp:Label ID="ValidadorExistenciaCorreo" runat="server" Visible="false" Text="Este correo ya existe" ForeColor="Red"></asp:Label>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="temail" ErrorMessage="Se deben completar todos los espacios">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="temail" Display="Dynamic" ErrorMessage="Las direcciones de correo electrónico deben estar en el formato nombre@dominio.xyz." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="AllValidators" ForeColor="Red" Font-Bold="True">Formato no válido.</asp:RegularExpressionValidator>
                     </div>
                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ValidationGroup="AllValidators" />

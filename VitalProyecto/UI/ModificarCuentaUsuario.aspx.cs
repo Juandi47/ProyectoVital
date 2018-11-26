@@ -75,7 +75,8 @@ namespace UI
                     maneja.modificarCliente(cedula, correo, observaciones, Int32.Parse(telefono), contr);
                     Response.Write("<script>alert('Su perfil ha sido modificado')</script>");
                 } else {
-                    Response.Write("<script>alert('Las contraseñas deben coincidir')</script>");
+                    ValidadorClaves.Visible = true;
+                    //Response.Write("<script>alert('Las contraseñas deben coincidir')</script>");
                 }
             } else {
                 Response.Write("<script>alert('Se debe completar los espacios')</script>");
