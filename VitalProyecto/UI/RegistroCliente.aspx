@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="RegistroCliente.aspx.cs" Inherits="UI.RegistroCliente" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true"  CodeBehind="RegistroCliente.aspx.cs" Inherits="UI.RegistroCliente" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta charset="utf-8">
@@ -16,8 +16,10 @@
     <asp:Label ID="tituloH1" CssClass="title" runat="server" Text="Registro de cliente"></asp:Label>
 
     <div class="form-container" runat="server">
+          <%-- LABEL PARA MENSAJES DE ALERTA --%>
+                <asp:Label  ID="labelAlerta" runat="server" CssClass="labelAlerta"></asp:Label>
         <form id="form1" runat="server">
-
+            
             <%-- DIV DE DESPLIEGUE DE INGRESO DE CREDENCIALES --%>
             <div id="ingresoDIV" class="col-sm-5 ingresoDiv" runat="server">
 
@@ -74,7 +76,7 @@
 
             <%-- DIV CON TODOS LOS CAMPOS DE REGISTRO --%>
             <div id="principalDiv" runat="server" class="con">
-
+              
                 <asp:Table runat="server" CssClass="table-responsive">
 
                     <asp:TableRow CssClass="tablerow">

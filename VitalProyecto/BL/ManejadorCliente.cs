@@ -29,6 +29,7 @@ namespace BL
                 {
                     Cliente c = new Cliente();
                     c.Cedula = toClient.Cedula;
+                    c.Correo = toClient.Correo;
                     c.Nombre = toClient.Nombre;
                     c.Apellido1 = toClient.Apellido1;
                     c.Apellido2 = toClient.Apellido2;
@@ -90,6 +91,11 @@ namespace BL
             return clienteDAO.registrarClienteDAO(cliente);
         }
 
+        public void marcarAsistencia(string id)
+        {
+            clienteDAO.marcarAsistencia(id);
+        }
+
         //public void llenarPersona() {
         //    Class1 c = new Class1();
         //    c.ActualizarRegistroPersona();
@@ -138,5 +144,7 @@ namespace BL
         {
             clienteDAO.eliminarCliente(id,correo);
         }
+
+
     }
 }

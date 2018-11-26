@@ -21,10 +21,10 @@ namespace UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-			if (new ControlSeguridad().validarAdmin() == true)
-			{
-				Response.Redirect("~/IniciarSesion.aspx");
-			}
+			//if (new ControlSeguridad().validarAdmin() == true)
+			//{
+			//	Response.Redirect("~/IniciarSesion.aspx");
+			//}
 
 			//if (!IsPostBack)
 			//    Session["lista"] = cedulasAgregadas;
@@ -38,7 +38,8 @@ namespace UI
             if(!IsPostBack)
             if ( accion != null) {
                     if (accion.Equals("true"))
-                        Response.Write("<script>alert('Cliente modificado correctamente.')</script>");
+                        mostrarAlerta("Cliente modificado correctamente.", true);
+                   
                 }
                   
 
@@ -67,13 +68,14 @@ namespace UI
         private void cargarListaClientes()
         {
             List<Cliente> lista = new ManejadorCliente().listaClientes();
-            
 
             TableRow encabezado = new TableRow();
+            
             encabezado.CssClass = "encabezado";
 
             encabezado.CssClass = "encabezadoTablaAsistencia";
             TableCell cedula = new TableCell();
+           
             cedula.Text = "CEDULA";
             
             cedula.CssClass = "cell";
@@ -127,25 +129,27 @@ namespace UI
 
                 Button btnMod = new Button();
                 btnMod.Text = "Modificar";
-                btnMod.CssClass = "radio-mod small" ;
+                btnMod.CssClass = "small" ;
                 btnMod.ID = "mod."+ c.Cedula;
                 //btnMod.BackColor = System.Drawing.Color.LightYellow;
                 //btnMod.Width;
                 //btnMod.Attributes.Add("onClick", "salvarID("+ c.Cedula +")");
                 btnMod.Click += delegate { modCliente(btnMod.ID); }; //linea sayayin
-                controlMOd.Controls.Add(btnMod);
+               
                 fila.Cells.Add(controlMOd);
 
                 controlEli = new TableCell();
                 controlEli.CssClass = "cell";
                 Button btnEli = new Button();
                 btnEli.Text = "Eliminar";
-                btnEli.CssClass = "radio-eli small";
+                btnEli.CssClass = "small";
                 btnEli.ID = c.Cedula+";"+c.Correo;
                 btnEli.BackColor = System.Drawing.Color.LightPink;
-                
-                btnEli.Click += delegate { agregarElemento(btnEli.ID); }; //linea sayayin
-                controlEli.Controls.Add(btnEli);
+
+                btnEli.Click += delegate { eliminar(btnEli.ID); }; //linea sayayin
+                //btnEli.Attributes.Add("onClick", "salvarID(" + c.Cedula + ")");
+                controlMOd.Controls.Add(btnMod);
+                controlMOd.Controls.Add(btnEli);//cambiar si falla
                 fila.Cells.Add(controlEli);
 
                 tablaClientes.Rows.Add(fila);
@@ -156,7 +160,6 @@ namespace UI
 
         protected void addBTN_Click(object sender, EventArgs e)
         {
-
             String text = "";
 
             foreach (String ced in cedulasAgregadas)
@@ -167,6 +170,13 @@ namespace UI
             //ListaTotal.Text = text;
         }
 
+        private void salvarID(String id) {
+            //String[] array = id.Split(';');
+            //String text = new Encripcion().EncodePassword(id);
+            //new ManejadorCliente().eliminarCliente(array[0], array[1]);
+            Response.Redirect("~/ListaClientesAdmin.aspx?con=" + id);
+        }
+
 
         private void modCliente(String id) {
             String llave = id;
@@ -174,11 +184,12 @@ namespace UI
             Response.Redirect("~/RegistroCliente.aspx?accion=mod&key=" + llave2);
         }
 
-        private void elminar(String id) {
+        private void eliminar(String id) {
             String[] array = id.Split(';');
             String text = new Encripcion().EncodePassword(id);
-
             new ManejadorCliente().eliminarCliente(array[0],array[1]);
+            tablaClientes.Rows.Clear();
+            cargarListaClientes();
         }
 
         private void agregarElemento(String id) {
@@ -196,6 +207,14 @@ namespace UI
                 _result += (char)i;
             }
             return _result;
+        }
+
+        private void mostrarAlerta(String m, Boolean estado)
+        {
+            labelAlerta.Text = m;
+            if (estado)
+                labelAlerta.ForeColor = System.Drawing.Color.Green;
+            labelAlerta.Visible = true;
         }
     }
 

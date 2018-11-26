@@ -25,6 +25,7 @@
     text-transform: uppercase;
 }
 
+
 .banner {
   background-color: gainsboro;
 }
@@ -226,6 +227,7 @@ color:black;
 
 .tablerow {
     margin-left: 0%;
+    
 }
 
 /*.tablerow {
@@ -241,8 +243,24 @@ margin-top: 5px;
     text-align:right;
     }*/
 
+.labelAlerta {
+    margin-top: 5px;
+    color: darkred;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 03.5vw;
+    font-weight:bold;
+}
 
+encabezado {
+    margin-bottom: 4px;
+    border-bottom: 5px solid rgba(5, 47, 7, 0.94);
+    margin-right: 3px;
+}
+encabezado {
+    font-weight: bold;
+}
 
+    
 
 
 
