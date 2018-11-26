@@ -136,7 +136,7 @@
 
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ValidationGroup="AllValidators" />
             </div>
-            <asp:Button ID="btnModificar" Text="Modificar" runat="server" OnClick="btnModificar_Click" />
+            <asp:Button ID="btnModificar" Text="Modificar" runat="server" OnClick="btnModificar_Click" Font-Size="Small" />
 
         </div>
 

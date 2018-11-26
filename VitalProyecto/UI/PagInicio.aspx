@@ -62,23 +62,23 @@
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner">
 					<div class="item active">
-						<img src="images/a.jpg"  style="width: 100%;"/>
+						<img src="images/a.jpg" />
 					</div>
 
 					<div class="item">
-						<img src="images/b.jpg" style="width: 100%;"/>
+						<img src="images/b.jpg"/>
 					</div>
 
 					<div class="item">
-						<img src="images/c.jpg" style="width: 100%;"/>
+						<img src="images/c.jpg"/>
 					</div>
 					
 					<div class="item">
-						<img src="images/d.jpg" style="width: 100%;"/>
+						<img src="images/d.jpg"/>
 					</div>
 
 					<div class="item">
-						<img src="images/e.jpg" style="width: 100%;"/>
+						<img src="images/e.jpg"/>
 					</div>
 				</div>
 
