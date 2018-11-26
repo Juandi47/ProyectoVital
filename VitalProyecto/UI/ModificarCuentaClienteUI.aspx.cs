@@ -8,25 +8,22 @@ using BL;
 
 namespace UI
 {
-    public partial class ModificarCuentaUsuario : System.Web.UI.Page
+    public partial class ModificarCuentaClienteUI : System.Web.UI.Page
     {
 
         ManejadorCliente maneja = new ManejadorCliente();
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
-			if (new ControlSeguridad().validarCliente() == true)
-			{
-				Response.Redirect("~/IniciarSesion.aspx");
-			}
+            if (new ControlSeguridad().validarCliente() == true)
+            {
+                Response.Redirect("~/IniciarSesion.aspx");
+            }
             BL.Usuario usuarioSesion = Session["usuarioSesion"] as Usuario;
 
             tcedula.Text = usuarioSesion.cedula;
             tnombre.Text = usuarioSesion.nombre;
             tcorreo.Text = usuarioSesion.correo;
             informacionCliente();
-
         }
 
 
@@ -51,9 +48,8 @@ namespace UI
             {
 
             }
-
-
         }
+
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
@@ -68,17 +64,21 @@ namespace UI
             string telefono = tTelefono.Text;
 
             //valida espacios vacio
-            if (tel != "" || contr != "" || contra2 != "") {
+            if (tel != "" || contr != "" || contra2 != "")
+            {
 
                 //valida que las contraseñas coincidan
-                if (contr.Equals(contra2)) {
+                if (contr.Equals(contra2))
+                {
                     maneja.modificarCliente(cedula, correo, observaciones, Int32.Parse(telefono), contr);
                     Response.Write("<script>alert('Su perfil ha sido modificado')</script>");
-                } else {
+                }
+                else {
                     ValidadorClaves.Visible = true;
                     //Response.Write("<script>alert('Las contraseñas deben coincidir')</script>");
                 }
-            } else {
+            }
+            else {
                 Response.Write("<script>alert('Se debe completar los espacios')</script>");
             }
         }
@@ -94,8 +94,9 @@ namespace UI
             tclave2.Text = string.Empty;
         }
 
-
-
-
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ClientePrincipal.aspx");
+        }
     }
 }

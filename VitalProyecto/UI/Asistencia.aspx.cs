@@ -40,7 +40,7 @@ namespace UI
             encabezado.Cells.Add(apellidoS);
             TableCell control = new TableCell();
             control.Text = "ASISTENCIA";
-            control.CssClass = "cell";
+            control.CssClass = "cell2";
             encabezado.Cells.Add(control);
             TablaClientes.Rows.Add(encabezado);
 
@@ -62,8 +62,13 @@ namespace UI
                 apellidoS.Text = c.Apellido1 + " " + c.Apellido2;
                 fila.Cells.Add(apellidoS);
                 control = new TableCell();
-                control.CssClass = "cell";
-                RadioButton radio = new RadioButton();
+                control.CssClass = "cell2";
+                Button radio = new Button();
+                radio.Text = "Marcar";
+                radio.ID = "rad." + c.Cedula;
+                
+                radio.Click += delegate { marcarAsistencia(c.Cedula); };
+                radio.CssClass = "btn-primary small ";
                 control.Controls.Add(radio);
                 fila.Cells.Add(control);
                
@@ -74,7 +79,11 @@ namespace UI
         }
 
 
-
+        private void marcarAsistencia(String id) {
+            new ManejadorCliente().marcarAsistencia(id);
+            TablaClientes.Rows.Clear();
+            cargarClientes();
+        }
 
        
 

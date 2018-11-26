@@ -10,19 +10,19 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 
+
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.dropotron.min.js"></script>
 	<script src="js/skel.min.js"></script>
 	<script src="js/skel-layers.min.js"></script>
 	<script src="js/init.js"></script>
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="css/skel.css" />
-	<link rel="stylesheet" href="css/style.css" />
+	<%--<link rel="stylesheet" href="css/skel.css" />
+	<link rel="stylesheet" href="css/style.css" />--%>
 	<link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen" />
-
 	<link rel="stylesheet" href="css/tabla.css" />
 </head>
 
@@ -30,7 +30,7 @@
 	<style>
 		#div1 {
 			overflow: scroll;
-			width: 800px;
+			width: 900px;
 		}
 	</style>
 
@@ -45,7 +45,7 @@
 				<div>
 					<nav id="nav">
 						<ul>
-							<li><a href="ModificarCuentaUsuario.aspx">Modificar perfil</a></li>
+							<li><a href="ModificarCuentaClienteUI.aspx">Modificar perfil</a></li>
                             
 							<li><a href="PagInicio.aspx">Cerrar Sesión</a></li>
 						</ul>
@@ -54,10 +54,14 @@
 			</div>
 		</div>
 
-		<div style="background-color: gainsboro;">
-			<img src="../images/banner_admin01.jpg" style="width: 100%" />
+	
+
+		<div style="background-color: gainsboro;" class="body">
+			
+			<img src="../images/banner_admin01.jpg" style="width:100%" />
 		</div>
 
+			<div class="body">
 		
 			<div class="container" >
 				<div class="row">
@@ -72,7 +76,7 @@
 			</div>
 
 
-			<div class="container">
+			<div class="container" runat="server">
 				<div class="row">
 					<div class="col-md-2"></div>
 					<div class="col-md-8" style="background-color:silver">
@@ -118,7 +122,7 @@
 				</div>
 			</div>
 
-		<div class="container">
+		<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-2"></div>
 					<div class="col-md-8" style="background-color:silver">
@@ -142,14 +146,14 @@
 
 
 		</div>
-
+			</div>
 	</form>
+	<br /><br /><br /><br />
 
-<footer class="footer">
+	<footer class="footer">
 		Vital San Ramón, mas que un gimnasio es tu espacio.
 	</footer>
-	<p>
-		&nbsp;</p>
+	
 </body>
 </html>
 

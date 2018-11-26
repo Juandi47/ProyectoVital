@@ -24,17 +24,19 @@ namespace UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-			if (new ControlSeguridad().validarAdmin() == true)
-			{
-				Response.Redirect("~/IniciarSesion.aspx");
-			}
+            //MaintainScrollPositionOnPostback="true"
+            labelAlerta.Visible = false;
+   //         if (new ControlSeguridad().validarAdmin() == true)
+			//{
+			//	Response.Redirect("~/IniciarSesion.aspx");
+			//}
 
 			string accion = Convert.ToString(Request.QueryString["accion"]);
 
             if (accion != null && accion.Equals("mod")) {
                 if (IsPostBack)
                 {
+
                     Session["telefono"] = txbtelefono.Text;
                     Session["obs"] = txbobs.Text;
                     Session["clave"] = textBoxClave.Text;
@@ -157,17 +159,19 @@ namespace UI
 
                 cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
                 if (cliente_creado)
-            {
-                    Response.Write("<script>alert('Cliente registrado correctamente CON CUENTA')</script>");
+                {
+                    
+                    mostrarAlerta("Cliente y cuenta registrados correctamente", true);
                 }
                 else
                 {
-                    Response.Write("<script>alert('Error en registro de cliente')</script>");
+                    mostrarAlerta("*Error en registro de cliente", false);
+                   
                 }
             }
             else
             {
-                Response.Write("<script>alert('Contraseñas invalidas CON CUENTA')</script>");
+                mostrarAlerta("*Contraseñas invalidas", false);
             }
             //ingresoDIV.Visible = false;
             //habilitarCampos();
@@ -191,15 +195,16 @@ namespace UI
 
                     cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
                         if (cliente_creado){
-                        Response.Write("<script>alert('Cliente registrado correctamente SIN CUENTA')</script>");
+                        mostrarAlerta("Cliente registrado correctamente", true);
+                       
                         }else{
-                        Response.Write("<script>alert('Error en registro de cliente')</script>");
+                        mostrarAlerta("Error en registro de cliente", false);
                         }
-
                 }
                 else
                 {
-                    Response.Write("<script>alert('Error: Campos incompletos')</script>");
+                    mostrarAlerta("*Error: Campos incompletos",false);
+                    
                 }
             }
             else // SE VA A MODIFICAR UN CLIENTE
@@ -218,16 +223,14 @@ namespace UI
                     }
 
                     else {
-                        Response.Write("<script>alert('Error 404.')</script>");
+                        mostrarAlerta("*Error (404): Elemento no encontrado.", false);
                     }
                 }
                 else {
-                    Response.Write("<script>alert('Error: Datos incorrectos a modificar. (Telefono, Observaciones)')</script>");
+                    mostrarAlerta("*Error: Campos incorrectos (Telefono, Observaciones)", false);
                 }
-                
             }
-                
-            
+
             //ingresoDIV.Visible = false;
             //habilitarCampos();
             limpiarCampos();
@@ -251,11 +254,11 @@ namespace UI
                         txbnombre.Text = "";
                         txbape1.Text = "";
                         txbape2.Text = "";
-
-                        Response.Write("<script>alert('Este cliente ya se encuentra registrado')</script>");
+                        mostrarAlerta("*Error: Este cliente ya se encuentra registrado.", false);
+                        
                     }
                    else if (cliente.Cedula.Equals("")) {
-                        Response.Write("<script>alert('Cédula no registrada ')</script>");
+                        mostrarAlerta("*Error: Cédula no registrada.", false);
                     }
                     else
                     {
@@ -266,7 +269,8 @@ namespace UI
                 }
                 else
                 {
-                    Response.Write("<script>alert('Debe ingresar una cedula')</script>");
+                    mostrarAlerta("*Error: Debe ingresar una cédula.", false);
+               
                 }
             }
             else {
@@ -311,7 +315,6 @@ namespace UI
                 txbced.Text.Equals("") || txbnombre.Text.Equals("")||
                 txbape1.Text.Equals("") || txbape2.Text.Equals("") ||
                 txbtelefono.Text.Equals("") || txbcorreo.Text.Equals("")||
-                //pass1.Text.Equals("") || pass2.Text.Equals("") ||
                 DlDia.SelectedIndex == 0 || DlMes.SelectedIndex == 0 ||
                 DLAnno.SelectedIndex == 0 || txbobs.Text.Equals("")
                 ) {
@@ -348,7 +351,8 @@ namespace UI
             }
             else
             {
-                Response.Write("<script>alert('Campos incompletos CON CUENTA')</script>");
+                mostrarAlerta("*Error: Campos incompletos en formulario.", false);
+                //Response.Write("<script>alert('Campos incompletos CON CUENTA')</script>");
             }            
         }
 
@@ -440,6 +444,13 @@ namespace UI
             DlDia.Visible = true;
             DlMes.Visible = true;
             DLAnno.Visible = true;
+        }
+
+        private void mostrarAlerta(String m, Boolean estado) {
+            labelAlerta.Text = m;
+            if (estado)
+                labelAlerta.ForeColor = System.Drawing.Color.Green;
+            labelAlerta.Visible = true;
         }
 
     }

@@ -28,6 +28,7 @@ namespace DAO
                     TOCliente c = new TOCliente();
                     c.Cedula = lector["Cedula"].ToString();
                     c.Nombre = lector["Nombre"].ToString();
+                    c.Correo = lector["Correo"].ToString();
                     c.Apellido1 = lector["Apellido1"].ToString();
                     c.Apellido2 = lector["Apellido2"].ToString();
                     c.Fecha_Mensualidad = DateTime.Parse(lector["Fecha_mensualidad"].ToString());
@@ -101,6 +102,22 @@ namespace DAO
             }
         }
 
+        public void marcarAsistencia(string id)
+        {
+            SqlCommand cmd = new SqlCommand("insert into Asistencia_Cliente values (@ced, @fecha)",conexion);
+            cmd.Parameters.AddWithValue("@ced", id);
+            cmd.Parameters.AddWithValue("@fecha", System.DateTime.Now);
+            
+            try {
+                conexion.Open();
+                cmd.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch (Exception e) {
+                e.ToString();
+                conexion.Close();
+            }
+        }
 
         public Boolean verificarCliente(String cedula)
         {
@@ -131,9 +148,12 @@ namespace DAO
 
         public void eliminarCliente(string id, string correo)
         {
-            SqlCommand cmdCliente = new SqlCommand("delete from Cliente where ced = @ced", conexion);
-            SqlCommand cmdUsuario = new SqlCommand("delete from Usuario where ced = @ced", conexion);
+            SqlCommand cmdCliente = new SqlCommand("delete from Cliente where Cedula = @ced", conexion);
+            cmdCliente.Parameters.AddWithValue("@ced", id);
+            SqlCommand cmdUsuario = new SqlCommand("delete from Usuario where Cedula = @cedU", conexion);
+            cmdUsuario.Parameters.AddWithValue("@cedU", id);
             SqlCommand cmdLogin = new SqlCommand("delete from Login where Nombre_usuario = @cor", conexion);
+            cmdLogin.Parameters.AddWithValue("@cor", correo);
 
             try {
                 conexion.Open();
