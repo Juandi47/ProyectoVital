@@ -51,5 +51,14 @@ namespace UI
 			}
 			return false;
 		}
+
+		public Boolean validarClieNutri()
+		{
+			if (usuario() == null || !usuario().rol.Equals("clienteNutri") || usuario().rol.Equals(""))
+			{
+				return true;
+			}
+			return false;
+		}
 	}
 }

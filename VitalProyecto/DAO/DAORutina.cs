@@ -257,7 +257,7 @@ namespace DAO
             SqlCommand comando = new SqlCommand(query, conexion);
 
             comando.Parameters.AddWithValue("@fecha", rutina.Fecha);
-            comando.Parameters.AddWithValue("@nom", rutina.Nombre.ToUpper());
+            comando.Parameters.AddWithValue("@nom", rutina.Nombre.ToUpper());            
 
             if (conexion.State != ConnectionState.Open)
             {
@@ -275,7 +275,7 @@ namespace DAO
                 conexion.Close();
             }
 
-
+            
 
 
         }
@@ -283,7 +283,7 @@ namespace DAO
         public void agregarEjerciciosRutina(TORutina rutina, int claveRutina)
         {
 
-
+            
 
             for (int i = 0; i < rutina.Ejercicios.Count; i++)
             {
@@ -324,12 +324,16 @@ namespace DAO
                 TOEjercicio Toejercicio = new TOEjercicio();
                 Toejercicio.Clave = int.Parse(x["Clave_Ejercicio"].ToString());
                 Toejercicio.Nombre = x["Nombre"].ToString().ToUpper();
-
+            
                 lista.Add(Toejercicio);
-            }
+        }
 
             return lista;
         }
+
+        //public Boolean verificarExistenciaRutina() {
+
+        //}
 
 
 

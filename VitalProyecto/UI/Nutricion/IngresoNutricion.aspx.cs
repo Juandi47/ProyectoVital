@@ -242,7 +242,7 @@ namespace UI.Nutricion
                         {
                             decimal Geb = 0;
                             if (GEBMStat != 0) { Geb = GEBMStat; } else if (GEBHStat != 0) { Geb = GEBHStat; } else { Geb = GEBMenStat; };
-                            Antropometria antropom = new Antropometria(tCedula.Text, Convert.ToDecimal(tTalla.Text), Convert.ToDecimal(tPesoMeta.Text),
+                                Antropometria antropom = new Antropometria(tCedula.Text, Convert.ToDecimal(tTalla.Text), Convert.ToDecimal(tPesoMeta.Text),
                                 Convert.ToDecimal(tEdadNut.Text), Convert.ToDecimal(tPMB.Text), Convert.ToDecimal(tPesoActual.Text), Convert.ToDecimal(tPesoMaxTeoria.Text), Convert.ToDecimal(tIMC.Text),
                                 Convert.ToDecimal(tPorcGAnalizador.Text), Convert.ToDecimal(tPorcGBascula.Text), Convert.ToDecimal(tGBascBI.Text), Convert.ToDecimal(tGBascBD.Text),
                                 Convert.ToDecimal(tGBascPI.Text), Convert.ToDecimal(tGBascPD.Text), Convert.ToDecimal(tGBascTronco.Text), Convert.ToDecimal(tAguaNut.Text), Convert.ToDecimal(tMasaOsea.Text),
@@ -271,7 +271,27 @@ namespace UI.Nutricion
                 }
                 else { Response.Write("<script language=\"JavaScript\" type=\"text / JavaScript\">alertify.notify('Registro no se realizó correctamente', 'error', 5, null); </script>"); }
             }
+            limpiarControles();
 
+        }
+
+        private void limpiarControles() {
+            tCedula.Text = string.Empty; tnombre.Text = string.Empty; tApellid1.Text = string.Empty; tApellid2.Text = string.Empty;
+            tFechNac.Text = string.Empty; tSex.Text = string.Empty; tEstCivil.Text = string.Empty; tTelef.Text = string.Empty;
+            tResid.Text = string.Empty; tOcupacion.Text = string.Empty; tAnteced.Text = string.Empty; tPatolog.Text = string.Empty;
+            tFechRevis.Text = string.Empty; ActFisica.Text = string.Empty; VecesComid.Text = string.Empty; cuanExpress.Text = string.Empty;
+            aguAlDia.Text = string.Empty; tTalla.Text = string.Empty; tPesoMeta.Text = string.Empty; tEdadNut.Text = string.Empty;
+            tPMB.Text = string.Empty; tPesoActual.Text = string.Empty; tPesoMaxTeoria.Text = string.Empty; tIMC.Text = string.Empty;
+            tPorcGAnalizador.Text = string.Empty; tPorcGBascula.Text = string.Empty; tGBascBI.Text = string.Empty;
+            tGBascBD.Text = string.Empty; tGBascPI.Text = string.Empty; tGBascPD.Text = string.Empty; tGBascTronco.Text = string.Empty;
+            tAguaNut.Text = string.Empty; tMasaOsea.Text = string.Empty; tComplexión.Text = string.Empty; tEdadMetabolica.Text = string.Empty;
+            tCintura.Text = string.Empty; tAbdomen.Text = string.Empty; tCadera.Text = string.Empty; tMuslo.Text = string.Empty; tCBM.Text = string.Empty;
+            tCircunfMun.Text = string.Empty; tPorcGVisceral.Text = string.Empty; tPorcGMusculo.Text = string.Empty; tMuscBI.Text = string.Empty;
+            tMuscPD.Text = string.Empty; tMuscBD.Text = string.Empty; tMuscPI.Text = string.Empty;
+            tMuscTronco.Text = string.Empty; PorcCHO.Text = string.Empty; GramCHO.Text = string.Empty; kcalCHO.Text = string.Empty; PorcProteinas.Text = string.Empty;
+            GramProteinas.Text = string.Empty; kcalProteinas.Text = string.Empty; PorcGrasas.Text = string.Empty; GramGrasas.Text = string.Empty;
+            kcalGrasas.Text = string.Empty; pLeche.Text = string.Empty; pCarnes.Text = string.Empty; pVegetales.Text = string.Empty; pGrasas.Text = string.Empty;
+            pFrutas.Text = string.Empty; pAzúcares.Text = string.Empty; pHarinas.Text = string.Empty; pSuplemento.Text = string.Empty;
         }
         protected void tFechNac_TextChanged(object sender, EventArgs e)
         {

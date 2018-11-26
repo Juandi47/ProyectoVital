@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="~/AdminPrincipal.aspx.cs" Inherits="UI.AdminPrincipal" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
     <form id="form1" runat="server">
     <div>
-         <h1>Vital. Inicio</h1>
-     <%--   <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"/>--%>
+    
+        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="#333300" Text="¡Hola! Bienvenido su sitio de trabajo"></asp:Label>
+    
     </div>
     </form>
 </asp:Content>

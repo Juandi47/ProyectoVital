@@ -34,14 +34,31 @@ namespace UI
             if (t == false)
             {
                 Response.Write("<script language=\"JavaScript\" type=\"text / JavaScript\">alertify.notify('No se pudo realizar la acción', 'error', 5, null); </script>");
-
+                limpiarControles();
             }
             else
             {
                 Response.Write("<script language=\"JavaScript\" type=\"text / JavaScript\">alertify.notify('Registro almacenado correctamente', 'success', 5, null); </script>");
+                limpiarControles();
             }
         }
 
 
-	}
+        private void limpiarControles()
+        {
+
+            txtCed.Text = string.Empty;
+            tfrecCard.Text = string.Empty;
+            tPeso.Text = string.Empty;
+            tpercentGrasa.Text = string.Empty;
+            tImc.Text = string.Empty;
+            tabdomen.Text = string.Empty;
+            tCadera.Text = string.Empty;
+            tMuslo.Text = string.Empty;
+            tEstatura.Text = string.Empty;
+            tcintura.Text = string.Empty;
+            
+        }
+        
+    }
 }

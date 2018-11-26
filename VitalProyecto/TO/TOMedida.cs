@@ -23,7 +23,7 @@ namespace TO
 
 
 
-		public TOMedida(string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente, DateTime fecha)
+		public TOMedida(string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, string ced_Cliente, DateTime fecha)
         {
             Frec_Cardiaca = frec_Cardiaca;
             Peso = peso;
@@ -38,7 +38,7 @@ namespace TO
 			Fecha_medida = fecha;
         }
 
-		public TOMedida(int clave, string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, String ced_Cliente)
+		public TOMedida(int clave, string frec_Cardiaca, decimal peso, decimal porcent_Grasa, decimal iMC, decimal cintura, decimal abdomen, decimal cadera, decimal muslo, decimal estatura, string ced_Cliente)
 		{
 			Clave = clave;
 			Frec_Cardiaca = frec_Cardiaca;

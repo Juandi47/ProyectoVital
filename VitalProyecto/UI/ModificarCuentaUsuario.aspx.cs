@@ -68,6 +68,7 @@ namespace UI
                 //valida que las contraseñas coincidan
                 if (contr.Equals(contra2)) {
                     //aca va el metodo que le falta a Tony
+                    
                 } else {
                     Response.Write("<script>alert('Las contraseñas deben coincidir')</script>");
                 }
@@ -75,6 +76,19 @@ namespace UI
                 Response.Write("<script>alert('Se debe completar los espacios')</script>");
             }
         }
+
+        private void limpiarControles()
+        {
+            tcedula.Text = string.Empty;
+            tnombre.Text = string.Empty;
+            tTelefono.Text = string.Empty;
+            tcorreo.Text = string.Empty;
+            tfehcaN.Text = string.Empty;
+            tclave.Text = string.Empty;
+            tclave2.Text = string.Empty;
+        }
+
+
 
 
     }
