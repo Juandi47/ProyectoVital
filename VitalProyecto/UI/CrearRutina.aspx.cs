@@ -43,24 +43,32 @@ namespace UI
 
             String nombreRutina = Controlador.RemoveAccentsWithRegEx(txtNuevaRutina.Text);
 
-            if (!manejador.existenciaRutina(nombreRutina))
+            if (this.nombreRutina != null)
             {
-
                 DateTime Hoy = DateTime.Today;
                 string fecha_actual = Hoy.ToString("yyyy-MM-dd");
                 List<Ejercicio> ejercicios = manejador.pasarAEjercicios(lista);
                 Rutina rutina = new Rutina(0, fecha_actual, nombreRutina, ejercicios);
-
-                if (this.nombreRutina != null)
-                {
-                    manejador.eliminarRutina(rutina.Nombre);
-                }
+                manejador.eliminarRutina(rutina.Nombre);
                 manejador.agregarRutina(rutina);
                 Response.Redirect("BancoRutinas.aspx");
             }
             else {
-                VerificadorExistencia.Visible = true;
+                if (!manejador.existenciaRutina(nombreRutina))
+                {
+
+                    DateTime Hoy = DateTime.Today;
+                    string fecha_actual = Hoy.ToString("yyyy-MM-dd");
+                    List<Ejercicio> ejercicios = manejador.pasarAEjercicios(lista);
+                    Rutina rutina = new Rutina(0, fecha_actual, nombreRutina, ejercicios);
+                    manejador.agregarRutina(rutina);
+                    Response.Redirect("BancoRutinas.aspx");
+                }
+                else {
+                    VerificadorExistencia.Visible = true;
+                }
             }
+
 
 
 
@@ -174,6 +182,7 @@ namespace UI
                     String repeticiones = txtRepeticiones.Text;
                     TextBox txtSeries = (TextBox)grdEjercicios.Rows[i].FindControl("txtSeries");
                     String serie = txtSeries.Text;
+                    lista.Clear();
                     lista.Add(new HojaRutina(ejercicio, int.Parse(repeticiones), int.Parse(serie)));
                 }
 
