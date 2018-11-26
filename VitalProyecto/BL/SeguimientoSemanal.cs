@@ -26,5 +26,14 @@ namespace BL
         }
 
         public SeguimientoSemanal() { }
+
+        public SeguimientoSemanal(DateTime fecha, decimal peso, string oreja, string ejercicio, string cedula)
+        {
+            Fecha = fecha;
+            Peso = peso;
+            Oreja = oreja;
+            Ejercicio = ejercicio;
+            Cedula = cedula;
+        }
     }
 }

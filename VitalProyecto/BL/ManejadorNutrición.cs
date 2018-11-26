@@ -115,6 +115,28 @@ namespace BL
 
         }
 
+        public bool AgregarSeguimiento(SeguimientoSemanal seguimiento)
+        {
+            return daoClienteNutricion.AgregarSeguimiento(new TOSeguimientoSemanal(seguimiento.Fecha, seguimiento.Peso, seguimiento.Oreja,seguimiento.Ejercicio, seguimiento.Cedula));
+        }
+
+        public List<SeguimientoSemanal> TraerLista(string cedula) 
+        {
+            List<SeguimientoSemanal> listaSeguimiento = new List<SeguimientoSemanal>();
+            List<TOSeguimientoSemanal> lista = daoClienteNutricion.ListarSeguimSemanal(cedula);
+            if (lista != null)
+            {
+                foreach (TOSeguimientoSemanal seg in lista)
+                {
+                    listaSeguimiento.Add(new SeguimientoSemanal(seg.Sesion, seg.Fecha, seg.Peso, seg.Oreja, seg.Ejercicio, seg.Cedula));
+                }
+                return listaSeguimiento;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
     }
 }

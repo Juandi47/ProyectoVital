@@ -31,13 +31,22 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.TextBox sCedula;
         
         /// <summary>
-        /// sPEso control.
+        /// btnBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox sPEso;
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
+        
+        /// <summary>
+        /// sPeso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox sPeso;
         
         /// <summary>
         /// sOreja control.
@@ -67,12 +76,12 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.Button btnAgreg;
         
         /// <summary>
-        /// tSuplementoMedico control.
+        /// LitSeguimiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal tSuplementoMedico;
+        protected global::System.Web.UI.WebControls.Literal LitSeguimiento;
     }
 }

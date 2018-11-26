@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nutricion/NutricionMaster.Master" AutoEventWireup="true" CodeBehind="SeguimSemanal.aspx.cs" Inherits="UI.Nutricion.SeguimSemanal" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nutricion/NutricionMaster.Master" AutoEventWireup="true"  MaintainScrollPositionOnPostback="true" CodeBehind="SeguimSemanal.aspx.cs" Inherits="UI.Nutricion.SeguimSemanal" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta charset="utf-8">
@@ -12,19 +12,24 @@
     <div class="container">
         <div class="tab-content">
             <form runat="server">
-                <div id="DatpsPersonales" class="tab-pane fade in active">
+                <div id="SeguimientoSemanal" class="tab-pane fade in active">
                     <div class="container">
-                        <h3>Seguimiento de pesaje semanal:</h3>
-                        <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
+
                         <div class="form-container">
+                            <h3>Seguimiento de pesaje semanal:</h3>
+                            <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
                             <div class="row">
                                 <div class="col-10">
-                                    <label class="form-label" for="sCedula">Cedula</label>
+                                    <label class="form-label" for="sCedula">Ingrese la Cedula del Cliente: </label>
                                     <asp:TextBox ID="sCedula" runat="server" TextMode="Number" placeholder="Cédula" Width="100"></asp:TextBox>
+                                    <asp:Button ID="btnBuscar" Text="Buscar" runat="server" OnClick="btnBuscar_Click" />
                                 </div>
+                            </div>
+                            <div class="row">
+
                                 <div class="col-10">
                                     <label class="form-label" for="sPeso">Peso</label>
-                                    <asp:TextBox ID="sPEso" runat="server" placeholder="Pesp" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="sPeso" runat="server" placeholder="Peso" Width="150"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="sOreja">Oreja</label>
@@ -42,7 +47,7 @@
 
                             <div class="row">
                                 <table>
-                                    <asp:Literal ID="tSuplementoMedico" runat="server"></asp:Literal>
+                                    <asp:Literal ID="LitSeguimiento" runat="server"></asp:Literal>
                                 </table>
                             </div>
                         </div>
@@ -57,5 +62,5 @@
         </div>
     </div>
 
-   
+
 </asp:Content>
