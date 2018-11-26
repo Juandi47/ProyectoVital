@@ -25,6 +25,16 @@ namespace TO
             Cedula = cedula;
         }
 
+
         public TOSeguimientoSemanal() { }
+
+        public TOSeguimientoSemanal(DateTime fecha, decimal peso, string oreja, string ejercicio, string cedula)
+        {
+            Fecha = fecha;
+            Peso = peso;
+            Oreja = oreja;
+            Ejercicio = ejercicio;
+            Cedula = cedula;
+        }
     }
 }

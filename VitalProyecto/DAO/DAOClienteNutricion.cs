@@ -70,9 +70,6 @@ namespace DAO
             SqlCommand cmd2 = new SqlCommand(query2, conexion);
             try
             {
-                //Cliente padre
-                //ced, fecha, tel, obs, mens
-
                 cmd.Parameters.AddWithValue("@ced", HabitosAlimentario.Cedula);
                 cmd.Parameters.AddWithValue("@comDi", HabitosAlimentario.ComidaDiaria);
                 cmd.Parameters.AddWithValue("@ComHD", HabitosAlimentario.ComidaHorasDia);
@@ -163,6 +160,35 @@ namespace DAO
             }
         }
 
+        public bool AgregarSeguimiento(TOSeguimientoSemanal tOSeguimientoSemanal)
+        {
+            String query = "Insert into SeguimientoSemanal values(@fech,@peso,@orej,@ejercic,@ced);";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            
+            try
+            {
+                //Asignacion de parametros.
+                cmd.Parameters.AddWithValue("@fech", tOSeguimientoSemanal.Fecha);
+                cmd.Parameters.AddWithValue("@peso", tOSeguimientoSemanal.Peso);
+                cmd.Parameters.AddWithValue("@orej", tOSeguimientoSemanal.Oreja);
+                cmd.Parameters.AddWithValue("@ejercic", tOSeguimientoSemanal.Ejercicio);
+                cmd.Parameters.AddWithValue("@ced", tOSeguimientoSemanal. Cedula);
+                //Validacion del estado de la conexion.
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+        }
+
         public bool GuardarHistorial(TOHistorialMedico historial, List<TOMedicamento> listaMedicamento)
         {
             String query1 = "Insert into Historial_Medico values(@antec,@patol,@consLic,@fum,@fechEx,@ced,@frecFum,@frecTom,@actvFis);";
@@ -170,7 +196,7 @@ namespace DAO
 
             SqlCommand cmd = new SqlCommand(query1, conexion);
             SqlCommand cmd2 = new SqlCommand(query2, conexion);
-
+            
             try
             {
                 //Historial Medico.
@@ -217,6 +243,41 @@ namespace DAO
             }
 
         }
+
+        public List<TOSeguimientoSemanal> ListarSeguimSemanal(string cedula)
+        {         
+                List<TOSeguimientoSemanal> ListaMedidas = new List<TOSeguimientoSemanal>();
+                string qry = "Select * from SeguimientoSemanal where Cedula = " + cedula;
+                SqlCommand buscar = new SqlCommand(qry, conexion);
+                SqlDataReader lector;
+            
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                lector = buscar.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        ListaMedidas.Add(new TOSeguimientoSemanal(Int32.Parse(lector["Sesion"].ToString()), DateTime.Parse(lector["FechaSesion"].ToString()),
+                        decimal.Parse(lector["Peso"].ToString()), lector["Oreja"].ToString(), lector["Ejercicio"].ToString(), lector["Cedula"].ToString()));
+
+                    }
+                    conexion.Close();
+                    return ListaMedidas;
+                }
+                else
+                {
+                    conexion.Close();
+                    return null;
+                }
+
+           
+        }
+
+
+
 
     }
 }

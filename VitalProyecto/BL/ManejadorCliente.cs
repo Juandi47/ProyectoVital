@@ -22,22 +22,26 @@ namespace BL
         {
             List<TOCliente> listaTO = clienteDAO.ListaCliente();
             List<Cliente> listaBLCliente = new List<Cliente>();
-            foreach (TOCliente toClient in listaTO)
+            if (listaTO != null)
             {
-                Cliente c = new Cliente();
-                c.Cedula = toClient.Cedula;
-                c.Nombre = toClient.Nombre;
-                c.Apellido1 = toClient.Apellido1;
-                c.Apellido2 = toClient.Apellido2;
-                c.Fecha_Mensualidad = toClient.Fecha_Mensualidad;
-                c.Telefono = toClient.Telefono;
+                foreach (TOCliente toClient in listaTO)
+                {
+                    Cliente c = new Cliente();
+                    c.Cedula = toClient.Cedula;
+                    c.Nombre = toClient.Nombre;
+                    c.Apellido1 = toClient.Apellido1;
+                    c.Apellido2 = toClient.Apellido2;
+                    c.Fecha_Mensualidad = toClient.Fecha_Mensualidad;
+                    c.Telefono = toClient.Telefono;
 
-                listaBLCliente.Add(c);
+                    listaBLCliente.Add(c);
 
-                //listaBLCliente.Add(new Cliente(toClient.Cedula, toClient.Nombre, toClient.Apellido1,
-                //    toClient.Apellido2, toClient.Fecha_Nacimiento, 
-                //    toClient.Telefono, toClient.Correo, toClient.Observacion));
+                    //listaBLCliente.Add(new Cliente(toClient.Cedula, toClient.Nombre, toClient.Apellido1,
+                    //    toClient.Apellido2, toClient.Fecha_Nacimiento, 
+                    //    toClient.Telefono, toClient.Correo, toClient.Observacion));
+                }
             }
+            else { listaBLCliente = null; }
             return listaBLCliente;
         }
 
