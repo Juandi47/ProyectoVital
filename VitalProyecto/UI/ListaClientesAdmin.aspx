@@ -19,23 +19,39 @@
             border-radius: 5%;
         }
 
-         tablaClientes:only-child {
+        tablaClientes:only-child {
             border-bottom: 5px solid gray;
             background-color: red;
         }
+
+        .fila1 {
+        width:20%;
+        background-color:#ffd800;
+        }
     </style>
-    <script >
-        function salvarID(id){
+    <%--  <script>
+        function salvarID(id) {
             _doPostBack("id", id);
         }
-    </script>
-    <form runat="server" style="padding-left: 2%">
-        
-        <h1 id="Label1" runat="server">asds</h1>
-        <asp:Table ID="tablaClientes" CssClass="table-responsive" runat="server" >
-        </asp:Table>
-        <%--<asp:Button ID="addBTN" runat="server" Text="Finalizar" OnClick="addBTN_Click" />
-        <asp:Label ID="ListaTotal" runat="server"></asp:Label>--%>
-    </form>
+    </script>--%>
+    <%--<div class="col-md-1"></div>
+    <div class="col-md-10">--%>
 
+    <div class="container" runat="server">
+       
+        <asp:Label ID="labelAlerta" runat="server" CssClass="labelAlerta"></asp:Label>
+        <asp:Label ID="labelTitulo" runat="server" CssClass="title">Lista de clientes:</asp:Label>
+              <form runat="server">
+                  <asp:TextBox runat="server" ID="txbFiltrar" placeholder="Escriba para filtrar"></asp:TextBox>
+                  <asp:Table ID="tablaClientes" CssClass="table-responsive table-bordered text-center" runat="server">
+                  </asp:Table>
+                  <script src="js/jquery.quicksearch.js"></script>
+                  <script src="js/jquery-1.4.1.min.js"></script>     
+                  <script type="text/javascript">         
+                      $(document).ready(function () {
+                          $('input#<%=txbFiltrar.ClientID%>').quicksearch('table#<%=tablaClientes.ClientID%> tbody tr');
+                      });</script>
+              </form>
+
+    </div>
 </asp:Content>
