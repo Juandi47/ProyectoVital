@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModificarCuentaUsuario.aspx.cs" Inherits="UI.ModificarCuentaUsuario" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModificarCuentaClienteUI.aspx.cs" Inherits="UI.ModificarCuentaClienteUI" %>
 
 <!DOCTYPE html>
 
@@ -36,7 +36,7 @@
                     <nav id="nav">
                         <ul>
 
-                            <li><a href="PagInicio.apsx">Cerrar Sesión</a></li>
+                            <li><a href="PagInicio.aspx">Cerrar Sesión</a></li>
                         </ul>
                     </nav>
                 </div>

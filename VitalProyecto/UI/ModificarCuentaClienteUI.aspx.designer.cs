@@ -10,7 +10,7 @@
 namespace UI {
     
     
-    public partial class ModificarCuentaUsuario {
+    public partial class ModificarCuentaClienteUI {
         
         /// <summary>
         /// form1 control.
