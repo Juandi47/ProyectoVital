@@ -68,6 +68,8 @@
                         </ul>
                     </li>
                     <li><a href="Notificacion.aspx">Notificación</a></li>
+					
+					<li><a href="PagInicio.aspx">Cerrar sesión</a></li>
                 </ul>
             </nav>
            
@@ -88,14 +90,11 @@
     </div>
     <br>
     <br>
-    <footer class="footer">
+    <footer class="footer" style="position: relative">
+		<h1 class="title">Gimnasio Vital y Nutrición</h1>
         Vital San Ramón, mas que un gimnasio es tu espacio.
     </footer>
 
-
-<%--    <footer class="footer" >
-        <h1 class="title">FOOTER</h1>
-    </footer>--%>
 
     <%-- </form>--%>
 </body>
