@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="tNivelAnsiedad">Niveles de Ansiedad semanal y tiempo de comida en donde lo siente                   </label>
-                                    <asp:TextBox ID="tNivelAnsiedad" runat="server" placeholder="Apellido 2" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="tNivelAnsiedad" runat="server"  Width="150"></asp:TextBox>
                                 </div>
                             </div>
                             <br />
