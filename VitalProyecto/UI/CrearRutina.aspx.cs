@@ -14,12 +14,12 @@ namespace UI
         private static List<HojaRutina> lista = new List<HojaRutina>();
         protected void Page_Load(object sender, EventArgs e)
         {
-			if (new ControlSeguridad().validarAdmin() == true)
-			{
-				Response.Redirect("~/IniciarSesion.aspx");
-			}
+            if (new ControlSeguridad().validarAdmin() == true)
+            {
+                Response.Redirect("~/IniciarSesion.aspx");
+            }
 
-			nombreRutina = Session["Rutina"] as String;
+            nombreRutina = Session["Rutina"] as String;
             if (!IsPostBack)
                 llenarGrid();
         }
@@ -38,23 +38,42 @@ namespace UI
 
         protected void btnCrearRutina_Click(object sender, EventArgs e)
         {
-            if (txtNuevaRutina.Text.Trim() == "") {
 
-            }
-            else {
-                String nombreRutina = Controlador.RemoveAccentsWithRegEx(txtNuevaRutina.Text);
+            ManejadorRutina manejador = new ManejadorRutina();
 
+            String nombreRutina = Controlador.RemoveAccentsWithRegEx(txtNuevaRutina.Text);
+
+            if (this.nombreRutina != null)
+            {
                 DateTime Hoy = DateTime.Today;
                 string fecha_actual = Hoy.ToString("yyyy-MM-dd");
-                ManejadorRutina manejador = new ManejadorRutina();
                 List<Ejercicio> ejercicios = manejador.pasarAEjercicios(lista);
                 Rutina rutina = new Rutina(0, fecha_actual, nombreRutina, ejercicios);
                 manejador.eliminarRutina(rutina.Nombre);
                 manejador.agregarRutina(rutina);
+                Response.Redirect("BancoRutinas.aspx");
+            }
+            else {
+                if (!manejador.existenciaRutina(nombreRutina))
+                {
+
+                    DateTime Hoy = DateTime.Today;
+                    string fecha_actual = Hoy.ToString("yyyy-MM-dd");
+                    List<Ejercicio> ejercicios = manejador.pasarAEjercicios(lista);
+                    Rutina rutina = new Rutina(0, fecha_actual, nombreRutina, ejercicios);
+                    manejador.agregarRutina(rutina);
+                    Response.Redirect("BancoRutinas.aspx");
+                }
+                else {
+                    VerificadorExistencia.Visible = true;
+                }
             }
 
-            
-            
+
+
+
+
+
 
         }
 
@@ -163,6 +182,7 @@ namespace UI
                     String repeticiones = txtRepeticiones.Text;
                     TextBox txtSeries = (TextBox)grdEjercicios.Rows[i].FindControl("txtSeries");
                     String serie = txtSeries.Text;
+                    lista.Clear();
                     lista.Add(new HojaRutina(ejercicio, int.Parse(repeticiones), int.Parse(serie)));
                 }
 
