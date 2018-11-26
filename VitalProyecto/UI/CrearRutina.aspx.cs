@@ -14,7 +14,12 @@ namespace UI
         private static List<HojaRutina> lista = new List<HojaRutina>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            nombreRutina = Session["Rutina"] as String;
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+
+			nombreRutina = Session["Rutina"] as String;
             if (!IsPostBack)
                 llenarGrid();
         }

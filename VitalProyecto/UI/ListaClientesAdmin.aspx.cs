@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BL;
+using System.Text;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace UI
 {
@@ -12,14 +15,42 @@ namespace UI
     {
         
         private static List<string> cedulasAgregadas = new List<string>();
-        
+        public byte[] Clave = Encoding.ASCII.GetBytes("clave");
+        public byte[] IV = Encoding.ASCII.GetBytes("Devjoker7.37hAES");
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
 
-            //if (!IsPostBack)
-            //    Session["lista"] = cedulasAgregadas;
+			//if (!IsPostBack)
+			//    Session["lista"] = cedulasAgregadas;
 
-            cargarListaClientes();
+			cargarListaClientes();
+
+            ClientScript.GetPostBackEventReference(this, string.Empty);
+
+            string accion = Convert.ToString(Request.QueryString["con"]);
+
+            if(!IsPostBack)
+            if ( accion != null) {
+                    if (accion.Equals("true"))
+                        Response.Write("<script>alert('Cliente modificado correctamente.')</script>");
+                }
+                  
+
+            //if (IsPostBack)
+            //{
+            //    if (Page.Request.Params["__EVENTTARGET"] == "id")
+            //    {
+            //        string dato = Page.Request.Params["__EVENTARGUMENT"].ToString();
+            //        Session["id"] = dato;
+            //        Response.Redirect("~/RegistroCliente.aspx?accion=mod");
+            //    }
+            //}
 
 
             //if (Session["lista"] != null)
@@ -39,6 +70,8 @@ namespace UI
             
 
             TableRow encabezado = new TableRow();
+            encabezado.CssClass = "encabezado";
+
             encabezado.CssClass = "encabezadoTablaAsistencia";
             TableCell cedula = new TableCell();
             cedula.Text = "CEDULA";
@@ -95,10 +128,11 @@ namespace UI
                 Button btnMod = new Button();
                 btnMod.Text = "Modificar";
                 btnMod.CssClass = "radio-mod small" ;
-                btnMod.ID = c.Cedula;
+                btnMod.ID = "mod."+ c.Cedula;
                 //btnMod.BackColor = System.Drawing.Color.LightYellow;
                 //btnMod.Width;
-                btnMod.Click += delegate { agregarElemento(btnMod.ID); }; //linea sayayin
+                //btnMod.Attributes.Add("onClick", "salvarID("+ c.Cedula +")");
+                btnMod.Click += delegate { modCliente(btnMod.ID); }; //linea sayayin
                 controlMOd.Controls.Add(btnMod);
                 fila.Cells.Add(controlMOd);
 
@@ -107,7 +141,7 @@ namespace UI
                 Button btnEli = new Button();
                 btnEli.Text = "Eliminar";
                 btnEli.CssClass = "radio-eli small";
-                btnEli.ID = c.Cedula;
+                btnEli.ID = "eli"+c.Cedula;
                 btnEli.BackColor = System.Drawing.Color.LightPink;
                 
                 btnEli.Click += delegate { agregarElemento(btnEli.ID); }; //linea sayayin
@@ -130,15 +164,32 @@ namespace UI
                 text += ced + " / ";
                 
             }
-            ListaTotal.Text = text;
+            //ListaTotal.Text = text;
+        }
+
+
+        private void modCliente(String id) {
+            String llave = id;
+            String llave2 = encrypt(llave);
+            Response.Redirect("~/RegistroCliente.aspx?accion=mod&key=" + llave2);
         }
 
         private void agregarElemento(String id) {
             cedulasAgregadas.Add(id);
         }
-
-
-
+        
+        private string encrypt(string str)
+        {
+            string _result = string.Empty;
+            char[] temp = str.ToCharArray();
+            foreach (var _singleChar in temp)
+            {
+                var i = (int)_singleChar;
+                i = i - 2;
+                _result += (char)i;
+            }
+            return _result;
+        }
     }
 
 }

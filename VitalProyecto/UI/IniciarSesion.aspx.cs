@@ -39,6 +39,10 @@ namespace UI
 				{
 					Response.Redirect("Asistencia.aspx");
 				}
+				else if (usua.rol.Equals("clienteNutri"))
+				{
+					Response.Redirect("");
+				}
 
 			}
 			else

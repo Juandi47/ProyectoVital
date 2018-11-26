@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BL;
 using Login = BL.Ingreso;
+using System.Text;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace UI
 {
@@ -13,25 +16,37 @@ namespace UI
     {
 
         private String[] meses;
-        private Cliente cliente;
+        private static Cliente cliente;
         String correo = "";
         Boolean cliente_creado;
-
+        public byte[] IV = Encoding.ASCII.GetBytes("clave");
+        public byte[] Clave = Encoding.ASCII.GetBytes("Devjoker7.37hAES");
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //if (new ControlSeguridad().validarAdmin() == true)
-            //{
-            //    Response.Redirect("~/IniciarSesion.aspx");
-            //}
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
 
-            string accion = Convert.ToString(Request.QueryString["accion"]);
+			string accion = Convert.ToString(Request.QueryString["accion"]);
+
             if (accion != null && accion.Equals("mod")) {
+                if (IsPostBack)
+                {
+                    Session["telefono"] = txbtelefono.Text;
+                    Session["obs"] = txbobs.Text;
+                    Session["clave"] = textBoxClave.Text;
+                }
                 cargarEdicionUsuario();
                 ingresoDIV.Visible = false;
+
+                
+
             } else {
                 ingresoDIV.Visible = false;
+                divExtra.Visible = false;
                 meses = new string[] { "MES","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
             "Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre"};
 
@@ -39,25 +54,46 @@ namespace UI
                 {
                     cargarFechas();
                     cliente = new Cliente();
-            }
+                }
                 else {
                     cliente = Session["cliente"] as Cliente;
                 }
-
-
         }
-
-
-        
-
         }
 
         private void cargarEdicionUsuario() {
-            tituloH1.Text = "MODIFICACION USUARIO";
-            btnBusqueda.Text = "Buscar";
+
+            
+
+
+            string idEn = Convert.ToString(Request.QueryString["key"]);
+            
+            string idDes = decrypt(idEn).Substring(4);
+
+            tituloH1.Text = "ACTUALIZACION DATOS CLIENTE:";
+            btnCredenciales.Enabled = false;
+            btnCredenciales.Visible = false;
+            btnCrearCuenta.Enabled = false;
+            btnCrearCuenta.Visible = false;
+            btnBusqueda.Enabled = false;
+            btnBusqueda.Visible = false;
+            btnModificar.Text = "Actualizar";
+            cargarInfoUsuario(idDes);
 
         }
 
+        private string decrypt(string str)
+        {
+            string _result = string.Empty;
+            char[] temp = str.ToCharArray();
+            foreach (var _singleChar in temp)
+            {
+                var i = (int)_singleChar;
+                i = i + 2;
+                _result += (char)i;
+            }
+            return _result;
+        }
 
         private void cargarFechas() {
 
@@ -114,8 +150,9 @@ namespace UI
             if (pass1.Text.Equals(pass2.Text))
             {
                 String pass = pass1.Text;
+                String corr = txbcorreo.Text;
                 //registrar login
-                Ingreso log = new Ingreso(correo, pass, "cliente");
+                Ingreso log = new Ingreso(corr, pass, "cliente");
                 new ManejadorIngreso().registrarLogin(log);
 
                 cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
@@ -139,31 +176,61 @@ namespace UI
 
             protected void btnRegistrar_Click(object sender, EventArgs e){
 
-           
-
-                DateTime fecha_nac = new DateTime(int.Parse(DLAnno.SelectedValue), int.Parse(DlMes.SelectedValue), int.Parse(DlDia.SelectedItem.Text));
+                DateTime fecha_nac;
                 String correo = txbcorreo.Text;
                 String obs = txbobs.Text;
-                //String pass = pass1.Text;
 
+              
+            if (!btnModificar.Text.Equals("Actualizar"))        // SE VA A REGISTRAR UN CLIENTE sin crearle la cuenta
+            {
                 if (camposVacios())
                 {
+
+                    fecha_nac = new DateTime(int.Parse(DLAnno.SelectedValue), int.Parse(DlMes.SelectedValue), int.Parse(DlDia.SelectedItem.Text));
                     crearRegistroCliente();
 
                     cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
-                    if (cliente_creado)
-                    {
+                        if (cliente_creado){
                         Response.Write("<script>alert('Cliente registrado correctamente SIN CUENTA')</script>");
-                    }
-                    else
-                    {
+                        }else{
                         Response.Write("<script>alert('Error en registro de cliente')</script>");
-                    }
-            }
+                        }
+
+                }
                 else
                 {
-                Response.Write("<script>alert('Campos incompletos')</script>");
+                    Response.Write("<script>alert('Error: Campos incompletos')</script>");
+                }
             }
+            else // SE VA A MODIFICAR UN CLIENTE
+            {
+                if (!txbobs.Equals("") && !txbtelefono.Equals("")) // VALIDAR QUE NO DEJE EN BLANCO
+                {
+
+                    String observaciones = (String)Session["obs"];
+
+                        int tel = int.Parse((String)Session["telefono"]);
+
+                    
+                    String clave = (String)Session["clave"];
+                                                                                // prevalece     prevalece        sesion        sesion sesion
+                    Boolean modificado = new ManejadorCliente().modificarCliente(cliente.Cedula, cliente.Correo, observaciones, tel, clave);
+                    if (modificado)
+                    {
+                        Response.Redirect("ListaClientesAdmin.aspx?con=true");
+                    }
+                       
+
+                    else {
+                        Response.Write("<script>alert('Error 404.')</script>");
+                    }
+                }
+                else {
+                    Response.Write("<script>alert('Error: Datos incorrectos a modificar. (Telefono, Observaciones)')</script>");
+                }
+                
+            }
+                
             
             //ingresoDIV.Visible = false;
             //habilitarCampos();
@@ -208,6 +275,7 @@ namespace UI
             }
             else {
                 //busqueda para la modificacion
+
                 cliente.Cedula = txbced.Text;
                 Session["cliente"] = cliente;
                 cliente = new ManejadorCliente().verificarClienteBL(cliente);
@@ -275,7 +343,6 @@ namespace UI
 
             if (camposVacios())
             {
-
                 crearRegistroCliente();
                 TextBoxCorreo2.Text = txbcorreo.Text;
                 desabilitarCampos();
@@ -315,7 +382,7 @@ namespace UI
             DLAnno.Visible = false;
 
             btnBusqueda.Visible = false;
-            btnModificar.Visible = false;
+            //btnModificar.Visible = false;
         }
 
         private void habilitarCampos()
@@ -343,7 +410,41 @@ namespace UI
             DLAnno.Visible = true;
 
             btnBusqueda.Visible = true;
-            btnModificar.Visible = true;
+            //btnModificar.Visible = true;
         }
+
+        private void cargarInfoUsuario(String id) {
+
+            cliente = new ManejadorCliente().buscarCliente(id);
+            txbced.Text = cliente.Cedula;
+            txbced.Enabled = false;
+            txbnombre.Text = cliente.Nombre;
+            txbnombre.Enabled = false;
+            txbape1.Text = cliente.Apellido1;
+            txbape1.Enabled = false;
+            txbape2.Text = cliente.Apellido2;
+            txbape2.Enabled = false;
+            txbtelefono.Text = cliente.Telefono.ToString();
+            txbcorreo.Text = cliente.Correo;
+            txbcorreo.Enabled = false;
+            txbobs.Text = cliente.Observacion;
+            textBoxClave.Text = "xxxxxxxxxx"; //10
+
+            ListItem diaItem0 = new ListItem(cliente.Fecha_Nacimiento.Day.ToString(), "", true);
+            ListItem mesItem0 = new ListItem(cliente.Fecha_Nacimiento.Month.ToString(), "", true);
+            ListItem anioItem = new ListItem(cliente.Fecha_Nacimiento.Year.ToString(), "", true);
+            
+            DlDia.Items.Add(diaItem0);
+            DlMes.Items.Add(diaItem0);
+            DLAnno.Items.Add(anioItem);
+
+            DlDia.Enabled = false;
+            DlMes.Enabled = false;
+            DLAnno.Enabled = false;
+            DlDia.Visible = true;
+            DlMes.Visible = true;
+            DLAnno.Visible = true;
+        }
+
     }
 }

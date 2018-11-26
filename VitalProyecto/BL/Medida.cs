@@ -51,5 +51,10 @@ namespace BL
             Ced_Cliente = ced_Cliente;
 		}
 
+
+		public Medida()
+		{
+
+		}
     }
 }

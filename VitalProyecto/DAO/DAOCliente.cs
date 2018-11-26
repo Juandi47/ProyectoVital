@@ -127,8 +127,43 @@ namespace DAO
 
         }
 
-        public TOCliente filtrarDatosCliente(String ced)
+        public bool modificarClienteDAO(String ced, String corr, String obs, int tel, String clave)
         {
+            SqlCommand cmdCliente = new SqlCommand("update Cliente set Telefono = @tel, Observaciones = @obs where Cedula = @ced", conexion);
+            SqlCommand cmdLogin = new SqlCommand("update Login set Clave = @con where Nombre_usuario = @correo", conexion);
+
+            cmdCliente.Parameters.AddWithValue("@tel", tel);
+            cmdCliente.Parameters.AddWithValue("@obs", obs);
+            cmdCliente.Parameters.AddWithValue("@ced", ced);
+
+            cmdLogin.Parameters.AddWithValue("@con", clave);
+            cmdLogin.Parameters.AddWithValue("@correo", corr);
+            Boolean modificacionClienteCorrecta = false;
+            try {
+                conexion.Open();
+
+                 modificacionClienteCorrecta = cmdCliente.ExecuteNonQuery() > 0 ? true : false;
+
+                conexion.Close();
+
+
+                if (modificacionClienteCorrecta && clave.Length > 3)
+                {
+                    conexion.Open();
+                    modificacionClienteCorrecta = cmdLogin.ExecuteNonQuery() > 0 ? true : false;
+                    conexion.Close();
+                }
+
+            }
+            catch (SqlException ex) {
+                conexion.Close();
+                return false;
+            }
+           
+            return modificacionClienteCorrecta;
+        }
+
+        public TOCliente filtrarDatosCliente(String ced) {
             TOCliente cliente = new TOCliente();
 
             if (ConnectionState.Open != conexion.State)
@@ -168,26 +203,30 @@ namespace DAO
             return cliente;
         }
 
-        public TOCliente buscarCliente(String cedula)
-        {
-            try
-            {
-                TOCliente cliente = new TOCliente();
+		public TOCliente buscarCliente(String cedula)
+		{
+			try
+			{
+				TOCliente cliente = new TOCliente();
+				
+				SqlCommand buscar = new SqlCommand("select c.Cedula, u.Nombre, u.Apellido1, u.Apellido2, u.Correo, c.Telefono, c.Fecha_mensualidad, c.Fecha_nacimiento, c.Observaciones from Cliente c, Usuario u where c.cedula = u.cedula and c.cedula = @cedula", conexion);
+				buscar.Parameters.AddWithValue("@cedula", cedula);
+				conexion.Open();
+				SqlDataReader lector = buscar.ExecuteReader();
 
-                SqlCommand buscar = new SqlCommand("select * from cliente where cedula = @cedula", conexion);
-                buscar.Parameters.AddWithValue("@cedula", cedula);
-                conexion.Open();
-                SqlDataReader lector = buscar.ExecuteReader();
-
-                if (lector.HasRows)
-                {
-                    while (lector.Read())
-                    {
-                        cliente.Cedula = lector["Cedula"].ToString();
-                        cliente.Fecha_Nacimiento = DateTime.Parse(lector["Fecha_nacimiento"].ToString());
+				if (lector.HasRows)
+				{
+					while (lector.Read())
+					{
+						cliente.Cedula = lector["Cedula"].ToString();
+                        cliente.Nombre = lector["Nombre"].ToString();
+                        cliente.Apellido1 = lector["Apellido1"].ToString();
+                        cliente.Apellido2 = lector["Apellido2"].ToString();
+                        cliente.Correo = lector["Correo"].ToString();
                         cliente.Telefono = Int32.Parse(lector["Telefono"].ToString());
-                        cliente.Observacion = lector["Observaciones"].ToString();
                         cliente.Fecha_Mensualidad = DateTime.Parse(lector["Fecha_mensualidad"].ToString());
+                        cliente.Fecha_Nacimiento = DateTime.Parse(lector["Fecha_nacimiento"].ToString());
+						cliente.Observacion = lector["Observaciones"].ToString();
 
                     }
                     lector.Close();

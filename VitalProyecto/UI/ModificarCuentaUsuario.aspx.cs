@@ -16,11 +16,11 @@ namespace UI
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //if (new ControlSeguridad().validarCliente() == true)
-            //{
-            //    Response.Redirect("~/IniciarSesion.aspx");
-            //}
-            BL.Usuario usuarioSesion = Session["usuarioSesion"] as Usuario;
+			if (new ControlSeguridad().validarCliente() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+			BL.Usuario usuarioSesion = Session["usuarioSesion"] as Usuario;
 
 
             tcedula.Text = usuarioSesion.cedula;
