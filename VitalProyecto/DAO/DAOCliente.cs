@@ -57,8 +57,9 @@ namespace DAO
         public Boolean registrarClienteDAO(TOCliente c)
         {
 
-            String query = "Insert into Cliente values(@ced,@fecha_n,@tel,@obs,@men);";
-            String query2 = "Insert into Usuario values(@ced,@cor,@nomb,@ape1,@ape2);";
+            String query = "Insert into Cliente values(@ced,@fecha_n,@tel,@obs,@men,1);";
+
+            String query2 = "Insert into Usuario values(@ced,@cor,@nomb,@ape1,@ape2,'cliente');";
 
             SqlCommand cmd = new SqlCommand(query, conexion);
             SqlCommand cmd2 = new SqlCommand(query2, conexion);
@@ -84,17 +85,18 @@ namespace DAO
 
 
                 conexion.Open();
-                //inserta hijo
+                //inserta USUARIO
                 cmd2.ExecuteNonQuery();
-                //inserta padre
+                //inserta CLIENTE
                 cmd.ExecuteNonQuery();
 
                 conexion.Close();
 
                 return true;
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
+                e.ToString();
                 return false;
             }
         }
@@ -124,6 +126,28 @@ namespace DAO
             }
 
             return existencia > 0 ? true : false;
+
+        }
+
+        public void eliminarCliente(string id, string correo)
+        {
+            SqlCommand cmdCliente = new SqlCommand("delete from Cliente where ced = @ced", conexion);
+            SqlCommand cmdUsuario = new SqlCommand("delete from Usuario where ced = @ced", conexion);
+            SqlCommand cmdLogin = new SqlCommand("delete from Login where Nombre_usuario = @cor", conexion);
+
+            try {
+                conexion.Open();
+
+                cmdCliente.ExecuteNonQuery();
+                cmdUsuario.ExecuteNonQuery();
+                cmdLogin.ExecuteNonQuery();
+
+                conexion.Close();
+            }
+            catch (Exception ex) {
+                ex.ToString();
+                conexion.Close();
+            }
 
         }
 

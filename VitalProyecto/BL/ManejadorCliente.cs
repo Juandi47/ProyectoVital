@@ -132,6 +132,9 @@ namespace BL
             return clienteDAO.existeCliente(correo);
         }
 
-
+        public void eliminarCliente(string id, string correo)
+        {
+            clienteDAO.eliminarCliente(id,correo);
+        }
     }
 }

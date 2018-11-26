@@ -141,7 +141,7 @@ namespace UI
                 Button btnEli = new Button();
                 btnEli.Text = "Eliminar";
                 btnEli.CssClass = "radio-eli small";
-                btnEli.ID = "eli"+c.Cedula;
+                btnEli.ID = c.Cedula+";"+c.Correo;
                 btnEli.BackColor = System.Drawing.Color.LightPink;
                 
                 btnEli.Click += delegate { agregarElemento(btnEli.ID); }; //linea sayayin
@@ -172,6 +172,13 @@ namespace UI
             String llave = id;
             String llave2 = encrypt(llave);
             Response.Redirect("~/RegistroCliente.aspx?accion=mod&key=" + llave2);
+        }
+
+        private void elminar(String id) {
+            String[] array = id.Split(';');
+            String text = new Encripcion().EncodePassword(id);
+
+            new ManejadorCliente().eliminarCliente(array[0],array[1]);
         }
 
         private void agregarElemento(String id) {

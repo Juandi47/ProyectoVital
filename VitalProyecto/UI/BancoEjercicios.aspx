@@ -25,8 +25,9 @@
                 <div class="col-md-10">
                     <div class="input-group">
                         <asp:TextBox ID="txtNuevoEjercicio" runat="server" Width="300px" Height="45px" Wrap="False" placeholder="NUEVO EJERCICIO" BackColor="WhiteSmoke"></asp:TextBox>
-                        <asp:Button ID="btnAgregarEjercicio" runat="server" Font-Size="Medium" Width="250px" Height="55px" Text="Agregar Ejercicio" class="button input-group-addon" OnClick="btnAgregarEjercicio_Click" BackColor="darkolivegreen" />
+                         <asp:Button ID="btnAgregarEjercicio" runat="server" Font-Size="Medium" Width="250px" Height="55px" Text="Agregar Ejercicio" class="button input-group-addon" OnClick="btnAgregarEjercicio_Click" BackColor="darkolivegreen" />
                     </div>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1"  ForeColor="Red" ControlToValidate="txtNuevoEjercicio" runat="server" SetFocusOnError="true" ErrorMessage="Debe escribir el nombre de la rutina"></asp:RequiredFieldValidator>
                     <div id="div1">
                         <asp:GridView ID="grdEjercicios" runat="server" class="table table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False">
                             <Columns>

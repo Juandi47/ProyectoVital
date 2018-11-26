@@ -74,7 +74,7 @@ namespace UI
 
             celdaNombre.Attributes.Add("HorizontalAlign", "Center");
             celdaNombre.Attributes.Add("Wrap", "false");
-            celdaNombre.Attributes.Add("Width", "355px");
+            celdaNombre.Attributes.Add("Width", "95px");
             celdaNombre.Attributes.Add("VerticalAlign", "Middle");
 
             celdaNombre.CssClass = "celda";
