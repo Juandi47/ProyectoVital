@@ -129,9 +129,5 @@ namespace UI
 			}
 		}
 
-        protected void btnExpediente_Click(object sender, EventArgs e)
-        {
-
-	}
 }
 }
