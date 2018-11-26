@@ -22,6 +22,24 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox tced;
         
         /// <summary>
+        /// ValidadorCedulaExistente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ValidadorCedulaExistente;
+        
+        /// <summary>
+        /// ValidadorCedulaFormato control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ValidadorCedulaFormato;
+        
+        /// <summary>
         /// tname control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,15 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox tlname2;
         
         /// <summary>
+        /// RequiredFieldValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        
+        /// <summary>
         /// RegularExpressionValidator4 control.
         /// </summary>
         /// <remarks>
@@ -94,6 +121,15 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox tclave2;
         
         /// <summary>
+        /// ValidadorClaves control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ValidadorClaves;
+        
+        /// <summary>
         /// temail control.
         /// </summary>
         /// <remarks>
@@ -101,6 +137,15 @@ namespace UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox temail;
+        
+        /// <summary>
+        /// ValidadorExistenciaCorreo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ValidadorExistenciaCorreo;
         
         /// <summary>
         /// RequiredFieldValidator1 control.
