@@ -17,27 +17,32 @@ namespace BL
 		}
 
         DAOCliente clienteDAO = new DAOCliente();
+        Encripcion encripta = new Encripcion();
 
 		public List<Cliente> listaClientes()
         {
             List<TOCliente> listaTO = clienteDAO.ListaCliente();
             List<Cliente> listaBLCliente = new List<Cliente>();
-            foreach (TOCliente toClient in listaTO)
+            if (listaTO != null)
             {
-                Cliente c = new Cliente();
-                c.Cedula = toClient.Cedula;
-                c.Nombre = toClient.Nombre;
-                c.Apellido1 = toClient.Apellido1;
-                c.Apellido2 = toClient.Apellido2;
-                c.Fecha_Mensualidad = toClient.Fecha_Mensualidad;
-                c.Telefono = toClient.Telefono;
+                foreach (TOCliente toClient in listaTO)
+                {
+                    Cliente c = new Cliente();
+                    c.Cedula = toClient.Cedula;
+                    c.Nombre = toClient.Nombre;
+                    c.Apellido1 = toClient.Apellido1;
+                    c.Apellido2 = toClient.Apellido2;
+                    c.Fecha_Mensualidad = toClient.Fecha_Mensualidad;
+                    c.Telefono = toClient.Telefono;
 
-                listaBLCliente.Add(c);
+                    listaBLCliente.Add(c);
 
-                //listaBLCliente.Add(new Cliente(toClient.Cedula, toClient.Nombre, toClient.Apellido1,
-                //    toClient.Apellido2, toClient.Fecha_Nacimiento, 
-                //    toClient.Telefono, toClient.Correo, toClient.Observacion));
+                    //listaBLCliente.Add(new Cliente(toClient.Cedula, toClient.Nombre, toClient.Apellido1,
+                    //    toClient.Apellido2, toClient.Fecha_Nacimiento, 
+                    //    toClient.Telefono, toClient.Correo, toClient.Observacion));
+                }
             }
+            else { listaBLCliente = null; }
             return listaBLCliente;
         }
 
@@ -120,7 +125,8 @@ namespace BL
             //TOCliente clienTO = new TOCliente(cliente.Cedula, cliente.Nombre, cliente.Apellido1,
             //    cliente.Apellido2, cliente.Fecha_Nacimiento, cliente.Telefono, cliente.Correo,
             //    cliente.Observacion, cliente.Fecha_Mensualidad);
-            return clienteDAO.modificarClienteDAO(ced,corr,obs, tel, clave);
+            string pass = encripta.EncodePassword(clave);
+            return clienteDAO.modificarClienteDAO(ced,corr,obs, tel, pass);
         }
     
 
@@ -128,6 +134,9 @@ namespace BL
             return clienteDAO.existeCliente(correo);
         }
 
-
+        public void eliminarCliente(string id, string correo)
+        {
+            clienteDAO.eliminarCliente(id,correo);
+        }
     }
 }

@@ -25,12 +25,12 @@ namespace UI
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //if (new ControlSeguridad().validarAdmin() == true)
-            //{
-            //    Response.Redirect("~/IniciarSesion.aspx");
-            //}
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
 
-            string accion = Convert.ToString(Request.QueryString["accion"]);
+			string accion = Convert.ToString(Request.QueryString["accion"]);
 
             if (accion != null && accion.Equals("mod")) {
                 if (IsPostBack)
@@ -208,10 +208,7 @@ namespace UI
                 {
 
                     String observaciones = (String)Session["obs"];
-
-                        int tel = int.Parse((String)Session["telefono"]);
-
-                    
+                    int tel = int.Parse((String)Session["telefono"]);
                     String clave = (String)Session["clave"];
                                                                                 // prevalece     prevalece        sesion        sesion sesion
                     Boolean modificado = new ManejadorCliente().modificarCliente(cliente.Cedula, cliente.Correo, observaciones, tel, clave);
@@ -219,7 +216,6 @@ namespace UI
                     {
                         Response.Redirect("ListaClientesAdmin.aspx?con=true");
                     }
-                       
 
                     else {
                         Response.Write("<script>alert('Error 404.')</script>");

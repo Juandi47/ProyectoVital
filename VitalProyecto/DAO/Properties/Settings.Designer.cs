@@ -26,7 +26,8 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=ProyectoVital;Integrated Security=True;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL5025.site4now.net;Initial Catalog=DB_A42F8B_gymVital;User Id=DB_A4" +
+            "2F8B_gymVital_admin;Password=GymVital123;")]
         public string conexion {
             get {
                 return ((string)(this["conexion"]));

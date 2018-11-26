@@ -34,7 +34,11 @@
                 </div>
                 <div>
                     <nav id="nav">
-                    </nav>
+						<ul>
+							
+							<li><a href="PagInicio.apsx">Cerrar Sesión</a></li>
+						</ul>
+					</nav>
                 </div>
             </div>
         </div>

@@ -14,8 +14,12 @@ namespace UI
        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-                string valor = Request.QueryString["Valor"];
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+
+			string valor = Request.QueryString["Valor"];
              
                 Administrador admin = manejadorAdmin.consultaAdministrador(valor);
 

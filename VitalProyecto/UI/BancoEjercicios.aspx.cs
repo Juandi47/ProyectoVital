@@ -13,7 +13,11 @@ namespace UI
         private ManejadorEjercicio manejador = new ManejadorEjercicio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            llenarGrid();
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+			llenarGrid();
         }
 
         private void llenarGrid()

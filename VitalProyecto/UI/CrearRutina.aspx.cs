@@ -14,7 +14,12 @@ namespace UI
         private static List<HojaRutina> lista = new List<HojaRutina>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            nombreRutina = Session["Rutina"] as String;
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+
+			nombreRutina = Session["Rutina"] as String;
             if (!IsPostBack)
                 llenarGrid();
         }
@@ -33,16 +38,23 @@ namespace UI
 
         protected void btnCrearRutina_Click(object sender, EventArgs e)
         {
-            
-            String nombreRutina = Controlador.RemoveAccentsWithRegEx(txtNuevaRutina.Text);
+            if (txtNuevaRutina.Text.Trim() == "") {
 
-            DateTime Hoy = DateTime.Today;
-            string fecha_actual = Hoy.ToString("yyyy-MM-dd");
-            ManejadorRutina manejador = new ManejadorRutina();
-            List<Ejercicio> ejercicios = manejador.pasarAEjercicios(lista);
-            Rutina rutina = new Rutina(0, fecha_actual, nombreRutina, ejercicios);
-            manejador.eliminarRutina(rutina.Nombre);
-            manejador.agregarRutina(rutina);
+            }
+            else {
+                String nombreRutina = Controlador.RemoveAccentsWithRegEx(txtNuevaRutina.Text);
+
+                DateTime Hoy = DateTime.Today;
+                string fecha_actual = Hoy.ToString("yyyy-MM-dd");
+                ManejadorRutina manejador = new ManejadorRutina();
+                List<Ejercicio> ejercicios = manejador.pasarAEjercicios(lista);
+                Rutina rutina = new Rutina(0, fecha_actual, nombreRutina, ejercicios);
+                manejador.eliminarRutina(rutina.Nombre);
+                manejador.agregarRutina(rutina);
+            }
+
+            
+            
 
         }
 

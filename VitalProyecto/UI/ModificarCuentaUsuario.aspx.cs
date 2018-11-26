@@ -16,12 +16,12 @@ namespace UI
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (new ControlSeguridad().validarCliente() == true)
-            {
-                Response.Redirect("~/IniciarSesion.aspx");
-            }
+			if (new ControlSeguridad().validarCliente() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
             BL.Usuario usuarioSesion = Session["usuarioSesion"] as Usuario;
-            
+
             tcedula.Text = usuarioSesion.cedula;
             tnombre.Text = usuarioSesion.nombre;
             tcorreo.Text = usuarioSesion.correo;
@@ -73,6 +73,7 @@ namespace UI
                 //valida que las contraseñas coincidan
                 if (contr.Equals(contra2)) {
                     maneja.modificarCliente(cedula, correo, observaciones, Int32.Parse(telefono), contr);
+                    Response.Write("<script>alert('Su perfil ha sido modificado')</script>");
                 } else {
                     Response.Write("<script>alert('Las contraseñas deben coincidir')</script>");
                 }

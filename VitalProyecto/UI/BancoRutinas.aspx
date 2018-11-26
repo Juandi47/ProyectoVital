@@ -7,11 +7,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link href="admin_estilos.css" rel="stylesheet" />
+    <%--<link href="admin_estilos.css" rel="stylesheet" />--%>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
     
+    <style>
+		#div1 {
+			overflow: scroll;
+			width: 800px;
+		}
+	</style>
+
     <script>
         function guardarNombre(nombre,boton) {
             __doPostBack("NombreYBoton", nombre + ";" + boton);
@@ -26,9 +33,12 @@
 
 
                     <asp:Button ID="BtnCrearRutina"  Font-Size="Medium" Width="250px" Height="55px" runat="server" Text="Crear Rutina" OnClick="BtnCrearRutina_Click" class="button" BackColor="darkolivegreen"/>
-
-                    <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover ">
-                    </asp:Table>
+                    
+                        <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover ">
+                            </asp:Table>
+                    
+                    
+                    
 
                 </div>
                 <div class="col-md-1"></div>

@@ -112,6 +112,8 @@
                         <asp:Button ID="btnCrearRutina" runat="server" Font-Size="Medium" Text="GUARDAR RUTINA" Width="250px" Height="55px" BackColor="darkolivegreen" OnClick="btnCrearRutina_Click" />
                     </div>
                     <div>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1"  ForeColor="Red" ControlToValidate="txtNuevaRutina" runat="server" SetFocusOnError="true" ErrorMessage="Debe escribir el nombre de la rutina"></asp:RequiredFieldValidator>
+
                         <br />
                         <asp:Label ID="lbBuscarEjercicio" runat="server" Text="BUSCAR:" Font-Bold="true"></asp:Label>
                         <div class="input-group">
@@ -137,6 +139,8 @@
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
                                         ControlToValidate="txtRepeticiones" runat="server"
                                         ErrorMessage="Solo números permitidos"
+                                        SetFocusOnError="true"
+                                        ForeColor="red"
                                         ValidationExpression="\d+">
                                     </asp:RegularExpressionValidator>
                                 </ItemTemplate>
@@ -147,6 +151,7 @@
                                 <ItemTemplate>
                                     <asp:TextBox ID="txtSeries" Enabled="false" runat="server" onClick="validarRegularExpresion2(this)" onChange="SeriesZipOnChange(this);" Width="55px" Height="25px" Wrap="false" BackColor="WhiteSmoke" MaxLength="3" />
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2"
+                                        ForeColor="red"
                                         ControlToValidate="txtSeries" runat="server"
                                         ErrorMessage="Solo números permitidos"
                                         ValidationExpression="\d+">
