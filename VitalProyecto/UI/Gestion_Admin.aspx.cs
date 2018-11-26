@@ -41,17 +41,38 @@ namespace UI
             TableRow fila = new TableRow(); ;
             string correoV = correo;
             TableCell celdaNombre = new TableCell();
+            celdaNombre.Attributes.Add("HorizontalAlign", "Center");
+            celdaNombre.Attributes.Add("Wrap", "false");
+            celdaNombre.Attributes.Add("Width", "95px");
+            celdaNombre.Attributes.Add("VerticalAlign", "Middle");
             celdaNombre.CssClass = "celda";
             celdaNombre.Text = nombre;
-            celdaNombre.Font.Size = 20;
+            celdaNombre.Font.Size = FontUnit.Medium; ;
             celdaNombre.Font.Bold = true;
             celdaNombre.BackColor = System.Drawing.Color.Gray;
             celdaNombre.Attributes.Add("onClick", "mostrarDatosUsuario('" + "Cedula: " + cedula + "', '" + "Nombre completo: " + nombre + " " + apellido1 + " " + apellido2 + "', '" + "correo electronico: " + correo + "','" + datosUsuario.ID + "')");
             fila.Cells.Add(celdaNombre); 
 
             TableCell botonCell = new TableCell();
+            botonCell.Attributes.Add("HorizontalAlign", "Center");
+            botonCell.Attributes.Add("Wrap", "false");
+            botonCell.Attributes.Add("Width", "55px");
+            botonCell.Attributes.Add("VerticalAlign", "Middle");
             Button btnModificar = new Button();
+            btnModificar.Attributes.Add("HorizontalAlign", "Center");
+            btnModificar.Attributes.Add("HorizontalAlign", "Center");
+            btnModificar.Attributes.Add("Wrap", "false");
+            btnModificar.Attributes.Add("VerticalAlign", "Middle");
             Button btnEliminar = new Button();
+
+            btnModificar.Width = 125;
+            btnEliminar.Width = 120;
+
+            btnModificar.Height = 35;
+            btnEliminar.Height = 35;
+
+            btnModificar.Font.Size = FontUnit.Small;
+            btnEliminar.Font.Size = FontUnit.Small;
 
             count = count + 1;
             btnModificar.ID = "btnModificar" + count;

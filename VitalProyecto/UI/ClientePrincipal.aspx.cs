@@ -15,12 +15,12 @@ namespace UI
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (new ControlSeguridad().validarCliente() == true)
-			{
-				Response.Redirect("~/IniciarSesion.aspx");
-			}
+            if (new ControlSeguridad().validarCliente() == true)
+            {
+                Response.Redirect("~/IniciarSesion.aspx");
+            }
 
-			llenarCampos();
+            llenarCampos();
 			informacionCliente();
 
 		}
@@ -129,9 +129,5 @@ namespace UI
 			}
 		}
 
-        protected void btnExpediente_Click(object sender, EventArgs e)
-        {
-
-	}
 }
 }

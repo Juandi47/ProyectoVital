@@ -43,10 +43,6 @@ namespace UI
             else {
                 Session.Remove("Rutina");
             }
-
-
-
-
             llenarTablaRutinas();
 
         }
@@ -74,7 +70,7 @@ namespace UI
 
             celdaNombre.Attributes.Add("HorizontalAlign", "Center");
             celdaNombre.Attributes.Add("Wrap", "false");
-            celdaNombre.Attributes.Add("Width", "355px");
+            celdaNombre.Attributes.Add("Width", "95px");
             celdaNombre.Attributes.Add("VerticalAlign", "Middle");
 
             celdaNombre.CssClass = "celda";
@@ -143,6 +139,13 @@ namespace UI
         protected void BtnCrearRutina_Click(object sender, EventArgs e)
         {
             Response.Redirect("CrearRutina.aspx");
+        }
+
+        protected void btnRutinaAleatoria_Click(object sender, EventArgs e)
+        {
+            Session["Rutina"] = manejo.rutinaAleatoria();
+
+            Response.Redirect("~/MostrarRutina.aspx");
         }
     }
 

@@ -97,7 +97,6 @@
     <Content Include="css\style-normal.css" />
     <Content Include="css\style-wide.css" />
     <Content Include="css\style.css" />
-    <Content Include="Cliente\estilos.css" />
     <Content Include="css\tabla.css" />
     <Content Include="css\theme.css" />
     <Content Include="css\triangle.css" />
@@ -110,8 +109,7 @@
     <Content Include="images\d.jpg" />
     <Content Include="images\e.jpg" />
     <Content Include="images\elky.jpg" />
-    <Content Include="images\nutriGym.jpg" />
-    <Content Include="images\pic02.jpg" />
+    <Content Include="images\nutriVital.jfif" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
     <Content Include="images\yen.jpg" />
@@ -129,9 +127,10 @@
     <Content Include="Cliente\login.aspx" />
     <Content Include="ListaClientesAdmin.aspx" />
     <Content Include="ModificarAdmin.aspx" />
-    <Content Include="ModificarCuentaUsuario.aspx" />
+    <Content Include="ModificarCuentaClienteUI.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
+    <Content Include="Nutricion\styleNutri.css" />
     <Content Include="Nutricion\IngresoNutricion.aspx" />
     <Content Include="Nutricion\SeguimientoNutricion.aspx" />
     <Content Include="Nutricion\SeguimSemanal.aspx" />
@@ -260,12 +259,12 @@
     <Compile Include="ModificarAdmin.aspx.designer.cs">
       <DependentUpon>ModificarAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ModificarCuentaUsuario.aspx.cs">
-      <DependentUpon>ModificarCuentaUsuario.aspx</DependentUpon>
+    <Compile Include="ModificarCuentaClienteUI.aspx.cs">
+      <DependentUpon>ModificarCuentaClienteUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ModificarCuentaUsuario.aspx.designer.cs">
-      <DependentUpon>ModificarCuentaUsuario.aspx</DependentUpon>
+    <Compile Include="ModificarCuentaClienteUI.aspx.designer.cs">
+      <DependentUpon>ModificarCuentaClienteUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="MostrarRutina.aspx.cs">
       <DependentUpon>MostrarRutina.aspx</DependentUpon>
