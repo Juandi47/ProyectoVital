@@ -223,18 +223,23 @@ color:black;
    margin-right:5px;
 }
 
+
+.tablerow {
+    margin-left: 0%;
+}
+
 /*.tablerow {
 margin-left:0%;
 width:20%;
 }*/
 
-.filaExtra {
+/*.filaExtra {
 margin-top: 5px;
 
 }
     .filaExtra:first-child {
     text-align:right;
-    }
+    }*/
 
 
 

@@ -208,10 +208,7 @@ namespace UI
                 {
 
                     String observaciones = (String)Session["obs"];
-
-                        int tel = int.Parse((String)Session["telefono"]);
-
-                    
+                    int tel = int.Parse((String)Session["telefono"]);
                     String clave = (String)Session["clave"];
                                                                                 // prevalece     prevalece        sesion        sesion sesion
                     Boolean modificado = new ManejadorCliente().modificarCliente(cliente.Cedula, cliente.Correo, observaciones, tel, clave);
@@ -219,7 +216,6 @@ namespace UI
                     {
                         Response.Redirect("ListaClientesAdmin.aspx?con=true");
                     }
-                       
 
                     else {
                         Response.Write("<script>alert('Error 404.')</script>");
