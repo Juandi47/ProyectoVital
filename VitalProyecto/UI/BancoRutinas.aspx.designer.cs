@@ -31,6 +31,15 @@ namespace UI {
         protected global::System.Web.UI.WebControls.Button BtnCrearRutina;
         
         /// <summary>
+        /// btnRutinaAleatoria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRutinaAleatoria;
+        
+        /// <summary>
         /// Rutinas control.
         /// </summary>
         /// <remarks>

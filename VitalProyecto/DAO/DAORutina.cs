@@ -68,6 +68,33 @@ namespace DAO
             return rutina;
         }
 
+        public String rutinaAleatoria()
+        {
+
+            DataTable tabla = new DataTable();
+
+            TORutina rutina = new TORutina();
+
+            String query = "SELECT TOP 1 Nombre from Rutina ORDER BY NEWID()";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+
+            String nombre = (String)comando.ExecuteScalar();
+
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+
+
+            return nombre;
+        }
+
         public void EliminarRutina(String Nombre)
         {
 
