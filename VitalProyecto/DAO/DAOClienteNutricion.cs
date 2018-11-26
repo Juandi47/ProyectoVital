@@ -31,7 +31,7 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@nomb", tOCliente.Nombre);
                 cmd.Parameters.AddWithValue("@ape1", tOCliente.Apellido1);
                 cmd.Parameters.AddWithValue("@ape2", tOCliente.Apellido2);
-                cmd.Parameters.AddWithValue("@rol", "ClienteNutricion");
+                cmd.Parameters.AddWithValue("@rol", "clienteNutri");
 
 
                 cmd2.Parameters.AddWithValue("@fechNac", tOCliente.Fecha_Nacimiento);
@@ -180,6 +180,60 @@ namespace DAO
                 }
                 
                 cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+        }
+
+        public bool GuardarSeguimiento(TOSeguimientoNutri seg, List<TOSeguimientoRecord24> lisSeg, TOSegAntropometria segAnt)
+        {
+            String query1 = "Insert into Historial_Medico values(@antec,@patol,@consLic,@fum,@fechEx,@ced,@frecFum,@frecTom,@actvFis);";
+            String query2 = "Insert into Medic_Suplem values(@ced,@nomb,@mot,@frec,@dosis);";
+
+            SqlCommand cmd = new SqlCommand(query1, conexion);
+            SqlCommand cmd2 = new SqlCommand(query2, conexion);
+
+            try
+            {
+                //Historial Medico.
+                //Asignacion de parametros.
+                cmd.Parameters.AddWithValue("@antec", historial.Antecedentes);
+                cmd.Parameters.AddWithValue("@patol", historial.Patologias);
+                cmd.Parameters.AddWithValue("@consLic", historial.ConsumeLicor);
+                cmd.Parameters.AddWithValue("@fum", historial.Fuma);
+                cmd.Parameters.AddWithValue("@fechEx", historial.UltimoExamen);
+                cmd.Parameters.AddWithValue("@ced", historial.Cedula);
+                cmd.Parameters.AddWithValue("@frecFum", historial.FrecFuma);
+                cmd.Parameters.AddWithValue("@frecTom", historial.FrecLicor);
+                cmd.Parameters.AddWithValue("@actvFis", historial.ActividadFisica);
+                //Validacion del estado de la conexion.
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                //Insercion del historial medico.
+                cmd.ExecuteNonQuery();
+                //Insercion de los medicamentos o suplementos del cliente.
+                if (listaMedicamento != null)
+                {
+                    foreach (TOMedicamento medicamento in listaMedicamento)
+                    {
+                        cmd2.Parameters.AddWithValue("@ced", medicamento.Cedula);
+                        cmd2.Parameters.AddWithValue("@nomb", medicamento.Nombre);
+                        cmd2.Parameters.AddWithValue("@mot", medicamento.Motivo);
+                        cmd2.Parameters.AddWithValue("@frec", medicamento.Frecuencia);
+                        cmd2.Parameters.AddWithValue("@dosis", medicamento.Dosis);
+
+                        cmd2.ExecuteNonQuery();
+                    }
+                }
+
+
+                conexion.Close();
 
                 return true;
             }

@@ -97,7 +97,6 @@
     <Content Include="css\style-normal.css" />
     <Content Include="css\style-wide.css" />
     <Content Include="css\style.css" />
-    <Content Include="Cliente\estilos.css" />
     <Content Include="css\tabla.css" />
     <Content Include="css\theme.css" />
     <Content Include="css\triangle.css" />
@@ -111,7 +110,6 @@
     <Content Include="images\e.jpg" />
     <Content Include="images\elky.jpg" />
     <Content Include="images\nutriVital.jfif" />
-    <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
     <Content Include="images\yen.jpg" />
@@ -342,6 +340,7 @@
     <Content Include="Nutricion\NutricionMaster.Master" />
     <None Include="packages.config" />
     <Content Include="Principal.Master" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

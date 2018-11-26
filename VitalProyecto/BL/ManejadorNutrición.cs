@@ -138,5 +138,58 @@ namespace BL
             }
         }
 
+        public bool AgregaSegNutri(SeguimientoNutri nutri, List<SeguimientoRecord24> lista, SegAntropometria segAntrop)
+        {
+
+            TOSeguimientoNutri seg = new TOSeguimientoNutri();
+            List<TOSeguimientoRecord24> lisSeg = new List<TOSeguimientoRecord24>();
+            TOSegAntropometria segAnt = new TOSegAntropometria();
+            seg.Cedula = nutri.Cedula;
+            seg.DiasEjercicio = nutri.DiasEjercicio;
+            seg.ComidaExtra = nutri.ComidaExtra;
+            seg.NivelAnsiedad = nutri.NivelAnsiedad;
+            if(lisSeg != null)
+            {
+                foreach (SeguimientoRecord24 record in lista)
+                {
+                    lisSeg.Add(new TOSeguimientoRecord24(record.TiempoComida, record.Descripcion));
+                }
+            }
+            segAnt.Talla = segAntrop.Talla;
+            segAnt.PesoIdeal = segAntrop.PesoIdeal;
+            segAnt.Edad = segAntrop.Edad;
+            segAnt.PMB = segAntrop.PMB;
+            segAnt.Fecha_SA = segAntrop.Fecha_SA;
+            segAnt.Peso = segAntrop.Peso;
+            segAnt.IMC = segAntrop.IMC;
+            segAnt.PorcGrasaAnalizador = segAntrop.PorcGrasaAnalizador;
+            segAnt.PorcGr_Bascula = segAntrop.PorcGr_Bascula;
+            segAnt.GB_BI = segAntrop.GB_BI;
+            segAnt.GB_BD = segAntrop.GB_BD;
+            segAnt.GB_PI = segAntrop.GB_PI;
+            segAnt.GB_PD = segAntrop.GB_PD;
+            segAnt.GB_Tronco = segAntrop.GB_Tronco;
+            segAnt.PorcentGViceral = segAntrop.PorcentGViceral;
+            segAnt.PorcentMusculo = segAntrop.PorcentMusculo;
+            segAnt.PM_BI = segAntrop.PM_BI;
+            segAnt.PM_PD = segAntrop.PM_PD;
+            segAnt.PM_BD = segAntrop.PM_BD;
+            segAnt.PM_PI = segAntrop.PM_PI;
+            segAnt.PM_Tronco = segAntrop.PM_Tronco;
+            segAnt.AguaCorporal = segAntrop.AguaCorporal;
+            segAnt.MasaOsea = segAntrop.MasaOsea;
+            segAnt.Complexión = segAntrop.Complexión;
+            segAnt.EdadMetabolica = segAntrop.EdadMetabolica;
+            segAnt.Cintura = segAntrop.Cintura;
+            segAnt.Abdomen = segAntrop.Abdomen;
+            segAnt.Cadera = segAntrop.Cadera;
+            segAnt.Muslo = segAntrop.Muslo;
+            segAnt.Brazo = segAntrop.Brazo;
+            segAnt.Observaciones = segAntrop.Observaciones;
+
+            return daoClienteNutricion.GuardarSeguimiento(seg, lisSeg,segAnt);
+            
+        }
+
     }
 }
