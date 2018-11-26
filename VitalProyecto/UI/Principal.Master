@@ -20,11 +20,13 @@
     <script src="js/init.js"></script>
 
     <link href="admin_estilos.css" rel="stylesheet" />
-   
-        <link rel="stylesheet" href="css/skel.css" />
+   <noscript>
+       <link rel="stylesheet" href="css/skel.css" />
         <link rel="stylesheet" href="css/style.css" />
+   </noscript>
         
-        <link rel="stylesheet" type="text/css" href="admin_estilos.css" />
+        
+        <%--<link rel="stylesheet" type="text/css" href="admin_estilos.css" />--%>
    
     
 </head>
