@@ -44,8 +44,8 @@
 				<div>
 					<nav id="nav">
 						<ul>
-							<li><a href="ModificarCuentaUsuario.aspx">Modificar perfil</a></li>
-							<li><a href="PagInicio.apsx">Cerrar Sesión</a></li>
+							<li><a href="ModificarCuentaUsuario.apsx">Modificar perfil</a></li>
+							<li><a href="PagInicio.aspx">Cerrar Sesión</a></li>
 						</ul>
 					</nav>
 				</div>
