@@ -42,10 +42,11 @@ namespace UI
                 //Se debe asegurar que las claves coincidan.
                 if (clave2.Equals(clave))
                 {
-                    //Se debe validar que los numeros no asean negativos
+                    //Se debe validar que los numeros nosean negativos
                     if (cedula.Contains("-"))
                     {
-                        Response.Write("<script>alert('Formato de cedula inválida')</script>");
+                        ValidadorCedulaFormato.Visible = true;
+                        //Response.Write("<script>alert('Formato de cedula inválida')</script>");
                     }
                     else {
                         //se debe verificar que la cedula  no haya sido ingresada anteriormente
@@ -54,7 +55,8 @@ namespace UI
                             //se debe verificar que la correo  no haya sido ingresada anteriormente
                             if (manejadorAdmin.existeCorreo(correo))
                             {
-                                Response.Write("<script>alert('El correo electrónico ya ha sido registrado anteriormente')</script>");
+                                ValidadorExistenciaCorreo.Visible = true;
+                                //Response.Write("<script>alert('El correo electrónico ya ha sido registrado anteriormente')</script>");
                             }
                             else {
                                 mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2, correo);
@@ -62,12 +64,14 @@ namespace UI
                             }
                         }
                         else {
-                            Response.Write("<script>alert('Ya existe la cedula registrada en el sistema')</script>");
+                            ValidadorCedulaExistente.Visible = true;
+                            //Response.Write("<script>alert('Ya existe la cedula registrada en el sistema')</script>");
                         }
                     }
                 }
                 else {
-                    Response.Write("<script>alert('Las claves deben coincidir')</script>");
+                    ValidadorClaves.Visible = true;
+                    //Response.Write("<script>alert('Las claves deben coincidir')</script>");
                 }
 
             }

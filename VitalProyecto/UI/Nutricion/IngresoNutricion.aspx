@@ -13,7 +13,7 @@
         <form runat="server">
             <h2>Crear Clientes</h2>
             <ul class="nav nav-tabs">
-                <li><a data-toggle="tab" href="#DatpsPersonales">Datos Personales</a></li>
+                <li class="active"><a data-toggle="tab" href="#DatpsPersonales">Datos Personales</a></li>
                 <li><a data-toggle="tab" href="#HistorialMedico">Historial Médico</a></li>
                 <li><a data-toggle="tab" href="#HabitosAlimentarios">Habitos Alimentarios</a></li>
                 <li><a data-toggle="tab" href="#Antropometría">Antropometría</a></li>
@@ -23,10 +23,10 @@
                 <%-- <form runat="server">--%>
                 <div id="DatpsPersonales" class="tab-pane fade in active">
                     <div class="container">
-                        <h1 class="title">Historial Nutrición Anamnesis</h1>
-                        <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
+                        <h3 class="title">Historial Nutrición Anamnesis</h3>
+                        
                         <div class="form-container">
-
+                            <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
                             <h3>Datos Personales:</h3>
                             <div class="row">
                                 <div class="col-10">

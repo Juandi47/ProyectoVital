@@ -43,10 +43,6 @@ namespace UI
             else {
                 Session.Remove("Rutina");
             }
-
-
-
-
             llenarTablaRutinas();
 
         }
@@ -143,6 +139,13 @@ namespace UI
         protected void BtnCrearRutina_Click(object sender, EventArgs e)
         {
             Response.Redirect("CrearRutina.aspx");
+        }
+
+        protected void btnRutinaAleatoria_Click(object sender, EventArgs e)
+        {
+            Session["Rutina"] = manejo.rutinaAleatoria();
+
+            Response.Redirect("~/MostrarRutina.aspx");
         }
     }
 

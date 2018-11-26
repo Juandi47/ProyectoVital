@@ -13,5 +13,35 @@ namespace UI.Nutricion
         {
 
         }
+
+        protected void r24Agrega_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCrear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GEBMujer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GEBHombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GEBMenores_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GETBoton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

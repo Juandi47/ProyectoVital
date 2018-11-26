@@ -68,6 +68,31 @@ namespace DAO
             return rutina;
         }
 
+        public String rutinaAleatoria()
+        {
+
+            TORutina rutina = new TORutina();
+
+            String query = "SELECT TOP 1 Nombre from Rutina ORDER BY NEWID()";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+
+            String nombre = (String)comando.ExecuteScalar();
+
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+
+
+            return nombre;
+        }
+
         public void EliminarRutina(String Nombre)
         {
 
@@ -331,9 +356,28 @@ namespace DAO
             return lista;
         }
 
-        //public Boolean verificarExistenciaRutina() {
+        public Boolean verificarExistenciaRutina(String nomRutina) {
 
-        //}
+            String query = "select * from Rutina where Nombre=@nom";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+            comando.Parameters.AddWithValue("@nom",nomRutina);
+
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+
+            Object existe = comando.ExecuteScalar();
+
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+
+
+            return (existe!=null)?true:false;
+        }
 
 
 

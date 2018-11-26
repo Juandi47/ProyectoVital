@@ -109,7 +109,7 @@
     <Content Include="images\d.jpg" />
     <Content Include="images\e.jpg" />
     <Content Include="images\elky.jpg" />
-    <Content Include="images\nutriGym.jpg" />
+    <Content Include="images\nutriVital.jfif" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
@@ -131,6 +131,7 @@
     <Content Include="ModificarCuentaUsuario.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
+    <Content Include="Nutricion\styleNutri.css" />
     <Content Include="Nutricion\IngresoNutricion.aspx" />
     <Content Include="Nutricion\SeguimientoNutricion.aspx" />
     <Content Include="Nutricion\SeguimSemanal.aspx" />
