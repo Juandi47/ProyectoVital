@@ -114,7 +114,8 @@
                     <div class="input-group">
                         <asp:TextBox ID="txtNuevaRutina" runat="server" Width="300px" Height="45px" Wrap="False" placeholder="NOMBRE RUTINA" BackColor="WhiteSmoke"></asp:TextBox>
                         <asp:Button ID="btnCrearRutina" runat="server" Font-Size="Medium" Text="GUARDAR RUTINA" Width="250px" Height="55px" BackColor="darkolivegreen" OnClick="btnCrearRutina_Click" />
-                    </div>
+                      </div>
+                    <asp:Label ID="VerificadorExistencia" runat="server" Text="Ya existe esta rutina" ForeColor="Red" Visible="false"></asp:Label>
                     <div>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="Red" ControlToValidate="txtNuevaRutina" runat="server" SetFocusOnError="true" ErrorMessage="Debe escribir el nombre de la rutina"></asp:RequiredFieldValidator>
 
@@ -140,37 +141,37 @@
 
                                 <asp:TemplateField HeaderText="REPETICIONES">
                                     <ItemTemplate>
-                                        <asp:TextBox ID="txtRepeticiones" Enabled="false" runat="server" onClick="validarRegularExpresion1(this)" onChange="txtRepeticionesZipOnChange(this);" Width="35px" Height="25px" Wrap="false" BackColor="WhiteSmoke" MaxLength="3" />
+                                        <asp:TextBox ID="txtRepeticiones" Enabled="false" runat="server" onClick="validarRegularExpresion1(this)" onChange="txtRepeticionesZipOnChange(this);" Width="55px" Height="25px" Wrap="false" BackColor="WhiteSmoke" MaxLength="3" />
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
                                             ControlToValidate="txtRepeticiones" runat="server"
-                                            ErrorMessage="Solo números permitidos"
+                                            ErrorMessage="Números"
                                             SetFocusOnError="true"
                                             ForeColor="red"
                                             ValidationExpression="\d+">
                                         </asp:RegularExpressionValidator>
                                     </ItemTemplate>
-                                    <ItemStyle HorizontalAlign="Center" Wrap="false" Width="25px" />
+                                    <ItemStyle HorizontalAlign="Center" Wrap="false" Width="55px" VerticalAlign="Middle" />
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="SERIES">
                                     <ItemTemplate>
-                                        <asp:TextBox ID="txtSeries" Enabled="false" runat="server" onClick="validarRegularExpresion2(this)" onChange="SeriesZipOnChange(this);" Width="35px" Height="25px" Wrap="false" BackColor="WhiteSmoke" MaxLength="3" />
+                                        <asp:TextBox ID="txtSeries" Enabled="false" runat="server" onClick="validarRegularExpresion2(this)" onChange="SeriesZipOnChange(this);" Width="55px" Height="25px" Wrap="false" BackColor="WhiteSmoke" MaxLength="3" />
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2"
                                             ForeColor="red"
                                             ControlToValidate="txtSeries" runat="server"
-                                            ErrorMessage="Solo números permitidos"
+                                            ErrorMessage="Números"
                                             ValidationExpression="\d+">
                                         </asp:RegularExpressionValidator>
                                     </ItemTemplate>
-                                    <ItemStyle HorizontalAlign="Center" Wrap="false" Width="25px" />
+                                    <ItemStyle HorizontalAlign="Center" Wrap="false" Width="55px" />
                                 </asp:TemplateField>
 
                                 <asp:TemplateField>
                                     <ItemTemplate>
-                                        <asp:Button Enabled="false" ForeColor="LightGreen" Font-Size="Small" BackColor="#98989a" runat="server" CommandArgument='<%# Container.DataItemIndex  %>' OnClick="GuardarLinea_Click" Width="100px" Height="35px" Wrap="false" ID="GuardarLinea" Text="Guardar" />
-                                        <asp:Button Enabled="true" Visible="false" ForeColor="Red" Font-Size="Small" BackColor="#98989a" runat="server" CommandArgument='<%# Container.DataItemIndex  %>' OnClick="DescartarLinea_Click" Width="100px" Height="35px" Wrap="false" ID="DescartarLinea" Text="Descartar" />
+                                        <asp:Button Enabled="false" ForeColor="LightGreen" Font-Size="Small" BackColor="#98989a" runat="server" CommandArgument='<%# Container.DataItemIndex  %>' OnClick="GuardarLinea_Click" Width="90px" Height="35px" Wrap="false" ID="GuardarLinea" Text="Guardar" />
+                                        <asp:Button Enabled="true" Visible="false" ForeColor="Red" Font-Size="Small" BackColor="#98989a" runat="server" CommandArgument='<%# Container.DataItemIndex  %>' OnClick="DescartarLinea_Click" Width="100px" Height="15px" Wrap="false" ID="DescartarLinea" Text="Descartar" />
                                     </ItemTemplate>
-                                    <ItemStyle HorizontalAlign="Center" Wrap="false" Width="55px" />
+                                    <ItemStyle HorizontalAlign="Center" Wrap="false" Width="25px" />
                                 </asp:TemplateField>
 
                             </Columns>

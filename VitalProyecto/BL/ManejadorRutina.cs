@@ -118,5 +118,10 @@ namespace BL
 
             return dao.rutinaAleatoria();
         }
+
+        public Boolean existenciaRutina(String nombre) {
+            DAORutina dao = new DAORutina();
+            return dao.verificarExistenciaRutina(nombre);
+        }
     }
 }

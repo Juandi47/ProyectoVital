@@ -39,20 +39,30 @@ namespace UI
         protected void btnCrearRutina_Click(object sender, EventArgs e)
         {
 
+            ManejadorRutina manejador = new ManejadorRutina();
+
             String nombreRutina = Controlador.RemoveAccentsWithRegEx(txtNuevaRutina.Text);
 
-            DateTime Hoy = DateTime.Today;
-            string fecha_actual = Hoy.ToString("yyyy-MM-dd");
-            ManejadorRutina manejador = new ManejadorRutina();
-            List<Ejercicio> ejercicios = manejador.pasarAEjercicios(lista);
-            Rutina rutina = new Rutina(0, fecha_actual, nombreRutina, ejercicios);
-
-            if (this.nombreRutina != null)
+            if (!manejador.existenciaRutina(nombreRutina))
             {
-                manejador.eliminarRutina(rutina.Nombre);
+
+                DateTime Hoy = DateTime.Today;
+                string fecha_actual = Hoy.ToString("yyyy-MM-dd");
+                List<Ejercicio> ejercicios = manejador.pasarAEjercicios(lista);
+                Rutina rutina = new Rutina(0, fecha_actual, nombreRutina, ejercicios);
+
+                if (this.nombreRutina != null)
+                {
+                    manejador.eliminarRutina(rutina.Nombre);
+                }
+                manejador.agregarRutina(rutina);
+                Response.Redirect("BancoRutinas.aspx");
             }
-            manejador.agregarRutina(rutina);
-            Response.Redirect("BancoRutinas.aspx");
+            else {
+                VerificadorExistencia.Visible = true;
+            }
+
+
 
 
 
