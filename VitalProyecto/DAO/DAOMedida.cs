@@ -25,7 +25,7 @@ namespace DAO
             Insertar.Parameters.AddWithValue("@porcGrasa", medida.Porcent_Grasa);
             Insertar.Parameters.AddWithValue("@IMC", medida.IMC);
             Insertar.Parameters.AddWithValue("@cint", medida.Cintura);
-                Insertar.Parameters.AddWithValue("@adbom", medida.Abdomen);
+                Insertar.Parameters.AddWithValue("@abdom", medida.Abdomen);
             Insertar.Parameters.AddWithValue("@cader", medida.Cadera);
             Insertar.Parameters.AddWithValue("@muslo", medida.Muslo);
             Insertar.Parameters.AddWithValue("@estat", medida.Estatura);
@@ -50,7 +50,7 @@ namespace DAO
         public List<TOMedida> ListaMedidas(string cedula)
         {
             List<TOMedida> ListaMedidas = new List<TOMedida>();
-            string qry = "Select * from Medidas where Cedula = "+cedula;
+            string qry = "Select * from Medidas where Cedula = "+cedula + "order by Fecha_Medida desc";
             SqlCommand sent = new SqlCommand(qry, conexion);
             SqlDataReader lector;
             conexion.Open();
@@ -59,9 +59,9 @@ namespace DAO
             {
                 while (lector.Read())
                 {
-                        ListaMedidas.Add(new TOMedida((int)lector["Clave_Medida"], lector["Frecuencia_Cardiaca"].ToString(),
-                        (decimal)lector["Peso"], (decimal)lector["Porcentaje_Grasa"], (decimal)lector["IMC"], decimal.Parse(lector["Cintura"].ToString()), decimal.Parse(lector["Abdomen"].ToString()),
-                        (decimal)lector["Cadera"], (decimal)lector["Muslo"], (decimal)lector["Estatura"], lector["Cedula"].ToString()));
+                        ListaMedidas.Add(new TOMedida(lector["Frecuencia_Cardiaca"].ToString(),
+                        decimal.Parse(lector["Peso"].ToString()), decimal.Parse(lector["Porcentaje_Grasa"].ToString()), decimal.Parse(lector["IMC"].ToString()), decimal.Parse(lector["Cintura"].ToString()), decimal.Parse(lector["Abdomen"].ToString()),
+                        decimal.Parse(lector["Cadera"].ToString()), decimal.Parse(lector["Muslo"].ToString()), decimal.Parse(lector["Estatura"].ToString()), lector["Cedula"].ToString(), DateTime.Parse(lector["Fecha_Medida"].ToString())));
 
                 }
                 conexion.Close();

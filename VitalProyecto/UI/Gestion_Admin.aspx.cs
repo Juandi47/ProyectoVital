@@ -15,8 +15,12 @@ namespace UI
         int count = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //datosUsuario.Style: display = "none";
-            crearTabla();
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+			//datosUsuario.Style: display = "none";
+			crearTabla();
         }
             
 

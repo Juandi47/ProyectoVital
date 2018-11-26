@@ -73,7 +73,7 @@
 					<asp:Label ID="lblIncorrecto" runat="server"></asp:Label>
 					<br />
 					<br />
-
+					<p style="text-align:center">Si aún no te has registrado, haz click <u><a style="color:darkolivegreen" href="CrearCuenta.aspx">aquí</a></u></p>
 			
 
 				</div>
@@ -87,7 +87,9 @@
 
     </form>
 
-	 
+	 <footer class="footer">
+		Vital San Ramón, mas que un gimnasio es tu espacio.
+	</footer>
 
 </body>
 

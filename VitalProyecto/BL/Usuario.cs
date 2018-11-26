@@ -14,6 +14,7 @@ namespace BL
 		public string apellido1 { set; get; }
 		public string apellido2 { set; get; }
         public string rol { set; get; }
+		public string foto { set; get; }
 
 		public Usuario(string cedula, string correo, string nombre, string apellido1, string apellido2)
 		{

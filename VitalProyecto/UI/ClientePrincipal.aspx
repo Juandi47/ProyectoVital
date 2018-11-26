@@ -21,21 +21,17 @@
 	<link rel="stylesheet" href="css/skel.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen" />
+
+	<link rel="stylesheet" href="css/tabla.css" />
 </head>
 
 <body>
-	<%--<style>
-		.estiloFila {
-			
-			border: 2px solid;
-			border-color: darkolivegreen;
+	<style>
+		#div1 {
+			overflow: scroll;
+			width: 800px;
 		}
-
-			.estiloFila :only-child {
-				margin-top: 1000px;
-			}
-
-	</style>--%>
+	</style>
 
 	<form id="form1" runat="server">
 
@@ -49,6 +45,7 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="ModificarCuentaUsuario.apsx">Modificar perfil</a></li>
+							<li><a href="PagInicio.apsx">Cerrar Sesión</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -125,6 +122,15 @@
 					<div class="col-md-2"></div>
 					<div class="col-md-8" style="background-color:silver">
 						
+						<div id="div1">
+						<table>
+								<asp:Literal ID="tablaExped" runat="server"></asp:Literal>
+
+
+						</table>
+							</div>
+					
+						
 			
 					</div>
 					<div class="col-md-2">
@@ -132,143 +138,15 @@
 						<br />
 					</div>
 				</div>
-			</div>
 
 
-
-
-
-
-
-
-
-
-			<%--<div class="container">
-				<div class="row">
-					<div class="col-md-2"></div>
-					<div class="col-md-8" style="background-color:silver">
-						<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
-						<br />
-						<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-						<br />
-						<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-						<br />
-						<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-						<br />
-						<asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
-						<br />
-
-						<asp:Table runat="server" CssClass="table-responsive estiloFila">
-							<asp:TableRow CssClass="estiloFila">
-								<asp:TableCell>
-									Cédula: <asp:Label ID="lbCedula" runat="server"></asp:Label>
-								</asp:TableCell>
-
-								<asp:TableCell>
-									Correo: <asp:Label ID="lbCorreo" runat="server"></asp:Label>
-								</asp:TableCell>
-
-								<asp:TableCell>
-									Teléfono: <asp:Label ID="lbTelefono" runat="server"></asp:Label>
-								</asp:TableCell>
-
-							</asp:TableRow>
-
-
-							<asp:TableRow>
-								<asp:TableCell>
-									<asp:Label ID="lbNombre" runat="server"></asp:Label>
-								</asp:TableCell>
-
-								<asp:TableCell>
-									<asp:Label ID="lbApe1" runat="server"></asp:Label>
-								</asp:TableCell>
-
-								<asp:TableCell>
-									<asp:Label ID="lbApe2" runat="server"></asp:Label>
-								</asp:TableCell>
-							</asp:TableRow>
-
-							<asp:TableRow>
-								<asp:TableCell>
-									Fecha de nacimiento: <asp:Label ID="lbFecNac" runat="server"></asp:Label>
-								</asp:TableCell>
-
-								<asp:TableCell>
-									Fecha de mensualidad: <asp:Label ID="lbFecMens" runat="server"></asp:Label>
-								</asp:TableCell>
-								
-							</asp:TableRow>
-
-							<asp:TableRow>
-								<asp:TableCell>
-									Observaciones: <asp:Label ID="lbObserva" runat="server"></asp:Label>
-								</asp:TableCell>
-							</asp:TableRow>
-
-						</asp:Table>
-
-						<asp:TextBox ID="txtMedidas" BackColor="DarkOliveGreen" Text="Medidas del cliente" runat="server" Font-Overline="False" Font-Size="Medium" ForeColor="White" Width="200px"></asp:TextBox>
-						<br />
-						<asp:Label ID="lbNoMedidas" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="Red"></asp:Label>
-						<asp:Table runat="server">
-							<asp:TableRow>
-								<asp:TableCell>
-									Frecuencia cardiaca: <asp:Label ID="lbFrec" runat="server"></asp:Label>
-								</asp:TableCell>
-
-								<asp:TableCell>
-									Peso: <asp:Label ID="lbPeso" runat="server"></asp:Label>
-								</asp:TableCell>
-
-								<asp:TableCell>
-									Porcentaje Grasa: <asp:Label ID="lbGrasa" runat="server"></asp:Label>
-								</asp:TableCell>
-							</asp:TableRow>
-
-							<asp:TableRow>
-								<asp:TableCell>
-									IMC: <asp:Label ID="lbIMC" runat="server"></asp:Label>
-								</asp:TableCell>
-
-								<asp:TableCell>
-									Cintura: <asp:Label ID="lbCintura" runat="server"></asp:Label>
-								</asp:TableCell>
-
-								<asp:TableCell>
-									Abdomen: <asp:Label ID="lbAbdomen" runat="server"></asp:Label>
-								</asp:TableCell>
-
-								<asp:TableCell>
-									Cadera: <asp:Label ID="lbCadera" runat="server"></asp:Label>
-								</asp:TableCell>
-							</asp:TableRow>
-
-							<asp:TableRow>
-								<asp:TableCell>
-									Muslo: <asp:Label ID="lbMuslo" runat="server"></asp:Label>
-								</asp:TableCell>
-								<asp:TableCell>
-									Estatura: <asp:Label ID="lbEstatura" runat="server"></asp:Label>
-								</asp:TableCell>
-							</asp:TableRow>
-						</asp:Table>--%>			<%--			<br />
-						<br />
-						<br />
-						<br />
-					</div>
-					<div class="col-md-2"></div>
-				</div>
-			</div>--%>
-
+		</div>
 
 	</form>
 
-	<%-- <footer class="footer" style="position: page">
-        <h1 class="title">
-			<br /><br /><br />
-        </h1>
-    </footer>--%>
+<footer class="footer">
+		Vital San Ramón, mas que un gimnasio es tu espacio.
+	</footer>
 	<p>
 		&nbsp;</p>
 </body>

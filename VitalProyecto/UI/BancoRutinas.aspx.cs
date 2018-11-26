@@ -14,7 +14,12 @@ namespace UI
         private ManejadorRutina manejo = new ManejadorRutina();
         protected void Page_Load(object sender, EventArgs e)
         {
-            ClientScript.GetPostBackEventReference(this, string.Empty);
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+
+			ClientScript.GetPostBackEventReference(this, string.Empty);
 
             if (IsPostBack)
             {

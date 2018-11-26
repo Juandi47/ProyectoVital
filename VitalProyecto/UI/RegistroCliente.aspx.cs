@@ -25,12 +25,12 @@ namespace UI
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //if (new ControlSeguridad().validarAdmin() == true)
-            //{
-            //    Response.Redirect("~/IniciarSesion.aspx");
-            //}
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
 
-            string accion = Convert.ToString(Request.QueryString["accion"]);
+			string accion = Convert.ToString(Request.QueryString["accion"]);
 
             if (accion != null && accion.Equals("mod")) {
                 if (IsPostBack)
