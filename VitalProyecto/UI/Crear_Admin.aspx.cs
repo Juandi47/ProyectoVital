@@ -14,7 +14,11 @@ namespace UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-        }
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+		}
 
 
         protected void BtnRegistrar_Click(object sender, EventArgs e)
