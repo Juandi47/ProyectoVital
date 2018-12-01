@@ -55,6 +55,7 @@
     <Compile Include="TOIngreso.cs" />
     <Compile Include="TOMedicamento.cs" />
     <Compile Include="TOMedida.cs" />
+    <Compile Include="TONoticia.cs" />
     <Compile Include="TOPorciones.cs" />
     <Compile Include="TORecordatorio24H.cs" />
     <Compile Include="TORutina.cs" />

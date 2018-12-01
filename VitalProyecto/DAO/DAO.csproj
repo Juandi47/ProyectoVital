@@ -46,6 +46,7 @@
     <Compile Include="DAOClienteNutricion.cs" />
     <Compile Include="DAOIngreso.cs" />
     <Compile Include="DAOMedida.cs" />
+    <Compile Include="DAONoticia.cs" />
     <Compile Include="DAORutina.cs" />
     <Compile Include="DAOUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

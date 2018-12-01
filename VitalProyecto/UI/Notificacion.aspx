@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="/css/NotifB.css"
+    <link rel="stylesheet" href="/css/NotifB.css" />
      <script src="http://ajax.googleapis.com/ajax/libs/jquery/x.x.x/jquery.min.js"></script>
     <script src="jquery.bpopup-x.x.x.min.js"></script>
      <meta charset="utf-8">
