@@ -22,7 +22,7 @@
 
                 <div id="SeguimientosNutri" class="tab-pane fade in active">
                     <div class="container">
-
+                        <h3>Seguimiento Mensual:</h3>
                         <div class="form-container">
                             <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
                             <br />
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="tNivelAnsiedad">Niveles de Ansiedad semanal y tiempo de comida en donde lo siente                   </label>
-                                    <asp:TextBox ID="tNivelAnsiedad" runat="server" placeholder="Apellido 2" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="tNivelAnsiedad" runat="server"  Width="150"></asp:TextBox>
                                 </div>
                             </div>
                             <br />
@@ -53,12 +53,6 @@
                             <div class="row">
                                 <div class="col-10">
                                     <asp:TextBox ID="r24TiempoComida" runat="server" placeholder="Tiempo de Comida"></asp:TextBox>
-                                </div>
-                                <div class="col-10">
-                                    <asp:TextBox ID="r24Alimento" runat="server" placeholder="Alimento"></asp:TextBox>
-                                </div>
-                                <div class="col-10">
-                                    <asp:TextBox ID="r24Cantidad" runat="server" placeholder="Cantidad"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
                                     <asp:TextBox ID="r24Descripcion" runat="server" placeholder="Descripcion"></asp:TextBox>
@@ -93,79 +87,11 @@
                             </div>
                         </div>
                         <div class="form-container">
-                            <div class="row">
-                                <div class="col-25">
-                                    <div class="col-15">
-                                        <label class="form-label" for="tEdad">Edad</label>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tEdadNut" runat="server" TextMode="Number"></asp:TextBox>
-                                    </div>
-                                    <div class="col-15">
-                                        <label class="form-label" for="tPesoActual">Peso Actual</label>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tPesoActual" runat="server" TextMode="Number"></asp:TextBox>
-                                    </div>
-                                    <div class="col-15">
-                                        <label class="form-label" for="tPesoMaxTeoria">Peso máximo en teoría</label>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tPesoMaxTeoria" runat="server" TextMode="Number"></asp:TextBox>
-                                    </div>
-                                    <div class="col-15">
-                                        <label class="form-label" for="tPesoMeta">Peso Meta o Ideal</label>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tPesoMeta" runat="server"></asp:TextBox>
-                                    </div>
-                                    <div class="col-15">
-                                        <label class="form-label" for="tEdadMetabolica">Edad Metabolica</label>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tEdadMetabolica" runat="server"></asp:TextBox>
-                                    </div>
-                                    <div class="col-15">
-                                        <label class="form-label" for="tCintura">Cintura</label>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tCintura" runat="server"></asp:TextBox>
-                                    </div>
-                                    <div class="col-15">
-                                        <label class="form-label" for="tAguaNut">Agua</label>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tAguaNut" runat="server"></asp:TextBox>
-                                    </div>
-                                    <div class="col-15">
-                                        <label class="form-label" for="tComplexión">Complexión</label>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tComplexión" runat="server"></asp:TextBox>
-                                    </div>
-                                    <div class="col-15">
-                                        <label class="form-label" for="tObservacion">Observacion</label>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tObservacion" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
 
+
+                            <div class="row">
+                                <%-- Columna 1--%>
                                 <div class="col-25">
-                                    <div class="col-15">
-                                        <p>
-                                            <label class="form-label" for="tAbdomen">Abdomen</label>
-                                        </p>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tAbdomen" runat="server"></asp:TextBox>
-                                    </div>
-                                    <div class="col-15">
-                                        <label class="form-label" for="tCadera">Cadera</label>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tCadera" runat="server"></asp:TextBox>
-                                    </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tTalla">Talla</label>
                                     </div>
@@ -173,10 +99,28 @@
                                         <asp:TextBox ID="tTalla" runat="server"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
-                                        <label class="form-label" for="tCircunfMun">Circunferencia muñeca</label>
+                                        <label class="form-label" for="tPesoIdeal">Peso Meta o Ideal</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tCircunfMun" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tPesoIdeal" runat="server" TextMode="Number"></asp:TextBox>
+                                    </div>
+                                    <div class="col-15">
+                                        <label class="form-label" for="tEdad">Edad</label>
+                                    </div>
+                                    <div class="col-35">
+                                        <asp:TextBox ID="tEdadNut" runat="server" TextMode="Number"></asp:TextBox>
+                                    </div>
+                                    <div class="col-15">
+                                        <label class="form-label" for="tPMB">PMB</label>
+                                    </div>
+                                    <div class="col-35">
+                                        <asp:TextBox ID="tPMB" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="col-15">
+                                        <label class="form-label" for="tPeso">Peso</label>
+                                    </div>
+                                    <div class="col-35">
+                                        <asp:TextBox ID="tPeso" runat="server"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tIMC">IMC</label>
@@ -191,25 +135,19 @@
                                         <asp:TextBox ID="tMuslo" runat="server"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
-                                        <label class="form-label" for="tPMB">PMB</label>
+                                        <label class="form-label" for="tBrazo">Brazo</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tPMB" runat="server"></asp:TextBox>
-                                    </div>
-                                    <div class="col-15">
-                                        <label class="form-label" for="tCBM">CBM</label>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tCBM" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tBrazo" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-
+                                <%-- Columna 2--%>
                                 <div class="col-25">
                                     <div class="col-15">
-                                        <label class="form-label" for="tMasaOsea">Masa ósea</label>
+                                        <label class="form-label" for="tPorcGAnalizador">% Grasa Analizador</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tMasaOsea" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tPorcGAnalizador" runat="server"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tPorcGBascula">% Grasa Báscula</label>
@@ -247,14 +185,11 @@
                                     <div class="col-35">
                                         <asp:TextBox ID="tGBascTronco" runat="server"></asp:TextBox>
                                     </div>
+
                                 </div>
+                                <%-- Columna 3--%>
                                 <div class="col-25">
-                                    <div class="col-15">
-                                        <label class="form-label" for="tPorcGAnalizador">% Grasa Analizador</label>
-                                    </div>
-                                    <div class="col-35">
-                                        <asp:TextBox ID="tPorcGAnalizador" runat="server"></asp:TextBox>
-                                    </div>
+
                                     <div class="col-15">
                                         <label class="form-label" for="tPorcGVisceral">% Grasa Visceral</label>
                                     </div>
@@ -298,73 +233,69 @@
                                         <asp:TextBox ID="tMuscTronco" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
+                                <div class="col-25">
+                                    <div class="col-15">
+                                        <label class="form-label" for="tAguaNut">Agua Corporal</label>
+                                    </div>
+                                    <div class="col-35">
+                                        <asp:TextBox ID="tAguaNut" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="col-15">
+                                        <label class="form-label" for="tMasaOsea">Masa ósea</label>
+                                    </div>
+                                    <div class="col-35">
+                                        <asp:TextBox ID="tMasaOsea" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="col-15">
+                                        <label class="form-label" for="tComplexión">Complexión</label>
+                                    </div>
+                                    <div class="col-35">
+                                        <asp:TextBox ID="tComplexión" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="col-15">
+                                        <label class="form-label" for="tEdadMetabolica">Edad Metabolica</label>
+                                    </div>
+                                    <div class="col-35">
+                                        <asp:TextBox ID="tEdadMetabolica" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="col-15">
+                                        <label class="form-label" for="tCintura">Cintura</label>
+                                    </div>
+                                    <div class="col-35">
+                                        <asp:TextBox ID="tCintura" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="col-15">
+                                        <label class="form-label" for="tAbdomen">Abdomen</label>
+                                    </div>
+                                    <div class="col-35">
+                                        <asp:TextBox ID="tAbdomen" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="col-15">
+                                        <label class="form-label" for="tCadera">Cadera</label>
+                                    </div>
+                                    <div class="col-35">
+                                        <asp:TextBox ID="tCadera" runat="server"></asp:TextBox>
+                                    </div>
+                                    
+
+                                    <div class="col-15">
+                                        <label class="form-label" for="tObservacion">Observacion</label>
+                                    </div>
+                                    <div class="col-35">
+                                        <asp:TextBox ID="tObservacion" runat="server"></asp:TextBox>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-25">
+
+
+                                    
+                                </div>
+
                             </div>
 
-                            <h3>GEB:</h3>
-                            <div class="row">
-                                <div class="col-15">
-                                    <asp:Label CssClass="form-label" runat="server" ID="GEBLblMujer" Text="Mujer: "></asp:Label>
-                                </div>
-                                <div class="col-10">
-                                    <asp:TextBox ID="GEBPI" runat="server" placeholder="PI"></asp:TextBox>
-                                </div>
-                                <div class="col-10">
-                                    <asp:TextBox ID="GEBTcm" runat="server" placeholder="T(cm)"></asp:TextBox>
-                                </div>
-                                <div class="col-10">
-                                    <asp:TextBox ID="GEBEdad" runat="server" placeholder="Edad"></asp:TextBox>
-                                </div>
-                                <div class="col-10">
-                                    <asp:Button ID="GEBMujer" Text="Calcular" runat="server" OnClick="GEBMujer_Click" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-15">
-                                    <asp:Label CssClass="form-label" runat="server" ID="GEBlblHomb" Text="Hombre: "></asp:Label>
-                                </div>
-                                <div class="col-10">
-                                    <asp:TextBox ID="GEBHomPI" runat="server" placeholder="PI"></asp:TextBox>
-                                </div>
-                                <div class="col-10">
-                                    <asp:TextBox ID="GEBHomTcm" runat="server" placeholder="T(cm)"></asp:TextBox>
-                                </div>
-                                <div class="col-10">
-                                    <asp:TextBox ID="GEBHomEdad" runat="server" placeholder="Edad"></asp:TextBox>
-                                </div>
-                                <div class="col-10">
-                                    <asp:Button ID="GEBHombre" Text="Calcular" runat="server" OnClick="GEBHombre_Click" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-15">
-                                    <asp:Label CssClass="form-label" runat="server" ID="GEBlblMenores" Text="Menores de 10 años: "></asp:Label>
-                                </div>
-                                <div class="col-10">
-                                    <asp:TextBox ID="GEBMenorPI" runat="server" placeholder="PI"></asp:TextBox>
-                                </div>
-                                <div class="col-10">
-                                    <asp:TextBox ID="GEBMenorTcm" runat="server" placeholder="T(cm)"></asp:TextBox>
-                                </div>
-                                <div class="col-10">
-                                    <asp:Button ID="GEBMenores" Text="Calcular" runat="server" OnClick="GEBMenores_Click" />
-                                </div>
-                            </div>
-
-                            <h3>GET:</h3>
-                            <div class="row">
-                                <div class="col-15">
-                                    <asp:Label CssClass="form-label" runat="server" ID="GETlbl" Text=" kcal= "></asp:Label>
-                                </div>
-                                <div class="col-10">
-                                    <asp:TextBox ID="GETkcal" runat="server" placeholder="Kcal"></asp:TextBox>
-                                    <label class="form-label" for="GETkcal">x FTA (1.1) x FA (</label>
-                                    <asp:TextBox ID="GETFA" runat="server" placeholder="FA"></asp:TextBox>
-                                    <label class="form-label" for="GetFA">) </label>
-                                </div>
-                                <div class="col-10">
-                                    <asp:Button ID="GETBoton" Text="Calcular" runat="server" OnClick="GETBoton_Click" />
-                                </div>
-                            </div>
 
                         </div>
                     </div>

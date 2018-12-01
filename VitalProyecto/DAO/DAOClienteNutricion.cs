@@ -31,7 +31,7 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@nomb", tOCliente.Nombre);
                 cmd.Parameters.AddWithValue("@ape1", tOCliente.Apellido1);
                 cmd.Parameters.AddWithValue("@ape2", tOCliente.Apellido2);
-                cmd.Parameters.AddWithValue("@rol", "ClienteNutricion");
+                cmd.Parameters.AddWithValue("@rol", "clienteNutri");
 
 
                 cmd2.Parameters.AddWithValue("@fechNac", tOCliente.Fecha_Nacimiento);
@@ -188,6 +188,80 @@ namespace DAO
                 return false;
             }
         }
+
+        public bool GuardarSeguimiento(TOSeguimientoNutri seg, List<TOSeguimientoRecord24> lisSeg, TOSegAntropometria segAnt)
+        {
+            int idSeg = 0;
+            String query1 = "Insert into SeguimNutricion values(@ced, @diaEj , @comE, @niv);";
+            String query2 = "Insert into SeguimRecordat24H values(@tiemp,@desc,@idS);";
+           
+            String query4 = "Select max(Id_seguim) as 'IdSeg' from SeguimNutricion";
+            SqlCommand cmd = new SqlCommand(query1, conexion);
+            SqlCommand cmd2 = new SqlCommand(query2, conexion);
+           
+            SqlCommand cmd4 = new SqlCommand(query4, conexion);
+            SqlDataReader lector;
+            try
+            {
+
+                cmd.Parameters.AddWithValue("@ced", seg.Cedula);
+                cmd.Parameters.AddWithValue("@diaEj", seg.DiasEjercicio);
+                cmd.Parameters.AddWithValue("@comE", seg.ComidaExtra);
+                cmd.Parameters.AddWithValue("@niv", seg.NivelAnsiedad);
+              
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+               
+                cmd.ExecuteNonQuery();
+                
+                lector = cmd4.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    lector.Read();
+                    idSeg = Int32.Parse(lector["IdSeg"].ToString());
+                    conexion.Close();
+                }
+                else
+                {
+                    conexion.Close();
+                    return false;
+                }
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                if (lisSeg != null)
+                {
+                    foreach (TOSeguimientoRecord24 seg24 in lisSeg)
+                    {
+                        cmd2.Parameters.AddWithValue("@tiemp", seg24.TiempoComida);
+                        cmd2.Parameters.AddWithValue("@desc", seg24.Descripcion);
+                        cmd2.Parameters.AddWithValue("@idS", idSeg);
+
+                        cmd2.ExecuteNonQuery();
+                    }
+                }
+            String query3 = "Insert into SeguimAntropom values("+idSeg+"," + segAnt.Talla + "," +
+         segAnt.PesoIdeal + "," + segAnt.Edad + "," + segAnt.PMB + "," + segAnt.Fecha_SA.Date + "," + segAnt.Peso + "," + segAnt.IMC + ", " +
+         segAnt.PorcGrasaAnalizador + "," + segAnt.PorcGr_Bascula + "," + segAnt.GB_BI + ","+
+            segAnt.GB_BD + "," + segAnt.GB_PI + "," + segAnt.GB_PD + "," + segAnt.GB_Tronco + "," + segAnt.AguaCorporal + "," +
+         segAnt.MasaOsea + "," + segAnt.Complexión + "," + segAnt.EdadMetabolica + "," + segAnt.Cintura + "," + segAnt.Abdomen + "," +
+          segAnt.Cadera + "," + segAnt.Muslo + "," + segAnt.Brazo + "," + segAnt.PorcentGViceral + "," + segAnt.PorcentMusculo + "," +
+          segAnt.PM_BI + "," + segAnt.PM_PD + "," + segAnt.PM_BD + "," + segAnt.PM_PI + "," + segAnt.PM_Tronco + "," + segAnt.Observaciones + ")";
+            SqlCommand cmd3 = new SqlCommand(query3, conexion);
+            cmd3.ExecuteNonQuery();
+
+                conexion.Close();
+
+                return true;
+        }
+            catch (SqlException)
+            {
+                return false;
+            }
+}
 
         public bool GuardarHistorial(TOHistorialMedico historial, List<TOMedicamento> listaMedicamento)
         {

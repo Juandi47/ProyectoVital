@@ -44,9 +44,9 @@
                      
                      <li><a>Nutrición</a> 
                         <ul>
-                            <li><a href="IngresoNutricion.aspx">Primer Ingreso</a></li>
-                            <li><a href="SeguimientoSemanal.aspx">Seguimineto Semanal</a></li>
-                            <li><a href="SeguimientoNutricion.aspx">Seguimineto Mensual</a></li>
+                            <li><a href="/Nutricion/IngresoNutricion.aspx">Primer Ingreso</a></li>
+                            <li><a href="/Nutricion/SeguimSemanal.aspx">Seguimineto Semanal</a></li>
+                            <li><a href="/Nutricion/SeguimientoNutricion.aspx">Seguimineto Mensual</a></li>
                             <%--<li><a href="/BancoEjercicios.aspx">Intercambio Hombre</a></li>
                             <li><a href="/BancoEjercicios.aspx">Intercambio Mujer</a></li>--%>
                         </ul>

@@ -343,6 +343,7 @@
     <Content Include="Nutricion\NutricionMaster.Master" />
     <None Include="packages.config" />
     <Content Include="Principal.Master" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

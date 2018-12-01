@@ -67,24 +67,6 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.TextBox r24TiempoComida;
         
         /// <summary>
-        /// r24Alimento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox r24Alimento;
-        
-        /// <summary>
-        /// r24Cantidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox r24Cantidad;
-        
-        /// <summary>
         /// r24Descripcion control.
         /// </summary>
         /// <remarks>
@@ -121,105 +103,6 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.Button btnCrear;
         
         /// <summary>
-        /// tEdadNut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tEdadNut;
-        
-        /// <summary>
-        /// tPesoActual control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tPesoActual;
-        
-        /// <summary>
-        /// tPesoMaxTeoria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tPesoMaxTeoria;
-        
-        /// <summary>
-        /// tPesoMeta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tPesoMeta;
-        
-        /// <summary>
-        /// tEdadMetabolica control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tEdadMetabolica;
-        
-        /// <summary>
-        /// tCintura control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tCintura;
-        
-        /// <summary>
-        /// tAguaNut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tAguaNut;
-        
-        /// <summary>
-        /// tComplexión control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tComplexión;
-        
-        /// <summary>
-        /// tObservacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tObservacion;
-        
-        /// <summary>
-        /// tAbdomen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tAbdomen;
-        
-        /// <summary>
-        /// tCadera control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tCadera;
-        
-        /// <summary>
         /// tTalla control.
         /// </summary>
         /// <remarks>
@@ -229,13 +112,40 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.TextBox tTalla;
         
         /// <summary>
-        /// tCircunfMun control.
+        /// tPesoIdeal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tCircunfMun;
+        protected global::System.Web.UI.WebControls.TextBox tPesoIdeal;
+        
+        /// <summary>
+        /// tEdadNut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tEdadNut;
+        
+        /// <summary>
+        /// tPMB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tPMB;
+        
+        /// <summary>
+        /// tPeso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tPeso;
         
         /// <summary>
         /// tIMC control.
@@ -256,31 +166,22 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.TextBox tMuslo;
         
         /// <summary>
-        /// tPMB control.
+        /// tBrazo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tPMB;
+        protected global::System.Web.UI.WebControls.TextBox tBrazo;
         
         /// <summary>
-        /// tCBM control.
+        /// tPorcGAnalizador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tCBM;
-        
-        /// <summary>
-        /// tMasaOsea control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tMasaOsea;
+        protected global::System.Web.UI.WebControls.TextBox tPorcGAnalizador;
         
         /// <summary>
         /// tPorcGBascula control.
@@ -335,15 +236,6 @@ namespace UI.Nutricion {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tGBascTronco;
-        
-        /// <summary>
-        /// tPorcGAnalizador control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tPorcGAnalizador;
         
         /// <summary>
         /// tPorcGVisceral control.
@@ -409,165 +301,75 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.TextBox tMuscTronco;
         
         /// <summary>
-        /// GEBLblMujer control.
+        /// tAguaNut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label GEBLblMujer;
+        protected global::System.Web.UI.WebControls.TextBox tAguaNut;
         
         /// <summary>
-        /// GEBPI control.
+        /// tMasaOsea control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GEBPI;
+        protected global::System.Web.UI.WebControls.TextBox tMasaOsea;
         
         /// <summary>
-        /// GEBTcm control.
+        /// tComplexión control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GEBTcm;
+        protected global::System.Web.UI.WebControls.TextBox tComplexión;
         
         /// <summary>
-        /// GEBEdad control.
+        /// tEdadMetabolica control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GEBEdad;
+        protected global::System.Web.UI.WebControls.TextBox tEdadMetabolica;
         
         /// <summary>
-        /// GEBMujer control.
+        /// tCintura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GEBMujer;
+        protected global::System.Web.UI.WebControls.TextBox tCintura;
         
         /// <summary>
-        /// GEBlblHomb control.
+        /// tAbdomen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label GEBlblHomb;
+        protected global::System.Web.UI.WebControls.TextBox tAbdomen;
         
         /// <summary>
-        /// GEBHomPI control.
+        /// tCadera control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GEBHomPI;
+        protected global::System.Web.UI.WebControls.TextBox tCadera;
         
         /// <summary>
-        /// GEBHomTcm control.
+        /// tObservacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GEBHomTcm;
-        
-        /// <summary>
-        /// GEBHomEdad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GEBHomEdad;
-        
-        /// <summary>
-        /// GEBHombre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GEBHombre;
-        
-        /// <summary>
-        /// GEBlblMenores control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label GEBlblMenores;
-        
-        /// <summary>
-        /// GEBMenorPI control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GEBMenorPI;
-        
-        /// <summary>
-        /// GEBMenorTcm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GEBMenorTcm;
-        
-        /// <summary>
-        /// GEBMenores control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GEBMenores;
-        
-        /// <summary>
-        /// GETlbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label GETlbl;
-        
-        /// <summary>
-        /// GETkcal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GETkcal;
-        
-        /// <summary>
-        /// GETFA control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GETFA;
-        
-        /// <summary>
-        /// GETBoton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GETBoton;
+        protected global::System.Web.UI.WebControls.TextBox tObservacion;
     }
 }
