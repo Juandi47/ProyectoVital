@@ -106,12 +106,15 @@
     <Content Include="images\b.jpg" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\c.jpg" />
+    <Content Include="images\cerrado.jpg" />
     <Content Include="images\d.jpg" />
     <Content Include="images\e.jpg" />
     <Content Include="images\elky.jpg" />
+    <Content Include="images\not.jpeg" />
     <Content Include="images\nutriVital.jfif" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
+    <Content Include="images\plan.jpg" />
     <Content Include="images\yen.jpg" />
     <Content Include="InformacionAdministrador.aspx" />
     <Content Include="IniciarSesion.aspx" />
