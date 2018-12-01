@@ -110,3 +110,26 @@
         font-size: 1em;
         margin-left: -0.5em;
     }
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+encabezado {
+    margin-bottom: 4px;
+    border-bottom: 5px solid rgba(5, 47, 7, 0.94);
+    margin-right: 3px;
+}
+
+encabezado {
+    font-weight: bold;
+}

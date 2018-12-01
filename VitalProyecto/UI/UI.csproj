@@ -90,7 +90,9 @@
     <Content Include="css\ie\v8.css" />
     <Content Include="css\pikaday.css" />
     <Content Include="css\site.css" />
+    <Content Include="css\skel-noscript.css" />
     <Content Include="css\skel.css" />
+    <Content Include="css\style-desktop.css" />
     <Content Include="css\style-mobile.css" />
     <Content Include="css\style-narrow.css" />
     <Content Include="css\style-narrower.css" />
@@ -130,6 +132,7 @@
     <Content Include="ModificarCuentaClienteUI.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
+    <Content Include="Nutricion\ConsultarNutricion.aspx" />
     <Content Include="Nutricion\styleNutri.css" />
     <Content Include="Nutricion\IngresoNutricion.aspx" />
     <Content Include="Nutricion\SeguimientoNutricion.aspx" />
@@ -279,6 +282,13 @@
     </Compile>
     <Compile Include="Notificacion.aspx.designer.cs">
       <DependentUpon>Notificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nutricion\ConsultarNutricion.aspx.cs">
+      <DependentUpon>ConsultarNutricion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutricion\ConsultarNutricion.aspx.designer.cs">
+      <DependentUpon>ConsultarNutricion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nutricion\IngresoNutricion.aspx.cs">
       <DependentUpon>IngresoNutricion.aspx</DependentUpon>

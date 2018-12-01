@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="styleNutri.css" />
     <link href="/admin_estilos.css" rel="stylesheet" />
     <noscript>
-        <link rel="stylesheet" href="/css/skel.css" />
-        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="../css/skel.css" />
+        <link rel="stylesheet" href="../css/style.css" />
         <link rel="stylesheet" type="text/css" href="../css/admin_estilos.css" />
     </noscript>
     
@@ -44,11 +44,12 @@
                      
                      <li><a>Nutrición</a> 
                         <ul>
+                             <li><a href="/Nutricion/ConsultarNutricion.aspx">Ver Clientes</a></li>
                             <li><a href="/Nutricion/IngresoNutricion.aspx">Primer Ingreso</a></li>
                             <li><a href="/Nutricion/SeguimSemanal.aspx">Seguimineto Semanal</a></li>
                             <li><a href="/Nutricion/SeguimientoNutricion.aspx">Seguimineto Mensual</a></li>
-                            <%--<li><a href="/BancoEjercicios.aspx">Intercambio Hombre</a></li>
-                            <li><a href="/BancoEjercicios.aspx">Intercambio Mujer</a></li>--%>
+                            <%--<li><a href="">Intercambio Hombre</a></li>
+                            <li><a href="">Intercambio Mujer</a></li>--%>
                         </ul>
                     </li>
                 </ul>

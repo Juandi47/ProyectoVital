@@ -53,6 +53,7 @@
     <Compile Include="HojaEjercicio.cs" />
     <Compile Include="HojaRutina.cs" />
     <Compile Include="Ingreso.cs" />
+    <Compile Include="Manejador Noticia.cs" />
     <Compile Include="ManejadorAdministrador.cs" />
     <Compile Include="Ejercicio.cs" />
     <Compile Include="ManejadorCliente.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="ManejadorUsuario.cs" />
     <Compile Include="Medicamento.cs" />
     <Compile Include="Medida.cs" />
+    <Compile Include="Noticia.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Porciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
