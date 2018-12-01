@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClientePrincipal.aspx.cs" Inherits="UI.ClientePrincipal" %>
+﻿q<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClientePrincipal.aspx.cs" Inherits="UI.ClientePrincipal" %>
 
 <!DOCTYPE html>
 
