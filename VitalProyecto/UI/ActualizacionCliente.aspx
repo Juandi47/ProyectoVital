@@ -23,17 +23,18 @@
 					<div class="col-md-6">
 						<br /><br />
 						Cédula
-						<asp:TextBox ID="txtCed" runat="server" TextMode="Number"></asp:TextBox>
+						<asp:TextBox class="form-control" ID="txtCed" TextMode="SingleLine" runat="server"></asp:TextBox>
 						<br />
 						Frecuencia cardiaca
-						<asp:TextBox ID="tfrecCard" runat="server" BackColor="White" Height="10px" Width="180px" BorderColor="Silver"></asp:TextBox>
+						<asp:TextBox ID="tfrecCard" class="form-control" runat="server" BackColor="White" Height="10px" Width="180px" BorderColor="Silver"></asp:TextBox>
 						<br />
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
 						Peso(Kg)
-						<asp:TextBox ID="tPeso" runat="server" TextMode="Number"></asp:TextBox>
+						<asp:TextBox ID="tPeso" runat="server"></asp:TextBox>
 						&nbsp;<br />
 						<br />
-						Porcentaje grasa(%)<asp:TextBox ID="tpercentGrasa" runat="server" TextMode="Number"></asp:TextBox>
+						Porcentaje grasa(%)
+						<asp:TextBox ID="tpercentGrasa" runat="server" TextMode="Number"></asp:TextBox>
 						<br />
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<br />
