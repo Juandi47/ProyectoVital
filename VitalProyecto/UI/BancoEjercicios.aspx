@@ -23,11 +23,13 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-					<br /><br />
+                    <br />
+                    <br />
                     <div class="input-group">
 						
                         <asp:TextBox ID="txtNuevoEjercicio" runat="server" Width="300px" Height="45px" Wrap="False" placeholder="NUEVO EJERCICIO" BackColor="WhiteSmoke"></asp:TextBox>
-                         <asp:Button ID="btnAgregarEjercicio" runat="server" Font-Size="Small" Text="Agregar Ejercicio" class="button input-group-addon" OnClick="btnAgregarEjercicio_Click"/>
+
+                        <asp:Button ID="btnAgregarEjercicio" runat="server" Font-Size="Small" Text="Agregar Ejercicio" class="button input-group-addon" OnClick="btnAgregarEjercicio_Click" ValidationGroup="txtVacio" />
                     </div>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1"  ForeColor="Red" ControlToValidate="txtNuevoEjercicio" runat="server" SetFocusOnError="true" ErrorMessage="Debe escribir el nombre del ejercicio"></asp:RequiredFieldValidator>
                     <div id="div1">
@@ -49,5 +51,28 @@
                 </div>
             </div>
         </div>
+        <script>
+            function buscarEjercicio() {
+                // Declare variables 
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById('<%=txtBuscarEjercicio.ClientID%>');
+                filter = input.value.toUpperCase();
+                table = document.getElementById('<%=grdEjercicios.ClientID%>');
+                tr = table.getElementsByTagName("tr");
+
+                // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        </script>
     </form>
 </asp:Content>

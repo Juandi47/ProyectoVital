@@ -77,6 +77,8 @@
     padding-left: 5%;
     padding-right: 5%;
     height: auto;
+    /*margin-left:20%;
+    width:70%;*/
 }
 
 .col-25 {
@@ -227,7 +229,6 @@ color:black;
 
 .tablerow {
     margin-left: 0%;
-    
 }
 
 /*.tablerow {
@@ -243,13 +244,7 @@ margin-top: 5px;
     text-align:right;
     }*/
 
-.labelAlerta {
-    margin-top: 5px;
-    color: darkred;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 03.5vw;
-    font-weight:bold;
-}
+
 
 encabezado {
     margin-bottom: 4px;
