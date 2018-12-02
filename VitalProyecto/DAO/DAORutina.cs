@@ -126,6 +126,38 @@ namespace DAO
 
         }
 
+        public void EliminarRutinaClave(String clave)
+        {
+            
+
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+
+            String query = "delete from Rutina where Clave_Rutina = @clave";
+
+            String query2 = "delete from Ejercicios_Rutina where Clave_Rutina = @clave";
+
+            SqlCommand comando1 = new SqlCommand(query, conexion);
+
+            SqlCommand comando2 = new SqlCommand(query2, conexion);
+
+            comando1.Parameters.AddWithValue("@clave", clave);
+
+            comando2.Parameters.AddWithValue("@clave", clave);
+
+            comando2.ExecuteNonQuery();
+
+            comando1.ExecuteNonQuery();
+
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+
+        }
+
         public int buscarClaveRutina(String Nombre)
         {
 
@@ -229,23 +261,89 @@ namespace DAO
 
         public void eliminarEjercicio(String ejercicio)
         {
-            String query = "delete from Ejercicio where Nombre= @ejer;";
+            String query1 = "delete from Ejercicio where Nombre= @ejer;";
+            String query2 = "delete from Ejercicios_Rutina where Clave_Ejercicio = @clavEjer";
 
-            SqlCommand comando = new SqlCommand(query, conexion);
+            SqlCommand comando1 = new SqlCommand(query1, conexion);
 
-            comando.Parameters.AddWithValue("@ejer", ejercicio);
+            SqlCommand comando2 = new SqlCommand(query2, conexion);
+
+            comando1.Parameters.AddWithValue("@ejer", ejercicio);
+
+            comando2.Parameters.AddWithValue("@clavEjer", buscarClaveEjercicio(ejercicio));
+
+            List<string> rutinas = buscarRutinasConEjercicio(ejercicio);
 
             if (conexion.State != ConnectionState.Open)
             {
                 conexion.Open();
-            }
+            }                  
 
-            comando.ExecuteNonQuery();
+            comando2.ExecuteNonQuery();
+            comando1.ExecuteNonQuery();
+
+            eliminarRutinasVacias(rutinas);
 
             if (conexion.State != ConnectionState.Closed)
             {
                 conexion.Close();
             }
+        }
+
+        
+
+        private void eliminarRutinasVacias(List<string> lista) {
+
+            String query = "select * from Ejercicios_Rutina where Clave_Rutina = @clavRut";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            foreach (String i in lista) {
+                comando.Parameters.AddWithValue("@clavRut",i);
+
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                if (comando.ExecuteScalar() == null) {
+                    EliminarRutinaClave(i);
+                }             
+
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+
+            }
+        }
+
+        private List<String> buscarRutinasConEjercicio(String Ejercicio) {
+
+            List<String> lista = new List<string>();
+
+            String query = "select Clave_Rutina from Ejercicios_Rutina where Clave_Ejercicio = @clavEjer";
+
+            SqlCommand comando1 = new SqlCommand(query, conexion);
+
+            comando1.Parameters.AddWithValue("@clavEjer", buscarClaveEjercicio(Ejercicio));
+
+            SqlDataReader lector;
+            conexion.Open();
+            lector = comando1.ExecuteReader();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    lista.Add(lector["Clave_Rutina"].ToString());
+                }
+                conexion.Close();
+            }
+            else
+            {
+                conexion.Close();
+            }
+            return lista;
         }
 
         public int buscarClaveEjercicio(String Nombre)
@@ -330,30 +428,27 @@ namespace DAO
 
 
 
-        public List<TOEjercicio> buscarEjercicio(String ejercicio)
-        {
-            DataTable tabla = new DataTable();
+        public Boolean ExistenciaEjercicio(String ejercicio) { 
 
-            List<TOEjercicio> lista = new List<TOEjercicio>();
+            string query = "select * from Ejercicio where Nombre=@ejer";
 
-            string query = "select * from Ejercicio where Nombre=@ejer order by Nombre";
+            SqlCommand comando = new SqlCommand(query, conexion);
 
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
-            adapter.SelectCommand.Parameters.AddWithValue("@ejer",ejercicio);
+            comando.Parameters.AddWithValue("@ejer",ejercicio);
 
-            adapter.Fill(tabla);
-
-            foreach (DataRow x in tabla.Rows)
+            if (conexion.State != ConnectionState.Open)
             {
+                conexion.Open();
+            }
 
-                TOEjercicio Toejercicio = new TOEjercicio();
-                Toejercicio.Clave = int.Parse(x["Clave_Ejercicio"].ToString());
-                Toejercicio.Nombre = x["Nombre"].ToString().ToUpper();
-            
-                lista.Add(Toejercicio);
-        }
+            Object existe = comando.ExecuteScalar();
 
-            return lista;
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+
+            return (existe != null) ? true : false;
         }
 
         public Boolean verificarExistenciaRutina(String nomRutina) {
