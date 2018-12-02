@@ -26,6 +26,28 @@
 <body>
     <form id="form1" runat="server">
 
+        <script> 
+         function txtRepeticionesZipOnChange(txt) {
+
+            var id = txt.id;
+
+            var primerNum = 0;
+
+
+           
+
+            // get the validator and check if it is valid
+            var val = document.getElementById('<%=RegularExpressionValidator1.ClientID%>');
+            if (val.isvalid == false) {
+                document.getElementById('<%=tTelefono.ClientID%>').value = "";
+                //document.getElementById('Cuerpo_grdEjercicios_txtSeries_' + primerNum).text = "";
+            }
+        }
+
+    </script>
+        
+        
+         
         <!-- Header -->
         <div id="header">
             <div class="container">
@@ -82,8 +104,15 @@
 				<asp:TextBox class="form-control" Width="500px" ID="tfehcaN" runat="server" Enabled="false"></asp:TextBox>
 				<br />
 				Teléfono:  
-				<asp:TextBox class="form-control" Width="500px" ID="tTelefono" runat="server" placeholder="Ejm: 83978140"></asp:TextBox>
+				<asp:TextBox class="form-control" Width="500px" ID="tTelefono" runat="server" placeholder="Ejm: 83978140" onClick="validarRegularExpresion1(this)" onChange="txtRepeticionesZipOnChange(this);"></asp:TextBox>
 				<asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="tTelefono" SetFocusOnError="true" ForeColor="red" runat="server" ErrorMessage="Se deben completar todos los espacios" ValidationGroup="validaciones"></asp:RequiredFieldValidator>
+                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
+                                            ControlToValidate="tTelefono" runat="server"
+                                            ErrorMessage="Números"
+                                            SetFocusOnError="true"
+                                            ForeColor="red"
+                                            ValidationExpression="\d+">
+                </asp:RegularExpressionValidator>
 				<br />
 				Contraseña: 
 				<asp:TextBox class="form-control" Width="500px" ID="tclave" runat="server" TextMode="Password" placeholder="Ejm: Cla.123"></asp:TextBox>

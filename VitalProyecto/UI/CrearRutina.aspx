@@ -129,7 +129,7 @@
                         <br />
                     </div>
                     <div id="div1">
-                        <asp:GridView Width="1070px" ID="grdEjercicios" runat="server" class="table-responsive-lg table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False">
+                        <asp:GridView Width="1070px" ID="grdEjercicios" runat="server" class="table-responsive-lg table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False" OnSelectedIndexChanged="grdEjercicios_SelectedIndexChanged">
                             <Columns>
                                 <asp:TemplateField HeaderText="SELECCIÓN">
                                     <ItemTemplate>
