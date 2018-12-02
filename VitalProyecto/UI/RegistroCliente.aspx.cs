@@ -26,6 +26,7 @@ namespace UI
         {
             //MaintainScrollPositionOnPostback="true"
             labelAlerta.Visible = false;
+
    //         if (new ControlSeguridad().validarAdmin() == true)
 			//{
 			//	Response.Redirect("~/IniciarSesion.aspx");
@@ -326,9 +327,9 @@ namespace UI
 
         private void crearRegistroCliente() {
             String ced = txbced.Text;
-            String nombre = txbnombre.Text;
-            String ape1 = txbape1.Text;
-            String ape2 = txbape2.Text;
+            String nombre = formatoTitulo(txbnombre.Text);
+            String ape1 = formatoTitulo(txbape1.Text);
+            String ape2 = formatoTitulo(txbape2.Text);
             int tel = int.Parse(txbtelefono.Text);
             DateTime fecha_nac = new DateTime(int.Parse(DLAnno.SelectedValue), int.Parse(DlMes.SelectedValue), int.Parse(DlDia.SelectedItem.Text));
             String correo = txbcorreo.Text;
@@ -351,7 +352,7 @@ namespace UI
             }
             else
             {
-                mostrarAlerta("*Error: Campos incompletos en formulario.", false);
+                mostrarAlerta("*Error: Formulario incompleto.", false);
                 //Response.Write("<script>alert('Campos incompletos CON CUENTA')</script>");
             }            
         }
@@ -359,13 +360,13 @@ namespace UI
         private void desabilitarCampos() {
 
 
-            lblCed.Visible = false;
-            Label1.Visible = false;
-            Label10.Visible = false;
-            Label3.Visible = false;
-            Label4.Visible = false;
-            Label5.Visible = false;
-            Label6.Visible = false;
+            //lblCed.Visible = false;
+            //Label1.Visible = false;
+            //Label10.Visible = false;
+            //Label3.Visible = false;
+            //Label4.Visible = false;
+            //Label5.Visible = false;
+            //Label6.Visible = false;
             Label7.Visible = false;
 
             txbced.Visible = false;
@@ -387,13 +388,13 @@ namespace UI
 
         private void habilitarCampos()
         {
-            lblCed.Visible = true;
-            Label1.Visible = true;
-            Label10.Visible = true;
-            Label3.Visible = true;
-            Label4.Visible = true;
-            Label5.Visible = true;
-            Label6.Visible = true;
+            //lblCed.Visible = true;
+            //Label1.Visible = true;
+            //Label10.Visible = true;
+            //Label3.Visible = true;
+            //Label4.Visible = true;
+            //Label5.Visible = true;
+            //Label6.Visible = true;
             Label7.Visible = true;
 
             txbced.Visible = true;
@@ -451,6 +452,13 @@ namespace UI
             if (estado)
                 labelAlerta.ForeColor = System.Drawing.Color.Green;
             labelAlerta.Visible = true;
+        }
+
+        private string formatoTitulo(String palabra) {
+       
+            string nuevaPalabra = palabra.ToUpper();
+
+            return nuevaPalabra;
         }
 
     }
