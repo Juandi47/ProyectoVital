@@ -72,13 +72,9 @@
     </div>
     <br>
     <br>
-    <div class="footer">
-        Vital San Ramón, mas que un gimnasio es tu espacio.  Contáctanos: (+506) 2445-xxxx
-    </div>
-
-
-    <footer class="footer" style="position: relative">
-        <h1 class="title">Gimnasio Vital y Nutrición</h1>
+   <footer class="footer" style="position: relative">
+		<h1 class="title">Gimnasio Vital y Nutrición</h1>
+        Vital San Ramón, mas que un gimnasio es tu espacio.
     </footer>
 
     <%-- </form>--%>

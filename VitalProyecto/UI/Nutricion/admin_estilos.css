@@ -1,0 +1,266 @@
+﻿@import url("font-awesome.min.css");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+
+.body {
+    height:100%;
+    background-color:white;
+}
+
+.footer {
+    background-color: darkolivegreen;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    color: white;
+    text-align: center;
+    /*margin-top: 5%;*/
+}
+.homepage {
+    background-color: white;
+}
+
+.title {
+    font: bold 20px 'Open Sans', sans-serif;
+    margin: 15px 0 15px 15px;
+    text-transform: uppercase;
+}
+
+
+.banner {
+  background-color: gainsboro;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.input[type=text], select, textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    border-color:#4CAF50;
+}
+
+.celda {
+     padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    border-color:#4CAF50;
+}
+
+.label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+/*.input[type=submit] {
+    background-color: darkolivegreen;
+    color: #45a049;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    font-weight: bold;
+}*/
+
+    /*.input[type=submit]:hover {
+        background-color: #4CAF50;
+    }*/
+
+.form-container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: auto;
+}
+
+.col-25 {
+    float: left;
+    width: 21%;
+    margin-top: 6px;
+    margin-right: 0px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.btn-form {
+    margin: 0px 15px 100px 0%;
+    font-size: 1px;
+}
+
+
+.small-div {
+text-align:center;
+}
+
+.form-label {
+    font:  15px 'Open Sans', sans-serif;
+}
+
+.form-label2 {
+    font: bold 20px 'Open Sans', sans-serif;
+    color:papayawhip;
+}
+
+/*.admin-banner {    
+    width: 100%;
+    background: #222222 url(../images/banner_admin01.jpg) no-repeat;
+height: 20em;
+}
+
+/*PENDIENTE*/
+/*.N {
+
+}*/
+
+.previous {
+float:left;
+color:black;
+}
+
+.next {
+    float: right;
+}
+
+/*.center-block {
+
+}*/
+
+.link1 {
+    font: bold 20px 'Open Sans', sans-serif;
+    margin: 0px 0px 10px 10px;
+}
+
+.buscarBTN {
+    text-align:center;
+    font-size:5px;
+    margin-top:5px;
+    height:30px;
+    width:auto;
+}
+
+/*#Table2 {
+    width:80%
+
+}*/
+
+.btnn {
+    margin-left: 2%;
+    margin-top: 0%;
+}
+
+.btnn2 {
+    margin-right:0%;
+    margin-top: 28%;
+    /*width: 180px;
+    height:40px;*/
+}
+
+.container2 {
+   padding-left:10px
+}
+
+.footerText {
+    font: 15px 'Open Sans', normal;
+    display: inline-block;
+}
+
+.btnCred {
+    margin: 0px 0px 0% 30%;
+}
+
+.btnCred:hover {
+    background-color:#4CAF50;
+}
+
+.ingresoDiv {
+    /*align-content: center;*/
+    /*position:;*/
+    display:inline-block;
+    border-radius: 16px;
+    top: 25%;
+    background-color: #f2f2f2;
+    border: groove 5px #45a049;
+    padding: 0px 0% 2% 0%;
+    left: 2%;
+}
+
+    .ingresoDiv h3 {
+        margin-bottom: 9px;
+    }
+
+.tablaRes :only-child {
+    margin-top: 5px;
+    /*width: 20%;*/
+}
+
+
+
+.cellIzqP {
+   margin-right:5px;
+}
+
+
+.tablerow {
+    margin-left: 0%;
+    
+}
+
+/*.tablerow {
+margin-left:0%;
+width:20%;
+}*/
+
+/*.filaExtra {
+margin-top: 5px;
+
+}
+    .filaExtra:first-child {
+    text-align:right;
+    }*/
+
+.labelAlerta {
+    margin-top: 5px;
+    color: darkred;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 03.5vw;
+    font-weight:bold;
+}
+
+encabezado {
+    margin-bottom: 4px;
+    border-bottom: 5px solid rgba(5, 47, 7, 0.94);
+    margin-right: 3px;
+}
+encabezado {
+    font-weight: bold;
+}
+
+    
+
+
+

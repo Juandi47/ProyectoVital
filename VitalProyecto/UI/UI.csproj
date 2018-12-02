@@ -135,6 +135,7 @@
     <Content Include="ModificarCuentaClienteUI.aspx" />
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
+    <Content Include="Nutricion\admin_estilos.css" />
     <Content Include="Nutricion\ConsultarNutricion.aspx" />
     <Content Include="Nutricion\styleNutri.css" />
     <Content Include="Nutricion\IngresoNutricion.aspx" />

@@ -115,10 +115,10 @@
 
                     <asp:TableRow runat="server" CssClass="tablerow">
                         <asp:TableCell runat="server">
-                            <asp:Label ID="Label3" CssClass=" form-label " runat="server" Text="1er Apellido"></asp:Label>
+                            <asp:Label ID="Label3" CssClass=" form-label " runat="server" Text="Primer Apellido"></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell runat="server">
-                            <asp:Label ID="Label4" CssClass="form-label" runat="server" Text="2do Apellido"></asp:Label>
+                            <asp:Label ID="Label4" CssClass="form-label" runat="server" Text="Segundo Apellido"></asp:Label>
                         </asp:TableCell>
                     </asp:TableRow>
 
