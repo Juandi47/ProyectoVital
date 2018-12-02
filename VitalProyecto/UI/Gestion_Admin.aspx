@@ -25,7 +25,7 @@
         }
 
     </script>
-
+	<br /><br />
     <%-- DIV DE DESPLIEGUE DE INGRESO DE CREDENCIALES --%>
     <div id="datosUsuario" class="col-sm-5 datosUsuario" runat="server" style="display: none">
         <asp:Label ID="Label8" runat="server" Text="Label" CssClass="h3">Información de usuario</asp:Label>

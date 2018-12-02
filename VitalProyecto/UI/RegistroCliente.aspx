@@ -14,7 +14,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
 
     <asp:Label ID="tituloH1" CssClass="title" runat="server" Text="Registro de cliente"></asp:Label>
-
+		<br />
+	<br />
     <div class="form-container" runat="server">
           <%-- LABEL PARA MENSAJES DE ALERTA --%>
                 <asp:Label  ID="labelAlerta" runat="server" CssClass="labelAlerta"></asp:Label>
@@ -101,7 +102,7 @@
                         <asp:Label ID="Label10" CssClass="form-label" runat="server" Text="Nombre"></asp:Label>
                     </div>
                     <div class="col-md-6">
-                        <asp:TextBox ID="txbnombre" runat="server"></asp:TextBox>
+                        <br><asp:TextBox ID="txbnombre" runat="server"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"
                             ControlToValidate="txbnombre" ErrorMessage="*Ingrese solo letras"
                             ForeColor="Red"

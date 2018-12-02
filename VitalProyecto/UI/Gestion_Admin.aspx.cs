@@ -95,9 +95,9 @@ namespace UI
                 crearTabla();
 
             };
-
-            botonCell.Controls.Add(btnEliminar);
-            botonCell.Controls.Add(btnModificar);
+			botonCell.Controls.Add(btnModificar);
+			botonCell.Controls.Add(btnEliminar);
+           
             fila.Cells.Add(botonCell);
 
             Administrador.Rows.Add(fila);

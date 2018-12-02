@@ -102,33 +102,39 @@
     <style>
         #div1 {
             overflow: scroll;
-            height: 600px;
+            height: 500px;
+			width: 1090px;
         }
     </style>
     <form id="form1" runat="server" style="background-color: lightgray">
 
         <div class="container">
             <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
-                    <div class="input-group">
-                        <asp:TextBox ID="txtNuevaRutina" runat="server" Width="300px" Height="45px" Wrap="False" placeholder="NOMBRE RUTINA" BackColor="WhiteSmoke"></asp:TextBox>
-                        <asp:Button ID="btnCrearRutina" runat="server" Font-Size="Medium" Text="GUARDAR RUTINA" Width="250px" Height="55px" BackColor="darkolivegreen" OnClick="btnCrearRutina_Click" />
+                <%--<div class="col-md-1"></div>--%>
+                <div class="col-md-11">
+					<br /><br />
+                    <div >
+                         
+                        <asp:Label ID="Label1" runat="server" Text="Nombre de la nueva rutina: " Font-Bold="true"></asp:Label>
+						 
+						<br /> 
+						<asp:TextBox Width="500px" ID="txtNuevaRutina" runat="server" Wrap="False" placeholder="NOMBRE RUTINA" class="form-control" ></asp:TextBox>
                       </div>
                     <asp:Label ID="VerificadorExistencia" runat="server" Text="Ya existe esta rutina" ForeColor="Red" Visible="false"></asp:Label>
                     <div>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="Red" ControlToValidate="txtNuevaRutina" runat="server" SetFocusOnError="true" ErrorMessage="Debe escribir el nombre de la rutina"></asp:RequiredFieldValidator>
 
                         <br />
-                        <asp:Label ID="lbBuscarEjercicio" runat="server" Text="BUSCAR:" Font-Bold="true"></asp:Label>
+                        <asp:Label ID="lbBuscarEjercicio" runat="server" Text="Buscar: " Font-Bold="true"></asp:Label>
                         <div class="input-group">
-                            <asp:TextBox ID="txtBuscarEjercicio" class="form-control" runat="server" Width="150px" Height="45px" Wrap="False" placeholder="EJERCICIO" BackColor="WhiteSmoke"></asp:TextBox>
-                            <asp:Button ID="btnBuscar" runat="server" Font-Size="Medium" Text="BUSCAR" Width="100px" Height="45px" BackColor="darkolivegreen" OnClick="btnBuscar_Click" />
+                            <asp:TextBox ID="txtBuscarEjercicio" class="form-control" runat="server" Width="500px" Wrap="False" placeholder="EJERCICIO" ></asp:TextBox>
+							<asp:Button ID="btnBuscar" runat="server" Font-Size="Small" Text="BUSCAR" OnClick="btnBuscar_Click" />
+							<br /><br />
                         </div>
-
+						<br />
                     </div>
                     <div id="div1">
-                        <asp:GridView ID="grdEjercicios" runat="server" class="table-responsive-lg table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False">
+                        <asp:GridView Width="1070px" ID="grdEjercicios" runat="server" class="table-responsive-lg table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False">
                             <Columns>
                                 <asp:TemplateField HeaderText="SELECCIÓN">
                                     <ItemTemplate>
@@ -141,7 +147,7 @@
 
                                 <asp:TemplateField HeaderText="REPETICIONES">
                                     <ItemTemplate>
-                                        <asp:TextBox ID="txtRepeticiones" Enabled="false" runat="server" onClick="validarRegularExpresion1(this)" onChange="txtRepeticionesZipOnChange(this);" Width="55px" Height="25px" Wrap="false" BackColor="WhiteSmoke" MaxLength="3" />
+                                        <asp:TextBox ID="txtRepeticiones" Enabled="false" runat="server" onClick="validarRegularExpresion1(this)" onChange="txtRepeticionesZipOnChange(this);" Width="60px" Height="35px" Wrap="false" BackColor="WhiteSmoke" MaxLength="3" />
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
                                             ControlToValidate="txtRepeticiones" runat="server"
                                             ErrorMessage="Números"
@@ -155,7 +161,7 @@
 
                                 <asp:TemplateField HeaderText="SERIES">
                                     <ItemTemplate>
-                                        <asp:TextBox ID="txtSeries" Enabled="false" runat="server" onClick="validarRegularExpresion2(this)" onChange="SeriesZipOnChange(this);" Width="55px" Height="25px" Wrap="false" BackColor="WhiteSmoke" MaxLength="3" />
+                                        <asp:TextBox ID="txtSeries" Enabled="false" runat="server" onClick="validarRegularExpresion2(this)" onChange="SeriesZipOnChange(this);" Width="60px" Height="35px" Wrap="false" BackColor="WhiteSmoke" MaxLength="3" />
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2"
                                             ForeColor="red"
                                             ControlToValidate="txtSeries" runat="server"
@@ -168,8 +174,8 @@
 
                                 <asp:TemplateField>
                                     <ItemTemplate>
-                                        <asp:Button Enabled="false" ForeColor="LightGreen" Font-Size="Small" BackColor="#98989a" runat="server" CommandArgument='<%# Container.DataItemIndex  %>' OnClick="GuardarLinea_Click" Width="90px" Height="35px" Wrap="false" ID="GuardarLinea" Text="Guardar" />
-                                        <asp:Button Enabled="true" Visible="false" ForeColor="Red" Font-Size="Small" BackColor="#98989a" runat="server" CommandArgument='<%# Container.DataItemIndex  %>' OnClick="DescartarLinea_Click" Width="100px" Height="15px" Wrap="false" ID="DescartarLinea" Text="Descartar" />
+                                        <asp:Button Enabled="false" Font-Size="Small" runat="server" CommandArgument='<%# Container.DataItemIndex  %>' OnClick="GuardarLinea_Click" Width="100px" Height="40px" Wrap="false" ID="GuardarLinea" Text="Agregar" />
+                                        <asp:Button Enabled="true" Visible="false" ForeColor="Red" Font-Size="Small" BackColor="#98989a" runat="server" CommandArgument='<%# Container.DataItemIndex  %>' OnClick="DescartarLinea_Click" Width="100px" Height="40px" Wrap="false" ID="DescartarLinea" Text="Devolver" />
                                     </ItemTemplate>
                                     <ItemStyle HorizontalAlign="Center" Wrap="false" Width="25px" />
                                 </asp:TemplateField>
@@ -178,10 +184,12 @@
                             <HeaderStyle BackColor="#999999" BorderStyle="Double" Font-Bold="True" />
                         </asp:GridView>
                     </div>
-
+					<br />
+                        <asp:Button ID="btnCrearRutina" runat="server" Font-Size="Small" Text="GUARDAR RUTINA" OnClick="btnCrearRutina_Click" />
+						<br />	<br />
                 </div>
-                <div class="col-md-1">
-                </div>
+               <%-- <div class="col-md-1">
+                </div>--%>
             </div>
         </div>
     </form>

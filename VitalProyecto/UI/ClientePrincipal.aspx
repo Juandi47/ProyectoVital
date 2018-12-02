@@ -1,4 +1,4 @@
-﻿q<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClientePrincipal.aspx.cs" Inherits="UI.ClientePrincipal" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClientePrincipal.aspx.cs" Inherits="UI.ClientePrincipal" %>
 
 <!DOCTYPE html>
 
@@ -150,9 +150,10 @@
 	</form>
 	<br /><br /><br /><br />
 
-	<footer class="footer">
-		Vital San Ramón, mas que un gimnasio es tu espacio.
-	</footer>
+	<footer class="footer" style="position: relative">
+		<h1 class="title">Gimnasio Vital y Nutrición</h1>
+        Vital San Ramón, mas que un gimnasio es tu espacio.
+    </footer>
 	
 </body>
 </html>

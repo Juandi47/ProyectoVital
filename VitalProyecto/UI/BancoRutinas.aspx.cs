@@ -127,8 +127,9 @@ namespace UI
 
             };
 
-            botonCell.Controls.Add(btnEliminar);
-            botonCell.Controls.Add(btnModificar);
+			botonCell.Controls.Add(btnModificar);
+			botonCell.Controls.Add(btnEliminar);
+           
             fila.Cells.Add(botonCell);
 
             Rutinas.Rows.Add(fila);
