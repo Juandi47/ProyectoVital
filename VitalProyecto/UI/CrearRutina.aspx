@@ -8,13 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="js/jquery.quicksearch.js"></script>
-    <script src="js/jquery-1.4.1.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('input#<%=txtBuscarEjercicio.ClientID%>').quicksearch('table#<%=grdEjercicios.ClientID%> tbody tr');
-        });
-    </script>
+
 </asp:Content>
 
 
@@ -103,7 +97,7 @@
         #div1 {
             overflow: scroll;
             height: 500px;
-			width: 1090px;
+            width: 1090px;
         }
     </style>
     <form id="form1" runat="server" style="background-color: lightgray">
@@ -112,26 +106,27 @@
             <div class="row">
                 <%--<div class="col-md-1"></div>--%>
                 <div class="col-md-11">
-					<br /><br />
-                    <div >
-                         
+                    <br />
+                    <br />
+                    <div>
+
                         <asp:Label ID="Label1" runat="server" Text="Nombre de la nueva rutina: " Font-Bold="true"></asp:Label>
-						 
-						<br /> 
-						<asp:TextBox Width="500px" ID="txtNuevaRutina" runat="server" Wrap="False" placeholder="NOMBRE RUTINA" class="form-control" ></asp:TextBox>
-                      </div>
+
+                        <br />
+                        <asp:TextBox Width="500px" ID="txtNuevaRutina" runat="server" Wrap="False" placeholder="NOMBRE RUTINA" class="form-control"></asp:TextBox>
+                    </div>
                     <asp:Label ID="VerificadorExistencia" runat="server" Text="Ya existe esta rutina" ForeColor="Red" Visible="false"></asp:Label>
                     <div>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="Red" ControlToValidate="txtNuevaRutina" runat="server" SetFocusOnError="true" ErrorMessage="Debe escribir el nombre de la rutina"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="Red" ControlToValidate="txtNuevaRutina" runat="server" SetFocusOnError="true" ErrorMessage="Debe escribir el nombre de la rutina" ValidationGroup="txtVacio"></asp:RequiredFieldValidator>
 
                         <br />
                         <asp:Label ID="lbBuscarEjercicio" runat="server" Text="Buscar: " Font-Bold="true"></asp:Label>
                         <div class="input-group">
-                            <asp:TextBox ID="txtBuscarEjercicio" class="form-control" runat="server" Width="500px" Wrap="False" placeholder="EJERCICIO" ></asp:TextBox>
-							<asp:Button ID="btnBuscar" runat="server" Font-Size="Small" Text="BUSCAR" OnClick="btnBuscar_Click" />
-							<br /><br />
+                            <asp:TextBox ID="txtBuscarEjercicio" onkeyup="buscarEjercicio()" class="form-control" runat="server" Width="500px" Wrap="False" placeholder="EJERCICIO"></asp:TextBox>
+                            <br />
+                            <br />
                         </div>
-						<br />
+                        <br />
                     </div>
                     <div id="div1">
                         <asp:GridView Width="1070px" ID="grdEjercicios" runat="server" class="table-responsive-lg table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False">
@@ -184,13 +179,37 @@
                             <HeaderStyle BackColor="#999999" BorderStyle="Double" Font-Bold="True" />
                         </asp:GridView>
                     </div>
-					<br />
-                        <asp:Button ID="btnCrearRutina" runat="server" Font-Size="Small" Text="GUARDAR RUTINA" OnClick="btnCrearRutina_Click" />
-						<br />	<br />
+                    <br />
+                    <asp:Button ID="btnCrearRutina" runat="server" Font-Size="Small" Text="GUARDAR RUTINA" OnClick="btnCrearRutina_Click" ValidationGroup="txtVacio" />
+                    <br />
+                    <br />
                 </div>
-               <%-- <div class="col-md-1">
+                <%-- <div class="col-md-1">
                 </div>--%>
             </div>
         </div>
+        <script>
+            function buscarEjercicio() {
+                // Declare variables 
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById('<%=txtBuscarEjercicio.ClientID%>');
+                filter = input.value.toUpperCase();
+                table = document.getElementById('<%=grdEjercicios.ClientID%>');
+                tr = table.getElementsByTagName("tr");
+
+                // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[1];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        </script>
     </form>
 </asp:Content>

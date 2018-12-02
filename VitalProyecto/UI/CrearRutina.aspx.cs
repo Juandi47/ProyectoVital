@@ -21,7 +21,10 @@ namespace UI
 
             nombreRutina = Session["Rutina"] as String;
             if (!IsPostBack)
+            {
+                lista.Clear();
                 llenarGrid();
+            }
         }
         private void llenarGrid()
         {
@@ -68,13 +71,6 @@ namespace UI
                     VerificadorExistencia.Visible = true;
                 }
             }
-
-
-
-
-
-
-
         }
 
         protected void GuardarLinea_Click(object sender, EventArgs e)
@@ -96,10 +92,6 @@ namespace UI
                 grdEjercicios.Rows[rowIndex].FindControl("GuardarLinea").Visible = false;
                 grdEjercicios.Rows[rowIndex].FindControl("DescartarLinea").Visible = true;
             }
-
-
-
-
         }
 
         protected void DescartarLinea_Click(object sender, EventArgs e)
@@ -125,13 +117,7 @@ namespace UI
 
         }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            ManejadorEjercicio manejador = new ManejadorEjercicio();
-
-            grdEjercicios.DataSource = manejador.buscarEjercicio(txtBuscarEjercicio.Text); ;
-            grdEjercicios.DataBind();
-        }
+        
 
         public void llenarCampos()
         {
@@ -172,6 +158,7 @@ namespace UI
 
         public void agregarMarcadosLista()
         {
+            lista.Clear();
             for (int i = 0; i < grdEjercicios.Rows.Count; i++)
             {
                 CheckBox chk = (CheckBox)grdEjercicios.Rows[i].FindControl("chkSeleccion");
@@ -181,8 +168,7 @@ namespace UI
                     TextBox txtRepeticiones = (TextBox)grdEjercicios.Rows[i].FindControl("txtRepeticiones");
                     String repeticiones = txtRepeticiones.Text;
                     TextBox txtSeries = (TextBox)grdEjercicios.Rows[i].FindControl("txtSeries");
-                    String serie = txtSeries.Text;
-                    lista.Clear();
+                    String serie = txtSeries.Text;                    
                     lista.Add(new HojaRutina(ejercicio, int.Parse(repeticiones), int.Parse(serie)));
                 }
 
