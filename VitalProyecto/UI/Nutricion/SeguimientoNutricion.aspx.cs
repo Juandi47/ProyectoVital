@@ -14,7 +14,11 @@ namespace UI.Nutricion
         ManejadorNutrición manejador = new ManejadorNutrición();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+			if (new ControlSeguridad().validarClieNutri() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+			if (!IsPostBack)
             {
                 Fecha.Text = "Fecha: " + DateTime.Now;
                 r24Tabla.Text = "<tr><th>Tiempo de Comida</th><th>Descripción</th></tr>";

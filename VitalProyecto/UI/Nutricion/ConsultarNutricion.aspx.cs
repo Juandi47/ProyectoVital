@@ -14,7 +14,12 @@ namespace UI.Nutricion
         private static List<ClienteNutricion> lista = new List<ClienteNutricion>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+			if (new ControlSeguridad().validarClieNutri() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+
+			if (!IsPostBack)
             {
                 CargarLista();
             }

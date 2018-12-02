@@ -11,13 +11,23 @@ namespace UI
     public partial class ActualizacionCliente : System.Web.UI.Page
     {
         ManejadorMedida manejador = new ManejadorMedida();
+		ManejadorCliente manCliente = new ManejadorCliente();
         protected void Page_Load(object sender, EventArgs e)
         {
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
 
-        }
+		}
 
         protected void btnAñadirExpediente_Click(object sender, EventArgs e)
         {
+			if (!manCliente.verificarCliente(txtCed.Text))
+			{
+				lbCedMala.Text = "Cliente no encontrado";
+			} else { 
+
             string Cedula = txtCed.Text;
             string Frec_Cardiaca = tfrecCard.Text;
             decimal Peso = Convert.ToDecimal(tPeso.Text);
@@ -33,7 +43,8 @@ namespace UI
             Boolean t = manejador.AgregarMedida(Frec_Cardiaca, Peso, Porcent_Grasa, IMC, Cintura, Abdomen, Cadera, Muslo, Estatura, Cedula, DateTime.Now.Date);
             if (t == false)
             {
-                Response.Write("<script language=\"JavaScript\" type=\"text / JavaScript\">alertify.notify('No se pudo realizar la acción', 'error', 5, null); </script>");
+				
+				Response.Write("<script language=\"JavaScript\" type=\"text / JavaScript\">alertify.notify('No se pudo realizar la acción', 'error', 5, null); </script>");
                 limpiarControles();
             }
             else
@@ -41,7 +52,8 @@ namespace UI
                 Response.Write("<script language=\"JavaScript\" type=\"text / JavaScript\">alertify.notify('Registro almacenado correctamente', 'success', 5, null); </script>");
                 limpiarControles();
             }
-        }
+			}
+		}
 
 
         private void limpiarControles()

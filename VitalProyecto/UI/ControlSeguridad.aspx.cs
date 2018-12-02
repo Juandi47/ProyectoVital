@@ -54,7 +54,7 @@ namespace UI
 
 		public Boolean validarClieNutri()
 		{
-			if (usuario() == null || !usuario().rol.Equals("clienteNutri") || usuario().rol.Equals(""))
+			if (usuario() == null || !usuario().rol.Equals("nutricionista") || usuario().rol.Equals(""))
 			{
 				return true;
 			}

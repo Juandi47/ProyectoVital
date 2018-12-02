@@ -26,10 +26,10 @@ namespace UI
         {
             //MaintainScrollPositionOnPostback="true"
             labelAlerta.Visible = false;
-   //         if (new ControlSeguridad().validarAdmin() == true)
-			//{
-			//	Response.Redirect("~/IniciarSesion.aspx");
-			//}
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
 
 			string accion = Convert.ToString(Request.QueryString["accion"]);
 
