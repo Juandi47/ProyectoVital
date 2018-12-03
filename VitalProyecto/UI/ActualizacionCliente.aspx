@@ -45,21 +45,21 @@
 						<br /><br />
 						Cédula
 						<asp:TextBox BackColor="White" class="form-control" ID="txtCed" runat="server" Width="500px"></asp:TextBox>
-						<asp:RequiredFieldValidator ID="rfCed" runat="server" ErrorMessage="Campo Obligatorio" ControlToValidate="txtCed"></asp:RequiredFieldValidator>
+						<asp:RequiredFieldValidator ID="rfCed" runat="server" ErrorMessage="Campo Obligatorio" ControlToValidate="txtCed" ForeColor="Red"></asp:RequiredFieldValidator>
 						<asp:Label ID="lbCedMala" runat="server" ForeColor="#FF3300"></asp:Label>
 						<br />Frecuencia cardiaca
 						<asp:TextBox BackColor="White" ID="tfrecCard" class="form-control" runat="server" Width="500px"></asp:TextBox>
-						<asp:RequiredFieldValidator ID="rfFrec" runat="server" ControlToValidate="tfrecCard" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<asp:RequiredFieldValidator ID="rfFrec" runat="server" ControlToValidate="tfrecCard" ErrorMessage="Campo Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
 						<br />Peso(Kg)
 						<asp:TextBox class="form-control" ID="tPeso" TextMode="Number" runat="server" Width="500px"></asp:TextBox>
-						<asp:RequiredFieldValidator ID="rfPeso" runat="server" ControlToValidate="tPeso" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<asp:RequiredFieldValidator ID="rfPeso" runat="server" ControlToValidate="tPeso" ErrorMessage="Campo Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
 						<br />Porcentaje grasa(%)
 						<asp:TextBox class="form-control" ID="tpercentGrasa" runat="server" TextMode="Number" Width="500px"></asp:TextBox>
-						<asp:RequiredFieldValidator ID="rfGrasa" runat="server" ControlToValidate="tpercentGrasa" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<asp:RequiredFieldValidator ID="rfGrasa" runat="server" ControlToValidate="tpercentGrasa" ErrorMessage="Campo Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
 						<br />IMC
 						<asp:TextBox class="form-control" ID="tImc" runat="server" TextMode="Number" Width="500px"></asp:TextBox>
 						
-						<asp:RequiredFieldValidator ID="rfimc" runat="server" ControlToValidate="tImc" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<asp:RequiredFieldValidator ID="rfimc" runat="server" ControlToValidate="tImc" ErrorMessage="Campo Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
 						
 						<br />
 					</div>
@@ -68,16 +68,16 @@
 						<br /><br />
 						Cintura(cm)
 						<asp:TextBox class="form-control" ID="tcintura" runat="server" TextMode="Number" Width="500px"></asp:TextBox>
-						<asp:RequiredFieldValidator ID="rfCint" runat="server" ControlToValidate="tcintura" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<asp:RequiredFieldValidator ID="rfCint" runat="server" ControlToValidate="tcintura" ErrorMessage="Campo Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
 						<br />Abdomen(cm)
 						<asp:TextBox ID="tabdomen" runat="server" TextMode="Number" Width="500px" class="form-control"></asp:TextBox>
-						<asp:RequiredFieldValidator ID="rfAbdom" runat="server" ControlToValidate="tabdomen" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<asp:RequiredFieldValidator ID="rfAbdom" runat="server" ControlToValidate="tabdomen" ErrorMessage="Campo Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
 						<br />Cadera(cm)<asp:TextBox ID="tCadera" runat="server" TextMode="Number" Width="500px" class="form-control"></asp:TextBox>
-						<asp:RequiredFieldValidator ID="rfCad" runat="server" ControlToValidate="tCadera" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<asp:RequiredFieldValidator ID="rfCad" runat="server" ControlToValidate="tCadera" ErrorMessage="Campo Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
 						<br />Muslo(cm)<asp:TextBox ID="tMuslo" runat="server" TextMode="Number" Width="500px" class="form-control"></asp:TextBox>
-						<asp:RequiredFieldValidator ID="rfMuslo" runat="server" ControlToValidate="tMuslo" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<asp:RequiredFieldValidator ID="rfMuslo" runat="server" ControlToValidate="tMuslo" ErrorMessage="Campo Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
 						<br />Estatura(cm)<asp:TextBox ID="tEstatura" runat="server" TextMode="Number" Width="500px" class="form-control"></asp:TextBox>
-						<asp:RequiredFieldValidator ID="rfEst" runat="server" ControlToValidate="tEstatura" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<asp:RequiredFieldValidator ID="rfEst" runat="server" ControlToValidate="tEstatura" ErrorMessage="Campo Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
 						<br />
 					</div>
 				</div>
