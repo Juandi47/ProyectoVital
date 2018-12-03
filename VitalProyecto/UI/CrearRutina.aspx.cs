@@ -54,9 +54,11 @@ namespace UI
                 Rutina rutina = new Rutina(0, fecha_actual, nombreRutina, ejercicios);
                 manejador.eliminarRutina(rutina.Nombre);
                 manejador.agregarRutina(rutina);
-                Response.Redirect("BancoRutinas.aspx");
-            }
-            else {
+				Response.Redirect("BancoRutinas.aspx");
+				ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
+
+			}
+			else {
                 if (!manejador.existenciaRutina(nombreRutina))
                 {
 
@@ -66,8 +68,10 @@ namespace UI
                     Rutina rutina = new Rutina(0, fecha_actual, nombreRutina, ejercicios);
                     manejador.agregarRutina(rutina);
                     Response.Redirect("BancoRutinas.aspx");
-                }
-                else {
+					ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
+
+				}
+				else {
                     VerificadorExistencia.Visible = true;
                 }
             }
@@ -84,7 +88,8 @@ namespace UI
 
             if (repeticiones.Equals("") || serie.Equals(""))
             {
-                Response.Write("<script>alert('No deben haber espacios en blanco')</script>");
+				ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "error();", true);
+				//Response.Write("<script>alert('No deben haber espacios en blanco')</script>");
             }
             else
             {

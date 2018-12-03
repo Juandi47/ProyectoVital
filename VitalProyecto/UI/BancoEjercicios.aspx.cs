@@ -34,7 +34,8 @@ namespace UI
                 if (!manejador.buscarEjercicio(txtNuevoEjercicio.Text))
                 {
                     manejador.agregarEjercicio(Controlador.RemoveAccentsWithRegEx(txtNuevoEjercicio.Text));
-                    VerificadorExistencia.Visible = false;
+					ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
+					VerificadorExistencia.Visible = false;
                 }
                 else
                     VerificadorExistencia.Visible = true;
@@ -48,7 +49,8 @@ namespace UI
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             manejador.eliminarEjercicio((sender as LinkButton).CommandArgument);
-            llenarGrid();
+			ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "eliminado();", true);
+			llenarGrid();
             VerificadorExistencia.Visible = false;
         }
     }

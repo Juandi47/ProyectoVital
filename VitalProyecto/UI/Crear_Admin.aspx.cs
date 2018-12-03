@@ -36,7 +36,9 @@ namespace UI
             //se debe verificar que no hayan espacios incompleto 
             if (cedula.Equals("") || nombre.Equals("") || clave.Equals("") || apellido1.Equals("") || apellido1.Equals(""))
             {
-                Response.Write("<script>alert('No deben haber espacios en blanco')</script>");
+				ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "error();", true);
+
+				//Response.Write("<script>alert('No deben haber espacios en blanco')</script>");
             }
             else {
                 //Se debe asegurar que las claves coincidan.
@@ -60,7 +62,9 @@ namespace UI
                             }
                             else {
                                 mensaje = manejadorAdmin.agregarAdministrador(cedula, nombre, clave, apellido1, apellido2, correo);
-                                Response.Write("<script>alert('Usuario registrado correctamente')</script>");
+								ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
+
+								//Response.Write("<script>alert('Usuario registrado correctamente')</script>");
                             }
                         }
                         else {

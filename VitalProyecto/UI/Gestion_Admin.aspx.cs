@@ -93,8 +93,10 @@ namespace UI
 
                 manejo.eliminarAdministrador(cedula, correo);
                 crearTabla();
+				ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
 
-            };
+
+			};
 			botonCell.Controls.Add(btnModificar);
 			botonCell.Controls.Add(btnEliminar);
            

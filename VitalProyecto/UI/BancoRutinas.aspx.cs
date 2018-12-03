@@ -124,8 +124,9 @@ namespace UI
 
                 manejo.eliminarRutina(nombre);
                 llenarTablaRutinas();
+				ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
 
-            };
+			};
 
 			botonCell.Controls.Add(btnModificar);
 			botonCell.Controls.Add(btnEliminar);

@@ -21,6 +21,18 @@
    <%-- <link rel="stylesheet" href="css/skel.css" />
     <link rel="stylesheet" href="css/style.css" />--%>
     <link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen" />
+
+		 <script src="js/alertify.min.js"></script>
+	<link rel="stylesheet" href="/css/alertify.min.css" />
+	<link rel="stylesheet" href="/css/semantic.min.css" />
+	<script src="/alertify.js"></script>
+	<script src="/mensaje.js"></script>
+	
+	<script type="text/javascript">
+		function mensaje() {
+			alertify.success("Cliente modificado correctamente");
+		}
+	</script>
 </head>
 
 <body>

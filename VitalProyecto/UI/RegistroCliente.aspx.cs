@@ -160,8 +160,8 @@ namespace UI
                 cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
                 if (cliente_creado)
                 {
-                    
-                    mostrarAlerta("Cliente y cuenta registrados correctamente", true);
+					ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
+					//mostrarAlerta("Cliente y cuenta registrados correctamente", true);
                 }
                 else
                 {
@@ -195,7 +195,8 @@ namespace UI
 
                     cliente_creado = new ManejadorCliente().registrarClienteBL(cliente);
                         if (cliente_creado){
-                        mostrarAlerta("Cliente registrado correctamente", true);
+						ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
+						//mostrarAlerta("Cliente registrado correctamente", true);
                        
                         }else{
                         mostrarAlerta("Error en registro de cliente", false);

@@ -49,8 +49,8 @@ namespace UI
             }
             else
             {
-					ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
-					limpiarControles();
+				ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
+				limpiarControles();
             }
 			}
         }

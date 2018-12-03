@@ -9,6 +9,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
+		 <script src="js/alertify.min.js"></script>
+	<link rel="stylesheet" href="/css/alertify.min.css" />
+	<link rel="stylesheet" href="/css/semantic.min.css" />
+	<script src="/alertify.js"></script>
+	<script src="/mensaje.js"></script>
+	
+	<script type="text/javascript">
+		function mensaje() {
+			alertify.success("Se han guardado los cambios");
+		}
+	</script>
+		<script type="text/javascript">
+		function error() {
+			alertify.error("Error");
+		}
+	</script>
+
 </asp:Content>
 
 
@@ -129,7 +146,7 @@
                         <br />
                     </div>
                     <div id="div1">
-                        <asp:GridView Width="1070px" ID="grdEjercicios" runat="server" class="table-responsive-lg table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False" OnSelectedIndexChanged="grdEjercicios_SelectedIndexChanged">
+                        <asp:GridView Width="1070px" ID="grdEjercicios" runat="server" class="table-responsive-lg table-bordered text-center" BackColor="Silver" AutoGenerateColumns="False">
                             <Columns>
                                 <asp:TemplateField HeaderText="SELECCIÓN">
                                     <ItemTemplate>
