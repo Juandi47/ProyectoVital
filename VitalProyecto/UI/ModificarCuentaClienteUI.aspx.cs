@@ -71,8 +71,9 @@ namespace UI
                 if (contr.Equals(contra2))
                 {
                     maneja.modificarCliente(cedula, correo, observaciones, Int32.Parse(telefono), contr);
-                    Response.Write("<script>alert('Su perfil ha sido modificado')</script>");
-                }
+					ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
+					//Response.Write("<script>alert('Su perfil ha sido modificado')</script>");
+				}
                 else {
                     ValidadorClaves.Visible = true;
                     //Response.Write("<script>alert('Las contraseñas deben coincidir')</script>");
