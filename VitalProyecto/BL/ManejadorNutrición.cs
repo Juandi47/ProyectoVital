@@ -21,6 +21,23 @@ namespace BL
             return daoClienteNutricion.CrearUsuario(usuario);
         }
 
+        public List<ClienteNutricion> ListaClientes()
+        {
+            List<ClienteNutricion> ListaClient = new List<ClienteNutricion>();
+            List<TOClienteNutricion> listaTO = daoClienteNutricion.ListarCliente();
+            if (listaTO != null)
+            {
+                foreach (TOClienteNutricion cliente in listaTO)
+                {
+                    ListaClient.Add(new ClienteNutricion(cliente.Cedula, cliente.Nombre, cliente.Apellido1, cliente.Apellido2, cliente.Fecha_Nacimiento, cliente.Sexo, cliente.Estado_Civil, cliente.Telefono, cliente.Residencia, cliente.Ocupacion, cliente.FechaIngreso));
+                }
+                return ListaClient;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public Boolean AgregarHistorialMedico(HistorialMedico historial, List<Medicamento> listaMedicamentos)
         {
             List<TOMedicamento> lista = new List<TOMedicamento>();
@@ -189,6 +206,12 @@ namespace BL
 
             return daoClienteNutricion.GuardarSeguimiento(seg, lisSeg,segAnt);
             
+        }
+
+        public void EliminarExpediente(string cedula)
+        {
+            
+            daoClienteNutricion.EliminarExpediente(cedula);
         }
 
     }

@@ -40,12 +40,12 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
-        /// LitSeguimiento control.
+        /// LitConsultar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LitSeguimiento;
+        protected global::System.Web.UI.WebControls.Literal LitConsultar;
     }
 }

@@ -46,7 +46,7 @@ namespace DAO
         public List<TONoticia> CargarNoticias()
         {
             List<TONoticia> ListaNoticia = new List<TONoticia>();
-            string qry = "Select * from Noticia;";
+            string qry = "Select * from Noticia order by Fecha desc;";
             SqlCommand buscar = new SqlCommand(qry, conexion);
             SqlDataReader lector;
 
