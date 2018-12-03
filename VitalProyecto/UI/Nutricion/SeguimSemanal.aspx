@@ -56,7 +56,7 @@
                                 <div class="col-15">
                                     <label class="form-label" for="sCedula">Buscador Historial del Cliente: </label>
                                     <br />
-                                    <asp:TextBox ID="sCedula" runat="server" textMode="Number" placeholder="Cédula del Cliente" Width="250"></asp:TextBox>
+                                    <asp:TextBox ID="sCedula" runat="server" textMode="Number" placeholder="Cédula del Cliente" Width="150" Height="50"></asp:TextBox>
                                 </div>
                                  <div class="col-10">
                                      <p></p>
