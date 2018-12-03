@@ -8,6 +8,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link href="admin_estilos.css" rel="stylesheet" />
+
+	 <script src="js/alertify.min.js"></script>
+	<link rel="stylesheet" href="/css/alertify.min.css" />
+	<link rel="stylesheet" href="/css/semantic.min.css" />
+	<script src="/alertify.js"></script>
+	<script src="/mensaje.js"></script>
+	
+	<script type="text/javascript">
+		function eliminado() {
+			alertify.success("Ejercicio eliminado");
+		}
+	</script>
+
+	<script type="text/javascript">
+		function mensaje() {
+			alertify.success("Ejercicio creado");
+		}
+	</script>
+
 </asp:Content>
 
 
