@@ -38,7 +38,9 @@ namespace UI
             if(!IsPostBack)
             if ( accion != null) {
                     if (accion.Equals("true"))
-                        mostrarAlerta("Cliente modificado correctamente.", true);
+						ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
+
+					//mostrarAlerta("Cliente modificado correctamente.", true);
                    
                 }
                   
@@ -190,9 +192,11 @@ namespace UI
             new ManejadorCliente().eliminarCliente(array[0],array[1]);
             tablaClientes.Rows.Clear();
             cargarListaClientes();
-        }
+			ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "eliminado();", true);
 
-        private void agregarElemento(String id) {
+		}
+
+		private void agregarElemento(String id) {
             cedulasAgregadas.Add(id);
         }
         

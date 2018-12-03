@@ -7,10 +7,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
      <link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen">
-    <script src="js/alertify.min.js"></script>
-
-
-
+    
+	<script src="js/alertify.min.js"></script>
 	<link rel="stylesheet" href="/css/alertify.min.css" />
 	<link rel="stylesheet" href="/css/semantic.min.css" />
 	<script src="/alertify.js"></script>
