@@ -41,7 +41,7 @@ namespace UI
 				}
 				else if (usua.rol.Equals("nutricionista"))
 				{
-					Response.Redirect("~/Nutricion/IngresoNutricion.aspx");
+					Response.Redirect("~/Nutricion/ConsultarNutricion.aspx");
 				}
 
 			}

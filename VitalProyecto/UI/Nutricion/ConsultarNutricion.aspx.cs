@@ -28,8 +28,9 @@ namespace UI.Nutricion
 
         }
 
-        private void CargarLista()
+        private  void CargarLista()
         {
+            LitConsultar.Text = "";
             lista = manejador.ListaClientes();
             if (lista != null)
             {
@@ -41,17 +42,24 @@ namespace UI.Nutricion
                 }
 
             }
-
+            btnAtras.Visible = false;
         }
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            ClienteNutricion cl = lista.Find(x => x.Cedula.Equals(sCedula.Text));
-            if(cl != null)
+            LitConsultar.Text = "";
+            if (sBusqueda.Text != (""))
             {
-                LitConsultar.Text = "<tr><td>" + cl.Nombre + " " + cl.Apellido1 + " " + cl.Apellido2 + "</td>" +
+                foreach (ClienteNutricion cl in lista)
+                {
+                    if (cl.Cedula.Equals(sBusqueda.Text) || cl.Nombre.Equals(sBusqueda.Text) || cl.Apellido1.Equals(sBusqueda.Text))
+                    {
+                        LitConsultar.Text += "<tr><td>" + cl.Nombre + " " + cl.Apellido1 + " " + cl.Apellido2 + "</td>" +
                         "<td><a \"href=\"#\" onclick=\"Ver_Click(" + cl.Cedula + ")\" id=\"btnVer\">Ver</a></td>" +
                          "<td><a \"href=\"#\" onclick=\"Eliminar_Click(" + cl.Cedula + ")\" id=\"btnVer\">Eliminar</a></td></tr>";
+                    }
+                }
             }
+            btnAtras.Visible=true;
         }
 
         [System.Web.Services.WebMethod]
@@ -104,7 +112,18 @@ namespace UI.Nutricion
         public static void EliminarCliente(string ced)
         {
             manejador.EliminarExpediente(ced);
+            ConsultarNutricion c = new ConsultarNutricion();
+            c.CargarLista();
         }
-        
+
+        protected void btnAtras_Click(object sender, EventArgs e)
+        {
+            CargarLista();
+        }
+
+        protected void timerTest_Tick(object sender, EventArgs e)
+        {
+            Fecha.Text = "Fecha: " + DateTime.Now;
+        }
     }
 }
