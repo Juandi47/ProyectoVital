@@ -8,6 +8,28 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
      <link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen">
     <script src="js/alertify.min.js"></script>
+
+
+
+	<link rel="stylesheet" href="/css/alertify.min.css" />
+	<link rel="stylesheet" href="/css/semantic.min.css" />
+	<script src="/alertify.js"></script>
+	<script src="/mensaje.js"></script>
+
+	<script type="text/javascript">
+		function mensaje(){	
+			alertify.success("El expediente ha sido actualizado");     
+		}
+	</script>
+
+		<script type="text/javascript">
+		function error(){	
+			alertify.error("El expediente no se ha podido actualizar");     
+		}
+	</script>
+
+
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">

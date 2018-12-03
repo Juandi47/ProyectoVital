@@ -44,16 +44,16 @@ namespace UI
             if (t == false)
             {
 				
-				Response.Write("<script language=\"JavaScript\" type=\"text / JavaScript\">alertify.notify('No se pudo realizar la acción', 'error', 5, null); </script>");
+				ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "error();", true);
                 limpiarControles();
             }
             else
             {
-                Response.Write("<script language=\"JavaScript\" type=\"text / JavaScript\">alertify.notify('Registro almacenado correctamente', 'success', 5, null); </script>");
-                limpiarControles();
+					ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
+					limpiarControles();
             }
 			}
-		}
+        }
 
 
         private void limpiarControles()
