@@ -109,6 +109,7 @@
     <Content Include="images\a.jpg" />
     <Content Include="images\b.jpg" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\banner_admin01.jpg" />
     <Content Include="images\c.jpg" />
     <Content Include="images\cerrado.jpg" />
     <Content Include="images\d.jpg" />
@@ -385,7 +386,6 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="DiagramaUI.cd" />
     <Content Include="Nutricion\NutricionMaster.Master" />
     <None Include="packages.config" />
     <Content Include="Principal.Master" />
