@@ -19,10 +19,10 @@ namespace UI.Nutricion
         private static decimal GEBMenStat = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (new ControlSeguridad().validarClieNutri() == true)
-            {
-                Response.Redirect("~/IniciarSesion.aspx");
-            }
+            //if (new ControlSeguridad().validarClieNutri() == true)
+            //{
+            //    Response.Redirect("~/IniciarSesion.aspx");
+            //}
 
             if (!IsPostBack)
             {
