@@ -84,11 +84,13 @@
     <Content Include="Cliente\asistencia_page0.html" />
     <Content Include="Cliente\js\html5-qrcode.js" />
     <Content Include="Cliente\js\jquery-qrcode.js" />
+    <Content Include="css\alertify.min.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
     <Content Include="css\ie\v8.css" />
     <Content Include="css\pikaday.css" />
+    <Content Include="css\semantic.min.css" />
     <Content Include="css\site.css" />
     <Content Include="css\skel-noscript.css" />
     <Content Include="css\skel.css" />
@@ -121,6 +123,7 @@
     <Content Include="InformacionAdministrador.aspx" />
     <Content Include="IniciarSesion.aspx" />
     <Content Include="js\alertify.js" />
+    <Content Include="js\alertify.min.js" />
     <Content Include="js\init.js" />
     <Content Include="js\jquery-1.4.1.min.js" />
     <Content Include="js\jquery.dropotron.min.js" />
