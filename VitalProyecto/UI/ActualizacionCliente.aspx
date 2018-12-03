@@ -12,8 +12,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
 
-    <h2 style="text-align:center">Actualización de cliente</h2>
-
+	 <asp:Label ID="labelTitulo" runat="server" CssClass="title">Actualización de clientes:</asp:Label>
+		<br />
+	<br />
     <div class="form-container" >
 
         <form id="form1" runat="server">
@@ -23,54 +24,47 @@
 					<div class="col-md-6">
 						<br /><br />
 						Cédula
-						<asp:TextBox ID="txtCed" runat="server" TextMode="Number"></asp:TextBox>
-						<br />
-						Frecuencia cardiaca
-						<asp:TextBox ID="tfrecCard" runat="server" BackColor="White" Height="10px" Width="180px" BorderColor="Silver"></asp:TextBox>
-						<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-						Peso(Kg)
-						<asp:TextBox ID="tPeso" runat="server" TextMode="Number"></asp:TextBox>
-						&nbsp;<br />
-						<br />
-						Porcentaje grasa(%)<asp:TextBox ID="tpercentGrasa" runat="server" TextMode="Number"></asp:TextBox>
-						<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<br />
-						IMC
-						<asp:TextBox ID="tImc" runat="server" TextMode="Number"></asp:TextBox>
-						<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<br />
-                        Cintura(cm)
-						<asp:TextBox ID="tcintura" runat="server" TextMode="Number"></asp:TextBox>
+						<asp:TextBox BackColor="White" class="form-control" ID="txtCed" runat="server" Width="500px"></asp:TextBox>
+						<asp:RequiredFieldValidator ID="rfCed" runat="server" ErrorMessage="Campo Obligatorio" ControlToValidate="txtCed"></asp:RequiredFieldValidator>
+						<asp:Label ID="lbCedMala" runat="server" ForeColor="#FF3300"></asp:Label>
+						<br />Frecuencia cardiaca
+						<asp:TextBox BackColor="White" ID="tfrecCard" class="form-control" runat="server" Width="500px"></asp:TextBox>
+						<asp:RequiredFieldValidator ID="rfFrec" runat="server" ControlToValidate="tfrecCard" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<br />Peso(Kg)
+						<asp:TextBox class="form-control" ID="tPeso" TextMode="Number" runat="server" Width="500px"></asp:TextBox>
+						<asp:RequiredFieldValidator ID="rfPeso" runat="server" ControlToValidate="tPeso" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<br />Porcentaje grasa(%)
+						<asp:TextBox class="form-control" ID="tpercentGrasa" runat="server" TextMode="Number" Width="500px"></asp:TextBox>
+						<asp:RequiredFieldValidator ID="rfGrasa" runat="server" ControlToValidate="tpercentGrasa" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<br />IMC
+						<asp:TextBox class="form-control" ID="tImc" runat="server" TextMode="Number" Width="500px"></asp:TextBox>
+						
+						<asp:RequiredFieldValidator ID="rfimc" runat="server" ControlToValidate="tImc" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						
 						<br />
 					</div>
 
 					<div class="col-md-6">
-						<br /><br /><br />
-						&nbsp;<br />
-						Abdomen(cm)
-						<asp:TextBox ID="tabdomen" runat="server" TextMode="Number"></asp:TextBox>
-						<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<br />
-						Cadera(cm)<asp:TextBox ID="tCadera" runat="server" TextMode="Number"></asp:TextBox>
-						<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<br />
-						Muslo(cm)<asp:TextBox ID="tMuslo" runat="server" TextMode="Number"></asp:TextBox>
-						<br />
-						&nbsp;&nbsp;
-						<br />
-						Estatura(cm)<asp:TextBox ID="tEstatura" runat="server" TextMode="Number"></asp:TextBox>
+						<br /><br />
+						Cintura(cm)
+						<asp:TextBox class="form-control" ID="tcintura" runat="server" TextMode="Number" Width="500px"></asp:TextBox>
+						<asp:RequiredFieldValidator ID="rfCint" runat="server" ControlToValidate="tcintura" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<br />Abdomen(cm)
+						<asp:TextBox ID="tabdomen" runat="server" TextMode="Number" Width="500px" class="form-control"></asp:TextBox>
+						<asp:RequiredFieldValidator ID="rfAbdom" runat="server" ControlToValidate="tabdomen" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<br />Cadera(cm)<asp:TextBox ID="tCadera" runat="server" TextMode="Number" Width="500px" class="form-control"></asp:TextBox>
+						<asp:RequiredFieldValidator ID="rfCad" runat="server" ControlToValidate="tCadera" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<br />Muslo(cm)<asp:TextBox ID="tMuslo" runat="server" TextMode="Number" Width="500px" class="form-control"></asp:TextBox>
+						<asp:RequiredFieldValidator ID="rfMuslo" runat="server" ControlToValidate="tMuslo" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
+						<br />Estatura(cm)<asp:TextBox ID="tEstatura" runat="server" TextMode="Number" Width="500px" class="form-control"></asp:TextBox>
+						<asp:RequiredFieldValidator ID="rfEst" runat="server" ControlToValidate="tEstatura" ErrorMessage="Campo Obligatorio"></asp:RequiredFieldValidator>
 						<br />
 					</div>
 				</div>
 			</div>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3"></div>
+					<div class="col-md-4"></div>
 					<div class="col-md-4">
 						<br /><br /><br />
 						<asp:Button id="btnAñadirExpediente" Text="Añadir a expediente" runat="server" OnClick="btnAñadirExpediente_Click" Height="51px" Width="216px" Font-Size="Small"/>

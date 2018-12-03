@@ -32,6 +32,8 @@
         }
     </style>
 
+		<link rel="stylesheet" href="css/style.css" />
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
     <div class="container">

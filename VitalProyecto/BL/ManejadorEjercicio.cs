@@ -81,25 +81,13 @@ namespace BL
             return lista;
         }
 
-        public List<HojaEjercicio> buscarEjercicio(String ejercicio)
+        public Boolean buscarEjercicio(String ejercicio)
         {
             DAORutina dao = new DAORutina();
-
-            List<HojaEjercicio> lista = new List<HojaEjercicio>();
-
-            List<TOEjercicio> to = dao.buscarEjercicio(ejercicio);
-
-            foreach (TOEjercicio x in to)
-            {
-                HojaEjercicio hojaEjercicio = new HojaEjercicio();
-                hojaEjercicio.Ejercicio = x.Nombre;
-
-                lista.Add(hojaEjercicio);
-            }
-
-
-            return lista;
+            return dao.ExistenciaEjercicio(ejercicio);
         }
+
+        
 
     }
 }

@@ -47,8 +47,17 @@
         }
 
     </style>
-    <h1>Listado de clientes:</h1>
+	 <asp:Label ID="labelTitulo" runat="server" CssClass="title">Listado de clientes:</asp:Label>
+	<br />
+	<br />
+	<div class="form-container">
+			<br />
+	<br />
     <form runat="server" class="container">
     <asp:Table ID="TablaClientes" runat="server" CssClass="table-responsive tab"></asp:Table>
     </form>
+		</div>
+	<div>
+
+	</div>
 </asp:Content>

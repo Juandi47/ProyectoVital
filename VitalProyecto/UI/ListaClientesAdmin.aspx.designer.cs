@@ -13,15 +13,6 @@ namespace UI {
     public partial class ListaClientesAdmin {
         
         /// <summary>
-        /// labelAlerta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelAlerta;
-        
-        /// <summary>
         /// labelTitulo control.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label labelTitulo;
+        
+        /// <summary>
+        /// labelAlerta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelAlerta;
         
         /// <summary>
         /// txbFiltrar control.

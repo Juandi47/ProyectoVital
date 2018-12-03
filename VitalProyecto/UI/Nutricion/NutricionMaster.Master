@@ -21,9 +21,9 @@
     <link rel="stylesheet" href="styleNutri.css" />
     <link href="/admin_estilos.css" rel="stylesheet" />
     <noscript>
-        <link rel="stylesheet" href="../css/skel.css" />
+       <%-- <link rel="stylesheet" href="../css/skel.css" />
         <link rel="stylesheet" href="../css/style.css" />
-        <link rel="stylesheet" type="text/css" href="../css/admin_estilos.css" />
+        <link rel="stylesheet" type="text/css" href="../css/admin_estilos.css" />--%>
     </noscript>
     
 </head>
@@ -35,7 +35,7 @@
       <div class="container">
             <!-- Logo -->
             <div id="logo">
-                <h1>Vital</h1>
+                <h1><a style="text-decoration: none;">Vital</a></h1>
             </div>
              
                
@@ -72,13 +72,9 @@
     </div>
     <br>
     <br>
-    <div class="footer">
-        Vital San Ramón, mas que un gimnasio es tu espacio.  Contáctanos: (+506) 2445-xxxx
-    </div>
-
-
-    <footer class="footer" style="position: relative">
-        <h1 class="title">Gimnasio Vital y Nutrición</h1>
+   <footer class="footer" style="position: relative">
+		<h1 class="title">Gimnasio Vital y Nutrición</h1>
+        Vital San Ramón, mas que un gimnasio es tu espacio.
     </footer>
 
     <%-- </form>--%>

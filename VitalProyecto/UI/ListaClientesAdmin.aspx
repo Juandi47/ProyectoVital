@@ -37,13 +37,18 @@
     <%--<div class="col-md-1"></div>
     <div class="col-md-10">--%>
 
-    <div class="container" runat="server">
-       
+	 <asp:Label ID="labelTitulo" runat="server" CssClass="title">Lista de clientes:</asp:Label>
+             	<br />
+	<br />
+    <div class="form-container" runat="server">
+       <br /><br />
         <asp:Label ID="labelAlerta" runat="server" CssClass="labelAlerta"></asp:Label>
-        <asp:Label ID="labelTitulo" runat="server" CssClass="title">Lista de clientes:</asp:Label>
-              <form runat="server">
-                  <asp:TextBox runat="server" ID="txbFiltrar" placeholder="Escriba para filtrar"></asp:TextBox>
-                  <asp:Table ID="tablaClientes" CssClass="table-responsive table-bordered text-center" runat="server">
+       
+		<div class="form-container">
+		 <form runat="server">
+                  <asp:TextBox class="form-control" runat="server" ID="txbFiltrar" placeholder="Escriba para filtrar"></asp:TextBox>
+				   <br />
+				   <asp:Table ID="tablaClientes" CssClass="table-responsive table-bordered text-center" runat="server">
                   </asp:Table>
                   <script src="js/jquery.quicksearch.js"></script>
                   <script src="js/jquery-1.4.1.min.js"></script>     
@@ -52,6 +57,6 @@
                           $('input#<%=txbFiltrar.ClientID%>').quicksearch('table#<%=tablaClientes.ClientID%> tbody tr');
                       });</script>
               </form>
-
+			</div>
     </div>
 </asp:Content>

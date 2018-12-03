@@ -15,7 +15,12 @@ namespace UI.Nutricion
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+			if (new ControlSeguridad().validarClieNutri() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+
+			if (!IsPostBack)
             {
                 CargarLista();
             }

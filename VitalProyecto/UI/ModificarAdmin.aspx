@@ -15,78 +15,32 @@
         <div class="form-container">
             <form runat="server">
 
-                 <div class="row">
-                    <div class="col-25">
-                        <label class="form-label" for="tced">Cédula</label>
-                    </div>
-                    <div class="col-75">
-                   <asp:TextBox ID="tced" runat="server"   TextMode="Number" MaskedTextBox="0-000-000" Enabled="false"></asp:TextBox>
-                   </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-25">
-                        <label class="form-label" for="tname">Nombre</label>
-                    </div>
-                    <div class="col-75">
-                        <asp:TextBox ID="tname" runat="server"  placeholder="María"></asp:TextBox>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-25">
-                        <label class="form-label" for="tlname1">Primer apellido</label>
-                    </div>
-                    <div class="col-75">
-                        <asp:TextBox ID="tlname1" runat="server"  placeholder="Arias"></asp:TextBox>
-                    </div>
-                </div>
-
-                 <div class="row">
-                    <div class="col-25">
-                        <label class="form-label" for="tlname2">Segundo apellido</label>
-                    </div>
-                    <div class="col-75">
-                        <asp:TextBox ID="tlname2" runat="server"  placeholder="Rojas"></asp:TextBox>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-25">
-                        <label class="form-label" for="tclave">Clave</label>
-                    </div>
-                    <div class="col-75">
-                        <asp:TextBox ID="tclave" runat="server" TextMode ="Password" placeholder="Ejm: Cla.123"></asp:TextBox>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-25">
-                        <label class="form-label" for="tclave2">Confirme clave </label>
-                    </div>
-                    <div class="col-75">
-                        <asp:TextBox ID="tclave2" runat="server" TextMode ="Password" placeholder="Ejm: Cla.123"></asp:TextBox>
-                    </div>
-                </div>
-
-                  <div class="row">
-                    <div class="col-25">
-                        <label class="form-label" for="temail">Correo</label>
-                    </div>
-                    <div class="col-75">
-                        <asp:TextBox ID="temail" runat="server"  placeholder="Ejm: maria.rojas@gmail.com" TextMode ="Email" Enabled="false" ValidationGroup="AllValidators"></asp:TextBox>
+                <br />
+                   Cédula: <asp:TextBox class="form-control" Width="500px"  ID="tced" runat="server" MaskedTextBox="0-000-000" Enabled="false"></asp:TextBox>
+                  <br />
+                       Nombre: <asp:TextBox class="form-control" Width="500px" ID="tname" runat="server"  placeholder="María"></asp:TextBox>
+                   <br />
+                        Primer apellido: <asp:TextBox class="form-control" Width="500px" ID="tlname1" runat="server"  placeholder="Arias"></asp:TextBox>
+                   <br />
+                        Segundo apellido: <asp:TextBox class="form-control" Width="500px" ID="tlname2" runat="server"  placeholder="Rojas"></asp:TextBox>
+                  <br />
+                       Contraseña: <asp:TextBox class="form-control" Width="500px" ID="tclave" runat="server" TextMode ="Password" placeholder="Ejm: Cla.123"></asp:TextBox>
+                    <br />
+                      Confirmar contraseña: <asp:TextBox class="form-control" Width="500px" ID="tclave2" runat="server" TextMode ="Password" placeholder="Ejm: Cla.123"></asp:TextBox>
+                   <br />
+                       Correo: <asp:TextBox class="form-control" Width="500px" ID="temail" runat="server"  placeholder="Ejm: maria.rojas@gmail.com" TextMode ="Email" Enabled="false" ValidationGroup="AllValidators"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="temail" Display="Dynamic" ErrorMessage="Se requiere la dirección de correo electrónico" ValidationGroup="AllValidators">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="temail" Display="Dynamic" ErrorMessage="Las direcciones de correo electrónico deben estar en el formato nombre@dominio.xyz." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="AllValidators">Formato no válido.</asp:RegularExpressionValidator>
-                    </div>
+                <br />
                       <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ValidationGroup="AllValidators" />
-                </div>
-                <asp:Button id="btnModificar" Text="Modificar" runat="server" OnClick="BtnModificar_Click"/>
-                
+             <br />
+                <asp:Button id="btnModificar" Text="Modificar" runat="server" OnClick="BtnModificar_Click" Font-Size="Small" />
+                <br /><br />
             </form>
-
+			<br />
         </div>
             
-                    
+            <br />        
     </div>
 
 </asp:Content>

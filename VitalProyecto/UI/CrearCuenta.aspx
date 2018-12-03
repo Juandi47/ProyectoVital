@@ -92,7 +92,10 @@
 
     </form>
 
-	 
+	   <footer class="footer" style="position: relative">
+		<h1 class="title">Gimnasio Vital y Nutrición</h1>
+        Vital San Ramón, mas que un gimnasio es tu espacio.
+    </footer>
 
 </body>
 

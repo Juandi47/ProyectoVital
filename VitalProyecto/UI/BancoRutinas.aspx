@@ -31,11 +31,11 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
 
+					<br /><br />
+                    <asp:Button ID="BtnCrearRutina" Font-Size="Small" Width="250px" Height="55px" runat="server" Text="Crear Rutina" OnClick="BtnCrearRutina_Click"/>
 
-                    <asp:Button ID="BtnCrearRutina" Font-Size="Medium" Width="250px" Height="55px" runat="server" Text="Crear Rutina" OnClick="BtnCrearRutina_Click" class="button" BackColor="darkolivegreen" />
-
-                    <asp:Button ID="btnRutinaAleatoria" Font-Size="Medium" Width="250px" Height="55px" runat="server" Text="Rutina Aleatoria" OnClick="btnRutinaAleatoria_Click" class="button" BackColor="darkolivegreen" />
-
+                    <asp:Button ID="btnRutinaAleatoria" Font-Size="Small" Width="250px" Height="55px" runat="server" Text="Rutina Aleatoria" OnClick="btnRutinaAleatoria_Click"/>
+					<br /><br /><br />
                     <asp:Table ID="Rutinas" runat="server" class="table table-bordered text-center table-hover ">
                     </asp:Table>
 

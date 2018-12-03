@@ -21,10 +21,10 @@ namespace UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-			//if (new ControlSeguridad().validarAdmin() == true)
-			//{
-			//	Response.Redirect("~/IniciarSesion.aspx");
-			//}
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
 
 			//if (!IsPostBack)
 			//    Session["lista"] = cedulasAgregadas;

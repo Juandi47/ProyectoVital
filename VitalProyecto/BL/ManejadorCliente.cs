@@ -63,25 +63,40 @@ namespace BL
             return cliente;
         }
 
-        //public Cliente verificarClienteBLMod(Cliente cliente)
-        //{
+		public Boolean verificarCliente(string ced)
+		{
 
-        //    Boolean exist = clienteDAO.verificarCliente(cliente.Cedula);
+			Boolean exist = clienteDAO.verificarCliente(ced);
 
-        //    if (!exist)
-        //    {
-        //        TOCliente clienteTO = clienteDAO.filtrarDatosCliente(cliente.Cedula);
-        //        cliente = parsearClienteTO(clienteTO);
-        //    }
-        //    else
-        //    {
-        //        cliente.Cedula = "!";
-        //    }
-        //    return cliente;
-        //}
+			if (!exist)
+			{
+				return false;
+			}
+			else {
+				return true;
+			}
+			
+		}
+
+		//public Cliente verificarClienteBLMod(Cliente cliente)
+		//{
+
+		//    Boolean exist = clienteDAO.verificarCliente(cliente.Cedula);
+
+		//    if (!exist)
+		//    {
+		//        TOCliente clienteTO = clienteDAO.filtrarDatosCliente(cliente.Cedula);
+		//        cliente = parsearClienteTO(clienteTO);
+		//    }
+		//    else
+		//    {
+		//        cliente.Cedula = "!";
+		//    }
+		//    return cliente;
+		//}
 
 
-        public Boolean registrarClienteBL(Cliente c) {
+		public Boolean registrarClienteBL(Cliente c) {
 
             if (c.Cedula.Equals("") || c.Nombre.Equals("")) {
                 return false;
