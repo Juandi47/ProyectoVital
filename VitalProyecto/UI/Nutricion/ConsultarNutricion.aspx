@@ -68,13 +68,13 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-75">
-                                    <div id="div1">
+                                
+                                    <div class="col-60" id="div1">
                                         <table>
                                             <asp:Literal ID="LitConsultar" runat="server"></asp:Literal>
                                         </table>
                                     </div>
-                                </div>
+                               
                                 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
                                 <script type="text/javascript">   
                                     function Ver_Click(num) {
@@ -117,8 +117,8 @@
 
                             <%--</div>
                             <div class="row">--%>
-                                <div class="col-25">
-                                    <label class="form-label" for ="lblVer"></label>
+                                <div class="col-40">
+                                    <label class="form-label" for ="lblVer" style="width: 400px; height:300px"></label>
                                 </div>
                             </div>
                         </div>
