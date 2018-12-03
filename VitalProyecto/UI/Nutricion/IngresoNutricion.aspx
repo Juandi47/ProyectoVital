@@ -15,7 +15,7 @@
         <form runat="server">
             <h2>Crear Clientes</h2>
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#DatpsPersonales">Datos Personales</a></li>
+                <li class="active"><a data-toggle="tab" href="#DatosPersonales">Datos Personales</a></li>
                 <li><a data-toggle="tab" href="#HistorialMedico">Historial Médico</a></li>
                 <li><a data-toggle="tab" href="#HabitosAlimentarios">Habitos Alimentarios</a></li>
                 <li><a data-toggle="tab" href="#Antropometría">Antropometría</a></li>
@@ -23,7 +23,7 @@
 
             <div class="tab-content">
                 <%-- <form runat="server">--%>
-                <div id="DatpsPersonales" class="tab-pane fade in active">
+                <div id="DatosPersonales" class="tab-pane fade in active">
                     <div class="container">
                         <h3 class="title">Historial Nutrición Anamnesis</h3>
                         
