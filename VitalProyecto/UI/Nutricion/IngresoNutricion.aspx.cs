@@ -19,10 +19,10 @@ namespace UI.Nutricion
         private static decimal GEBMenStat = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-			if (new ControlSeguridad().validarClieNutri() == true)
-			{
-				Response.Redirect("~/IniciarSesion.aspx");
-			}
+			//if (new ControlSeguridad().validarClieNutri() == true)
+			//{
+			//	Response.Redirect("~/IniciarSesion.aspx");
+			//}
 
 			if (!IsPostBack)
             {
@@ -331,6 +331,27 @@ namespace UI.Nutricion
                     }
                 }
             }
+        }
+
+        protected void timerTest_Tick(object sender, EventArgs e)
+        {
+            DateTime timeUtc = DateTime.UtcNow;
+            try
+            {
+                TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+                DateTime cstTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, cstZone);
+                cstTime = cstTime.AddHours(-1);
+                Fecha.Text = "Fecha: " + cstTime;
+            }
+            catch (TimeZoneNotFoundException)
+            {
+                Response.Write("<script>alert('El registro no define la zona CST.')</script>");
+            }
+            catch (InvalidTimeZoneException)
+            {
+                Response.Write("<script>alert('El registro de datos en la zona CST ha sido corrupta .')</script>");
+            }
+            
         }
     }
 }

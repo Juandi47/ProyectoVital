@@ -192,26 +192,56 @@ namespace DAO
 
         public bool AgregarSeguimiento(TOSeguimientoSemanal tOSeguimientoSemanal)
         {
-            String query = "Insert into SeguimientoSemanal values(@fech,@peso,@orej,@ejercic,@ced);";
+            String query = "Insert into SeguimientoSemanal values(@sesion,@fech,@peso,@orej,@ejercic,@ced);";
             SqlCommand cmd = new SqlCommand(query, conexion);
-
+            String query2 = "Select max(Sesion) as 'Sesion' from SeguimientoSemanal where Cedula = " + tOSeguimientoSemanal.Cedula;
+            SqlCommand cmd2 = new SqlCommand(query2, conexion);
+            SqlDataReader lector;
             try
             {
-                //Asignacion de parametros.
-                cmd.Parameters.AddWithValue("@fech", tOSeguimientoSemanal.Fecha);
-                cmd.Parameters.AddWithValue("@peso", tOSeguimientoSemanal.Peso);
-                cmd.Parameters.AddWithValue("@orej", tOSeguimientoSemanal.Oreja);
-                cmd.Parameters.AddWithValue("@ejercic", tOSeguimientoSemanal.Ejercicio);
-                cmd.Parameters.AddWithValue("@ced", tOSeguimientoSemanal.Cedula);
-                //Validacion del estado de la conexion.
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();
                 }
+                int ses = 0;
+                lector = cmd2.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    lector.Read();
+                    string t = lector["Sesion"].ToString();
+                    if (lector["Sesion"].ToString().Equals(""))
+                    {
+                        ses = 1;
+                        conexion.Close();
+                    }
+                    else
+                    {
+                        ses = Int32.Parse(lector["Sesion"].ToString()) + 1;
+                        conexion.Close();
+                    }
+                }
+                else
+                {
+                    conexion.Close();
+                }
+                
+                    //Asignacion de parametros.
+                    cmd.Parameters.AddWithValue("@sesion", ses);
+                    cmd.Parameters.AddWithValue("@fech", tOSeguimientoSemanal.Fecha);
+                    cmd.Parameters.AddWithValue("@peso", tOSeguimientoSemanal.Peso);
+                    cmd.Parameters.AddWithValue("@orej", tOSeguimientoSemanal.Oreja);
+                    cmd.Parameters.AddWithValue("@ejercic", tOSeguimientoSemanal.Ejercicio);
+                    cmd.Parameters.AddWithValue("@ced", tOSeguimientoSemanal.Cedula);
+                    //Validacion del estado de la conexion.
+                    if (conexion.State != ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
 
-                cmd.ExecuteNonQuery();
-
-                return true;
+                    cmd.ExecuteNonQuery();
+                conexion.Close();
+                    return true;
+                            
             }
             catch (SqlException)
             {

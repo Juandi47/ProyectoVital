@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/css/tabla.css" />
+    <link rel="stylesheet" href="css/tabla.css" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
@@ -24,30 +24,36 @@
                     <div class="container">
                         <h3>Seguimiento Mensual:</h3>
                         <div class="form-container">
-                            <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
-                            <br />
+                           <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+                            <asp:ScriptManager ID="sp" runat="server"></asp:ScriptManager>
+                            <asp:Timer ID="timerTest" runat="server" Interval="1000" OnTick="timerTest_Tick"></asp:Timer>
+                            <asp:UpdatePanel ID="up" runat="server" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
+                                </ContentTemplate>
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="timerTest" EventName="tick" />
+                                </Triggers>
+                            </asp:UpdatePanel>
                             <br />
                             <div class="row">
                                 <div class="col-10">
-                                    <label class="form-label" for="tCedula">Cedula</label>
-                                    <asp:TextBox ID="tCedula" runat="server" TextMode="Number" placeholder="Cédula" Width="100"></asp:TextBox>
+                                    <label class="form-label" for="tCedula">Cedula</label><br />
+                                    <asp:TextBox ID="tCedula" runat="server" TextMode="Number" placeholder="Cédula" Width="150"></asp:TextBox>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-10">
                                     <label class="form-label" for="tDiasEjer">Días de ejercicio semanales:</label>
                                     <asp:TextBox ID="tDiasEjer" runat="server" Width="150"></asp:TextBox>
                                 </div>
-                                <div class="col-15">
+                                <div class="col-10">
                                     <label class="form-label" for="tComExtras">Comidas extras:</label>
                                     <asp:TextBox ID="tComExtras" runat="server" Width="150"></asp:TextBox>
                                 </div>
-                                <div class="col-15">
-                                    <label class="form-label" for="tNivelAnsiedad">Niveles de Ansiedad semanal y tiempo de comida en donde lo siente                   </label>
-                                    <asp:TextBox ID="tNivelAnsiedad" runat="server"  Width="150"></asp:TextBox>
+                                <div class="col-10">
+                                    <label class="form-label" for="tNivelAnsiedad">Niveles de Ansiedad semanal y tiempo de comida en donde lo siente</label>
+                                    <asp:TextBox ID="tNivelAnsiedad" runat="server"  Width="250"></asp:TextBox>
                                 </div>
                             </div>
-                            <br />
                             <br />
                             <h4>Recordatorio 24 Horas</h4>
                             <div class="row">
@@ -59,15 +65,18 @@
                                 </div>
                                 <div class="col-10">
 
-                                    <asp:Button ID="r24Agrega" Text="Agregar" runat="server" OnClick="r24Agrega_Click" />
+                                    <asp:Button ID="r24Agrega" Text="Agregar" runat="server" OnClick="r24Agrega_Click" Font-Size="X-Small"/>
 
                                 </div>
                             </div>
 
                             <div class="row">
-                                <table>
+                                <div class="col-75">
+                                     <table>
                                     <asp:Literal ID="r24Tabla" runat="server"></asp:Literal>
                                 </table>
+                                </div>
+                               
                             </div>
                             <br />
                             <br />
@@ -82,9 +91,6 @@
                     <div class="container">
                         <div class="row">
                             <h3>Antropometría:</h3>
-                            <div class="col-25">
-                                <asp:Button ID="btnCrear" Text="Crear" runat="server" OnClick="btnCrear_Click" />
-                            </div>
                         </div>
                         <div class="form-container">
 
@@ -284,19 +290,13 @@
                                     <div class="col-35">
                                         <asp:TextBox ID="tObservacion" runat="server"></asp:TextBox>
                                     </div>
-
-
                                 </div>
-
-                                <div class="col-25">
-
-
-                                    
-                                </div>
-
                             </div>
-
-
+                            <div class="row">
+                                <div class="col-25">
+                                <asp:Button ID="btnCrear" Text="Crear" runat="server" OnClick="btnCrear_Click" Font-Size="Smaller"/>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>

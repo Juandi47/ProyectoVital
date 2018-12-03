@@ -28,7 +28,20 @@
                         <h3 class="title">Historial Nutrición Anamnesis</h3>
                         
                         <div class="form-container">
-                            <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
+                            
+
+                             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+                            <asp:ScriptManager ID="sp" runat="server"></asp:ScriptManager>
+                            <asp:Timer ID="timerTest" runat="server" Interval="1000" OnTick="timerTest_Tick"></asp:Timer>
+                            <asp:UpdatePanel ID="up" runat="server" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
+                                </ContentTemplate>
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="timerTest" EventName="tick" />
+                                </Triggers>
+                            </asp:UpdatePanel>
+
                             <h3>Datos Personales:</h3>
                             <div class="row">
                                 <div class="col-10">

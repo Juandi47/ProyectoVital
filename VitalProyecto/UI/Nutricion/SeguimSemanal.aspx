@@ -40,17 +40,32 @@
 
                         <div class="form-container">
                             <h3>Seguimiento de pesaje semanal:</h3>
-                            <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
+                            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+                            <asp:ScriptManager ID="sp" runat="server"></asp:ScriptManager>
+                            <asp:Timer ID="timerTest" runat="server" Interval="1000" OnTick="timerTest_Tick"></asp:Timer>
+                            <asp:UpdatePanel ID="up" runat="server" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
+                                </ContentTemplate>
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="timerTest" EventName="tick" />
+                                </Triggers>
+                            </asp:UpdatePanel>
+                            <br />
                             <div class="row">
-                                <div class="col-10">
-                                    <label class="form-label" for="sCedula">Ingrese la Cedula del Cliente: </label>
-                                    <asp:TextBox ID="sCedula" runat="server" TextMode="Number" placeholder="Cédula" Width="100"></asp:TextBox>
-                                    <asp:Button ID="btnBuscar" Text="Buscar" runat="server" OnClick="btnBuscar_Click" />
+                                <div class="col-15">
+                                    <label class="form-label" for="sCedula">Buscador Historial del Cliente: </label>
+                                
+                                    <asp:TextBox ID="sCedula" runat="server"  placeholder="Cédula del Cliente" Width="250"></asp:TextBox>
+                                </div>
+                                 <div class="col-10">
+                                     <p></p>
+                                    <asp:Button ID="btnBuscar" Text="Buscar" runat="server"  OnClick="btnBuscar_Click" Font-Size="X-Small" />
                                 </div>
                             </div>
                             <div class="row">
 
-                                <div class="col-10">
+                                <div class="col-15">
                                     <label class="form-label" for="sPeso">Peso</label>
                                     <asp:TextBox ID="sPeso" runat="server" placeholder="Peso" Width="150"></asp:TextBox>
                                 </div>
@@ -62,8 +77,9 @@
                                     <label class="form-label" for="sEjercicio">Ejercicio</label>
                                     <asp:TextBox ID="sEjercicio" runat="server" placeholder="Ejercicio" Width="150"></asp:TextBox>
                                 </div>
-                                <div class="col-20">
-                                    <asp:Button ID="btnAgreg" Text="Agregar" runat="server" OnClick="btnAgreg_Click" />
+                                <div class="col-15">
+                                    <p></p>
+                                    <asp:Button ID="btnAgreg" Text="Agregar" runat="server" OnClick="btnAgreg_Click" Font-Size="X-Small"/>
 
                                 </div>
                             </div>

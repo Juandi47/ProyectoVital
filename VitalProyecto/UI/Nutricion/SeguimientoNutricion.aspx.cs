@@ -14,11 +14,11 @@ namespace UI.Nutricion
         ManejadorNutrición manejador = new ManejadorNutrición();
         protected void Page_Load(object sender, EventArgs e)
         {
-			if (new ControlSeguridad().validarClieNutri() == true)
-			{
-				Response.Redirect("~/IniciarSesion.aspx");
-			}
-			if (!IsPostBack)
+            if (new ControlSeguridad().validarClieNutri() == true)
+            {
+                Response.Redirect("~/IniciarSesion.aspx");
+            }
+            if (!IsPostBack)
             {
                 Fecha.Text = "Fecha: " + DateTime.Now;
                 r24Tabla.Text = "<tr><th>Tiempo de Comida</th><th>Descripción</th></tr>";
@@ -114,6 +114,26 @@ namespace UI.Nutricion
             tMuscTronco.Text = string.Empty; tAguaNut.Text = string.Empty;tMasaOsea.Text = string.Empty; tComplexión.Text = string.Empty;
             tEdadMetabolica.Text = string.Empty; tCintura.Text = string.Empty;tAbdomen.Text = string.Empty; tCadera.Text = string.Empty;
             tMuslo.Text = string.Empty;tBrazo.Text = string.Empty;tObservacion.Text = string.Empty;
+        }
+
+        protected void timerTest_Tick(object sender, EventArgs e)
+        {
+            DateTime timeUtc = DateTime.UtcNow;
+            try
+            {
+                TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+                DateTime cstTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, cstZone);
+                cstTime = cstTime.AddHours(-1);
+                Fecha.Text = "Fecha: " + cstTime;
+            }
+            catch (TimeZoneNotFoundException)
+            {
+                Response.Write("<script>alert('El registro no define la zona CST.')</script>");
+            }
+            catch (InvalidTimeZoneException)
+            {
+                Response.Write("<script>alert('El registro de datos en la zona CST ha sido corrupta .')</script>");
+            }
         }
     }
 

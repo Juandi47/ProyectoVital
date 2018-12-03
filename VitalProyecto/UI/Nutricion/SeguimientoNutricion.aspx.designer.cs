@@ -13,6 +13,33 @@ namespace UI.Nutricion {
     public partial class SeguimientoNutricion {
         
         /// <summary>
+        /// sp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager sp;
+        
+        /// <summary>
+        /// timerTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer timerTest;
+        
+        /// <summary>
+        /// up control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up;
+        
+        /// <summary>
         /// Fecha control.
         /// </summary>
         /// <remarks>
@@ -92,15 +119,6 @@ namespace UI.Nutricion {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal r24Tabla;
-        
-        /// <summary>
-        /// btnCrear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrear;
         
         /// <summary>
         /// tTalla control.
@@ -371,5 +389,14 @@ namespace UI.Nutricion {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tObservacion;
+        
+        /// <summary>
+        /// btnCrear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCrear;
     }
 }

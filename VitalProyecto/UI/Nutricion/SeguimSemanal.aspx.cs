@@ -14,14 +14,11 @@ namespace UI.Nutricion
         ManejadorNutrición manejadorNutrición = new ManejadorNutrición();
         protected void Page_Load(object sender, EventArgs e)
         {
-			if (new ControlSeguridad().validarClieNutri() == true)
-			{
-				Response.Redirect("~/IniciarSesion.aspx");
-			}
-			if (IsPostBack != true)
+            if (new ControlSeguridad().validarClieNutri() == true)
             {
-                Fecha.Text = "Fecha: " + DateTime.Now;
+                Response.Redirect("~/IniciarSesion.aspx");
             }
+
         }
 
         protected void btnAgreg_Click(object sender, EventArgs e)
@@ -35,9 +32,22 @@ namespace UI.Nutricion
                 bool creado = manejadorNutrición.AgregarSeguimiento(new SeguimientoSemanal(DateTime.Now, Convert.ToDecimal(sPeso.Text), sOreja.Text, sEjercicio.Text, sCedula.Text));
                 if (creado)
                 {
-                    LitSeguimiento.Text += "<tr><td>" + (listaSeguimientos[listaSeguimientos.Count-1].Sesion+1) + "</td><td>" + DateTime.Now + "</td><td>" + sPeso.Text + "</td><td>" + sOreja.Text + "</td><td>" + sEjercicio.Text + "</td></tr>";
+                    
+                    if (listaSeguimientos != null)
+                    {
+                        listaSeguimientos.Add(new SeguimientoSemanal(listaSeguimientos[listaSeguimientos.Count - 1].Sesion + 1, DateTime.Now, Convert.ToDecimal(sPeso.Text), sOreja.Text, sEjercicio.Text, sCedula.Text));
+                        LitSeguimiento.Text += "<tr><td>" + (listaSeguimientos[listaSeguimientos.Count - 1].Sesion) + "</td><td>" + DateTime.Now + "</td><td>" + sPeso.Text + "</td><td>" + sOreja.Text + "</td><td>" + sEjercicio.Text + "</td></tr>";
+                    }
+                    else
+                    {
+                        listaSeguimientos.Add(new SeguimientoSemanal(1, DateTime.Now, Convert.ToDecimal(sPeso.Text), sOreja.Text, sEjercicio.Text, sCedula.Text));
+                        LitSeguimiento.Text = "";
+                        LitSeguimiento.Text += "<tr><td>" + 1 + "</td><td>" + DateTime.Now + "</td><td>" + sPeso.Text + "</td><td>" + sOreja.Text + "</td><td>" + sEjercicio.Text + "</td></tr>";
+
+                    }
                 }
             }
+            sCedula.Text = string.Empty; sPeso.Text = string.Empty; sOreja.Text = string.Empty; sEjercicio.Text = string.Empty;
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -59,8 +69,28 @@ namespace UI.Nutricion
                 }
                 else
                 {
-                    LitSeguimiento.Text = "<tr><th>No existen registros de este usuario.</th></tr>";
+                    LitSeguimiento.Text = "<tr><th>No existen Seguimientos Semanales de este usuario.</th></tr>";
                 }
+            }
+        }
+
+        protected void timerTest_Tick(object sender, EventArgs e)
+        {
+            DateTime timeUtc = DateTime.UtcNow;
+            try
+            {
+                TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+                DateTime cstTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, cstZone);
+                cstTime = cstTime.AddHours(-1);
+                Fecha.Text = "Fecha: " + cstTime;
+            }
+            catch (TimeZoneNotFoundException)
+            {
+                Response.Write("<script>alert('El registro no define la zona CST.')</script>");
+            }
+            catch (InvalidTimeZoneException)
+            {
+                Response.Write("<script>alert('El registro de datos en la zona CST ha sido corrupta .')</script>");
             }
         }
     }

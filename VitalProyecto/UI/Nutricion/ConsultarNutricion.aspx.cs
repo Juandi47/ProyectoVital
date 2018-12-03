@@ -15,12 +15,12 @@ namespace UI.Nutricion
         
         protected void Page_Load(object sender, EventArgs e)
         {
-			if (new ControlSeguridad().validarClieNutri() == true)
-			{
-				Response.Redirect("~/IniciarSesion.aspx");
-			}
+            if (new ControlSeguridad().validarClieNutri() == true)
+            {
+                Response.Redirect("~/IniciarSesion.aspx");
+            }
 
-			if (!IsPostBack)
+            if (!IsPostBack)
             {
                 CargarLista();
             }
@@ -66,10 +66,10 @@ namespace UI.Nutricion
         public static string VerDetalleCliente(string ced)
         {
             ClienteNutricion cl = lista.Find(x => x.Cedula.Equals(ced));
-            return "Cedula: " + cl.Cedula + "Nombre: " + cl.Nombre + " " + cl.Apellido1 + " " + cl.Apellido2 + ".<br/>" +
-                "Fecha de Nacimiento: " + cl.Fecha_Nacimiento + "<br/>Edad: " + CalcularCumple(cl.Fecha_Nacimiento) +
-                "<br />Telefono: " + cl.Telefono + "<br />Sexo: " + cl.Sexo + "<br/>Estado Civil: " + cl.Estado_Civil +
-                "<br />Residencia: " + cl.Residencia + "<br/>Ocupacion: " + cl.Ocupacion + "<br/>Fecha de Ingreso: " + cl.FechaIngreso;
+            string t = "Cedula: " + cl.Cedula+ "    Nombre: " + cl.Nombre +" "+ cl.Apellido1 + " " + cl.Apellido2 +  "                Fecha de Nacimiento: " + cl.Fecha_Nacimiento.ToString("ddmmyyyy") + Environment.NewLine + "Edad: " + CalcularCumple(cl.Fecha_Nacimiento) + "                " +
+                "Telefono: " + cl.Telefono +"    "+ "      Sexo: " + cl.Sexo + "     "+ "Estado Civil: " + cl.Estado_Civil + "       " +
+                "Residencia: " + cl.Residencia + "    " + "Ocupacion: " + cl.Ocupacion + "     " + "Fecha de Ingreso: " + cl.FechaIngreso.ToString("ddmmyyyy");
+            return t;
         }
         
        
@@ -123,7 +123,22 @@ namespace UI.Nutricion
 
         protected void timerTest_Tick(object sender, EventArgs e)
         {
-            Fecha.Text = "Fecha: " + DateTime.Now;
+            DateTime timeUtc = DateTime.UtcNow;
+            try
+            {
+                TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+                DateTime cstTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, cstZone);
+                cstTime = cstTime.AddHours(-1);
+                Fecha.Text = "Fecha: " + cstTime;
+            }
+            catch (TimeZoneNotFoundException)
+            {
+                Response.Write("<script>alert('El registro no define la zona CST.')</script>");
+            }
+            catch (InvalidTimeZoneException)
+            {
+                Response.Write("<script>alert('El registro de datos en la zona CST ha sido corrupta .')</script>");
+            }
         }
     }
 }
