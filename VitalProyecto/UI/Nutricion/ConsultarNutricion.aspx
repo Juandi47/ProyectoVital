@@ -7,6 +7,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/tabla.css" />
+
+    <style>
+        #div1 {
+            overflow: scroll;
+            height: 250px;
+            width: 75%;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: inherit;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
 		<link rel="stylesheet" href="css/style.css" />
 
 </asp:Content>
@@ -21,18 +46,62 @@
                             <asp:Label ID="Fecha" Text="Fecha:" runat="server"></asp:Label>
                             <div class="row">
                                 <div class="col-10">
-                                    <label class="form-label" for="sCedula">Ingrese la Cedula del Cliente: </label>
+                                    <label class="form-label" for="sCedula">Busqueda por Cedula: </label>
                                     <asp:TextBox ID="sCedula" runat="server" TextMode="Number" placeholder="Cédula" Width="100"></asp:TextBox>
                                     <asp:Button ID="btnBuscar" Text="Buscar" runat="server" OnClick="btnBuscar_Click" />
                                 </div>
                             </div>
                             <div class="row">
-                                <br />
-                                <br />
+                                 <div class="col-75">
                                 <div id="div1">
                                     <table>
-                                        <asp:Literal ID="LitSeguimiento" runat="server"></asp:Literal>
+                                        <asp:Literal ID="LitConsultar" runat="server"></asp:Literal>
                                     </table>
+                                </div>
+                                     </div>
+                                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                                <script type="text/javascript">   
+                                    function Ver_Click(num) {
+                                        $.ajax({
+                                            type: "POST",
+                                            url: '../Nutricion/ConsultarNutricion.aspx/VerDetalleCliente',
+                                            data: '{ced:' + num + '}',
+                                            contentType: "application/json; charset=utf-8",
+                                            dataType: "json",
+                                            async: true,
+                                            success: function (info) {
+                                                alert(""+info.d);
+                                               $('#lblVer').text(info.d);},
+                                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                                alert("Acción Denegada");
+                                            }
+                                        });
+                                    }
+                                </script>
+                                <script type="text/javascript">   
+                                    function Eliminar_Click(num) {
+                                        $.ajax({
+                                            type: "POST",
+                                            url: '../Nutricion/ConsultarNutricion.aspx/EliminarCliente',
+                                            data: '{ced:' + num + '}',
+                                            contentType: "application/json; charset=utf-8",
+                                            dataType: "json",
+                                            async: true,
+                                            success: function () {
+                                                alert("Cliente Eliminado");
+                                            },
+                                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                                alert("Acción Denegada");
+                                            }
+                                        });
+                                    }
+
+                                </script>
+
+                            </div>
+                            <div class="row">
+                                <div id="lblVer">
+                                  <%--<p style="border: ridge #0f0fef 1px;" id="lblVer"></p>--%>
                                 </div>
                             </div>
                         </div>
