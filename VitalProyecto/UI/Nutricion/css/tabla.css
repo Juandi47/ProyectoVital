@@ -1,0 +1,24 @@
+﻿table {
+    font-family: arial, sans-serif;
+    border-collapse: initial;
+    width: 50%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 6px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.tabla {
+    width: 600px;
+    height: 400px;
+    padding: 0;
+}
+.tr{
+    vertical-align:top;
+}
