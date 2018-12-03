@@ -66,8 +66,8 @@ namespace UI.Nutricion
         public static string VerDetalleCliente(string ced)
         {
             ClienteNutricion cl = lista.Find(x => x.Cedula.Equals(ced));
-            string t = "Cedula: " + cl.Cedula+ "    Nombre: " + cl.Nombre +" "+ cl.Apellido1 + " " + cl.Apellido2 +  "                Fecha de Nacimiento: " + cl.Fecha_Nacimiento.ToString("ddmmyyyy") + Environment.NewLine + "Edad: " + CalcularCumple(cl.Fecha_Nacimiento) + "                " +
-                "Telefono: " + cl.Telefono +"    "+ "      Sexo: " + cl.Sexo + "     "+ "Estado Civil: " + cl.Estado_Civil + "       " +
+            string t = "Cedula: " + cl.Cedula + "    Nombre: " + cl.Nombre +" "+ cl.Apellido1 + " " + cl.Apellido2 +  "                Fecha de Nacimiento: " + cl.Fecha_Nacimiento.ToString("ddmmyyyy") + Environment.NewLine + "Edad: " + CalcularCumple(cl.Fecha_Nacimiento) + "                " +
+                "Telefono: " + cl.Telefono +"    "+ "      Sexo: " + cl.Sexo +  "  " + "Estado Civil: " + cl.Estado_Civil + "       " +
                 "Residencia: " + cl.Residencia + "    " + "Ocupacion: " + cl.Ocupacion + "     " + "Fecha de Ingreso: " + cl.FechaIngreso.ToString("ddmmyyyy");
             return t;
         }
