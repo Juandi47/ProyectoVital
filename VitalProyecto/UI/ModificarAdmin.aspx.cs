@@ -49,17 +49,19 @@ namespace UI
 
             if (nombre.Equals("") || clave.Equals("") || clave2.Equals("") || apellido1.Equals("") || apellido2.Equals("") || correo.Equals(""))
             {
-                Response.Write("<script>alert('Debe completar los datos')</script>");
+				ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "error();", true);
+				//Response.Write("<script>alert('Debe completar los datos')</script>");
             }
             else {
                 if (clave.Equals(clave2))
                 {
                     mensaje = manejadorAdmin.modificarAdmin(cedula, nombre, clave, apellido1, apellido2, correo);
-
-                    Response.Write("<script>alert('" + mensaje + "')</script>");
+					ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
+					//Response.Write("<script>alert('" + mensaje + "')</script>");
                 }
                 else {
-                    Response.Write("<script>alert('Las contraseñas deben coincidir')</script>");
+					ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "error();", true);
+					//Response.Write("<script>alert('Las contraseñas deben coincidir')</script>");
                 }
                 
             }
