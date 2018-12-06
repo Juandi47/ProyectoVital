@@ -15,7 +15,7 @@ namespace DAO
 
         public bool CrearNoticia(TONoticia noti)
         {
-            String query1 = "Insert into Noticia values(@fech,@encab,@txt,@img);";
+            String query1 = "Insert into Noticia values(@fech,@encab,@txt,@img,@tipo);";
             
             SqlCommand cmd = new SqlCommand(query1, conexion);
 
@@ -25,6 +25,7 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@encab", noti.Encabezado);
                 cmd.Parameters.AddWithValue("@txt", noti.Texto);
                 cmd.Parameters.AddWithValue("@img", noti.Imagen);
+                cmd.Parameters.AddWithValue("@tipo", noti.TipoNoticia);
 
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -60,8 +61,8 @@ namespace DAO
                 while (lector.Read())
                 {
                     ListaNoticia.Add(new TONoticia(Int32.Parse(lector["Clave_Noticia"].ToString()),
-                        DateTime.Parse(lector["Fecha"].ToString()), lector["Encabezado"].ToString(), 
-                        lector["Texto"].ToString(),lector["Imagen"].ToString()));
+                        DateTime.Parse(lector["Fecha"].ToString()), lector["Encabezado"].ToString(),
+                        lector["Texto"].ToString(), lector["Imagen"].ToString(), Int32.Parse(lector["TipoNoticia"].ToString())));
 
                 }
                 conexion.Close();

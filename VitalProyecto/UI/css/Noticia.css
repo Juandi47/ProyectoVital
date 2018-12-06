@@ -1,73 +1,13 @@
-﻿body {
-    background: #e5e5e5;
-    color: rgba(37,41,45,1);
-    font-family: Helvetica Neue, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-/*---- Block: Pill ----*/
-
-.pill {
-    margin: 0 auto 1em;
-    text-align: center;
-    background-color: #fff;
-    display: inline-block;
-    padding: 1em 0.375em;
-    border-radius: 60px;
-}
-
-#pill__swap {
-    display: none;
-}
-
-.pill__label:hover {
-    cursor: pointer;
-}
-
-.pill__label__option {
-    padding: 10px;
-    border-radius: 60px;
-    position: relative;
-    z-index: 1;
-    transition: all 1s ease;
-}
-
-.pill input:not(:checked) + .pill__label .pill__label__option--ind, .pill input:checked + .pill__label .pill__label__option--org {
-    color: white;
-}
-
-.pill__label__option--ind:after {
-    content: "";
-    background-color: rgba(37,41,45,1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 60px;
-    z-index: -1;
-    transition: all 1s ease;
-}
-
-.pill input:checked + .pill__label .pill__label__option--ind:after {
-    left: 104%;
-    left: calc(100% + 0.3em);
-    width: 138%;
-    width: calc(100% + 1.4em);
-}
-
-/*---- Block: Table ----*/
+﻿/*---- Block: Table ----*/
 
 .table {
-    margin: 0 auto;
+    margin:inherit;
     overflow: hidden;
     max-width: 90em;
 }
 
 .table__row {
-    width: 200%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -99,7 +39,7 @@
 }
 
 .tier__title {
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-align: center;
     color: white;
     line-height: 2em;
@@ -111,26 +51,20 @@
 }
 
 .tier__color--1 {
-    background-color: rgba(93,142,150,1);
+    background-color: darkolivegreen;
 }
 
-.tier__color--2 {
-    background-color: rgba(74,104,114,1);
-}
-
-.tier__color--3 {
-    background-color: rgba(57,65,70,1);
-}
-
-.tier__color--4 {
-    background-color: rgba(37,41,45,1);
-}
 
 .tier__price {
-    text-align: center;
-    padding: .5rem;
-    font-size: 2.5em;
+    text-align: left;
+    padding: .2rem;
+    font-size: 1em;
     flex: 1;
+    height: 30px;
+    text-anchor: inherit;
+
+  
+   
 }
 
 .tier__price__duration {
@@ -162,35 +96,29 @@
 
 .benefits__blt__pricing {
     background-color: #eee;
-    padding: 0.125em 0.3em;
+    padding: 0.12em 0.3em;
     border-radius: 4px;
     display: inline-block;
     text-align: center;
 }
 
-.benefits__blt__pricing--visitor {
-    background-color: #666;
-    color: #f2f2f2;
-}
-
-.benefits__blt__pricing--free {
-    background-color: gold;
-}
 
 .benefits__blt__pricing--premium {
-    background-color: lightgreen;
+    background-color: darkolivegreen
 }
 
 /*---- Block: tier__cta ----*/
 
 .tier__cta {
-    display: block;
+    display: contents;
     text-align: center;
-    color: white;
+    color:white;
+    background-color:darkolivegreen;
     margin: 0em .5em .5em;
     padding: 1em .5em;
     border-radius: .25em;
     text-decoration: none;
+    text-transform:capitalize;
     border-bottom: .125em solid rgba(0,0,0,.5);
     transition: all 0.3s ease;
 }
