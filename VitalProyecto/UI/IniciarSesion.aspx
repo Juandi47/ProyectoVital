@@ -40,7 +40,7 @@
 			<!-- Nav -->
 			<nav id="nav">
 				<ul>
-					<li><a href="#">Noticias</a></li>
+					<li><a href="PagInicio.aspx">Noticias</a></li>
 					<li><a href="SobreNosotros.html">Sobre nosotros</a></li>
 					<li><a href="Contactenos.html">Contactenos</a></li>
 				</ul>

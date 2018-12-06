@@ -49,7 +49,6 @@
             <!-- Nav -->
             <nav id="nav">
                 <ul>
-                    <li><a href="#">Noticias</a></li>
                     <li><a href="IniciarSesion.aspx">Iniciar sesión</a></li>
                     <li><a href="SobreNosotros.html">Sobre nosotros</a></li>
                     <li><a href="Contactenos.html">Contactenos</a></li>
