@@ -11,9 +11,9 @@ namespace BL
     public class Manejador_Noticia
     {
         DAONoticia daoNoticia = new DAONoticia();
-        public Boolean CrearCliente(DateTime Fecha, string encabezado, string texto, string imangen)
+        public Boolean CrearNoti(DateTime Fecha, string encabezado, string texto, string imagen,int tipoNoticia)
         {
-            TONoticia notic = new TONoticia(Fecha, encabezado, texto, imangen);
+            TONoticia notic = new TONoticia(Fecha, encabezado, texto, imagen,tipoNoticia);
             return daoNoticia.CrearNoticia(notic);
         }
 
@@ -25,7 +25,7 @@ namespace BL
             {
                 foreach (TONoticia noti in lista)
                 {
-                    ListaNotic.Add(new Noticia(noti.Clave, noti.Fecha, noti.Encabezado, noti.Texto, noti.Imagen));
+                    ListaNotic.Add(new Noticia(noti.Clave, noti.Fecha, noti.Encabezado, noti.Texto, noti.Imagen,noti.TipoNoticia));
                 }
                 return ListaNotic;
             }

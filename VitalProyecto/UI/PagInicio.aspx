@@ -49,7 +49,6 @@
             <!-- Nav -->
             <nav id="nav">
                 <ul>
-                    <li><a href="#">Noticias</a></li>
                     <li><a href="IniciarSesion.aspx">Iniciar sesión</a></li>
                     <li><a href="SobreNosotros.html">Sobre nosotros</a></li>
                     <li><a href="Contactenos.html">Contactenos</a></li>
@@ -123,124 +122,26 @@
     </div>
 
     <div class="container" style="background-color: white">
-        <!-- Grid -->
         <div class="w3-row">
-
-            <!-- Blog entries -->
             <div class="w3-col l8 s12">
                 <asp:Literal ID="Blogs" runat="server"></asp:Literal>
-                <!-- Blog entry -->
-                <%--<div class="w3-card-4 w3-margin w3-white">
-                    <img src="/images/not.jpeg" alt="Nature" style="width: 100%" />
-                    <div class="w3-container">
-                        <h3><b>HACER EJERCICIO ALARGA LA VIDA</b></h3>
-                        <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
-                    </div>
-
-                    <div class="w3-container">
-                        <p>
-                            Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
-                        </p>
-                        <div class="w3-row">
-                            <div class="w3-col m8 s12">
-                                <p>
-                                    <button class="w3-button w3-padding-large w3-white w3-border"><b>Leer más »</b></button></p>
-                            </div>
-                            <div class="w3-col m4 w3-hide-small">
-                                <p><span class="w3-padding-large w3-right"><b>Comments  </b><span class="w3-tag">0</span></span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr />--%>
-
-                <!-- Blog entry -->
-                <%--<div class="w3-card-4 w3-margin w3-white">
-                    <img src="/images/plan.jpg" alt="Norway" style="width: 100%" />
-                    <div class="w3-container">
-                        <h3><b>RETO PLANCHA</b></h3>
-                        <h5>Title description, <span class="w3-opacity">April 2, 2014</span></h5>
-                    </div>
-
-                    <div class="w3-container">
-                        <p>
-                            Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
-                        </p>
-                        <div class="w3-row">
-                            <div class="w3-col m8 s12">
-                                <p>
-                                    <button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
-                            </div>
-                            <div class="w3-col m4 w3-hide-small">
-                                <p><span class="w3-padding-large w3-right"><b>Comments  </b><span class="w3-badge">2</span></span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>--%>
-                <!-- END BLOG ENTRIES -->
             </div>
-
-            <!-- Introduction menu -->
             <div class="w3-col l4">
-                <!-- About Card -->
-                <asp:Literal ID="MiniNoticia" runat ="server"></asp:Literal>
-                <%--<div class="w3-card w3-margin w3-margin-top">
-                    <img src="/images/cerrado.jpg" style="width: 100%" />
-                    <div class="w3-container w3-white">
-                        <h4><b>CERRADO POR DIAS FESTIVOS</b></h4>
-                        <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
-                    </div>
-                </div>
-                <hr />--%>
+                <asp:Literal ID="MiniNoticia" runat="server"></asp:Literal>
 
-                <!-- Posts -->
                 <div class="w3-card w3-margin">
                     <div class="w3-container w3-padding">
                         <h4>Más Recientes</h4>
                     </div>
                     <ul class="w3-ul w3-hoverable w3-white">
-                        <li class="w3-padding-16">
-                            <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width: 50px" />
-                            <span class="w3-large">Lorem</span><br />
-                            <span>Sed mattis nunc</span>
-                        </li>
-                        <li class="w3-padding-16">
-                            <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width: 50px" />
-                            <span class="w3-large">Ipsum</span><br />
-                            <span>Praes tinci sed</span>
-                        </li>
-                        <li class="w3-padding-16">
-                            <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width: 50px" />
-                            <span class="w3-large">Dorum</span><br />
-                            <span>Ultricies congue</span>
-                        </li>
-                        <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-                            <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width: 50px" />
-                            <span class="w3-large">Mingsum</span><br />
-                            <span>Lorem ipsum dipsum</span>
-                        </li>
+                        <asp:Literal ID="NotReciente" runat="server"></asp:Literal>
                     </ul>
                 </div>
                 <hr />
-
-                <!-- Labels / tags -->
                 <div class="w3-card w3-margin">
-                    <div class="w3-container w3-padding">
-                        <h4>Mensajes</h4>
-                    </div>
-                    <div class="w3-container w3-white">
-                        <p>
-                            Gimnasio Vital ofrece servicios de nutrición.
-                        </p>
-                    </div>
+                    <asp:Literal ID="Notas" runat="server"></asp:Literal>
                 </div>
-
-                <!-- END Introduction Menu -->
             </div>
-
-            <!-- END GRID -->
         </div>
         <br />
 
@@ -253,8 +154,8 @@
         <br />
     </div>
 
-	<footer class="footer" style="position: relative">
-		<h1 class="title">Gimnasio Vital y Nutrición</h1>
+    <footer class="footer" style="position: relative">
+        <h1 class="title">Gimnasio Vital y Nutrición</h1>
         Vital San Ramón, mas que un gimnasio es tu espacio.
     </footer>
 

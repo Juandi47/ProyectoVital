@@ -65,8 +65,5 @@
     <Compile Include="TOSeguimientoSemanal.cs" />
     <Compile Include="TOUsuario.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="DiagramaTO.cd" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -87,8 +87,5 @@
       <Name>TO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="DiagramaBL.cd" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

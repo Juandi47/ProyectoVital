@@ -78,6 +78,7 @@
     <Content Include="Contactenos.html" />
     <Content Include="ControlSeguridad.aspx" />
     <Content Include="CrearCuenta.aspx" />
+    <Content Include="CrearNoticia.aspx" />
     <Content Include="CrearRutina.aspx" />
     <Content Include="Crear_Admin.aspx" />
     <Content Include="Asistencia.aspx" />
@@ -89,6 +90,7 @@
     <Content Include="css\ie\html5shiv.js" />
     <Content Include="css\ie\PIE.htc" />
     <Content Include="css\ie\v8.css" />
+    <Content Include="css\Noticia.css" />
     <Content Include="css\pikaday.css" />
     <Content Include="css\semantic.min.css" />
     <Content Include="css\site.css" />
@@ -109,16 +111,19 @@
     <Content Include="images\a.jpg" />
     <Content Include="images\b.jpg" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\banner_admin01.jpg" />
     <Content Include="images\c.jpg" />
     <Content Include="images\cerrado.jpg" />
     <Content Include="images\d.jpg" />
     <Content Include="images\e.jpg" />
     <Content Include="images\elky.jpg" />
+    <Content Include="images\importante.jpg" />
     <Content Include="images\not.jpeg" />
     <Content Include="images\nutriVital.jfif" />
     <Content Include="images\placeholder.png" />
     <Content Include="Cliente\index2.aspx" />
     <Content Include="images\plan.jpg" />
+    <Content Include="images\vital.jpg" />
     <Content Include="images\yen.jpg" />
     <Content Include="InformacionAdministrador.aspx" />
     <Content Include="IniciarSesion.aspx" />
@@ -251,6 +256,13 @@
     </Compile>
     <Compile Include="CrearCuenta.aspx.designer.cs">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearNoticia.aspx.cs">
+      <DependentUpon>CrearNoticia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearNoticia.aspx.designer.cs">
+      <DependentUpon>CrearNoticia.aspx</DependentUpon>
     </Compile>
     <Compile Include="CrearRutina.aspx.cs">
       <DependentUpon>CrearRutina.aspx</DependentUpon>
@@ -385,7 +397,6 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="DiagramaUI.cd" />
     <Content Include="Nutricion\NutricionMaster.Master" />
     <None Include="packages.config" />
     <Content Include="Principal.Master" />
