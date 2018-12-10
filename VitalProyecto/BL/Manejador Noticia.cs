@@ -34,5 +34,10 @@ namespace BL
                 return null;
             }
         }
+
+        public bool EliminarNoticia(int Clave)
+        {
+            return true;
+        }
     }
 }

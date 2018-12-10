@@ -58,6 +58,7 @@ namespace UI.Nutricion
             }
             else
             {
+                //validar Existe cliente!!
                 listaSeguimientos = manejadorNutrición.TraerLista(sCedula.Text);
                 if (listaSeguimientos != null)
                 {
@@ -81,7 +82,6 @@ namespace UI.Nutricion
             {
                 TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
                 DateTime cstTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, cstZone);
-                cstTime = cstTime.AddHours(-1);
                 Fecha.Text = "Fecha: " + cstTime;
             }
             catch (TimeZoneNotFoundException)

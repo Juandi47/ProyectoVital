@@ -19,7 +19,7 @@
     <script src="/js/skel-layers.min.js"></script>
     <script src="/js/init.js"></script>
     <link rel="stylesheet" href="styleNutri.css" />
-    <link href="admin_estilos.css" rel="stylesheet" />
+    <link href="/admin_estilos.css" rel="stylesheet" />
     <noscript>
         <link rel="stylesheet" href="/css/skel.css" />
         <link rel="stylesheet" href="/css/style.css" />
@@ -31,11 +31,15 @@
 
     <!-- Header -->
 
-    <div id="header">  
-      <div class="container">
+    <div id="header">
+    
+        <%-- Color seteado en style.css --%>
+        <div class="container">
             <!-- Logo -->
             <div id="logo">
-                <h1><a style="text-decoration: none;">Vital</a></h1>
+
+                <h1><a style="text-decoration: none;" href="ConsultarNutricion.aspx">Vital</a></h1>
+                <%-- Sin SUBRAYADO--%>
             </div>
              
                
@@ -77,6 +81,5 @@
         Vital San Ramón, mas que un gimnasio es tu espacio.
     </footer>
 
-    <%-- </form>--%>
 </body>
 </html>

@@ -43,67 +43,67 @@
                                 <div class="col-10">
                                     <label class="form-label" for="tCedula">Cedula</label>
                                     <br />
-                                    <asp:TextBox ID="tCedula" runat="server" TextMode="Number" placeholder="Cédula" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="tCedula" runat="server" TextMode="Number" placeholder="Cédula" Font-Size="Medium"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
                                     <label class="form-label" for="tnombre">Nombre</label>
-                                    <asp:TextBox ID="tnombre" runat="server" placeholder="Nombre" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="tnombre" runat="server" placeholder="Nombre" Font-Size="Small"></asp:TextBox>
                                 </div>
-                                <div class="col-15">
+                                <div class="col-10">
                                     <label class="form-label" for="tApellid1">Apellido 1</label>
-                                    <asp:TextBox ID="tApellid1" runat="server" placeholder="Apellido 1" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="tApellid1" runat="server" placeholder="Apellido 1" Font-Size="Small"></asp:TextBox>
                                 </div>
-                                <div class="col-15">
+                                <div class="col-10">
                                     <label class="form-label" for="tApellid2">Apellido 2</label>
-                                    <asp:TextBox ID="tApellid2" runat="server" placeholder="Apellido 2" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="tApellid2" runat="server" placeholder="Apellido 2" Font-Size="Small"></asp:TextBox>
                                 </div>
 
                                 <div class="col-10">
                                     <label class="form-label" for="tFechNac">Fecha Nacimiento</label>
                                     <br />
-                                    <asp:TextBox ID="tFechNac" runat="server" TextMode="Date" OnTextChanged="tFechNac_TextChanged" Width="155" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="tFechNac" runat="server" TextMode="Date" OnTextChanged="tFechNac_TextChanged" Font-Size="Medium"></asp:TextBox>
 
                                 </div>
-                                <div class="col-15">
-                                    <label class="form-label" for="tEdad">Edad</label>
-                                    <br />
-                                    <asp:TextBox ID="tEdad" runat="server" TextMode="Number" Width="150" Height="50"></asp:TextBox>
-                                </div>
-
+                            </div>
+                            <div class="row">
                                 <div class="col-10">
                                     <label class="form-label" for="tTelef">Telefono</label>
                                     <br />
-                                    <asp:TextBox ID="tTelef" runat="server" TextMode="Phone" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="tTelef" runat="server" TextMode="Phone" Font-Size="Medium"></asp:TextBox>
                                 </div>
-                                <div class="col-15">
+                                <div class="col-10">
                                     <label class="form-label" for="tSexo">Sexo</label>
                                     <br />
-                                    <asp:DropDownList ID="tSex" runat="server" Height="50px" Width="150"></asp:DropDownList>
+                                    <asp:DropDownList ID="tSex" runat="server" Font-Size="Small"></asp:DropDownList>
                                 </div>
                                 <div class="col-10">
                                     <label class="form-label" for="tEstCivil">Estado Civil</label>
                                     <br />
-                                    <asp:DropDownList ID="tEstCivil" runat="server" Width="150px" Height="50px"></asp:DropDownList>
+                                    <asp:DropDownList ID="tEstCivil" runat="server" Font-Size="Small"></asp:DropDownList>
                                 </div>
                                 <div class="col-10">
                                     <label class="form-label" for="tResid">Residencia</label>
-                                    <asp:TextBox ID="tResid" runat="server" Height="50" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="tResid" runat="server" Font-Size="Small"></asp:TextBox>
                                 </div>
-
-                            </div>
-                            <h3>Datos Socioeconómicos:</h3>
-                            <div class="row">
-                                <div class="col-75">
-                                    <label class="form-label" for="tOcupacion">Ocupación</label>
-                                    <asp:TextBox ID="tOcupacion" runat="server" Width="150" Height="50"></asp:TextBox>
+                                <div class="col-10">
+                                    <label class="form-label" for="tEdad">Edad</label>
+                                    <br />
+                                    <asp:TextBox ID="tEdad" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
                             </div>
-                            <h3>Actividad Física</h3>
-                            <div class="row">
-                                <div class="col-25">
-                                    <asp:TextBox ID="ActFisica" runat="server" Width="150" Height="50"></asp:TextBox>
-                                </div>
+                        <h3>Datos Socioeconómicos:</h3>
+                        <div class="row">
+                            <div class="col-25">
+                                <label class="form-label" for="tOcupacion">Ocupación</label>
+                                <asp:TextBox ID="tOcupacion" runat="server" Font-Size="Small"></asp:TextBox>
                             </div>
+                        </div>
+                        <h3>Actividad Física</h3>
+                        <div class="row">
+                            <div class="col-25">
+                                <asp:TextBox ID="ActFisica" runat="server" Font-Size="Small"></asp:TextBox>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -113,51 +113,51 @@
                         <div class="form-container">
 
                             <div class="row">
-                                <div class="col-5">
+                                <div class="col-10">
                                     <label class="form-label" for="tAnteced">Antecedentes Familiares</label>
-                                    <asp:TextBox ID="tAnteced" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="tAnteced" runat="server" Font-Size="Small"></asp:TextBox>
                                 </div>
-                                <div class="col-25">
+                                <div class="col-10">
                                     <label class="form-label" for="tPatolog">Patologías que padece</label>
-                                    <asp:TextBox ID="tPatolog" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="tPatolog" runat="server" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
                                     <label class="form-label" for="tConsLicor">Licor:</label>
                                     <br />
-                                    <asp:DropDownList ID="tConsLicr" runat="server" Width="75" Height="50"></asp:DropDownList>
+                                    <asp:DropDownList ID="tConsLicr" runat="server" Font-Size="Small"></asp:DropDownList>
                                 </div>
                                 <div class="col-10">
                                     <br />
-                                    <asp:TextBox ID="tFrecLicor" runat="server" placeholder="Frecuencia" Width="120" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="tFrecLicor" runat="server" placeholder="Frecuencia" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
                                     <label class="form-label" for="tConsFuma">Fuma</label>
                                     <br />
-                                    <asp:DropDownList ID="tConsFum" runat="server" Width="75" Height="50"></asp:DropDownList>
+                                    <asp:DropDownList ID="tConsFum" runat="server" Font-Size="Small"></asp:DropDownList>
                                 </div>
                                 <div class="col-10">
                                     <br />
-                                    <asp:TextBox ID="tFrecFuma" runat="server" placeholder="Frecuencia" Width="120" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="tFrecFuma" runat="server" placeholder="Frecuencia" Font-Size="Small"></asp:TextBox>
                                 </div>
-                                <div class="col-75">
+                                <div class="col-10">
                                     <label class="form-label" for="tFech">Fecha de últimos exámenes de sangre o revisión médica</label>
                                     <br />
-                                    <asp:TextBox ID="tFechRevis" runat="server" TextMode="Date" Width="160" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="tFechRevis" runat="server" TextMode="Date" Font-Size="Medium"></asp:TextBox>
                                 </div>
                             </div>
                             <h3>Medicamentos o suplementos que consume:</h3>
                             <div class="row">
                                 <div class="col-20">
-                                    <asp:TextBox ID="tNomMed" runat="server" placeholder="Nombre"></asp:TextBox>
+                                    <asp:TextBox ID="tNomMed" runat="server" placeholder="Nombre" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-20">
-                                    <asp:TextBox ID="tMotvMed" runat="server" placeholder="Motivo"></asp:TextBox>
+                                    <asp:TextBox ID="tMotvMed" runat="server" placeholder="Motivo" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-20">
-                                    <asp:TextBox ID="tFrecMed" runat="server" placeholder="Frecuencia"></asp:TextBox>
+                                    <asp:TextBox ID="tFrecMed" runat="server" placeholder="Frecuencia" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-20">
-                                    <asp:TextBox ID="tDosisMed" runat="server" placeholder="Dosis"></asp:TextBox>
+                                    <asp:TextBox ID="tDosisMed" runat="server" placeholder="Dosis" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-20">
 
@@ -182,18 +182,18 @@
                                 <div class="col-15">
                                     <label class="form-label" for="CostHordia">¿Acostumbra a comer a las horas al día?</label>
                                     <br />
-                                    <asp:DropDownList ID="CostHorDia" runat="server" Width="150" Height="50"></asp:DropDownList>
+                                    <asp:DropDownList ID="CostHorDia" runat="server" Font-Size="Small"></asp:DropDownList>
                                 </div>
 
                                 <div class="col-35">
                                     <label class="form-label" for="cuanExpress">¿Cuántas veces a la semana come fuera o pide un express?</label>
                                     <br />
-                                    <asp:TextBox ID="cuanExpress" runat="server" TextMode="Number" Height="50" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="cuanExpress" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="CuantAzucar">¿Cuánta azucar le agrega a las bebidas?</label>
                                     <br />
-                                    <asp:TextBox ID="CuantAzucar" runat="server" TextMode="Number" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="CuantAzucar" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
                             </div>
 
@@ -201,18 +201,18 @@
                                 <div class="col-15">
                                     <label class="form-label" for="queComeAfuera">¿Generalmente que come fuera de la casa?</label>
                                     <br />
-                                    <asp:TextBox ID="queComeAfuera" runat="server" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="queComeAfuera" runat="server" Font-Size="Small"></asp:TextBox>
                                 </div>
 
                                 <div class="col-35">
                                     <label class="form-label" for="cocinaElabora">¿Los alimentos que cocina los elabora generalmente?</label>
                                     <br />
-                                    <asp:DropDownList ID="cocinaElabora" runat="server" Width="150" Height="50"></asp:DropDownList>
+                                    <asp:DropDownList ID="cocinaElabora" runat="server" Font-Size="Small"></asp:DropDownList>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="aguAlDia">¿Cuántos vasos de agua toma al día?</label>
                                     <br />
-                                    <asp:TextBox ID="aguAlDia" runat="server" TextMode="Number" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="aguAlDia" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
 
 
@@ -223,12 +223,12 @@
                                 <div class="col-15">
                                     <label class="form-label" for="VecesComid">¿Cuántas veces come al día?</label>
                                     <br />
-                                    <asp:TextBox ID="VecesComid" runat="server" TextMode="Number" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="VecesComid" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
                                 <div class="col-35">
                                     <label class="form-label" for="Aderezos">¿Agrega salsa de tomate, mayonesa, mantequilla o natilla a la comida?</label>
                                     <br />
-                                    <asp:DropDownList ID="Aderezos" runat="server" Width="150"></asp:DropDownList>
+                                    <asp:DropDownList ID="Aderezos" runat="server" Font-Size="Small"></asp:DropDownList>
                                 </div>
 
                             </div>
@@ -239,23 +239,23 @@
                                     <label class="form-label" for="GustosComida">Le gustan la mayoría de: </label>
                                 </div>
                                 <div class="col-70">
-                                    <asp:CheckBoxList runat="server" ID="checkListGustos" RepeatColumns="3" TextAlign="Right"></asp:CheckBoxList>
+                                    <asp:CheckBoxList runat="server" ID="checkListGustos" RepeatColumns="3" TextAlign="Right" ></asp:CheckBoxList>
                                 </div>
                             </div>
 
                             <h3>Recordatorio 24 Horas</h3>
                             <div class="row">
                                 <div class="col-10">
-                                    <asp:TextBox ID="r24TiempoComida" runat="server" placeholder="Tiempo de Comida" Width="160"></asp:TextBox>
+                                    <asp:TextBox ID="r24TiempoComida" runat="server" placeholder="Tiempo de Comida" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
-                                    <asp:TextBox ID="r24Alimento" runat="server" placeholder="Alimento" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="r24Alimento" runat="server" placeholder="Alimento" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
-                                    <asp:TextBox ID="r24Cantidad" runat="server" placeholder="Cantidad" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="r24Cantidad" runat="server" placeholder="Cantidad" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
-                                    <asp:TextBox ID="r24Descripcion" runat="server" placeholder="Descripcion" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="r24Descripcion" runat="server" placeholder="Descripcion" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
                                     <asp:Button ID="r24Agrega" Text="Agregar" runat="server" OnClick="R24Agrega_Click" Font-Size="X-Small" />
@@ -285,49 +285,49 @@
                                         <label class="form-label" for="tEdad">Edad</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tEdadNut" runat="server" TextMode="Number" Height="50"></asp:TextBox>
+                                        <asp:TextBox ID="tEdadNut" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tPesoActual">Peso Actual</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tPesoActual" runat="server" TextMode="Number" Height="50"></asp:TextBox>
+                                        <asp:TextBox ID="tPesoActual" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tPesoMaxTeoria">Peso máximo en teoría</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tPesoMaxTeoria" runat="server" TextMode="Number" Height="50"></asp:TextBox>
+                                        <asp:TextBox ID="tPesoMaxTeoria" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tPesoMeta">Peso Meta o Ideal</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tPesoMeta" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tPesoMeta" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tEdadMetabolica">Edad Metabolica</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tEdadMetabolica" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tEdadMetabolica" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tAguaNut">Agua</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tAguaNut" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tAguaNut" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tComplexión">Complexión</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tComplexión" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tComplexión" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tObservacion">Observacion</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tObservacion" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tObservacion" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -336,49 +336,49 @@
                                         <label class="form-label" for="tAbdomen">Abdomen</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tAbdomen" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tAbdomen" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tCadera">Cadera</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tCadera" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tCadera" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tTalla">Talla</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tTalla" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tTalla" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tCircunfMun">Circunferencia muñeca</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tCircunfMun" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tCircunfMun" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tIMC">IMC</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tIMC" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tIMC" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tMuslo">Muslo</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tMuslo" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tMuslo" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tPMB">PMB</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tPMB" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tPMB" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tCBM">CBM</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tCBM" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tCBM" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -387,49 +387,49 @@
                                         <label class="form-label" for="tCintura">Cintura</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tCintura" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tCintura" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tMasaOsea">Masa ósea</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tMasaOsea" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tMasaOsea" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tPorcGBascula">% Grasa Báscula</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tPorcGBascula" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tPorcGBascula" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tGBascBI">BI</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tGBascBI" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tGBascBI" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tGBascBD">BD</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tGBascBD" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tGBascBD" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tGBascPD">PD</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tGBascPD" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tGBascPD" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tGBascPI">PI</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tGBascPI" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tGBascPI" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tGBascTronco">Tronco</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tGBascTronco" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tGBascTronco" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-25">
@@ -437,49 +437,49 @@
                                         <label class="form-label" for="tPorcGAnalizador">% Grasa Analizador</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tPorcGAnalizador" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tPorcGAnalizador" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tPorcGVisceral">% Grasa Visceral</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tPorcGVisceral" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tPorcGVisceral" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tPorcMusculo">% Músculo</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tPorcGMusculo" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tPorcGMusculo" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tMuscBI">BI</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tMuscBI" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tMuscBI" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tMuscBD">BD</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tMuscBD" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tMuscBD" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tMuscPD">PD</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tMuscPD" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tMuscPD" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tMuscPI">PI</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tMuscPI" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tMuscPI" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                     <div class="col-15">
                                         <label class="form-label" for="tMuscTronco">Tronco</label>
                                     </div>
                                     <div class="col-35">
-                                        <asp:TextBox ID="tMuscTronco" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="tMuscTronco" runat="server" Font-Size="Small"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -491,13 +491,13 @@
                                     <br />
                                 </div>
                                 <div class="col-20">
-                                    <asp:TextBox ID="GEBPI" runat="server" placeholder="PI"></asp:TextBox>
+                                    <asp:TextBox ID="GEBPI" runat="server" placeholder="PI" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
-                                    <asp:TextBox ID="GEBTcm" runat="server" placeholder="T(cm)"></asp:TextBox>
+                                    <asp:TextBox ID="GEBTcm" runat="server" placeholder="T(cm)" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
-                                    <asp:TextBox ID="GEBEdad" runat="server" placeholder="Edad"></asp:TextBox>
+                                    <asp:TextBox ID="GEBEdad" runat="server" placeholder="Edad" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
                                     <asp:Button ID="GEBMujer" Text="Calcular" runat="server" OnClick="GEBMujer_Click" Font-Size="X-Small" />
@@ -509,13 +509,13 @@
                                     <br />
                                 </div>
                                 <div class="col-20">
-                                    <asp:TextBox ID="GEBHomPI" runat="server" placeholder="PI"></asp:TextBox>
+                                    <asp:TextBox ID="GEBHomPI" runat="server" placeholder="PI" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
-                                    <asp:TextBox ID="GEBHomTcm" runat="server" placeholder="T(cm)"></asp:TextBox>
+                                    <asp:TextBox ID="GEBHomTcm" runat="server" placeholder="T(cm)" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
-                                    <asp:TextBox ID="GEBHomEdad" runat="server" placeholder="Edad"></asp:TextBox>
+                                    <asp:TextBox ID="GEBHomEdad" runat="server" placeholder="Edad" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
                                     <asp:Button ID="GEBHombre" Text="Calcular" runat="server" OnClick="GEBHombre_Click" Font-Size="X-Small" />
@@ -526,10 +526,10 @@
                                     <asp:Label CssClass="form-label" runat="server" ID="GEBlblMenores" Text="Menores de 10 años: "></asp:Label>
                                 </div>
                                 <div class="col-20">
-                                    <asp:TextBox ID="GEBMenorPI" runat="server" placeholder="PI"></asp:TextBox>
+                                    <asp:TextBox ID="GEBMenorPI" runat="server" placeholder="PI" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
-                                    <asp:TextBox ID="GEBMenorTcm" runat="server" placeholder="T(cm)"></asp:TextBox>
+                                    <asp:TextBox ID="GEBMenorTcm" runat="server" placeholder="T(cm)" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
                                     <asp:Button ID="GEBMenores" Text="Calcular" runat="server" OnClick="GEBMenores_Click" Font-Size="X-Small" />
@@ -543,13 +543,13 @@
 
                                 </div>
                                 <div class="col-20">
-                                    <asp:TextBox ID="GETkcal" runat="server" placeholder="Kcal"></asp:TextBox>
+                                    <asp:TextBox ID="GETkcal" runat="server" placeholder="Kcal" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
                                     <label class="form-label" for="GETkcal">x FTA (1.1) x FA (</label>
                                 </div>
                                 <div class="col-10">
-                                    <asp:TextBox ID="GETFA" runat="server" placeholder="FA"></asp:TextBox>
+                                    <asp:TextBox ID="GETFA" runat="server" placeholder="FA" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
                                     <label class="form-label" for="GetFA">) </label>
@@ -571,29 +571,29 @@
                                         <tr>
                                             <td>CHO</td>
                                             <td>
-                                                <asp:TextBox ID="PorcCHO" runat="server" BorderColor="Transparent"></asp:TextBox></td>
+                                                <asp:TextBox ID="PorcCHO" runat="server" BorderColor="Transparent" Font-Size="Small"></asp:TextBox></td>
                                             <td>
-                                                <asp:TextBox ID="GramCHO" runat="server" BorderColor="Transparent"></asp:TextBox></td>
+                                                <asp:TextBox ID="GramCHO" runat="server" BorderColor="Transparent" Font-Size="Small"></asp:TextBox></td>
                                             <td>
-                                                <asp:TextBox ID="kcalCHO" runat="server" BorderColor="Transparent"></asp:TextBox></td>
+                                                <asp:TextBox ID="kcalCHO" runat="server" BorderColor="Transparent" Font-Size="Small"></asp:TextBox></td>
                                         </tr>
                                         <tr>
                                             <td>Proteínas</td>
                                             <td>
-                                                <asp:TextBox ID="PorcProteinas" runat="server" BorderColor="Transparent"></asp:TextBox></td>
+                                                <asp:TextBox ID="PorcProteinas" runat="server" BorderColor="Transparent" Font-Size="Small"></asp:TextBox></td>
                                             <td>
-                                                <asp:TextBox ID="GramProteinas" runat="server" BorderColor="Transparent"></asp:TextBox></td>
+                                                <asp:TextBox ID="GramProteinas" runat="server" BorderColor="Transparent" Font-Size="Small"></asp:TextBox></td>
                                             <td>
-                                                <asp:TextBox ID="kcalProteinas" runat="server" BorderColor="Transparent"></asp:TextBox></td>
+                                                <asp:TextBox ID="kcalProteinas" runat="server" BorderColor="Transparent" Font-Size="Small"></asp:TextBox></td>
                                         </tr>
                                         <tr>
                                             <td>Grasas</td>
                                             <td>
-                                                <asp:TextBox ID="PorcGrasas" runat="server" BorderColor="Transparent"></asp:TextBox></td>
+                                                <asp:TextBox ID="PorcGrasas" runat="server" BorderColor="Transparent" Font-Size="Small"></asp:TextBox></td>
                                             <td>
-                                                <asp:TextBox ID="GramGrasas" runat="server" BorderColor="Transparent"></asp:TextBox></td>
+                                                <asp:TextBox ID="GramGrasas" runat="server" BorderColor="Transparent" Font-Size="Small"></asp:TextBox></td>
                                             <td>
-                                                <asp:TextBox ID="kcalGrasas" runat="server" BorderColor="Transparent"></asp:TextBox></td>
+                                                <asp:TextBox ID="kcalGrasas" runat="server" BorderColor="Transparent" Font-Size="Small"></asp:TextBox></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -604,44 +604,44 @@
                                 <div class="col-15">
                                     <label class="form-label" for="pLeche">Leche:</label>
                                     <br />
-                                    <asp:TextBox ID="pLeche" runat="server" TextMode="Number" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="pLeche" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pVegetales">Vegetales:</label>
                                     <br />
-                                    <asp:TextBox ID="pVegetales" runat="server" TextMode="Number" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="pVegetales" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pFrutas">Frutas:</label>
                                     <br />
-                                    <asp:TextBox ID="pFrutas" runat="server" TextMode="Number" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="pFrutas" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pHarinas">Harinas:</label>
                                     <br />
-                                    <asp:TextBox ID="pHarinas" runat="server" TextMode="Number" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="pHarinas" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-15">
                                     <label class="form-label" for="pCarnes">Carnes:</label>
                                     <br />
-                                    <asp:TextBox ID="pCarnes" runat="server" TextMode="Number" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="pCarnes" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pGrasas">Grasas:</label>
                                     <br />
-                                    <asp:TextBox ID="pGrasas" runat="server" TextMode="Number" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="pGrasas" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pAzúcares">Azúcares:</label>
                                     <br />
-                                    <asp:TextBox ID="pAzúcares" runat="server" TextMode="Number" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="pAzúcares" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="pSuplemento">Suplemento:</label>
                                     <br />
-                                    <asp:TextBox ID="pSuplemento" runat="server" TextMode="Number" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="pSuplemento" runat="server" TextMode="Number" Font-Size="Medium"></asp:TextBox>
                                 </div>
                             </div>
 
@@ -692,7 +692,7 @@
                                 </div>
                             </div>
                             <div class="col-25">
-                                <asp:Button ID="btnCrear" Text="Crear" runat="server" OnClick="btnCrear_Click" Font-Size="Small" Width="100"/>
+                                <asp:Button ID="btnCrear" Text="Crear" runat="server" OnClick="btnCrear_Click" Font-Size="Small" Width="100" />
                             </div>
                         </div>
                     </div>

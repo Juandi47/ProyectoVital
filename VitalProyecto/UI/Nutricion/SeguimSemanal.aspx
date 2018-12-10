@@ -56,7 +56,7 @@
                                 <div class="col-15">
                                     <label class="form-label" for="sCedula">Buscador Historial del Cliente: </label>
                                     <br />
-                                    <asp:TextBox ID="sCedula" runat="server" textMode="Number" placeholder="Cédula del Cliente" Width="150" Height="50"></asp:TextBox>
+                                    <asp:TextBox ID="sCedula" runat="server" textMode="Number" placeholder="Cédula del Cliente" Font-Size="Medium"></asp:TextBox>
                                 </div>
                                  <div class="col-10">
                                      <p></p>
@@ -67,15 +67,15 @@
 
                                 <div class="col-15">
                                     <label class="form-label" for="sPeso">Peso</label>
-                                    <asp:TextBox ID="sPeso" runat="server" placeholder="Peso" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="sPeso" runat="server" placeholder="Peso" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="sOreja">Oreja</label>
-                                    <asp:TextBox ID="sOreja" runat="server" placeholder="Oreja" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="sOreja" runat="server" placeholder="Oreja" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <label class="form-label" for="sEjercicio">Ejercicio</label>
-                                    <asp:TextBox ID="sEjercicio" runat="server" placeholder="Ejercicio" Width="150"></asp:TextBox>
+                                    <asp:TextBox ID="sEjercicio" runat="server" placeholder="Ejercicio" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-15">
                                     <p></p>
@@ -88,7 +88,7 @@
                             <div id="div1">
 
                                 <table>
-                                    <asp:Literal ID="LitSeguimiento" runat="server"></asp:Literal>
+                                    <asp:Literal ID="LitSeguimiento" runat="server" ></asp:Literal>
                                 </table>
 
                             </div>

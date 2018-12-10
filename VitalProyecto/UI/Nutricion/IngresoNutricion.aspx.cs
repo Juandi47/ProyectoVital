@@ -26,8 +26,6 @@ namespace UI.Nutricion
 
             if (!IsPostBack)
             {
-                //ListaMedicamSuplem = Session["ListaSup"] as List<Medicamento>;
-                Fecha.Text = "Fecha: " + DateTime.Now;
                 LlenarListas();
                 tSuplementoMedico.Text = "<tr><th>Nombre</th><th>Motivo</th><th>Frecuencia</th><th>Dosis</th></tr>";
                 r24Tabla.Text = "<tr><th>Tiempo de Comida</th><th>Alimento</th><th>Cantidad</th><th>Descripción</th></tr>";
@@ -340,7 +338,6 @@ namespace UI.Nutricion
             {
                 TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
                 DateTime cstTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, cstZone);
-                cstTime = cstTime.AddHours(-1);
                 Fecha.Text = "Fecha: " + cstTime;
             }
             catch (TimeZoneNotFoundException)

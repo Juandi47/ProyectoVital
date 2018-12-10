@@ -9,7 +9,7 @@
 
     <link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/Noticia.css" />
-
+    <link rel="stylesheet" href="css/tabla.css" />
     <script src="js/alertify.min.js"></script>
     <link rel="stylesheet" href="/css/alertify.min.css" />
     <link rel="stylesheet" href="/css/semantic.min.css" />
@@ -31,7 +31,16 @@
             alertify.error("No pueden haber campos vacíos");
         }
     </script>
-
+    <script type="text/javascript">
+        function borro() {
+            alertify.success("La noticia se eliminó correctamente");
+        }
+    </script>
+    <script type="text/javascript">
+        function errorBorrar() {
+            alertify.error("La noticia no se eliminó correctamente");
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
 
@@ -110,10 +119,26 @@
                             <table>
                                 <asp:Literal ID="TablaEliminar" runat="server"></asp:Literal>
                             </table>
-                            <asp:LinkButton ID="BtnEliminar" runat="server" CssClass="btn btn-primary"
-                                OnClick="BtnEliminar_Click" BackColor="#990000"> <span aria-hidden="true" class="glyphicon glyphicon-trash"></span>
-                            </asp:LinkButton>
+                            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                             <script type="text/javascript">   
+                                 function Eliminar_Click(num) {
+                                        $.ajax({
+                                            type: "POST",
+                                            url: '/CrearNoticia.aspx/EliminarNoticia',
+                                            data: '{clave:' + num + '}',
+                                            contentType: "application/json; charset=utf-8",
+                                            dataType: "json",
+                                            async: true,
+                                            success: function () {
+                                                alertify.success("La noticia se eliminó correctamente");
+                                            },
+                                            error: function () {
+                                                alertify.error("La noticia no se eliminó correctamente");
+                                            }
+                                        });
+                                    }
 
+                                </script>
                         </div>
                     </div>
                 </div>

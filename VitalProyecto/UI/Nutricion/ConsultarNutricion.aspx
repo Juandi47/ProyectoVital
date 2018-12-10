@@ -59,7 +59,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <label class="form-label" for="sCedula">Busqueda: </label>
-                                    <asp:TextBox ID="sBusqueda" runat="server" Width="250"></asp:TextBox>
+                                    <asp:TextBox ID="sBusqueda" runat="server" Font-Size="Small"></asp:TextBox>
                                 </div>
                                 <div class="col-10">
                                     <p></p>

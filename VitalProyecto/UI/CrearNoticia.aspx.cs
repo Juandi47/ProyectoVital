@@ -10,13 +10,15 @@ namespace UI
 {
     public partial class CrearNoticia : System.Web.UI.Page
     {
-        Manejador_Noticia manejador = new Manejador_Noticia();
+        private static Manejador_Noticia manejador = new Manejador_Noticia();
         private static List<Noticia> ListaNoticia = new List<Noticia>();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 CargarLista();
+                TablaEliminar.Text = "<tr><th>Encabezado</th><th>Texto</th><th>Fecha</th><th>Eliminar</th></tr>";
+                LlenarTabla();
             }
         }
 
@@ -39,7 +41,7 @@ namespace UI
             {
                 if (manejador.CrearNoti(DateTime.Now, EncabReciente.Text, TextoReciente.Text, "/images/vital.jpg", 3))
                 {
-                    ListaNoticia.Add(new Noticia(DateTime.Now, EncabReciente.Text, TextoReciente.Text, "/images/vital.jpg", 3));
+                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabReciente.Text, TextoReciente.Text, "/images/vital.jpg", 3));
                     ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
                 }
                 else
@@ -60,7 +62,7 @@ namespace UI
             {
                 if(manejador.CrearNoti(DateTime.Now, EncabImportante.Text, TextoImportante.Text, "/images/importante.jpg", 2))
                 {
-                    ListaNoticia.Add(new Noticia(DateTime.Now, EncabImportante.Text, TextoImportante.Text, "/images/vital.jpg", 2));
+                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabImportante.Text, TextoImportante.Text, "/images/vital.jpg", 2));
                     ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
                 }
                 else
@@ -81,7 +83,7 @@ namespace UI
             {
                 if (manejador.CrearNoti(DateTime.Now, EncabPrincipal.Text, TextoPrincipal.Text, "/images/plan.jpg", 1))
                 {
-                    ListaNoticia.Add(new Noticia(DateTime.Now, EncabPrincipal.Text, TextoPrincipal.Text, "/images/vital.jpg", 1));
+                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabPrincipal.Text, TextoPrincipal.Text, "/images/vital.jpg", 1));
                     ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
                 }
                 else
@@ -102,7 +104,7 @@ namespace UI
             {
                 if (manejador.CrearNoti(DateTime.Now, EncabNotas.Text, TextoNotas.Text, "", 4))
                 {
-                    ListaNoticia.Add(new Noticia(DateTime.Now, EncabNotas.Text, TextoNotas.Text, "/images/vital.jpg", 4));
+                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1,DateTime.Now, EncabNotas.Text, TextoNotas.Text, "/images/vital.jpg", 4));
                     ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
                 }
                 else
@@ -113,9 +115,33 @@ namespace UI
             EncabNotas.Text = string.Empty; TextoNotas.Text = string.Empty;
         }
         //
-        protected void BtnEliminar_Click(object sender, EventArgs e)
+
+        protected void LlenarTabla()
         {
-            ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
+            foreach(Noticia noti in ListaNoticia)
+            {
+                TablaEliminar.Text += "<tr><td>" + noti.Encabezado + "</td><td>" + noti.Texto + "</td><td>" + noti.Fecha + "</td><td>"+
+                   "<Button id=\"BtnEliminar\" class=\"glyphicon glyphicon-trash\" onclick=\"Eliminar_Click(" + noti.Clave+")\" style= \"color:#990000\"></Button></td></tr>";
+            }
         }
+
+        [System.Web.Services.WebMethod]
+        protected static void EliminarNoticia(string clave)
+        {
+            int cont = 0;
+            manejador.EliminarNoticia(Convert.ToInt32(clave));
+            foreach (Noticia noti in ListaNoticia)
+            {
+                if(noti.Clave == Convert.ToInt32(clave))
+                {
+                    ListaNoticia.RemoveAt(cont);
+                }
+                else
+                {
+                    cont = cont + 1;
+                }
+            }
+        }
+        
     }
 }

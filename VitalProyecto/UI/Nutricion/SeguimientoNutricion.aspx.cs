@@ -20,7 +20,6 @@ namespace UI.Nutricion
             }
             if (!IsPostBack)
             {
-                Fecha.Text = "Fecha: " + DateTime.Now;
                 r24Tabla.Text = "<tr><th>Tiempo de Comida</th><th>Descripción</th></tr>";
             }
         }
@@ -123,7 +122,6 @@ namespace UI.Nutricion
             {
                 TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
                 DateTime cstTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, cstZone);
-                cstTime = cstTime.AddHours(-1);
                 Fecha.Text = "Fecha: " + cstTime;
             }
             catch (TimeZoneNotFoundException)

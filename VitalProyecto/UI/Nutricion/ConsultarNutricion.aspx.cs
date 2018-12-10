@@ -128,7 +128,6 @@ namespace UI.Nutricion
             {
                 TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
                 DateTime cstTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, cstZone);
-                cstTime = cstTime.AddHours(-1);
                 Fecha.Text = "Fecha: " + cstTime;
             }
             catch (TimeZoneNotFoundException)

@@ -94,15 +94,6 @@ namespace UI.Nutricion {
         protected global::System.Web.UI.WebControls.TextBox tFechNac;
         
         /// <summary>
-        /// tEdad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tEdad;
-        
-        /// <summary>
         /// tTelef control.
         /// </summary>
         /// <remarks>
@@ -137,6 +128,15 @@ namespace UI.Nutricion {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tResid;
+        
+        /// <summary>
+        /// tEdad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tEdad;
         
         /// <summary>
         /// tOcupacion control.
