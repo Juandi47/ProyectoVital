@@ -39,6 +39,7 @@ namespace UI.Nutricion
         private void LlenarListas()
         {
             //Lista Sexo
+            tSex.Items.Add("Seleccione");
             tSex.Items.Add("Masculino");
             tSex.Items.Add("Femenino");
             tSex.Items.Add("Otro");
@@ -196,6 +197,7 @@ namespace UI.Nutricion
 
         protected void btnCrear_Click(object sender, EventArgs e)
         {
+            
             if (tCedula.Text.Equals("") || tnombre.Text.Equals("") || tApellid1.Text.Equals("") || tApellid2.Text.Equals("") || tFechNac.Text.Equals("") || tSex.Text.Equals("") || tEstCivil.Text.Equals("") || tTelef.Text.Equals("") || tResid.Text.Equals("") || tOcupacion.Text.Equals("") ||
                 tCedula.Text.Equals("") || tAnteced.Text.Equals("") || tPatolog.Text.Equals("") || tFechRevis.Text.Equals("") || ActFisica.Text.Equals("") || VecesComid.Text.Equals("") || cuanExpress.Text.Equals("")|| aguAlDia.Text.Equals("")||
                 tTalla.Text.Equals("")|| tPesoMeta.Text.Equals("") ||tEdadNut.Text.Equals("")|| tPMB.Text.Equals("")|| tPesoActual.Text.Equals("")|| tPesoMaxTeoria.Text.Equals("")|| tIMC.Text.Equals("")||

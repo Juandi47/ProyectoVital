@@ -224,24 +224,24 @@ namespace DAO
                 {
                     conexion.Close();
                 }
-                
-                    //Asignacion de parametros.
-                    cmd.Parameters.AddWithValue("@sesion", ses);
-                    cmd.Parameters.AddWithValue("@fech", tOSeguimientoSemanal.Fecha);
-                    cmd.Parameters.AddWithValue("@peso", tOSeguimientoSemanal.Peso);
-                    cmd.Parameters.AddWithValue("@orej", tOSeguimientoSemanal.Oreja);
-                    cmd.Parameters.AddWithValue("@ejercic", tOSeguimientoSemanal.Ejercicio);
-                    cmd.Parameters.AddWithValue("@ced", tOSeguimientoSemanal.Cedula);
-                    //Validacion del estado de la conexion.
-                    if (conexion.State != ConnectionState.Open)
-                    {
-                        conexion.Open();
-                    }
 
-                    cmd.ExecuteNonQuery();
+                //Asignacion de parametros.
+                cmd.Parameters.AddWithValue("@sesion", ses);
+                cmd.Parameters.AddWithValue("@fech", tOSeguimientoSemanal.Fecha);
+                cmd.Parameters.AddWithValue("@peso", tOSeguimientoSemanal.Peso);
+                cmd.Parameters.AddWithValue("@orej", tOSeguimientoSemanal.Oreja);
+                cmd.Parameters.AddWithValue("@ejercic", tOSeguimientoSemanal.Ejercicio);
+                cmd.Parameters.AddWithValue("@ced", tOSeguimientoSemanal.Cedula);
+                //Validacion del estado de la conexion.
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                cmd.ExecuteNonQuery();
                 conexion.Close();
-                    return true;
-                            
+                return true;
+
             }
             catch (SqlException)
             {
@@ -322,7 +322,7 @@ namespace DAO
                 return false;
             }
         }
-    
+
 
 
         public bool GuardarHistorial(TOHistorialMedico historial, List<TOMedicamento> listaMedicamento)
@@ -332,7 +332,7 @@ namespace DAO
 
             SqlCommand cmd = new SqlCommand(query1, conexion);
             SqlCommand cmd2 = new SqlCommand(query2, conexion);
-            
+
             try
             {
                 //Historial Medico.
@@ -354,7 +354,7 @@ namespace DAO
                 //Insercion del historial medico.
                 cmd.ExecuteNonQuery();
                 //Insercion de los medicamentos o suplementos del cliente.
-                if(listaMedicamento != null)
+                if (listaMedicamento != null)
                 {
                     foreach (TOMedicamento medicamento in listaMedicamento)
                     {
@@ -367,7 +367,7 @@ namespace DAO
                         cmd2.ExecuteNonQuery();
                     }
                 }
-              
+
 
                 conexion.Close();
 
@@ -381,40 +381,40 @@ namespace DAO
         }
 
         public List<TOSeguimientoSemanal> ListarSeguimSemanal(string cedula)
-        {         
-                List<TOSeguimientoSemanal> ListaMedidas = new List<TOSeguimientoSemanal>();
-                string qry = "Select * from SeguimientoSemanal where Cedula = " + cedula;
-                SqlCommand buscar = new SqlCommand(qry, conexion);
-                SqlDataReader lector;
-            
-                if (conexion.State != ConnectionState.Open)
-                {
-                    conexion.Open();
-                }
-                lector = buscar.ExecuteReader();
-                if (lector.HasRows)
-                {
-                    while (lector.Read())
-                    {
-                        ListaMedidas.Add(new TOSeguimientoSemanal(Int32.Parse(lector["Sesion"].ToString()), DateTime.Parse(lector["FechaSesion"].ToString()),
-                        decimal.Parse(lector["Peso"].ToString()), lector["Oreja"].ToString(), lector["Ejercicio"].ToString(), lector["Cedula"].ToString()));
+        {
+            List<TOSeguimientoSemanal> ListaMedidas = new List<TOSeguimientoSemanal>();
+            string qry = "Select * from SeguimientoSemanal where Cedula = " + cedula;
+            SqlCommand buscar = new SqlCommand(qry, conexion);
+            SqlDataReader lector;
 
-                    }
-                    conexion.Close();
-                    return ListaMedidas;
-                }
-                else
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+            lector = buscar.ExecuteReader();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
                 {
-                    conexion.Close();
-                    return null;
-                }
+                    ListaMedidas.Add(new TOSeguimientoSemanal(Int32.Parse(lector["Sesion"].ToString()), DateTime.Parse(lector["FechaSesion"].ToString()),
+                    decimal.Parse(lector["Peso"].ToString()), lector["Oreja"].ToString(), lector["Ejercicio"].ToString(), lector["Cedula"].ToString()));
 
-           
+                }
+                conexion.Close();
+                return ListaMedidas;
+            }
+            else
+            {
+                conexion.Close();
+                return null;
+            }
+
+
         }
 
         public void EliminarExpediente(string cedula)
         {
-            string query1 = "Delete from Usuario where Cedula = "+ cedula;
+            string query1 = "Delete from Usuario where Cedula = " + cedula;
             string query2 = "Delete from Cliente_Nutricion where Cedula = " + cedula;
             string query3 = "Delete from Antropometria where CedulaCliente = " + cedula;
             string query4 = "Delete from DistribucionPorcion where Cedula = " + cedula;
@@ -432,22 +432,16 @@ namespace DAO
             SqlCommand cmd5 = new SqlCommand(query5, conexion);
             SqlCommand cmd6 = new SqlCommand(query6, conexion);
             SqlCommand cmd7 = new SqlCommand(query7, conexion);
-            SqlCommand cmd8= new SqlCommand(query8, conexion);
-            SqlCommand cmd9= new SqlCommand(query9, conexion);
+            SqlCommand cmd8 = new SqlCommand(query8, conexion);
+            SqlCommand cmd9 = new SqlCommand(query9, conexion);
             SqlCommand cmd10 = new SqlCommand(query10, conexion);
             SqlDataReader lector;
-            //try
-            //{
+            try
+            {
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();
                 }
-                
-                //conexion.Close();
-                //if (conexion.State != ConnectionState.Open)
-                //{
-                //    conexion.Open();
-                //}
                 string seg = "Select ID_Seguim from SeguimNutricion where Cedula = " + cedula;
                 SqlCommand segm = new SqlCommand(seg, conexion);
                 lector = segm.ExecuteReader();
@@ -471,10 +465,11 @@ namespace DAO
                     conexion.Close();
                 }
                 if (conexion.State != ConnectionState.Open)
-            {
-                conexion.Open();
-            }
-            cmd10.ExecuteNonQuery();
+                {
+                    conexion.Open();
+                }
+
+                cmd10.ExecuteNonQuery();
                 cmd9.ExecuteNonQuery();
                 cmd8.ExecuteNonQuery();
                 cmd7.ExecuteNonQuery();
@@ -486,10 +481,12 @@ namespace DAO
                 cmd.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
 
-                conexion.Close(); 
-            //}
-            //catch (SqlException)
-            //{}
+                conexion.Close();
+
+
+            }
+            catch (SqlException)
+            { }
         }
 
 

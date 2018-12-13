@@ -52,11 +52,12 @@
                             <li><a href="/Nutricion/IngresoNutricion.aspx">Primer Ingreso</a></li>
                             <li><a href="/Nutricion/SeguimSemanal.aspx">Seguimineto Semanal</a></li>
                             <li><a href="/Nutricion/SeguimientoNutricion.aspx">Seguimineto Mensual</a></li>
-                            <li><a href="/PagInicio.aspx">Cerrar sesión</a></li>
+                           
                             <%--<li><a href="">Intercambio Hombre</a></li>
                             <li><a href="">Intercambio Mujer</a></li>--%>
                         </ul>
                     </li>
+                     <li><a href="/PagInicio.aspx">Cerrar sesión</a></li>
                 </ul>
                  
             </nav>

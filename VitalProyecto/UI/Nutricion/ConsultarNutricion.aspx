@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nutricion/NutricionMaster.Master" AutoEventWireup="true" CodeBehind="ConsultarNutricion.aspx.cs" Inherits="UI.Nutricion.ConsultarNutricion" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Nutricion/NutricionMaster.Master" AutoEventWireup="true" CodeBehind="ConsultarNutricion.aspx.cs" MaintainScrollPositionOnPostback="true" Inherits="UI.Nutricion.ConsultarNutricion" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta charset="utf-8">
@@ -68,13 +68,13 @@
                                 </div>
                             </div>
                             <div class="row">
-                                
-                                    <div class="col-60" id="div1">
-                                        <table>
-                                            <asp:Literal ID="LitConsultar" runat="server"></asp:Literal>
-                                        </table>
-                                    </div>
-                               
+
+                                <div class="col-60" id="div1">
+                                    <table>
+                                        <asp:Literal ID="LitConsultar" runat="server"></asp:Literal>
+                                    </table>
+                                </div>
+
                                 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
                                 <script type="text/javascript">   
                                     function Ver_Click(num) {
@@ -86,8 +86,8 @@
                                             dataType: "json",
                                             async: true,
                                             success: function (info) {
-                                                 $("label[for = lblVer]").text(info.d);
-                                                
+                                                //$("label[for = lblVer]").text(info.d);
+                                                document.getElementById("#Mostrar").innerHTML = "Leegoo";
                                             },
                                             error: function (XMLHttpRequest, textStatus, errorThrown) {
                                                 alert("Acción Denegada");
@@ -95,6 +95,8 @@
                                         });
                                     }
                                 </script>
+                                
+
                                 <script type="text/javascript">   
                                     function Eliminar_Click(num) {
                                         $.ajax({
@@ -115,11 +117,13 @@
 
                                 </script>
 
-                            <%--</div>
+                                <%--</div>
                             <div class="row">--%>
                                 <div class="col-40">
-                                    <label class="form-label" for ="lblVer" style="width: 400px; height:300px"></label>
+                                    <asp:Label ID="Mostrar" runat="server"></asp:Label>
+                                    <label class="form-label" for="lblVer"></label>
                                 </div>
+
                             </div>
                         </div>
                     </div>

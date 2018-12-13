@@ -15,10 +15,10 @@ namespace UI.Nutricion
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (new ControlSeguridad().validarClieNutri() == true)
-            {
-                Response.Redirect("~/IniciarSesion.aspx");
-            }
+        //    if (new ControlSeguridad().validarClieNutri() == true)
+        //    {
+        //        Response.Redirect("~/IniciarSesion.aspx");
+        //    }
 
             if (!IsPostBack)
             {
@@ -65,6 +65,7 @@ namespace UI.Nutricion
         [System.Web.Services.WebMethod]
         public static string VerDetalleCliente(string ced)
         {
+       
             ClienteNutricion cl = lista.Find(x => x.Cedula.Equals(ced));
             string t = "Cedula: " + cl.Cedula + "    Nombre: " + cl.Nombre +" "+ cl.Apellido1 + " " + cl.Apellido2 +  "                Fecha de Nacimiento: " + cl.Fecha_Nacimiento.ToString("ddmmyyyy") + Environment.NewLine + "Edad: " + CalcularCumple(cl.Fecha_Nacimiento) + "                " +
                 "Telefono: " + cl.Telefono +"    "+ "      Sexo: " + cl.Sexo +  "  " + "Estado Civil: " + cl.Estado_Civil + "       " +
@@ -72,6 +73,7 @@ namespace UI.Nutricion
             return t;
         }
         
+       
        
         protected static int CalcularCumple(DateTime fechaNac)
         {
