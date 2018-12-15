@@ -74,5 +74,24 @@ namespace DAO
                 return null;
             }
         }
-    }
+
+		public void eliminarNoticia(int clave)
+		{
+			SqlCommand cmdNoti = new SqlCommand("delete from noticia where clave_noticia = @clave", conexion);
+			cmdNoti.Parameters.AddWithValue("@clave", clave);
+			try
+			{
+				conexion.Open();
+				cmdNoti.ExecuteNonQuery();
+				conexion.Close();
+			}
+			catch (Exception ex)
+			{
+				ex.ToString();
+				conexion.Close();
+			}
+		}
+
+
+	}
 }

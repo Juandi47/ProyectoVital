@@ -35,9 +35,9 @@ namespace BL
             }
         }
 
-        public bool EliminarNoticia(int Clave)
+        public void EliminarNoticia(int clave)
         {
-            return true;
-        }
+			daoNoticia.eliminarNoticia(clave);
+		}
     }
 }
