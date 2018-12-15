@@ -324,11 +324,46 @@ namespace DAO
         }
 
 
-
+        public TOHistorialMedico TraerHistorialMed(string ced)
+        {
+            TOHistorialMedico hm = new TOHistorialMedico();
+            string query = "Select * from Historial_Medico where Cedula = " + ced;
+            SqlCommand buscar = new SqlCommand(query, conexion);
+            SqlDataReader lector;
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                lector = buscar.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    lector.Read();
+                    hm.Cedula = lector["Cedula"].ToString();
+                    hm.Antecedentes = lector["Antecedentes_Fam"].ToString();
+                    hm.Patologias = lector["Patologias"].ToString();
+                    hm.Fuma = Int32.Parse(lector["Fumador"].ToString());
+                    hm.UltimoExamen = DateTime.Parse(lector["Fecha_Ult_Exm"].ToString());
+                    hm.FrecFuma = lector["FrecFumar"].ToString();
+                    hm.FrecLicor = lector["FrecTomar"].ToString();
+                    hm.ActividadFisica = lector["ActividadFisica"].ToString();
+                    conexion.Close();
+                }
+                else
+                {
+                    conexion.Close();
+                    return null;
+                }
+            }
+            catch
+            { conexion.Close(); }
+            return hm;
+        }
         public bool GuardarHistorial(TOHistorialMedico historial, List<TOMedicamento> listaMedicamento)
         {
-            String query1 = "Insert into Historial_Medico values(@antec,@patol,@consLic,@fum,@fechEx,@ced,@frecFum,@frecTom,@actvFis);";
-            String query2 = "Insert into Medic_Suplem values(@ced,@nomb,@mot,@frec,@dosis);";
+            string query1 = "Insert into Historial_Medico values(@antec,@patol,@consLic,@fum,@fechEx,@ced,@frecFum,@frecTom,@actvFis);";
+            string query2 = "Insert into Medic_Suplem values(@ced,@nomb,@mot,@frec,@dosis);";
 
             SqlCommand cmd = new SqlCommand(query1, conexion);
             SqlCommand cmd2 = new SqlCommand(query2, conexion);
@@ -380,6 +415,34 @@ namespace DAO
 
         }
 
+        public List<TOMedicamento> ListaSuplMed(string ced)
+        {
+            List<TOMedicamento> list = new List<TOMedicamento>();
+            string qry = "Select * from Medic_Suplem where Cedula =" + ced;
+            SqlCommand buscar = new SqlCommand(qry, conexion);
+            SqlDataReader lector;
+            
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+            lector = buscar.ExecuteReader();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    list.Add(new TOMedicamento(lector["Cedula"].ToString(), lector["Nombre"].ToString(), lector["Motivo"].ToString(),
+                    lector["Frecuencia"].ToString(), lector["Dosis"].ToString()));
+                }
+                conexion.Close();
+                return list;
+            }
+            else
+            {
+                conexion.Close();
+                return null;
+            }
+        }
         public List<TOSeguimientoSemanal> ListarSeguimSemanal(string cedula)
         {
             List<TOSeguimientoSemanal> ListaMedidas = new List<TOSeguimientoSemanal>();
@@ -447,6 +510,7 @@ namespace DAO
                 lector = segm.ExecuteReader();
                 if (lector.HasRows)
                 {
+                    lector.Read();
                     string query11 = "Delete from SeguimNutricion where Cedula = " + cedula;
                     string query12 = "Delete from SeguimRecordat24H where ID_Seguimiento = " + Int32.Parse(lector["ID_Seguim"].ToString());
                     string query13 = "Delete from SeguimAntropom where ID_Seguimiento = " + Int32.Parse(lector["ID_Seguim"].ToString());
