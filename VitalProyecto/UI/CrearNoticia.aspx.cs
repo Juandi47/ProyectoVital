@@ -121,7 +121,7 @@ namespace UI
             foreach(Noticia noti in ListaNoticia)
             {
                 TablaEliminar.Text += "<tr><td>" + noti.Encabezado + "</td><td>" + noti.Texto + "</td><td>" + noti.Fecha + "</td><td>"+
-                   "<Button id=\"BtnEliminar\" class=\"glyphicon glyphicon-trash\" onclick=\"Eliminar_Click(" + noti.Clave+")\" style= \"color:#990000\"></Button></td></tr>";
+                   "<a \"href=\"#\" onclick=\"Eliminar_Click(" + noti.Clave + ")\" id=\"btnEliminar\">Eliminar</a></td></tr>";
             }
         }
 

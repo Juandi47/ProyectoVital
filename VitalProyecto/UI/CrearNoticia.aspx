@@ -122,9 +122,10 @@
                             <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
                              <script type="text/javascript">   
                                  function Eliminar_Click(num) {
+                                     alert(num);
                                         $.ajax({
                                             type: "POST",
-                                            url: '/CrearNoticia.aspx/EliminarNoticia',
+                                            url: '../CrearNoticia.aspx/EliminarNoticia',
                                             data: '{clave:' + num + '}',
                                             contentType: "application/json; charset=utf-8",
                                             dataType: "json",
@@ -136,8 +137,7 @@
                                                 alertify.error("La noticia no se eliminó correctamente");
                                             }
                                         });
-                                    }
-
+                                 }
                                 </script>
                         </div>
                     </div>
