@@ -8,6 +8,23 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/tabla.css" />
     <link rel="StyleSheet" href="admin_estilos.css" type="text/css" media="screen">
+     <script src="js/alertify.min.js"></script>
+    <link rel="stylesheet" href="/css/alertify.min.css" />
+    <link rel="stylesheet" href="/css/semantic.min.css" />
+    <script src="/alertify.js"></script>
+    <script src="/mensaje.js"></script>
+
+    <script type="text/javascript">
+        function mensaje() {
+            alertify.success("Se creó el cliente exitosamente");
+        }
+    </script>
+    <script type="text/javascript">
+        function error() {
+            alertify.error("Cliente no se registró correctamente");
+        }
+     </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Cuerpo" runat="server">
 	<div class="container">
@@ -21,7 +38,6 @@
             </ul>
 
             <div class="tab-content">
-                <%-- <form runat="server">--%>
                 <div id="DatosPersonales" class="tab-pane fade in active">
                     <div class="container">
                         <h3 class="title">Historial Nutrición Anamnesis</h3>

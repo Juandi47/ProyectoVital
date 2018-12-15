@@ -19,10 +19,10 @@ namespace UI.Nutricion
         private static decimal GEBMenStat = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (new ControlSeguridad().validarClieNutri() == true)
-            {
-                Response.Redirect("~/IniciarSesion.aspx");
-            }
+            //if (new ControlSeguridad().validarClieNutri() == true)
+            //{
+            //    Response.Redirect("~/IniciarSesion.aspx");
+            //}
 
             if (!IsPostBack)
             {
@@ -96,7 +96,6 @@ namespace UI.Nutricion
                 medicamSupl.Frecuencia = tFrecMed.Text;
                 medicamSupl.Dosis = tDosisMed.Text;
                 ListaMedicamSuplem.Add(medicamSupl);
-                //Session["ListaSup"] = ListaMedicamSuplem;
 
                 tNomMed.Text = "";
                 tMotvMed.Text = "";
@@ -150,7 +149,7 @@ namespace UI.Nutricion
 
         protected void GEBHombre_Click(object sender, EventArgs e)
         {
-            if (GEBPI.Text.Equals("") || GEBTcm.Text.Equals("") || GEBEdad.Text.Equals(""))
+            if (GEBHomPI.Text.Equals("") || GEBHomTcm.Text.Equals("") || GEBHomEdad.Text.Equals(""))
             {
                 Response.Write("<script>alert('No deben haber espacios en blanco')</script>");
             }
@@ -198,8 +197,8 @@ namespace UI.Nutricion
         protected void btnCrear_Click(object sender, EventArgs e)
         {
             
-            if (tCedula.Text.Equals("") || tnombre.Text.Equals("") || tApellid1.Text.Equals("") || tApellid2.Text.Equals("") || tFechNac.Text.Equals("") || tSex.Text.Equals("") || tEstCivil.Text.Equals("") || tTelef.Text.Equals("") || tResid.Text.Equals("") || tOcupacion.Text.Equals("") ||
-                tCedula.Text.Equals("") || tAnteced.Text.Equals("") || tPatolog.Text.Equals("") || tFechRevis.Text.Equals("") || ActFisica.Text.Equals("") || VecesComid.Text.Equals("") || cuanExpress.Text.Equals("")|| aguAlDia.Text.Equals("")||
+            if (tCedula.Text.Equals("") || tnombre.Text.Equals("") || tApellid1.Text.Equals("") || tApellid2.Text.Equals("") || tFechNac.Text.Equals("") || tTelef.Text.Equals("") || tResid.Text.Equals("") || tOcupacion.Text.Equals("") ||
+                tAnteced.Text.Equals("") || tPatolog.Text.Equals("") || tFechRevis.Text.Equals("") || ActFisica.Text.Equals("") || VecesComid.Text.Equals("") || cuanExpress.Text.Equals("")|| aguAlDia.Text.Equals("")||
                 tTalla.Text.Equals("")|| tPesoMeta.Text.Equals("") ||tEdadNut.Text.Equals("")|| tPMB.Text.Equals("")|| tPesoActual.Text.Equals("")|| tPesoMaxTeoria.Text.Equals("")|| tIMC.Text.Equals("")||
                 tPorcGAnalizador.Text.Equals("")|| tPorcGBascula.Text.Equals("") || tGBascBI.Text.Equals("")|| tGBascBD.Text.Equals("")|| tGBascPI.Text.Equals("")|| tGBascPD.Text.Equals("")|| tGBascTronco.Text.Equals("")||
                 tAguaNut.Text.Equals("") || tMasaOsea.Text.Equals("")||tComplexión.Text.Equals("")|| tEdadMetabolica.Text.Equals("")|| tCintura.Text.Equals("")|| tAbdomen.Text.Equals("")|| tCadera.Text.Equals("")||
@@ -266,15 +265,15 @@ namespace UI.Nutricion
 
                             bool agreTot = manejadorNutri.AgregarAntropometria(antropom, porc, distrib);
                             if (agreTot == true)
-                            { Response.Write("Cliente Registrado!"); }
-                            else { Response.Write("Cliente No Registrado"); }
+                            { ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true); }
+                            else { ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "error();", true); }
 
                         }
                     }
-                    else { Response.Write("<script>alertify.notify('Registro no se realizó correctamente', 'error', 5, null); </script>"); }
+                    else { ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "error();", true); }
 
                 }
-                else { Response.Write("<script language=\"JavaScript\" type=\"text / JavaScript\">alertify.notify('Registro no se realizó correctamente', 'error', 5, null); </script>"); }
+                else { ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "error();", true); }
             }
             limpiarControles();
 
@@ -282,8 +281,7 @@ namespace UI.Nutricion
 
         private void limpiarControles() {
             tCedula.Text = string.Empty; tnombre.Text = string.Empty; tApellid1.Text = string.Empty; tApellid2.Text = string.Empty;
-            tFechNac.Text = string.Empty; tSex.Text = string.Empty; tEstCivil.Text = string.Empty; tTelef.Text = string.Empty;
-            tResid.Text = string.Empty; tOcupacion.Text = string.Empty; tAnteced.Text = string.Empty; tPatolog.Text = string.Empty;
+            tTelef.Text = string.Empty; tResid.Text = string.Empty; tOcupacion.Text = string.Empty; tAnteced.Text = string.Empty; tPatolog.Text = string.Empty;
             tFechRevis.Text = string.Empty; ActFisica.Text = string.Empty; VecesComid.Text = string.Empty; cuanExpress.Text = string.Empty;
             aguAlDia.Text = string.Empty; tTalla.Text = string.Empty; tPesoMeta.Text = string.Empty; tEdadNut.Text = string.Empty;
             tPMB.Text = string.Empty; tPesoActual.Text = string.Empty; tPesoMaxTeoria.Text = string.Empty; tIMC.Text = string.Empty;
@@ -302,7 +300,7 @@ namespace UI.Nutricion
         {
             if (tFechNac.Text.Equals(""))
             {
-                Response.Write("<script>alert('No deben haber espacios en blanco')</script>");
+                Response.Write("No deben haber espacios en blanco");
             }
             else
             {
@@ -344,11 +342,11 @@ namespace UI.Nutricion
             }
             catch (TimeZoneNotFoundException)
             {
-                Response.Write("<script>alert('El registro no define la zona CST.')</script>");
+                Response.Write("El registro no define la zona CST.");
             }
             catch (InvalidTimeZoneException)
             {
-                Response.Write("<script>alert('El registro de datos en la zona CST ha sido corrupta .')</script>");
+                Response.Write("El registro de datos en la zona CST ha sido corrupta.");
             }
             
         }

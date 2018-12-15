@@ -7,7 +7,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/tabla.css" />
+    <script src="js/alertify.min.js"></script>
+    <link rel="stylesheet" href="/css/alertify.min.css" />
+    <link rel="stylesheet" href="/css/semantic.min.css" />
+    <script src="/alertify.js"></script>
+    <script src="/mensaje.js"></script>
 
+    <script type="text/javascript">
+        function mensaje() {
+            alertify.success("Se eliminó el registro exitosamente");
+        }
+    </script>
+    <script type="text/javascript">
+        function error() {
+            alertify.error("Registro no se eliminó correctamente");
+        }
+    </script>
     <style>
         #div1 {
             overflow: scroll;
@@ -86,16 +101,15 @@
                                             dataType: "json",
                                             async: true,
                                             success: function (info) {
-                                                //$("label[for = lblVer]").text(info.d);
-                                                document.getElementById("#Mostrar").innerHTML = "Leegoo";
+                                                $('#M').html(info.d);
                                             },
-                                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                            error: function () {
                                                 alert("Acción Denegada");
                                             }
                                         });
                                     }
                                 </script>
-                                
+
 
                                 <script type="text/javascript">   
                                     function Eliminar_Click(num) {
@@ -107,24 +121,20 @@
                                             dataType: "json",
                                             async: true,
                                             success: function () {
-                                                alert("Cliente Eliminado");
+                                                mensaje;
                                             },
-                                            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                                                alert("Acción Denegada");
+                                            error: function () {
+                                                error;
                                             }
                                         });
                                     }
 
                                 </script>
 
-                                <%--</div>
-                            <div class="row">--%>
-                                <div class="col-40">
-                                    <asp:Label ID="Mostrar" runat="server"></asp:Label>
-                                    <label class="form-label" for="lblVer"></label>
-                                </div>
-
                             </div>
+                             <div id="M" class="row">
+                                    <asp:Literal runat="server"></asp:Literal>
+                             </div>
                         </div>
                     </div>
                 </div>

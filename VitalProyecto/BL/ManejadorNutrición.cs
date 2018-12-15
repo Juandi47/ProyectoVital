@@ -214,5 +214,40 @@ namespace BL
             daoClienteNutricion.EliminarExpediente(cedula);
         }
 
+        public HistorialMedico TraerHistorial(string Ced)
+        {
+            HistorialMedico hist = new HistorialMedico();
+            TOHistorialMedico hm= daoClienteNutricion.TraerHistorialMed(Ced);
+            if (hm != null)
+            {
+                hist.Cedula = hm.Cedula;
+                hist.Antecedentes = hm.Antecedentes;
+                hist.Patologias = hm.Patologias;
+                hist.ConsumeLicor = hm.ConsumeLicor;
+                hist.Fuma = hm.Fuma;
+                hist.FrecFuma = hm.FrecFuma;
+                hist.FrecLicor = hm.FrecLicor;
+                hist.UltimoExamen = hm.UltimoExamen;
+                hist.ActividadFisica = hm.ActividadFisica;
+                return hist;
+            }
+            else { return null; }
+            
+        }
+        public List<Medicamento> traerSuplMed(string ced)
+        {
+            List<Medicamento> MedList = new List<Medicamento>();
+            List<TOMedicamento> list = daoClienteNutricion.ListaSuplMed(ced);
+            if(list != null)
+            {
+                foreach(TOMedicamento med in list)
+                {
+                    MedList.Add(new Medicamento(med.Cedula,med.Nombre,med.Motivo,med.Frecuencia,med.Dosis));
+                }
+                
+            }
+            else { return null; }
+            return MedList;
+        }
     }
 }
