@@ -14,7 +14,12 @@ namespace UI
         private static List<Noticia> ListaNoticia = new List<Noticia>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+			if (new ControlSeguridad().validarAdmin() == true)
+			{
+				Response.Redirect("~/IniciarSesion.aspx");
+			}
+
+			if (!IsPostBack)
             {
                 CargarLista();
                 TablaEliminar.Text = "<tr><th>Encabezado</th><th>Texto</th><th>Fecha</th><th>Eliminar</th></tr>";
@@ -126,7 +131,7 @@ namespace UI
         }
 
         [System.Web.Services.WebMethod]
-        protected static void EliminarNoticia(string clave)
+        public static void EliminarNoticia(string clave)
         {
             int cont = 0;
             manejador.EliminarNoticia(Convert.ToInt32(clave));

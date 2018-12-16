@@ -66,7 +66,7 @@
                         </ul>
                     </li>
                     <li><a href="Notificacion.aspx">Notificación</a></li>
-					
+					<li><a href="CrearNoticia.aspx">Noticias</a></li>
 					<li><a href="PagInicio.aspx">Cerrar sesión</a></li>
                 </ul>
             </nav>
