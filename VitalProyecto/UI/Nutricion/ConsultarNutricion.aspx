@@ -122,6 +122,7 @@
                                             async: true,
                                             success: function () {
                                                 mensaje;
+                                                location.reload();
                                             },
                                             error: function () {
                                                 error;
