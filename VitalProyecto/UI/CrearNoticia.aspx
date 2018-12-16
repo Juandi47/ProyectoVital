@@ -122,7 +122,6 @@
                             <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
                              <script type="text/javascript">   
                                  function Eliminar_Click(num) {
-                                     alert(num);
                                         $.ajax({
                                             type: "POST",
                                             url: '../CrearNoticia.aspx/EliminarNoticia',
@@ -132,6 +131,7 @@
                                             async: true,
                                             success: function () {
                                                 alertify.success("La noticia se eliminó correctamente");
+                                                location.reload();
                                             },
                                             error: function () {
                                                 alertify.error("La noticia no se eliminó correctamente");

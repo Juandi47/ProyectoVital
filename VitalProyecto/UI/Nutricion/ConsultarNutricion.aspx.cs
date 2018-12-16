@@ -188,6 +188,7 @@ namespace UI.Nutricion
         public static void EliminarCliente(string ced)
         {
             manejador.EliminarExpediente(ced);
+            
         }
 
         protected void btnAtras_Click(object sender, EventArgs e)

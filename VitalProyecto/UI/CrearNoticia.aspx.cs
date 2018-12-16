@@ -14,17 +14,17 @@ namespace UI
         private static List<Noticia> ListaNoticia = new List<Noticia>();
         protected void Page_Load(object sender, EventArgs e)
         {
-			if (new ControlSeguridad().validarAdmin() == true)
-			{
-				Response.Redirect("~/IniciarSesion.aspx");
-			}
+            //if (new ControlSeguridad().validarAdmin() == true)
+            //{
+            //	Response.Redirect("~/IniciarSesion.aspx");
+            //}
 
-			if (!IsPostBack)
+            if (!IsPostBack)
             {
                 CargarLista();
                 TablaEliminar.Text = "<tr><th>Encabezado</th><th>Texto</th><th>Fecha</th><th>Eliminar</th></tr>";
-                LlenarTabla();
             }
+            LlenarTabla();
         }
 
         private void CargarLista()
@@ -133,19 +133,17 @@ namespace UI
         [System.Web.Services.WebMethod]
         public static void EliminarNoticia(string clave)
         {
-            int cont = 0;
             manejador.EliminarNoticia(Convert.ToInt32(clave));
-            foreach (Noticia noti in ListaNoticia)
+            for(int i =0; i<ListaNoticia.Count-1; i++)
             {
-                if(noti.Clave == Convert.ToInt32(clave))
+                if(ListaNoticia[i].Clave== Convert.ToInt32(clave))
                 {
-                    ListaNoticia.RemoveAt(cont);
+                    ListaNoticia.RemoveAt(i);
+                    break;
                 }
-                else
-                {
-                    cont = cont + 1;
-                }
+
             }
+            
         }
         
     }
