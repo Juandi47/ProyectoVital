@@ -50,7 +50,6 @@
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#CrearNoticia">Crear Noticia</a></li>
                 <li><a data-toggle="tab" href="#EliminarNoticia">Eliminar Noticia</a></li>
-                <li><a data-toggle="tab" href="#ModificarNoticia">Modificar Noticia</a></li>
             </ul>
             <div class="tab-content">
                 <div id="CrearNoticia" class="tab-pane fade in active">
@@ -139,15 +138,6 @@
                                         });
                                  }
                                 </script>
-                        </div>
-                    </div>
-                </div>
-                <div id="ModificarNoticia" class="tab-pane fade">
-                    <div class="container">
-                        <h3 class="title">Modificar Noticias</h3>
-                        <div class="form-container">
-                            <div class="form-container">
-                            </div>
                         </div>
                     </div>
                 </div>
