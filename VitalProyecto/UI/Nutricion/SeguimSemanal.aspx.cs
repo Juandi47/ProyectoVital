@@ -59,9 +59,9 @@ namespace UI.Nutricion
             }
             else
             {
-                bool existe = manejadorNutrición.Metodo!!!(sCedula.Text);
-                if(existe)
-                {
+                //bool existe = manejadorNutrición.Metodo!!!(sCedula.Text);
+                //if(existe)
+                //{
                     listaSeguimientos = manejadorNutrición.TraerLista(sCedula.Text);
                     if (listaSeguimientos != null)
                     {
@@ -75,11 +75,11 @@ namespace UI.Nutricion
                     {
                         LitSeguimiento.Text = "No existen Seguimientos Semanales de este usuario.";
                     }
-                }
-                else
-                {
-                    LitSeguimiento.Text = "El usuario que ingresó no existe en la base de datos.";
-                }
+                //}
+                //else
+                //{
+                //    LitSeguimiento.Text = "El usuario que ingresó no existe en la base de datos.";
+                //}
             }
         }
 

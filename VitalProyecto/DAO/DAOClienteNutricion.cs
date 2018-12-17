@@ -158,7 +158,7 @@ namespace DAO
 				 "@pmpi,@pmtronco,@observ,@geb,@get,@chopor,@chogram,@chokcal,@protpor,@protgram,@protkcal,@grporc,@grgram,@grkcal)";
 
             String query2 = "Insert into Porciones values(" + porcion.Cedula + "," + porcion.Leche + "," + porcion.Carne + "," + porcion.Vegetales + "," + porcion.Grasa + "," +
-               porcion.Fruta + "," + porcion.Azucar + "," + porcion.Harina + "," + porcion.Suplemento + ");";
+               porcion.Fruta + "," + porcion.Azucar + "," + porcion.Harina + "," + porcion.Suplemento + ")";
             String query3 = "Insert into DistribucionPorcion values(" + distrib.Cedula + "," + distrib.Ayunas + "," + distrib.Desayuno + "," +
                 distrib.MediaMañana + "," + distrib.Almuerzo + "," + distrib.MediaTarde + "," + distrib.Cena + "," + distrib.ColacionNocturna + ");";
             SqlCommand cmd = new SqlCommand(query1, conexion);
