@@ -251,7 +251,7 @@ namespace UI.Nutricion
                                 Convert.ToDecimal(tPorcGAnalizador.Text), Convert.ToDecimal(tPorcGBascula.Text), Convert.ToDecimal(tGBascBI.Text), Convert.ToDecimal(tGBascBD.Text),
                                 Convert.ToDecimal(tGBascPI.Text), Convert.ToDecimal(tGBascPD.Text), Convert.ToDecimal(tGBascTronco.Text), Convert.ToDecimal(tAguaNut.Text), Convert.ToDecimal(tMasaOsea.Text),
                                 Convert.ToDecimal(tComplexión.Text), Convert.ToDecimal(tEdadMetabolica.Text), Convert.ToDecimal(tCintura.Text), Convert.ToDecimal(tAbdomen.Text), Convert.ToDecimal(tCadera.Text),
-                                tMuslo.Text, Convert.ToDecimal(tCBM.Text), Convert.ToDecimal(tCircunfMun.Text), Convert.ToDecimal(tPorcGVisceral.Text), Convert.ToDecimal(tPorcGMusculo.Text), Convert.ToDecimal(tMuscBI.Text),
+                                tMuslo.Text, tCBM.Text, Convert.ToDecimal(tCircunfMun.Text), Convert.ToDecimal(tPorcGVisceral.Text), Convert.ToDecimal(tPorcGMusculo.Text), Convert.ToDecimal(tMuscBI.Text),
                                 Convert.ToDecimal(tMuscPD.Text), Convert.ToDecimal(tMuscBD.Text), Convert.ToDecimal(tMuscPI.Text), Convert.ToDecimal(tMuscTronco.Text), tObservacion.Text,
                                 Geb, GETStat, Convert.ToDecimal(PorcCHO.Text), Convert.ToDecimal(GramCHO.Text), Convert.ToDecimal(kcalCHO.Text), Convert.ToDecimal(PorcProteinas.Text),
                                 Convert.ToDecimal(GramProteinas.Text), Convert.ToDecimal(kcalProteinas.Text), Convert.ToDecimal(PorcGrasas.Text), Convert.ToDecimal(GramGrasas.Text), Convert.ToDecimal(kcalGrasas.Text));
@@ -295,6 +295,9 @@ namespace UI.Nutricion
             GramProteinas.Text = string.Empty; kcalProteinas.Text = string.Empty; PorcGrasas.Text = string.Empty; GramGrasas.Text = string.Empty;
             kcalGrasas.Text = string.Empty; pLeche.Text = string.Empty; pCarnes.Text = string.Empty; pVegetales.Text = string.Empty; pGrasas.Text = string.Empty;
             pFrutas.Text = string.Empty; pAzúcares.Text = string.Empty; pHarinas.Text = string.Empty; pSuplemento.Text = string.Empty;
+            tSuplementoMedico.Text = "";
+            r24Tabla.Text = "";
+            tEdad.Text = "";
         }
         protected void tFechNac_TextChanged(object sender, EventArgs e)
         {
