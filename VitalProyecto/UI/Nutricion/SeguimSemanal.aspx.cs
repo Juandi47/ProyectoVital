@@ -40,8 +40,9 @@ namespace UI.Nutricion
                     }
                     else
                     {
+                        listaSeguimientos = new List<SeguimientoSemanal>();
                         listaSeguimientos.Add(new SeguimientoSemanal(1, DateTime.Now, Convert.ToDecimal(sPeso.Text), sOreja.Text, sEjercicio.Text, sCedula.Text));
-                        LitSeguimiento.Text = "";
+                        LitSeguimiento.Text = "<tr><th>Sesión</th><th>Fecha</th><th>Peso</th><th>Oreja</th><th>Ejercicio</th></tr>";
                         LitSeguimiento.Text += "<tr><td>" + 1 + "</td><td>" + DateTime.Now + "</td><td>" + sPeso.Text + "</td><td>" + sOreja.Text + "</td><td>" + sEjercicio.Text + "</td></tr>";
 
                     }

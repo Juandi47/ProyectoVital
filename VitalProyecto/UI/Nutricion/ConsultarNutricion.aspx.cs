@@ -65,7 +65,7 @@ namespace UI.Nutricion
         [System.Web.Services.WebMethod]
         public static string VerDetalleCliente(string ced)
         {
-            HistorialMedico hm = new HistorialMedico();
+           
             ClienteNutricion cl = lista.Find(x => x.Cedula.Equals(ced));
             string t = "<ul class=\"nav nav-tabs\"><li class=\"active\"><a data-toggle=\"tab\" href=\"#DatosPersonales\"> Datos Personales</a></li>" +
                        "<li><a data-toggle= \"tab\" href= \"#HistorialMedico\"> Historial Médico</a></li>" +
@@ -80,40 +80,90 @@ namespace UI.Nutricion
                        "Cedula: " + cl.Cedula + " <br /> Nombre: " + cl.Nombre + " " + cl.Apellido1 + " " + cl.Apellido2 + "<br />Fecha de Nacimiento: " + cl.Fecha_Nacimiento.ToString("dd/MM/yyyy") + "<br />Edad: " + CalcularCumple(cl.Fecha_Nacimiento) +
                        "<br />Telefono: " + cl.Telefono + "</div><div class=\"col-50\">Sexo: " + cl.Sexo + "  " + "<br />Estado Civil: " + cl.Estado_Civil + "       " +
                        "<br />Residencia: " + cl.Residencia + "<br />Ocupacion: " + cl.Ocupacion + "<br />Fecha de Ingreso: " + cl.FechaIngreso.ToString("dd/MM/yyyy") +
-                       "</div></div></div></div>";
-            hm = manejador.TraerHistorial(cl.Cedula);
-           
-            if (hm != null) {
-                string l = "";
-                string f = "";
-                if (hm.ConsumeLicor == 1) { l="Sí"; } else {l= "No"; }
-                if (hm.Fuma == 1) { f = "Sí"; } else { f = "No"; }
-                t += "<div id = \"HistorialMedico\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" +
-                 "Antecedentes Familiares: "+hm.Antecedentes+"<br />Patologías que padece: "+hm.Patologias+"<br /> Consume Licor: "+ l +", Frecuencia: "+hm.FrecLicor+"<br />" +
-                 "Fuma: "+f+", Frecuencia: "+hm.FrecFuma+"<br />Fecha de últimos exámenes de sangre o revisión médica: "+ hm.UltimoExamen.ToString("dd/MM/yyyy") + "<br />Medicamentos o suplementos que consume:<br />" + CargarSuplemnto(cl.Cedula);
-               
-            } else { t += "<div id = \"HistorialMedico\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">No existe registro de historial médico</div></div></div></div>"; }
+                       "</div></div></div></div>" +
 
-            t +=  "<div id = \"HabitosAlimentarios\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" +
-                       "¿Acostumbra a comer a las horas al día?: <br />¿Cuántas veces a la semana come fuera o pide un express?: <br />" +
-                       "¿Generalmente que come fuera de la casa?: <br />¿Cuánta azucar le agrega a las bebidas?: <br/>" +
-                       "Los alimentos que cocina los elabora generalmente con: <br /></div><div class=\"col-50\">¿Cuántos vasos de agua toma al día?: <br />¿Cuántas veces come al día?: <br />" +
-                       "¿Agrega salsa de tomate, mayonesa, mantequilla o natilla a la comida?: <br />Le gustan la mayoría de: <br/>" +
-                       "</div></div><div class=\"row\"><div class=\"col-75\">Recordatorio de 24 Horas:</div></div></div></div>" +
-                       
+                       "<div id = \"HistorialMedico\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" +CargarHistorialMed(cl.Cedula)+ "</div></div></div></div>"+
+                       "<div id = \"HabitosAlimentarios\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" + CargarHabitoAlimentario(cl.Cedula) + "</div></div></div></div>"+
                        "<div id=\"Antropometría\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" +
                        "Antopometria<br />GEB: , GET: <br />Porciones: <br />Distribución de porciones entregadas:<br /></div></div></div></div>"+
 
-                        "<div id=\"SegSemanal\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div id=\"div1\"><table>"+CargarSeguimientoSemanal(cl.Cedula)+"</table></div></div></div></div>" +
+                        "<div id=\"SegSemanal\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\">"+CargarSeguimientoSemanal(cl.Cedula)+"</div></div></div>" +
 
                         "<div id=\"SegMensual\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" +
                         "Seguimiento Mensual</div></div></div></div></div>";
             return t;
         }
-        
+        public static string CargarHistorialMed(string ced)
+        {
+            string txt = "";
+            HistorialMedico hm = manejador.TraerHistorial(ced);
+            if (hm != null)
+            {
+                string l = "";
+                string f = "";
+                if (hm.ConsumeLicor == 1) { l = "Sí"; } else { l = "No"; }
+                if (hm.Fuma == 1) { f = "Sí"; } else { f = "No"; }
+                txt += 
+                 "Antecedentes Familiares: " + hm.Antecedentes + "<br />Patologías que padece: " + hm.Patologias + "<br /> Consume Licor: " + l + ", Frecuencia: " + hm.FrecLicor + "</div><div class=\"col-50\">" +
+                 "Fuma: " + f + ", Frecuencia: " + hm.FrecFuma + "<br />Fecha de últimos exámenes de sangre o revisión médica: " + hm.UltimoExamen.ToString("dd/MM/yyyy") +
+                 "</div></div><div class=\"row\"><div class=\"col-75\">Medicamentos o suplementos que consume:<br />" + CargarSuplemnto(ced);
+
+            }
+            else { txt = "No existe registro de historial médico."; }
+
+            return txt;
+        }
+        public static string CargarHabitoAlimentario(string ced)
+        {
+            string txt = "";
+            HabitoAlimentario hab = manejador.TraerHabitosAlimentario(ced);
+            if (hab != null)
+            {
+                string horasdia = ""; if (hab.ComidaHorasDia == 1) { horasdia = "Sí"; } else { horasdia = "No"; }
+                string comExpress = ""; if (hab.AfueraExpress == 1) { comExpress = "Sí"; } else { comExpress = "No"; }
+                string vecesCom = ""; if (hab.ComidaDiaria == 1) { vecesCom = "Sí"; } else { vecesCom = "No"; }
+                string aderez = ""; if (hab.Aderezos == 1) { aderez = "Sí"; } else { aderez = "No"; }
+                string fruta = ""; if (hab.Fruta == 1) { fruta = "Sí"; } else { fruta = "No"; }
+                string verdur = ""; if (hab.Verdura == 1) { verdur = "Sí"; } else { verdur = "No"; }
+                string leche = ""; if (hab.Leche == 1) { leche = "Sí"; } else { leche = "No"; }
+                string huevo = ""; if (hab.Huevo == 1) { huevo = "Sí"; } else { huevo = "No"; }
+                string yogurt = ""; if (hab.Yogurt == 1) { yogurt = "Sí"; } else { yogurt = "No"; }
+                string carne = ""; if (hab.Carne == 1) { carne = "Sí"; } else { carne = "No"; }
+                string queso = ""; if (hab.Queso == 1) { queso = "Sí"; } else { queso = "No"; }
+                string aguacate = ""; if (hab.Aguacate == 1) { aguacate = "Sí"; } else { aguacate = "No"; }
+                string semillas = ""; if (hab.Semillas == 1) { semillas = "Sí"; } else { semillas = "No"; }
+
+                txt += "¿Acostumbra a comer a las horas al día?: " + horasdia + "<br />¿Cuántas veces a la semana come fuera o pide un express?: " + comExpress + "<br />" +
+                           "¿Generalmente que come fuera de la casa?: " + hab.ComidaFuera + "<br />¿Cuánta azucar le agrega a las bebidas?: " + hab.AzucarBebida + "</div><div class=\"col-50\">" +
+                           "Los alimentos que cocina los elabora generalmente con: " + hab.ComidaElaboradCon + "<br /¿Cuántos vasos de agua toma al día?: " + hab.AguaDiaria + "<br />¿Cuántas veces come al día?: " + vecesCom + "<br />" +
+                           "¿Agrega salsa de tomate, mayonesa, mantequilla o natilla a la comida?: " + aderez + "</div></div><div class=\"row\"><div class=\"col-50\">Le gustan la mayoría de: <br/>" +
+                           "Fruta: " + fruta + "<br />Verdura: " + verdur + "</div><div class=\"col-25\">Leche: " + leche + "<br />Huevo: " + huevo + "</div><div class=\"col-25\">Yogurt: " + yogurt + "<br />Carne: " + carne + "</div><div class=\"col-25\">Queso: " + queso + "<br />Aguacate: " + aguacate + "<br />Semillas: " + semillas +
+                           "</div></div><div class=\"row\"><div class=\"col-75\">Recordatorio de 24 Horas:<br />";
+                List<Recordatorio24H> record = manejador.TraerRecordatorio24h(ced);
+                if (record != null || record.Count >= 1)
+                {
+                    txt += "<table><tr><th>Tiempo de Comida</th><th>Alimento</th><th>Cantidad</th><th>Descripción</th></tr>";
+                    foreach (Recordatorio24H r in record)
+                    {
+                        txt += "<tr><td>" + r.TiempoComida + "</td><td>" + r.Comida + "</td><td>" + r.Cantidad + "</td><td>" + r.Descripcion + "</td></tr>";
+                    }
+                    txt += "</table>";
+                }
+                else
+                {
+                    txt = "No hay registro del recordatorio de 24 horas.";
+                }
+
+            }
+            else
+            {
+                txt = "No hay registro de los habitos alimentarios de este usuario.";
+            }
+            return txt;
+        }
         public static string CargarSuplemnto(string ced)
         {
-            string txt = "<table><tr><th>Nombre</th><th>Motivo</th><th>Frecuencia</th><th>Dosis</th></tr>";
+            string txt = "<div id=\"div1\"><table><tr><th>Nombre</th><th>Motivo</th><th>Frecuencia</th><th>Dosis</th></tr>";
             List<Medicamento> medicamSupl = new List<Medicamento>();
             medicamSupl = manejador.traerSuplMed(ced);
             if (medicamSupl != null)
@@ -122,11 +172,11 @@ namespace UI.Nutricion
                 {
                     txt += "<tr><td>" + med.Nombre + "</td><td>" + med.Motivo + "</td><td>" + med.Frecuencia + "</td><td>" + med.Dosis + "</td></tr>";
                 }
-                txt += "</table></div></div></div></div>";
+                txt += "</table></div>";
             }
             else
             {
-                txt += "No consume medicamentos ni suplementos</div></div></div></div>";
+                txt = "No consume medicamentos ni suplementos";
             }
             return txt;
         }
@@ -136,15 +186,16 @@ namespace UI.Nutricion
             List<SeguimientoSemanal>  listaSeguimientos = manejador.TraerLista(ced);
             if (listaSeguimientos != null)
             {
-                lista= "<tr><th>Sesión</th><th>Fecha</th><th>Peso</th><th>Oreja</th><th>Ejercicio</th></tr>";
+                lista= "<table><tr><th>Sesión</th><th>Fecha</th><th>Peso</th><th>Oreja</th><th>Ejercicio</th></tr>";
                 foreach (SeguimientoSemanal seg in listaSeguimientos)
                 {
                     lista += "<tr><td>" + seg.Sesion + "</td><td>" + seg.Fecha.ToString("dd/MM/yyyy") + "</td><td>" + seg.Peso + "</td><td>" + seg.Oreja + "</td><td>" + seg.Ejercicio + "</td></tr>";
                 }
+                lista += "</table>";
             }
             else
             {
-                lista = "<tr><th>No existen Seguimientos Semanales de este usuario.</th></tr>";
+                lista = "No existen Seguimientos Semanales de este usuario.";
             }
             return lista;
         }

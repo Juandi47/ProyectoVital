@@ -112,6 +112,7 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@frut", HabitosAlimentario.Fruta);
                 cmd.Parameters.AddWithValue("@verd", HabitosAlimentario.Verdura);
                 cmd.Parameters.AddWithValue("@lech", HabitosAlimentario.Leche);
+                cmd.Parameters.AddWithValue("@huev", HabitosAlimentario.Leche);
                 cmd.Parameters.AddWithValue("@yogurt", HabitosAlimentario.Yogurt);
                 cmd.Parameters.AddWithValue("@carn", HabitosAlimentario.Carne);
                 cmd.Parameters.AddWithValue("@ques", HabitosAlimentario.Queso);
@@ -145,6 +146,7 @@ namespace DAO
             }
             catch (SqlException)
             {
+                conexion.Close();
                 return false;
             }
         }
@@ -415,6 +417,35 @@ namespace DAO
 
         }
 
+        public List<TORecordatorio24H> TraerRecord24H(string ced)
+        {
+            List<TORecordatorio24H> list = new List<TORecordatorio24H>();
+            string qry = "Select * from Recordat24H where Cedula_Cliente =" + ced;
+            SqlCommand buscar = new SqlCommand(qry, conexion);
+            SqlDataReader lector;
+
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+            lector = buscar.ExecuteReader();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    list.Add(new TORecordatorio24H(lector["Cedula_Cliente"].ToString(), lector["TiempoComida"].ToString(), lector["Comida"].ToString(),
+                    lector["Cantidad"].ToString(), lector["Descripcion"].ToString()));
+                }
+                conexion.Close();
+                return list;
+            }
+            else
+            {
+                conexion.Close();
+                return null;
+            }
+        }
+
         public List<TOMedicamento> ListaSuplMed(string ced)
         {
             List<TOMedicamento> list = new List<TOMedicamento>();
@@ -475,6 +506,42 @@ namespace DAO
 
         }
 
+        public TOHabitoAlimentario ConsultarHabitoAlimentario(string cedula)
+        {
+           
+            string qry = "select * from HabitosAlimentario where Cedula = " + cedula;
+            SqlCommand buscar = new SqlCommand(qry, conexion);
+            SqlDataReader lector;
+
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
+            lector = buscar.ExecuteReader();
+            if (lector.HasRows)
+            {
+                lector.Read();
+                TOHabitoAlimentario hab = new TOHabitoAlimentario(cedula, Int32.Parse(lector["ComidasDiarias"].ToString()),
+                    Int32.Parse(lector["Com_Hor_Dias"].ToString()), Int32.Parse(lector["Afuera_Express"].ToString()),
+                    lector["ComidaFuera"].ToString(), lector["AzucarBebida"].ToString(), lector["ComidaElaborada_Con"].ToString(),
+                    Decimal.Parse(lector["VasosAguaDiaria"].ToString()), Int32.Parse(lector["Aderezos"].ToString()),
+                    Int32.Parse(lector["Fruta"].ToString()), Int32.Parse(lector["Verdura"].ToString()),
+                    Int32.Parse(lector["Leche"].ToString()), Int32.Parse(lector["Huevo"].ToString()),
+                    Int32.Parse(lector["Yogurt"].ToString()), Int32.Parse(lector["Carne"].ToString()),
+                    Int32.Parse(lector["Queso"].ToString()), Int32.Parse(lector["Aguacate"].ToString()),
+                    Int32.Parse(lector["Semillas"].ToString()));
+                conexion.Close();
+                return hab;
+            }
+            else
+            {
+                conexion.Close();
+                return null;
+            }
+            
+
+        }
+
         public void EliminarExpediente(string cedula)
         {
             string query1 = "Delete from Usuario where Cedula = " + cedula;
@@ -484,9 +551,8 @@ namespace DAO
             string query5 = "Delete from HabitosAlimentario where Cedula = " + cedula;
             string query6 = "Delete from Historial_Medico where Cedula = " + cedula;
             string query7 = "Delete from Medic_Suplem where Cedula = " + cedula;
-            string query8 = "Delete from PesoSemanal where Cedula = " + cedula;
-            string query9 = "Delete from Porciones where Cedula = " + cedula;
-            string query10 = "Delete from Recordat24H where Cedula_Cliente = " + cedula;
+            string query8 = "Delete from Porciones where Cedula = " + cedula;
+            string query9 = "Delete from Recordat24H where Cedula_Cliente = " + cedula;
 
             SqlCommand cmd = new SqlCommand(query1, conexion);
             SqlCommand cmd2 = new SqlCommand(query2, conexion);
@@ -497,7 +563,6 @@ namespace DAO
             SqlCommand cmd7 = new SqlCommand(query7, conexion);
             SqlCommand cmd8 = new SqlCommand(query8, conexion);
             SqlCommand cmd9 = new SqlCommand(query9, conexion);
-            SqlCommand cmd10 = new SqlCommand(query10, conexion);
             SqlDataReader lector;
             try
             {
@@ -511,18 +576,18 @@ namespace DAO
                 if (lector.HasRows)
                 {
                     lector.Read();
-                    string query11 = "Delete from SeguimNutricion where Cedula = " + cedula;
-                    string query12 = "Delete from SeguimRecordat24H where ID_Seguimiento = " + Int32.Parse(lector["ID_Seguim"].ToString());
-                    string query13 = "Delete from SeguimAntropom where ID_Seguimiento = " + Int32.Parse(lector["ID_Seguim"].ToString());
-                    string query14 = "Delete from SeguimientoSemanal where Cedula = " + cedula;
+                    string query10 = "Delete from SeguimNutricion where Cedula = " + cedula;
+                    string query11 = "Delete from SeguimRecordat24H where ID_Seguimiento = " + Int32.Parse(lector["ID_Seguim"].ToString());
+                    string query12 = "Delete from SeguimAntropom where ID_Seguimiento = " + Int32.Parse(lector["ID_Seguim"].ToString());
+                    string query13 = "Delete from SeguimientoSemanal where Cedula = " + cedula;
+                    SqlCommand cmd10 = new SqlCommand(query10, conexion);
                     SqlCommand cmd11 = new SqlCommand(query11, conexion);
                     SqlCommand cmd12 = new SqlCommand(query12, conexion);
                     SqlCommand cmd13 = new SqlCommand(query13, conexion);
-                    SqlCommand cmd14 = new SqlCommand(query14, conexion);
-                    cmd14.ExecuteNonQuery();
                     cmd13.ExecuteNonQuery();
                     cmd12.ExecuteNonQuery();
                     cmd11.ExecuteNonQuery();
+                    cmd10.ExecuteNonQuery();
                 }
                 else
                 {
@@ -533,7 +598,6 @@ namespace DAO
                     conexion.Open();
                 }
 
-                cmd10.ExecuteNonQuery();
                 cmd9.ExecuteNonQuery();
                 cmd8.ExecuteNonQuery();
                 cmd7.ExecuteNonQuery();
@@ -543,11 +607,8 @@ namespace DAO
                 cmd3.ExecuteNonQuery();
                 cmd2.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
-                cmd.ExecuteNonQuery();
 
                 conexion.Close();
-
-
             }
             catch (SqlException)
             { }

@@ -210,7 +210,6 @@ namespace BL
 
         public void EliminarExpediente(string cedula)
         {
-            
             daoClienteNutricion.EliminarExpediente(cedula);
         }
 
@@ -248,6 +247,37 @@ namespace BL
             }
             else { return null; }
             return MedList;
+        }
+
+        public HabitoAlimentario TraerHabitosAlimentario(string cedula)
+        {
+            
+            TOHabitoAlimentario hab = daoClienteNutricion.ConsultarHabitoAlimentario(cedula);
+            if(hab != null)
+            {
+                HabitoAlimentario habito = new HabitoAlimentario(hab.Cedula, hab.ComidaDiaria, hab.ComidaHorasDia,
+                hab.AfueraExpress, hab.ComidaFuera, hab.AzucarBebida, hab.ComidaElaboradCon, hab.AguaDiaria, hab.Aderezos,
+                hab.Fruta, hab.Verdura, hab.Leche, hab.Huevo, hab.Yogurt, hab.Carne, hab.Queso,hab.Aguacate, hab.Semillas);
+                return habito;
+            }
+            return null;
+        }
+        public List<Recordatorio24H> TraerRecordatorio24h(string ced)
+        {
+            List<TORecordatorio24H> list = daoClienteNutricion.TraerRecord24H(ced);
+            List<Recordatorio24H> listRec = new List<Recordatorio24H>();
+            if (list != null || list.Count >=1)
+            {
+                foreach(TORecordatorio24H r in list)
+                {
+                    listRec.Add(new Recordatorio24H(r.Cedula, r.TiempoComida, r.Comida, r.Cantidad, r.Descripcion));
+                }
+                return listRec;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
