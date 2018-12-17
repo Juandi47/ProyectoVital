@@ -57,6 +57,11 @@
                             <li><a href="">Intercambio Mujer</a></li>--%>
                         </ul>
                     </li>
+                    <li><a>Modificar Cuenta</a> 
+                        <ul>
+                            <li><a href="/Nutricion/CambiarContraseña.aspx">Cambiar contraseña</a></li>
+                        </ul>
+                    </li>
                      <li><a href="/PagInicio.aspx">Cerrar sesión</a></li>
                 </ul>
                  

@@ -57,11 +57,9 @@ namespace UI
                 {
                     mensaje = manejadorAdmin.modificarAdmin(cedula, nombre, clave, apellido1, apellido2, correo);
 					ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
-					//Response.Write("<script>alert('" + mensaje + "')</script>");
                 }
                 else {
 					ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "error();", true);
-					//Response.Write("<script>alert('Las contraseñas deben coincidir')</script>");
                 }
                 
             }

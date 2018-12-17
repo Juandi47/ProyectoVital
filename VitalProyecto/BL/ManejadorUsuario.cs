@@ -11,6 +11,8 @@ namespace BL
 	public class ManejadorUsuario
 	{
 		DAOUsuario usuaDAO = new DAOUsuario();
+        DAOIngreso ingreso = new DAOIngreso();
+        Encripcion encripta = new Encripcion();
 
 		public Usuario buscarUsuario(string correo)
 		{
@@ -22,6 +24,13 @@ namespace BL
 			return new Usuario(usuaTO.cedula, usuaTO.correo, usuaTO.nombre, usuaTO.apellido1, usuaTO.apellido2, usuaTO.rol);
 		}
 
+        public string  modificarUsuario(String contraseña) {
+            string contrasenna = encripta.EncodePassword(contraseña);
+            return ingreso.modificarUsuario(contrasenna);
 
-	}
+        }
+
+
+
+    }
 }
