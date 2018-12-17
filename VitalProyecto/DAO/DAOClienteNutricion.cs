@@ -742,6 +742,56 @@ namespace DAO
             { }
         }
 
+        public Boolean existeCliente(string cedula)
+        {
+            Boolean existe = false;
+            string tel ="";
+            string resi = "";
+
+            try
+            {
+                SqlCommand buscar = new SqlCommand("select * from Cliente_Nutricion where Cedula = @ced;", conexion);
+
+                buscar.Parameters.AddWithValue("@ced", cedula);
+
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                SqlDataReader lector = buscar.ExecuteReader();
+
+
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        tel = lector["Telefono"].ToString();
+                        resi = lector["Residencia"].ToString();
+                    }
+                    lector.Close();
+                }
+
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+
+                if (tel != "" && resi != "")
+                {
+                    existe = true;
+                }
+                else {
+                    existe = false;
+                }
+                return existe;
+            }
+            catch (Exception e) {
+                return false;
+            }
+
+        }
+
 
     }
 }

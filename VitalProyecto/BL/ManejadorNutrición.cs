@@ -305,5 +305,10 @@ namespace BL
                 return null;
             }
         }
+
+        public Boolean existeCliente(string cedula)
+        {
+            return daoClienteNutricion.existeCliente(cedula);
+        }
     }
 }
