@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography;
@@ -67,5 +68,41 @@ namespace DAO
             }
             return res;
         }
-	}
+
+
+        public string modificarUsuario(string clave) {
+           
+            string mensaje = "";
+            try
+            {
+
+                string qry = "UPDATE Login SET Clave = @clave where Nombre_usuario = 'nutri@gmail.com';";
+
+
+                SqlCommand sent = new SqlCommand(qry, conexion);
+                sent.Parameters.AddWithValue("@clave", clave);
+
+
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                int modificadas = sent.ExecuteNonQuery();
+                if (modificadas == 1)
+                {
+                    mensaje = "Se ha modificado los datos del Nutricionista";
+                }
+            }
+            catch (Exception e)
+            {
+                return "No se pudo realizar la actualización";
+            }
+            if (conexion.State != ConnectionState.Closed)
+            {
+                conexion.Close();
+            }
+            return mensaje;
+
+        }
+    }
 }
