@@ -84,7 +84,7 @@ namespace UI.Nutricion
 
                        "<div id = \"HistorialMedico\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" +CargarHistorialMed(cl.Cedula)+ "</div></div></div></div>"+
                        "<div id = \"HabitosAlimentarios\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" + CargarHabitoAlimentario(cl.Cedula) + "</div></div></div></div>"+
-                       "<div id=\"Antropometría\" class=\"tab-pane fade\"><div class=\"container\">" + CargarAntrop(cl.Cedula)+ "</div></div>"+
+                       "<div id=\"Antropometría\" class=\"tab-pane fade\"><div class=\"container\">" +CargarAntrop(cl.Cedula)+ "</div></div>"+
                         "<div id=\"SegSemanal\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\">"+CargarSeguimientoSemanal(cl.Cedula)+"</div></div></div>" +
 
                         "<div id=\"SegMensual\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" +

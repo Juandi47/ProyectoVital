@@ -153,15 +153,9 @@ namespace DAO
 
         public bool GuardarAntropometria(TOAntropometria antropom, TOPorciones porcion, TODistribucionPorciones distrib)
         {
-            String query1 = "Insert into Antropometria values(" + antropom.Cedula + "," + antropom.Talla + "," +
-                antropom.PesoIdeal + "," + antropom.Edad + "," + antropom.PMB + "," + antropom.Peso + "," + antropom.PesoMaxTeoria + ", " +
-                antropom.IMC + "," + antropom.PorcGrasaAnalizador + "," + antropom.PorcGr_Bascula + "," + antropom.GB_BI + ","
-                + antropom.GB_BD + "," + antropom.GB_PI + "," + antropom.GB_PD + "," + antropom.GB_Tronco + "," + antropom.AguaCorporal + "," +
-                antropom.MasaOsea + "," + antropom.Complexión + "," + antropom.EdadMetabolica + "," + antropom.Cintura + "," + antropom.Abdomen + "," +
-                 antropom.Cadera + "," + antropom.Muslo + "," + antropom.CBM + "," + antropom.CircunfMunneca + "," + antropom.PorcentMusculo + "," +
-                 antropom.PM_BI + "," + antropom.PM_PD + "," + antropom.PM_BD + "," + antropom.PM_PI + "," + antropom.PM_Tronco + "," + antropom.Observaciones + "," +
-                  antropom.GEB + "," + antropom.GET + "," + antropom.CHOPorc + "," + antropom.CHOGram + "," + antropom.CHO_kcal + "," + antropom.ProteinaPorc + "," +
-                  antropom.ProteinaGram + "," + antropom.Proteinakcal + "," + antropom.GrasaPorc + "," + antropom.GrasaGram + "," + antropom.Grasakcal + "); ";
+            String query1 = "Insert into Antropometria values(@ced, @talla, @pesIdeal, @edad,@pmb, @peso,@pesmax,@imc, @gAnaliz, @grbascu, @gbbi,@gbbd, @gbpi, @gbpd,"+
+                "@gbtronc, @aguacorp, @masaOsea, @complex,@edadMetab,@cint,@abdomn,@cader,@muslo,@cbm,@circunf,@grviser,@pormuscul,@pmbi,@pmpd,@pmbd,"+
+				 "@pmpi,@pmtronco,@observ,@geb,@get,@chopor,@chogram,@chokcal,@protpor,@protgram,@protkcal,@grporc,@grgram,@grkcal)";
 
             String query2 = "Insert into Porciones values(" + porcion.Cedula + "," + porcion.Leche + "," + porcion.Carne + "," + porcion.Vegetales + "," + porcion.Grasa + "," +
                porcion.Fruta + "," + porcion.Azucar + "," + porcion.Harina + "," + porcion.Suplemento + ");";
@@ -173,6 +167,28 @@ namespace DAO
             //try
             //{
 
+            cmd.Parameters.AddWithValue("@ced", antropom.Cedula); cmd.Parameters.AddWithValue("@talla", antropom.Talla);
+            cmd.Parameters.AddWithValue("@pesIdeal", antropom.PesoIdeal); cmd.Parameters.AddWithValue("@edad", antropom.Edad);
+            cmd.Parameters.AddWithValue("@pmb", antropom.PMB); cmd.Parameters.AddWithValue("@peso", antropom.Peso);
+            cmd.Parameters.AddWithValue("@pesmax", antropom.PesoMaxTeoria); cmd.Parameters.AddWithValue("@imc", antropom.IMC);
+            cmd.Parameters.AddWithValue("@gAnaliz",antropom.PorcGrasaAnalizador); cmd.Parameters.AddWithValue("@grbascu", antropom.PorcGr_Bascula);
+            cmd.Parameters.AddWithValue("@gbbi",antropom.GB_BI); cmd.Parameters.AddWithValue("@gbbd", antropom.GB_BD);
+            cmd.Parameters.AddWithValue("@gbpi", antropom.GB_PI); cmd.Parameters.AddWithValue("@gbpd", antropom.GB_PD);
+            cmd.Parameters.AddWithValue("@gbtronc", antropom.GB_Tronco); cmd.Parameters.AddWithValue("@aguacorp", antropom.AguaCorporal);
+            cmd.Parameters.AddWithValue("@masaOsea", antropom.MasaOsea); cmd.Parameters.AddWithValue("@complex", antropom.Complexión);
+            cmd.Parameters.AddWithValue("@edadMetab", antropom.EdadMetabolica); cmd.Parameters.AddWithValue("@cint", antropom.Cintura);
+            cmd.Parameters.AddWithValue("@abdomn", antropom.Abdomen); cmd.Parameters.AddWithValue("@cader", antropom.Cadera);
+            cmd.Parameters.AddWithValue("@muslo", antropom.Muslo); cmd.Parameters.AddWithValue("@cbm", antropom.CBM);
+            cmd.Parameters.AddWithValue("@circunf", antropom.CircunfMunneca); cmd.Parameters.AddWithValue("@grviser", antropom.PorcentGViceral);
+            cmd.Parameters.AddWithValue("@pormuscul", antropom.PorcentMusculo); cmd.Parameters.AddWithValue("@pmbi", antropom.PM_BI);
+            cmd.Parameters.AddWithValue("@pmpd",antropom.PM_PD); cmd.Parameters.AddWithValue("@pmbd",antropom.PM_BD);
+            cmd.Parameters.AddWithValue("@pmpi", antropom.PM_PI); cmd.Parameters.AddWithValue("@pmtronco", antropom.PM_Tronco);
+            cmd.Parameters.AddWithValue("@observ",antropom.Observaciones); cmd.Parameters.AddWithValue("@geb",antropom.GEB);
+            cmd.Parameters.AddWithValue("@get",antropom.GET); cmd.Parameters.AddWithValue("@chopor",antropom.CHOPorc);
+            cmd.Parameters.AddWithValue("@chogram",antropom.CHOGram); cmd.Parameters.AddWithValue("@chokcal",antropom.CHO_kcal);
+            cmd.Parameters.AddWithValue("@protpor", antropom.ProteinaPorc); cmd.Parameters.AddWithValue("@protgram", antropom.ProteinaGram);
+            cmd.Parameters.AddWithValue("@protkcal", antropom.Proteinakcal); cmd.Parameters.AddWithValue("@grporc", antropom.GrasaPorc);
+            cmd.Parameters.AddWithValue("@grgram", antropom.GrasaGram); cmd.Parameters.AddWithValue("@grkcal", antropom.Grasakcal);
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();
@@ -254,7 +270,44 @@ namespace DAO
         public TOAntropometria TraerAntropometria(string ced)
         {
             string qry = "select * from Antropometria where CedulaCliente = " + ced;
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand(qry, conexion);
+            SqlDataReader lector;
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                lector = cmd.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    lector.Read();
+                    TOAntropometria antrop = new TOAntropometria(lector["CedulaCliente"].ToString(), Decimal.Parse(lector["Talla"].ToString()),
+                        Decimal.Parse(lector["PesoIdeal"].ToString()), Decimal.Parse(lector["Edad"].ToString()), Decimal.Parse(lector["PMB"].ToString()), Decimal.Parse(lector["Peso"].ToString()),
+                        Decimal.Parse(lector["PesoMaxTeoria"].ToString()), Decimal.Parse(lector["IMC"].ToString()), Decimal.Parse(lector["PorcGrasaAnalizador"].ToString()), Decimal.Parse(lector["PorcGr_Bascula"].ToString()),
+                        Decimal.Parse(lector["GB_BI"].ToString()), Decimal.Parse(lector["GB_BD"].ToString()), Decimal.Parse(lector["GB_PI"].ToString()), Decimal.Parse(lector["GB_PD"].ToString()), Decimal.Parse(lector["GB_Tronco"].ToString()),
+                        Decimal.Parse(lector["AguaCorporal"].ToString()), Decimal.Parse(lector["MasaOsea"].ToString()), Decimal.Parse(lector["Complexion"].ToString()), Decimal.Parse(lector["Edad_Metabolica"].ToString()), Decimal.Parse(lector["Cintura"].ToString()),
+                        Decimal.Parse(lector["Abdomen"].ToString()), Decimal.Parse(lector["Cadera"].ToString()), lector["Muslo"].ToString(), lector["CBM"].ToString(), Decimal.Parse(lector["CircunfMunneca"].ToString()), Decimal.Parse(lector["PorcentGViceral"].ToString()),
+                        Decimal.Parse(lector["PorcentMusculo"].ToString()), Decimal.Parse(lector["PM_BI"].ToString()), Decimal.Parse(lector["PM_PD"].ToString()), Decimal.Parse(lector["PM_BD"].ToString()),
+                        Decimal.Parse(lector["PM_PI"].ToString()), Decimal.Parse(lector["PM_Troco"].ToString()), lector["Observaciones"].ToString(), Decimal.Parse(lector["GEB"].ToString()),
+                        Decimal.Parse(lector["GET"].ToString()), Decimal.Parse(lector["CHOPorc"].ToString()), Decimal.Parse(lector["CHOGram"].ToString()), Decimal.Parse(lector["CHOkcal"].ToString()),
+                        Decimal.Parse(lector["ProteinaPorc"].ToString()), Decimal.Parse(lector["ProteinaGram"].ToString()), Decimal.Parse(lector["Proteinakcal"].ToString()), Decimal.Parse(lector["GrasaPorc"].ToString()),
+                        Decimal.Parse(lector["GrasaPorc"].ToString()), Decimal.Parse(lector["Grasakcal"].ToString()));
+                    conexion.Close();
+                    return antrop;
+                }
+                else
+                {
+                    conexion.Close();
+                    return null;
+                }
+            }
+            catch (SqlException)
+            {
+                conexion.Close();
+                return null;
+            }
         }
 
         public bool GuardarSeguimiento(TOSeguimientoNutri seg, List<TOSeguimientoRecord24> lisSeg, TOSegAntropometria segAnt)
@@ -333,12 +386,72 @@ namespace DAO
 
         public TODistribucionPorciones TraerDistribucion(string ced)
         {
-            throw new NotImplementedException();
+            string qry = "select * from DistribucionPorcion where Cedula = " + ced;
+            SqlCommand cmd = new SqlCommand(qry, conexion);
+            SqlDataReader lector;
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                lector = cmd.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    lector.Read();
+                    TODistribucionPorciones distrib = new TODistribucionPorciones(lector["Cedula"].ToString(), lector["Ayunas"].ToString(),
+                        lector["Desayuno"].ToString(), lector["MediaMañana"].ToString(), lector["Almuerzo"].ToString(),
+                        lector["MediaTarde"].ToString(), lector["Cena"].ToString(), lector["ColacionNocturna"].ToString());
+                    conexion.Close();
+                    return distrib;
+                }
+                else
+                {
+                    conexion.Close();
+                    return null;
+                }
+            }
+            catch (SqlException)
+            {
+                conexion.Close();
+                return null;
+            }
         }
 
         public TOPorciones TraerPorciones(string ced)
         {
-            throw new NotImplementedException();
+            string qry = "select * from Porciones where Cedula = " + ced;
+            SqlCommand cmd = new SqlCommand(qry, conexion);
+            SqlDataReader lector;
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                lector = cmd.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    lector.Read();
+                    TOPorciones porcion = new TOPorciones(lector["Cedula"].ToString(), Decimal.Parse(lector["Leche"].ToString()),
+                        Decimal.Parse(lector["Carne"].ToString()), Decimal.Parse(lector["Vegetales"].ToString()), Decimal.Parse(lector["Grasa"].ToString()),
+                        Decimal.Parse(lector["Fruta"].ToString()), Decimal.Parse(lector["Azucar"].ToString()), Decimal.Parse(lector["Harina"].ToString()), Decimal.Parse(lector["Suplemento"].ToString()));
+                    conexion.Close();
+                    return porcion;
+                }
+                else
+                {
+                    conexion.Close();
+                    return null;
+                }
+            }
+            catch (SqlException)
+            {
+                conexion.Close();
+                return null;
+            }
         }
 
         public TOHistorialMedico TraerHistorialMed(string ced)
