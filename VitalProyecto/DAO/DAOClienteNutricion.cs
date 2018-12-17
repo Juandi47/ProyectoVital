@@ -170,8 +170,8 @@ namespace DAO
             SqlCommand cmd = new SqlCommand(query1, conexion);
             SqlCommand cmd2 = new SqlCommand(query2, conexion);
             SqlCommand cmd3 = new SqlCommand(query3, conexion);
-            try
-            {
+            //try
+            //{
 
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -185,11 +185,11 @@ namespace DAO
                 conexion.Close();
 
                 return true;
-            }
-            catch (SqlException)
-            {
-                return false;
-            }
+            //}
+            //catch (SqlException)
+            //{
+            //    return false;
+            //}
         }
 
         public bool AgregarSeguimiento(TOSeguimientoSemanal tOSeguimientoSemanal)
@@ -249,6 +249,12 @@ namespace DAO
             {
                 return false;
             }
+        }
+
+        public TOAntropometria TraerAntropometria(string ced)
+        {
+            string qry = "select * from Antropometria where CedulaCliente = " + ced;
+            throw new NotImplementedException();
         }
 
         public bool GuardarSeguimiento(TOSeguimientoNutri seg, List<TOSeguimientoRecord24> lisSeg, TOSegAntropometria segAnt)
@@ -325,6 +331,15 @@ namespace DAO
             }
         }
 
+        public TODistribucionPorciones TraerDistribucion(string ced)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TOPorciones TraerPorciones(string ced)
+        {
+            throw new NotImplementedException();
+        }
 
         public TOHistorialMedico TraerHistorialMed(string ced)
         {

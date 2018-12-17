@@ -84,14 +84,96 @@ namespace UI.Nutricion
 
                        "<div id = \"HistorialMedico\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" +CargarHistorialMed(cl.Cedula)+ "</div></div></div></div>"+
                        "<div id = \"HabitosAlimentarios\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" + CargarHabitoAlimentario(cl.Cedula) + "</div></div></div></div>"+
-                       "<div id=\"Antropometría\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" +
-                       "Antopometria<br />GEB: , GET: <br />Porciones: <br />Distribución de porciones entregadas:<br /></div></div></div></div>"+
-
+                       "<div id=\"Antropometría\" class=\"tab-pane fade\"><div class=\"container\">" + CargarAntrop(cl.Cedula)+ "</div></div>"+
                         "<div id=\"SegSemanal\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\">"+CargarSeguimientoSemanal(cl.Cedula)+"</div></div></div>" +
 
                         "<div id=\"SegMensual\" class=\"tab-pane fade\"><div class=\"container\"><div class=\"row\"><div class=\"col-50\">" +
                         "Seguimiento Mensual</div></div></div></div></div>";
             return t;
+        }
+
+        public static string CargarAntrop(string ced)
+        {
+            string txt = "";
+            Antropometria antrop = manejador.TraerAntrop(ced);
+            if(antrop != null)
+            {
+                txt = "<div class=\"row\">" +
+                    "<div class=\"col-25\"><div class=\"col-15\"><label class=\"form-label\" for=\"tEdad\">Edad: " + antrop.Edad + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tPesoActual\">Peso Actual: " + antrop.Peso + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tPesoMaxTeoria\">Peso máximo en teoría: " + antrop.PesoMaxTeoria + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tPesoMeta\">Peso Meta o Ideal: " + antrop.PesoIdeal + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tEdadMetabolica\">Edad Metabolica: " + antrop.EdadMetabolica + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tAguaNut\">Agua: " + antrop.AguaCorporal + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tComplexión\">Complexión: " + antrop.Complexión + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tObservacion\">Observacion: " + antrop.Observaciones + "</label> </div> </div>" +
+                    "<div class=\"col-25\"><div class=\"col-15\"><label class=\"form-label\" for=\"tAbdomen\">Abdomen: " + antrop.Abdomen + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tCadera\">Cadera: " + antrop.Cadera + "</label> </div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tTalla\">Talla: " + antrop.Talla + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tCircunfMun\">Circunferencia muñeca: " + antrop.CircunfMunneca + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tIMC\">IMC: " + antrop.IMC + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tMuslo\">Muslo: " + antrop.Muslo + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tPMB\">PMB: " + antrop.PMB + "</label>div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tCBM\">CBM: " + antrop.CBM + "</label> </div></div>" +
+                    "<div class=\"col-25\"><div class=\"col-15\"><label class=\"form-label\" for=\"tCintura\">Cintura: " + antrop.Cintura + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tMasaOsea\">Masa ósea: " + antrop.MasaOsea + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tPorcGBascula\">% Grasa Báscula: " + antrop.PorcGr_Bascula + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tGBascBI\">BI: " + antrop.GB_BI + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tGBascBD\">BD: " + antrop.GB_BD + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tGBascPD\">PD: " + antrop.GB_PD + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tGBascPI\">PI: " + antrop.GB_PI + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tGBascTronco\">Tronco: " + antrop.GB_Tronco + "</label></div></div>" +
+                    "<div class=\"col-25\"><div class=\"col-15\"><label class=\"form-label\" for=\"tPorcGAnalizador\">% Grasa Analizador: " + antrop.PorcGrasaAnalizador + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tPorcGVisceral\">% Grasa Visceral: " + antrop.PorcentGViceral + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tPorcMusculo\">% Músculo: " + antrop.PorcentMusculo + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tMuscBI\">BI: " + antrop.PM_BI + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tMuscBD\">BD: " + antrop.PM_BD + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tMuscPD\">PD: " + antrop.PM_PD + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tMuscPI\">PI: " + antrop.PM_PI + "</label></div>" +
+                    "<div class=\"col-15\"><label class=\"form-label\" for=\"tMuscTronco\">Tronco: " + antrop.PM_Tronco + "</label></div></div></div>" +
+                    "GEB: " + antrop.GEB + "<br />GET: " + antrop.GET + "<br /><div class=\"row\"><div class=\"col-75\">" +
+                    "<table><tr><th>Macronutrientes</th>th>%</th><th>Gramos</th><th>kcal</th></tr>" +
+                    "<tr><td>CHO</td><td>" + antrop.CHOPorc + "</td><td>" + antrop.CHOGram + "</td><td>" + antrop.CHO_kcal + "</td></tr>" +
+                    "<tr><td>Proteínas</td><td>" + antrop.ProteinaPorc + "</td><td>" + antrop.ProteinaGram + "</td><td>" + antrop.Proteinakcal + "</td></tr>" +
+                    "<tr><td>Grasas</td><td>" + antrop.GrasaPorc + "</td><td>" + antrop.GrasaGram + "</td><td>" + antrop.Grasakcal + "</td></tr></table></div></div>";
+                Porciones porcion = manejador.TraerPorciones(ced);
+                if (porcion != null)
+                {
+                    txt += "<h3>Porciones:</h3><div class=\"row\">" +
+                     "<div class=\"col-15\"><label class=\"form-label\" for=\"pLeche\">Leche: " + porcion.Leche + "</label></div>" +
+                     "<div class=\"col-15\"><label class=\"form-label\" for=\"pVegetales\">Vegetales: " + porcion.Vegetales + "</label></div>" +
+                     "<div class=\"col-15\"><label class=\"form-label\" for=\"pFrutas\">Frutas: " + porcion.Fruta + "</label></div>" +
+                     "<div class=\"col-15\"><label class=\"form-label\" for=\"pHarinas\">Harinas: " + porcion.Harina + "</label></div></div>" +
+                     "<div class=\"row\">" +
+                     "<div class=\"col-15\"><label class=\"form-label\" for=\"pCarnes\">Carnes: " + porcion.Carne + "</label></div>" +
+                     "<div class=\"col-15\"><label class=\"form-label\" for=\"pGrasas\">Grasas: " + porcion.Grasa + "</label></div>" +
+                     "<div class=\"col-15\"><label class=\"form-label\" for=\"pAzúcares\">Azúcares: " + porcion.Azucar + "</label></div>" +
+                     "<div class=\"col-15\"><label class=\"form-label\" for=\"pSuplemento\">Suplemento: " + porcion.Suplemento + "</label></div></div>";
+                }
+                else
+                {
+                    txt += "No se almacenó correctamente las Porciones de este Cliente";
+                }
+                DistribucionPorciones distr = manejador.TraerDistribPorc(ced);
+                if (distr != null)
+                {
+                    txt += "<h3>Distribución de porciones entregadas</h3> <div class=\"row\"><div class=\"col-75\">" +
+                      "<table><tr><th>Tiempo de Comida</th><th>Porciones</th></tr>" +
+                     "<tr><td>Ayunas</td><td>" + distr.Ayunas + "</td></tr><tr><td>Desayuno</td><td>" + distr.Desayuno + "</td></tr>" +
+                     "<tr><td>Media Mañana</td><td>" + distr.MediaMañana + "</td></tr><tr><td>Almuerzo</td><td>" + distr.Almuerzo + "</td></tr>" +
+                     "<tr><td>Media Tarde</td><td>" + distr.MediaTarde + "</td></tr><tr><td>Cena</td><td>" + distr.Cena + "</td></tr>" +
+                     "<tr><td>Colación Nocturna</td><td>" + distr.ColacionNocturna + "</td></tr></table></div></div>";
+                }
+                else
+                {
+                    txt += "No se almacenó correctamente la distribucion de las Porciones de este Cliente";
+                }
+            }
+            else
+            {
+                txt = "No hay registro de antropometría de este usuario.";
+            }
+            return txt;
         }
         public static string CargarHistorialMed(string ced)
         {

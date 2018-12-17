@@ -79,49 +79,20 @@ namespace BL
         public bool AgregarAntropometria(Antropometria antrop, Porciones porcion, DistribucionPorciones distrib)
         {
             TOAntropometria antropom = new TOAntropometria();
-            antropom.Cedula = antrop.Cedula;
-            antropom.Talla = antrop.Talla;
-            antropom.PesoIdeal = antrop.PesoIdeal;
-            antropom.Edad = antrop.Edad;
-            antropom.PMB = antrop.PMB;
-            antropom.Peso = antrop.Peso;
-            antropom.PesoMaxTeoria = antrop.PesoMaxTeoria;
-            antropom.IMC = antrop.IMC;
-            antropom.PorcGrasaAnalizador = antrop.PorcGrasaAnalizador;
-            antropom.PorcGr_Bascula = antrop.PorcGr_Bascula;
-            antropom.GB_BI = antrop.GB_BI;
-            antropom.GB_BD = antrop.GB_BD;
-            antropom.GB_PI = antrop.GB_PI;
-            antropom.GB_PD = antrop.GB_PD;
-            antropom.GB_Tronco = antrop.GB_Tronco;
-            antropom.AguaCorporal = antrop.AguaCorporal;
-            antropom.MasaOsea = antrop.MasaOsea;
-            antropom.Complexión = antrop.Complexión;
-            antropom.EdadMetabolica = antrop.EdadMetabolica;
-            antropom.Cintura = antrop.Cintura;
-            antropom.Abdomen = antrop.Abdomen;
-            antropom.Cadera = antrop.Cadera;
-            antropom.Muslo = antrop.Muslo;
-            antropom.CBM = antrop.CBM;
-            antropom.CircunfMunneca = antrop.CircunfMunneca;
-            antropom.PorcentMusculo = antrop.PorcentMusculo;
-            antropom.PM_BI = antrop.PM_BI;
-            antropom.PM_PD = antrop.PM_PD;
-            antropom.PM_BD = antrop.PM_BD;
-            antropom.PM_PI = antrop.PM_PI;
-            antropom.PM_Tronco = antrop.PM_Tronco;
-            antropom.Observaciones = antrop.Observaciones;
-            antropom.GEB = antrop.GEB;
-            antropom.GET = antrop.GET;
-            antropom.CHOPorc = antrop.CHOPorc;
-            antropom.CHOGram = antrop.CHOGram;
-            antropom.CHO_kcal = antrop.CHO_kcal;
-            antropom.ProteinaPorc = antrop.ProteinaPorc;
-            antropom.ProteinaGram = antrop.ProteinaGram;
-            antropom.Proteinakcal = antrop.Proteinakcal;
-            antropom.GrasaPorc = antrop.GrasaPorc;
-            antropom.GrasaGram = antrop.GrasaGram;
-            antropom.Grasakcal = antrop.Grasakcal;
+            antropom.Cedula = antrop.Cedula; antropom.Talla = antrop.Talla; antropom.PesoIdeal = antrop.PesoIdeal;
+            antropom.Edad = antrop.Edad; antropom.PMB = antrop.PMB; antropom.Peso = antrop.Peso; antropom.PesoMaxTeoria = antrop.PesoMaxTeoria;
+            antropom.IMC = antrop.IMC; antropom.PorcGrasaAnalizador = antrop.PorcGrasaAnalizador; antropom.PorcGr_Bascula = antrop.PorcGr_Bascula;
+            antropom.GB_BI = antrop.GB_BI; antropom.GB_BD = antrop.GB_BD; antropom.GB_PI = antrop.GB_PI;
+            antropom.GB_PD = antrop.GB_PD; antropom.GB_Tronco = antrop.GB_Tronco; antropom.AguaCorporal = antrop.AguaCorporal;
+            antropom.MasaOsea = antrop.MasaOsea; antropom.Complexión = antrop.Complexión; antropom.EdadMetabolica = antrop.EdadMetabolica;
+            antropom.Cintura = antrop.Cintura; antropom.Abdomen = antrop.Abdomen; antropom.Cadera = antrop.Cadera;
+            antropom.Muslo = antrop.Muslo; antropom.CBM = antrop.CBM; antropom.CircunfMunneca = antrop.CircunfMunneca;
+            antropom.PorcentMusculo = antrop.PorcentMusculo; antropom.PM_BI = antrop.PM_BI; antropom.PM_PD = antrop.PM_PD; antropom.PM_BD = antrop.PM_BD;
+            antropom.PM_PI = antrop.PM_PI; antropom.PM_Tronco = antrop.PM_Tronco; antropom.Observaciones = antrop.Observaciones;
+            antropom.GEB = antrop.GEB; antropom.GET = antrop.GET; antropom.CHOPorc = antrop.CHOPorc;
+            antropom.CHOGram = antrop.CHOGram; antropom.CHO_kcal = antrop.CHO_kcal; antropom.ProteinaPorc = antrop.ProteinaPorc;
+            antropom.ProteinaGram = antrop.ProteinaGram; antropom.Proteinakcal = antrop.Proteinakcal; antropom.GrasaPorc = antrop.GrasaPorc;
+            antropom.GrasaGram = antrop.GrasaGram; antropom.Grasakcal = antrop.Grasakcal;
             TOPorciones porci = new TOPorciones(porcion.Cedula, porcion.Leche, porcion.Carne, porcion.Vegetales, porcion.Grasa,
                porcion.Fruta, porcion.Azucar, porcion.Harina, porcion.Suplemento);
 
@@ -131,7 +102,7 @@ namespace BL
             return daoClienteNutricion.GuardarAntropometria( antropom, porci, distribuc);
 
         }
-
+        
         public bool AgregarSeguimiento(SeguimientoSemanal seguimiento)
         {
             return daoClienteNutricion.AgregarSeguimiento(new TOSeguimientoSemanal(seguimiento.Fecha, seguimiento.Peso, seguimiento.Oreja,seguimiento.Ejercicio, seguimiento.Cedula));
@@ -207,6 +178,46 @@ namespace BL
             return daoClienteNutricion.GuardarSeguimiento(seg, lisSeg,segAnt);
             
         }
+        public Antropometria TraerAntrop(string ced)
+        {
+            Antropometria antropom = new Antropometria();
+            TOAntropometria antrop = daoClienteNutricion.TraerAntropometria(ced);
+            if (antrop != null)
+            {
+                antropom.Cedula = antrop.Cedula;antropom.Talla = antrop.Talla; antropom.PesoIdeal = antrop.PesoIdeal;
+                antropom.Edad = antrop.Edad; antropom.PMB = antrop.PMB; antropom.Peso = antrop.Peso;
+                antropom.PesoMaxTeoria = antrop.PesoMaxTeoria; antropom.IMC = antrop.IMC; antropom.PorcGrasaAnalizador = antrop.PorcGrasaAnalizador;
+                antropom.PorcGr_Bascula = antrop.PorcGr_Bascula; antropom.GB_BI = antrop.GB_BI; antropom.GB_BD = antrop.GB_BD; antropom.GB_PI = antrop.GB_PI;
+                antropom.GB_PD = antrop.GB_PD; antropom.GB_Tronco = antrop.GB_Tronco; antropom.AguaCorporal = antrop.AguaCorporal;
+                antropom.MasaOsea = antrop.MasaOsea; antropom.Complexión = antrop.Complexión; antropom.EdadMetabolica = antrop.EdadMetabolica;
+                antropom.Cintura = antrop.Cintura; antropom.Abdomen = antrop.Abdomen; antropom.Cadera = antrop.Cadera;
+                antropom.Muslo = antrop.Muslo; antropom.CBM = antrop.CBM; antropom.CircunfMunneca = antrop.CircunfMunneca;
+                antropom.PorcentMusculo = antrop.PorcentMusculo; antropom.PM_BI = antrop.PM_BI; antropom.PM_PD = antrop.PM_PD;
+                antropom.PM_BD = antrop.PM_BD; antropom.PM_PI = antrop.PM_PI; antropom.PM_Tronco = antrop.PM_Tronco;
+                antropom.Observaciones = antrop.Observaciones; antropom.GEB = antrop.GEB; antropom.GET = antrop.GET; antropom.CHOPorc = antrop.CHOPorc;
+                antropom.CHOGram = antrop.CHOGram; antropom.CHO_kcal = antrop.CHO_kcal; antropom.ProteinaPorc = antrop.ProteinaPorc;
+                antropom.ProteinaGram = antrop.ProteinaGram; antropom.Proteinakcal = antrop.Proteinakcal; antropom.GrasaPorc = antrop.GrasaPorc;
+                antropom.GrasaGram = antrop.GrasaGram; antropom.Grasakcal = antrop.Grasakcal;
+                return antropom;
+            }
+            else { return null; }
+            
+           
+        }
+
+        public DistribucionPorciones TraerDistribPorc(string ced)
+        {
+           
+            TODistribucionPorciones distribuc = daoClienteNutricion.TraerDistribucion(ced);
+            if (distribuc != null)
+            {
+                return new DistribucionPorciones(distribuc.Cedula, distribuc.Ayunas, distribuc.Desayuno,distribuc.MediaMañana, distribuc.Almuerzo,
+                    distribuc.MediaTarde,distribuc.Cena, distribuc.ColacionNocturna);
+            }
+            else {
+                return null;
+            }
+        }
 
         public void EliminarExpediente(string cedula)
         {
@@ -233,6 +244,21 @@ namespace BL
             else { return null; }
             
         }
+
+        public Porciones TraerPorciones(string ced)
+        {
+            TOPorciones porcion = daoClienteNutricion.TraerPorciones(ced);
+            if(porcion != null)
+            {
+                return new Porciones(porcion.Cedula, porcion.Leche, porcion.Carne, porcion.Vegetales, porcion.Grasa,
+                porcion.Fruta, porcion.Azucar, porcion.Harina, porcion.Suplemento);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public List<Medicamento> traerSuplMed(string ced)
         {
             List<Medicamento> MedList = new List<Medicamento>();
