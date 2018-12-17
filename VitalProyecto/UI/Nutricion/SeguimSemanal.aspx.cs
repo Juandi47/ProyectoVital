@@ -59,7 +59,7 @@ namespace UI.Nutricion
             }
             else
             {
-                bool existe = manejadorNutrición.Metodo!!!(sCedula.Text);
+                bool existe = manejadorNutrición.existeCliente(sCedula.Text);
                 if(existe)
                 {
                     listaSeguimientos = manejadorNutrición.TraerLista(sCedula.Text);
