@@ -121,11 +121,11 @@
                                             dataType: "json",
                                             async: true,
                                             success: function () {
-                                                mensaje;
                                                 location.reload();
+                                                mensaje();
                                             },
                                             error: function () {
-                                                error;
+                                                error();
                                             }
                                         });
                                     }

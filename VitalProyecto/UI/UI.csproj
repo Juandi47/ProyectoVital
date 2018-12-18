@@ -162,6 +162,7 @@
     <Content Include="MostrarRutina.aspx" />
     <Content Include="Notificacion.aspx" />
     <Content Include="Nutricion\admin_estilos.css" />
+    <Content Include="Nutricion\CambiarContraseña.aspx" />
     <Content Include="Nutricion\ConsultarNutricion.aspx" />
     <Content Include="Nutricion\css\font-awesome.min.css" />
     <Content Include="Nutricion\css\ie\html5shiv.js" />
@@ -351,6 +352,13 @@
     </Compile>
     <Compile Include="Notificacion.aspx.designer.cs">
       <DependentUpon>Notificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nutricion\CambiarContraseña.aspx.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutricion\CambiarContraseña.aspx.designer.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nutricion\ConsultarNutricion.aspx.cs">
       <DependentUpon>ConsultarNutricion.aspx</DependentUpon>
