@@ -175,7 +175,7 @@ namespace BL
             segAnt.Brazo = segAntrop.Brazo;
             segAnt.Observaciones = segAntrop.Observaciones;
 
-            return daoClienteNutricion.GuardarSeguimiento(seg, lisSeg,segAnt);
+            return daoClienteNutricion.GuardarSeguimiento(seg, lisSeg, segAnt);
             
         }
         public Antropometria TraerAntrop(string ced)
@@ -292,7 +292,7 @@ namespace BL
         {
             List<TORecordatorio24H> list = daoClienteNutricion.TraerRecord24H(ced);
             List<Recordatorio24H> listRec = new List<Recordatorio24H>();
-            if (list != null || list.Count >=1)
+            if (list != null)
             {
                 foreach(TORecordatorio24H r in list)
                 {

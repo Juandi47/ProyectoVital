@@ -46,7 +46,7 @@ namespace UI
             {
                 if (manejador.CrearNoti(DateTime.Now, EncabReciente.Text, TextoReciente.Text, cargarImagen(), 3))
                 {
-                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabReciente.Text, TextoReciente.Text, "/images/vital.jpg", 3));
+                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabReciente.Text, TextoReciente.Text, cargarImagen(), 3));
                     ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
                 }
                 else
@@ -69,7 +69,7 @@ namespace UI
             {
                 if(manejador.CrearNoti(DateTime.Now, EncabImportante.Text, TextoImportante.Text, cargarImagen(), 2))
                 {
-                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabImportante.Text, TextoImportante.Text, "/images/vital.jpg", 2));
+                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabImportante.Text, TextoImportante.Text, cargarImagen(), 2));
                     ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
                 }
                 else
@@ -90,7 +90,7 @@ namespace UI
             {
                 if (manejador.CrearNoti(DateTime.Now, EncabPrincipal.Text, TextoPrincipal.Text, cargarImagen(), 1))
                 {
-                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabPrincipal.Text, TextoPrincipal.Text, "/images/vital.jpg", 1));
+                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabPrincipal.Text, TextoPrincipal.Text, cargarImagen(), 1));
                     ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
                 }
                 else
@@ -109,7 +109,7 @@ namespace UI
             }
             else
             {
-                if (manejador.CrearNoti(DateTime.Now, EncabNotas.Text, TextoNotas.Text, "", 4))
+                if (manejador.CrearNoti(DateTime.Now, EncabNotas.Text, TextoNotas.Text, cargarImagen(), 4))
                 {
                     ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1,DateTime.Now, EncabNotas.Text, TextoNotas.Text, cargarImagen(), 4));
                     ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
@@ -172,8 +172,10 @@ namespace UI
 				try
 				{
 					imagen.PostedFile.SaveAs(ruta + imagen.FileName);
-					stringRuta = ruta + imagen.FileName;
-					Response.Write("<script>alert('Imagen cargada.')</script>");
+					stringRuta = "/images/" + imagen.FileName;
+
+					//stringRuta = ruta + imagen.FileName;
+					//Response.Write("<script>alert('Imagen cargada.')</script>");
 					return stringRuta;
 				}
 				catch

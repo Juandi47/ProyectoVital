@@ -95,9 +95,7 @@ namespace DAO
         public bool GuardarHabitos(TOHabitoAlimentario HabitosAlimentario, List<TORecordatorio24H> listaR)
         {
             String query1 = "Insert into HabitosAlimentario values(@ced,@comDi,@ComHD,@express,@comFue,@azuc,@comElab,@agua,@ader,@frut,@verd,@lech,@huev,@yogurt,@carn,@ques,@aguacat,@semil);";
-            String query2 = "Insert into Recordat24H values(@ced,@tiempC,@comid,@cant,@descrip);";
             SqlCommand cmd = new SqlCommand(query1, conexion);
-            SqlCommand cmd2 = new SqlCommand(query2, conexion);
             try
             {
                 cmd.Parameters.AddWithValue("@ced", HabitosAlimentario.Cedula);
@@ -126,22 +124,24 @@ namespace DAO
                 }
                 //inserta 
                 cmd.ExecuteNonQuery();
+                conexion.Close();
                 if (listaR != null)
                 {
                     foreach (TORecordatorio24H recordatorio in listaR)
                     {
+                        String query2 = "Insert into Recordat24H values(@ced,@tiempC,@comid,@cant,@descrip);";
+                        SqlCommand cmd2 = new SqlCommand(query2, conexion);
                         cmd2.Parameters.AddWithValue("@ced", recordatorio.Cedula);
                         cmd2.Parameters.AddWithValue("@tiempC", recordatorio.TiempoComida);
                         cmd2.Parameters.AddWithValue("@comid", recordatorio.Comida);
                         cmd2.Parameters.AddWithValue("@cant", recordatorio.Cantidad);
                         cmd2.Parameters.AddWithValue("@descrip", recordatorio.Descripcion);
-
+                        conexion.Open();
                         cmd2.ExecuteNonQuery();
+                        conexion.Close();
                     }
                 }
-
-                conexion.Close();
-
+                
                 return true;
             }
             catch (SqlException)
@@ -153,42 +153,52 @@ namespace DAO
 
         public bool GuardarAntropometria(TOAntropometria antropom, TOPorciones porcion, TODistribucionPorciones distrib)
         {
-            String query1 = "Insert into Antropometria values(@ced, @talla, @pesIdeal, @edad,@pmb, @peso,@pesmax,@imc, @gAnaliz, @grbascu, @gbbi,@gbbd, @gbpi, @gbpd,"+
-                "@gbtronc, @aguacorp, @masaOsea, @complex,@edadMetab,@cint,@abdomn,@cader,@muslo,@cbm,@circunf,@grviser,@pormuscul,@pmbi,@pmpd,@pmbd,"+
-				 "@pmpi,@pmtronco,@observ,@geb,@get,@chopor,@chogram,@chokcal,@protpor,@protgram,@protkcal,@grporc,@grgram,@grkcal)";
+            String query1 = "Insert into Antropometria values(@ced, @talla, @pesIdeal, @edad,@pmb, @peso,@pesmax,@imc, @gAnaliz, @grbascu, @gbbi,@gbbd, @gbpi, @gbpd," +
+                "@gbtronc, @aguacorp, @masaOsea, @complex,@edadMetab,@cint,@abdomn,@cader,@muslo,@cbm,@circunf,@grviser,@pormuscul,@pmbi,@pmpd,@pmbd," +
+                 "@pmpi,@pmtronco,@observ,@geb,@get,@chopor,@chogram,@chokcal,@protpor,@protgram,@protkcal,@grporc,@grgram,@grkcal)";
 
-            String query2 = "Insert into Porciones values(" + porcion.Cedula + "," + porcion.Leche + "," + porcion.Carne + "," + porcion.Vegetales + "," + porcion.Grasa + "," +
-               porcion.Fruta + "," + porcion.Azucar + "," + porcion.Harina + "," + porcion.Suplemento + ")";
-            String query3 = "Insert into DistribucionPorcion values(" + distrib.Cedula + "," + distrib.Ayunas + "," + distrib.Desayuno + "," +
-                distrib.MediaMañana + "," + distrib.Almuerzo + "," + distrib.MediaTarde + "," + distrib.Cena + "," + distrib.ColacionNocturna + ");";
+            String query2 = "Insert into Porciones values( @pced,@pleche,@pcarne,@pveget,@pgrasa,@pfruta,@pazuc,@pharina, @psuplem)";
+            String query3 = "Insert into DistribucionPorcion values(@diCed, @diAyun, @diDesay, @diMedMan,@diAlmuer, @dimedTard,@diCena,@dicolNoc)";
             SqlCommand cmd = new SqlCommand(query1, conexion);
             SqlCommand cmd2 = new SqlCommand(query2, conexion);
             SqlCommand cmd3 = new SqlCommand(query3, conexion);
-            //try
-            //{
+            try
+            {
 
-            cmd.Parameters.AddWithValue("@ced", antropom.Cedula); cmd.Parameters.AddWithValue("@talla", antropom.Talla);
-            cmd.Parameters.AddWithValue("@pesIdeal", antropom.PesoIdeal); cmd.Parameters.AddWithValue("@edad", antropom.Edad);
-            cmd.Parameters.AddWithValue("@pmb", antropom.PMB); cmd.Parameters.AddWithValue("@peso", antropom.Peso);
-            cmd.Parameters.AddWithValue("@pesmax", antropom.PesoMaxTeoria); cmd.Parameters.AddWithValue("@imc", antropom.IMC);
-            cmd.Parameters.AddWithValue("@gAnaliz",antropom.PorcGrasaAnalizador); cmd.Parameters.AddWithValue("@grbascu", antropom.PorcGr_Bascula);
-            cmd.Parameters.AddWithValue("@gbbi",antropom.GB_BI); cmd.Parameters.AddWithValue("@gbbd", antropom.GB_BD);
-            cmd.Parameters.AddWithValue("@gbpi", antropom.GB_PI); cmd.Parameters.AddWithValue("@gbpd", antropom.GB_PD);
-            cmd.Parameters.AddWithValue("@gbtronc", antropom.GB_Tronco); cmd.Parameters.AddWithValue("@aguacorp", antropom.AguaCorporal);
-            cmd.Parameters.AddWithValue("@masaOsea", antropom.MasaOsea); cmd.Parameters.AddWithValue("@complex", antropom.Complexión);
-            cmd.Parameters.AddWithValue("@edadMetab", antropom.EdadMetabolica); cmd.Parameters.AddWithValue("@cint", antropom.Cintura);
-            cmd.Parameters.AddWithValue("@abdomn", antropom.Abdomen); cmd.Parameters.AddWithValue("@cader", antropom.Cadera);
-            cmd.Parameters.AddWithValue("@muslo", antropom.Muslo); cmd.Parameters.AddWithValue("@cbm", antropom.CBM);
-            cmd.Parameters.AddWithValue("@circunf", antropom.CircunfMunneca); cmd.Parameters.AddWithValue("@grviser", antropom.PorcentGViceral);
-            cmd.Parameters.AddWithValue("@pormuscul", antropom.PorcentMusculo); cmd.Parameters.AddWithValue("@pmbi", antropom.PM_BI);
-            cmd.Parameters.AddWithValue("@pmpd",antropom.PM_PD); cmd.Parameters.AddWithValue("@pmbd",antropom.PM_BD);
-            cmd.Parameters.AddWithValue("@pmpi", antropom.PM_PI); cmd.Parameters.AddWithValue("@pmtronco", antropom.PM_Tronco);
-            cmd.Parameters.AddWithValue("@observ",antropom.Observaciones); cmd.Parameters.AddWithValue("@geb",antropom.GEB);
-            cmd.Parameters.AddWithValue("@get",antropom.GET); cmd.Parameters.AddWithValue("@chopor",antropom.CHOPorc);
-            cmd.Parameters.AddWithValue("@chogram",antropom.CHOGram); cmd.Parameters.AddWithValue("@chokcal",antropom.CHO_kcal);
-            cmd.Parameters.AddWithValue("@protpor", antropom.ProteinaPorc); cmd.Parameters.AddWithValue("@protgram", antropom.ProteinaGram);
-            cmd.Parameters.AddWithValue("@protkcal", antropom.Proteinakcal); cmd.Parameters.AddWithValue("@grporc", antropom.GrasaPorc);
-            cmd.Parameters.AddWithValue("@grgram", antropom.GrasaGram); cmd.Parameters.AddWithValue("@grkcal", antropom.Grasakcal);
+                cmd.Parameters.AddWithValue("@ced", antropom.Cedula); cmd.Parameters.AddWithValue("@talla", antropom.Talla);
+                cmd.Parameters.AddWithValue("@pesIdeal", antropom.PesoIdeal); cmd.Parameters.AddWithValue("@edad", antropom.Edad);
+                cmd.Parameters.AddWithValue("@pmb", antropom.PMB); cmd.Parameters.AddWithValue("@peso", antropom.Peso);
+                cmd.Parameters.AddWithValue("@pesmax", antropom.PesoMaxTeoria); cmd.Parameters.AddWithValue("@imc", antropom.IMC);
+                cmd.Parameters.AddWithValue("@gAnaliz", antropom.PorcGrasaAnalizador); cmd.Parameters.AddWithValue("@grbascu", antropom.PorcGr_Bascula);
+                cmd.Parameters.AddWithValue("@gbbi", antropom.GB_BI); cmd.Parameters.AddWithValue("@gbbd", antropom.GB_BD);
+                cmd.Parameters.AddWithValue("@gbpi", antropom.GB_PI); cmd.Parameters.AddWithValue("@gbpd", antropom.GB_PD);
+                cmd.Parameters.AddWithValue("@gbtronc", antropom.GB_Tronco); cmd.Parameters.AddWithValue("@aguacorp", antropom.AguaCorporal);
+                cmd.Parameters.AddWithValue("@masaOsea", antropom.MasaOsea); cmd.Parameters.AddWithValue("@complex", antropom.Complexión);
+                cmd.Parameters.AddWithValue("@edadMetab", antropom.EdadMetabolica); cmd.Parameters.AddWithValue("@cint", antropom.Cintura);
+                cmd.Parameters.AddWithValue("@abdomn", antropom.Abdomen); cmd.Parameters.AddWithValue("@cader", antropom.Cadera);
+                cmd.Parameters.AddWithValue("@muslo", antropom.Muslo); cmd.Parameters.AddWithValue("@cbm", antropom.CBM);
+                cmd.Parameters.AddWithValue("@circunf", antropom.CircunfMunneca); cmd.Parameters.AddWithValue("@grviser", antropom.PorcentGViceral);
+                cmd.Parameters.AddWithValue("@pormuscul", antropom.PorcentMusculo); cmd.Parameters.AddWithValue("@pmbi", antropom.PM_BI);
+                cmd.Parameters.AddWithValue("@pmpd", antropom.PM_PD); cmd.Parameters.AddWithValue("@pmbd", antropom.PM_BD);
+                cmd.Parameters.AddWithValue("@pmpi", antropom.PM_PI); cmd.Parameters.AddWithValue("@pmtronco", antropom.PM_Tronco);
+                cmd.Parameters.AddWithValue("@observ", antropom.Observaciones); cmd.Parameters.AddWithValue("@geb", antropom.GEB);
+                cmd.Parameters.AddWithValue("@get", antropom.GET); cmd.Parameters.AddWithValue("@chopor", antropom.CHOPorc);
+                cmd.Parameters.AddWithValue("@chogram", antropom.CHOGram); cmd.Parameters.AddWithValue("@chokcal", antropom.CHO_kcal);
+                cmd.Parameters.AddWithValue("@protpor", antropom.ProteinaPorc); cmd.Parameters.AddWithValue("@protgram", antropom.ProteinaGram);
+                cmd.Parameters.AddWithValue("@protkcal", antropom.Proteinakcal); cmd.Parameters.AddWithValue("@grporc", antropom.GrasaPorc);
+                cmd.Parameters.AddWithValue("@grgram", antropom.GrasaGram); cmd.Parameters.AddWithValue("@grkcal", antropom.Grasakcal);
+                cmd2.Parameters.AddWithValue("@pced", porcion.Cedula); cmd2.Parameters.AddWithValue("@pleche", porcion.Leche);
+                cmd2.Parameters.AddWithValue("@pcarne", porcion.Carne); cmd2.Parameters.AddWithValue("@pveget", porcion.Vegetales);
+                cmd2.Parameters.AddWithValue("@pgrasa", porcion.Grasa); cmd2.Parameters.AddWithValue("@pfruta", porcion.Fruta);
+                cmd2.Parameters.AddWithValue("@pazuc", porcion.Azucar); cmd2.Parameters.AddWithValue("@pharina", porcion.Harina);
+                cmd2.Parameters.AddWithValue("@psuplem", porcion.Suplemento);
+                cmd3.Parameters.AddWithValue("@diCed", distrib.Cedula); cmd3.Parameters.AddWithValue("@diAyun", distrib.Ayunas);
+                cmd3.Parameters.AddWithValue("@diDesay", distrib.Desayuno); cmd3.Parameters.AddWithValue("@diMedMan", distrib.MediaMañana);
+                cmd3.Parameters.AddWithValue("@diAlmuer", distrib.Almuerzo); cmd3.Parameters.AddWithValue("@dimedTard", distrib.MediaTarde);
+                cmd3.Parameters.AddWithValue("@diCena", distrib.Cena); cmd3.Parameters.AddWithValue("@dicolNoc", distrib.ColacionNocturna);
+
+
+
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();
@@ -199,13 +209,12 @@ namespace DAO
                 cmd3.ExecuteNonQuery();
 
                 conexion.Close();
-
                 return true;
-            //}
-            //catch (SqlException)
-            //{
-            //    return false;
-            //}
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
         }
 
         public bool AgregarSeguimiento(TOSeguimientoSemanal tOSeguimientoSemanal)
@@ -314,69 +323,87 @@ namespace DAO
         {
             int idSeg = 0;
             String query1 = "Insert into SeguimNutricion values(@ced, @diaEj , @comE, @niv);";
-            String query2 = "Insert into SeguimRecordat24H values(@tiemp,@desc,@idS);";
-
             String query4 = "Select max(Id_seguim) as 'IdSeg' from SeguimNutricion";
             SqlCommand cmd = new SqlCommand(query1, conexion);
-            SqlCommand cmd2 = new SqlCommand(query2, conexion);
-
+            
             SqlCommand cmd4 = new SqlCommand(query4, conexion);
             SqlDataReader lector;
             try
             {
 
                 cmd.Parameters.AddWithValue("@ced", seg.Cedula);
-                cmd.Parameters.AddWithValue("@diaEj", seg.DiasEjercicio);
-                cmd.Parameters.AddWithValue("@comE", seg.ComidaExtra);
-                cmd.Parameters.AddWithValue("@niv", seg.NivelAnsiedad);
+            cmd.Parameters.AddWithValue("@diaEj", seg.DiasEjercicio);
+            cmd.Parameters.AddWithValue("@comE", seg.ComidaExtra);
+            cmd.Parameters.AddWithValue("@niv", seg.NivelAnsiedad);
 
-                if (conexion.State != ConnectionState.Open)
-                {
-                    conexion.Open();
-                }
+            if (conexion.State != ConnectionState.Open)
+            {
+                conexion.Open();
+            }
 
-                cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
 
-                lector = cmd4.ExecuteReader();
-                if (lector.HasRows)
-                {
-                    lector.Read();
-                    idSeg = Int32.Parse(lector["IdSeg"].ToString());
-                    conexion.Close();
-                }
-                else
-                {
-                    conexion.Close();
-                    return false;
-                }
-                if (conexion.State != ConnectionState.Open)
-                {
-                    conexion.Open();
-                }
-                if (lisSeg != null)
-                {
-                    foreach (TOSeguimientoRecord24 seg24 in lisSeg)
-                    {
-                        cmd2.Parameters.AddWithValue("@tiemp", seg24.TiempoComida);
-                        cmd2.Parameters.AddWithValue("@desc", seg24.Descripcion);
-                        cmd2.Parameters.AddWithValue("@idS", idSeg);
-
-                        cmd2.ExecuteNonQuery();
-                    }
-                }
-                String query3 = "Insert into SeguimAntropom values(" + idSeg + "," + segAnt.Talla + "," +
-             segAnt.PesoIdeal + "," + segAnt.Edad + "," + segAnt.PMB + "," + segAnt.Fecha_SA.Date + "," + segAnt.Peso + "," + segAnt.IMC + ", " +
-             segAnt.PorcGrasaAnalizador + "," + segAnt.PorcGr_Bascula + "," + segAnt.GB_BI + "," +
-                segAnt.GB_BD + "," + segAnt.GB_PI + "," + segAnt.GB_PD + "," + segAnt.GB_Tronco + "," + segAnt.AguaCorporal + "," +
-             segAnt.MasaOsea + "," + segAnt.Complexión + "," + segAnt.EdadMetabolica + "," + segAnt.Cintura + "," + segAnt.Abdomen + "," +
-              segAnt.Cadera + "," + segAnt.Muslo + "," + segAnt.Brazo + "," + segAnt.PorcentGViceral + "," + segAnt.PorcentMusculo + "," +
-              segAnt.PM_BI + "," + segAnt.PM_PD + "," + segAnt.PM_BD + "," + segAnt.PM_PI + "," + segAnt.PM_Tronco + "," + segAnt.Observaciones + ")";
-                SqlCommand cmd3 = new SqlCommand(query3, conexion);
-                cmd3.ExecuteNonQuery();
-
+            lector = cmd4.ExecuteReader();
+            if (lector.HasRows)
+            {
+                lector.Read();
+                idSeg = Int32.Parse(lector["IdSeg"].ToString());
                 conexion.Close();
+            }
+            else
+            {
+                conexion.Close();
+                return false;
+            }
 
-                return true;
+            if (lisSeg != null)
+            {
+                
+                foreach (TOSeguimientoRecord24 seg24 in lisSeg)
+                {
+                    String query2 = "Insert into SeguimRecordat24H values(@tiemp,@desc,@idS);";
+                    SqlCommand cmd2 = new SqlCommand(query2, conexion);
+                    cmd2.Parameters.AddWithValue("@tiemp", seg24.TiempoComida);
+                    cmd2.Parameters.AddWithValue("@desc", seg24.Descripcion);
+                    cmd2.Parameters.AddWithValue("@idS", idSeg);
+                    conexion.Open();
+                    cmd2.ExecuteNonQuery();
+                    conexion.Close();
+                }
+                
+            }
+            String query3 = "Insert into SeguimAntropom values(@idSeg,@talla,@pesIdeal,@sEdad,@sPMB,@sFechSA,@sPeso,@sIMC," +
+                             "@sPorcAnaliz, @sGrBasc, @sGBBI,@sGBBD,@sGBPI,@sGBPD,@sGBTron,@sAguaCorp," +
+                             "@sMasaOsea,@sComplex,@sEdadMetab,@sCint,@sAbdomn,@sCader,@sMuslo,@sBrazo,@sPorcVicer,@spMuscul," +
+                             "@spmBI, @sPMPD,@sPMBD,@sPMPI,@sPMTronc,@sObserv)";
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlCommand cmd3 = new SqlCommand(query3, conexion);
+
+            cmd3.Parameters.AddWithValue("@idSeg", idSeg); cmd3.Parameters.AddWithValue("@talla", segAnt.Talla);
+            cmd3.Parameters.AddWithValue("@pesIdeal", segAnt.PesoIdeal); cmd3.Parameters.AddWithValue("@sEdad", segAnt.Edad);
+            cmd3.Parameters.AddWithValue("@sPMB", segAnt.PMB); cmd3.Parameters.AddWithValue("@sFechSA", segAnt.Fecha_SA);
+            cmd3.Parameters.AddWithValue("@sPeso", segAnt.Peso); cmd3.Parameters.AddWithValue("@sIMC", segAnt.IMC);
+            cmd3.Parameters.AddWithValue("@sPorcAnaliz", segAnt.PorcGrasaAnalizador); cmd3.Parameters.AddWithValue("@sGrBasc", segAnt.PorcGr_Bascula);
+            cmd3.Parameters.AddWithValue("@sGBBI", segAnt.GB_BI); cmd3.Parameters.AddWithValue("@sGBBD", segAnt.GB_BD);
+            cmd3.Parameters.AddWithValue("@sGBPI", segAnt.GB_PI); cmd3.Parameters.AddWithValue("@sGBPD", segAnt.GB_PD);
+            cmd3.Parameters.AddWithValue("@sGBTron", segAnt.GB_Tronco); cmd3.Parameters.AddWithValue("@sAguaCorp", segAnt.AguaCorporal);
+            cmd3.Parameters.AddWithValue("@sMasaOsea", segAnt.MasaOsea); cmd3.Parameters.AddWithValue("@sComplex", segAnt.Complexión);
+            cmd3.Parameters.AddWithValue("@sEdadMetab", segAnt.EdadMetabolica); cmd3.Parameters.AddWithValue("@sCint", segAnt.Cintura);
+            cmd3.Parameters.AddWithValue("@sAbdomn", segAnt.Abdomen); cmd3.Parameters.AddWithValue("@sCader", segAnt.Cadera);
+            cmd3.Parameters.AddWithValue("@sMuslo", segAnt.Muslo); cmd3.Parameters.AddWithValue("@sBrazo", segAnt.Brazo);
+            cmd3.Parameters.AddWithValue("@sPorcVicer", segAnt.PorcentGViceral); cmd3.Parameters.AddWithValue("@spMuscul", segAnt.PorcentMusculo);
+            cmd3.Parameters.AddWithValue("@spmBI", segAnt.PM_BI); cmd3.Parameters.AddWithValue("@sPMPD", segAnt.PM_PD);
+            cmd3.Parameters.AddWithValue("@sPMBD", segAnt.PM_BD); cmd3.Parameters.AddWithValue("@sPMPI", segAnt.PM_PI);
+            cmd3.Parameters.AddWithValue("@sPMTronc", segAnt.PM_Tronco); cmd3.Parameters.AddWithValue("@sObserv", segAnt.Observaciones);
+
+            cmd3.ExecuteNonQuery();
+
+            conexion.Close();
+
+            return true;
             }
             catch (SqlException)
             {
@@ -493,10 +520,8 @@ namespace DAO
         public bool GuardarHistorial(TOHistorialMedico historial, List<TOMedicamento> listaMedicamento)
         {
             string query1 = "Insert into Historial_Medico values(@antec,@patol,@consLic,@fum,@fechEx,@ced,@frecFum,@frecTom,@actvFis);";
-            string query2 = "Insert into Medic_Suplem values(@ced,@nomb,@mot,@frec,@dosis);";
-
+           
             SqlCommand cmd = new SqlCommand(query1, conexion);
-            SqlCommand cmd2 = new SqlCommand(query2, conexion);
 
             try
             {
@@ -518,24 +543,25 @@ namespace DAO
                 }
                 //Insercion del historial medico.
                 cmd.ExecuteNonQuery();
+                conexion.Close();
                 //Insercion de los medicamentos o suplementos del cliente.
                 if (listaMedicamento != null)
                 {
                     foreach (TOMedicamento medicamento in listaMedicamento)
                     {
+                        string query2 = "Insert into Medic_Suplem values(@ced,@nomb,@mot,@frec,@dosis)";
+                        SqlCommand cmd2 = new SqlCommand(query2, conexion);
                         cmd2.Parameters.AddWithValue("@ced", medicamento.Cedula);
                         cmd2.Parameters.AddWithValue("@nomb", medicamento.Nombre);
                         cmd2.Parameters.AddWithValue("@mot", medicamento.Motivo);
                         cmd2.Parameters.AddWithValue("@frec", medicamento.Frecuencia);
                         cmd2.Parameters.AddWithValue("@dosis", medicamento.Dosis);
-
+                        conexion.Open();
                         cmd2.ExecuteNonQuery();
+                        conexion.Close();
                     }
                 }
-
-
-                conexion.Close();
-
+                
                 return true;
             }
             catch (SqlException)
@@ -580,7 +606,7 @@ namespace DAO
             string qry = "Select * from Medic_Suplem where Cedula =" + ced;
             SqlCommand buscar = new SqlCommand(qry, conexion);
             SqlDataReader lector;
-            
+
             if (conexion.State != ConnectionState.Open)
             {
                 conexion.Open();
@@ -636,7 +662,7 @@ namespace DAO
 
         public TOHabitoAlimentario ConsultarHabitoAlimentario(string cedula)
         {
-           
+
             string qry = "select * from HabitosAlimentario where Cedula = " + cedula;
             SqlCommand buscar = new SqlCommand(qry, conexion);
             SqlDataReader lector;
@@ -666,7 +692,7 @@ namespace DAO
                 conexion.Close();
                 return null;
             }
-            
+
 
         }
 
@@ -745,7 +771,7 @@ namespace DAO
         public Boolean existeCliente(string cedula)
         {
             Boolean existe = false;
-            string tel ="";
+            string tel = "";
             string resi = "";
 
             try
@@ -781,12 +807,14 @@ namespace DAO
                 {
                     existe = true;
                 }
-                else {
+                else
+                {
                     existe = false;
                 }
                 return existe;
             }
-            catch (Exception e) {
+            catch (Exception)
+            {
                 return false;
             }
 
