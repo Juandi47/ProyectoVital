@@ -44,9 +44,9 @@ namespace UI
             }
             else
             {
-                if (manejador.CrearNoti(DateTime.Now, EncabReciente.Text, TextoReciente.Text, "/images/vital.jpg", 3))
+                if (manejador.CrearNoti(DateTime.Now, EncabReciente.Text, TextoReciente.Text, cargarImagen(), 3))
                 {
-                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabReciente.Text, TextoReciente.Text, "/images/vital.jpg", 3));
+                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabReciente.Text, TextoReciente.Text, cargarImagen(), 3));
                     ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
                 }
                 else
@@ -55,7 +55,9 @@ namespace UI
                 }
             }
             EncabReciente.Text = string.Empty; TextoReciente.Text = string.Empty;
-        }
+			
+
+		}
 
         protected void BtnImportante_Click(object sender, EventArgs e)
         {
@@ -65,9 +67,9 @@ namespace UI
             }
             else
             {
-                if(manejador.CrearNoti(DateTime.Now, EncabImportante.Text, TextoImportante.Text, "/images/importante.jpg", 2))
+                if(manejador.CrearNoti(DateTime.Now, EncabImportante.Text, TextoImportante.Text, cargarImagen(), 2))
                 {
-                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabImportante.Text, TextoImportante.Text, "/images/vital.jpg", 2));
+                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabImportante.Text, TextoImportante.Text, cargarImagen(), 2));
                     ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
                 }
                 else
@@ -86,9 +88,9 @@ namespace UI
             }
             else
             {
-                if (manejador.CrearNoti(DateTime.Now, EncabPrincipal.Text, TextoPrincipal.Text, "/images/plan.jpg", 1))
+                if (manejador.CrearNoti(DateTime.Now, EncabPrincipal.Text, TextoPrincipal.Text, cargarImagen(), 1))
                 {
-                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabPrincipal.Text, TextoPrincipal.Text, "/images/vital.jpg", 1));
+                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1, DateTime.Now, EncabPrincipal.Text, TextoPrincipal.Text, cargarImagen(), 1));
                     ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
                 }
                 else
@@ -107,9 +109,9 @@ namespace UI
             }
             else
             {
-                if (manejador.CrearNoti(DateTime.Now, EncabNotas.Text, TextoNotas.Text, "", 4))
+                if (manejador.CrearNoti(DateTime.Now, EncabNotas.Text, TextoNotas.Text, cargarImagen(), 4))
                 {
-                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1,DateTime.Now, EncabNotas.Text, TextoNotas.Text, "/images/vital.jpg", 4));
+                    ListaNoticia.Add(new Noticia(ListaNoticia.Count + 1,DateTime.Now, EncabNotas.Text, TextoNotas.Text, cargarImagen(), 4));
                     ClientScript.RegisterStartupScript(GetType(), "invocarfuncion", "mensaje();", true);
                 }
                 else
@@ -119,7 +121,7 @@ namespace UI
             }
             EncabNotas.Text = string.Empty; TextoNotas.Text = string.Empty;
         }
-        //
+        
 
         protected void LlenarTabla()
         {
@@ -145,6 +147,49 @@ namespace UI
             }
             
         }
-        
-    }
+
+		private string cargarImagen()
+		{
+			Boolean correcto = false;
+			String ruta = Server.MapPath("~/images/");
+			string stringRuta = "";
+
+			if (imagen.HasFile)
+			{
+				String extension = System.IO.Path.GetExtension(imagen.FileName).ToLower();
+				String[] allowedExtensions = { ".png", ".jpeg", ".jpg" };
+				for (int i = 0; i < allowedExtensions.Length; i++)
+				{
+					if (extension == allowedExtensions[i])
+					{
+						correcto = true;
+					}
+				}
+			}
+
+			if (correcto)
+			{
+				try
+				{
+					imagen.PostedFile.SaveAs(ruta + imagen.FileName);
+					stringRuta = "/images/" + imagen.FileName;
+
+					//stringRuta = ruta + imagen.FileName;
+					//Response.Write("<script>alert('Imagen cargada.')</script>");
+					return stringRuta;
+				}
+				catch
+				{
+					//Response.Write("<script>alert('No se pudo cargar la imagen.')</script>");
+				}
+			}
+			else
+			{
+				//Response.Write("<script>alert('Archivo no aceptado.')</script>");
+				return null;
+			}
+			return null;
+		}
+
+	}
 }
