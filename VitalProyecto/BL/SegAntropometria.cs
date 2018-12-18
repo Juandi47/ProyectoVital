@@ -112,9 +112,9 @@ namespace BL
         public decimal Cadera { set; get; }
         public string Muslo { set; get; }
         public decimal Brazo { set; get; }        
-        public string Observaciones { set; get; }//
+        public string Observaciones { set; get; }
       
 
-       
+       public SegAntropometria() { }
     }
 }
