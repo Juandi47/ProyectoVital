@@ -792,6 +792,42 @@ namespace DAO
 
         }
 
+        public TOSeguimMensual consultarSeguimMensual(String cedula)
+        {
+            TOSeguimMensual seguimMensulal = null;
+
+            String query = "select SeguimNutricion.Cedula,SeguimNutricion.DiasEjercSem,SeguimNutricion.ComidaExtra,SeguimNutricion.NivelAnsiedad,SeguimRecordat24H.TiempoComida,SeguimRecordat24H.Descripcion,SeguimAntropom.* from SeguimNutricion,SeguimRecordat24H,SeguimAntropom where SeguimNutricion.Cedula= @ced and SeguimNutricion.ID_Seguim = SeguimRecordat24H.ID_Seguimiento and SeguimNutricion.ID_Seguim = SeguimAntropom.ID_Seguimiento;";
+
+            SqlCommand command = new SqlCommand(query, conexion);
+
+            command.Parameters.AddWithValue("@ced", cedula);
+
+            SqlDataReader lector;
+            conexion.Open();
+            lector = command.ExecuteReader();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    seguimMensulal = new TOSeguimMensual(new TOSeguimientoNutri(lector["Cedula"].ToString(), int.Parse(lector["DiasEjercSem"].ToString()), lector["ComidaExtra"].ToString(), lector["NivelAnsiedad"].ToString()),
+                        new TOSeguimientoRecord24(int.Parse(lector["ID_Seguimiento"].ToString()), lector["TiempoComida"].ToString(), lector["Descripcion"].ToString()),
+                        new TOSegAntropometria(int.Parse(lector["ID_SegAntrop"].ToString()), int.Parse(lector["ID_Seguimiento"].ToString()), decimal.Parse(lector["Talla"].ToString()), decimal.Parse(lector["PesoIdeal"].ToString()), decimal.Parse(lector["Edad"].ToString()),
+                        decimal.Parse(lector["PMB"].ToString()), DateTime.Parse(lector["Fecha_SA"].ToString()), decimal.Parse(lector["Peso"].ToString()), decimal.Parse(lector["IMC"].ToString()), decimal.Parse(lector["PorcGrasaAnalizador"].ToString()), decimal.Parse(lector["PorcGR_Bascula"].ToString()),
+                        decimal.Parse(lector["GB_BI"].ToString()), decimal.Parse(lector["GB_BD"].ToString()), decimal.Parse(lector["GB_PI"].ToString()), decimal.Parse(lector["GB_PD"].ToString()), decimal.Parse(lector["GB_Tronco"].ToString()), decimal.Parse(lector["tPorcGVisceral"].ToString()),
+                        decimal.Parse(lector["PorcentMusculo"].ToString()), decimal.Parse(lector["PM_BI"].ToString()), decimal.Parse(lector["PM_PD"].ToString()), decimal.Parse(lector["PM_BD"].ToString()), decimal.Parse(lector["PM_PI"].ToString()), decimal.Parse(lector["PM_Troco"].ToString()),
+                        decimal.Parse(lector["AguaCorporal"].ToString()), decimal.Parse(lector["MasaOsea"].ToString()), decimal.Parse(lector["Complexion"].ToString()), decimal.Parse(lector["Edad_Metabolica"].ToString()), decimal.Parse(lector["Cintura"].ToString()), decimal.Parse(lector["Abdomen"].ToString()),
+                        decimal.Parse(lector["Cadera"].ToString()), lector["Muslo"].ToString(), decimal.Parse(lector["Brazo"].ToString()), lector["Observaciones"].ToString()));
+                   
+                }
+                conexion.Close();
+            }
+            else
+            {
+                conexion.Close();
+            }
+            return seguimMensulal;
+        }
+
 
     }
 }

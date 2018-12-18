@@ -75,6 +75,7 @@
     <Compile Include="SeguimientoNutri.cs" />
     <Compile Include="SeguimientoRecord24.cs" />
     <Compile Include="SeguimientoSemanal.cs" />
+    <Compile Include="SeguimMensual.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

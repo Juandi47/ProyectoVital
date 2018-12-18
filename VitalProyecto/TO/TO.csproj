@@ -63,6 +63,7 @@
     <Compile Include="TOSeguimientoNutri.cs" />
     <Compile Include="TOSeguimientoRecord24.cs" />
     <Compile Include="TOSeguimientoSemanal.cs" />
+    <Compile Include="TOSeguimMensual.cs" />
     <Compile Include="TOUsuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

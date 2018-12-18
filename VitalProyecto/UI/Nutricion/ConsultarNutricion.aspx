@@ -47,6 +47,30 @@
         }
     </style>
 
+    <script>
+            function buscarUsuario() {
+                // Declare variables 
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById('<%=sBusqueda.ClientID%>');
+                filter = input.value.toUpperCase();
+                table = document.getElementById('tabla');
+                tr = table.getElementsByTagName("tr");
+
+                // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        </script>
+
     <link rel="stylesheet" href="css/style.css" />
 
 </asp:Content>
@@ -74,18 +98,18 @@
                             <div class="row">
                                 <div class="col-10">
                                     <label class="form-label" for="sCedula">Busqueda: </label>
-                                    <asp:TextBox ID="sBusqueda" runat="server" Font-Size="Small"></asp:TextBox>
+                                    <asp:TextBox ID="sBusqueda" onkeyup="buscarUsuario()" runat="server" Font-Size="Small"></asp:TextBox>
                                 </div>
-                                <div class="col-10">
+                                <%--<div class="col-10">
                                     <p></p>
                                     <asp:Button ID="btnBuscar" Text="Buscar" runat="server" OnClick="btnBuscar_Click" Font-Size="X-Small" />
                                     <asp:Button ID="btnAtras" Text="Atrás" runat="server" OnClick="btnAtras_Click" Visible="false" Font-Size="X-Small" />
-                                </div>
+                                </div>--%>
                             </div>
                             <div class="row">
 
                                 <div class="col-60" id="div1">
-                                    <table>
+                                    <table ID="tabla">
                                         <asp:Literal ID="LitConsultar" runat="server"></asp:Literal>
                                     </table>
                                 </div>

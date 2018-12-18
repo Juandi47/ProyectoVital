@@ -310,5 +310,30 @@ namespace BL
         {
             return daoClienteNutricion.existeCliente(cedula);
         }
+
+        public SeguimMensual consultaSeguimMensual(String cedula) {
+
+            DAOClienteNutricion dao = new DAOClienteNutricion();
+
+            TOSeguimMensual to = dao.consultarSeguimMensual(cedula);
+
+            TOSeguimientoNutri toNutri= to.nutri;
+
+            TOSeguimientoRecord24 toSeguim = to.record;
+
+            TOSegAntropometria toAnt = to.antrop;
+
+            SeguimMensual seguim = new SeguimMensual(new SeguimientoNutri(toNutri.Cedula, toNutri.DiasEjercicio, toNutri.ComidaExtra, toNutri.NivelAnsiedad),
+                        new SeguimientoRecord24(toSeguim.Seguimiento, toSeguim.TiempoComida, toSeguim.Descripcion),
+                        new SegAntropometria(toAnt.id_SegAntrop, toAnt.Seguimiento, toAnt.Talla, toAnt.PesoIdeal, toAnt.Edad,
+                        toAnt.PMB, toAnt.Fecha_SA, toAnt.Peso, toAnt.IMC, toAnt.PorcGrasaAnalizador, toAnt.PorcGr_Bascula,
+                        toAnt.GB_BI, toAnt.GB_BD, toAnt.GB_PI, toAnt.GB_PD, toAnt.GB_Tronco, toAnt.PorcentGViceral,
+                        toAnt.PorcentMusculo, toAnt.PM_BI, toAnt.PM_PD, toAnt.PM_BD, toAnt.PM_PI, toAnt.PM_Tronco,
+                        toAnt.AguaCorporal, toAnt.MasaOsea, toAnt.Complexión, toAnt.EdadMetabolica, toAnt.Cintura, toAnt.Abdomen,
+                        toAnt.Cadera, toAnt.Muslo, toAnt.Brazo, toAnt.Observaciones));
+
+            return seguim;
+
+        }
     }
 }

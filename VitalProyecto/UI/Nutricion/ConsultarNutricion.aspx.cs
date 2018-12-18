@@ -42,25 +42,23 @@ namespace UI.Nutricion
                 }
 
             }
-            btnAtras.Visible = false;
         }
-        protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            LitConsultar.Text = "";
-            if (sBusqueda.Text != (""))
-            {
-                foreach (ClienteNutricion cl in lista)
-                {
-                    if (cl.Cedula.Equals(sBusqueda.Text) || cl.Nombre.Equals(sBusqueda.Text) || cl.Apellido1.Equals(sBusqueda.Text))
-                    {
-                        LitConsultar.Text += "<tr><td>" + cl.Nombre + " " + cl.Apellido1 + " " + cl.Apellido2 + "</td>" +
-                        "<td><a \"href=\"#\" onclick=\"Ver_Click(" + cl.Cedula + ")\" id=\"btnVer\">Ver</a></td>" +
-                         "<td><a \"href=\"#\" onclick=\"Eliminar_Click(" + cl.Cedula + ")\" id=\"btnVer\">Eliminar</a></td></tr>";
-                    }
-                }
-            }
-            btnAtras.Visible=true;
-        }
+        //protected void btnBuscar_Click(object sender, EventArgs e)
+        //{
+        //    LitConsultar.Text = "";
+        //    if (sBusqueda.Text != (""))
+        //    {
+        //        foreach (ClienteNutricion cl in lista)
+        //        {
+        //            if (cl.Cedula.Equals(sBusqueda.Text) || cl.Nombre.Equals(sBusqueda.Text) || cl.Apellido1.Equals(sBusqueda.Text))
+        //            {
+        //                LitConsultar.Text += "<tr><td>" + cl.Nombre + " " + cl.Apellido1 + " " + cl.Apellido2 + "</td>" +
+        //                "<td><a \"href=\"#\" onclick=\"Ver_Click(" + cl.Cedula + ")\" id=\"btnVer\">Ver</a></td>" +
+        //                 "<td><a \"href=\"#\" onclick=\"Eliminar_Click(" + cl.Cedula + ")\" id=\"btnVer\">Eliminar</a></td></tr>";
+        //            }
+        //        }
+        //    }
+        //}
 
         [System.Web.Services.WebMethod]
         public static string VerDetalleCliente(string ced)
