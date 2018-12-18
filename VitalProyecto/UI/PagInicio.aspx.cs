@@ -48,7 +48,10 @@ namespace UI
                         {
                             if(noti.TipoNoticia == 3)//Noticias informacion Reciente
                             {
-                                NotReciente.Text +=  "<li class=\"w3-padding-16\"><img src = \"" + noti.Imagen + "\" alt=\"Foto\" class=\"w3-left w3-margin-right\" style=\"width: 50px\" />" +
+								//string fotograf = "~/images/" + imagen.FileName.Trim();
+								//foto.ImageUrl = fotograf;
+
+								NotReciente.Text +=  "<li class=\"w3-padding-16\"><img src = \"" + noti.Imagen + "\" alt=\"Foto\" class=\"w3-left w3-margin-right\" style=\"width: 50px\" />" +
                                     "<span class=\"w3-large\">" + noti.Encabezado + "</span><br /><span>" + noti.Texto + "</span></li>";
                             }
                             else

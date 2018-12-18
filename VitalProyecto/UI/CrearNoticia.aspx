@@ -106,6 +106,7 @@
                         <div class="row">
                             <div class="col-75">
                                 <h3>Seleccione la imágen para la noticia</h3>
+								<asp:FileUpload ID="imagen" runat="server" />
                             </div>
                         </div>
 
