@@ -1,6 +1,6 @@
 ﻿table {
     font-family: arial, sans-serif;
-    border-collapse: unset;
+    border-collapse: initial;
     width: 50%;
 }
 
@@ -8,7 +8,6 @@ td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 6px;
-    width: 50px;
 }
 
 tr:nth-child(even) {
@@ -23,4 +22,3 @@ tr:nth-child(even) {
 .tr{
     vertical-align:top;
 }
-

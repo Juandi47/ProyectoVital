@@ -1,0 +1,163 @@
+﻿/*---- Block: Table ----*/
+
+.table {
+    margin:inherit;
+    overflow: hidden;
+    max-width: 90em;
+}
+
+.table__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    transition: all 1s ease;
+}
+
+#table-org .table__row {
+    transform: translateX( -50% );
+}
+
+.tier {
+    background-color: #FFF;
+    margin: 0;
+    flex: 3;
+    text-align: left;
+    border-right: 1px solid #CCC;
+}
+
+    .tier.tier--org {
+        flex: 4;
+    }
+
+/*---- Block: tier ----*/
+
+.tier {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tier__title {
+    text-transform: capitalize;
+    text-align: center;
+    color: white;
+    line-height: 2em;
+    margin: 0;
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    padding: 0 .25em;
+    font-size: 1.5em;
+}
+
+.tier__color--1 {
+    background-color: darkolivegreen;
+}
+
+
+.tier__price {
+    text-align: left;
+    padding: .2rem;
+    font-size: 1em;
+    flex: 1;
+    height: 30px;
+    text-anchor: inherit;
+
+  
+   
+}
+
+.tier__price__duration {
+    font-size: .5em;
+}
+
+.tier__range {
+    margin: 1em 8em;
+}
+
+/*---- Block: benefits ----*/
+
+.benefits {
+    padding: .5em 2em;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.benefits__blt {
+    list-style: none;
+    margin: .5em 0;
+}
+
+.benefits__blt--description {
+    margin-top: 0;
+    font-style: italic;
+    font-family: Didot;
+}
+
+.benefits__blt__pricing {
+    background-color: #eee;
+    padding: 0.12em 0.3em;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.benefits__blt__pricing--premium {
+    background-color: darkolivegreen
+}
+
+/*---- Block: tier__cta ----*/
+
+.tier__cta {
+    display: contents;
+    text-align: center;
+    color:white;
+    background-color:darkolivegreen;
+    margin: 0em .5em .5em;
+    padding: 1em .5em;
+    border-radius: .25em;
+    text-decoration: none;
+    text-transform:capitalize;
+    border-bottom: .125em solid rgba(0,0,0,.5);
+    transition: all 0.3s ease;
+}
+
+.tier__cta--disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+/*---- Media Queries ----*/
+
+@media screen and (max-width: 61.25em) {
+
+    .pill {
+        display: none;
+    }
+
+    .table {
+        overflow-x: scroll;
+    }
+
+    #table-org .table__row {
+        transform: none;
+        min-width: 1400px;
+    }
+
+    .tier, .tier.tier--org {
+        flex: 3 0 300px;
+    }
+}
+
+@media screen and (max-width: 35em) {
+    .benefits {
+        /*padding: .5em;*/
+    }
+
+    .tier__cta {
+        margin: 0;
+        border-radius: 0;
+        border: 0;
+    }
+}

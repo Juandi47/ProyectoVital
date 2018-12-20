@@ -16,10 +16,10 @@ namespace UI.Nutricion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //    if (new ControlSeguridad().validarClieNutri() == true)
-            //    {
-            //        Response.Redirect("~/IniciarSesion.aspx");
-            //    }
+            if (new ControlSeguridad().validarClieNutri() == true)
+            {
+                Response.Redirect("~/IniciarSesion.aspx");
+            }
             if (!IsPostBack)
             {
                 CargarLista();
@@ -91,21 +91,114 @@ namespace UI.Nutricion
 
         public static string CargarSegNutricional(string ced)
         {
-            SeguimientoNutri seg = new SeguimientoNutri();
-            List<SeguimientoRecord24> segrec24 = new List<SeguimientoRecord24>();
-            SegAntropometria segAntrop = new SegAntropometria();
-            string txt = "<div class=\"row\">" +
-                        "<div class=\"col-10\"><label class=\"form-label\" for=\"tDiasEjer\">Días de ejercicio semanales:</label></div>" +
-                        "<div class=\"col-10\"><label class=\"form-label\" for=\"tComExtras\">Comidas extras:</label></div>" +
-                        "<div class=\"col-10\"><label class=\"form-label\" for=\"tNivelAnsiedad\">Niveles de Ansiedad semanal y tiempo de comida en donde lo siente: </label></div></div>" +
-                        "<div class=\"row\"><div class=\"col-75\"><table>" +
-                        "<tr><th>Tiempo de Comida</th><th>Descripción</th></tr>";
-            foreach (SeguimientoRecord24 s in segrec24)
+            
+            string txt = "";
+           List <SeguimMensual> segMensuales = manejador.consultaSeguimMensual(ced);
+            if(segMensuales != null)
             {
-                txt += "<tr><td>" + s.TiempoComida + "</td><td>" + s.Descripcion + "</td></tr>";
+                int cont = 0;
+                txt += "<ul class=\"nav nav-tabs\">";
+                for (int i = 0; i <= segMensuales.Count - 1; i++)
+                {
+                    cont = i;
+                    if (i == 0)
+                    {
+                        txt += "<li class=\"active\"><a data-toggle=\"tab\" href=\"#Seg"+i+"\">"+(cont +1)+"</a></li>";
+                    }
+                    else
+                    {
+                        txt += "<li><a data-toggle=\"tab\" href=\"#Seg" + i + "\">" + (cont + 1) + "</a></li>";
+                    }
+                }
+                txt += "</ul><div class=\"tab-content\">";
+                int cont2 = 0;
+                foreach (SeguimMensual segMensual in segMensuales)
+                {
+                    if (cont2 == 0) { txt += "<div id=\"Seg" + cont2 + "\" class=\"tab-pane fade in active\"><div class=\"container\">"; } else { txt += "<div id=\"Seg" + cont2 + "\" class=\"tab-pane fade\"><div class=\"container\">"; }
+                    cont2 += 1;
+                    SeguimientoNutri seg = segMensual.nutri;
+                    if(seg != null)
+                    {
+                       txt+= "<br /><div class=\"row\">" +
+                       "<label class=\"form-label\" for=\"tDiasEjer\">Días de ejercicio semanales: " + seg.DiasEjercicio + "</label><br />" +
+                       "<label class=\"form-label\" for=\"tComExtras\">Comidas extras: " + seg.ComidaExtra + "</label><br />" +
+                       "<label class=\"form-label\" for=\"tNivelAnsiedad\">Niveles de Ansiedad semanal y tiempo de comida en donde lo siente: " + seg.NivelAnsiedad + "</label><br /></div>";
+                    }
+                    else { txt += "No hay registro del seguimiento nutricional del cliente.<br />"; }
+
+                    List<SeguimientoRecord24> segrec24h = segMensual.record;
+                    if(segrec24h != null)
+                    {
+                        txt += "<div class=\"row\"><div class=\"col-75\"><table>" +
+                               "<tr><th>Tiempo de Comida</th><th>Descripción</th></tr>";
+                        foreach (SeguimientoRecord24 segrec24 in segrec24h)
+                        {
+                             txt += "<tr><td>" + segrec24.TiempoComida + "</td><td>" + segrec24.Descripcion + "</td></tr>";
+                        }
+                        txt += "</table></div></div>";
+                    }
+                    else { txt += "No hay registro del recordatorio de 24 horas para el cliente.<br />"; }
+
+                    SegAntropometria segAntrop = segMensual.antrop;
+                    if (segAntrop != null)
+                    {
+                        txt += "<div class=\"row\">" +
+                                "Fecha: " + segAntrop.Fecha_SA.ToString("dd/MM/yyyy")+ "<br /></div>" +
+                                "<div class=\"row\"><div class=\"col-25\">" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tTalla\">Talla: " + segAntrop.Talla + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tPesoIdeal\">Peso Meta o Ideal: " + segAntrop.PesoIdeal + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tEdad\">Edad: " + segAntrop.Edad + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tPMB\">PMB: " + segAntrop.PMB + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tPeso\">Peso: " + segAntrop.Peso + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tIMC\">IMC: " + segAntrop.IMC + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tMuslo\">Muslo: " + segAntrop.Muslo + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tBrazo\">Brazo: " + segAntrop.Brazo + "</label></div>" +
+                                "</div>" +
+                                "<div class=\"col-25\">" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tPorcGAnalizador\">% Grasa Analizador: " + segAntrop.PorcGrasaAnalizador + "</label></div>" +
+                                 "<div class=\"col-15v\"><label class=\"form-label\" for=\"tPorcGBascula\">% Grasa Báscula: " + segAntrop.PorcGr_Bascula + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tGBascBI\">BI: " + segAntrop.GB_BI + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tGBascBD\">BD: " + segAntrop.GB_BD + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tGBascPD\">PD: " + segAntrop.GB_PD + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tGBascPI\">PI: " + segAntrop.GB_PI + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tGBascTronco\">Tronco: " + segAntrop.GB_Tronco + "</label></div>" +
+                                "</div>" +
+                                "<div class=\"col-25\">" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tPorcGVisceral\">% Grasa Visceral: " + segAntrop.PorcentGViceral + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tPorcMusculo\">% Músculo: " + segAntrop.PorcentMusculo + "</label> </div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tMuscBI\">BI: " + segAntrop.PM_BI + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tMuscBD\">BD: " + segAntrop.PM_BD + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tMuscPD\">PD: " + segAntrop.PM_PD + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tMuscPI\">PI: " + segAntrop.PM_PI + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tMuscTronco\">Tronco: " + segAntrop.PM_Tronco + "</label></div>" +
+                                "</div>" +
+                                "<div class=\"col-25\">" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tAguaNut\">Agua Corporal: " + segAntrop.AguaCorporal + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tMasaOsea\">Masa ósea: " + segAntrop.MasaOsea + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tComplexión\">Complexión: " + segAntrop.Complexión + "</label></div>" +
+                                "<div class=\"col-15\"> <label class=\"form-label\" for=\"tEdadMetabolica\">Edad Metabolica: " + segAntrop.EdadMetabolica + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tCintura\">Cintura: " + segAntrop.Cintura + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tAbdomen\">Abdomen: " + segAntrop.Abdomen + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tCadera\">Cadera: " + segAntrop.Cadera + "</label></div>" +
+                                "<div class=\"col-15\"><label class=\"form-label\" for=\"tObservacion\">Observacion: " + segAntrop.Observaciones + "</label></div>" +
+                                "</div></div>";
+                    }
+                    else
+                    {
+                        txt += "No se almacenó correctamente el seguimiento de antropometría correctamente.<br />";
+                    }
+                    txt += "</div></div>";
+                }
+                txt += "</div>";
             }
-            txt+= "</table></div></div>";
+
+           
           return txt;
+        }
+
+        public void CargarSegMB(string t)
+        {
+            LiVerSeg.Text = t;
         }
         public static string CargarAntrop(string ced)
         {

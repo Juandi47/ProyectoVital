@@ -9,7 +9,7 @@ namespace BL
     public class SeguimMensual
     {
 
-        public SeguimMensual(SeguimientoNutri nutri, SeguimientoRecord24 record, SegAntropometria antrop) {
+        public SeguimMensual(SeguimientoNutri nutri, List<SeguimientoRecord24> record, SegAntropometria antrop) {
             this.nutri = nutri;
             this.antrop = antrop;
             this.record = record;
@@ -20,7 +20,7 @@ namespace BL
 
         public SegAntropometria antrop { set; get; }
 
-        public SeguimientoRecord24 record { set; get; }
+        public List<SeguimientoRecord24> record { set; get; }
 
 
     }

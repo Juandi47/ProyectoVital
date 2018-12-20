@@ -111,7 +111,9 @@
                                 <div class="col-60" id="div1">
                                     <table ID="tabla">
                                         <asp:Literal ID="LitConsultar" runat="server"></asp:Literal>
+                                        
                                     </table>
+                                    <asp:Literal ID="LiVerSeg" runat="server"></asp:Literal>
                                 </div>
 
                                 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

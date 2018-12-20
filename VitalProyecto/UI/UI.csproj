@@ -164,11 +164,14 @@
     <Content Include="Nutricion\admin_estilos.css" />
     <Content Include="Nutricion\CambiarContraseña.aspx" />
     <Content Include="Nutricion\ConsultarNutricion.aspx" />
+    <Content Include="Nutricion\css\alertify.min.css" />
     <Content Include="Nutricion\css\font-awesome.min.css" />
     <Content Include="Nutricion\css\ie\html5shiv.js" />
     <Content Include="Nutricion\css\ie\PIE.htc" />
     <Content Include="Nutricion\css\ie\v8.css" />
+    <Content Include="Nutricion\css\Noticia.css" />
     <Content Include="Nutricion\css\pikaday.css" />
+    <Content Include="Nutricion\css\semantic.min.css" />
     <Content Include="Nutricion\css\site.css" />
     <Content Include="Nutricion\css\skel-noscript.css" />
     <Content Include="Nutricion\css\skel.css" />
@@ -182,7 +185,9 @@
     <Content Include="Nutricion\css\tabla.css" />
     <Content Include="Nutricion\css\theme.css" />
     <Content Include="Nutricion\css\triangle.css" />
+    <Content Include="Nutricion\fonts\fontawesome-webfont.svg" />
     <Content Include="Nutricion\js\alertify.js" />
+    <Content Include="Nutricion\js\alertify.min.js" />
     <Content Include="Nutricion\js\init.js" />
     <Content Include="Nutricion\js\jquery-1.4.1.min.js" />
     <Content Include="Nutricion\js\jquery.dropotron.min.js" />
@@ -197,6 +202,10 @@
     <Content Include="Nutricion\SeguimSemanal.aspx" />
     <Content Include="PagInicio.aspx" />
     <Content Include="RegistroCliente.aspx" />
+    <Content Include="Nutricion\fonts\fontawesome-webfont.eot" />
+    <Content Include="Nutricion\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Nutricion\fonts\fontawesome-webfont.woff" />
+    <Content Include="Nutricion\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

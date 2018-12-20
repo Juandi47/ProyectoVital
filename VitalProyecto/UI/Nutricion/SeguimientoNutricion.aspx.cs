@@ -14,10 +14,10 @@ namespace UI.Nutricion
         ManejadorNutrición manejador = new ManejadorNutrición();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (new ControlSeguridad().validarClieNutri() == true)
-            //{
-            //    Response.Redirect("~/IniciarSesion.aspx");
-            //}
+            if (new ControlSeguridad().validarClieNutri() == true)
+            {
+                Response.Redirect("~/IniciarSesion.aspx");
+            }
             if (!IsPostBack)
             {
                 r24Tabla.Text = "<tr><th>Tiempo de Comida</th><th>Descripción</th></tr>";
